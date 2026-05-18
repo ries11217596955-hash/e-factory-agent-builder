@@ -1,4 +1,4 @@
-{
+﻿{
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Agent Builder Task Queue",
   "type": "object",
@@ -40,6 +40,12 @@
           },
           "expected_gate": {
             "type": "string"
+          },
+          "build_task_path": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       }

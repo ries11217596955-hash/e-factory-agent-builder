@@ -17,13 +17,13 @@
                          {
                              "id":  "self_build_execution_loop",
                              "phase":  "PHASE_2",
-                             "status":  "ACTIVE",
+                             "status":  "COMPLETED",
                              "gate":  "SELF_BUILD_EXECUTION_LOOP_READY"
                          },
                          {
                              "id":  "self_validation_release_gates",
                              "phase":  "PHASE_3",
-                             "status":  "PENDING",
+                             "status":  "ACTIVE",
                              "gate":  "SELF_BUILD_READY"
                          },
                          {

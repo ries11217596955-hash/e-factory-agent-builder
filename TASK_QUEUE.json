@@ -1,6 +1,6 @@
 ﻿{
     "queue_version":  "0.1",
-    "active_task_id":  "TASK_SELF_BUILD_EXECUTION_LOOP_001",
+    "active_task_id":  "TASK_SELF_VALIDATION_RELEASE_GATES_001",
     "tasks":  [
                   {
                       "task_id":  "TASK_REPO_GENESIS_001",
@@ -19,9 +19,18 @@
                   {
                       "task_id":  "TASK_SELF_BUILD_EXECUTION_LOOP_001",
                       "capability_id":  "self_build_execution_loop",
-                      "status":  "ACTIVE",
+                      "status":  "COMPLETED",
                       "objective":  "Implement the self-build execution loop: execute an approved build task, run validators, emit run artifacts, update state and queue, and continue only when gates remain valid.",
-                      "expected_gate":  "SELF_BUILD_EXECUTION_LOOP_READY"
+                      "expected_gate":  "SELF_BUILD_EXECUTION_LOOP_READY",
+                      "build_task_path":  "tasks/TASK_SELF_BUILD_EXECUTION_LOOP_001.json"
+                  },
+                  {
+                      "task_id":  "TASK_SELF_VALIDATION_RELEASE_GATES_001",
+                      "capability_id":  "self_validation_release_gates",
+                      "status":  "ACTIVE",
+                      "objective":  "Implement self-validation and release gates: verify truth alignment, validator evidence, artifact alignment, and fail-run diagnostics.",
+                      "expected_gate":  "SELF_BUILD_READY",
+                      "build_task_path":  "tasks/TASK_SELF_VALIDATION_RELEASE_GATES_001.json"
                   }
               ]
 }

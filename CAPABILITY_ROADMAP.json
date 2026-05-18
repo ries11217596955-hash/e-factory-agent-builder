@@ -11,13 +11,13 @@
                          {
                              "id":  "self_build_control_core",
                              "phase":  "PHASE_1",
-                             "status":  "ACTIVE",
+                             "status":  "COMPLETED",
                              "gate":  "SELF_BUILD_CONTROL_CORE_READY"
                          },
                          {
                              "id":  "self_build_execution_loop",
                              "phase":  "PHASE_2",
-                             "status":  "PENDING",
+                             "status":  "ACTIVE",
                              "gate":  "SELF_BUILD_EXECUTION_LOOP_READY"
                          },
                          {

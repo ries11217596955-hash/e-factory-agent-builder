@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [switch]$FinalizePhase,
     [string]$RunId
@@ -325,4 +325,10 @@ else {
     Write-Host "STOP_REASON :: $stopReason"
 }
 
-exit (if ($overallPass) { 0 } else { 1 })
+if ($overallPass) {
+    exit 0
+}
+else {
+    exit 1
+}
+

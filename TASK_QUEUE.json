@@ -1,13 +1,20 @@
-{
-  "queue_version": "0.1",
-  "active_task_id": "TASK_REPO_GENESIS_001",
-  "tasks": [
-    {
-      "task_id": "TASK_REPO_GENESIS_001",
-      "capability_id": "repo_genesis",
-      "status": "ACTIVE",
-      "objective": "Create canonical repository skeleton and genesis truth files for E-Factory Agent Builder.",
-      "expected_gate": "REPO_GENESIS_READY"
-    }
-  ]
+﻿{
+    "queue_version":  "0.1",
+    "active_task_id":  "TASK_SELF_BUILD_CONTROL_CORE_001",
+    "tasks":  [
+                  {
+                      "task_id":  "TASK_REPO_GENESIS_001",
+                      "capability_id":  "repo_genesis",
+                      "status":  "COMPLETED",
+                      "objective":  "Create canonical repository skeleton and genesis truth files for E-Factory Agent Builder.",
+                      "expected_gate":  "REPO_GENESIS_READY"
+                  },
+                  {
+                      "task_id":  "TASK_SELF_BUILD_CONTROL_CORE_001",
+                      "capability_id":  "self_build_control_core",
+                      "status":  "ACTIVE",
+                      "objective":  "Implement the self-build control core: read plan/state/queue, select the next approved task, and emit a decision object.",
+                      "expected_gate":  "SELF_BUILD_CONTROL_CORE_READY"
+                  }
+              ]
 }

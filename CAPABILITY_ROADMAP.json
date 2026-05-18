@@ -1,0 +1,48 @@
+{
+  "roadmap_id": "agent_builder_genesis_v0_1",
+  "roadmap_version": "0.1",
+  "capabilities": [
+    {
+      "id": "repo_genesis",
+      "phase": "PHASE_0",
+      "status": "ACTIVE",
+      "gate": "REPO_GENESIS_READY"
+    },
+    {
+      "id": "self_build_control_core",
+      "phase": "PHASE_1",
+      "status": "PENDING",
+      "gate": "SELF_BUILD_CONTROL_CORE_READY"
+    },
+    {
+      "id": "self_build_execution_loop",
+      "phase": "PHASE_2",
+      "status": "PENDING",
+      "gate": "SELF_BUILD_EXECUTION_LOOP_READY"
+    },
+    {
+      "id": "self_validation_release_gates",
+      "phase": "PHASE_3",
+      "status": "PENDING",
+      "gate": "SELF_BUILD_READY"
+    },
+    {
+      "id": "external_agent_spec_intake",
+      "phase": "PHASE_4",
+      "status": "PENDING",
+      "gate": "EXTERNAL_AGENT_SPEC_INTAKE_READY"
+    },
+    {
+      "id": "external_agent_package_generator",
+      "phase": "PHASE_5",
+      "status": "PENDING",
+      "gate": "EXTERNAL_AGENT_PACKAGE_GENERATOR_READY"
+    },
+    {
+      "id": "first_proven_external_agent",
+      "phase": "PHASE_6",
+      "status": "PENDING",
+      "gate": "FIRST_EXTERNAL_AGENT_PROOF"
+    }
+  ]
+}

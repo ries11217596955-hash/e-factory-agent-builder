@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "External Agent Specification",
+  "type": "object",
+  "required": [
+    "agent_id",
+    "mission",
+    "input_contract",
+    "output_contract",
+    "capability_requirements",
+    "validation_requirements",
+    "forbidden_scope"
+  ],
+  "properties": {
+    "agent_id": {
+      "type": "string"
+    },
+    "mission": {
+      "type": "string"
+    },
+    "input_contract": {
+      "type": "object"
+    },
+    "output_contract": {
+      "type": "object"
+    },
+    "capability_requirements": {
+      "type": "array"
+    },
+    "validation_requirements": {
+      "type": "array"
+    },
+    "forbidden_scope": {
+      "type": "array"
+    }
+  }
+}

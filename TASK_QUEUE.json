@@ -1,0 +1,13 @@
+{
+  "queue_version": "0.1",
+  "active_task_id": "TASK_REPO_GENESIS_001",
+  "tasks": [
+    {
+      "task_id": "TASK_REPO_GENESIS_001",
+      "capability_id": "repo_genesis",
+      "status": "ACTIVE",
+      "objective": "Create canonical repository skeleton and genesis truth files for E-Factory Agent Builder.",
+      "expected_gate": "REPO_GENESIS_READY"
+    }
+  ]
+}

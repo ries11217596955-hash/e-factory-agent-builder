@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_idea_to_specialized_agent_factory_v1",
-  "roadmap_version": "4.0",
+  "roadmap_id": "agent_builder_multi_profile_specialization_factory_v1",
+  "roadmap_version": "5.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -146,6 +146,24 @@
       "phase": "PHASE_23",
       "status": "COMPLETED",
       "gate": "IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1"
+    },
+    {
+      "id": "specialization_profile_registry_v1",
+      "phase": "PHASE_24",
+      "status": "ACTIVE",
+      "gate": "SPECIALIZATION_PROFILE_REGISTRY_V1_READY"
+    },
+    {
+      "id": "specification_agent_specialization_profile_v1",
+      "phase": "PHASE_25",
+      "status": "PENDING",
+      "gate": "SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_READY"
+    },
+    {
+      "id": "multi_profile_specialized_factory_proof_v1",
+      "phase": "PHASE_26",
+      "status": "PENDING",
+      "gate": "MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1"
     }
   ]
 }

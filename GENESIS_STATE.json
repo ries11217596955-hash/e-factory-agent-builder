@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_23",
-  "current_capability": "idea_to_specialized_agent_factory_proof_v1",
+  "current_phase": "PHASE_24",
+  "current_capability": "specialization_profile_registry_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -45,5 +45,6 @@
   "production_hardening_v2_ready": true,
   "operational_agent_package_ready": true,
   "idea_to_agent_factory_ready": true,
-  "idea_to_specialized_agent_factory_ready": true
+  "idea_to_specialized_agent_factory_ready": true,
+  "multi_profile_specialization_factory_ready": false
 }

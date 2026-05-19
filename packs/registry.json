@@ -1,5 +1,5 @@
 {
-  "registry_version": "4.0",
+  "registry_version": "5.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -139,6 +139,27 @@
       "task_id": "TASK_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1",
+      "task_id": "TASK_SPECIALIZATION_PROFILE_REGISTRY_V1_001",
+      "pack_contract_path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/PACK.json",
+      "entry_script": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE25_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1",
+      "task_id": "TASK_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_001",
+      "pack_contract_path": "packs/PHASE25_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1/PACK.json",
+      "entry_script": "packs/PHASE25_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1",
+      "task_id": "TASK_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

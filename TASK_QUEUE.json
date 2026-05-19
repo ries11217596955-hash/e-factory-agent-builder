@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_SPECIALIZATION_PROFILE_REGISTRY_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -191,6 +191,14 @@
       "objective": "Prove end-to-end raw idea to specialized generated agent factory loop.",
       "expected_gate": "IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1",
       "build_task_path": "tasks/TASK_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_SPECIALIZATION_PROFILE_REGISTRY_V1_001",
+      "capability_id": "specialization_profile_registry_v1",
+      "status": "ACTIVE",
+      "objective": "Replace one-off specialization resolver branching with registry-backed specialization profile lookup.",
+      "expected_gate": "SPECIALIZATION_PROFILE_REGISTRY_V1_READY",
+      "build_task_path": "tasks/TASK_SPECIALIZATION_PROFILE_REGISTRY_V1_001.json"
     }
   ]
 }

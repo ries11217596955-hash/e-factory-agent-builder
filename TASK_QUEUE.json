@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -211,7 +211,7 @@
     {
       "task_id": "TASK_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1_001",
       "capability_id": "multi_profile_specialized_factory_proof_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove two raw idea families route into distinct registry-backed specialization profiles.",
       "expected_gate": "MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1",
       "build_task_path": "tasks/TASK_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1_001.json"

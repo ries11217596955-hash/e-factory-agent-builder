@@ -28,7 +28,8 @@
     "build_from_raw_idea_specialized_mode_v1",
     "idea_to_specialized_agent_factory_proof_v1",
     "specialization_profile_registry_v1",
-    "specification_agent_specialization_profile_v1"
+    "specification_agent_specialization_profile_v1",
+    "multi_profile_specialized_factory_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -48,5 +49,5 @@
   "operational_agent_package_ready": true,
   "idea_to_agent_factory_ready": true,
   "idea_to_specialized_agent_factory_ready": true,
-  "multi_profile_specialization_factory_ready": false
+  "multi_profile_specialization_factory_ready": true
 }

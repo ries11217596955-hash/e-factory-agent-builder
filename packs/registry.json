@@ -1,5 +1,5 @@
 {
-  "registry_version": "5.0",
+  "registry_version": "6.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -160,6 +160,27 @@
       "task_id": "TASK_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE27_SPECIALIZATION_GAP_CONTRACT_V1",
+      "task_id": "TASK_SPECIALIZATION_GAP_CONTRACT_V1_001",
+      "pack_contract_path": "packs/PHASE27_SPECIALIZATION_GAP_CONTRACT_V1/PACK.json",
+      "entry_script": "packs/PHASE27_SPECIALIZATION_GAP_CONTRACT_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1",
+      "task_id": "TASK_NO_MATCH_DIAGNOSTIC_MODE_V1_001",
+      "pack_contract_path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/PACK.json",
+      "entry_script": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1",
+      "task_id": "TASK_MISSING_PROFILE_FACTORY_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

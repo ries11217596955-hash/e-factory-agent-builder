@@ -25,7 +25,8 @@
     "build_from_raw_idea_mode_v1",
     "idea_to_agent_factory_proof_v1",
     "specialization_overlay_resolution_v1",
-    "build_from_raw_idea_specialized_mode_v1"
+    "build_from_raw_idea_specialized_mode_v1",
+    "idea_to_specialized_agent_factory_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -44,5 +45,5 @@
   "production_hardening_v2_ready": true,
   "operational_agent_package_ready": true,
   "idea_to_agent_factory_ready": true,
-  "idea_to_specialized_agent_factory_ready": false
+  "idea_to_specialized_agent_factory_ready": true
 }

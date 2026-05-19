@@ -234,7 +234,7 @@
     {
       "id": "runtime_gap_remediation_closure_proof_v1",
       "phase": "PHASE_38",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1"
     }
   ]

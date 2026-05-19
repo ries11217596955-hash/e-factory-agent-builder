@@ -294,13 +294,13 @@
     {
       "id": "remediation_seed_program_blueprint_contract_v1",
       "phase": "PHASE_48",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1_READY"
     },
     {
       "id": "remediation_seed_program_materialization_v1",
       "phase": "PHASE_49",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1_READY"
     },
     {

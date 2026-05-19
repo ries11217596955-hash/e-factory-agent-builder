@@ -1,0 +1,81 @@
+{
+  "blueprint_id": "MONITORING_AGENT_V1_REMEDIATION_SELF_BUILD_PROGRAM_BLUEPRINT_V1",
+  "status": "BLUEPRINT_READY",
+  "source_seed": {
+    "path": ".\\remediation_programs\\MONITORING_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+    "candidate_profile_id": "monitoring_agent_v1",
+    "candidate_agent_kind": "monitoring_agent",
+    "program_kind": "SPECIALIZATION_PROFILE_CLOSURE_SERIAL_SELF_BUILD"
+  },
+  "target": {
+    "profile_id": "monitoring_agent_v1",
+    "agent_kind": "monitoring_agent"
+  },
+  "program_kind": "SERIAL_SELF_BUILD_REMEDIATION_PROGRAM",
+  "generated_capabilities": [
+    {
+      "order": 1,
+      "capability_id": "generated_monitoring_agent_v1_profile_materialization_v1",
+      "semantic_role": "PROFILE_MATERIALIZATION",
+      "source_capability_hint": "monitoring_agent_specialization_profile_v1"
+    },
+    {
+      "order": 2,
+      "capability_id": "generated_monitoring_agent_v1_closure_proof_v1",
+      "semantic_role": "SPECIALIZED_CLOSURE_PROOF",
+      "source_capability_hint": "monitoring_agent_gap_closure_proof_v1"
+    },
+    {
+      "order": 3,
+      "capability_id": "generated_monitoring_agent_v1_seed_consumption_proof_v1",
+      "semantic_role": "SEED_CONSUMPTION_PROOF",
+      "source_capability_hint": "remediation_program_seed_consumption_closure_proof_v1"
+    }
+  ],
+  "generated_tasks": [
+    {
+      "order": 1,
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_profile_materialization_v1",
+      "expected_gate": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_READY"
+    },
+    {
+      "order": 2,
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_closure_proof_v1",
+      "expected_gate": "GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1"
+    },
+    {
+      "order": 3,
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_seed_consumption_proof_v1",
+      "expected_gate": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1"
+    }
+  ],
+  "generated_packs": [
+    {
+      "order": 1,
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001"
+    },
+    {
+      "order": 2,
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1_001"
+    },
+    {
+      "order": 3,
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001"
+    }
+  ],
+  "materialization_contract": {
+    "expected_capability_count": 3,
+    "expected_task_count": 3,
+    "expected_pack_count": 3,
+    "requires_registry_patch": true,
+    "requires_roadmap_patch": true,
+    "requires_queue_seed": true,
+    "admission_status": "NOT_ADMITTED_YET"
+  }
+}

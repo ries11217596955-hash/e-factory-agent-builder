@@ -1,0 +1,12 @@
+{
+  "proof_id": "REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1",
+  "run_id": "SELF_BUILD_REMEDIATION_SEED_TO_PROGRAM_SYNTHESIS_V1_001__PACK_1",
+  "status": "PASS",
+  "source_seed_path": ".\\remediation_programs\\MONITORING_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+  "blueprint_path": ".\\remediation_programs\\generated_programs\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_BLUEPRINT.json",
+  "target_profile_id": "monitoring_agent_v1",
+  "target_agent_kind": "monitoring_agent",
+  "generated_pack_count": 3,
+  "generated_task_count": 3,
+  "generated_capability_count": 3
+}

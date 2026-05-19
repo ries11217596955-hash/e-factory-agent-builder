@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_17",
-  "current_capability": "operational_factory_proof_v2",
+  "current_phase": "PHASE_18",
+  "current_capability": "architect_to_spec_handoff_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -37,5 +37,6 @@
   "production_factory_ready": true,
   "production_program_v1_executed": true,
   "production_hardening_v2_ready": true,
-  "operational_agent_package_ready": true
+  "operational_agent_package_ready": true,
+  "idea_to_agent_factory_ready": false
 }

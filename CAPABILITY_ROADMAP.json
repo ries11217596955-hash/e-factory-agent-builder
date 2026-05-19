@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_operational_factory_v2",
-  "roadmap_version": "2.0",
+  "roadmap_id": "agent_builder_idea_to_agent_factory_v1",
+  "roadmap_version": "3.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -110,6 +110,24 @@
       "phase": "PHASE_17",
       "status": "COMPLETED",
       "gate": "OPERATIONAL_FACTORY_PROOF_V2"
+    },
+    {
+      "id": "architect_to_spec_handoff_v1",
+      "phase": "PHASE_18",
+      "status": "ACTIVE",
+      "gate": "ARCHITECT_TO_SPEC_HANDOFF_V1_READY"
+    },
+    {
+      "id": "build_from_raw_idea_mode_v1",
+      "phase": "PHASE_19",
+      "status": "PENDING",
+      "gate": "BUILD_FROM_RAW_IDEA_MODE_V1_READY"
+    },
+    {
+      "id": "idea_to_agent_factory_proof_v1",
+      "phase": "PHASE_20",
+      "status": "PENDING",
+      "gate": "IDEA_TO_AGENT_FACTORY_PROOF_V1"
     }
   ]
 }

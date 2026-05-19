@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_ARCHITECT_TO_SPEC_HANDOFF_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -143,6 +143,14 @@
       "objective": "Prove that Agent Builder can produce an operational baseline external agent through BUILD_EXTERNAL_AGENT mode v2.",
       "expected_gate": "OPERATIONAL_FACTORY_PROOF_V2",
       "build_task_path": "tasks/TASK_OPERATIONAL_FACTORY_PROOF_V2_001.json"
+    },
+    {
+      "task_id": "TASK_ARCHITECT_TO_SPEC_HANDOFF_V1_001",
+      "capability_id": "architect_to_spec_handoff_v1",
+      "status": "ACTIVE",
+      "objective": "Build reusable Agent Spec Architect handoff that turns raw ideas into validated production external-agent specs.",
+      "expected_gate": "ARCHITECT_TO_SPEC_HANDOFF_V1_READY",
+      "build_task_path": "tasks/TASK_ARCHITECT_TO_SPEC_HANDOFF_V1_001.json"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "registry_version": "2.0",
+  "registry_version": "3.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -97,6 +97,27 @@
       "task_id": "TASK_OPERATIONAL_FACTORY_PROOF_V2_001",
       "pack_contract_path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/PACK.json",
       "entry_script": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE18_ARCHITECT_TO_SPEC_HANDOFF_V1",
+      "task_id": "TASK_ARCHITECT_TO_SPEC_HANDOFF_V1_001",
+      "pack_contract_path": "packs/PHASE18_ARCHITECT_TO_SPEC_HANDOFF_V1/PACK.json",
+      "entry_script": "packs/PHASE18_ARCHITECT_TO_SPEC_HANDOFF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1",
+      "task_id": "TASK_BUILD_FROM_RAW_IDEA_MODE_V1_001",
+      "pack_contract_path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/PACK.json",
+      "entry_script": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1",
+      "task_id": "TASK_IDEA_TO_AGENT_FACTORY_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

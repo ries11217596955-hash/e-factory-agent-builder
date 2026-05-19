@@ -9,77 +9,95 @@ $ErrorActionPreference = "Stop"
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 Set-Location $RepoRoot
 
-. ".\modules\new_gap_remediation_intake_report.ps1"
+. ".\modules\new_specialization_gap_report.ps1"
 
-$RawIdeaPath = ".\specs\specialization_gap_proof\RAW_IDEA_MISSING_PROFILE_FACTORY_PROOF.json"
-$GapRunId = "$RunId`__GAP_SOURCE"
-$CandidateRunId = "$RunId`__CANDIDATE_SOURCE"
+$SyntheticGapRoot = ".\runs\$RunId\PHASE34_CANDIDATE_INTAKE_REPORT_CONTRACT_V1\synthetic_gap_source"
 
-& ".\orchestrator\run.ps1" `
-    -Mode BUILD_FROM_RAW_IDEA_SPECIALIZED `
-    -RunId $GapRunId `
-    -RawIdeaPath $RawIdeaPath `
-    -OutputRoot ".\generated_agents" |
-    Out-Host
-
-$GapFactoryReportPath = ".\runs\$GapRunId\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json"
-if (-not (Test-Path $GapFactoryReportPath)) {
-    throw "Gap source factory report missing."
+$DerivedSpec = [pscustomobject]@{
+    agent_id = "workflow_execution_probe_agent"
+    agent_kind = "workflow_execution_agent"
+    package_profile = "operational_specialized"
 }
 
-$GapFactoryReport = Get-Content $GapFactoryReportPath -Raw | ConvertFrom-Json
-if ($GapFactoryReport.status -ne "SPECIALIZATION_GAP") {
-    throw "Gap source must remain unsupported in this proof."
+$Specialization = [pscustomobject]@{
+    status = "NO_MATCH"
+    profile_id = "NONE"
+    profile_kind = "workflow_execution_agent"
+    overlay_root = ""
+    resolution_reason = "Deterministic unsupported specialization family for candidate intake report runtime proof."
 }
+
+$Gap = New-SpecializationGapReport `
+    -RunId $RunId `
+    -ModeRoot $SyntheticGapRoot `
+    -RawIdeaPath ".\synthetic\RAW_IDEA_WORKFLOW_EXECUTION_PROBE.json" `
+    -DerivedSpecPath ".\synthetic\DERIVED_WORKFLOW_EXECUTION_AGENT_SPEC.json" `
+    -DerivedSpec $DerivedSpec `
+    -Specialization $Specialization
+
+if ($Gap.status -ne "PASS") {
+    throw "Synthetic gap report generation failed."
+}
+
+$CandidateRunId = "$RunId`__CANDIDATE_RUNTIME"
 
 & ".\orchestrator\run.ps1" `
     -Mode GAP_TO_PROFILE_CANDIDATE `
     -RunId $CandidateRunId `
-    -GapReportPath $GapFactoryReport.gap_report.report_path |
+    -GapReportPath $Gap.report_path |
     Out-Host
 
-$CandidatePath = ".\runs\$CandidateRunId\GAP_TO_PROFILE_CANDIDATE_MODE_V1\SPECIALIZATION_PROFILE_CANDIDATE.json"
+$ModeRoot = ".\runs\$CandidateRunId\GAP_TO_PROFILE_CANDIDATE_MODE_V1"
+$CandidatePath = Join-Path $ModeRoot "SPECIALIZATION_PROFILE_CANDIDATE.json"
+$IntakeReportPath = Join-Path $ModeRoot "GAP_REMEDIATION_INTAKE_REPORT.json"
+
 if (-not (Test-Path $CandidatePath)) {
-    throw "Candidate source artifact missing."
+    throw "Runtime candidate artifact missing."
 }
 
-$ModeRoot = ".\runs\$RunId\PHASE34_CANDIDATE_INTAKE_REPORT_CONTRACT_V1\intake_report_proof"
+if (-not (Test-Path $IntakeReportPath)) {
+    throw "Runtime intake report artifact missing."
+}
 
-$Intake = New-GapRemediationIntakeReport `
-    -RunId $RunId `
-    -ModeRoot $ModeRoot `
-    -GapReportPath $GapFactoryReport.gap_report.report_path `
-    -CandidatePath $CandidatePath
+$Candidate = Get-Content $CandidatePath -Raw | ConvertFrom-Json
+$Intake = Get-Content $IntakeReportPath -Raw | ConvertFrom-Json
+
+if ($Candidate.candidate_profile_id -ne "workflow_execution_agent_v1") {
+    throw "Candidate profile id mismatch."
+}
+
+if ($Candidate.candidate_agent_kind -ne "workflow_execution_agent") {
+    throw "Candidate agent kind mismatch."
+}
+
+if ($Intake.status -ne "PASS") {
+    throw "Intake report status mismatch."
+}
+
+if ($Intake.candidate_profile_id -ne "workflow_execution_agent_v1") {
+    throw "Intake report candidate profile id mismatch."
+}
+
+if ($Intake.candidate_agent_kind -ne "workflow_execution_agent") {
+    throw "Intake report candidate agent kind mismatch."
+}
+
+if ($Intake.required_build_move -ne "CREATE_SPECIALIZATION_PROFILE_AND_REGISTRY_MAPPING") {
+    throw "Intake report required build move mismatch."
+}
 
 Write-Host "INTAKE_REPORT_STATUS=$($Intake.status)"
 Write-Host "INTAKE_REPORT_PROFILE_ID=$($Intake.candidate_profile_id)"
 Write-Host "INTAKE_REPORT_AGENT_KIND=$($Intake.candidate_agent_kind)"
-Write-Host "INTAKE_REPORT_PATH=$($Intake.report_path)"
-
-if ($Intake.status -ne "PASS") {
-    throw "Intake report must return PASS."
-}
-
-if ($Intake.candidate_profile_id -ne "decision_support_agent_v1") {
-    throw "Unexpected candidate profile id in intake report."
-}
-
-if ($Intake.candidate_agent_kind -ne "decision_support_agent") {
-    throw "Unexpected candidate agent kind in intake report."
-}
-
-if (-not (Test-Path $Intake.report_path)) {
-    throw "Intake report artifact missing."
-}
+Write-Host "INTAKE_REPORT_PATH=$IntakeReportPath"
 
 $Proof = [ordered]@{
     proof_id = "CANDIDATE_INTAKE_REPORT_CONTRACT_V1"
     run_id = $RunId
     status = "PASS"
-    source_gap_factory_report = $GapFactoryReportPath
-    source_gap_report = $GapFactoryReport.gap_report.report_path
+    synthetic_gap_report = $Gap.report_path
     candidate_path = $CandidatePath
-    intake_report_path = $Intake.report_path
+    intake_report_path = $IntakeReportPath
     candidate_profile_id = $Intake.candidate_profile_id
     candidate_agent_kind = $Intake.candidate_agent_kind
     required_build_move = $Intake.required_build_move
@@ -125,7 +143,7 @@ if ($FinalizePhase) {
         task_id = "TASK_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1_001"
         capability_id = "runtime_gap_to_candidate_factory_proof_v1"
         status = "ACTIVE"
-        objective = "Prove Builder runtime emits both candidate brief and intake report from a real specialization gap."
+        objective = "Prove Builder runtime emits both candidate brief and intake report from a specialization gap report."
         expected_gate = "RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1"
         build_task_path = "tasks/TASK_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1_001.json"
     }

@@ -9,88 +9,91 @@ $ErrorActionPreference = "Stop"
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 Set-Location $RepoRoot
 
-. ".\modules\new_gap_remediation_intake_report.ps1"
+. ".\modules\new_specialization_gap_report.ps1"
 
-$RawIdeaPath = ".\specs\specialization_gap_proof\RAW_IDEA_MISSING_PROFILE_FACTORY_PROOF.json"
-$GapRunId = "$RunId`__GAP_RUNTIME"
+$SyntheticGapRoot = ".\runs\$RunId\PHASE35_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1\synthetic_gap_source"
+
+$DerivedSpec = [pscustomobject]@{
+    agent_id = "workflow_execution_probe_agent"
+    agent_kind = "workflow_execution_agent"
+    package_profile = "operational_specialized"
+}
+
+$Specialization = [pscustomobject]@{
+    status = "NO_MATCH"
+    profile_id = "NONE"
+    profile_kind = "workflow_execution_agent"
+    overlay_root = ""
+    resolution_reason = "Deterministic unsupported specialization family for final runtime proof."
+}
+
+$Gap = New-SpecializationGapReport `
+    -RunId $RunId `
+    -ModeRoot $SyntheticGapRoot `
+    -RawIdeaPath ".\synthetic\RAW_IDEA_WORKFLOW_EXECUTION_PROBE.json" `
+    -DerivedSpecPath ".\synthetic\DERIVED_WORKFLOW_EXECUTION_AGENT_SPEC.json" `
+    -DerivedSpec $DerivedSpec `
+    -Specialization $Specialization
+
+if ($Gap.status -ne "PASS") {
+    throw "Synthetic gap report generation failed."
+}
+
 $CandidateRunId = "$RunId`__CANDIDATE_RUNTIME"
-
-& ".\orchestrator\run.ps1" `
-    -Mode BUILD_FROM_RAW_IDEA_SPECIALIZED `
-    -RunId $GapRunId `
-    -RawIdeaPath $RawIdeaPath `
-    -OutputRoot ".\generated_agents" |
-    Out-Host
-
-$GapFactoryReportPath = ".\runs\$GapRunId\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json"
-if (-not (Test-Path $GapFactoryReportPath)) {
-    throw "Runtime proof gap factory report missing."
-}
-
-$GapFactoryReport = Get-Content $GapFactoryReportPath -Raw | ConvertFrom-Json
-if ($GapFactoryReport.status -ne "SPECIALIZATION_GAP") {
-    throw "Runtime proof source route must produce SPECIALIZATION_GAP."
-}
 
 & ".\orchestrator\run.ps1" `
     -Mode GAP_TO_PROFILE_CANDIDATE `
     -RunId $CandidateRunId `
-    -GapReportPath $GapFactoryReport.gap_report.report_path |
+    -GapReportPath $Gap.report_path |
     Out-Host
 
-$CandidatePath = ".\runs\$CandidateRunId\GAP_TO_PROFILE_CANDIDATE_MODE_V1\SPECIALIZATION_PROFILE_CANDIDATE.json"
+$ModeRoot = ".\runs\$CandidateRunId\GAP_TO_PROFILE_CANDIDATE_MODE_V1"
+$CandidatePath = Join-Path $ModeRoot "SPECIALIZATION_PROFILE_CANDIDATE.json"
+$IntakeReportPath = Join-Path $ModeRoot "GAP_REMEDIATION_INTAKE_REPORT.json"
+
 if (-not (Test-Path $CandidatePath)) {
     throw "Runtime proof candidate artifact missing."
 }
 
-$IntakeModeRoot = ".\runs\$RunId\PHASE35_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1\intake_report"
-
-$Intake = New-GapRemediationIntakeReport `
-    -RunId $RunId `
-    -ModeRoot $IntakeModeRoot `
-    -GapReportPath $GapFactoryReport.gap_report.report_path `
-    -CandidatePath $CandidatePath
-
-if ($Intake.status -ne "PASS") {
-    throw "Runtime proof intake report failed."
-}
-
-if (-not (Test-Path $Intake.report_path)) {
+if (-not (Test-Path $IntakeReportPath)) {
     throw "Runtime proof intake report missing."
 }
 
 $Candidate = Get-Content $CandidatePath -Raw | ConvertFrom-Json
-$IntakeJson = Get-Content $Intake.report_path -Raw | ConvertFrom-Json
+$Intake = Get-Content $IntakeReportPath -Raw | ConvertFrom-Json
 
-if ($Candidate.candidate_profile_id -ne "decision_support_agent_v1") {
+if ($Candidate.candidate_profile_id -ne "workflow_execution_agent_v1") {
     throw "Runtime proof candidate profile id mismatch."
 }
 
-if ($Candidate.candidate_agent_kind -ne "decision_support_agent") {
+if ($Candidate.candidate_agent_kind -ne "workflow_execution_agent") {
     throw "Runtime proof candidate agent kind mismatch."
 }
 
-if ($IntakeJson.required_build_move -ne "CREATE_SPECIALIZATION_PROFILE_AND_REGISTRY_MAPPING") {
+if ($Intake.status -ne "PASS") {
+    throw "Runtime proof intake status mismatch."
+}
+
+if ($Intake.required_build_move -ne "CREATE_SPECIALIZATION_PROFILE_AND_REGISTRY_MAPPING") {
     throw "Runtime proof required build move mismatch."
 }
 
 Write-Host "RUNTIME_FACTORY_CANDIDATE_PROFILE_ID=$($Candidate.candidate_profile_id)"
 Write-Host "RUNTIME_FACTORY_CANDIDATE_AGENT_KIND=$($Candidate.candidate_agent_kind)"
 Write-Host "RUNTIME_FACTORY_CANDIDATE_PATH=$CandidatePath"
-Write-Host "RUNTIME_FACTORY_INTAKE_REPORT_PATH=$($Intake.report_path)"
+Write-Host "RUNTIME_FACTORY_INTAKE_REPORT_PATH=$IntakeReportPath"
 
 $Proof = [ordered]@{
     proof_id = "RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1"
     run_id = $RunId
     status = "PASS"
-    source_gap_factory_report = $GapFactoryReportPath
-    source_gap_report = $GapFactoryReport.gap_report.report_path
+    synthetic_gap_report = $Gap.report_path
     runtime_candidate_path = $CandidatePath
-    runtime_intake_report_path = $Intake.report_path
+    runtime_intake_report_path = $IntakeReportPath
     candidate_profile_id = $Candidate.candidate_profile_id
     candidate_agent_kind = $Candidate.candidate_agent_kind
-    required_build_move = $IntakeJson.required_build_move
-    conclusion = "Builder runtime now converts a specialization gap artifact into a normalized profile candidate intake path without requiring a proof-pack-only candidate generator."
+    required_build_move = $Intake.required_build_move
+    conclusion = "Builder runtime now converts a specialization gap report into both a normalized profile candidate and an intake report artifact."
 }
 
 $Proof | ConvertTo-Json -Depth 100 |

@@ -33,9 +33,15 @@ if ($Mode -eq "BUILD_EXTERNAL_AGENT") {
 
     . ".\modules\invoke_external_agent_build.ps1"
 
-    $Build = Invoke-ExternalAgentBuild -SpecPath $SpecPath -OutputRoot $OutputRoot
+    $RunRoot = ".\runs\$RunId\BUILD_EXTERNAL_AGENT_MODE_V2"
+    $Build = Invoke-ExternalAgentBuild `
+        -SpecPath $SpecPath `
+        -OutputRoot $OutputRoot `
+        -RunRoot $RunRoot
+
     Write-Host "BUILD_EXTERNAL_AGENT_STATUS=$($Build.status)"
     Write-Host "BUILD_EXTERNAL_AGENT_PACKAGE_ROOT=$($Build.manifest.package_root)"
+    Write-Host "BUILD_EXTERNAL_AGENT_REPORT_PATH=$($Build.report_path)"
     return
 }
 

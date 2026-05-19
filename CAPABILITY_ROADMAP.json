@@ -252,7 +252,7 @@
     {
       "id": "one_run_gap_remediation_packet_proof_v1",
       "phase": "PHASE_41",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1"
     }
   ]

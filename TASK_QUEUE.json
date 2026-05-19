@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -331,7 +331,7 @@
     {
       "task_id": "TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001",
       "capability_id": "one_run_gap_remediation_packet_proof_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove a real monitoring raw idea returns gap report, candidate, and intake in one specialized run.",
       "expected_gate": "ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1",
       "build_task_path": "tasks/TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001.json"

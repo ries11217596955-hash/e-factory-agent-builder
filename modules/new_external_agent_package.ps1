@@ -1,4 +1,4 @@
-function New-ExternalAgentPackage {
+﻿function New-ExternalAgentPackage {
     param(
         [object]$Spec,
         [string]$OutputRoot
@@ -253,7 +253,7 @@ function New-ExternalAgentPackage {
         "          path: |",
         "            runs",
         "          if-no-files-found: warn"
-    ) | Set-Content (Join-Path `$AgentRoot "deployment\github_actions\run-generated-agent.workflow.yml") -Encoding UTF8
+    ) | Set-Content (Join-Path $AgentRoot "deployment\github_actions\run-generated-agent.workflow.yml") -Encoding UTF8
 
     @(
         "Set-StrictMode -Version Latest",
@@ -358,4 +358,5 @@ function New-ExternalAgentPackage {
         )
     }
 }
+
 

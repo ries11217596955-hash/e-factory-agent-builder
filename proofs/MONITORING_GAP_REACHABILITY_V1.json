@@ -1,0 +1,12 @@
+{
+  "proof_id": "MONITORING_GAP_REACHABILITY_V1",
+  "run_id": "SELF_BUILD_INLINE_GAP_REMEDIATION_PACKET_PROGRAM_V1_001__PACK_1",
+  "status": "PASS",
+  "raw_idea_path": ".\\specs\\monitoring_gap_proof\\RAW_IDEA_MONITORING_GAP_PROOF.json",
+  "gap_factory_report_path": ".\\runs\\SELF_BUILD_INLINE_GAP_REMEDIATION_PACKET_PROGRAM_V1_001__PACK_1__RAW_MONITORING_GAP\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json",
+  "gap_report_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_INLINE_GAP_REMEDIATION_PACKET_PROGRAM_V1_001__PACK_1__RAW_MONITORING_GAP\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\SPECIALIZATION_GAP_REPORT.json",
+  "canonical_candidate_path": ".\\remediation_intake\\MONITORING_AGENT_PROFILE_CANDIDATE_V1.json",
+  "canonical_intake_report_path": ".\\remediation_intake\\MONITORING_AGENT_INTAKE_REPORT_V1.json",
+  "candidate_profile_id": "monitoring_agent_v1",
+  "candidate_agent_kind": "monitoring_agent"
+}

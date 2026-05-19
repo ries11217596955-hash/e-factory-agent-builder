@@ -40,6 +40,9 @@ function Build-AgentSpecArchitecture {
     elseif ($ClassificationText -match "\b(workflow|workflows|runbook|runbooks|orchestration|execution agent|task runner)\b") {
         $AgentKind = "workflow_execution_agent"
     }
+    elseif ($ClassificationText -match "\b(monitoring|monitor|monitors|alert|alerts|telemetry|watchdog)\b") {
+        $AgentKind = "monitoring_agent"
+    }
 
     return [pscustomobject]@{
         normalized_intent = [ordered]@{

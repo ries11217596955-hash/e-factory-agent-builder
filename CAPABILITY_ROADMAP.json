@@ -240,13 +240,13 @@
     {
       "id": "monitoring_gap_reachability_v1",
       "phase": "PHASE_39",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "MONITORING_GAP_REACHABILITY_V1_READY"
     },
     {
       "id": "specialized_gap_auto_intake_runtime_v1",
       "phase": "PHASE_40",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_READY"
     },
     {

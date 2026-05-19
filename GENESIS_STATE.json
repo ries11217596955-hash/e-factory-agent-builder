@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_54",
-  "current_capability": "owner_visible_self_build_acceptance_v1",
+  "current_phase": "PHASE_55",
+  "current_capability": "generated_program_admission_readiness_gate_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",

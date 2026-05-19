@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "owner_visible_factory_acceptance_loop_v1",
-  "roadmap_version": "15.0",
+  "roadmap_id": "generated_program_admission_readiness_gate_v1",
+  "roadmap_version": "16.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -332,6 +332,12 @@
       "phase": "PHASE_54",
       "status": "COMPLETED",
       "gate": "OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1"
+    },
+    {
+      "id": "generated_program_admission_readiness_gate_v1",
+      "phase": "PHASE_55",
+      "status": "ACTIVE",
+      "gate": "GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1"
     }
   ]
 }

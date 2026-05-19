@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_SPECIALIZATION_OVERLAY_RESOLUTION_V1_001",
+  "active_task_id": "TASK_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -171,10 +171,18 @@
     {
       "task_id": "TASK_SPECIALIZATION_OVERLAY_RESOLUTION_V1_001",
       "capability_id": "specialization_overlay_resolution_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Build reusable specialization overlay resolver and prove audit_agent_v1 profile selection.",
       "expected_gate": "SPECIALIZATION_OVERLAY_RESOLUTION_V1_READY",
       "build_task_path": "tasks/TASK_SPECIALIZATION_OVERLAY_RESOLUTION_V1_001.json"
+    },
+    {
+      "task_id": "TASK_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_001",
+      "capability_id": "build_from_raw_idea_specialized_mode_v1",
+      "status": "ACTIVE",
+      "objective": "Expose direct BUILD_FROM_RAW_IDEA_SPECIALIZED mode that resolves and applies a specialization overlay.",
+      "expected_gate": "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_READY",
+      "build_task_path": "tasks/TASK_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_001.json"
     }
   ]
 }

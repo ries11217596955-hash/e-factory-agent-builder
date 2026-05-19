@@ -132,13 +132,13 @@
     {
       "id": "specialization_overlay_resolution_v1",
       "phase": "PHASE_21",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SPECIALIZATION_OVERLAY_RESOLUTION_V1_READY"
     },
     {
       "id": "build_from_raw_idea_specialized_mode_v1",
       "phase": "PHASE_22",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_READY"
     },
     {

@@ -1,0 +1,9 @@
+{
+  "proof_id": "SPECIALIZATION_OVERLAY_RESOLUTION_V1",
+  "run_id": "SELF_BUILD_IDEA_TO_SPECIALIZED_AGENT_PROGRAM_V1_001__PACK_1",
+  "status": "PASS",
+  "profile_id": "audit_agent_v1",
+  "overlay_root": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\applied_agents\\specialization_profiles\\audit_agent_v1\\overlay",
+  "overlay_module": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\applied_agents\\specialization_profiles\\audit_agent_v1\\overlay\\modules\\invoke_agent_operation.ps1",
+  "overlay_sample": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\applied_agents\\specialization_profiles\\audit_agent_v1\\overlay\\examples\\SAMPLE_REQUEST.json"
+}

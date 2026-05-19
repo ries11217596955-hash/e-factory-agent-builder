@@ -186,13 +186,13 @@
     {
       "id": "gap_to_profile_candidate_brief_v1",
       "phase": "PHASE_30",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GAP_TO_PROFILE_CANDIDATE_BRIEF_V1_READY"
     },
     {
       "id": "decision_support_agent_specialization_profile_v1",
       "phase": "PHASE_31",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_READY"
     },
     {

@@ -114,13 +114,13 @@
     {
       "id": "architect_to_spec_handoff_v1",
       "phase": "PHASE_18",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "ARCHITECT_TO_SPEC_HANDOFF_V1_READY"
     },
     {
       "id": "build_from_raw_idea_mode_v1",
       "phase": "PHASE_19",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "BUILD_FROM_RAW_IDEA_MODE_V1_READY"
     },
     {

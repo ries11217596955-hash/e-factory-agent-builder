@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_ARCHITECT_TO_SPEC_HANDOFF_V1_001",
+  "active_task_id": "TASK_BUILD_FROM_RAW_IDEA_MODE_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -147,10 +147,18 @@
     {
       "task_id": "TASK_ARCHITECT_TO_SPEC_HANDOFF_V1_001",
       "capability_id": "architect_to_spec_handoff_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Build reusable Agent Spec Architect handoff that turns raw ideas into validated production external-agent specs.",
       "expected_gate": "ARCHITECT_TO_SPEC_HANDOFF_V1_READY",
       "build_task_path": "tasks/TASK_ARCHITECT_TO_SPEC_HANDOFF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_BUILD_FROM_RAW_IDEA_MODE_V1_001",
+      "capability_id": "build_from_raw_idea_mode_v1",
+      "status": "ACTIVE",
+      "objective": "Expose direct BUILD_FROM_RAW_IDEA mode that chains Agent Spec Architect handoff into external agent build.",
+      "expected_gate": "BUILD_FROM_RAW_IDEA_MODE_V1_READY",
+      "build_task_path": "tasks/TASK_BUILD_FROM_RAW_IDEA_MODE_V1_001.json"
     }
   ]
 }

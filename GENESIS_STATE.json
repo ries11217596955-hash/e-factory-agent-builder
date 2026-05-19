@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_18",
-  "current_capability": "architect_to_spec_handoff_v1",
+  "current_phase": "PHASE_19",
+  "current_capability": "build_from_raw_idea_mode_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -20,7 +20,8 @@
     "real_generated_agent_runtime_v2",
     "operational_validation_harness_v2",
     "factory_build_external_agent_mode_v2",
-    "operational_factory_proof_v2"
+    "operational_factory_proof_v2",
+    "architect_to_spec_handoff_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

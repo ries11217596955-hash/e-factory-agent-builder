@@ -50,6 +50,7 @@ if ($Mode -eq "GAP_TO_PROFILE_CANDIDATE") {
     }
 
     . ".\modules\new_specialization_profile_candidate_brief.ps1"
+    . ".\modules\new_gap_remediation_intake_report.ps1"
 
     $ModeRoot = ".\runs\$RunId\GAP_TO_PROFILE_CANDIDATE_MODE_V1"
     New-Item -ItemType Directory -Force -Path $ModeRoot | Out-Null
@@ -63,10 +64,18 @@ if ($Mode -eq "GAP_TO_PROFILE_CANDIDATE") {
         -GapReportPath $GapReportPath `
         -CandidateOutputPath $CandidateOutputPath
 
+    $Intake = New-GapRemediationIntakeReport `
+        -RunId $RunId `
+        -ModeRoot $ModeRoot `
+        -GapReportPath $GapReportPath `
+        -CandidatePath $Candidate.candidate_path
+
     Write-Host "GAP_TO_PROFILE_CANDIDATE_STATUS=$($Candidate.status)"
     Write-Host "GAP_TO_PROFILE_CANDIDATE_PROFILE_ID=$($Candidate.candidate_profile_id)"
     Write-Host "GAP_TO_PROFILE_CANDIDATE_AGENT_KIND=$($Candidate.candidate_agent_kind)"
     Write-Host "GAP_TO_PROFILE_CANDIDATE_PATH=$($Candidate.candidate_path)"
+    Write-Host "GAP_TO_PROFILE_CANDIDATE_INTAKE_REPORT_STATUS=$($Intake.status)"
+    Write-Host "GAP_TO_PROFILE_CANDIDATE_INTAKE_REPORT_PATH=$($Intake.report_path)"
     return
 }
 
@@ -332,3 +341,4 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+

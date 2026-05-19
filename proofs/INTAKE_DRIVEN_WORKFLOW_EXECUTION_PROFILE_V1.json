@@ -1,0 +1,12 @@
+{
+  "proof_id": "INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1",
+  "run_id": "SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_2",
+  "status": "PASS",
+  "canonical_candidate_path": ".\\remediation_intake\\WORKFLOW_EXECUTION_AGENT_PROFILE_CANDIDATE_V1.json",
+  "canonical_intake_report_path": ".\\remediation_intake\\WORKFLOW_EXECUTION_AGENT_INTAKE_REPORT_V1.json",
+  "profile_id": "workflow_execution_agent_v1",
+  "build_report_path": ".\\runs\\SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_2\\PHASE37_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1\\profile_build\\BUILD_EXTERNAL_AGENT_REPORT.json",
+  "validation_output": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_2\\PHASE37_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1\\profile_build\\operational_validation\\OPERATIONAL_RESULT.json",
+  "specialized_operation": "workflow_step_dispatch_plan",
+  "next_step_id": "collect_input"
+}

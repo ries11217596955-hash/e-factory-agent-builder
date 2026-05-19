@@ -228,13 +228,13 @@
     {
       "id": "intake_driven_workflow_execution_profile_v1",
       "phase": "PHASE_37",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_READY"
     },
     {
       "id": "runtime_gap_remediation_closure_proof_v1",
       "phase": "PHASE_38",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1"
     }
   ]

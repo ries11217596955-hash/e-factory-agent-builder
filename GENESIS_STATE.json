@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_37",
-  "current_capability": "intake_driven_workflow_execution_profile_v1",
+  "current_phase": "PHASE_38",
+  "current_capability": "runtime_gap_remediation_closure_proof_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -39,7 +39,8 @@
     "gap_remediation_intake_mode_v1",
     "candidate_intake_report_contract_v1",
     "runtime_gap_to_candidate_factory_proof_v1",
-    "workflow_execution_family_reachability_v1"
+    "workflow_execution_family_reachability_v1",
+    "intake_driven_workflow_execution_profile_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

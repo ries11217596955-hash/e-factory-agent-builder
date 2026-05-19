@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001",
+  "active_task_id": "TASK_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -299,10 +299,18 @@
     {
       "task_id": "TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001",
       "capability_id": "intake_driven_workflow_execution_profile_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Build and prove workflow_execution_agent_v1 from canonical runtime remediation intake artifacts.",
       "expected_gate": "INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_READY",
       "build_task_path": "tasks/TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001.json"
+    },
+    {
+      "task_id": "TASK_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1_001",
+      "capability_id": "runtime_gap_remediation_closure_proof_v1",
+      "status": "ACTIVE",
+      "objective": "Prove the exact workflow raw idea now closes from prior gap into a specialized PASS route.",
+      "expected_gate": "RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1",
+      "build_task_path": "tasks/TASK_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1_001.json"
     }
   ]
 }

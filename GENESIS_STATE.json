@@ -52,7 +52,8 @@
     "monitoring_gap_closure_specialized_proof_v1",
     "remediation_program_seed_consumption_closure_proof_v1",
     "remediation_seed_program_blueprint_contract_v1",
-    "remediation_seed_program_materialization_v1"
+    "remediation_seed_program_materialization_v1",
+    "one_run_remediation_seed_program_synthesis_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -80,5 +81,5 @@
   "inline_gap_remediation_packet_ready": true,
   "one_run_remediation_program_seed_ready": true,
   "remediation_program_seed_consumption_closure_ready": true,
-  "remediation_seed_to_self_build_program_synthesis_ready": false
+  "remediation_seed_to_self_build_program_synthesis_ready": true
 }

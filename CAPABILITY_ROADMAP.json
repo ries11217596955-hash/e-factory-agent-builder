@@ -306,7 +306,7 @@
     {
       "id": "one_run_remediation_seed_program_synthesis_proof_v1",
       "phase": "PHASE_50",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1"
     }
   ]

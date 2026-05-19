@@ -1,5 +1,5 @@
 {
-  "registry_version": "6.0",
+  "registry_version": "7.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -181,6 +181,27 @@
       "task_id": "TASK_MISSING_PROFILE_FACTORY_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1",
+      "task_id": "TASK_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1_001",
+      "pack_contract_path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/PACK.json",
+      "entry_script": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE31_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1",
+      "task_id": "TASK_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_001",
+      "pack_contract_path": "packs/PHASE31_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1/PACK.json",
+      "entry_script": "packs/PHASE31_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1",
+      "task_id": "TASK_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

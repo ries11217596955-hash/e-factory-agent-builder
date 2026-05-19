@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_specialization_gap_diagnostic_loop_v1",
-  "roadmap_version": "6.0",
+  "roadmap_id": "agent_builder_gap_to_profile_closure_loop_v1",
+  "roadmap_version": "7.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -182,6 +182,24 @@
       "phase": "PHASE_29",
       "status": "COMPLETED",
       "gate": "MISSING_PROFILE_FACTORY_PROOF_V1"
+    },
+    {
+      "id": "gap_to_profile_candidate_brief_v1",
+      "phase": "PHASE_30",
+      "status": "ACTIVE",
+      "gate": "GAP_TO_PROFILE_CANDIDATE_BRIEF_V1_READY"
+    },
+    {
+      "id": "decision_support_agent_specialization_profile_v1",
+      "phase": "PHASE_31",
+      "status": "PENDING",
+      "gate": "DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_READY"
+    },
+    {
+      "id": "gap_closure_specialized_factory_proof_v1",
+      "phase": "PHASE_32",
+      "status": "PENDING",
+      "gate": "GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1"
     }
   ]
 }

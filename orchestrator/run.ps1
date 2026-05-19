@@ -2,7 +2,10 @@ param(
     [ValidateSet("SELF_BUILD", "BUILD_EXTERNAL_AGENT", "VERIFY")]
     [string]$Mode = "VERIFY",
 
-    [string]$RunId = ("SELF_BUILD_" + (Get-Date -Format "yyyyMMdd_HHmmss"))
+    [string]$RunId = ("SELF_BUILD_" + (Get-Date -Format "yyyyMMdd_HHmmss")),
+
+    [ValidateRange(1, 25)]
+    [int]$MaxPacks = 1
 )
 
 Set-StrictMode -Version Latest
@@ -14,6 +17,7 @@ Set-Location $RepoRoot
 Write-Host "AGENT_BUILDER_ORCHESTRATOR"
 Write-Host "MODE=$Mode"
 Write-Host "RUN_ID=$RunId"
+Write-Host "MAX_PACKS=$MaxPacks"
 
 if ($Mode -ne "SELF_BUILD") {
     Write-Host "STATUS=NO_ACTION_FOR_MODE"
@@ -24,22 +28,41 @@ if ($Mode -ne "SELF_BUILD") {
 . ".\modules\select_self_build_pack.ps1"
 . ".\modules\execute_self_build_pack.ps1"
 
-$Queue = Get-Content ".\TASK_QUEUE.json" -Raw | ConvertFrom-Json
-$Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
-$Pack = Select-SelfBuildPack -Registry $Registry -ActiveTaskId $Queue.active_task_id
+$Executed = 0
 
-Write-Host "SELECTED_PACK=$($Pack.pack_id)"
-Write-Host "SELECTED_TASK=$($Pack.task_id)"
+for ($i = 1; $i -le $MaxPacks; $i++) {
+    $Queue = Get-Content ".\TASK_QUEUE.json" -Raw | ConvertFrom-Json
+    $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
-$Result = Invoke-SelfBuildPack -RepoRoot $RepoRoot -Pack $Pack -RunId $RunId
+    $Pack = $Registry.packs |
+        Where-Object { $_.task_id -eq $Queue.active_task_id } |
+        Select-Object -First 1
 
-Write-Host "PACK_STATUS=$($Result.status)"
-
-if ($Result.status -ne "PASS") {
-    if ($Result.error) {
-        Write-Host "PACK_ERROR=$($Result.error)"
+    if ($null -eq $Pack) {
+        Write-Host "NO_REGISTERED_PACK_FOR_ACTIVE_TASK=$($Queue.active_task_id)"
+        Write-Host "STATUS=PASS_STOPPED_NO_REGISTERED_PACK"
+        return
     }
-    throw "Self-build pack failed."
+
+    Write-Host "SELECTED_PACK=$($Pack.pack_id)"
+    Write-Host "SELECTED_TASK=$($Pack.task_id)"
+
+    $Result = Invoke-SelfBuildPack `
+        -RepoRoot $RepoRoot `
+        -Pack $Pack `
+        -RunId "$RunId`__PACK_$i"
+
+    Write-Host "PACK_STATUS=$($Result.status)"
+
+    if ($Result.status -ne "PASS") {
+        if ($Result.error) {
+            Write-Host "PACK_ERROR=$($Result.error)"
+        }
+        throw "Self-build pack failed."
+    }
+
+    $Executed++
 }
 
-Write-Host "STATUS=PASS"
+Write-Host "PACKS_EXECUTED=$Executed"
+Write-Host "STATUS=PASS_MAX_PACKS_REACHED"

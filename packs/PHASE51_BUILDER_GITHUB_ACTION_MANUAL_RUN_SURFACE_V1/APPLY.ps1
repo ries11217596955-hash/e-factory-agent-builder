@@ -1,4 +1,4 @@
-param(
+﻿param(
     [string]$RepoRoot,
     [string]$RunId,
     [switch]$InvokedByOrchestrator
@@ -6,6 +6,36 @@ param(
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+
+function Invoke-NativeGitCommand {
+    param(
+        [string]$Label,
+        [string[]]$Arguments
+    )
+
+    $PreviousPreference = $ErrorActionPreference
+    $Output = @()
+    $ExitCode = $null
+
+    try {
+        $ErrorActionPreference = "Continue"
+        $Output = @(& git @Arguments 2>&1)
+        $ExitCode = $LASTEXITCODE
+    }
+    finally {
+        $ErrorActionPreference = $PreviousPreference
+    }
+
+    foreach ($Line in $Output) {
+        Write-Host ($Line.ToString())
+    }
+
+    if ($ExitCode -ne 0) {
+        throw "GIT_${Label}_FAILED_EXIT_CODE=$ExitCode"
+    }
+
+    Write-Host "GIT_${Label}=PASS"
+}
 
 if (-not $InvokedByOrchestrator) { throw "Pack must be invoked by orchestrator." }
 Set-Location $RepoRoot
@@ -18,14 +48,26 @@ Copy-Item ".\packs\PHASE51_BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1\payload\v
 
 & ".\validators\validate_builder_github_action_manual_run_surface_v1.ps1" -FinalizePhase -RunId $RunId
 
-git add ".\.github\workflows\agent-builder-self-build.yml"
-git add ".\validators\validate_builder_github_action_manual_run_surface_v1.ps1"
-git add ".\tasks\TASK_GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1_001.json"
-git add ".\proofs\BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1.json"
-git add ".\CAPABILITY_ROADMAP.json"
-git add ".\GENESIS_STATE.json"
-git add ".\TASK_QUEUE.json"
-git commit -m "Self-build PHASE 51 builder GitHub Action manual run surface v1"
-git push origin main
+Invoke-NativeGitCommand -Label "ADD" -Arguments @(
+    "add",
+    ".\.github\workflows\agent-builder-self-build.yml",
+    ".\validators\validate_builder_github_action_manual_run_surface_v1.ps1",
+    ".\tasks\TASK_GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1_001.json",
+    ".\proofs\BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1.json",
+    ".\CAPABILITY_ROADMAP.json",
+    ".\GENESIS_STATE.json",
+    ".\TASK_QUEUE.json"
+)
+Invoke-NativeGitCommand -Label "COMMIT" -Arguments @(
+    "commit",
+    "-m",
+    "Self-build PHASE 51 builder GitHub Action manual run surface v1"
+)
+Invoke-NativeGitCommand -Label "PUSH" -Arguments @(
+    "push",
+    "origin",
+    "main"
+)
 
 Write-Host "PACK_COMMIT_PUSH=PASS"
+

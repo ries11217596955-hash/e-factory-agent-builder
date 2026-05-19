@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_001",
+  "active_task_id": "TASK_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -251,10 +251,18 @@
     {
       "task_id": "TASK_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_001",
       "capability_id": "decision_support_agent_specialization_profile_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Build and prove decision_support_agent_v1 from the canonical gap-driven profile candidate brief.",
       "expected_gate": "DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_READY",
       "build_task_path": "tasks/TASK_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1_001",
+      "capability_id": "gap_closure_specialized_factory_proof_v1",
+      "status": "ACTIVE",
+      "objective": "Prove the previously unsupported decision_support_agent raw idea now builds as a specialized agent.",
+      "expected_gate": "GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1",
+      "build_task_path": "tasks/TASK_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1_001.json"
     }
   ]
 }

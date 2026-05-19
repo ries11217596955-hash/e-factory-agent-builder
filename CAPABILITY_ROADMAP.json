@@ -192,13 +192,13 @@
     {
       "id": "decision_support_agent_specialization_profile_v1",
       "phase": "PHASE_31",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_READY"
     },
     {
       "id": "gap_closure_specialized_factory_proof_v1",
       "phase": "PHASE_32",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1"
     }
   ]

@@ -14,12 +14,18 @@ function Invoke-SelfBuildPack {
         throw "Pack entry script not found: $Entry"
     }
 
+    $PackOutput = @()
+
     try {
-        & $Entry -RepoRoot $RepoRoot -RunId $RunId -InvokedByOrchestrator
+        & $Entry -RepoRoot $RepoRoot -RunId $RunId -InvokedByOrchestrator *>&1 |
+            Tee-Object -Variable PackOutput |
+            Out-Host
+
         return [pscustomobject]@{
             pack_id = $Pack.pack_id
             task_id = $Pack.task_id
             status = "PASS"
+            output_line_count = @($PackOutput).Count
         }
     }
     catch {
@@ -28,7 +34,7 @@ function Invoke-SelfBuildPack {
             task_id = $Pack.task_id
             status = "FAIL"
             error = $_.Exception.Message
+            output_line_count = @($PackOutput).Count
         }
     }
 }
-

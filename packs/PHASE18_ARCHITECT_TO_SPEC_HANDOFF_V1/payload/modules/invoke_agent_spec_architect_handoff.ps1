@@ -20,6 +20,29 @@ function Invoke-AgentSpecArchitectHandoff {
         throw "Raw idea request missing: $RawIdeaRequestPath"
     }
 
+    $ArchitectSpecPath = (Resolve-Path $ArchitectSpecPath).Path
+    $ArchitectOverlayRoot = (Resolve-Path $ArchitectOverlayRoot).Path
+    $RawIdeaRequestPath = (Resolve-Path $RawIdeaRequestPath).Path
+
+    if (-not (Test-Path $GeneratedAgentsRoot)) {
+        New-Item -ItemType Directory -Force -Path $GeneratedAgentsRoot | Out-Null
+    }
+    $GeneratedAgentsRoot = (Resolve-Path $GeneratedAgentsRoot).Path
+
+    if (-not (Test-Path $RunRoot)) {
+        New-Item -ItemType Directory -Force -Path $RunRoot | Out-Null
+    }
+    $RunRoot = (Resolve-Path $RunRoot).Path
+
+    $DerivedSpecParent = Split-Path $DerivedSpecOutputPath -Parent
+    if (-not [string]::IsNullOrWhiteSpace($DerivedSpecParent)) {
+        New-Item -ItemType Directory -Force -Path $DerivedSpecParent | Out-Null
+    }
+
+    $DerivedSpecOutputPath = Join-Path `
+        (Resolve-Path (Split-Path $DerivedSpecOutputPath -Parent)).Path `
+        (Split-Path $DerivedSpecOutputPath -Leaf)
+
     . ".\modules\invoke_external_agent_build.ps1"
     . ".\modules\validate_production_external_agent_spec.ps1"
 
@@ -44,6 +67,7 @@ function Invoke-AgentSpecArchitectHandoff {
 
     $ArchitectResultRoot = Join-Path $RunRoot "architect_result"
     New-Item -ItemType Directory -Force -Path $ArchitectResultRoot | Out-Null
+    $ArchitectResultRoot = (Resolve-Path $ArchitectResultRoot).Path
 
     $ArchitectResultPath = Join-Path $ArchitectResultRoot "AGENT_SPEC_ARCHITECT_RESULT.json"
 
@@ -67,11 +91,6 @@ function Invoke-AgentSpecArchitectHandoff {
 
     if ($null -eq $DraftSpec) {
         throw "production_spec_draft missing from architect result."
-    }
-
-    $DerivedSpecDir = Split-Path $DerivedSpecOutputPath -Parent
-    if (-not [string]::IsNullOrWhiteSpace($DerivedSpecDir)) {
-        New-Item -ItemType Directory -Force -Path $DerivedSpecDir | Out-Null
     }
 
     $DraftSpec | ConvertTo-Json -Depth 100 |

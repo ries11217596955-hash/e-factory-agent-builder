@@ -318,13 +318,13 @@
     {
       "id": "generated_agent_action_launch_contract_v1",
       "phase": "PHASE_52",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1_READY"
     },
     {
       "id": "action_ready_generated_agent_proof_v1",
       "phase": "PHASE_53",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "ACTION_READY_GENERATED_AGENT_PROOF_V1"
     }
   ]

@@ -14,7 +14,9 @@ function New-ExternalAgentPackage {
         (Join-Path $AgentRoot "modules"),
         (Join-Path $AgentRoot "validators"),
         (Join-Path $AgentRoot "orchestrator"),
-        (Join-Path $AgentRoot "examples")
+        (Join-Path $AgentRoot "examples"),
+        (Join-Path $AgentRoot "deployment"),
+        (Join-Path $AgentRoot "deployment\github_actions")
     )
 
     foreach ($Dir in $Dirs) {
@@ -34,7 +36,16 @@ function New-ExternalAgentPackage {
         $Spec.package_profile,
         "",
         "## Runtime",
-        "orchestrator/run.ps1 -Mode RUN -InputPath <request.json> -OutputPath <result.json>"
+        "orchestrator/run.ps1 -Mode RUN -InputPath <request.json> -OutputPath <result.json>",
+        "",
+        "## GitHub Actions launch surface",
+        "Delivery artifact:",
+        "deployment/github_actions/run-generated-agent.workflow.yml",
+        "",
+        "When this agent package becomes its own repository, place the workflow at:",
+        ".github/workflows/run-generated-agent.yml",
+        "",
+        "This creates a manual Run workflow button in GitHub Actions."
     ) | Set-Content (Join-Path $AgentRoot "README.md") -Encoding UTF8
 
     @(
@@ -42,7 +53,8 @@ function New-ExternalAgentPackage {
         "",
         "Generated operational baseline agent package.",
         "Entrypoint: orchestrator/run.ps1",
-        "Validator: validators/validate_package.ps1"
+        "Validator: validators/validate_package.ps1",
+        "Action launch delivery artifact: deployment/github_actions/run-generated-agent.workflow.yml"
     ) | Set-Content (Join-Path $AgentRoot "AGENTS.md") -Encoding UTF8
 
     @(
@@ -119,6 +131,7 @@ function New-ExternalAgentPackage {
         "        diagnostics = [ordered]@{",
         "            package_profile = `$Profile.package_profile",
         "            capability_count = @(`$Profile.capabilities).Count",
+        "            github_action_launch_surface = ""delivery_artifact_present""",
         "        }",
         "    }",
         "}"
@@ -148,7 +161,8 @@ function New-ExternalAgentPackage {
         "        ""AGENT_PROFILE.json"",",
         "        ""contracts\request.schema.json"",",
         "        ""contracts\result.schema.json"",",
-        "        ""modules\invoke_agent_operation.ps1""",
+        "        ""modules\invoke_agent_operation.ps1"",",
+        "        ""deployment\github_actions\run-generated-agent.workflow.yml""",
         "    )",
         "    foreach (`$Rel in `$Required) {",
         "        if (-not (Test-Path (Join-Path `$AgentRoot `$Rel))) {",
@@ -181,6 +195,67 @@ function New-ExternalAgentPackage {
     ) | Set-Content (Join-Path $AgentRoot "orchestrator\run.ps1") -Encoding UTF8
 
     @(
+        "name: Run Generated Agent",
+        "",
+        "on:",
+        "  workflow_dispatch:",
+        "    inputs:",
+        "      input_path:",
+        "        description: 'Request JSON path inside the agent repository.'",
+        "        required: true",
+        "        default: 'examples/SAMPLE_REQUEST.json'",
+        "        type: string",
+        "      output_path:",
+        "        description: 'Optional result JSON path. Leave blank for automatic runs path.'",
+        "        required: false",
+        "        default: ''",
+        "        type: string",
+        "",
+        "jobs:",
+        "  run-generated-agent:",
+        "    runs-on: windows-latest",
+        "",
+        "    steps:",
+        "      - name: Checkout agent repository",
+        "        uses: actions/checkout@v6",
+        "",
+        "      - name: Resolve output path",
+        "        id: run_context",
+        "        shell: pwsh",
+        "        run: |",
+        "          `$OutputPath = ""`${{ inputs.output_path }}""",
+        "          if ([string]::IsNullOrWhiteSpace(`$OutputPath)) {",
+        "              `$OutputPath = ""runs\GHA_AGENT_RUN_`${{ github.run_id }}\OPERATIONAL_RESULT.json""",
+        "          }",
+        "",
+        "          `$OutputDir = Split-Path `$OutputPath -Parent",
+        "          if (-not [string]::IsNullOrWhiteSpace(`$OutputDir)) {",
+        "              New-Item -ItemType Directory -Force -Path `$OutputDir | Out-Null",
+        "          }",
+        "",
+        "          New-Item -ItemType Directory -Force -Path "".\runs\GHA_AGENT_RUN_`${{ github.run_id }}"" | Out-Null",
+        "          ""output_path=`$OutputPath"" >> `$env:GITHUB_OUTPUT",
+        "",
+        "      - name: Run generated agent",
+        "        shell: pwsh",
+        "        run: |",
+        "          & "".\orchestrator\run.ps1"" ``",
+        "              -Mode RUN ``",
+        "              -InputPath ""`${{ inputs.input_path }}"" ``",
+        "              -OutputPath ""`${{ steps.run_context.outputs.output_path }}"" |",
+        "              Tee-Object -FilePath "".\runs\GHA_AGENT_RUN_`${{ github.run_id }}\GITHUB_ACTION_AGENT_RUN.log""",
+        "",
+        "      - name: Upload generated agent artifacts",
+        "        if: always()",
+        "        uses: actions/upload-artifact@v7",
+        "        with:",
+        "          name: generated-agent-run-`${{ github.run_id }}",
+        "          path: |",
+        "            runs",
+        "          if-no-files-found: warn"
+    ) | Set-Content (Join-Path `$AgentRoot "deployment\github_actions\run-generated-agent.workflow.yml") -Encoding UTF8
+
+    @(
         "Set-StrictMode -Version Latest",
         "`$ErrorActionPreference = ""Stop""",
         "",
@@ -195,7 +270,8 @@ function New-ExternalAgentPackage {
         "    ""contracts\result.schema.json"",",
         "    ""modules\invoke_agent_operation.ps1"",",
         "    ""orchestrator\run.ps1"",",
-        "    ""examples\SAMPLE_REQUEST.json""",
+        "    ""examples\SAMPLE_REQUEST.json"",",
+        "    ""deployment\github_actions\run-generated-agent.workflow.yml""",
         ")",
         "",
         "foreach (`$Rel in `$Required) {",
@@ -207,6 +283,20 @@ function New-ExternalAgentPackage {
         "`$null = Get-Content "".\AGENT_PROFILE.json"" -Raw | ConvertFrom-Json",
         "`$null = Get-Content "".\contracts\request.schema.json"" -Raw | ConvertFrom-Json",
         "`$null = Get-Content "".\contracts\result.schema.json"" -Raw | ConvertFrom-Json",
+        "",
+        "`$WorkflowText = Get-Content "".\deployment\github_actions\run-generated-agent.workflow.yml"" -Raw",
+        "`$WorkflowMarkers = @(",
+        "    ""workflow_dispatch:"",",
+        "    ""orchestrator\run.ps1"",",
+        "    ""actions/checkout@v6"",",
+        "    ""actions/upload-artifact@v7""",
+        ")",
+        "",
+        "foreach (`$Marker in `$WorkflowMarkers) {",
+        "    if (`$WorkflowText -notmatch [regex]::Escape(`$Marker)) {",
+        "        throw ""Generated agent workflow template missing marker: `$Marker""",
+        "    }",
+        "}",
         "",
         "`$Tokens = `$null",
         "`$Errors = `$null",
@@ -243,6 +333,7 @@ function New-ExternalAgentPackage {
         package_root = $AgentRoot
         runtime_entrypoint = "orchestrator/run.ps1"
         validator_entrypoint = "validators/validate_package.ps1"
+        github_action_launch_delivery_artifact = "deployment/github_actions/run-generated-agent.workflow.yml"
         created_files = @(
             "README.md",
             "AGENTS.md",
@@ -253,14 +344,17 @@ function New-ExternalAgentPackage {
             "modules/invoke_agent_operation.ps1",
             "orchestrator/run.ps1",
             "validators/validate_package.ps1",
-            "examples/SAMPLE_REQUEST.json"
+            "examples/SAMPLE_REQUEST.json",
+            "deployment/github_actions/run-generated-agent.workflow.yml"
         )
         created_directories = @(
             "contracts",
             "modules",
             "validators",
             "orchestrator",
-            "examples"
+            "examples",
+            "deployment",
+            "deployment/github_actions"
         )
     }
 }

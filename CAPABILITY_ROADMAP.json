@@ -336,7 +336,7 @@
     {
       "id": "generated_program_admission_readiness_gate_v1",
       "phase": "PHASE_55",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1"
     }
   ]

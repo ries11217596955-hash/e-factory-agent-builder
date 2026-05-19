@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -443,7 +443,7 @@
     {
       "task_id": "TASK_GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1_001",
       "capability_id": "generated_program_admission_readiness_gate_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Evaluate whether the materialized generated monitoring-agent self-build program is safely admissible into live Builder execution, without admitting it.",
       "expected_gate": "GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1",
       "build_task_path": "tasks/TASK_GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1_001.json"

@@ -1,0 +1,15 @@
+{
+  "proof_id": "REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1",
+  "run_id": "SELF_BUILD_SEED_DRIVEN_MONITORING_REMEDIATION_CLOSURE_V1_001__PACK_3",
+  "status": "PASS",
+  "program_seed_path": ".\\remediation_programs\\MONITORING_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+  "seed_profile_id": "monitoring_agent_v1",
+  "seed_agent_kind": "monitoring_agent",
+  "seed_program_kind": "SPECIALIZATION_PROFILE_CLOSURE_SERIAL_SELF_BUILD",
+  "profile_proof_path": ".\\proofs\\SEED_DRIVEN_MONITORING_PROFILE_V1.json",
+  "profile_selected_id": "monitoring_agent_v1",
+  "closure_proof_path": ".\\proofs\\MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1.json",
+  "closure_selected_profile_id": "monitoring_agent_v1",
+  "closure_specialized_operation": "monitoring_alert_triage_queue",
+  "conclusion": "The canonical remediation program seed produced by SP-N11 was consumed into a real serial self-build closure: monitoring_agent_v1 was built, registered, and the prior monitoring specialization gap now closes to PASS."
+}

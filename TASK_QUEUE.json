@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -379,7 +379,7 @@
     {
       "task_id": "TASK_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1_001",
       "capability_id": "remediation_program_seed_consumption_closure_proof_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove the canonical remediation program seed was consumed into a real monitoring specialization closure loop.",
       "expected_gate": "REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1",
       "build_task_path": "tasks/TASK_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1_001.json"

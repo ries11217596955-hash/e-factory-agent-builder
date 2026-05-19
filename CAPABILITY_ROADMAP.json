@@ -288,7 +288,7 @@
     {
       "id": "remediation_program_seed_consumption_closure_proof_v1",
       "phase": "PHASE_47",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1"
     }
   ]

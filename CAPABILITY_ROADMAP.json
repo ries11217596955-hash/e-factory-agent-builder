@@ -30,13 +30,13 @@
     {
       "id": "self_validation_release_gates",
       "phase": "PHASE_4",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SELF_BUILD_READY"
     },
     {
       "id": "external_agent_spec_intake",
       "phase": "PHASE_5",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "EXTERNAL_AGENT_SPEC_INTAKE_READY"
     },
     {

@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_SELF_VALIDATION_RELEASE_GATES_001",
+  "active_task_id": "TASK_EXTERNAL_AGENT_SPEC_INTAKE_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -35,10 +35,18 @@
     {
       "task_id": "TASK_SELF_VALIDATION_RELEASE_GATES_001",
       "capability_id": "self_validation_release_gates",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Implement self-validation release gates through a registered self-build pack.",
       "expected_gate": "SELF_BUILD_READY",
       "build_task_path": "tasks/TASK_SELF_VALIDATION_RELEASE_GATES_001.json"
+    },
+    {
+      "task_id": "TASK_EXTERNAL_AGENT_SPEC_INTAKE_001",
+      "capability_id": "external_agent_spec_intake",
+      "status": "ACTIVE",
+      "objective": "Implement formal intake for external agent specifications.",
+      "expected_gate": "EXTERNAL_AGENT_SPEC_INTAKE_READY",
+      "build_task_path": "tasks/TASK_EXTERNAL_AGENT_SPEC_INTAKE_001.json"
     }
   ]
 }

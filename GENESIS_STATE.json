@@ -14,7 +14,8 @@
     "production_spec_contract_v1",
     "production_package_blueprint_v1",
     "generated_agent_validation_harness_v1",
-    "factory_build_external_agent_mode_v1"
+    "factory_build_external_agent_mode_v1",
+    "production_factory_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -28,5 +29,5 @@
     "corrected_active_capability": "serial_self_build_pack_executor"
   },
   "production_version": "1.0",
-  "production_factory_ready": false
+  "production_factory_ready": true
 }

@@ -78,7 +78,7 @@
     {
       "id": "production_factory_proof_v1",
       "phase": "PHASE_12",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "PRODUCTION_FACTORY_PROOF_V1"
     }
   ]

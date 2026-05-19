@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_PRODUCTION_FACTORY_PROOF_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -99,7 +99,7 @@
     {
       "task_id": "TASK_PRODUCTION_FACTORY_PROOF_V1_001",
       "capability_id": "production_factory_proof_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove production-grade factory build mode end to end.",
       "expected_gate": "PRODUCTION_FACTORY_PROOF_V1",
       "build_task_path": "tasks/TASK_PRODUCTION_FACTORY_PROOF_V1_001.json"

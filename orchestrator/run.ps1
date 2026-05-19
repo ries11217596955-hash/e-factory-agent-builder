@@ -51,6 +51,7 @@ if ($Mode -eq "GAP_TO_PROFILE_CANDIDATE") {
 
     . ".\modules\new_specialization_profile_candidate_brief.ps1"
     . ".\modules\new_gap_remediation_intake_report.ps1"
+    . ".\modules\new_gap_remediation_program_seed.ps1"
 
     $ModeRoot = ".\runs\$RunId\GAP_TO_PROFILE_CANDIDATE_MODE_V1"
     New-Item -ItemType Directory -Force -Path $ModeRoot | Out-Null
@@ -174,6 +175,7 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
     . ".\modules\new_specialization_gap_report.ps1"
     . ".\modules\new_specialization_profile_candidate_brief.ps1"
     . ".\modules\new_gap_remediation_intake_report.ps1"
+    . ".\modules\new_gap_remediation_program_seed.ps1"
 
     $ModeRoot = ".\runs\$RunId\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1"
     New-Item -ItemType Directory -Force -Path $ModeRoot | Out-Null
@@ -222,6 +224,13 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
             -GapReportPath $Gap.report_path `
             -CandidatePath $Candidate.candidate_path
 
+        $ProgramSeed = New-GapRemediationProgramSeed `
+            -RunId $RunId `
+            -ModeRoot $ModeRoot `
+            -GapReportPath $Gap.report_path `
+            -CandidatePath $Candidate.candidate_path `
+            -IntakeReportPath $Intake.report_path
+
         $Report = [ordered]@{
             report_id = "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1"
             run_id = $RunId
@@ -254,6 +263,15 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
                 intake_report_path = $Intake.report_path
                 required_build_move = $Intake.required_build_move
             }
+            remediation_program_seed = [ordered]@{
+                status = $ProgramSeed.status
+                seed_path = $ProgramSeed.seed_path
+                program_id = $ProgramSeed.program_id
+                candidate_profile_id = $ProgramSeed.candidate_profile_id
+                candidate_agent_kind = $ProgramSeed.candidate_agent_kind
+                program_kind = $ProgramSeed.program_kind
+                required_operator_move = $ProgramSeed.required_operator_move
+            }
             target_build = $null
         }
 
@@ -267,6 +285,7 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
         Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_GAP_REPORT_PATH=$($Report.gap_report.report_path)"
         Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REMEDIATION_CANDIDATE_PATH=$($Report.remediation_intake.candidate_path)"
         Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REMEDIATION_INTAKE_REPORT_PATH=$($Report.remediation_intake.intake_report_path)"
+        Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REMEDIATION_PROGRAM_SEED_PATH=$($Report.remediation_program_seed.seed_path)"
         Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT_PATH=$ReportPath"
         return
     }
@@ -367,5 +386,6 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 

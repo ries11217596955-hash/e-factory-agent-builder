@@ -264,13 +264,13 @@
     {
       "id": "specialized_gap_auto_program_seed_runtime_v1",
       "phase": "PHASE_43",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1_READY"
     },
     {
       "id": "one_run_remediation_program_seed_proof_v1",
       "phase": "PHASE_44",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1"
     }
   ]

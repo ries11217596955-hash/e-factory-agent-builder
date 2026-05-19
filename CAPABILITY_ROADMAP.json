@@ -204,13 +204,13 @@
     {
       "id": "gap_remediation_intake_mode_v1",
       "phase": "PHASE_33",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GAP_REMEDIATION_INTAKE_MODE_V1_READY"
     },
     {
       "id": "candidate_intake_report_contract_v1",
       "phase": "PHASE_34",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "CANDIDATE_INTAKE_REPORT_CONTRACT_V1_READY"
     },
     {

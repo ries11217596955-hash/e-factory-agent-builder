@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_GAP_REMEDIATION_INTAKE_MODE_V1_001",
+  "active_task_id": "TASK_CANDIDATE_INTAKE_REPORT_CONTRACT_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -267,10 +267,18 @@
     {
       "task_id": "TASK_GAP_REMEDIATION_INTAKE_MODE_V1_001",
       "capability_id": "gap_remediation_intake_mode_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Promote gap-to-profile candidate generation into a first-class orchestrator runtime mode.",
       "expected_gate": "GAP_REMEDIATION_INTAKE_MODE_V1_READY",
       "build_task_path": "tasks/TASK_GAP_REMEDIATION_INTAKE_MODE_V1_001.json"
+    },
+    {
+      "task_id": "TASK_CANDIDATE_INTAKE_REPORT_CONTRACT_V1_001",
+      "capability_id": "candidate_intake_report_contract_v1",
+      "status": "ACTIVE",
+      "objective": "Create a formal runtime report contract for gap-to-profile candidate intake.",
+      "expected_gate": "CANDIDATE_INTAKE_REPORT_CONTRACT_V1_READY",
+      "build_task_path": "tasks/TASK_CANDIDATE_INTAKE_REPORT_CONTRACT_V1_001.json"
     }
   ]
 }

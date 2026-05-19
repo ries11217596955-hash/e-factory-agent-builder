@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_33",
-  "current_capability": "gap_remediation_intake_mode_v1",
+  "current_phase": "PHASE_34",
+  "current_capability": "candidate_intake_report_contract_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -35,7 +35,8 @@
     "missing_profile_factory_proof_v1",
     "gap_to_profile_candidate_brief_v1",
     "decision_support_agent_specialization_profile_v1",
-    "gap_closure_specialized_factory_proof_v1"
+    "gap_closure_specialized_factory_proof_v1",
+    "gap_remediation_intake_mode_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

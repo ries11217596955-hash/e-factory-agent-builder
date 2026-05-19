@@ -4,6 +4,7 @@ param(
         "BUILD_EXTERNAL_AGENT",
         "BUILD_FROM_RAW_IDEA",
         "BUILD_FROM_RAW_IDEA_SPECIALIZED",
+        "GAP_TO_PROFILE_CANDIDATE",
         "VERIFY"
     )]
     [string]$Mode = "VERIFY",
@@ -21,7 +22,11 @@ param(
 
     [string]$RawIdeaPath,
 
-    [string]$DerivedSpecPath = ""
+    [string]$DerivedSpecPath = "",
+
+    [string]$GapReportPath,
+
+    [string]$CandidateOutputPath = ""
 )
 
 Set-StrictMode -Version Latest
@@ -36,6 +41,32 @@ Write-Host "RUN_ID=$RunId"
 
 if ($Mode -eq "VERIFY") {
     Write-Host "STATUS=PASS"
+    return
+}
+
+if ($Mode -eq "GAP_TO_PROFILE_CANDIDATE") {
+    if ([string]::IsNullOrWhiteSpace($GapReportPath)) {
+        throw "GapReportPath is required."
+    }
+
+    . ".\modules\new_specialization_profile_candidate_brief.ps1"
+
+    $ModeRoot = ".\runs\$RunId\GAP_TO_PROFILE_CANDIDATE_MODE_V1"
+    New-Item -ItemType Directory -Force -Path $ModeRoot | Out-Null
+
+    if ([string]::IsNullOrWhiteSpace($CandidateOutputPath)) {
+        $CandidateOutputPath = Join-Path $ModeRoot "SPECIALIZATION_PROFILE_CANDIDATE.json"
+    }
+
+    $Candidate = New-SpecializationProfileCandidateBrief `
+        -RunId $RunId `
+        -GapReportPath $GapReportPath `
+        -CandidateOutputPath $CandidateOutputPath
+
+    Write-Host "GAP_TO_PROFILE_CANDIDATE_STATUS=$($Candidate.status)"
+    Write-Host "GAP_TO_PROFILE_CANDIDATE_PROFILE_ID=$($Candidate.candidate_profile_id)"
+    Write-Host "GAP_TO_PROFILE_CANDIDATE_AGENT_KIND=$($Candidate.candidate_agent_kind)"
+    Write-Host "GAP_TO_PROFILE_CANDIDATE_PATH=$($Candidate.candidate_path)"
     return
 }
 

@@ -1,0 +1,9 @@
+{
+  "proof_id": "GAP_REMEDIATION_INTAKE_MODE_V1",
+  "run_id": "SELF_BUILD_GAP_REMEDIATION_INTAKE_RUNTIME_PROGRAM_V1_001_REPAIR__PACK_1",
+  "status": "PASS",
+  "synthetic_gap_report": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_GAP_REMEDIATION_INTAKE_RUNTIME_PROGRAM_V1_001_REPAIR__PACK_1\\PHASE33_GAP_REMEDIATION_INTAKE_MODE_V1\\synthetic_gap_source\\SPECIALIZATION_GAP_REPORT.json",
+  "candidate_path": ".\\runs\\SELF_BUILD_GAP_REMEDIATION_INTAKE_RUNTIME_PROGRAM_V1_001_REPAIR__PACK_1__CANDIDATE_RUNTIME\\GAP_TO_PROFILE_CANDIDATE_MODE_V1\\SPECIALIZATION_PROFILE_CANDIDATE.json",
+  "candidate_profile_id": "workflow_execution_agent_v1",
+  "candidate_agent_kind": "workflow_execution_agent"
+}

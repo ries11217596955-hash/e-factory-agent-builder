@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -283,7 +283,7 @@
     {
       "task_id": "TASK_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1_001",
       "capability_id": "runtime_gap_to_candidate_factory_proof_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove Builder runtime emits both candidate brief and intake report from a specialization gap report.",
       "expected_gate": "RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1",
       "build_task_path": "tasks/TASK_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1_001.json"

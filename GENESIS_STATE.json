@@ -37,7 +37,8 @@
     "decision_support_agent_specialization_profile_v1",
     "gap_closure_specialized_factory_proof_v1",
     "gap_remediation_intake_mode_v1",
-    "candidate_intake_report_contract_v1"
+    "candidate_intake_report_contract_v1",
+    "runtime_gap_to_candidate_factory_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -60,5 +61,5 @@
   "multi_profile_specialization_factory_ready": true,
   "specialization_gap_diagnostic_ready": true,
   "gap_to_profile_closure_ready": true,
-  "gap_remediation_intake_runtime_ready": false
+  "gap_remediation_intake_runtime_ready": true
 }

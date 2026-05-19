@@ -72,13 +72,13 @@
     {
       "id": "factory_build_external_agent_mode_v1",
       "phase": "PHASE_11",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "FACTORY_BUILD_EXTERNAL_AGENT_MODE_V1_READY"
     },
     {
       "id": "production_factory_proof_v1",
       "phase": "PHASE_12",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "PRODUCTION_FACTORY_PROOF_V1"
     }
   ]

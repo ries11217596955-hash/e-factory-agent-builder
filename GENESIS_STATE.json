@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_11",
-  "current_capability": "factory_build_external_agent_mode_v1",
+  "current_phase": "PHASE_12",
+  "current_capability": "production_factory_proof_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -13,7 +13,8 @@
     "external_agent_package_generator",
     "production_spec_contract_v1",
     "production_package_blueprint_v1",
-    "generated_agent_validation_harness_v1"
+    "generated_agent_validation_harness_v1",
+    "factory_build_external_agent_mode_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

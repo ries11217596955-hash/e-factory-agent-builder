@@ -5,7 +5,11 @@ param(
     [string]$RunId = ("SELF_BUILD_" + (Get-Date -Format "yyyyMMdd_HHmmss")),
 
     [ValidateRange(1, 25)]
-    [int]$MaxPacks = 1
+    [int]$MaxPacks = 1,
+
+    [string]$SpecPath,
+
+    [string]$OutputRoot
 )
 
 Set-StrictMode -Version Latest
@@ -17,16 +21,29 @@ Set-Location $RepoRoot
 Write-Host "AGENT_BUILDER_ORCHESTRATOR"
 Write-Host "MODE=$Mode"
 Write-Host "RUN_ID=$RunId"
-Write-Host "MAX_PACKS=$MaxPacks"
 
-if ($Mode -ne "SELF_BUILD") {
-    Write-Host "STATUS=NO_ACTION_FOR_MODE"
+if ($Mode -eq "VERIFY") {
+    Write-Host "STATUS=PASS"
+    return
+}
+
+if ($Mode -eq "BUILD_EXTERNAL_AGENT") {
+    if ([string]::IsNullOrWhiteSpace($SpecPath)) { throw "SpecPath is required." }
+    if ([string]::IsNullOrWhiteSpace($OutputRoot)) { throw "OutputRoot is required." }
+
+    . ".\modules\invoke_external_agent_build.ps1"
+
+    $Build = Invoke-ExternalAgentBuild -SpecPath $SpecPath -OutputRoot $OutputRoot
+    Write-Host "BUILD_EXTERNAL_AGENT_STATUS=$($Build.status)"
+    Write-Host "BUILD_EXTERNAL_AGENT_PACKAGE_ROOT=$($Build.manifest.package_root)"
     return
 }
 
 . ".\modules\read_pack_registry.ps1"
 . ".\modules\select_self_build_pack.ps1"
 . ".\modules\execute_self_build_pack.ps1"
+
+Write-Host "MAX_PACKS=$MaxPacks"
 
 $Executed = 0
 

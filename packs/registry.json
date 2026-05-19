@@ -1,5 +1,5 @@
 {
-  "registry_version": "11.0",
+  "registry_version": "12.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -286,6 +286,27 @@
       "task_id": "TASK_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE45_SEED_DRIVEN_MONITORING_PROFILE_V1",
+      "task_id": "TASK_SEED_DRIVEN_MONITORING_PROFILE_V1_001",
+      "pack_contract_path": "packs/PHASE45_SEED_DRIVEN_MONITORING_PROFILE_V1/PACK.json",
+      "entry_script": "packs/PHASE45_SEED_DRIVEN_MONITORING_PROFILE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1",
+      "task_id": "TASK_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1",
+      "task_id": "TASK_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

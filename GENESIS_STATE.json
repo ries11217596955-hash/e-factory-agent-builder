@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_44",
-  "current_capability": "one_run_remediation_program_seed_proof_v1",
+  "current_phase": "PHASE_45",
+  "current_capability": "seed_driven_monitoring_profile_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -73,5 +73,6 @@
   "gap_remediation_intake_runtime_ready": true,
   "runtime_gap_remediation_closure_ready": true,
   "inline_gap_remediation_packet_ready": true,
-  "one_run_remediation_program_seed_ready": true
+  "one_run_remediation_program_seed_ready": true,
+  "remediation_program_seed_consumption_closure_ready": false
 }

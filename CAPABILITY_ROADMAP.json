@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_inline_remediation_program_seed_v1",
-  "roadmap_version": "11.0",
+  "roadmap_id": "agent_builder_seed_driven_monitoring_remediation_closure_v1",
+  "roadmap_version": "12.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -272,6 +272,24 @@
       "phase": "PHASE_44",
       "status": "COMPLETED",
       "gate": "ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1"
+    },
+    {
+      "id": "seed_driven_monitoring_profile_v1",
+      "phase": "PHASE_45",
+      "status": "ACTIVE",
+      "gate": "SEED_DRIVEN_MONITORING_PROFILE_V1_READY"
+    },
+    {
+      "id": "monitoring_gap_closure_specialized_proof_v1",
+      "phase": "PHASE_46",
+      "status": "PENDING",
+      "gate": "MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1"
+    },
+    {
+      "id": "remediation_program_seed_consumption_closure_proof_v1",
+      "phase": "PHASE_47",
+      "status": "PENDING",
+      "gate": "REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1"
     }
   ]
 }

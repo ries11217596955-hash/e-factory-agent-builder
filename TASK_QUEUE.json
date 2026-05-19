@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_SEED_DRIVEN_MONITORING_PROFILE_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -359,6 +359,14 @@
       "objective": "Prove a real monitoring raw idea emits gap, candidate, intake, and serial remediation program seed in one specialized run.",
       "expected_gate": "ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1",
       "build_task_path": "tasks/TASK_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_SEED_DRIVEN_MONITORING_PROFILE_V1_001",
+      "capability_id": "seed_driven_monitoring_profile_v1",
+      "status": "ACTIVE",
+      "objective": "Consume the canonical monitoring remediation program seed and build monitoring_agent_v1 specialization profile with registry mapping and runtime validation.",
+      "expected_gate": "SEED_DRIVEN_MONITORING_PROFILE_V1_READY",
+      "build_task_path": "tasks/TASK_SEED_DRIVEN_MONITORING_PROFILE_V1_001.json"
     }
   ]
 }

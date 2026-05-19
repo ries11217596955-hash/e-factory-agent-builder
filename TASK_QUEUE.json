@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_PRODUCTION_SPEC_CONTRACT_V1_001",
+  "active_task_id": "TASK_PRODUCTION_PACKAGE_BLUEPRINT_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -67,10 +67,18 @@
     {
       "task_id": "TASK_PRODUCTION_SPEC_CONTRACT_V1_001",
       "capability_id": "production_spec_contract_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Replace proof-level external agent spec with production spec contract v1.",
       "expected_gate": "PRODUCTION_SPEC_CONTRACT_V1_READY",
       "build_task_path": "tasks/TASK_PRODUCTION_SPEC_CONTRACT_V1_001.json"
+    },
+    {
+      "task_id": "TASK_PRODUCTION_PACKAGE_BLUEPRINT_V1_001",
+      "capability_id": "production_package_blueprint_v1",
+      "status": "ACTIVE",
+      "objective": "Upgrade the external agent package generator to a production blueprint v1.",
+      "expected_gate": "PRODUCTION_PACKAGE_BLUEPRINT_V1_READY",
+      "build_task_path": "tasks/TASK_PRODUCTION_PACKAGE_BLUEPRINT_V1_001.json"
     }
   ]
 }

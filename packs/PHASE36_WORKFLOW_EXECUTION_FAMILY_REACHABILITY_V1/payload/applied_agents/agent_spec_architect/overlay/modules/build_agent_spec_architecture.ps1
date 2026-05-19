@@ -31,13 +31,13 @@ function Build-AgentSpecArchitecture {
 
     $AgentKind = "decision_support_agent"
 
-    if ($ClassificationText -match "audit|finding|report") {
+    if ($ClassificationText -match "\b(audit|audits|finding|findings|report|reports)\b") {
         $AgentKind = "audit_agent"
     }
-    elseif ($ClassificationText -match "template|document|spec") {
+    elseif ($ClassificationText -match "\b(template|templates|document|documents|spec|specs|specification|specifications)\b") {
         $AgentKind = "specification_agent"
     }
-    elseif ($ClassificationText -match "workflow|runbook|orchestration|execution agent|task runner") {
+    elseif ($ClassificationText -match "\b(workflow|workflows|runbook|runbooks|orchestration|execution agent|task runner)\b") {
         $AgentKind = "workflow_execution_agent"
     }
 

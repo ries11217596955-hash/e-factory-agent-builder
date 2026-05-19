@@ -198,7 +198,7 @@
     {
       "id": "gap_closure_specialized_factory_proof_v1",
       "phase": "PHASE_32",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1"
     }
   ]

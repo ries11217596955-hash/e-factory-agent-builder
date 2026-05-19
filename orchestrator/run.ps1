@@ -1,5 +1,11 @@
 param(
-    [ValidateSet("SELF_BUILD", "BUILD_EXTERNAL_AGENT", "BUILD_FROM_RAW_IDEA", "VERIFY")]
+    [ValidateSet(
+        "SELF_BUILD",
+        "BUILD_EXTERNAL_AGENT",
+        "BUILD_FROM_RAW_IDEA",
+        "BUILD_FROM_RAW_IDEA_SPECIALIZED",
+        "VERIFY"
+    )]
     [string]$Mode = "VERIFY",
 
     [string]$RunId = ("SELF_BUILD_" + (Get-Date -Format "yyyyMMdd_HHmmss")),
@@ -115,6 +121,91 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA") {
     Write-Host "BUILD_FROM_RAW_IDEA_DERIVED_SPEC_PATH=$($Report.derived_spec_path)"
     Write-Host "BUILD_FROM_RAW_IDEA_PACKAGE_ROOT=$($Report.target_build.package_root)"
     Write-Host "BUILD_FROM_RAW_IDEA_REPORT_PATH=$ReportPath"
+    return
+}
+
+if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
+    if ([string]::IsNullOrWhiteSpace($RawIdeaPath)) { throw "RawIdeaPath is required." }
+    if ([string]::IsNullOrWhiteSpace($OutputRoot)) { throw "OutputRoot is required." }
+
+    . ".\modules\invoke_agent_spec_architect_handoff.ps1"
+    . ".\modules\invoke_external_agent_build.ps1"
+    . ".\modules\resolve_specialization_overlay.ps1"
+
+    $ModeRoot = ".\runs\$RunId\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1"
+    New-Item -ItemType Directory -Force -Path $ModeRoot | Out-Null
+
+    if ([string]::IsNullOrWhiteSpace($DerivedSpecPath)) {
+        $DerivedSpecPath = Join-Path $ModeRoot "DERIVED_AGENT_SPEC.json"
+    }
+
+    $Handoff = Invoke-AgentSpecArchitectHandoff `
+        -ArchitectSpecPath ".\specs\applied_agents\agent_spec_architect\AGENT_SPEC_ARCHITECT_SPEC.json" `
+        -ArchitectOverlayRoot ".\applied_agents\agent_spec_architect\overlay" `
+        -RawIdeaRequestPath $RawIdeaPath `
+        -GeneratedAgentsRoot ".\generated_agents" `
+        -RunRoot (Join-Path $ModeRoot "architect_handoff") `
+        -DerivedSpecOutputPath $DerivedSpecPath
+
+    if ($Handoff.status -ne "PASS") {
+        throw "Raw idea handoff failed."
+    }
+
+    $DerivedSpec = Get-Content $Handoff.derived_spec_path -Raw | ConvertFrom-Json
+
+    $Specialization = Resolve-SpecializationOverlay `
+        -AgentKind $DerivedSpec.agent_kind `
+        -PackageProfile $DerivedSpec.package_profile
+
+    if ($Specialization.status -ne "PASS") {
+        throw "No specialization overlay resolved for derived target agent."
+    }
+
+    $TargetBuild = Invoke-ExternalAgentBuild `
+        -SpecPath $Handoff.derived_spec_path `
+        -OutputRoot $OutputRoot `
+        -RunRoot (Join-Path $ModeRoot "target_build") `
+        -OverlayRoot $Specialization.overlay_root
+
+    if ($TargetBuild.status -ne "PASS") {
+        throw "Specialized target external agent build failed."
+    }
+
+    $Report = [ordered]@{
+        report_id = "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1"
+        run_id = $RunId
+        status = "PASS"
+        raw_idea_path = $RawIdeaPath
+        derived_spec_path = $Handoff.derived_spec_path
+        derived_agent_id = $Handoff.derived_agent_id
+        architect_handoff = $Handoff
+        specialization = [ordered]@{
+            status = $Specialization.status
+            profile_id = $Specialization.profile_id
+            profile_kind = $Specialization.profile_kind
+            overlay_root = $Specialization.overlay_root
+            resolution_reason = $Specialization.resolution_reason
+        }
+        target_build = [ordered]@{
+            status = $TargetBuild.status
+            package_root = $TargetBuild.manifest.package_root
+            report_path = $TargetBuild.report_path
+            validation_output = $TargetBuild.validation.output_result_path
+            overlay_status = $TargetBuild.overlay.status
+            overlay_file_count = $TargetBuild.overlay.applied_file_count
+        }
+    }
+
+    $ReportPath = Join-Path $ModeRoot "BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json"
+    $Report | ConvertTo-Json -Depth 100 |
+        Set-Content $ReportPath -Encoding UTF8
+
+    Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_STATUS=$($Report.status)"
+    Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_DERIVED_AGENT_ID=$($Report.derived_agent_id)"
+    Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_PROFILE_ID=$($Report.specialization.profile_id)"
+    Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_OVERLAY_STATUS=$($Report.target_build.overlay_status)"
+    Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_PACKAGE_ROOT=$($Report.target_build.package_root)"
+    Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT_PATH=$ReportPath"
     return
 }
 

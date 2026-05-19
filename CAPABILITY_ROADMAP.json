@@ -138,13 +138,13 @@
     {
       "id": "build_from_raw_idea_specialized_mode_v1",
       "phase": "PHASE_22",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_READY"
     },
     {
       "id": "idea_to_specialized_agent_factory_proof_v1",
       "phase": "PHASE_23",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1"
     }
   ]

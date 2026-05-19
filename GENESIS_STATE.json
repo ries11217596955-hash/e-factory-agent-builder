@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_22",
-  "current_capability": "build_from_raw_idea_specialized_mode_v1",
+  "current_phase": "PHASE_23",
+  "current_capability": "idea_to_specialized_agent_factory_proof_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -24,7 +24,8 @@
     "architect_to_spec_handoff_v1",
     "build_from_raw_idea_mode_v1",
     "idea_to_agent_factory_proof_v1",
-    "specialization_overlay_resolution_v1"
+    "specialization_overlay_resolution_v1",
+    "build_from_raw_idea_specialized_mode_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

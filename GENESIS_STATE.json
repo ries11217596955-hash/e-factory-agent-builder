@@ -15,7 +15,7 @@
   "blocked_capabilities": [],
   "self_build_ready": true,
   "external_agent_build_ready": true,
-  "first_external_agent_proof": false,
+  "first_external_agent_proof": true,
   "last_run_status": "PASS",
   "truth_correction": {
     "correction_id": "SELF_BUILD_MODEL_CORRECTION_002",

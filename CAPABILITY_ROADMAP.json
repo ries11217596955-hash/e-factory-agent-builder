@@ -48,7 +48,7 @@
     {
       "id": "first_proven_external_agent",
       "phase": "PHASE_7",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "FIRST_EXTERNAL_AGENT_PROOF"
     }
   ]

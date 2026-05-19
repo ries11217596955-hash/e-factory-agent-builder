@@ -246,13 +246,13 @@
     {
       "id": "specialized_gap_auto_intake_runtime_v1",
       "phase": "PHASE_40",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_READY"
     },
     {
       "id": "one_run_gap_remediation_packet_proof_v1",
       "phase": "PHASE_41",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1"
     }
   ]

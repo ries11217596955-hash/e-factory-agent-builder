@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_001",
+  "active_task_id": "TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -323,10 +323,18 @@
     {
       "task_id": "TASK_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_001",
       "capability_id": "specialized_gap_auto_intake_runtime_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Upgrade BUILD_FROM_RAW_IDEA_SPECIALIZED no-match runtime so one run emits gap, candidate, and intake artifacts.",
       "expected_gate": "SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_READY",
       "build_task_path": "tasks/TASK_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_001.json"
+    },
+    {
+      "task_id": "TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001",
+      "capability_id": "one_run_gap_remediation_packet_proof_v1",
+      "status": "ACTIVE",
+      "objective": "Prove a real monitoring raw idea returns gap report, candidate, and intake in one specialized run.",
+      "expected_gate": "ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1",
+      "build_task_path": "tasks/TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001.json"
     }
   ]
 }

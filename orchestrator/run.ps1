@@ -172,6 +172,8 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
     . ".\modules\invoke_external_agent_build.ps1"
     . ".\modules\resolve_specialization_overlay.ps1"
     . ".\modules\new_specialization_gap_report.ps1"
+    . ".\modules\new_specialization_profile_candidate_brief.ps1"
+    . ".\modules\new_gap_remediation_intake_report.ps1"
 
     $ModeRoot = ".\runs\$RunId\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1"
     New-Item -ItemType Directory -Force -Path $ModeRoot | Out-Null
@@ -207,6 +209,19 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
             -DerivedSpec $DerivedSpec `
             -Specialization $Specialization
 
+        $CandidatePath = Join-Path $ModeRoot "SPECIALIZATION_PROFILE_CANDIDATE.json"
+
+        $Candidate = New-SpecializationProfileCandidateBrief `
+            -RunId $RunId `
+            -GapReportPath $Gap.report_path `
+            -CandidateOutputPath $CandidatePath
+
+        $Intake = New-GapRemediationIntakeReport `
+            -RunId $RunId `
+            -ModeRoot $ModeRoot `
+            -GapReportPath $Gap.report_path `
+            -CandidatePath $Candidate.candidate_path
+
         $Report = [ordered]@{
             report_id = "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1"
             run_id = $RunId
@@ -229,6 +244,16 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
                 missing_agent_kind = $Gap.missing_agent_kind
                 requested_package_profile = $Gap.requested_package_profile
             }
+            remediation_intake = [ordered]@{
+                status = "PASS"
+                candidate_status = $Candidate.status
+                candidate_path = $Candidate.candidate_path
+                candidate_profile_id = $Candidate.candidate_profile_id
+                candidate_agent_kind = $Candidate.candidate_agent_kind
+                intake_report_status = $Intake.status
+                intake_report_path = $Intake.report_path
+                required_build_move = $Intake.required_build_move
+            }
             target_build = $null
         }
 
@@ -240,10 +265,11 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
         Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_DERIVED_AGENT_ID=$($Report.derived_agent_id)"
         Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_PROFILE_ID=$($Report.specialization.profile_id)"
         Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_GAP_REPORT_PATH=$($Report.gap_report.report_path)"
+        Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REMEDIATION_CANDIDATE_PATH=$($Report.remediation_intake.candidate_path)"
+        Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REMEDIATION_INTAKE_REPORT_PATH=$($Report.remediation_intake.intake_report_path)"
         Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT_PATH=$ReportPath"
         return
     }
-
     if ($Specialization.status -ne "PASS") {
         throw "Unexpected specialization resolver status: $($Specialization.status)"
     }
@@ -341,4 +367,5 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 

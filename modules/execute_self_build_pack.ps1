@@ -16,14 +16,14 @@ function Invoke-SelfBuildPack {
 
     try {
         & $Entry -RepoRoot $RepoRoot -RunId $RunId -InvokedByOrchestrator
-        return [ordered]@{
+        return [pscustomobject]@{
             pack_id = $Pack.pack_id
             task_id = $Pack.task_id
             status = "PASS"
         }
     }
     catch {
-        return [ordered]@{
+        return [pscustomobject]@{
             pack_id = $Pack.pack_id
             task_id = $Pack.task_id
             status = "FAIL"
@@ -31,3 +31,4 @@ function Invoke-SelfBuildPack {
         }
     }
 }
+

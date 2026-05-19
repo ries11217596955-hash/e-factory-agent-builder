@@ -126,7 +126,7 @@
     {
       "id": "idea_to_agent_factory_proof_v1",
       "phase": "PHASE_20",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "IDEA_TO_AGENT_FACTORY_PROOF_V1"
     }
   ]

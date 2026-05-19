@@ -22,7 +22,8 @@
     "factory_build_external_agent_mode_v2",
     "operational_factory_proof_v2",
     "architect_to_spec_handoff_v1",
-    "build_from_raw_idea_mode_v1"
+    "build_from_raw_idea_mode_v1",
+    "idea_to_agent_factory_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -40,5 +41,5 @@
   "production_program_v1_executed": true,
   "production_hardening_v2_ready": true,
   "operational_agent_package_ready": true,
-  "idea_to_agent_factory_ready": false
+  "idea_to_agent_factory_ready": true
 }

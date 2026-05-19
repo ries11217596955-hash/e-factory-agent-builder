@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_12",
-  "current_capability": "production_factory_proof_v1",
+  "current_phase": "PHASE_13",
+  "current_capability": "production_truth_reset_v2",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -28,6 +28,9 @@
     "prior_active_capability": "real_self_build_backend_bridge",
     "corrected_active_capability": "serial_self_build_pack_executor"
   },
-  "production_version": "1.0",
-  "production_factory_ready": true
+  "production_version": "2.0",
+  "production_factory_ready": false,
+  "production_program_v1_executed": true,
+  "production_hardening_v2_ready": false,
+  "operational_agent_package_ready": false
 }

@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_PRODUCTION_TRUTH_RESET_V2_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -103,6 +103,14 @@
       "objective": "Prove production-grade factory build mode end to end.",
       "expected_gate": "PRODUCTION_FACTORY_PROOF_V1",
       "build_task_path": "tasks/TASK_PRODUCTION_FACTORY_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_PRODUCTION_TRUTH_RESET_V2_001",
+      "capability_id": "production_truth_reset_v2",
+      "status": "ACTIVE",
+      "objective": "Correct over-claimed production readiness and record the weaknesses that require hardening.",
+      "expected_gate": "PRODUCTION_TRUTH_RESET_V2_READY",
+      "build_task_path": "tasks/TASK_PRODUCTION_TRUTH_RESET_V2_001.json"
     }
   ]
 }

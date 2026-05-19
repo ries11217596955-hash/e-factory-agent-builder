@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.0",
+  "registry_version": "2.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -62,6 +62,41 @@
       "task_id": "TASK_PRODUCTION_FACTORY_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE12_PRODUCTION_FACTORY_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE12_PRODUCTION_FACTORY_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE13_PRODUCTION_TRUTH_RESET_V2",
+      "task_id": "TASK_PRODUCTION_TRUTH_RESET_V2_001",
+      "pack_contract_path": "packs/PHASE13_PRODUCTION_TRUTH_RESET_V2/PACK.json",
+      "entry_script": "packs/PHASE13_PRODUCTION_TRUTH_RESET_V2/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE14_REAL_GENERATED_AGENT_RUNTIME_V2",
+      "task_id": "TASK_REAL_GENERATED_AGENT_RUNTIME_V2_001",
+      "pack_contract_path": "packs/PHASE14_REAL_GENERATED_AGENT_RUNTIME_V2/PACK.json",
+      "entry_script": "packs/PHASE14_REAL_GENERATED_AGENT_RUNTIME_V2/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE15_OPERATIONAL_VALIDATION_HARNESS_V2",
+      "task_id": "TASK_OPERATIONAL_VALIDATION_HARNESS_V2_001",
+      "pack_contract_path": "packs/PHASE15_OPERATIONAL_VALIDATION_HARNESS_V2/PACK.json",
+      "entry_script": "packs/PHASE15_OPERATIONAL_VALIDATION_HARNESS_V2/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE16_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2",
+      "task_id": "TASK_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2_001",
+      "pack_contract_path": "packs/PHASE16_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2/PACK.json",
+      "entry_script": "packs/PHASE16_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE17_OPERATIONAL_FACTORY_PROOF_V2",
+      "task_id": "TASK_OPERATIONAL_FACTORY_PROOF_V2_001",
+      "pack_contract_path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/PACK.json",
+      "entry_script": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

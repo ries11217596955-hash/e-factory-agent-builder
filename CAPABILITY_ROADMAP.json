@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_production_v1",
-  "roadmap_version": "1.0",
+  "roadmap_id": "agent_builder_operational_factory_v2",
+  "roadmap_version": "2.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -80,6 +80,36 @@
       "phase": "PHASE_12",
       "status": "COMPLETED",
       "gate": "PRODUCTION_FACTORY_PROOF_V1"
+    },
+    {
+      "id": "production_truth_reset_v2",
+      "phase": "PHASE_13",
+      "status": "ACTIVE",
+      "gate": "PRODUCTION_TRUTH_RESET_V2_READY"
+    },
+    {
+      "id": "real_generated_agent_runtime_v2",
+      "phase": "PHASE_14",
+      "status": "PENDING",
+      "gate": "REAL_GENERATED_AGENT_RUNTIME_V2_READY"
+    },
+    {
+      "id": "operational_validation_harness_v2",
+      "phase": "PHASE_15",
+      "status": "PENDING",
+      "gate": "OPERATIONAL_VALIDATION_HARNESS_V2_READY"
+    },
+    {
+      "id": "factory_build_external_agent_mode_v2",
+      "phase": "PHASE_16",
+      "status": "PENDING",
+      "gate": "FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2_READY"
+    },
+    {
+      "id": "operational_factory_proof_v2",
+      "phase": "PHASE_17",
+      "status": "PENDING",
+      "gate": "OPERATIONAL_FACTORY_PROOF_V2"
     }
   ]
 }

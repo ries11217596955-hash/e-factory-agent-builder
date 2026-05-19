@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -355,7 +355,7 @@
     {
       "task_id": "TASK_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1_001",
       "capability_id": "one_run_remediation_program_seed_proof_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove a real monitoring raw idea emits gap, candidate, intake, and serial remediation program seed in one specialized run.",
       "expected_gate": "ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1",
       "build_task_path": "tasks/TASK_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1_001.json"

@@ -1,0 +1,31 @@
+{
+  "seed_id": "GAP_REMEDIATION_PROGRAM_SEED_MONITORING_AGENT_V1",
+  "seed_version": "1.0",
+  "status": "PROGRAM_SEED_READY",
+  "source_gap_report_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_INLINE_REMEDIATION_PROGRAM_SEED_V1_001__PACK_3\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\SPECIALIZATION_GAP_REPORT.json",
+  "source_candidate_path": ".\\runs\\SELF_BUILD_INLINE_REMEDIATION_PROGRAM_SEED_V1_001__PACK_3\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\SPECIALIZATION_PROFILE_CANDIDATE.json",
+  "source_intake_report_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_INLINE_REMEDIATION_PROGRAM_SEED_V1_001__PACK_3\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\GAP_REMEDIATION_INTAKE_REPORT.json",
+  "candidate_profile_id": "monitoring_agent_v1",
+  "candidate_agent_kind": "monitoring_agent",
+  "candidate_package_profile": "operational_specialized",
+  "required_build_move": "CREATE_SPECIALIZATION_PROFILE_AND_REGISTRY_MAPPING",
+  "recommended_program": {
+    "program_kind": "SPECIALIZATION_PROFILE_CLOSURE_SERIAL_SELF_BUILD",
+    "profile_capability_id": "monitoring_agent_specialization_profile_v1",
+    "closure_capability_id": "monitoring_agent_gap_closure_proof_v1",
+    "recommended_task_sequence": [
+      {
+        "task_id": "TASK_MONITORING_AGENT_SPECIALIZATION_PROFILE_V1_001",
+        "capability_id": "monitoring_agent_specialization_profile_v1",
+        "objective": "Build and prove monitoring_agent_v1 from the remediation program seed."
+      },
+      {
+        "task_id": "TASK_MONITORING_AGENT_GAP_CLOSURE_PROOF_V1_001",
+        "capability_id": "monitoring_agent_gap_closure_proof_v1",
+        "objective": "Rerun the original raw-idea path and prove the prior gap now closes through monitoring_agent_v1."
+      }
+    ]
+  },
+  "required_operator_move": "AUTHOR_OR_SELECT_REPO_DEFINED_PACKS_FOR_PROGRAM",
+  "operator_summary": "The Builder normalized a complete remediation packet into a serial self-build program seed. Arbitrary overlay coding is not claimed; repo-defined packs remain the execution substrate."
+}

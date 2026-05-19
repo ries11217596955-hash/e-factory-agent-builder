@@ -270,7 +270,7 @@
     {
       "id": "one_run_remediation_program_seed_proof_v1",
       "phase": "PHASE_44",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1"
     }
   ]

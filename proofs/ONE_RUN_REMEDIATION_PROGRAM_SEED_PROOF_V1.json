@@ -1,0 +1,14 @@
+{
+  "proof_id": "ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1",
+  "run_id": "SELF_BUILD_INLINE_REMEDIATION_PROGRAM_SEED_V1_001__PACK_3",
+  "status": "PASS",
+  "raw_idea_path": ".\\specs\\monitoring_gap_proof\\RAW_IDEA_MONITORING_GAP_PROOF.json",
+  "specialized_report_path": ".\\runs\\SELF_BUILD_INLINE_REMEDIATION_PROGRAM_SEED_V1_001__PACK_3\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json",
+  "runtime_seed_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_INLINE_REMEDIATION_PROGRAM_SEED_V1_001__PACK_3\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\GAP_REMEDIATION_PROGRAM_SEED.json",
+  "canonical_seed_path": ".\\remediation_programs\\MONITORING_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+  "candidate_profile_id": "monitoring_agent_v1",
+  "candidate_agent_kind": "monitoring_agent",
+  "program_kind": "SPECIALIZATION_PROFILE_CLOSURE_SERIAL_SELF_BUILD",
+  "required_operator_move": "AUTHOR_OR_SELECT_REPO_DEFINED_PACKS_FOR_PROGRAM",
+  "conclusion": "Unknown specialization families now return a complete remediation packet plus a serial self-build remediation program seed in one specialized run."
+}

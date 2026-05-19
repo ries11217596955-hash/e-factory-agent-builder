@@ -46,7 +46,8 @@
     "specialized_gap_auto_intake_runtime_v1",
     "one_run_gap_remediation_packet_proof_v1",
     "remediation_program_seed_contract_v1",
-    "specialized_gap_auto_program_seed_runtime_v1"
+    "specialized_gap_auto_program_seed_runtime_v1",
+    "one_run_remediation_program_seed_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -72,5 +73,5 @@
   "gap_remediation_intake_runtime_ready": true,
   "runtime_gap_remediation_closure_ready": true,
   "inline_gap_remediation_packet_ready": true,
-  "one_run_remediation_program_seed_ready": false
+  "one_run_remediation_program_seed_ready": true
 }

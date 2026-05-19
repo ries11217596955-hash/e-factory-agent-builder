@@ -108,7 +108,7 @@
     {
       "id": "operational_factory_proof_v2",
       "phase": "PHASE_17",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "OPERATIONAL_FACTORY_PROOF_V2"
     }
   ]

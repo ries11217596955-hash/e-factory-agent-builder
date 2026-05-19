@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_OPERATIONAL_FACTORY_PROOF_V2_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -139,7 +139,7 @@
     {
       "task_id": "TASK_OPERATIONAL_FACTORY_PROOF_V2_001",
       "capability_id": "operational_factory_proof_v2",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove that Agent Builder can produce an operational baseline external agent through BUILD_EXTERNAL_AGENT mode v2.",
       "expected_gate": "OPERATIONAL_FACTORY_PROOF_V2",
       "build_task_path": "tasks/TASK_OPERATIONAL_FACTORY_PROOF_V2_001.json"

@@ -34,13 +34,16 @@ Agent Builder has already proven the baseline readiness gates recorded in repo t
 - GitHub Actions self-build surface exists.
 - Generated external agents carry a GitHub Actions launch delivery artifact.
 
-Current verification contour:
+Current owner-facing truth:
 
-- `PHASE_54`
-- `owner_visible_self_build_acceptance_v1`
-- active task: `TASK_OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1_001`
+- PHASE54 owner-visible self-build acceptance is completed.
+- Task queue: `active_task_id = NONE`
+- Committed proof artifact: `proofs/OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1.json`
+- GitHub Actions owner-visible self-build acceptance is proven.
 
-This contour accepts the owner-visible loop next: first run Self-Build from the GitHub Action to consume the PHASE54 pack, then run Build From Raw Idea from GitHub Actions to generate a real external agent package from the canonical raw idea fixture.
+The Build From Raw Idea owner-visible GitHub Action has passed runtime acceptance in the latest owner verification run, producing a generated external agent package from the canonical raw idea fixture. This README does not claim a committed repo proof file for that second runtime unless such an artifact exists in repo truth.
+
+The owner-visible factory loop is now proven at the interaction layer. The next product frontier is reducing external pack-authoring dependence by allowing generated self-build programs to be admitted into the live Builder execution contour.
 
 ## Source of truth
 

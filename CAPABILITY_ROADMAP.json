@@ -324,7 +324,7 @@
     {
       "id": "action_ready_generated_agent_proof_v1",
       "phase": "PHASE_53",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "ACTION_READY_GENERATED_AGENT_PROOF_V1"
     }
   ]

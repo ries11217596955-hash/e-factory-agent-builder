@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_ACTION_READY_GENERATED_AGENT_PROOF_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -427,7 +427,7 @@
     {
       "task_id": "TASK_ACTION_READY_GENERATED_AGENT_PROOF_V1_001",
       "capability_id": "action_ready_generated_agent_proof_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Build one generated agent through the factory and prove the GitHub Actions launch delivery artifact is present and validator-enforced.",
       "expected_gate": "ACTION_READY_GENERATED_AGENT_PROOF_V1",
       "build_task_path": "tasks/TASK_ACTION_READY_GENERATED_AGENT_PROOF_V1_001.json"

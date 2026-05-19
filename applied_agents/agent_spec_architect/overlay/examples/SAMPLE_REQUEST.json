@@ -1,0 +1,25 @@
+{
+  "request_id": "agent_spec_architect_sample_001",
+  "payload": {
+    "problem": "Website funnel audit agent",
+    "target_user": "Product Lead / System Operator",
+    "operator_goal": "Receive a strong agent architecture draft for a domain-neutral website funnel audit agent.",
+    "expected_outputs": [
+      "audit architecture",
+      "prioritized findings structure",
+      "draft production spec"
+    ],
+    "constraints": [
+      "remain domain-neutral",
+      "do not hardcode one test website",
+      "preserve artifact-first discipline"
+    ],
+    "non_goals": [
+      "do not generate final production code in this step",
+      "do not claim benchmark readiness"
+    ]
+  },
+  "metadata": {
+    "source": "specialized_overlay_proof"
+  }
+}

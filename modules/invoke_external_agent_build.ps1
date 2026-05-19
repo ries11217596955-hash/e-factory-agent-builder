@@ -2,7 +2,8 @@ function Invoke-ExternalAgentBuild {
     param(
         [string]$SpecPath,
         [string]$OutputRoot,
-        [string]$RunRoot
+        [string]$RunRoot,
+        [string]$OverlayRoot = ""
     )
 
     if (-not (Test-Path $SpecPath)) {
@@ -20,6 +21,7 @@ function Invoke-ExternalAgentBuild {
     . ".\modules\validate_production_external_agent_spec.ps1"
     . ".\modules\new_external_agent_package.ps1"
     . ".\modules\test_generated_agent_package_operational.ps1"
+    . ".\modules\apply_external_agent_overlay.ps1"
 
     $SpecProof = Test-ProductionExternalAgentSpec -SpecPath $SpecPath
     if ($SpecProof -ne "PASS") {
@@ -28,6 +30,18 @@ function Invoke-ExternalAgentBuild {
 
     $Spec = Get-Content $SpecPath -Raw | ConvertFrom-Json
     $Manifest = New-ExternalAgentPackage -Spec $Spec -OutputRoot $OutputRoot
+
+    $OverlayResult = [pscustomobject]@{
+        status = "NOT_APPLIED"
+        applied_file_count = 0
+        overlay_root = ""
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($OverlayRoot)) {
+        $OverlayResult = Apply-ExternalAgentOverlay `
+            -GeneratedAgentRoot $Manifest.package_root `
+            -OverlayRoot $OverlayRoot
+    }
 
     $ValidationRoot = Join-Path $RunRoot "operational_validation"
     $Validation = Test-GeneratedAgentPackageOperational `
@@ -43,6 +57,11 @@ function Invoke-ExternalAgentBuild {
         agent_id = $Spec.agent_id
         package_root = $Manifest.package_root
         manifest = $Manifest
+        overlay = [ordered]@{
+            status = $OverlayResult.status
+            applied_file_count = $OverlayResult.applied_file_count
+            overlay_root = $OverlayResult.overlay_root
+        }
         validation = $Validation
     }
 
@@ -55,6 +74,7 @@ function Invoke-ExternalAgentBuild {
     return [pscustomobject]@{
         status = "PASS"
         manifest = $Manifest
+        overlay = $OverlayResult
         validation = $Validation
         report_path = $ReportPath
     }

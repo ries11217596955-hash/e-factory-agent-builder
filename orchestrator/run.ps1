@@ -9,7 +9,9 @@ param(
 
     [string]$SpecPath,
 
-    [string]$OutputRoot
+    [string]$OutputRoot,
+
+    [string]$OverlayRoot = ""
 )
 
 Set-StrictMode -Version Latest
@@ -37,10 +39,13 @@ if ($Mode -eq "BUILD_EXTERNAL_AGENT") {
     $Build = Invoke-ExternalAgentBuild `
         -SpecPath $SpecPath `
         -OutputRoot $OutputRoot `
-        -RunRoot $RunRoot
+        -RunRoot $RunRoot `
+        -OverlayRoot $OverlayRoot
 
     Write-Host "BUILD_EXTERNAL_AGENT_STATUS=$($Build.status)"
     Write-Host "BUILD_EXTERNAL_AGENT_PACKAGE_ROOT=$($Build.manifest.package_root)"
+    Write-Host "BUILD_EXTERNAL_AGENT_OVERLAY_STATUS=$($Build.overlay.status)"
+    Write-Host "BUILD_EXTERNAL_AGENT_OVERLAY_FILE_COUNT=$($Build.overlay.applied_file_count)"
     Write-Host "BUILD_EXTERNAL_AGENT_REPORT_PATH=$($Build.report_path)"
     return
 }

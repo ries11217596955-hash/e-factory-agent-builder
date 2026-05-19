@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Raw Agent Idea Payload",
+  "type": "object",
+  "required": [
+    "problem",
+    "target_user",
+    "operator_goal",
+    "expected_outputs",
+    "constraints",
+    "non_goals"
+  ]
+}

@@ -96,13 +96,13 @@
     {
       "id": "operational_validation_harness_v2",
       "phase": "PHASE_15",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "OPERATIONAL_VALIDATION_HARNESS_V2_READY"
     },
     {
       "id": "factory_build_external_agent_mode_v2",
       "phase": "PHASE_16",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2_READY"
     },
     {

@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_OPERATIONAL_VALIDATION_HARNESS_V2_001",
+  "active_task_id": "TASK_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -123,10 +123,18 @@
     {
       "task_id": "TASK_OPERATIONAL_VALIDATION_HARNESS_V2_001",
       "capability_id": "operational_validation_harness_v2",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Add a reusable operational validation harness for generated agent packages.",
       "expected_gate": "OPERATIONAL_VALIDATION_HARNESS_V2_READY",
       "build_task_path": "tasks/TASK_OPERATIONAL_VALIDATION_HARNESS_V2_001.json"
+    },
+    {
+      "task_id": "TASK_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2_001",
+      "capability_id": "factory_build_external_agent_mode_v2",
+      "status": "ACTIVE",
+      "objective": "Upgrade BUILD_EXTERNAL_AGENT mode so that every generated package is operationally validated and emits a structured build report.",
+      "expected_gate": "FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2_READY",
+      "build_task_path": "tasks/TASK_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V2_001.json"
     }
   ]
 }

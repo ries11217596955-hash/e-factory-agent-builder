@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_7",
-  "current_capability": "first_proven_external_agent",
+  "current_phase": "PHASE_8",
+  "current_capability": "production_spec_contract_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -22,5 +22,7 @@
     "reason": "Automatic coding-backend bridge was rejected. Approved model: serial execution of repo-defined PowerShell/Bash packs through a local pack executor.",
     "prior_active_capability": "real_self_build_backend_bridge",
     "corrected_active_capability": "serial_self_build_pack_executor"
-  }
+  },
+  "production_version": "1.0",
+  "production_factory_ready": false
 }

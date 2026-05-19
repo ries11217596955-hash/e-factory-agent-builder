@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.3",
+  "registry_version": "1.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -27,6 +27,41 @@
       "task_id": "TASK_FIRST_PROVEN_EXTERNAL_AGENT_001",
       "pack_contract_path": "packs/PHASE7_FIRST_PROVEN_EXTERNAL_AGENT/PACK.json",
       "entry_script": "packs/PHASE7_FIRST_PROVEN_EXTERNAL_AGENT/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE8_PRODUCTION_SPEC_CONTRACT_V1",
+      "task_id": "TASK_PRODUCTION_SPEC_CONTRACT_V1_001",
+      "pack_contract_path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/PACK.json",
+      "entry_script": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE9_PRODUCTION_PACKAGE_BLUEPRINT_V1",
+      "task_id": "TASK_PRODUCTION_PACKAGE_BLUEPRINT_V1_001",
+      "pack_contract_path": "packs/PHASE9_PRODUCTION_PACKAGE_BLUEPRINT_V1/PACK.json",
+      "entry_script": "packs/PHASE9_PRODUCTION_PACKAGE_BLUEPRINT_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE10_GENERATED_AGENT_VALIDATION_HARNESS_V1",
+      "task_id": "TASK_GENERATED_AGENT_VALIDATION_HARNESS_V1_001",
+      "pack_contract_path": "packs/PHASE10_GENERATED_AGENT_VALIDATION_HARNESS_V1/PACK.json",
+      "entry_script": "packs/PHASE10_GENERATED_AGENT_VALIDATION_HARNESS_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE11_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V1",
+      "task_id": "TASK_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V1_001",
+      "pack_contract_path": "packs/PHASE11_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V1/PACK.json",
+      "entry_script": "packs/PHASE11_FACTORY_BUILD_EXTERNAL_AGENT_MODE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE12_PRODUCTION_FACTORY_PROOF_V1",
+      "task_id": "TASK_PRODUCTION_FACTORY_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE12_PRODUCTION_FACTORY_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE12_PRODUCTION_FACTORY_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

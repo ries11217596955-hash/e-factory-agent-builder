@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_PRODUCTION_SPEC_CONTRACT_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -63,6 +63,14 @@
       "objective": "Prove the factory by building the first real external agent package.",
       "expected_gate": "FIRST_EXTERNAL_AGENT_PROOF",
       "build_task_path": "tasks/TASK_FIRST_PROVEN_EXTERNAL_AGENT_001.json"
+    },
+    {
+      "task_id": "TASK_PRODUCTION_SPEC_CONTRACT_V1_001",
+      "capability_id": "production_spec_contract_v1",
+      "status": "ACTIVE",
+      "objective": "Replace proof-level external agent spec with production spec contract v1.",
+      "expected_gate": "PRODUCTION_SPEC_CONTRACT_V1_READY",
+      "build_task_path": "tasks/TASK_PRODUCTION_SPEC_CONTRACT_V1_001.json"
     }
   ]
 }

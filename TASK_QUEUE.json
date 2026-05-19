@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_SPECIALIZATION_OVERLAY_RESOLUTION_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -167,6 +167,14 @@
       "objective": "Prove end-to-end raw idea to generated agent factory loop.",
       "expected_gate": "IDEA_TO_AGENT_FACTORY_PROOF_V1",
       "build_task_path": "tasks/TASK_IDEA_TO_AGENT_FACTORY_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_SPECIALIZATION_OVERLAY_RESOLUTION_V1_001",
+      "capability_id": "specialization_overlay_resolution_v1",
+      "status": "ACTIVE",
+      "objective": "Build reusable specialization overlay resolver and prove audit_agent_v1 profile selection.",
+      "expected_gate": "SPECIALIZATION_OVERLAY_RESOLUTION_V1_READY",
+      "build_task_path": "tasks/TASK_SPECIALIZATION_OVERLAY_RESOLUTION_V1_001.json"
     }
   ]
 }

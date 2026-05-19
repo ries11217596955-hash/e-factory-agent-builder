@@ -1,5 +1,5 @@
 {
-  "registry_version": "3.0",
+  "registry_version": "4.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -118,6 +118,27 @@
       "task_id": "TASK_IDEA_TO_AGENT_FACTORY_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1",
+      "task_id": "TASK_SPECIALIZATION_OVERLAY_RESOLUTION_V1_001",
+      "pack_contract_path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/PACK.json",
+      "entry_script": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1",
+      "task_id": "TASK_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_001",
+      "pack_contract_path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/PACK.json",
+      "entry_script": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1",
+      "task_id": "TASK_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

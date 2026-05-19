@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_idea_to_agent_factory_v1",
-  "roadmap_version": "3.0",
+  "roadmap_id": "agent_builder_idea_to_specialized_agent_factory_v1",
+  "roadmap_version": "4.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -128,6 +128,24 @@
       "phase": "PHASE_20",
       "status": "COMPLETED",
       "gate": "IDEA_TO_AGENT_FACTORY_PROOF_V1"
+    },
+    {
+      "id": "specialization_overlay_resolution_v1",
+      "phase": "PHASE_21",
+      "status": "ACTIVE",
+      "gate": "SPECIALIZATION_OVERLAY_RESOLUTION_V1_READY"
+    },
+    {
+      "id": "build_from_raw_idea_specialized_mode_v1",
+      "phase": "PHASE_22",
+      "status": "PENDING",
+      "gate": "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_READY"
+    },
+    {
+      "id": "idea_to_specialized_agent_factory_proof_v1",
+      "phase": "PHASE_23",
+      "status": "PENDING",
+      "gate": "IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1"
     }
   ]
 }

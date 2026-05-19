@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_github_action_execution_surface_v1",
-  "roadmap_version": "14.0",
+  "roadmap_id": "owner_visible_factory_acceptance_loop_v1",
+  "roadmap_version": "15.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -326,6 +326,12 @@
       "phase": "PHASE_53",
       "status": "COMPLETED",
       "gate": "ACTION_READY_GENERATED_AGENT_PROOF_V1"
+    },
+    {
+      "id": "owner_visible_self_build_acceptance_v1",
+      "phase": "PHASE_54",
+      "status": "ACTIVE",
+      "gate": "OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1"
     }
   ]
 }

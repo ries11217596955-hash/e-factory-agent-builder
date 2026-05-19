@@ -1,5 +1,5 @@
 {
-  "registry_version": "14.0",
+  "registry_version": "15.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -349,6 +349,13 @@
       "task_id": "TASK_ACTION_READY_GENERATED_AGENT_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE53_ACTION_READY_GENERATED_AGENT_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE53_ACTION_READY_GENERATED_AGENT_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE54_OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1",
+      "task_id": "TASK_OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1_001",
+      "pack_contract_path": "packs/PHASE54_OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1/PACK.json",
+      "entry_script": "packs/PHASE54_OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

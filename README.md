@@ -26,10 +26,21 @@ It is a separate AGENTOPS product line that reuses proven architectural discipli
 
 ## Current stage
 
-Genesis stage: `PHASE_0 — Repository Genesis`
+Agent Builder has already proven the baseline readiness gates recorded in repo truth:
 
-Current active task:
-- `TASK_REPO_GENESIS_001`
+- `SELF_BUILD_READY = PASS`
+- `EXTERNAL_AGENT_BUILD_READY = PASS`
+- `FIRST_EXTERNAL_AGENT_PROOF = PASS`
+- GitHub Actions self-build surface exists.
+- Generated external agents carry a GitHub Actions launch delivery artifact.
+
+Current verification contour:
+
+- `PHASE_54`
+- `owner_visible_self_build_acceptance_v1`
+- active task: `TASK_OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1_001`
+
+This contour accepts the owner-visible loop next: first run Self-Build from the GitHub Action to consume the PHASE54 pack, then run Build From Raw Idea from GitHub Actions to generate a real external agent package from the canonical raw idea fixture.
 
 ## Source of truth
 
@@ -41,6 +52,8 @@ Current active task:
 
 ## Absolute rule
 
-The agent must not transition into building external agents until:
+The agent must not transition into external-agent generation unless:
 
 `SELF_BUILD_READY = PASS`
+
+That gate is currently true in `GENESIS_STATE.json`; runtime proof artifacts remain the source of truth for each later acceptance claim.

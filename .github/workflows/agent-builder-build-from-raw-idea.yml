@@ -1,0 +1,64 @@
+name: Agent Builder Build From Raw Idea
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Optional explicit run id. Leave blank for automatic GitHub Actions run id.'
+        required: false
+        default: ''
+        type: string
+      raw_idea_path:
+        description: 'Raw idea request JSON path inside this repository.'
+        required: true
+        default: 'specs/factory_acceptance/raw_ideas/OWNER_VISIBLE_EXTERNAL_AGENT_IDEA.json'
+        type: string
+      output_root:
+        description: 'Generated external-agent output root inside this repository.'
+        required: true
+        default: 'generated_agents/owner_visible_factory_acceptance'
+        type: string
+
+jobs:
+  build-from-raw-idea:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Resolve run context
+        id: run_context
+        shell: pwsh
+        run: |
+          $RunId = "${{ inputs.run_id }}"
+          if ([string]::IsNullOrWhiteSpace($RunId)) {
+              $RunId = "GHA_BUILD_FROM_RAW_IDEA_${{ github.run_id }}"
+          }
+
+          New-Item -ItemType Directory -Force -Path ".\runs\$RunId" | Out-Null
+          "run_id=$RunId" >> $env:GITHUB_OUTPUT
+
+      - name: Build external agent from raw idea
+        shell: pwsh
+        run: |
+          & ".\orchestrator\run.ps1" `
+              -Mode BUILD_FROM_RAW_IDEA `
+              -RunId "${{ steps.run_context.outputs.run_id }}" `
+              -RawIdeaPath "${{ inputs.raw_idea_path }}" `
+              -OutputRoot "${{ inputs.output_root }}" |
+              Tee-Object -FilePath ".\runs\${{ steps.run_context.outputs.run_id }}\GITHUB_ACTION_BUILD_FROM_RAW_IDEA.log"
+
+      - name: Upload factory build artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: agent-builder-build-from-raw-idea-${{ steps.run_context.outputs.run_id }}
+          path: |
+            runs/${{ steps.run_context.outputs.run_id }}
+            ${{ inputs.output_root }}
+          if-no-files-found: warn

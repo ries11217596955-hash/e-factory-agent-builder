@@ -131,6 +131,7 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
     . ".\modules\invoke_agent_spec_architect_handoff.ps1"
     . ".\modules\invoke_external_agent_build.ps1"
     . ".\modules\resolve_specialization_overlay.ps1"
+    . ".\modules\new_specialization_gap_report.ps1"
 
     $ModeRoot = ".\runs\$RunId\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1"
     New-Item -ItemType Directory -Force -Path $ModeRoot | Out-Null
@@ -157,8 +158,54 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
         -AgentKind $DerivedSpec.agent_kind `
         -PackageProfile $DerivedSpec.package_profile
 
+    if ($Specialization.status -eq "NO_MATCH") {
+        $Gap = New-SpecializationGapReport `
+            -RunId $RunId `
+            -ModeRoot $ModeRoot `
+            -RawIdeaPath $RawIdeaPath `
+            -DerivedSpecPath $Handoff.derived_spec_path `
+            -DerivedSpec $DerivedSpec `
+            -Specialization $Specialization
+
+        $Report = [ordered]@{
+            report_id = "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1"
+            run_id = $RunId
+            status = "SPECIALIZATION_GAP"
+            raw_idea_path = $RawIdeaPath
+            derived_spec_path = $Handoff.derived_spec_path
+            derived_agent_id = $Handoff.derived_agent_id
+            architect_handoff = $Handoff
+            specialization = [ordered]@{
+                status = $Specialization.status
+                profile_id = $Specialization.profile_id
+                profile_kind = $Specialization.profile_kind
+                overlay_root = $Specialization.overlay_root
+                resolution_reason = $Specialization.resolution_reason
+            }
+            gap_report = [ordered]@{
+                status = $Gap.status
+                report_path = $Gap.report_path
+                diagnostic_status = $Gap.diagnostic_status
+                missing_agent_kind = $Gap.missing_agent_kind
+                requested_package_profile = $Gap.requested_package_profile
+            }
+            target_build = $null
+        }
+
+        $ReportPath = Join-Path $ModeRoot "BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json"
+        $Report | ConvertTo-Json -Depth 100 |
+            Set-Content $ReportPath -Encoding UTF8
+
+        Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_STATUS=$($Report.status)"
+        Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_DERIVED_AGENT_ID=$($Report.derived_agent_id)"
+        Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_PROFILE_ID=$($Report.specialization.profile_id)"
+        Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_GAP_REPORT_PATH=$($Report.gap_report.report_path)"
+        Write-Host "BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT_PATH=$ReportPath"
+        return
+    }
+
     if ($Specialization.status -ne "PASS") {
-        throw "No specialization overlay resolved for derived target agent."
+        throw "Unexpected specialization resolver status: $($Specialization.status)"
     }
 
     $TargetBuild = Invoke-ExternalAgentBuild `
@@ -186,6 +233,7 @@ if ($Mode -eq "BUILD_FROM_RAW_IDEA_SPECIALIZED") {
             overlay_root = $Specialization.overlay_root
             resolution_reason = $Specialization.resolution_reason
         }
+        gap_report = $null
         target_build = [ordered]@{
             status = $TargetBuild.status
             package_root = $TargetBuild.manifest.package_root

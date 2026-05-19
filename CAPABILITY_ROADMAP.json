@@ -174,13 +174,13 @@
     {
       "id": "no_match_diagnostic_mode_v1",
       "phase": "PHASE_28",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "NO_MATCH_DIAGNOSTIC_MODE_V1_READY"
     },
     {
       "id": "missing_profile_factory_proof_v1",
       "phase": "PHASE_29",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "MISSING_PROFILE_FACTORY_PROOF_V1"
     }
   ]

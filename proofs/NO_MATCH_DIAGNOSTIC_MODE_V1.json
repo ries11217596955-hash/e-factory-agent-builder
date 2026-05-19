@@ -1,0 +1,10 @@
+{
+  "proof_id": "NO_MATCH_DIAGNOSTIC_MODE_V1",
+  "run_id": "SELF_BUILD_SPECIALIZATION_GAP_DIAGNOSTIC_PROGRAM_V1_001__PACK_2",
+  "status": "PASS",
+  "raw_idea_path": ".\\specs\\specialization_gap_proof\\RAW_IDEA_GAP_MODE_PROOF.json",
+  "report_path": ".\\runs\\SELF_BUILD_SPECIALIZATION_GAP_DIAGNOSTIC_PROGRAM_V1_001__PACK_2\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json",
+  "gap_report_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_SPECIALIZATION_GAP_DIAGNOSTIC_PROGRAM_V1_001__PACK_2\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\SPECIALIZATION_GAP_REPORT.json",
+  "missing_agent_kind": "decision_support_agent",
+  "requested_package_profile": "operational_specialized"
+}

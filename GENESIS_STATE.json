@@ -1,12 +1,13 @@
-﻿{
+{
   "agent_id": "e_factory_agent_builder",
-  "genesis_version": "0.2",
-  "current_phase": "PHASE_3",
-  "current_capability": "real_self_build_backend_bridge",
+  "genesis_version": "0.3",
+  "current_phase": "PHASE_4",
+  "current_capability": "self_validation_release_gates",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
-    "self_build_execution_substrate"
+    "self_build_execution_substrate",
+    "serial_self_build_pack_executor"
   ],
   "blocked_capabilities": [],
   "self_build_ready": false,
@@ -14,9 +15,9 @@
   "first_external_agent_proof": false,
   "last_run_status": "PASS",
   "truth_correction": {
-    "correction_id": "SELF_BUILD_REALITY_RESET_001",
-    "reason": "Execution substrate existed, but real self-build backend bridge had not yet been proven. Release gates were deferred.",
-    "prior_active_capability": "self_validation_release_gates",
-    "corrected_active_capability": "real_self_build_backend_bridge"
+    "correction_id": "SELF_BUILD_MODEL_CORRECTION_002",
+    "reason": "Automatic coding-backend bridge was rejected. Approved model: serial execution of repo-defined PowerShell/Bash packs through a local pack executor.",
+    "prior_active_capability": "real_self_build_backend_bridge",
+    "corrected_active_capability": "serial_self_build_pack_executor"
   }
 }

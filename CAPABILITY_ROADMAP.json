@@ -1,6 +1,6 @@
-﻿{
-  "roadmap_id": "agent_builder_genesis_v0_2",
-  "roadmap_version": "0.2",
+{
+  "roadmap_id": "agent_builder_genesis_v0_3",
+  "roadmap_version": "0.3",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -22,15 +22,15 @@
       "gate": "SELF_BUILD_EXECUTION_SUBSTRATE_READY"
     },
     {
-      "id": "real_self_build_backend_bridge",
+      "id": "serial_self_build_pack_executor",
       "phase": "PHASE_3",
-      "status": "ACTIVE",
-      "gate": "REAL_SELF_BUILD_BACKEND_BRIDGE_READY"
+      "status": "COMPLETED",
+      "gate": "SERIAL_SELF_BUILD_PACK_EXECUTOR_READY"
     },
     {
       "id": "self_validation_release_gates",
       "phase": "PHASE_4",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "SELF_BUILD_READY"
     },
     {

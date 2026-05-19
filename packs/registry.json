@@ -1,0 +1,12 @@
+{
+  "registry_version": "0.1",
+  "packs": [
+    {
+      "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
+      "task_id": "TASK_SELF_VALIDATION_RELEASE_GATES_001",
+      "pack_contract_path": "packs/PHASE4_SELF_VALIDATION_RELEASE_GATES/PACK.json",
+      "entry_script": "packs/PHASE4_SELF_VALIDATION_RELEASE_GATES/APPLY.ps1",
+      "shell": "PowerShell"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-﻿{
-  "queue_version": "0.2",
-  "active_task_id": "TASK_REAL_SELF_BUILD_BACKEND_BRIDGE_001",
+{
+  "queue_version": "0.3",
+  "active_task_id": "TASK_SELF_VALIDATION_RELEASE_GATES_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -13,30 +13,30 @@
       "task_id": "TASK_SELF_BUILD_CONTROL_CORE_001",
       "capability_id": "self_build_control_core",
       "status": "COMPLETED",
-      "objective": "Implement the self-build control core: read plan/state/queue, select the next approved task, and emit a decision object.",
+      "objective": "Implement the self-build control core.",
       "expected_gate": "SELF_BUILD_CONTROL_CORE_READY"
     },
     {
       "task_id": "TASK_SELF_BUILD_EXECUTION_LOOP_001",
       "capability_id": "self_build_execution_substrate",
       "status": "COMPLETED",
-      "objective": "Implement the self-build execution substrate: controlled proof execution, validator run, artifact emission, state/queue update.",
+      "objective": "Implement the self-build execution substrate.",
       "expected_gate": "SELF_BUILD_EXECUTION_SUBSTRATE_READY",
       "build_task_path": "tasks/TASK_SELF_BUILD_EXECUTION_LOOP_001.json"
     },
     {
-      "task_id": "TASK_REAL_SELF_BUILD_BACKEND_BRIDGE_001",
-      "capability_id": "real_self_build_backend_bridge",
-      "status": "ACTIVE",
-      "objective": "Build the real self-build backend bridge and refuse release-gate claims without backend evidence.",
-      "expected_gate": "REAL_SELF_BUILD_BACKEND_BRIDGE_READY",
-      "build_task_path": "tasks/TASK_REAL_SELF_BUILD_BACKEND_BRIDGE_001.json"
+      "task_id": "TASK_SERIAL_SELF_BUILD_PACK_EXECUTOR_001",
+      "capability_id": "serial_self_build_pack_executor",
+      "status": "COMPLETED",
+      "objective": "Build the serial self-build pack executor and prove it by self-running the next registered local execution pack.",
+      "expected_gate": "SERIAL_SELF_BUILD_PACK_EXECUTOR_READY",
+      "build_task_path": "tasks/TASK_SERIAL_SELF_BUILD_PACK_EXECUTOR_001.json"
     },
     {
       "task_id": "TASK_SELF_VALIDATION_RELEASE_GATES_001",
       "capability_id": "self_validation_release_gates",
-      "status": "PENDING",
-      "objective": "Implement self-validation release gates only after real backend-bridge proof exists.",
+      "status": "ACTIVE",
+      "objective": "Implement self-validation release gates through a registered self-build pack.",
       "expected_gate": "SELF_BUILD_READY",
       "build_task_path": "tasks/TASK_SELF_VALIDATION_RELEASE_GATES_001.json"
     }

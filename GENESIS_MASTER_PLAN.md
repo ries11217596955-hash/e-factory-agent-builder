@@ -1,4 +1,4 @@
-﻿# GENESIS MASTER PLAN
+# GENESIS MASTER PLAN
 
 ## Purpose
 
@@ -6,70 +6,60 @@ This file defines the approved construction route for E-Factory Agent Builder.
 
 The agent must follow this plan during `SELF_BUILD`.
 
-A self-build PASS is valid only after the system proves real build orchestration:
-- it can read its own declared task;
-- compile a bounded implementation brief for an execution backend;
-- accept backend result evidence;
-- validate the result;
-- transition state only after validator proof.
+A self-build PASS is valid when the agent itself:
+- reads the active task from repo truth;
+- selects a repo-defined execution pack from the pack registry;
+- launches that pack through the local PowerShell/Bash execution layer;
+- validates the pack result;
+- advances state only after proof.
 
-A local serial pack written by the operator is bootstrap engineering, not self-building.
+The standing model is:
+
+`repo truth → pack registry → local pack executor → validators → state transition`
 
 ---
 
 # PHASE 0 — Repository Genesis
-## Goal
-Create the canonical repository skeleton and genesis truth files.
 ## Gate
 `REPO_GENESIS_READY = PASS`
 
 ---
 
 # PHASE 1 — Self-Build Control Core
-## Goal
-Enable the agent to read and understand its own construction state.
 ## Gate
 `SELF_BUILD_CONTROL_CORE_READY = PASS`
 
 ---
 
 # PHASE 2 — Self-Build Execution Substrate
-## Goal
-Create the internal execution substrate that can:
-- load approved task specs;
-- dispatch controlled proof execution;
-- run validators;
-- emit run artifacts;
-- update state/queue under validator control.
-
-## Boundary
-This phase proves execution plumbing, not autonomous/self-directed code construction.
-
 ## Gate
 `SELF_BUILD_EXECUTION_SUBSTRATE_READY = PASS`
 
 ---
 
-# PHASE 3 — Real Self-Build Backend Bridge
+# PHASE 3 — Serial Self-Build Pack Executor
+
 ## Goal
-Enable the agent to prepare and control a real self-build implementation move through an execution backend.
+Enable the agent to self-execute repo-defined build packs through the local terminal layer.
 
 ## Required capabilities
-- read active self-build task spec;
-- compile a bounded implementation brief from repo truth;
-- emit backend handoff artifacts;
-- define allowed files, forbidden scope, and required proof;
-- ingest backend result evidence;
-- refuse PASS if backend evidence is missing.
+- read the active queue task;
+- read a pack registry;
+- select the pack bound to the active task;
+- execute the pack through PowerShell/Bash;
+- emit orchestrator proof;
+- stop on pack failure;
+- prove the model by self-running the next registered pack.
 
 ## Gate
-`REAL_SELF_BUILD_BACKEND_BRIDGE_READY = PASS`
+`SERIAL_SELF_BUILD_PACK_EXECUTOR_READY = PASS`
 
 ---
 
 # PHASE 4 — Self-Validation and Release Gates
+
 ## Goal
-Prove that self-build truth does not drift after real backend-bridge self-build proof exists.
+Prove that self-build truth does not drift after the pack executor has self-run a registered build pack.
 
 ## Gate
 `SELF_BUILD_READY = PASS`
@@ -101,4 +91,4 @@ The agent must STOP if:
 - a validator fails and bounded repair is not evident;
 - state files contradict each other;
 - execution attempts to cross into a future phase before its gate is passed;
-- self-build is claimed without backend-bridge evidence.
+- self-build is claimed without pack-executor proof.

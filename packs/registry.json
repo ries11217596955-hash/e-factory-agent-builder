@@ -1,5 +1,5 @@
 {
-  "registry_version": "0.2",
+  "registry_version": "0.3",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -20,6 +20,13 @@
       "task_id": "TASK_EXTERNAL_AGENT_PACKAGE_GENERATOR_001",
       "pack_contract_path": "packs/PHASE6_EXTERNAL_AGENT_PACKAGE_GENERATOR/PACK.json",
       "entry_script": "packs/PHASE6_EXTERNAL_AGENT_PACKAGE_GENERATOR/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE7_FIRST_PROVEN_EXTERNAL_AGENT_V1",
+      "task_id": "TASK_FIRST_PROVEN_EXTERNAL_AGENT_001",
+      "pack_contract_path": "packs/PHASE7_FIRST_PROVEN_EXTERNAL_AGENT/PACK.json",
+      "entry_script": "packs/PHASE7_FIRST_PROVEN_EXTERNAL_AGENT/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

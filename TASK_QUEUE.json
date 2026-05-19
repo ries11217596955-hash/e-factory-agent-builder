@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_REAL_GENERATED_AGENT_RUNTIME_V2_001",
+  "active_task_id": "TASK_OPERATIONAL_VALIDATION_HARNESS_V2_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -115,10 +115,18 @@
     {
       "task_id": "TASK_REAL_GENERATED_AGENT_RUNTIME_V2_001",
       "capability_id": "real_generated_agent_runtime_v2",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Replace generated agent runtime stubs with a real baseline request to result execution path.",
       "expected_gate": "REAL_GENERATED_AGENT_RUNTIME_V2_READY",
       "build_task_path": "tasks/TASK_REAL_GENERATED_AGENT_RUNTIME_V2_001.json"
+    },
+    {
+      "task_id": "TASK_OPERATIONAL_VALIDATION_HARNESS_V2_001",
+      "capability_id": "operational_validation_harness_v2",
+      "status": "ACTIVE",
+      "objective": "Add a reusable operational validation harness for generated agent packages.",
+      "expected_gate": "OPERATIONAL_VALIDATION_HARNESS_V2_READY",
+      "build_task_path": "tasks/TASK_OPERATIONAL_VALIDATION_HARNESS_V2_001.json"
     }
   ]
 }

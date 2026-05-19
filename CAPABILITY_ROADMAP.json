@@ -90,13 +90,13 @@
     {
       "id": "real_generated_agent_runtime_v2",
       "phase": "PHASE_14",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "REAL_GENERATED_AGENT_RUNTIME_V2_READY"
     },
     {
       "id": "operational_validation_harness_v2",
       "phase": "PHASE_15",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "OPERATIONAL_VALIDATION_HARNESS_V2_READY"
     },
     {

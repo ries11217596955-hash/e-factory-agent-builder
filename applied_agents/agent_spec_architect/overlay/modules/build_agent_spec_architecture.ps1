@@ -11,13 +11,30 @@ function Build-AgentSpecArchitecture {
         $NormalizedTargetAgentId = "generated_agent"
     }
 
-    $AgentKind = "decision_support_agent"
+    $ProblemText = ""
+    if ($null -ne $RawIdea.problem) {
+        $ProblemText = [string]$RawIdea.problem
+    }
+
+    $OperatorGoalText = ""
+    if ($null -ne $RawIdea.operator_goal) {
+        $OperatorGoalText = [string]$RawIdea.operator_goal
+    }
 
     $ExpectedJoined = @($RawIdea.expected_outputs) -join " "
-    if ($ExpectedJoined -match "audit|finding|report") {
+
+    $ClassificationText = @(
+        $ProblemText,
+        $OperatorGoalText,
+        $ExpectedJoined
+    ) -join " "
+
+    $AgentKind = "decision_support_agent"
+
+    if ($ClassificationText -match "audit|finding|report") {
         $AgentKind = "audit_agent"
     }
-    elseif ($ExpectedJoined -match "template|document|spec") {
+    elseif ($ClassificationText -match "template|document|spec") {
         $AgentKind = "specification_agent"
     }
 

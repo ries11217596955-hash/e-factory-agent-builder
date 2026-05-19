@@ -60,13 +60,13 @@
     {
       "id": "production_package_blueprint_v1",
       "phase": "PHASE_9",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "PRODUCTION_PACKAGE_BLUEPRINT_V1_READY"
     },
     {
       "id": "generated_agent_validation_harness_v1",
       "phase": "PHASE_10",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "GENERATED_AGENT_VALIDATION_HARNESS_V1_READY"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "registry_version": "9.0",
+  "registry_version": "10.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -244,6 +244,27 @@
       "task_id": "TASK_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE39_MONITORING_GAP_REACHABILITY_V1",
+      "task_id": "TASK_MONITORING_GAP_REACHABILITY_V1_001",
+      "pack_contract_path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/PACK.json",
+      "entry_script": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1",
+      "task_id": "TASK_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_001",
+      "pack_contract_path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/PACK.json",
+      "entry_script": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1",
+      "task_id": "TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

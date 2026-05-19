@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_real_runtime_gap_remediation_closure_v1",
-  "roadmap_version": "9.0",
+  "roadmap_id": "agent_builder_inline_gap_remediation_packet_v1",
+  "roadmap_version": "10.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -236,6 +236,24 @@
       "phase": "PHASE_38",
       "status": "COMPLETED",
       "gate": "RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1"
+    },
+    {
+      "id": "monitoring_gap_reachability_v1",
+      "phase": "PHASE_39",
+      "status": "ACTIVE",
+      "gate": "MONITORING_GAP_REACHABILITY_V1_READY"
+    },
+    {
+      "id": "specialized_gap_auto_intake_runtime_v1",
+      "phase": "PHASE_40",
+      "status": "PENDING",
+      "gate": "SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_READY"
+    },
+    {
+      "id": "one_run_gap_remediation_packet_proof_v1",
+      "phase": "PHASE_41",
+      "status": "PENDING",
+      "gate": "ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1"
     }
   ]
 }

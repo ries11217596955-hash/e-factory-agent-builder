@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_32",
-  "current_capability": "gap_closure_specialized_factory_proof_v1",
+  "current_phase": "PHASE_33",
+  "current_capability": "gap_remediation_intake_mode_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -57,5 +57,6 @@
   "idea_to_specialized_agent_factory_ready": true,
   "multi_profile_specialization_factory_ready": true,
   "specialization_gap_diagnostic_ready": true,
-  "gap_to_profile_closure_ready": true
+  "gap_to_profile_closure_ready": true,
+  "gap_remediation_intake_runtime_ready": false
 }

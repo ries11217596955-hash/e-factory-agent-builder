@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_gap_to_profile_closure_loop_v1",
-  "roadmap_version": "7.0",
+  "roadmap_id": "agent_builder_gap_remediation_intake_runtime_v1",
+  "roadmap_version": "8.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -200,6 +200,24 @@
       "phase": "PHASE_32",
       "status": "COMPLETED",
       "gate": "GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1"
+    },
+    {
+      "id": "gap_remediation_intake_mode_v1",
+      "phase": "PHASE_33",
+      "status": "ACTIVE",
+      "gate": "GAP_REMEDIATION_INTAKE_MODE_V1_READY"
+    },
+    {
+      "id": "candidate_intake_report_contract_v1",
+      "phase": "PHASE_34",
+      "status": "PENDING",
+      "gate": "CANDIDATE_INTAKE_REPORT_CONTRACT_V1_READY"
+    },
+    {
+      "id": "runtime_gap_to_candidate_factory_proof_v1",
+      "phase": "PHASE_35",
+      "status": "PENDING",
+      "gate": "RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1"
     }
   ]
 }

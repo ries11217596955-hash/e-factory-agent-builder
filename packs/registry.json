@@ -1,5 +1,5 @@
 {
-  "registry_version": "7.0",
+  "registry_version": "8.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -202,6 +202,27 @@
       "task_id": "TASK_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE33_GAP_REMEDIATION_INTAKE_MODE_V1",
+      "task_id": "TASK_GAP_REMEDIATION_INTAKE_MODE_V1_001",
+      "pack_contract_path": "packs/PHASE33_GAP_REMEDIATION_INTAKE_MODE_V1/PACK.json",
+      "entry_script": "packs/PHASE33_GAP_REMEDIATION_INTAKE_MODE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE34_CANDIDATE_INTAKE_REPORT_CONTRACT_V1",
+      "task_id": "TASK_CANDIDATE_INTAKE_REPORT_CONTRACT_V1_001",
+      "pack_contract_path": "packs/PHASE34_CANDIDATE_INTAKE_REPORT_CONTRACT_V1/PACK.json",
+      "entry_script": "packs/PHASE34_CANDIDATE_INTAKE_REPORT_CONTRACT_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE35_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1",
+      "task_id": "TASK_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE35_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE35_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

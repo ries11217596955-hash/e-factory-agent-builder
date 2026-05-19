@@ -1,5 +1,5 @@
 {
-  "registry_version": "8.0",
+  "registry_version": "9.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -223,6 +223,27 @@
       "task_id": "TASK_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE35_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE35_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1",
+      "task_id": "TASK_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1_001",
+      "pack_contract_path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/PACK.json",
+      "entry_script": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE37_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1",
+      "task_id": "TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001",
+      "pack_contract_path": "packs/PHASE37_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1/PACK.json",
+      "entry_script": "packs/PHASE37_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1",
+      "task_id": "TASK_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_gap_remediation_intake_runtime_v1",
-  "roadmap_version": "8.0",
+  "roadmap_id": "agent_builder_real_runtime_gap_remediation_closure_v1",
+  "roadmap_version": "9.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -218,6 +218,24 @@
       "phase": "PHASE_35",
       "status": "COMPLETED",
       "gate": "RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1"
+    },
+    {
+      "id": "workflow_execution_family_reachability_v1",
+      "phase": "PHASE_36",
+      "status": "ACTIVE",
+      "gate": "WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1_READY"
+    },
+    {
+      "id": "intake_driven_workflow_execution_profile_v1",
+      "phase": "PHASE_37",
+      "status": "PENDING",
+      "gate": "INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_READY"
+    },
+    {
+      "id": "runtime_gap_remediation_closure_proof_v1",
+      "phase": "PHASE_38",
+      "status": "PENDING",
+      "gate": "RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1"
     }
   ]
 }

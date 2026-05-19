@@ -1,5 +1,5 @@
 {
-  "registry_version": "13.0",
+  "registry_version": "14.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -328,6 +328,27 @@
       "task_id": "TASK_ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE50_ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE50_ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE51_BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1",
+      "task_id": "TASK_BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1_001",
+      "pack_contract_path": "packs/PHASE51_BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1/PACK.json",
+      "entry_script": "packs/PHASE51_BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE52_GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1",
+      "task_id": "TASK_GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1_001",
+      "pack_contract_path": "packs/PHASE52_GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1/PACK.json",
+      "entry_script": "packs/PHASE52_GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE53_ACTION_READY_GENERATED_AGENT_PROOF_V1",
+      "task_id": "TASK_ACTION_READY_GENERATED_AGENT_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE53_ACTION_READY_GENERATED_AGENT_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE53_ACTION_READY_GENERATED_AGENT_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

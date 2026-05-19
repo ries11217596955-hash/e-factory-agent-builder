@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -407,6 +407,14 @@
       "objective": "Prove that one canonical remediation program seed can become a normalized blueprint and a materialized serial self-build program package.",
       "expected_gate": "ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1",
       "build_task_path": "tasks/TASK_ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1_001",
+      "capability_id": "builder_github_action_manual_run_surface_v1",
+      "status": "ACTIVE",
+      "objective": "Expose Agent Builder self-build through a manual GitHub Actions workflow_dispatch surface.",
+      "expected_gate": "BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1_READY",
+      "build_task_path": "tasks/TASK_BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1_001.json"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_remediation_seed_to_self_build_program_synthesis_v1",
-  "roadmap_version": "13.0",
+  "roadmap_id": "agent_builder_github_action_execution_surface_v1",
+  "roadmap_version": "14.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -308,6 +308,24 @@
       "phase": "PHASE_50",
       "status": "COMPLETED",
       "gate": "ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1"
+    },
+    {
+      "id": "builder_github_action_manual_run_surface_v1",
+      "phase": "PHASE_51",
+      "status": "ACTIVE",
+      "gate": "BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1_READY"
+    },
+    {
+      "id": "generated_agent_action_launch_contract_v1",
+      "phase": "PHASE_52",
+      "status": "PENDING",
+      "gate": "GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1_READY"
+    },
+    {
+      "id": "action_ready_generated_agent_proof_v1",
+      "phase": "PHASE_53",
+      "status": "PENDING",
+      "gate": "ACTION_READY_GENERATED_AGENT_PROOF_V1"
     }
   ]
 }

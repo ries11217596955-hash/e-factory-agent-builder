@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_27",
-  "current_capability": "specialization_gap_contract_v1",
+  "current_phase": "PHASE_28",
+  "current_capability": "no_match_diagnostic_mode_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -29,7 +29,8 @@
     "idea_to_specialized_agent_factory_proof_v1",
     "specialization_profile_registry_v1",
     "specification_agent_specialization_profile_v1",
-    "multi_profile_specialized_factory_proof_v1"
+    "multi_profile_specialized_factory_proof_v1",
+    "specialization_gap_contract_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

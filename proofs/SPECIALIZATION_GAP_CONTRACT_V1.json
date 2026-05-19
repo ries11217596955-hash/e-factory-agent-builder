@@ -1,0 +1,9 @@
+{
+  "proof_id": "SPECIALIZATION_GAP_CONTRACT_V1",
+  "run_id": "SELF_BUILD_SPECIALIZATION_GAP_DIAGNOSTIC_PROGRAM_V1_001__PACK_1",
+  "status": "PASS",
+  "report_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_SPECIALIZATION_GAP_DIAGNOSTIC_PROGRAM_V1_001__PACK_1\\PHASE27_SPECIALIZATION_GAP_CONTRACT_V1\\gap_contract_proof\\SPECIALIZATION_GAP_REPORT.json",
+  "diagnostic_status": "MISSING_SPECIALIZATION_PROFILE",
+  "missing_agent_kind": "decision_support_agent",
+  "required_next_move": "ADD_OR_MAP_SPECIALIZATION_PROFILE"
+}

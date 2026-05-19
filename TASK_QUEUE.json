@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_SPECIALIZATION_GAP_CONTRACT_V1_001",
+  "active_task_id": "TASK_NO_MATCH_DIAGNOSTIC_MODE_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -219,10 +219,18 @@
     {
       "task_id": "TASK_SPECIALIZATION_GAP_CONTRACT_V1_001",
       "capability_id": "specialization_gap_contract_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Create reusable specialization gap contract and report writer module.",
       "expected_gate": "SPECIALIZATION_GAP_CONTRACT_V1_READY",
       "build_task_path": "tasks/TASK_SPECIALIZATION_GAP_CONTRACT_V1_001.json"
+    },
+    {
+      "task_id": "TASK_NO_MATCH_DIAGNOSTIC_MODE_V1_001",
+      "capability_id": "no_match_diagnostic_mode_v1",
+      "status": "ACTIVE",
+      "objective": "Modify BUILD_FROM_RAW_IDEA_SPECIALIZED so NO_MATCH writes structured diagnostic artifacts instead of throwing.",
+      "expected_gate": "NO_MATCH_DIAGNOSTIC_MODE_V1_READY",
+      "build_task_path": "tasks/TASK_NO_MATCH_DIAGNOSTIC_MODE_V1_001.json"
     }
   ]
 }

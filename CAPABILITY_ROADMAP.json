@@ -168,13 +168,13 @@
     {
       "id": "specialization_gap_contract_v1",
       "phase": "PHASE_27",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SPECIALIZATION_GAP_CONTRACT_V1_READY"
     },
     {
       "id": "no_match_diagnostic_mode_v1",
       "phase": "PHASE_28",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "NO_MATCH_DIAGNOSTIC_MODE_V1_READY"
     },
     {

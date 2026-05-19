@@ -84,13 +84,13 @@
     {
       "id": "production_truth_reset_v2",
       "phase": "PHASE_13",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "PRODUCTION_TRUTH_RESET_V2_READY"
     },
     {
       "id": "real_generated_agent_runtime_v2",
       "phase": "PHASE_14",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "REAL_GENERATED_AGENT_RUNTIME_V2_READY"
     },
     {

@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_seed_driven_monitoring_remediation_closure_v1",
-  "roadmap_version": "12.0",
+  "roadmap_id": "agent_builder_remediation_seed_to_self_build_program_synthesis_v1",
+  "roadmap_version": "13.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -290,6 +290,24 @@
       "phase": "PHASE_47",
       "status": "COMPLETED",
       "gate": "REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1"
+    },
+    {
+      "id": "remediation_seed_program_blueprint_contract_v1",
+      "phase": "PHASE_48",
+      "status": "ACTIVE",
+      "gate": "REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1_READY"
+    },
+    {
+      "id": "remediation_seed_program_materialization_v1",
+      "phase": "PHASE_49",
+      "status": "PENDING",
+      "gate": "REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1_READY"
+    },
+    {
+      "id": "one_run_remediation_seed_program_synthesis_proof_v1",
+      "phase": "PHASE_50",
+      "status": "PENDING",
+      "gate": "ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -383,6 +383,14 @@
       "objective": "Prove the canonical remediation program seed was consumed into a real monitoring specialization closure loop.",
       "expected_gate": "REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1",
       "build_task_path": "tasks/TASK_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1_001",
+      "capability_id": "remediation_seed_program_blueprint_contract_v1",
+      "status": "ACTIVE",
+      "objective": "Turn a canonical remediation program seed into a normalized serial self-build program blueprint contract.",
+      "expected_gate": "REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1_READY",
+      "build_task_path": "tasks/TASK_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1_001.json"
     }
   ]
 }

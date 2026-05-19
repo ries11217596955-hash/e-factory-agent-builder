@@ -258,13 +258,13 @@
     {
       "id": "remediation_program_seed_contract_v1",
       "phase": "PHASE_42",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "REMEDIATION_PROGRAM_SEED_CONTRACT_V1_READY"
     },
     {
       "id": "specialized_gap_auto_program_seed_runtime_v1",
       "phase": "PHASE_43",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1_READY"
     },
     {

@@ -282,13 +282,13 @@
     {
       "id": "monitoring_gap_closure_specialized_proof_v1",
       "phase": "PHASE_46",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1"
     },
     {
       "id": "remediation_program_seed_consumption_closure_proof_v1",
       "phase": "PHASE_47",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1"
     }
   ]

@@ -13,7 +13,7 @@ Trigger workflow: `.github/workflows/agent-builder-self-build.yml`
 
 Inputs:
 
-- `run_id`: optional. Leave blank to use the GitHub Actions run id.
+- `run_id`: optional. Leave blank to use the GitHub Actions run id. Nonblank values are sanitized automatically for path and artifact-name safety.
 - `max_packs`: use `1` for this acceptance run.
 
 Expected runtime proof:
@@ -39,6 +39,8 @@ Default inputs:
 
 - `raw_idea_path`: `specs/factory_acceptance/raw_ideas/OWNER_VISIBLE_EXTERNAL_AGENT_IDEA.json`
 - `output_root`: `generated_agents/owner_visible_factory_acceptance`
+
+Leaving `raw_idea_path` or `output_root` blank uses the canonical defaults. Entering literal `default` is also normalized to the same defaults for owner safety. The `run_id` field is sanitized automatically for path and artifact-name safety.
 
 Expected generated artifacts:
 

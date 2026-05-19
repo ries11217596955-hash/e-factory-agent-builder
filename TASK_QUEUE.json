@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_EXTERNAL_AGENT_SPEC_INTAKE_001",
+  "active_task_id": "TASK_EXTERNAL_AGENT_PACKAGE_GENERATOR_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -43,10 +43,18 @@
     {
       "task_id": "TASK_EXTERNAL_AGENT_SPEC_INTAKE_001",
       "capability_id": "external_agent_spec_intake",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Implement formal intake for external agent specifications.",
       "expected_gate": "EXTERNAL_AGENT_SPEC_INTAKE_READY",
       "build_task_path": "tasks/TASK_EXTERNAL_AGENT_SPEC_INTAKE_001.json"
+    },
+    {
+      "task_id": "TASK_EXTERNAL_AGENT_PACKAGE_GENERATOR_001",
+      "capability_id": "external_agent_package_generator",
+      "status": "ACTIVE",
+      "objective": "Implement external agent package generator.",
+      "expected_gate": "EXTERNAL_AGENT_PACKAGE_GENERATOR_READY",
+      "build_task_path": "tasks/TASK_EXTERNAL_AGENT_PACKAGE_GENERATOR_001.json"
     }
   ]
 }

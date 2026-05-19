@@ -36,13 +36,13 @@
     {
       "id": "external_agent_spec_intake",
       "phase": "PHASE_5",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "EXTERNAL_AGENT_SPEC_INTAKE_READY"
     },
     {
       "id": "external_agent_package_generator",
       "phase": "PHASE_6",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "EXTERNAL_AGENT_PACKAGE_GENERATOR_READY"
     },
     {

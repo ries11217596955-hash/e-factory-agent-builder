@@ -1,14 +1,15 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_5",
-  "current_capability": "external_agent_spec_intake",
+  "current_phase": "PHASE_6",
+  "current_capability": "external_agent_package_generator",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
     "self_build_execution_substrate",
     "serial_self_build_pack_executor",
-    "self_validation_release_gates"
+    "self_validation_release_gates",
+    "external_agent_spec_intake"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

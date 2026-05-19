@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("SELF_BUILD", "BUILD_EXTERNAL_AGENT", "VERIFY")]
+    [ValidateSet("SELF_BUILD", "BUILD_EXTERNAL_AGENT", "BUILD_FROM_RAW_IDEA", "VERIFY")]
     [string]$Mode = "VERIFY",
 
     [string]$RunId = ("SELF_BUILD_" + (Get-Date -Format "yyyyMMdd_HHmmss")),
@@ -11,7 +11,11 @@ param(
 
     [string]$OutputRoot,
 
-    [string]$OverlayRoot = ""
+    [string]$OverlayRoot = "",
+
+    [string]$RawIdeaPath,
+
+    [string]$DerivedSpecPath = ""
 )
 
 Set-StrictMode -Version Latest
@@ -36,6 +40,7 @@ if ($Mode -eq "BUILD_EXTERNAL_AGENT") {
     . ".\modules\invoke_external_agent_build.ps1"
 
     $RunRoot = ".\runs\$RunId\BUILD_EXTERNAL_AGENT_MODE_V2"
+
     $Build = Invoke-ExternalAgentBuild `
         -SpecPath $SpecPath `
         -OutputRoot $OutputRoot `
@@ -47,6 +52,69 @@ if ($Mode -eq "BUILD_EXTERNAL_AGENT") {
     Write-Host "BUILD_EXTERNAL_AGENT_OVERLAY_STATUS=$($Build.overlay.status)"
     Write-Host "BUILD_EXTERNAL_AGENT_OVERLAY_FILE_COUNT=$($Build.overlay.applied_file_count)"
     Write-Host "BUILD_EXTERNAL_AGENT_REPORT_PATH=$($Build.report_path)"
+    return
+}
+
+if ($Mode -eq "BUILD_FROM_RAW_IDEA") {
+    if ([string]::IsNullOrWhiteSpace($RawIdeaPath)) { throw "RawIdeaPath is required." }
+    if ([string]::IsNullOrWhiteSpace($OutputRoot)) { throw "OutputRoot is required." }
+
+    . ".\modules\invoke_agent_spec_architect_handoff.ps1"
+    . ".\modules\invoke_external_agent_build.ps1"
+
+    $ModeRoot = ".\runs\$RunId\BUILD_FROM_RAW_IDEA_MODE_V1"
+    New-Item -ItemType Directory -Force -Path $ModeRoot | Out-Null
+
+    if ([string]::IsNullOrWhiteSpace($DerivedSpecPath)) {
+        $DerivedSpecPath = Join-Path $ModeRoot "DERIVED_AGENT_SPEC.json"
+    }
+
+    $Handoff = Invoke-AgentSpecArchitectHandoff `
+        -ArchitectSpecPath ".\specs\applied_agents\agent_spec_architect\AGENT_SPEC_ARCHITECT_SPEC.json" `
+        -ArchitectOverlayRoot ".\applied_agents\agent_spec_architect\overlay" `
+        -RawIdeaRequestPath $RawIdeaPath `
+        -GeneratedAgentsRoot ".\generated_agents" `
+        -RunRoot (Join-Path $ModeRoot "architect_handoff") `
+        -DerivedSpecOutputPath $DerivedSpecPath
+
+    if ($Handoff.status -ne "PASS") {
+        throw "Raw idea handoff failed."
+    }
+
+    $TargetBuild = Invoke-ExternalAgentBuild `
+        -SpecPath $Handoff.derived_spec_path `
+        -OutputRoot $OutputRoot `
+        -RunRoot (Join-Path $ModeRoot "target_build")
+
+    if ($TargetBuild.status -ne "PASS") {
+        throw "Derived external agent build failed."
+    }
+
+    $Report = [ordered]@{
+        report_id = "BUILD_FROM_RAW_IDEA_MODE_V1"
+        run_id = $RunId
+        status = "PASS"
+        raw_idea_path = $RawIdeaPath
+        derived_spec_path = $Handoff.derived_spec_path
+        derived_agent_id = $Handoff.derived_agent_id
+        architect_handoff = $Handoff
+        target_build = [ordered]@{
+            status = $TargetBuild.status
+            package_root = $TargetBuild.manifest.package_root
+            report_path = $TargetBuild.report_path
+            validation_output = $TargetBuild.validation.output_result_path
+        }
+    }
+
+    $ReportPath = Join-Path $ModeRoot "BUILD_FROM_RAW_IDEA_REPORT.json"
+    $Report | ConvertTo-Json -Depth 100 |
+        Set-Content $ReportPath -Encoding UTF8
+
+    Write-Host "BUILD_FROM_RAW_IDEA_STATUS=$($Report.status)"
+    Write-Host "BUILD_FROM_RAW_IDEA_DERIVED_AGENT_ID=$($Report.derived_agent_id)"
+    Write-Host "BUILD_FROM_RAW_IDEA_DERIVED_SPEC_PATH=$($Report.derived_spec_path)"
+    Write-Host "BUILD_FROM_RAW_IDEA_PACKAGE_ROOT=$($Report.target_build.package_root)"
+    Write-Host "BUILD_FROM_RAW_IDEA_REPORT_PATH=$ReportPath"
     return
 }
 

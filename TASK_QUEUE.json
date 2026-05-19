@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1_001",
+  "active_task_id": "TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -291,10 +291,18 @@
     {
       "task_id": "TASK_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1_001",
       "capability_id": "workflow_execution_family_reachability_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Make workflow_execution_agent reachable from real raw idea classification and prove runtime gap candidate intake.",
       "expected_gate": "WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1_READY",
       "build_task_path": "tasks/TASK_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1_001.json"
+    },
+    {
+      "task_id": "TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001",
+      "capability_id": "intake_driven_workflow_execution_profile_v1",
+      "status": "ACTIVE",
+      "objective": "Build and prove workflow_execution_agent_v1 from canonical runtime remediation intake artifacts.",
+      "expected_gate": "INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_READY",
+      "build_task_path": "tasks/TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001.json"
     }
   ]
 }

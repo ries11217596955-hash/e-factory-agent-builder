@@ -1,0 +1,12 @@
+{
+  "proof_id": "WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1",
+  "run_id": "SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_1",
+  "status": "PASS",
+  "raw_idea_path": ".\\specs\\workflow_gap_proof\\RAW_IDEA_WORKFLOW_EXECUTION_GAP_PROOF.json",
+  "gap_factory_report_path": ".\\runs\\SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_1__RAW_WORKFLOW_GAP\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json",
+  "gap_report_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_1__RAW_WORKFLOW_GAP\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\SPECIALIZATION_GAP_REPORT.json",
+  "canonical_candidate_path": ".\\remediation_intake\\WORKFLOW_EXECUTION_AGENT_PROFILE_CANDIDATE_V1.json",
+  "canonical_intake_report_path": ".\\remediation_intake\\WORKFLOW_EXECUTION_AGENT_INTAKE_REPORT_V1.json",
+  "candidate_profile_id": "workflow_execution_agent_v1",
+  "candidate_agent_kind": "workflow_execution_agent"
+}

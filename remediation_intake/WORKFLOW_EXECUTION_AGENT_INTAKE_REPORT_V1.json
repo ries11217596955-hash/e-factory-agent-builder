@@ -1,0 +1,17 @@
+{
+  "report_id": "GAP_REMEDIATION_INTAKE_REPORT_V1",
+  "run_id": "SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_1__RUNTIME_CANDIDATE",
+  "status": "PASS",
+  "source_gap_report_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_1__RAW_WORKFLOW_GAP\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\SPECIALIZATION_GAP_REPORT.json",
+  "candidate_path": ".\\runs\\SELF_BUILD_REAL_RUNTIME_GAP_REMEDIATION_CLOSURE_PROGRAM_V1_001_REPAIR__PACK_1__RUNTIME_CANDIDATE\\GAP_TO_PROFILE_CANDIDATE_MODE_V1\\SPECIALIZATION_PROFILE_CANDIDATE.json",
+  "candidate_profile_id": "workflow_execution_agent_v1",
+  "candidate_agent_kind": "workflow_execution_agent",
+  "candidate_package_profile": "operational_specialized",
+  "required_build_move": "CREATE_SPECIALIZATION_PROFILE_AND_REGISTRY_MAPPING",
+  "operator_summary": "The Builder converted a missing specialization gap into a normalized profile candidate intake artifact.",
+  "source_gap": {
+    "diagnostic_status": "MISSING_SPECIALIZATION_PROFILE",
+    "missing_agent_kind": "workflow_execution_agent",
+    "requested_package_profile": "operational_specialized"
+  }
+}

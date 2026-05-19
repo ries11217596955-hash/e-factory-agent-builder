@@ -222,13 +222,13 @@
     {
       "id": "workflow_execution_family_reachability_v1",
       "phase": "PHASE_36",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1_READY"
     },
     {
       "id": "intake_driven_workflow_execution_profile_v1",
       "phase": "PHASE_37",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_READY"
     },
     {

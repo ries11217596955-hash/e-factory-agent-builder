@@ -180,7 +180,7 @@
     {
       "id": "missing_profile_factory_proof_v1",
       "phase": "PHASE_29",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "MISSING_PROFILE_FACTORY_PROOF_V1"
     }
   ]

@@ -56,7 +56,8 @@
     "one_run_remediation_seed_program_synthesis_proof_v1",
     "builder_github_action_manual_run_surface_v1",
     "generated_agent_action_launch_contract_v1",
-    "action_ready_generated_agent_proof_v1"
+    "action_ready_generated_agent_proof_v1",
+    "owner_visible_self_build_acceptance_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

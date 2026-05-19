@@ -1,0 +1,20 @@
+{
+  "proof_id": "OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1",
+  "run_id": "run_id: OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1_001 max_packs: 1__PACK_1",
+  "selected_pack": "PHASE54_OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1",
+  "execution_mode": "SELF_BUILD",
+  "source_surface": "GITHUB_ACTION_COMPATIBLE",
+  "status": "PASS",
+  "statement": "Agent Builder consumed a repo-defined PHASE54 self-build pack through the GitHub Action compatible self-build path and advanced its own roadmap, state, and task queue truth from ACTIVE to completed with queue NONE.",
+  "owner_visible_surfaces": {
+    "self_build_workflow": ".github/workflows/agent-builder-self-build.yml",
+    "raw_idea_workflow": ".github/workflows/agent-builder-build-from-raw-idea.yml",
+    "raw_idea_fixture": "specs/factory_acceptance/raw_ideas/OWNER_VISIBLE_EXTERNAL_AGENT_IDEA.json",
+    "playbook": "docs/OWNER_VISIBLE_FACTORY_ACCEPTANCE_LOOP_V1.md"
+  },
+  "final_state": {
+    "capability_status": "COMPLETED",
+    "active_task_id": "NONE",
+    "last_run_status": "PASS"
+  }
+}

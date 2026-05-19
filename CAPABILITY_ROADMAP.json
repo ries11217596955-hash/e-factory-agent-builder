@@ -330,7 +330,7 @@
     {
       "id": "owner_visible_self_build_acceptance_v1",
       "phase": "PHASE_54",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1"
     }
   ]

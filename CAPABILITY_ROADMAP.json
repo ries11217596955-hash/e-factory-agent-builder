@@ -300,13 +300,13 @@
     {
       "id": "remediation_seed_program_materialization_v1",
       "phase": "PHASE_49",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1_READY"
     },
     {
       "id": "one_run_remediation_seed_program_synthesis_proof_v1",
       "phase": "PHASE_50",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1"
     }
   ]

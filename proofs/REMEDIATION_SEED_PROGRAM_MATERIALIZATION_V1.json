@@ -1,0 +1,15 @@
+{
+  "proof_id": "REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1",
+  "run_id": "SELF_BUILD_REMEDIATION_SEED_TO_PROGRAM_SYNTHESIS_V1_001__PACK_2",
+  "status": "PASS",
+  "blueprint_path": ".\\remediation_programs\\generated_programs\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_BLUEPRINT.json",
+  "materialized_program_root": ".\\self_build_programs\\generated\\monitoring_agent_v1",
+  "manifest_path": ".\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "registry_patch_path": ".\\self_build_programs\\generated\\monitoring_agent_v1\\patches\\PACK_REGISTRY_PATCH.json",
+  "roadmap_patch_path": ".\\self_build_programs\\generated\\monitoring_agent_v1\\patches\\CAPABILITY_ROADMAP_PATCH.json",
+  "queue_seed_path": ".\\self_build_programs\\generated\\monitoring_agent_v1\\patches\\TASK_QUEUE_SEED.json",
+  "pack_count": 3,
+  "task_count": 3,
+  "capability_count": 3,
+  "admission_status": "NOT_ADMITTED_YET"
+}

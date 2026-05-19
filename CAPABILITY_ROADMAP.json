@@ -66,13 +66,13 @@
     {
       "id": "generated_agent_validation_harness_v1",
       "phase": "PHASE_10",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_AGENT_VALIDATION_HARNESS_V1_READY"
     },
     {
       "id": "factory_build_external_agent_mode_v1",
       "phase": "PHASE_11",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "FACTORY_BUILD_EXTERNAL_AGENT_MODE_V1_READY"
     },
     {

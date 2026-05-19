@@ -1,19 +1,20 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_6",
-  "current_capability": "external_agent_package_generator",
+  "current_phase": "PHASE_7",
+  "current_capability": "first_proven_external_agent",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
     "self_build_execution_substrate",
     "serial_self_build_pack_executor",
     "self_validation_release_gates",
-    "external_agent_spec_intake"
+    "external_agent_spec_intake",
+    "external_agent_package_generator"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
-  "external_agent_build_ready": false,
+  "external_agent_build_ready": true,
   "first_external_agent_proof": false,
   "last_run_status": "PASS",
   "truth_correction": {

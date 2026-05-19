@@ -42,13 +42,13 @@
     {
       "id": "external_agent_package_generator",
       "phase": "PHASE_6",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "EXTERNAL_AGENT_PACKAGE_GENERATOR_READY"
     },
     {
       "id": "first_proven_external_agent",
       "phase": "PHASE_7",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "FIRST_EXTERNAL_AGENT_PROOF"
     }
   ]

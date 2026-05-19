@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_EXTERNAL_AGENT_PACKAGE_GENERATOR_001",
+  "active_task_id": "TASK_FIRST_PROVEN_EXTERNAL_AGENT_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -51,10 +51,18 @@
     {
       "task_id": "TASK_EXTERNAL_AGENT_PACKAGE_GENERATOR_001",
       "capability_id": "external_agent_package_generator",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Implement external agent package generator.",
       "expected_gate": "EXTERNAL_AGENT_PACKAGE_GENERATOR_READY",
       "build_task_path": "tasks/TASK_EXTERNAL_AGENT_PACKAGE_GENERATOR_001.json"
+    },
+    {
+      "task_id": "TASK_FIRST_PROVEN_EXTERNAL_AGENT_001",
+      "capability_id": "first_proven_external_agent",
+      "status": "ACTIVE",
+      "objective": "Prove the factory by building the first real external agent package.",
+      "expected_gate": "FIRST_EXTERNAL_AGENT_PROOF",
+      "build_task_path": "tasks/TASK_FIRST_PROVEN_EXTERNAL_AGENT_001.json"
     }
   ]
 }

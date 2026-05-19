@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_001",
+  "active_task_id": "TASK_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -203,10 +203,18 @@
     {
       "task_id": "TASK_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_001",
       "capability_id": "specification_agent_specialization_profile_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Add and prove specification_agent_v1 as the second registry-backed specialization profile.",
       "expected_gate": "SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_READY",
       "build_task_path": "tasks/TASK_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_001.json"
+    },
+    {
+      "task_id": "TASK_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1_001",
+      "capability_id": "multi_profile_specialized_factory_proof_v1",
+      "status": "ACTIVE",
+      "objective": "Prove two raw idea families route into distinct registry-backed specialization profiles.",
+      "expected_gate": "MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1",
+      "build_task_path": "tasks/TASK_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1_001.json"
     }
   ]
 }

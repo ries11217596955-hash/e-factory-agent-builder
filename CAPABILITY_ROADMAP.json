@@ -156,13 +156,13 @@
     {
       "id": "specification_agent_specialization_profile_v1",
       "phase": "PHASE_25",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_READY"
     },
     {
       "id": "multi_profile_specialized_factory_proof_v1",
       "phase": "PHASE_26",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1"
     }
   ]

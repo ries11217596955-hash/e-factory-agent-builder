@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_builder_inline_gap_remediation_packet_v1",
-  "roadmap_version": "10.0",
+  "roadmap_id": "agent_builder_inline_remediation_program_seed_v1",
+  "roadmap_version": "11.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -254,6 +254,24 @@
       "phase": "PHASE_41",
       "status": "COMPLETED",
       "gate": "ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1"
+    },
+    {
+      "id": "remediation_program_seed_contract_v1",
+      "phase": "PHASE_42",
+      "status": "ACTIVE",
+      "gate": "REMEDIATION_PROGRAM_SEED_CONTRACT_V1_READY"
+    },
+    {
+      "id": "specialized_gap_auto_program_seed_runtime_v1",
+      "phase": "PHASE_43",
+      "status": "PENDING",
+      "gate": "SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1_READY"
+    },
+    {
+      "id": "one_run_remediation_program_seed_proof_v1",
+      "phase": "PHASE_44",
+      "status": "PENDING",
+      "gate": "ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1"
     }
   ]
 }

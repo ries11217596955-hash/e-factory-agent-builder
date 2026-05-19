@@ -1,5 +1,5 @@
 {
-  "registry_version": "10.0",
+  "registry_version": "11.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -265,6 +265,27 @@
       "task_id": "TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001",
       "pack_contract_path": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE42_REMEDIATION_PROGRAM_SEED_CONTRACT_V1",
+      "task_id": "TASK_REMEDIATION_PROGRAM_SEED_CONTRACT_V1_001",
+      "pack_contract_path": "packs/PHASE42_REMEDIATION_PROGRAM_SEED_CONTRACT_V1/PACK.json",
+      "entry_script": "packs/PHASE42_REMEDIATION_PROGRAM_SEED_CONTRACT_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1",
+      "task_id": "TASK_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1_001",
+      "pack_contract_path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/PACK.json",
+      "entry_script": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1",
+      "task_id": "TASK_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

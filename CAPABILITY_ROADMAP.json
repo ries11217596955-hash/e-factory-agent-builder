@@ -312,13 +312,13 @@
     {
       "id": "builder_github_action_manual_run_surface_v1",
       "phase": "PHASE_51",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "BUILDER_GITHUB_ACTION_MANUAL_RUN_SURFACE_V1_READY"
     },
     {
       "id": "generated_agent_action_launch_contract_v1",
       "phase": "PHASE_52",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1_READY"
     },
     {

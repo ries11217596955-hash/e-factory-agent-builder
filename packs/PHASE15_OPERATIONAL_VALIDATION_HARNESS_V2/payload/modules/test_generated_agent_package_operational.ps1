@@ -8,6 +8,11 @@ function Test-GeneratedAgentPackageOperational {
         throw "Package root not found: $PackageRoot"
     }
 
+    $PackageRoot = (Resolve-Path $PackageRoot).Path
+
+    New-Item -ItemType Directory -Force -Path $RunRoot | Out-Null
+    $RunRoot = (Resolve-Path $RunRoot).Path
+
     $Validator = Join-Path $PackageRoot "validators\validate_package.ps1"
     $Orchestrator = Join-Path $PackageRoot "orchestrator\run.ps1"
     $SampleRequest = Join-Path $PackageRoot "examples\SAMPLE_REQUEST.json"
@@ -20,7 +25,6 @@ function Test-GeneratedAgentPackageOperational {
 
     & $Validator | Out-Host
 
-    New-Item -ItemType Directory -Force -Path $RunRoot | Out-Null
     $OutputPath = Join-Path $RunRoot "OPERATIONAL_RESULT.json"
 
     & $Orchestrator `

@@ -8,27 +8,44 @@ function Resolve-SpecializationOverlay {
         throw "AgentKind is required."
     }
 
-    if ($AgentKind -eq "audit_agent") {
-        $OverlayRoot = ".\applied_agents\specialization_profiles\audit_agent_v1\overlay"
+    $RegistryPath = ".\applied_agents\specialization_profiles\SPECIALIZATION_PROFILE_REGISTRY.json"
 
-        if (-not (Test-Path $OverlayRoot)) {
-            throw "Specialization overlay root missing: $OverlayRoot"
-        }
+    if (-not (Test-Path $RegistryPath)) {
+        throw "Specialization profile registry missing: $RegistryPath"
+    }
 
+    $Registry = Get-Content $RegistryPath -Raw | ConvertFrom-Json
+
+    $Match = $Registry.profiles |
+        Where-Object {
+            $_.status -eq "ACTIVE" -and
+            $_.agent_kind -eq $AgentKind -and
+            (
+                [string]::IsNullOrWhiteSpace($PackageProfile) -or
+                $_.package_profile -eq $PackageProfile
+            )
+        } |
+        Select-Object -First 1
+
+    if ($null -eq $Match) {
         return [pscustomobject]@{
-            status = "PASS"
-            profile_id = "audit_agent_v1"
-            profile_kind = "audit_agent"
-            overlay_root = (Resolve-Path $OverlayRoot).Path
-            resolution_reason = "Derived spec agent_kind matched audit_agent."
+            status = "NO_MATCH"
+            profile_id = "NONE"
+            profile_kind = $AgentKind
+            overlay_root = ""
+            resolution_reason = "No active specialization profile matched derived agent_kind/package_profile."
         }
     }
 
+    if (-not (Test-Path $Match.overlay_root)) {
+        throw "Resolved specialization overlay root missing: $($Match.overlay_root)"
+    }
+
     return [pscustomobject]@{
-        status = "NO_MATCH"
-        profile_id = "NONE"
-        profile_kind = $AgentKind
-        overlay_root = ""
-        resolution_reason = "No bounded specialization profile registered for this agent_kind."
+        status = "PASS"
+        profile_id = $Match.profile_id
+        profile_kind = $Match.agent_kind
+        overlay_root = (Resolve-Path $Match.overlay_root).Path
+        resolution_reason = "Registry matched active specialization profile."
     }
 }

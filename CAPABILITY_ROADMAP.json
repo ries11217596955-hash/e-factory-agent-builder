@@ -150,13 +150,13 @@
     {
       "id": "specialization_profile_registry_v1",
       "phase": "PHASE_24",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SPECIALIZATION_PROFILE_REGISTRY_V1_READY"
     },
     {
       "id": "specification_agent_specialization_profile_v1",
       "phase": "PHASE_25",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_READY"
     },
     {

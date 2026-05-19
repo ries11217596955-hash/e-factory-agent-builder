@@ -276,13 +276,13 @@
     {
       "id": "seed_driven_monitoring_profile_v1",
       "phase": "PHASE_45",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SEED_DRIVEN_MONITORING_PROFILE_V1_READY"
     },
     {
       "id": "monitoring_gap_closure_specialized_proof_v1",
       "phase": "PHASE_46",
-      "status": "PENDING",
+      "status": "ACTIVE",
       "gate": "MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1"
     },
     {

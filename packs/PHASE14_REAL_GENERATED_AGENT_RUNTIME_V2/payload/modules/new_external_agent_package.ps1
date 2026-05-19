@@ -5,6 +5,8 @@ function New-ExternalAgentPackage {
     )
 
     $AgentRoot = Join-Path $OutputRoot $Spec.agent_id
+    New-Item -ItemType Directory -Force -Path $AgentRoot | Out-Null
+    $AgentRoot = (Resolve-Path $AgentRoot).Path
 
     $Dirs = @(
         $AgentRoot,
@@ -134,7 +136,9 @@ function New-ExternalAgentPackage {
         "`$ErrorActionPreference = ""Stop""",
         "",
         "`$AgentRoot = (Resolve-Path (Join-Path `$PSScriptRoot "".."")).Path",
-        "Set-Location `$AgentRoot",
+        "`$OriginalLocation = Get-Location",
+        "Push-Location `$AgentRoot",
+        "try {",
         "",
         "Write-Host ""GENERATED_AGENT_ORCHESTRATOR""",
         "Write-Host ""MODE=`$Mode""",
@@ -169,7 +173,11 @@ function New-ExternalAgentPackage {
         "`$Result | ConvertTo-Json -Depth 100 | Set-Content `$OutputPath -Encoding UTF8",
         "",
         "Write-Host ""GENERATED_AGENT_RUN_STATUS=`$(`$Result.status)""",
-        "Write-Host ""GENERATED_AGENT_OUTPUT_PATH=`$OutputPath"""
+        "Write-Host ""GENERATED_AGENT_OUTPUT_PATH=`$OutputPath""",
+        "}",
+        "finally {",
+        "    Pop-Location",
+        "}"
     ) | Set-Content (Join-Path $AgentRoot "orchestrator\run.ps1") -Encoding UTF8
 
     @(
@@ -177,7 +185,9 @@ function New-ExternalAgentPackage {
         "`$ErrorActionPreference = ""Stop""",
         "",
         "`$AgentRoot = (Resolve-Path (Join-Path `$PSScriptRoot "".."")).Path",
-        "Set-Location `$AgentRoot",
+        "`$OriginalLocation = Get-Location",
+        "Push-Location `$AgentRoot",
+        "try {",
         "",
         "`$Required = @(",
         "    ""AGENT_PROFILE.json"",",
@@ -209,7 +219,11 @@ function New-ExternalAgentPackage {
         "if (`$Errors.Count -ne 0) { throw ""Generated orchestrator parser check failed."" }",
         "",
         "& "".\orchestrator\run.ps1"" -Mode VERIFY | Out-Host",
-        "Write-Host ""GENERATED_AGENT_VALIDATOR=PASS"""
+        "Write-Host ""GENERATED_AGENT_VALIDATOR=PASS""",
+        "}",
+        "finally {",
+        "    Pop-Location",
+        "}"
     ) | Set-Content (Join-Path $AgentRoot "validators\validate_package.ps1") -Encoding UTF8
 
     [ordered]@{
@@ -250,3 +264,4 @@ function New-ExternalAgentPackage {
         )
     }
 }
+

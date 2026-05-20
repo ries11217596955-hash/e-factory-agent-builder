@@ -1,0 +1,20 @@
+{
+  "proof_id": "SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1",
+  "run_id": "SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1_001__PACK_1",
+  "status": "PASS",
+  "family_id": "remediation_intake_agent_v1",
+  "distinct_from_family_id": "monitoring_agent_v1",
+  "compatibility_target": "generalized_generated_program_pipeline_v1",
+  "second_family_readiness": "PASS",
+  "source_contract_path": ".\\specs\\second_generated_program_family\\remediation_intake_agent_v1\\REMEDIATION_INTAKE_AGENT_V1_GENERATED_PROGRAM_FAMILY_CONTRACT.json",
+  "target_agent_kind": "remediation_intake_agent",
+  "planned_pack_count": 3,
+  "planned_capability_count": 3,
+  "planned_task_count": 3,
+  "materialized_program_exists": false,
+  "live_admission_attempted": false,
+  "second_family_pack_execution_attempted": false,
+  "report_path": ".\\reports\\second_generated_program_family_proof\\REMEDIATION_INTAKE_AGENT_V1_SECOND_FAMILY.json",
+  "next_required_capability": "second_generated_program_family_materialization_v1",
+  "conclusion": "A second generated self-build program family is formally defined and ready to enter the generalized generated-program materialization contour."
+}

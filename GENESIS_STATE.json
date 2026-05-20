@@ -66,7 +66,8 @@
     "generated_monitoring_agent_v1_seed_consumption_proof_v1",
     "generated_program_execution_recipe_contract_v1",
     "recipe_driven_generated_program_executable_materialization_v1",
-    "generalized_generated_program_live_admission_contract_v1"
+    "generalized_generated_program_live_admission_contract_v1",
+    "second_generated_program_family_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -100,5 +101,6 @@
   "generated_program_live_admission_ready": true,
   "generated_program_execution_recipe_contract_ready": true,
   "recipe_driven_generated_program_executable_materialization_ready": true,
-  "generalized_program_live_admission_contract_ready": true
+  "generalized_program_live_admission_contract_ready": true,
+  "second_generated_program_family_ready": true
 }

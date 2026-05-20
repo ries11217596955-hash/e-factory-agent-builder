@@ -18,8 +18,16 @@ Upgrade generated self-build program materialization so generated packs include 
 
 ## PHASE57 - Generated Program Live Admission Proof
 
-Status: SEEDED / LIVE ADMISSION PROOF.
+Status: CLOSED.
 
 Admit one executable generated self-build program into the live Builder registry, roadmap, and queue, then prove it can be consumed by the normal serial self-build execution contour.
 
-Next runtime after PHASE57: run normal `SELF_BUILD` with `MaxPacks = 3` to consume the admitted generated monitoring-agent program.
+The admitted generated monitoring-agent program has been consumed by normal `SELF_BUILD`.
+
+## PHASE58 - Execution Recipe Contract
+
+Status: SEEDED.
+
+Externalize generated self-build pack execution intent into program-owned machine-readable recipe artifacts. This phase defines the recipe contract and proves the consumed `monitoring_agent_v1` generated program can carry recipes for all three generated semantic roles without refactoring executable materialization.
+
+Next frontier after PHASE58: recipe-driven generic executable materialization.

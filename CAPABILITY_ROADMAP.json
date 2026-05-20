@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "generated_program_live_admission_proof_v1",
-  "roadmap_version": "18.0",
+  "roadmap_id": "generated_program_execution_recipe_contract_v1",
+  "roadmap_version": "19.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -374,6 +374,12 @@
       "gate": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
       "semantic_role": "SEED_CONSUMPTION_PROOF",
       "source_capability_hint": "remediation_program_seed_consumption_closure_proof_v1"
+    },
+    {
+      "id": "generated_program_execution_recipe_contract_v1",
+      "phase": "PHASE_58",
+      "status": "ACTIVE",
+      "gate": "GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1"
     }
   ]
 }

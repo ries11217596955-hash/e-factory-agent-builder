@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -487,6 +487,14 @@
       "objective": "Generated remediation self-build task for semantic role derived from remediation program seed.",
       "expected_gate": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
       "build_task_path": "self_build_programs/generated/monitoring_agent_v1/tasks/TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1_001",
+      "capability_id": "generated_program_execution_recipe_contract_v1",
+      "status": "ACTIVE",
+      "objective": "Define and prove program-owned execution recipe artifacts for the already-consumed monitoring_agent_v1 generated self-build program.",
+      "expected_gate": "GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1",
+      "build_task_path": "tasks/TASK_GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1_001.json"
     }
   ]
 }

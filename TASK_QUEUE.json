@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001",
+  "active_task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -459,10 +459,34 @@
     {
       "task_id": "TASK_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001",
       "capability_id": "generated_program_live_admission_proof_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Admit the executable monitoring_agent_v1 generated self-build program into live Builder execution without executing generated packs.",
       "expected_gate": "GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1",
       "build_task_path": "tasks/TASK_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_profile_materialization_v1",
+      "status": "ACTIVE",
+      "objective": "Generated remediation self-build task for semantic role derived from remediation program seed.",
+      "expected_gate": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_READY",
+      "build_task_path": "self_build_programs/generated/monitoring_agent_v1/tasks/TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_closure_proof_v1",
+      "status": "QUEUED",
+      "objective": "Generated remediation self-build task for semantic role derived from remediation program seed.",
+      "expected_gate": "GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1",
+      "build_task_path": "self_build_programs/generated/monitoring_agent_v1/tasks/TASK_GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_seed_consumption_proof_v1",
+      "status": "QUEUED",
+      "objective": "Generated remediation self-build task for semantic role derived from remediation program seed.",
+      "expected_gate": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "build_task_path": "self_build_programs/generated/monitoring_agent_v1/tasks/TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001.json"
     }
   ]
 }

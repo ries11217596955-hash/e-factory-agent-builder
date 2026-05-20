@@ -348,8 +348,32 @@
     {
       "id": "generated_program_live_admission_proof_v1",
       "phase": "PHASE_57",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1"
+    },
+    {
+      "id": "generated_monitoring_agent_v1_profile_materialization_v1",
+      "phase": "GENERATED_MONITORING_AGENT_V1_PHASE_1",
+      "status": "ACTIVE",
+      "gate": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_READY",
+      "semantic_role": "PROFILE_MATERIALIZATION",
+      "source_capability_hint": "monitoring_agent_specialization_profile_v1"
+    },
+    {
+      "id": "generated_monitoring_agent_v1_closure_proof_v1",
+      "phase": "GENERATED_MONITORING_AGENT_V1_PHASE_2",
+      "status": "QUEUED",
+      "gate": "GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1",
+      "semantic_role": "SPECIALIZED_CLOSURE_PROOF",
+      "source_capability_hint": "monitoring_agent_gap_closure_proof_v1"
+    },
+    {
+      "id": "generated_monitoring_agent_v1_seed_consumption_proof_v1",
+      "phase": "GENERATED_MONITORING_AGENT_V1_PHASE_3",
+      "status": "QUEUED",
+      "gate": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "semantic_role": "SEED_CONSUMPTION_PROOF",
+      "source_capability_hint": "remediation_program_seed_consumption_closure_proof_v1"
     }
   ]
 }

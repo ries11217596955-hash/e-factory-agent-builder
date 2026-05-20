@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_57",
-  "current_capability": "generated_program_live_admission_proof_v1",
+  "current_phase": "GENERATED_MONITORING_AGENT_V1_PHASE_1",
+  "current_capability": "generated_monitoring_agent_v1_profile_materialization_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -59,7 +59,8 @@
     "action_ready_generated_agent_proof_v1",
     "owner_visible_self_build_acceptance_v1",
     "generated_program_admission_readiness_gate_v1",
-    "executable_generated_program_materialization_v1"
+    "executable_generated_program_materialization_v1",
+    "generated_program_live_admission_proof_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -89,5 +90,6 @@
   "remediation_program_seed_consumption_closure_ready": true,
   "remediation_seed_to_self_build_program_synthesis_ready": true,
   "github_action_execution_surface_ready": true,
-  "executable_generated_program_materialization_ready": true
+  "executable_generated_program_materialization_ready": true,
+  "generated_program_live_admission_ready": true
 }

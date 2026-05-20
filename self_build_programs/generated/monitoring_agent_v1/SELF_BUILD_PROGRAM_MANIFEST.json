@@ -11,5 +11,5 @@
   "packs_root": ".\\self_build_programs\\generated\\monitoring_agent_v1\\packs",
   "tasks_root": ".\\self_build_programs\\generated\\monitoring_agent_v1\\tasks",
   "patches_root": ".\\self_build_programs\\generated\\monitoring_agent_v1\\patches",
-  "admission_status": "NOT_ADMITTED_YET"
+  "admission_status": "ADMITTED_TO_LIVE_EXECUTION"
 }

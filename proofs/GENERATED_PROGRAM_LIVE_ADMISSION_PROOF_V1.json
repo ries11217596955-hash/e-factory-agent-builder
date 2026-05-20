@@ -1,0 +1,16 @@
+{
+  "proof_id": "GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1",
+  "run_id": "GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001__PACK_1",
+  "status": "PASS",
+  "admitted_program_manifest": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "admitted_registry_entry_count": 3,
+  "admitted_capability_count": 3,
+  "admitted_task_count": 3,
+  "activated_task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+  "activated_capability_id": "generated_monitoring_agent_v1_profile_materialization_v1",
+  "selected_live_pack_id": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+  "selected_live_entry_script": "self_build_programs/generated/monitoring_agent_v1/packs/GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1/APPLY.ps1",
+  "next_runtime_step": "Run normal SELF_BUILD with MaxPacks = 3 to consume the admitted generated program.",
+  "conclusion": "Builder can now admit an executable generated self-build program into the live execution contour, leaving it ready for ordinary serial self-build consumption.",
+  "report_path": ".\\reports\\generated_program_live_admission\\MONITORING_AGENT_V1_LIVE_ADMISSION.json"
+}

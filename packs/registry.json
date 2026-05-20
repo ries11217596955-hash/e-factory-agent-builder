@@ -378,6 +378,27 @@
       "pack_contract_path": "packs/PHASE57_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1/PACK.json",
       "entry_script": "packs/PHASE57_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
+    },
+    {
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+      "pack_contract_path": "self_build_programs/generated/monitoring_agent_v1/packs/GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1/PACK.json",
+      "entry_script": "self_build_programs/generated/monitoring_agent_v1/packs/GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1_001",
+      "pack_contract_path": "self_build_programs/generated/monitoring_agent_v1/packs/GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1/PACK.json",
+      "entry_script": "self_build_programs/generated/monitoring_agent_v1/packs/GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+      "pack_contract_path": "self_build_programs/generated/monitoring_agent_v1/packs/GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1/PACK.json",
+      "entry_script": "self_build_programs/generated/monitoring_agent_v1/packs/GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
     }
   ]
 }

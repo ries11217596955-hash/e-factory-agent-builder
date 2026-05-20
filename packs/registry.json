@@ -1,5 +1,5 @@
 {
-  "registry_version": "16.0",
+  "registry_version": "17.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -412,6 +412,13 @@
       "task_id": "TASK_RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1_001",
       "pack_contract_path": "packs/PHASE59_RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1/PACK.json",
       "entry_script": "packs/PHASE59_RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE60_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1",
+      "task_id": "TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001",
+      "pack_contract_path": "packs/PHASE60_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1/PACK.json",
+      "entry_script": "packs/PHASE60_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

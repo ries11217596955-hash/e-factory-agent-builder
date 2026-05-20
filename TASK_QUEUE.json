@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -503,6 +503,14 @@
       "objective": "Refactor generated self-build executable materialization so APPLY.ps1 scripts are rendered from program-owned execution recipes while preserving the proven monitoring_agent_v1 behavior contour.",
       "expected_gate": "RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1",
       "build_task_path": "tasks/TASK_RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001",
+      "capability_id": "generalized_generated_program_live_admission_contract_v1",
+      "status": "ACTIVE",
+      "objective": "Generalize live admission so admission is driven by manifest-rooted program contracts rather than hardcoded fixture assumptions. Validate admissibility via contract validation on monitoring_agent_v1 without re-admission.",
+      "expected_gate": "GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1",
+      "build_task_path": "tasks/TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001.json"
     }
   ]
 }

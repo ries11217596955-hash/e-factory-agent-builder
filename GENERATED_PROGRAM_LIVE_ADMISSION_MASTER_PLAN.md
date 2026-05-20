@@ -32,8 +32,21 @@ Externalize generated self-build pack execution intent into program-owned machin
 
 ## PHASE59 - Recipe-Driven Executable Materialization
 
-Status: SEEDED / RECIPE-DRIVEN EXECUTABLE MATERIALIZATION.
+Status: CLOSED.
 
 Refactor executable generated-program materialization so generated `APPLY.ps1` scripts are rendered from program-owned execution recipe JSON artifacts rather than fixture-owned Builder code, while preserving the already-proven monitoring-agent generated program behavior.
 
-Next frontier after PHASE59: generalized generated-program live admission contract.
+## PHASE60 - Generalized Generated Program Live Admission Contract
+
+Status: SEEDED / GENERALIZED LIVE ADMISSION CONTRACT.
+
+Generalize live admission so admission is driven by manifest-rooted program contracts rather than hardcoded fixture assumptions. This phase validates admissibility of `monitoring_agent_v1` via contract validation without re-admission, proving that the admission module can operate in a contract-driven mode.
+
+Key scope constraints for PHASE60:
+- Do not re-admit monitoring_agent_v1 into live execution
+- Do not modify any live admission state established in PHASE57
+- Do not modify registry, roadmap, or queue files
+- Validation must run in CONTRACT_VALIDATION_ONLY mode
+- Use manifest-driven contracts to validate, not hardcoded fixtures
+
+Next frontier after PHASE60: second generated program family proof.

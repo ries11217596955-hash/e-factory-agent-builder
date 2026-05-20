@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -447,6 +447,14 @@
       "objective": "Evaluate whether the materialized generated monitoring-agent self-build program is safely admissible into live Builder execution, without admitting it.",
       "expected_gate": "GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1",
       "build_task_path": "tasks/TASK_GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1_001.json"
+    },
+    {
+      "task_id": "TASK_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1_001",
+      "capability_id": "executable_generated_program_materialization_v1",
+      "status": "ACTIVE",
+      "objective": "Materialize executable APPLY.ps1 entry scripts for the generated monitoring-agent self-build program without admitting it into live Builder execution.",
+      "expected_gate": "EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1",
+      "build_task_path": "tasks/TASK_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1_001.json"
     }
   ]
 }

@@ -364,6 +364,13 @@
       "pack_contract_path": "packs/PHASE55_GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1/PACK.json",
       "entry_script": "packs/PHASE55_GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1/APPLY.ps1",
       "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE56_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1",
+      "task_id": "TASK_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1_001",
+      "pack_contract_path": "packs/PHASE56_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1/PACK.json",
+      "entry_script": "packs/PHASE56_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1/APPLY.ps1",
+      "shell": "PowerShell"
     }
   ]
 }

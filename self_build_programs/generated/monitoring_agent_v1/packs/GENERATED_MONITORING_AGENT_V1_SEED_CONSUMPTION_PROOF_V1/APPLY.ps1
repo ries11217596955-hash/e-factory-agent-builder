@@ -7,13 +7,81 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-$PackId = "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1"
-$TaskId = "TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001"
-$CapabilityId = "generated_monitoring_agent_v1_seed_consumption_proof_v1"
-$ExpectedGate = "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1"
-$SemanticRole = "SEED_CONSUMPTION_PROOF"
-$NextCapabilityId = ""
-$NextTaskId = ""
+$Recipe = @'
+{
+  "recipe_id": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_RECIPE",
+  "program_manifest_path": "self_build_programs/generated/monitoring_agent_v1/SELF_BUILD_PROGRAM_MANIFEST.json",
+  "target_profile_id": "monitoring_agent_v1",
+  "target_agent_kind": "monitoring_agent",
+  "pack_id": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+  "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+  "capability_id": "generated_monitoring_agent_v1_seed_consumption_proof_v1",
+  "expected_gate": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+  "semantic_role": "SEED_CONSUMPTION_PROOF",
+  "recipe_kind": "SEED_CONSUMPTION_PROOF_RECIPE_V1",
+  "input_artifacts": {
+    "program_seed_path": ".\\remediation_programs\\MONITORING_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+    "dependent_generated_profile_proof_path": ".\\proofs\\GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1.json",
+    "dependent_generated_closure_proof_path": ".\\proofs\\GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1.json"
+  },
+  "invocation_contract": {
+    "invocation_kind": "ARTIFACT_CONSISTENCY_PROOF",
+    "required_prior_generated_proofs": [
+      ".\\proofs\\GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1.json",
+      ".\\proofs\\GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1.json"
+    ]
+  },
+  "expected_assertions": {
+    "seed_profile_id": "monitoring_agent_v1",
+    "seed_agent_kind": "monitoring_agent",
+    "cross_proof_consistency_rules": [
+      "profile_proof.status == PASS",
+      "profile_proof.selected_profile_id == seed.candidate_profile_id",
+      "closure_proof.status == PASS",
+      "closure_proof.selected_profile_id == seed.candidate_profile_id",
+      "closure_proof.specialized_operation == monitoring_alert_triage_queue"
+    ],
+    "expected_specialized_operation": "monitoring_alert_triage_queue"
+  },
+  "proof_contract": {
+    "proof_id": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+    "required_fields": [
+      "proof_id",
+      "run_id",
+      "status",
+      "task_id",
+      "capability_id",
+      "expected_gate",
+      "semantic_role",
+      "program_seed_path",
+      "seed_profile_id",
+      "seed_agent_kind",
+      "profile_proof_path",
+      "profile_selected_id",
+      "closure_proof_path",
+      "closure_selected_profile_id",
+      "closure_specialized_operation",
+      "conclusion"
+    ],
+    "status": "PASS"
+  },
+  "next_transition": {
+    "next_capability_id": "",
+    "next_task_id": "",
+    "queue_action": "COMPLETE_GENERATED_PROGRAM"
+  }
+}
+'@ | ConvertFrom-Json
+
+$PackId = [string]$Recipe.pack_id
+$TaskId = [string]$Recipe.task_id
+$CapabilityId = [string]$Recipe.capability_id
+$ExpectedGate = [string]$Recipe.expected_gate
+$SemanticRole = [string]$Recipe.semantic_role
+$RecipeKind = [string]$Recipe.recipe_kind
+$NextCapabilityId = [string]$Recipe.next_transition.next_capability_id
+$NextTaskId = [string]$Recipe.next_transition.next_task_id
+$QueueAction = [string]$Recipe.next_transition.queue_action
 
 function Invoke-NativeGitCommand {
     param(
@@ -51,9 +119,64 @@ function Assert-PathExists {
         [string]$Label
     )
 
+    if ([string]::IsNullOrWhiteSpace($Path)) {
+        throw "$Label path is required."
+    }
     if (-not (Test-Path $Path)) {
         throw "$Label missing: $Path"
     }
+}
+
+function Assert-RequiredValue {
+    param(
+        [object]$Value,
+        [string]$Label
+    )
+
+    if ($null -eq $Value -or [string]::IsNullOrWhiteSpace([string]$Value)) {
+        throw "$Label is required by execution recipe."
+    }
+
+    return [string]$Value
+}
+
+function Get-OptionalValue {
+    param(
+        [object]$Object,
+        [string]$PropertyName
+    )
+
+    if ($null -eq $Object) {
+        return ""
+    }
+    if (-not $Object.PSObject.Properties.Name.Contains($PropertyName)) {
+        return ""
+    }
+    if ($null -eq $Object.$PropertyName) {
+        return ""
+    }
+    return [string]$Object.$PropertyName
+}
+
+function Get-RequiredRecipeValue {
+    param(
+        [object]$Object,
+        [string]$PropertyName,
+        [string]$Label
+    )
+
+    $Value = Get-OptionalValue -Object $Object -PropertyName $PropertyName
+    return Assert-RequiredValue -Value $Value -Label $Label
+}
+
+function Expand-RecipeTemplate {
+    param(
+        [string]$TemplateValue,
+        [string]$RunId,
+        [string]$PackId
+    )
+
+    return $TemplateValue.Replace("{run_id}", $RunId).Replace("{pack_id}", $PackId)
 }
 
 function Add-CompletedCapability {
@@ -72,7 +195,8 @@ function Complete-GeneratedProgramState {
         [string]$CompletedCapabilityId,
         [string]$CompletedTaskId,
         [string]$FollowingCapabilityId,
-        [string]$FollowingTaskId
+        [string]$FollowingTaskId,
+        [string]$QueueAction
     )
 
     $State = Get-Content ".\GENESIS_STATE.json" -Raw | ConvertFrom-Json
@@ -99,7 +223,11 @@ function Complete-GeneratedProgramState {
     Add-CompletedCapability -State $State -CompletedCapabilityId $CompletedCapabilityId
     $State.last_run_status = "PASS"
 
-    if (-not [string]::IsNullOrWhiteSpace($FollowingCapabilityId)) {
+    if ($QueueAction -eq "ACTIVATE_NEXT_GENERATED_TASK") {
+        if ([string]::IsNullOrWhiteSpace($FollowingCapabilityId) -or [string]::IsNullOrWhiteSpace($FollowingTaskId)) {
+            throw "Recipe next_transition must provide next capability and next task for ACTIVATE_NEXT_GENERATED_TASK."
+        }
+
         $NextCap = $Roadmap.capabilities |
             Where-Object { $_.id -eq $FollowingCapabilityId } |
             Select-Object -First 1
@@ -119,9 +247,12 @@ function Complete-GeneratedProgramState {
             $State.current_phase = [string]$NextCap.phase
         }
     }
-    else {
+    elseif ($QueueAction -eq "COMPLETE_GENERATED_PROGRAM") {
         $Queue.active_task_id = "NONE"
         $State.current_capability = $CompletedCapabilityId
+    }
+    else {
+        throw "Unsupported recipe next_transition.queue_action: $QueueAction"
     }
 
     $Roadmap | ConvertTo-Json -Depth 100 |
@@ -134,54 +265,88 @@ function Complete-GeneratedProgramState {
         Set-Content ".\TASK_QUEUE.json" -Encoding UTF8
 }
 
-function Invoke-GeneratedProfileMaterialization {
+function Assert-OperationalResult {
+    param(
+        [object]$Result,
+        [object]$Expected,
+        [string]$ProfileId,
+        [string]$Context
+    )
+
+    if ($Result.result.operation -ne $Expected.operation) {
+        throw "$Context specialized operation mismatch."
+    }
+    if ($Result.diagnostics.specialization_profile -ne $ProfileId) {
+        throw "$Context specialization diagnostics mismatch."
+    }
+    if ($Result.result.next_alert_id -ne $Expected.next_alert_id) {
+        throw "$Context next alert mismatch."
+    }
+    if ($Result.result.escalation_status -ne $Expected.escalation_status) {
+        throw "$Context escalation status mismatch."
+    }
+}
+
+function Invoke-GeneratedProfileMaterializationFromRecipe {
     param([string]$RunId)
 
-    $ProgramSeedPath = ".\remediation_programs\MONITORING_AGENT_REMEDIATION_PROGRAM_SEED_V1.json"
-    $SpecPath = ".\specs\monitoring_profile_proof\MONITORING_AGENT_PROFILE_PROOF_SPEC.json"
+    $Artifacts = $Recipe.input_artifacts
+    $Invocation = $Recipe.invocation_contract
+    $Expected = $Recipe.expected_assertions
+    $BuildContract = $Invocation.external_agent_build
 
-    Assert-PathExists -Path $ProgramSeedPath -Label "Canonical monitoring remediation program seed"
-    Assert-PathExists -Path $SpecPath -Label "Monitoring profile proof spec"
-    Assert-PathExists -Path ".\modules\resolve_specialization_overlay.ps1" -Label "Specialization overlay resolver"
-    Assert-PathExists -Path ".\modules\invoke_external_agent_build.ps1" -Label "External agent build module"
+    $ProgramSeedPath = Get-RequiredRecipeValue -Object $Artifacts -PropertyName "program_seed_path" -Label "program seed path"
+    $SpecPath = Get-RequiredRecipeValue -Object $BuildContract -PropertyName "spec_path" -Label "profile build spec path"
+    $ResolverModulePath = Get-RequiredRecipeValue -Object $Artifacts -PropertyName "resolver_module_path" -Label "resolver module path"
+    $ExternalBuildModulePath = Get-RequiredRecipeValue -Object $Artifacts -PropertyName "external_build_module_path" -Label "external build module path"
 
-    . ".\modules\resolve_specialization_overlay.ps1"
-    . ".\modules\invoke_external_agent_build.ps1"
+    Assert-PathExists -Path $ProgramSeedPath -Label "Generated program seed"
+    Assert-PathExists -Path $SpecPath -Label "Generated profile proof spec"
+    Assert-PathExists -Path $ResolverModulePath -Label "Specialization overlay resolver"
+    Assert-PathExists -Path $ExternalBuildModulePath -Label "External agent build module"
+
+    . $ResolverModulePath
+    . $ExternalBuildModulePath
 
     $Seed = Get-Content $ProgramSeedPath -Raw | ConvertFrom-Json
-    if ($Seed.status -ne "PROGRAM_SEED_READY") { throw "Program seed status mismatch." }
-    if ($Seed.candidate_profile_id -ne "monitoring_agent_v1") { throw "Program seed profile target mismatch." }
-    if ($Seed.candidate_agent_kind -ne "monitoring_agent") { throw "Program seed kind target mismatch." }
+    if ($Seed.status -ne $Expected.program_seed_status) { throw "Program seed status mismatch." }
+    if ($Seed.candidate_profile_id -ne $Expected.expected_profile_id) { throw "Program seed profile target mismatch." }
+    if ($Seed.candidate_agent_kind -ne $Expected.expected_agent_kind) { throw "Program seed kind target mismatch." }
 
+    $ResolverContract = $Invocation.resolve_specialization_overlay
     $Resolution = Resolve-SpecializationOverlay `
-        -AgentKind "monitoring_agent" `
-        -PackageProfile "operational_specialized"
+        -AgentKind (Get-RequiredRecipeValue -Object $ResolverContract -PropertyName "agent_kind" -Label "resolver agent kind") `
+        -PackageProfile (Get-RequiredRecipeValue -Object $ResolverContract -PropertyName "package_profile" -Label "resolver package profile")
 
-    if ($Resolution.status -ne "PASS") { throw "Resolver must return PASS for monitoring_agent." }
-    if ($Resolution.profile_id -ne "monitoring_agent_v1") { throw "Unexpected monitoring specialization profile id." }
+    if ($Resolution.status -ne $Expected.resolver_status) { throw "Resolver status mismatch." }
+    if ($Resolution.profile_id -ne $Expected.expected_profile_id) { throw "Unexpected specialization profile id." }
+
+    $RunRootTemplate = Get-RequiredRecipeValue -Object $BuildContract -PropertyName "run_root_template" -Label "profile build run root template"
+    $RunRoot = Expand-RecipeTemplate -TemplateValue $RunRootTemplate -RunId $RunId -PackId $PackId
 
     $Build = Invoke-ExternalAgentBuild `
-        -SpecPath $SpecPath `
-        -OutputRoot ".\generated_agents" `
-        -RunRoot ".\runs\$RunId\$PackId\profile_build" `
+        -SpecPath (Get-RequiredRecipeValue -Object $BuildContract -PropertyName "spec_path" -Label "profile build spec path") `
+        -OutputRoot (Get-RequiredRecipeValue -Object $BuildContract -PropertyName "output_root" -Label "profile build output root") `
+        -RunRoot $RunRoot `
         -OverlayRoot $Resolution.overlay_root
 
-    if ($Build.status -ne "PASS") { throw "Monitoring generated profile build must be PASS." }
-    if ($Build.overlay.status -ne "PASS") { throw "Monitoring generated overlay apply must be PASS." }
+    if ($Build.status -ne $Recipe.proof_contract.status) { throw "Generated profile build status mismatch." }
+    if ($Build.overlay.status -ne $Expected.overlay_status) { throw "Generated profile overlay status mismatch." }
 
     $ValidationOutput = $Build.validation.output_result_path
-    Assert-PathExists -Path $ValidationOutput -Label "Monitoring generated validation output"
+    Assert-PathExists -Path $ValidationOutput -Label "Generated profile validation output"
 
     $Result = Get-Content $ValidationOutput -Raw | ConvertFrom-Json
-    if ($Result.result.operation -ne "monitoring_alert_triage_queue") { throw "Monitoring specialized operation mismatch." }
-    if ($Result.diagnostics.specialization_profile -ne "monitoring_agent_v1") { throw "Monitoring specialization diagnostics mismatch." }
-    if ($Result.result.next_alert_id -ne "cpu_spike") { throw "Monitoring next alert mismatch." }
-    if ($Result.result.escalation_status -ne "ESCALATE") { throw "Monitoring escalation status mismatch." }
+    Assert-OperationalResult `
+        -Result $Result `
+        -Expected $Expected.operational_result `
+        -ProfileId $Expected.expected_profile_id `
+        -Context "Generated profile materialization"
 
     $Proof = [ordered]@{
-        proof_id = $PackId
+        proof_id = [string]$Recipe.proof_contract.proof_id
         run_id = $RunId
-        status = "PASS"
+        status = [string]$Recipe.proof_contract.status
         task_id = $TaskId
         capability_id = $CapabilityId
         expected_gate = $ExpectedGate
@@ -193,7 +358,7 @@ function Invoke-GeneratedProfileMaterialization {
         specialized_operation = $Result.result.operation
         next_alert_id = $Result.result.next_alert_id
         escalation_status = $Result.result.escalation_status
-        conclusion = "Generated monitoring_agent_v1 profile materialization executed through the existing validated monitoring profile contour."
+        conclusion = "Generated self-build profile materialization executed from program-owned execution recipe $($Recipe.recipe_id)."
     }
 
     $ProofPath = ".\proofs\$PackId.json"
@@ -203,40 +368,50 @@ function Invoke-GeneratedProfileMaterialization {
     return $ProofPath
 }
 
-function Invoke-GeneratedClosureProof {
+function Invoke-GeneratedClosureProofFromRecipe {
     param([string]$RunId)
 
-    $RawIdeaPath = ".\specs\monitoring_gap_proof\RAW_IDEA_MONITORING_GAP_PROOF.json"
-    Assert-PathExists -Path $RawIdeaPath -Label "Monitoring gap proof raw idea"
+    $Artifacts = $Recipe.input_artifacts
+    $Invocation = $Recipe.invocation_contract
+    $Expected = $Recipe.expected_assertions
 
-    & ".\orchestrator\run.ps1" `
-        -Mode BUILD_FROM_RAW_IDEA_SPECIALIZED `
+    $RawIdeaPath = Get-RequiredRecipeValue -Object $Artifacts -PropertyName "raw_idea_path" -Label "raw idea path"
+    $OrchestratorPath = Get-RequiredRecipeValue -Object $Artifacts -PropertyName "orchestrator_path" -Label "orchestrator path"
+    Assert-PathExists -Path $RawIdeaPath -Label "Generated closure raw idea"
+    Assert-PathExists -Path $OrchestratorPath -Label "Builder orchestrator"
+
+    & $OrchestratorPath `
+        -Mode (Get-RequiredRecipeValue -Object $Invocation -PropertyName "mode" -Label "orchestrator mode") `
         -RunId $RunId `
         -RawIdeaPath $RawIdeaPath `
-        -OutputRoot ".\generated_agents" |
+        -OutputRoot (Get-RequiredRecipeValue -Object $Invocation -PropertyName "output_root" -Label "orchestrator output root") |
         Out-Host
 
-    $ReportPath = ".\runs\$RunId\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json"
-    Assert-PathExists -Path $ReportPath -Label "Monitoring generated closure factory report"
+    $ReportPathTemplate = Get-RequiredRecipeValue -Object $Invocation -PropertyName "report_path_template" -Label "factory report path template"
+    $ReportPath = Expand-RecipeTemplate -TemplateValue $ReportPathTemplate -RunId $RunId -PackId $PackId
+    Assert-PathExists -Path $ReportPath -Label "Generated closure factory report"
 
     $Report = Get-Content $ReportPath -Raw | ConvertFrom-Json
-    if ($Report.status -ne "PASS") { throw "Monitoring generated closure factory report must be PASS." }
-    if ($Report.specialization.profile_id -ne "monitoring_agent_v1") { throw "Monitoring generated closure did not route to monitoring_agent_v1." }
-    if ($null -ne $Report.gap_report) { throw "Monitoring generated closure path must not retain a gap report." }
-    if ($Report.target_build.overlay_status -ne "PASS") { throw "Monitoring generated closure overlay status must be PASS." }
+    if ($Report.status -ne $Expected.factory_report_status) { throw "Generated closure factory report status mismatch." }
+    if ($Report.specialization.profile_id -ne $Expected.expected_specialization_profile_id) { throw "Generated closure specialization profile mismatch." }
+    if ($Expected.PSObject.Properties.Name.Contains("gap_report") -and $null -eq $Expected.gap_report -and $null -ne $Report.gap_report) {
+        throw "Generated closure path must not retain a gap report."
+    }
+    if ($Report.target_build.overlay_status -ne $Expected.overlay_status) { throw "Generated closure overlay status mismatch." }
 
-    Assert-PathExists -Path $Report.target_build.validation_output -Label "Monitoring generated closure validation output"
+    Assert-PathExists -Path $Report.target_build.validation_output -Label "Generated closure validation output"
     $Result = Get-Content $Report.target_build.validation_output -Raw | ConvertFrom-Json
 
-    if ($Result.result.operation -ne "monitoring_alert_triage_queue") { throw "Monitoring generated closure specialized operation mismatch." }
-    if ($Result.diagnostics.specialization_profile -ne "monitoring_agent_v1") { throw "Monitoring generated closure specialization diagnostics mismatch." }
-    if ($Result.result.next_alert_id -ne "cpu_spike") { throw "Monitoring generated closure next alert mismatch." }
-    if ($Result.result.escalation_status -ne "ESCALATE") { throw "Monitoring generated closure escalation status mismatch." }
+    Assert-OperationalResult `
+        -Result $Result `
+        -Expected $Expected.operational_result `
+        -ProfileId $Expected.expected_specialization_profile_id `
+        -Context "Generated closure proof"
 
     $Proof = [ordered]@{
-        proof_id = $PackId
+        proof_id = [string]$Recipe.proof_contract.proof_id
         run_id = $RunId
-        status = "PASS"
+        status = [string]$Recipe.proof_contract.status
         task_id = $TaskId
         capability_id = $CapabilityId
         expected_gate = $ExpectedGate
@@ -249,7 +424,7 @@ function Invoke-GeneratedClosureProof {
         specialized_operation = $Result.result.operation
         next_alert_id = $Result.result.next_alert_id
         escalation_status = $Result.result.escalation_status
-        conclusion = "Generated monitoring_agent_v1 closure proof reran the formerly missing monitoring specialization route and closed it to PASS."
+        conclusion = "Generated self-build closure proof executed from program-owned execution recipe $($Recipe.recipe_id)."
     }
 
     $ProofPath = ".\proofs\$PackId.json"
@@ -259,33 +434,74 @@ function Invoke-GeneratedClosureProof {
     return $ProofPath
 }
 
-function Invoke-GeneratedSeedConsumptionProof {
+function Assert-CrossProofRule {
+    param(
+        [string]$Rule,
+        [object]$Seed,
+        [object]$ProfileProof,
+        [object]$ClosureProof
+    )
+
+    switch -Regex ($Rule) {
+        "^profile_proof\.status == (.+)$" {
+            if ($ProfileProof.status -ne $Matches[1]) { throw "Cross-proof rule failed: $Rule" }
+            return
+        }
+        "^profile_proof\.selected_profile_id == seed\.candidate_profile_id$" {
+            if ($ProfileProof.selected_profile_id -ne $Seed.candidate_profile_id) { throw "Cross-proof rule failed: $Rule" }
+            return
+        }
+        "^closure_proof\.status == (.+)$" {
+            if ($ClosureProof.status -ne $Matches[1]) { throw "Cross-proof rule failed: $Rule" }
+            return
+        }
+        "^closure_proof\.selected_profile_id == seed\.candidate_profile_id$" {
+            if ($ClosureProof.selected_profile_id -ne $Seed.candidate_profile_id) { throw "Cross-proof rule failed: $Rule" }
+            return
+        }
+        "^closure_proof\.specialized_operation == (.+)$" {
+            if ($ClosureProof.specialized_operation -ne $Matches[1]) { throw "Cross-proof rule failed: $Rule" }
+            return
+        }
+        default {
+            throw "Unsupported generated seed-consumption cross-proof rule: $Rule"
+        }
+    }
+}
+
+function Invoke-GeneratedSeedConsumptionProofFromRecipe {
     param([string]$RunId)
 
-    $ProgramSeedPath = ".\remediation_programs\MONITORING_AGENT_REMEDIATION_PROGRAM_SEED_V1.json"
-    $ProfileProofPath = ".\proofs\GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1.json"
-    $ClosureProofPath = ".\proofs\GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1.json"
+    $Artifacts = $Recipe.input_artifacts
+    $Expected = $Recipe.expected_assertions
 
-    Assert-PathExists -Path $ProgramSeedPath -Label "Canonical remediation program seed"
-    Assert-PathExists -Path $ProfileProofPath -Label "Generated monitoring profile proof"
-    Assert-PathExists -Path $ClosureProofPath -Label "Generated monitoring closure proof"
+    $ProgramSeedPath = Get-RequiredRecipeValue -Object $Artifacts -PropertyName "program_seed_path" -Label "program seed path"
+    $ProfileProofPath = Get-RequiredRecipeValue -Object $Artifacts -PropertyName "dependent_generated_profile_proof_path" -Label "dependent profile proof path"
+    $ClosureProofPath = Get-RequiredRecipeValue -Object $Artifacts -PropertyName "dependent_generated_closure_proof_path" -Label "dependent closure proof path"
+
+    Assert-PathExists -Path $ProgramSeedPath -Label "Generated program seed"
+    Assert-PathExists -Path $ProfileProofPath -Label "Generated profile proof"
+    Assert-PathExists -Path $ClosureProofPath -Label "Generated closure proof"
 
     $Seed = Get-Content $ProgramSeedPath -Raw | ConvertFrom-Json
     $ProfileProof = Get-Content $ProfileProofPath -Raw | ConvertFrom-Json
     $ClosureProof = Get-Content $ClosureProofPath -Raw | ConvertFrom-Json
 
-    if ($Seed.candidate_profile_id -ne "monitoring_agent_v1") { throw "Seed profile id mismatch." }
-    if ($Seed.candidate_agent_kind -ne "monitoring_agent") { throw "Seed agent kind mismatch." }
-    if ($ProfileProof.status -ne "PASS") { throw "Generated profile proof must be PASS." }
-    if ($ProfileProof.selected_profile_id -ne $Seed.candidate_profile_id) { throw "Generated profile proof does not consume the seed profile id." }
-    if ($ClosureProof.status -ne "PASS") { throw "Generated closure proof must be PASS." }
-    if ($ClosureProof.selected_profile_id -ne $Seed.candidate_profile_id) { throw "Generated closure proof does not close through the seed profile id." }
-    if ($ClosureProof.specialized_operation -ne "monitoring_alert_triage_queue") { throw "Generated closure specialized operation mismatch." }
+    if ($Seed.candidate_profile_id -ne $Expected.seed_profile_id) { throw "Seed profile id mismatch." }
+    if ($Seed.candidate_agent_kind -ne $Expected.seed_agent_kind) { throw "Seed agent kind mismatch." }
+
+    foreach ($Rule in @($Expected.cross_proof_consistency_rules)) {
+        Assert-CrossProofRule -Rule $Rule -Seed $Seed -ProfileProof $ProfileProof -ClosureProof $ClosureProof
+    }
+
+    if ($ClosureProof.specialized_operation -ne $Expected.expected_specialized_operation) {
+        throw "Generated closure specialized operation mismatch."
+    }
 
     $Proof = [ordered]@{
-        proof_id = $PackId
+        proof_id = [string]$Recipe.proof_contract.proof_id
         run_id = $RunId
-        status = "PASS"
+        status = [string]$Recipe.proof_contract.status
         task_id = $TaskId
         capability_id = $CapabilityId
         expected_gate = $ExpectedGate
@@ -298,7 +514,7 @@ function Invoke-GeneratedSeedConsumptionProof {
         closure_proof_path = $ClosureProofPath
         closure_selected_profile_id = $ClosureProof.selected_profile_id
         closure_specialized_operation = $ClosureProof.specialized_operation
-        conclusion = "Generated monitoring_agent_v1 seed consumption proof confirms the generated profile and closure packs consumed the remediation seed into a serial executable contour."
+        conclusion = "Generated self-build seed consumption proof executed from program-owned execution recipe $($Recipe.recipe_id)."
     }
 
     $ProofPath = ".\proofs\$PackId.json"
@@ -311,22 +527,23 @@ function Invoke-GeneratedSeedConsumptionProof {
 if (-not $InvokedByOrchestrator) { throw "Pack must be invoked by orchestrator." }
 Set-Location $RepoRoot
 
-Write-Host "PACK=$PackId"
-Write-Host "GENERATED_PACK_ROLE=$SemanticRole"
-Write-Host "GENERATED_PACK_TASK=$TaskId"
+Write-Host "PACK=GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1"
+Write-Host "GENERATED_PACK_ROLE=SEED_CONSUMPTION_PROOF"
+Write-Host "GENERATED_PACK_TASK=TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001"
 
-$ProofPath = switch ($SemanticRole) {
-    "PROFILE_MATERIALIZATION" { Invoke-GeneratedProfileMaterialization -RunId $RunId }
-    "SPECIALIZED_CLOSURE_PROOF" { Invoke-GeneratedClosureProof -RunId $RunId }
-    "SEED_CONSUMPTION_PROOF" { Invoke-GeneratedSeedConsumptionProof -RunId $RunId }
-    default { throw "Unsupported generated semantic role: $SemanticRole" }
+$ProofPath = switch ($RecipeKind) {
+    "PROFILE_MATERIALIZATION_RECIPE_V1" { Invoke-GeneratedProfileMaterializationFromRecipe -RunId $RunId }
+    "SPECIALIZED_CLOSURE_PROOF_RECIPE_V1" { Invoke-GeneratedClosureProofFromRecipe -RunId $RunId }
+    "SEED_CONSUMPTION_PROOF_RECIPE_V1" { Invoke-GeneratedSeedConsumptionProofFromRecipe -RunId $RunId }
+    default { throw "Unsupported generated execution recipe kind: $RecipeKind" }
 }
 
 Complete-GeneratedProgramState `
     -CompletedCapabilityId $CapabilityId `
     -CompletedTaskId $TaskId `
     -FollowingCapabilityId $NextCapabilityId `
-    -FollowingTaskId $NextTaskId
+    -FollowingTaskId $NextTaskId `
+    -QueueAction $QueueAction
 
 Invoke-NativeGitCommand -Label "ADD" -Arguments @(
     "add",
@@ -338,7 +555,7 @@ Invoke-NativeGitCommand -Label "ADD" -Arguments @(
 Invoke-NativeGitCommand -Label "COMMIT" -Arguments @(
     "commit",
     "-m",
-    "Generated monitoring_agent_v1 self-build pack $SemanticRole"
+    "Generated self-build pack $SemanticRole from execution recipe"
 )
 Invoke-NativeGitCommand -Label "PUSH" -Arguments @(
     "push",

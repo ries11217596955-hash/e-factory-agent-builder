@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -499,7 +499,7 @@
     {
       "task_id": "TASK_RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1_001",
       "capability_id": "recipe_driven_generated_program_executable_materialization_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Refactor generated self-build executable materialization so APPLY.ps1 scripts are rendered from program-owned execution recipes while preserving the proven monitoring_agent_v1 behavior contour.",
       "expected_gate": "RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1",
       "build_task_path": "tasks/TASK_RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1_001.json"

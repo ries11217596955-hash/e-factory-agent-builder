@@ -384,7 +384,7 @@
     {
       "id": "recipe_driven_generated_program_executable_materialization_v1",
       "phase": "PHASE_59",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1"
     }
   ]

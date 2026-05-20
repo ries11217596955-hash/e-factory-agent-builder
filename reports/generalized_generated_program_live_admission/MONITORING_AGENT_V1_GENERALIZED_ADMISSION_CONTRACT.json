@@ -1,0 +1,22 @@
+{
+  "report_id": "MONITORING_AGENT_V1_GENERALIZED_ADMISSION_CONTRACT",
+  "task_id": "TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001",
+  "capability_id": "generalized_generated_program_live_admission_contract_v1",
+  "run_id": "GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001__PACK_1",
+  "status": "PASS",
+  "timestamp": "2026-05-20T15:21:01.9236883+04:00",
+  "validation_mode": "CONTRACT_VALIDATION_ONLY",
+  "program_manifest": ".\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "source_program_manifest": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "program_root": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1",
+  "target_profile_id": "monitoring_agent_v1",
+  "target_agent_kind": "monitoring_agent",
+  "resolved_pack_count": 3,
+  "resolved_capability_count": 3,
+  "resolved_task_count": 3,
+  "first_activatable_task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+  "first_activatable_capability_id": "generated_monitoring_agent_v1_profile_materialization_v1",
+  "admission_readiness_decision": "ADMISSION_READY",
+  "duplicate_guard_status": "PASS",
+  "protected_artifacts_unchanged": true
+}

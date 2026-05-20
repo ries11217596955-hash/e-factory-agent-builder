@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -507,7 +507,7 @@
     {
       "task_id": "TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001",
       "capability_id": "generalized_generated_program_live_admission_contract_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Generalize live admission so admission is driven by manifest-rooted program contracts rather than hardcoded fixture assumptions. Validate admissibility via contract validation on monitoring_agent_v1 without re-admission.",
       "expected_gate": "GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1",
       "build_task_path": "tasks/TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001.json"

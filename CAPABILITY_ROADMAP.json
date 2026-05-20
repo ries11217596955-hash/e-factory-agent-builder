@@ -370,7 +370,7 @@
     {
       "id": "generated_monitoring_agent_v1_seed_consumption_proof_v1",
       "phase": "GENERATED_MONITORING_AGENT_V1_PHASE_3",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
       "semantic_role": "SEED_CONSUMPTION_PROOF",
       "source_capability_hint": "remediation_program_seed_consumption_closure_proof_v1"

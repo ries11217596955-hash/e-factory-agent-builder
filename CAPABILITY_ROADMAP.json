@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "generated_program_execution_recipe_contract_v1",
-  "roadmap_version": "19.0",
+  "roadmap_id": "recipe_driven_generated_program_executable_materialization_v1",
+  "roadmap_version": "20.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -380,6 +380,12 @@
       "phase": "PHASE_58",
       "status": "COMPLETED",
       "gate": "GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1"
+    },
+    {
+      "id": "recipe_driven_generated_program_executable_materialization_v1",
+      "phase": "PHASE_59",
+      "status": "ACTIVE",
+      "gate": "RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1"
     }
   ]
 }

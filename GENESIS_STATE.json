@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_58",
-  "current_capability": "generated_program_execution_recipe_contract_v1",
+  "current_phase": "PHASE_59",
+  "current_capability": "recipe_driven_generated_program_executable_materialization_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",

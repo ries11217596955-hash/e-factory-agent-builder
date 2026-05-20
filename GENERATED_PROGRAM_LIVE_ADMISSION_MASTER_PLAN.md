@@ -26,8 +26,14 @@ The admitted generated monitoring-agent program has been consumed by normal `SEL
 
 ## PHASE58 - Execution Recipe Contract
 
-Status: SEEDED.
+Status: CLOSED.
 
 Externalize generated self-build pack execution intent into program-owned machine-readable recipe artifacts. This phase defines the recipe contract and proves the consumed `monitoring_agent_v1` generated program can carry recipes for all three generated semantic roles without refactoring executable materialization.
 
-Next frontier after PHASE58: recipe-driven generic executable materialization.
+## PHASE59 - Recipe-Driven Executable Materialization
+
+Status: SEEDED / RECIPE-DRIVEN EXECUTABLE MATERIALIZATION.
+
+Refactor executable generated-program materialization so generated `APPLY.ps1` scripts are rendered from program-owned execution recipe JSON artifacts rather than fixture-owned Builder code, while preserving the already-proven monitoring-agent generated program behavior.
+
+Next frontier after PHASE59: generalized generated-program live admission contract.

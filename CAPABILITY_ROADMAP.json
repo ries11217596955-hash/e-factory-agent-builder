@@ -354,7 +354,7 @@
     {
       "id": "generated_monitoring_agent_v1_profile_materialization_v1",
       "phase": "GENERATED_MONITORING_AGENT_V1_PHASE_1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_READY",
       "semantic_role": "PROFILE_MATERIALIZATION",
       "source_capability_hint": "monitoring_agent_specialization_profile_v1"
@@ -362,7 +362,7 @@
     {
       "id": "generated_monitoring_agent_v1_closure_proof_v1",
       "phase": "GENERATED_MONITORING_AGENT_V1_PHASE_2",
-      "status": "QUEUED",
+      "status": "ACTIVE",
       "gate": "GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1",
       "semantic_role": "SPECIALIZED_CLOSURE_PROOF",
       "source_capability_hint": "monitoring_agent_gap_closure_proof_v1"

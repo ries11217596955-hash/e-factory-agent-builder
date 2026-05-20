@@ -392,6 +392,12 @@
       "phase": "PHASE_60",
       "status": "COMPLETED",
       "gate": "GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1"
+    },
+    {
+      "id": "second_generated_program_family_proof_v1",
+      "phase": "PHASE_61",
+      "status": "ACTIVE",
+      "gate": "SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1"
     }
   ]
 }

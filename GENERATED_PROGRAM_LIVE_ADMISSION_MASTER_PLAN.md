@@ -38,15 +38,16 @@ Refactor executable generated-program materialization so generated `APPLY.ps1` s
 
 ## PHASE60 - Generalized Generated Program Live Admission Contract
 
-Status: SEEDED / GENERALIZED LIVE ADMISSION CONTRACT.
+Status: CLOSED.
 
 Generalize live admission so admission is driven by manifest-rooted program contracts rather than hardcoded fixture assumptions. This phase validates admissibility of `monitoring_agent_v1` via contract validation without re-admission, proving that the admission module can operate in a contract-driven mode.
 
-Key scope constraints for PHASE60:
-- Do not re-admit monitoring_agent_v1 into live execution
-- Do not modify any live admission state established in PHASE57
-- Do not modify registry, roadmap, or queue files
-- Validation must run in CONTRACT_VALIDATION_ONLY mode
-- Use manifest-driven contracts to validate, not hardcoded fixtures
+PHASE60 established a manifest-rooted contract validation mode for generated-program live admission and proved it against the already-admitted `monitoring_agent_v1` program without re-admission.
 
-Next frontier after PHASE60: second generated program family proof.
+## PHASE61 - Second Generated Program Family Proof
+
+Status: SEEDED / SECOND GENERATED PROGRAM FAMILY PROOF.
+
+Define and prove `remediation_intake_agent_v1` as a second generated self-build program family. This phase stops at formal family definition and readiness proof; it does not materialize executable generated packs, admit the second family into live execution, or execute any second-family self-build packs.
+
+Next frontier after PHASE61: second generated program family materialization v1.

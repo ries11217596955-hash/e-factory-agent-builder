@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -511,6 +511,14 @@
       "objective": "Generalize live admission so admission is driven by manifest-rooted program contracts rather than hardcoded fixture assumptions. Validate admissibility via contract validation on monitoring_agent_v1 without re-admission.",
       "expected_gate": "GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1",
       "build_task_path": "tasks/TASK_GENERALIZED_GENERATED_PROGRAM_LIVE_ADMISSION_CONTRACT_V1_001.json"
+    },
+    {
+      "task_id": "TASK_SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1_001",
+      "capability_id": "second_generated_program_family_proof_v1",
+      "status": "ACTIVE",
+      "objective": "Define and prove remediation_intake_agent_v1 as a second generated self-build program family ready to enter the generalized generated-program materialization contour without materializing, admitting, or consuming it.",
+      "expected_gate": "SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1",
+      "build_task_path": "tasks/TASK_SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1_001.json"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -455,6 +455,14 @@
       "objective": "Materialize executable APPLY.ps1 entry scripts for the generated monitoring-agent self-build program without admitting it into live Builder execution.",
       "expected_gate": "EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1",
       "build_task_path": "tasks/TASK_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001",
+      "capability_id": "generated_program_live_admission_proof_v1",
+      "status": "ACTIVE",
+      "objective": "Admit the executable monitoring_agent_v1 generated self-build program into live Builder execution without executing generated packs.",
+      "expected_gate": "GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1",
+      "build_task_path": "tasks/TASK_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001.json"
     }
   ]
 }

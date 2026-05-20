@@ -12,12 +12,14 @@ Evaluate a materialized generated self-build program package before live admissi
 
 ## PHASE56 - Executable Generated Program Materialization
 
-Status: SEEDED.
+Status: CLOSED.
 
 Upgrade generated self-build program materialization so generated packs include executable `APPLY.ps1` payloads with validator-backed behavior. This phase removes the PHASE55 non-executable-pack blocker but does not admit generated packs into the live registry, roadmap, or queue.
 
 ## PHASE57 - Generated Program Live Admission Proof
 
-Status: NEXT AFTER PHASE56 RUNTIME PROOF.
+Status: SEEDED / LIVE ADMISSION PROOF.
 
 Admit one executable generated self-build program into the live Builder registry, roadmap, and queue, then prove it can be consumed by the normal serial self-build execution contour.
+
+Next runtime after PHASE57: run normal `SELF_BUILD` with `MaxPacks = 3` to consume the admitted generated monitoring-agent program.

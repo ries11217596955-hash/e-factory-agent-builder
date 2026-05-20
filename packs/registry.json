@@ -371,6 +371,13 @@
       "pack_contract_path": "packs/PHASE56_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1/PACK.json",
       "entry_script": "packs/PHASE56_EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1/APPLY.ps1",
       "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE57_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1",
+      "task_id": "TASK_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001",
+      "pack_contract_path": "packs/PHASE57_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1/PACK.json",
+      "entry_script": "packs/PHASE57_GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
     }
   ]
 }

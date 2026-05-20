@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "executable_generated_program_materialization_v1",
-  "roadmap_version": "17.0",
+  "roadmap_id": "generated_program_live_admission_proof_v1",
+  "roadmap_version": "18.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -344,6 +344,12 @@
       "phase": "PHASE_56",
       "status": "COMPLETED",
       "gate": "EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1"
+    },
+    {
+      "id": "generated_program_live_admission_proof_v1",
+      "phase": "PHASE_57",
+      "status": "ACTIVE",
+      "gate": "GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -491,7 +491,7 @@
     {
       "task_id": "TASK_GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1_001",
       "capability_id": "generated_program_execution_recipe_contract_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Define and prove program-owned execution recipe artifacts for the already-consumed monitoring_agent_v1 generated self-build program.",
       "expected_gate": "GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1",
       "build_task_path": "tasks/TASK_GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1_001.json"

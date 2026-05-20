@@ -378,7 +378,7 @@
     {
       "id": "generated_program_execution_recipe_contract_v1",
       "phase": "PHASE_58",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1"
     }
   ]

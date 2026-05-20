@@ -342,7 +342,7 @@
     {
       "id": "executable_generated_program_materialization_v1",
       "phase": "PHASE_56",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1"
     }
   ]

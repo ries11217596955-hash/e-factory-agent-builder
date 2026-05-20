@@ -1,0 +1,37 @@
+{
+  "report_id": "MONITORING_AGENT_V1_EXECUTABLE_PACKS",
+  "run_id": "EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1_001__PACK_1",
+  "status": "PASS",
+  "evaluated_program_manifest": ".\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "materialized_apply_script_count": 3,
+  "materialized_packs": [
+    {
+      "order": 1,
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_profile_materialization_v1",
+      "semantic_role": "PROFILE_MATERIALIZATION",
+      "apply_script_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\packs\\GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1\\APPLY.ps1"
+    },
+    {
+      "order": 2,
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_closure_proof_v1",
+      "semantic_role": "SPECIALIZED_CLOSURE_PROOF",
+      "apply_script_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\packs\\GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1\\APPLY.ps1"
+    },
+    {
+      "order": 3,
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "task_id": "TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+      "capability_id": "generated_monitoring_agent_v1_seed_consumption_proof_v1",
+      "semantic_role": "SEED_CONSUMPTION_PROOF",
+      "apply_script_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\packs\\GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1\\APPLY.ps1"
+    }
+  ],
+  "admission_decision_after_materialization": "ADMISSION_READY",
+  "executable_pack_count": 3,
+  "blocked_pack_count": 0,
+  "next_required_capability": "generated_program_live_admission_proof_v1"
+}

@@ -1,0 +1,11 @@
+{
+  "proof_id": "EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1",
+  "run_id": "EXECUTABLE_GENERATED_PROGRAM_MATERIALIZATION_V1_001__PACK_1",
+  "status": "PASS",
+  "evaluated_program_manifest": ".\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "materialized_apply_script_count": 3,
+  "admission_decision_after_materialization": "ADMISSION_READY",
+  "next_required_capability": "generated_program_live_admission_proof_v1",
+  "report_path": ".\\reports\\executable_generated_program_materialization\\MONITORING_AGENT_V1_EXECUTABLE_PACKS.json",
+  "conclusion": "Builder can now materialize generated self-build programs into an executable admission-ready contour."
+}

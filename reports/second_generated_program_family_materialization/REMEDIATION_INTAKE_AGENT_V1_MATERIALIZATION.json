@@ -1,0 +1,35 @@
+{
+  "report_id": "REMEDIATION_INTAKE_AGENT_V1_MATERIALIZATION",
+  "run_id": "SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1_001__PACK_1",
+  "status": "PASS",
+  "timestamp": "2026-05-21T17:52:30.2376483+04:00",
+  "family_id": "remediation_intake_agent_v1",
+  "source_contract_path": ".\\specs\\second_generated_program_family\\remediation_intake_agent_v1\\REMEDIATION_INTAKE_AGENT_V1_GENERATED_PROGRAM_FAMILY_CONTRACT.json",
+  "materialized_program_root": ".\\self_build_programs\\generated\\remediation_intake_agent_v1",
+  "manifest_path": ".\\self_build_programs\\generated\\remediation_intake_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "manifest_identity": "remediation_intake_agent_v1",
+  "materialized_pack_count": 3,
+  "materialized_capability_count": 3,
+  "materialized_task_count": 3,
+  "materialized_execution_recipe_count": 3,
+  "materialized_apply_script_count": 3,
+  "admission_readiness_decision": "ADMISSION_READY",
+  "live_admission_attempted": false,
+  "generated_pack_execution_attempted": false,
+  "generated_pack_ids": [
+    "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+    "GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1",
+    "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1"
+  ],
+  "generated_capability_ids": [
+    "generated_remediation_intake_agent_v1_profile_materialization_v1",
+    "generated_remediation_intake_agent_v1_closure_proof_v1",
+    "generated_remediation_intake_agent_v1_seed_consumption_proof_v1"
+  ],
+  "generated_task_ids": [
+    "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+    "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_001",
+    "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001"
+  ],
+  "next_required_capability": "second_generated_program_family_live_admission_v1"
+}

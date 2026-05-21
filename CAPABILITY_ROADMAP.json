@@ -402,7 +402,7 @@
     {
       "id": "second_generated_program_family_materialization_v1",
       "phase": "PHASE_62",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1"
     }
   ]

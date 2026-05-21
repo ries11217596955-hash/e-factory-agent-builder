@@ -1,6 +1,6 @@
 {
   "roadmap_id": "recipe_driven_generated_program_executable_materialization_v1",
-  "roadmap_version": "20.0",
+  "roadmap_version": "21.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -398,6 +398,12 @@
       "phase": "PHASE_61",
       "status": "COMPLETED",
       "gate": "SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1"
+    },
+    {
+      "id": "second_generated_program_family_materialization_v1",
+      "phase": "PHASE_62",
+      "status": "ACTIVE",
+      "gate": "SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1"
     }
   ]
 }

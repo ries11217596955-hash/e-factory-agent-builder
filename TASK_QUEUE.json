@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -519,6 +519,14 @@
       "objective": "Define and prove remediation_intake_agent_v1 as a second generated self-build program family ready to enter the generalized generated-program materialization contour without materializing, admitting, or consuming it.",
       "expected_gate": "SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1",
       "build_task_path": "tasks/TASK_SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1_001",
+      "capability_id": "second_generated_program_family_materialization_v1",
+      "status": "ACTIVE",
+      "objective": "Materialize remediation_intake_agent_v1 from the second generated program family contract into a complete generated self-build program package without live admission or generated pack execution.",
+      "expected_gate": "SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1",
+      "build_task_path": "tasks/TASK_SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1_001.json"
     }
   ]
 }

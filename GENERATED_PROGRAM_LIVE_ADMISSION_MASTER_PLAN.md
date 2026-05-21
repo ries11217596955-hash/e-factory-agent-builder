@@ -46,8 +46,16 @@ PHASE60 established a manifest-rooted contract validation mode for generated-pro
 
 ## PHASE61 - Second Generated Program Family Proof
 
-Status: SEEDED / SECOND GENERATED PROGRAM FAMILY PROOF.
+Status: CLOSED.
 
 Define and prove `remediation_intake_agent_v1` as a second generated self-build program family. This phase stops at formal family definition and readiness proof; it does not materialize executable generated packs, admit the second family into live execution, or execute any second-family self-build packs.
 
-Next frontier after PHASE61: second generated program family materialization v1.
+PHASE61 proved `remediation_intake_agent_v1` as the second generated self-build program family and declared `second_generated_program_family_materialization_v1` as the next required capability.
+
+## PHASE62 - Second Generated Program Family Materialization
+
+Status: SEEDED / SECOND GENERATED PROGRAM FAMILY MATERIALIZATION.
+
+Materialize the proven second generated program family contract into a complete generated self-build program package under `self_build_programs/generated/remediation_intake_agent_v1/`. This phase is materialization only: it creates the package, renders executable generated pack entry scripts from recipes, and proves structural admission readiness without live admission or generated pack execution.
+
+Next frontier after PHASE62: second generated program family live admission v1.

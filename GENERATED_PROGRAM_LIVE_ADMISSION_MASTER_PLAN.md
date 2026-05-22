@@ -54,8 +54,16 @@ PHASE61 proved `remediation_intake_agent_v1` as the second generated self-build 
 
 ## PHASE62 - Second Generated Program Family Materialization
 
-Status: SEEDED / SECOND GENERATED PROGRAM FAMILY MATERIALIZATION.
+Status: CLOSED.
 
 Materialize the proven second generated program family contract into a complete generated self-build program package under `self_build_programs/generated/remediation_intake_agent_v1/`. This phase is materialization only: it creates the package, renders executable generated pack entry scripts from recipes, and proves structural admission readiness without live admission or generated pack execution.
 
-Next frontier after PHASE62: second generated program family live admission v1.
+PHASE62 materialized `remediation_intake_agent_v1` with three executable generated packs, three generated capabilities, three generated tasks, three execution recipes, and an `ADMISSION_READY` decision.
+
+## PHASE63 - Second Generated Program Family Live Admission
+
+Status: SEEDED / SECOND GENERATED PROGRAM FAMILY LIVE ADMISSION.
+
+Admit the materialized `remediation_intake_agent_v1` generated self-build program into live Builder execution using the generalized admission module. This phase is live admission only: it validates readiness, mutates the live registry/roadmap/queue/manifest through admission, and leaves the first generated remediation task active for ordinary SELF_BUILD consumption without executing any generated remediation pack.
+
+Next frontier after PHASE63: second generated program family consumption proof v1.

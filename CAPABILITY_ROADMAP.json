@@ -430,7 +430,7 @@
     {
       "id": "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
       "phase": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PHASE_3",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
       "semantic_role": "SEED_CONSUMPTION_PROOF",
       "source_capability_hint": "remediation_intake_seed_consumption_proof_v1"

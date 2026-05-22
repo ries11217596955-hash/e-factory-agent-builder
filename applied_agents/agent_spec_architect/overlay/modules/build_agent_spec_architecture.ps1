@@ -6,14 +6,16 @@ function Build-AgentSpecArchitecture {
     }
 
     $ExplicitTargetAgentId = ""
-    if ($null -ne $RawIdea.target_agent_id) {
-        $ExplicitTargetAgentId = ([string]$RawIdea.target_agent_id).Trim()
-    }
+$TargetAgentIdProperty = $RawIdea.PSObject.Properties["target_agent_id"]
+if ($null -ne $TargetAgentIdProperty -and $null -ne $TargetAgentIdProperty.Value) {
+    $ExplicitTargetAgentId = ([string]$TargetAgentIdProperty.Value).Trim()
+}
 
     $ExplicitTargetAgentKind = ""
-    if ($null -ne $RawIdea.target_agent_kind) {
-        $ExplicitTargetAgentKind = ([string]$RawIdea.target_agent_kind).Trim()
-    }
+$TargetAgentKindProperty = $RawIdea.PSObject.Properties["target_agent_kind"]
+if ($null -ne $TargetAgentKindProperty -and $null -ne $TargetAgentKindProperty.Value) {
+    $ExplicitTargetAgentKind = ([string]$TargetAgentKindProperty.Value).Trim()
+}
 
     if (-not [string]::IsNullOrWhiteSpace($ExplicitTargetAgentId)) {
         $NormalizedTargetAgentId = $ExplicitTargetAgentId
@@ -127,3 +129,4 @@ function Build-AgentSpecArchitecture {
         }
     }
 }
+

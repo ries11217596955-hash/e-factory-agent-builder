@@ -1,0 +1,23 @@
+{
+  "proof_id": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1",
+  "run_id": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_005__PACK_1",
+  "status": "PASS",
+  "dry_run": true,
+  "active_task_id_observed": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_001",
+  "effective_conveyor_task_id": "NONE",
+  "excluded_task_ids": [
+    "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_001"
+  ],
+  "conveyor_status": "READY_NO_ACTIVE_GENERATED_FAMILY_TASK",
+  "packs_executed": 0,
+  "generated_pack_execution_attempted": false,
+  "selected_pack": null,
+  "per_pack_results": [],
+  "next_required_capability": "generated_family_autonomous_conveyor_live_trial_v1",
+  "conclusion": "The generated-family autonomous conveyor control surface is installed and can inspect live Builder queue state safely. No active generated-family task is currently available for live conveyor execution.",
+  "roadmap_capability_count": 71,
+  "registry_pack_count": 67,
+  "queue_task_count": 71,
+  "genesis_phase": "PHASE_64",
+  "genesis_capability": "generated_family_autonomous_conveyor_contract_v1"
+}

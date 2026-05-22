@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -563,7 +563,7 @@
     {
       "task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_001",
       "capability_id": "generated_family_autonomous_conveyor_contract_v1",
-      "status": "ACTIVE"
+      "status": "COMPLETED"
     }
   ]
 }

@@ -72,7 +72,8 @@
     "second_generated_program_family_live_admission_v1",
     "generated_remediation_intake_agent_v1_profile_materialization_v1",
     "generated_remediation_intake_agent_v1_closure_proof_v1",
-    "generated_remediation_intake_agent_v1_seed_consumption_proof_v1"
+    "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
+    "generated_family_autonomous_conveyor_contract_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

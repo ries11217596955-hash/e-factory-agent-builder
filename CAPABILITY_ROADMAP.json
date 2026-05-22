@@ -434,6 +434,12 @@
       "gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
       "semantic_role": "SEED_CONSUMPTION_PROOF",
       "source_capability_hint": "remediation_intake_seed_consumption_proof_v1"
+    },
+    {
+      "id": "generated_family_autonomous_conveyor_contract_v1",
+      "phase": "PHASE_64",
+      "status": "ACTIVE",
+      "gate": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1"
     }
   ]
 }

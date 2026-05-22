@@ -5,7 +5,22 @@ function Build-AgentSpecArchitecture {
         throw "Raw idea problem is required."
     }
 
-    $NormalizedTargetAgentId = ($RawIdea.problem.ToLower() -replace '[^a-z0-9]+', '_').Trim('_')
+    $ExplicitTargetAgentId = ""
+    if ($null -ne $RawIdea.target_agent_id) {
+        $ExplicitTargetAgentId = ([string]$RawIdea.target_agent_id).Trim()
+    }
+
+    $ExplicitTargetAgentKind = ""
+    if ($null -ne $RawIdea.target_agent_kind) {
+        $ExplicitTargetAgentKind = ([string]$RawIdea.target_agent_kind).Trim()
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($ExplicitTargetAgentId)) {
+        $NormalizedTargetAgentId = $ExplicitTargetAgentId
+    }
+    else {
+        $NormalizedTargetAgentId = ($RawIdea.problem.ToLower() -replace '[^a-z0-9]+', '_').Trim('_')
+    }
 
     if ([string]::IsNullOrWhiteSpace($NormalizedTargetAgentId)) {
         $NormalizedTargetAgentId = "generated_agent"
@@ -29,19 +44,24 @@ function Build-AgentSpecArchitecture {
         $ExpectedJoined
     ) -join " "
 
-    $AgentKind = "decision_support_agent"
+    if (-not [string]::IsNullOrWhiteSpace($ExplicitTargetAgentKind)) {
+        $AgentKind = $ExplicitTargetAgentKind
+    }
+    else {
+        $AgentKind = "decision_support_agent"
 
-    if ($ClassificationText -match "\b(audit|audits|finding|findings|report|reports)\b") {
-        $AgentKind = "audit_agent"
-    }
-    elseif ($ClassificationText -match "\b(template|templates|document|documents|spec|specs|specification|specifications)\b") {
-        $AgentKind = "specification_agent"
-    }
-    elseif ($ClassificationText -match "\b(workflow|workflows|runbook|runbooks|orchestration|execution agent|task runner)\b") {
-        $AgentKind = "workflow_execution_agent"
-    }
-    elseif ($ClassificationText -match "\b(monitoring|monitor|monitors|alert|alerts|telemetry|watchdog)\b") {
-        $AgentKind = "monitoring_agent"
+        if ($ClassificationText -match "\b(audit|audits|finding|findings|report|reports)\b") {
+            $AgentKind = "audit_agent"
+        }
+        elseif ($ClassificationText -match "\b(template|templates|document|documents|spec|specs|specification|specifications)\b") {
+            $AgentKind = "specification_agent"
+        }
+        elseif ($ClassificationText -match "\b(workflow|workflows|runbook|runbooks|orchestration|execution agent|task runner)\b") {
+            $AgentKind = "workflow_execution_agent"
+        }
+        elseif ($ClassificationText -match "\b(monitoring|monitor|monitors|alert|alerts|telemetry|watchdog)\b") {
+            $AgentKind = "monitoring_agent"
+        }
     }
 
     return [pscustomobject]@{

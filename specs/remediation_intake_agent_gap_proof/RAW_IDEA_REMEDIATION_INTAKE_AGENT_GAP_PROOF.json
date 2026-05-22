@@ -33,7 +33,10 @@
       "Do not modify monitoring_agent_v1 artifacts.",
       "Do not execute seed consumption proof inside closure proof."
     ],
-    "status": "READY_FOR_SPECIALIZED_CLOSURE_PROOF"
+    "status": "READY_FOR_SPECIALIZED_CLOSURE_PROOF",
+    "target_user": "Agent Builder operator / self-build system",
+    "operator_goal": "Prove that remediation_intake_agent_v1 can complete the specialized closure proof path and emit remediation intake operational output.",
+    "target_agent_id": "remediation_intake_agent_v1"
   },
   "metadata": {
     "source": "generated_remediation_family_consumption_preflight_v1",

@@ -161,5 +161,17 @@
     "core_module_drift": false,
     "orchestrator_workflow_drift": false,
     "phase64_or_consumption_preseeded": false
+  },
+  "architect_handoff_request_shape": {
+    "required_payload_fields": [
+      "problem",
+      "target_user",
+      "operator_goal",
+      "target_agent_id",
+      "target_agent_kind",
+      "package_profile"
+    ],
+    "missing_payload_fields": [],
+    "status": "PASS"
   }
 }

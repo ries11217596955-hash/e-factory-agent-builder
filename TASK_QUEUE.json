@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -568,7 +568,7 @@
     {
       "task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1_001",
       "capability_id": "generated_family_autonomous_conveyor_live_trial_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove the generated-family autonomous conveyor can execute exactly one generated-family trial pack through the live path and return the Builder queue to NONE.",
       "expected_gate": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1",
       "build_task_path": "tasks/TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1_001.json"
@@ -576,7 +576,7 @@
     {
       "task_id": "TASK_GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1_001",
       "capability_id": "generated_conveyor_trial_family_v1_live_pack_v1",
-      "status": "QUEUED",
+      "status": "COMPLETED",
       "objective": "Disposable generated-family conveyor live trial pack for PHASE65.",
       "expected_gate": "GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1",
       "build_task_path": "tasks/TASK_GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1_001.json",

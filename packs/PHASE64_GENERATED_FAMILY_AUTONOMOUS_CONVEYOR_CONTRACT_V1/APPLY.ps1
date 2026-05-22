@@ -36,7 +36,7 @@ if (-not $InvokedByOrchestrator) { throw "Pack must be invoked by orchestrator."
 Set-Location $RepoRoot
 
 Copy-Item ".\packs\PHASE64_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1\payload\validators\validate_generated_family_autonomous_conveyor_contract_v1.ps1" ".\validators\validate_generated_family_autonomous_conveyor_contract_v1.ps1" -Force
-& ".\validators\validate_generated_family_autonomous_conveyor_contract_v1.ps1" -FinalizePhase -RunId $RunId
+& ".\validators\validate_generated_family_autonomous_conveyor_contract_v1.ps1" -FinalizePhase -RunId $RunId -RepoRoot $RepoRoot
 
 Invoke-NativeGitCommand -Label "ADD" -Arguments @(
     "add",

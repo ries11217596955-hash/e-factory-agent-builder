@@ -1,11 +1,15 @@
 param(
     [switch]$FinalizePhase,
-    [string]$RunId
+    [string]$RunId,
+    [string]$RepoRoot = ""
 )
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 if (-not $FinalizePhase) { throw "PHASE64 validator requires -FinalizePhase." }
-$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..\..")).Path
+if ([string]::IsNullOrWhiteSpace($RepoRoot)) {
+    $RepoRoot = (Get-Location).Path
+}
+$RepoRoot = (Resolve-Path $RepoRoot).Path
 Set-Location $RepoRoot
 
 $modulePath = ".\modules\invoke_generated_family_autonomous_conveyor.ps1"

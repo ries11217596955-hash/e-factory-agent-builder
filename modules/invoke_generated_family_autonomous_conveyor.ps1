@@ -22,7 +22,7 @@ function Invoke-GeneratedFamilyAutonomousConveyor {
     . (Join-Path $RepoRoot "modules/execute_self_build_pack.ps1")
 
     $queue = Read-TaskQueue -RepoRoot $RepoRoot
-    $registry = Read-PackRegistry -RepoRoot $RepoRoot
+    $registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
     $roadmap = Get-Content (Join-Path $RepoRoot "CAPABILITY_ROADMAP.json") -Raw | ConvertFrom-Json
     $genesis = Get-Content (Join-Path $RepoRoot "GENESIS_STATE.json") -Raw | ConvertFrom-Json
 
@@ -116,3 +116,4 @@ function Invoke-GeneratedFamilyAutonomousConveyor {
     $result | ConvertTo-Json -Depth 20 | Set-Content -Path $ProofPath -Encoding UTF8
     return [pscustomobject]$result
 }
+

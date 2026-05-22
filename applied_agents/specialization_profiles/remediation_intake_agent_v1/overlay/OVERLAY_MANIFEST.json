@@ -1,0 +1,11 @@
+{
+  "overlay_id": "REMEDIATION_INTAKE_AGENT_V1_SPECIALIZATION_OVERLAY",
+  "overlay_version": "1.0",
+  "profile_id": "remediation_intake_agent_v1",
+  "agent_kind": "remediation_intake_agent",
+  "package_profile": "operational_specialized",
+  "status": "ACTIVE",
+  "purpose": "Specialization overlay root required by Resolve-SpecializationOverlay for generated remediation intake profile materialization.",
+  "generated_program_root": "self_build_programs/generated/remediation_intake_agent_v1",
+  "expected_active_task": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001"
+}

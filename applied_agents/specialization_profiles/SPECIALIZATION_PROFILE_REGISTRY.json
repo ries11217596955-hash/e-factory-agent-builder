@@ -1,6 +1,6 @@
 {
   "registry_id": "SPECIALIZATION_PROFILE_REGISTRY_V1",
-  "registry_version": "1.4",
+  "registry_version": "1.5",
   "profiles": [
     {
       "profile_id": "audit_agent_v1",
@@ -35,6 +35,13 @@
       "agent_kind": "monitoring_agent",
       "package_profile": "operational_specialized",
       "overlay_root": ".\\applied_agents\\specialization_profiles\\monitoring_agent_v1\\overlay",
+      "status": "ACTIVE"
+    },
+    {
+      "profile_id": "remediation_intake_agent_v1",
+      "agent_kind": "remediation_intake_agent",
+      "package_profile": "operational_specialized",
+      "overlay_root": ".\\applied_agents\\specialization_profiles\\remediation_intake_agent_v1\\overlay",
       "status": "ACTIVE"
     }
   ]

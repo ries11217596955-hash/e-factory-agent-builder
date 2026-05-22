@@ -173,5 +173,22 @@
     ],
     "missing_payload_fields": [],
     "status": "PASS"
+  },
+  "architect_handoff_full_payload_contract": {
+    "required_payload_fields": [
+      "problem",
+      "target_user",
+      "operator_goal",
+      "target_agent_id",
+      "target_agent_kind",
+      "package_profile",
+      "required_inputs",
+      "expected_outputs",
+      "validation_expectations",
+      "forbidden_scope"
+    ],
+    "missing_payload_fields": [],
+    "semantic_failures": [],
+    "status": "PASS"
   }
 }

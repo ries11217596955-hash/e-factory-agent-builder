@@ -27,16 +27,41 @@
       "next_alert_id": "remediation_intake_agent_intake_request",
       "escalation_status": "INTAKE_READY"
     },
-    "forbidden_scope": [
-      "Do not modify admission.",
-      "Do not create PHASE64.",
-      "Do not modify monitoring_agent_v1 artifacts.",
-      "Do not execute seed consumption proof inside closure proof."
-    ],
     "status": "READY_FOR_SPECIALIZED_CLOSURE_PROOF",
     "target_user": "Agent Builder operator / self-build system",
     "operator_goal": "Prove that remediation_intake_agent_v1 can complete the specialized closure proof path and emit remediation intake operational output.",
-    "target_agent_id": "remediation_intake_agent_v1"
+    "target_agent_id": "remediation_intake_agent_v1",
+    "required_inputs": [
+      "remediation_programs/REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+      "proofs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1.json",
+      "specs/remediation_intake_agent_gap_proof/RAW_IDEA_REMEDIATION_INTAKE_AGENT_GAP_PROOF.json"
+    ],
+    "expected_outputs": [
+      "specialized remediation intake operational result",
+      "closure proof for remediation_intake_agent_v1",
+      "next generated seed consumption proof task activation"
+    ],
+    "validation_expectations": [
+      "request_id exists",
+      "payload exists",
+      "payload problem exists",
+      "payload target_user exists",
+      "payload operator_goal exists",
+      "payload target_agent_id exists",
+      "payload target_agent_kind equals remediation_intake_agent",
+      "payload package_profile equals operational_specialized",
+      "required inputs are declared",
+      "expected outputs are declared",
+      "validation expectations are declared",
+      "forbidden scope is declared"
+    ],
+    "forbidden_scope": [
+      "do not modify live admission",
+      "do not create PHASE64",
+      "do not modify monitoring_agent_v1 artifacts",
+      "do not bypass generated remediation closure proof",
+      "do not execute seed consumption proof inside closure proof"
+    ]
   },
   "metadata": {
     "source": "generated_remediation_family_consumption_preflight_v1",

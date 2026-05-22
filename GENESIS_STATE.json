@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PHASE_1",
-  "current_capability": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+  "current_phase": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PHASE_2",
+  "current_capability": "generated_remediation_intake_agent_v1_closure_proof_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -69,7 +69,8 @@
     "generalized_generated_program_live_admission_contract_v1",
     "second_generated_program_family_proof_v1",
     "second_generated_program_family_materialization_v1",
-    "second_generated_program_family_live_admission_v1"
+    "second_generated_program_family_live_admission_v1",
+    "generated_remediation_intake_agent_v1_profile_materialization_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

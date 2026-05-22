@@ -67,3 +67,12 @@ Status: SEEDED / SECOND GENERATED PROGRAM FAMILY LIVE ADMISSION.
 Admit the materialized `remediation_intake_agent_v1` generated self-build program into live Builder execution using the generalized admission module. This phase is live admission only: it validates readiness, mutates the live registry/roadmap/queue/manifest through admission, and leaves the first generated remediation task active for ordinary SELF_BUILD consumption without executing any generated remediation pack.
 
 Next frontier after PHASE63: second generated program family consumption proof v1.
+
+
+## PHASE64 - Generated Family Autonomous Conveyor Contract
+
+Status: SEEDED / GENERATED FAMILY AUTONOMOUS CONVEYOR CONTRACT.
+
+SP-N15 second generated family live consumption is accepted. PHASE64 seeds a reusable generated-family autonomous conveyor control surface that can safely inspect current live queue state and emit report/proof without executing generated packs when no active task is available.
+
+Next frontier after PHASE64: generated_family_autonomous_conveyor_live_trial_v1.

@@ -462,6 +462,13 @@
       "pack_contract_path": "self_build_programs/generated/remediation_intake_agent_v1/packs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1/PACK.json",
       "entry_script": "self_build_programs/generated/remediation_intake_agent_v1/packs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1/APPLY.ps1",
       "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE64_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1",
+      "task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_001",
+      "pack_contract_path": "packs/PHASE64_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1/PACK.json",
+      "entry_script": "packs/PHASE64_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1/APPLY.ps1",
+      "shell": "PowerShell"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -559,6 +559,11 @@
       "objective": "Generated self-build task for remediation_intake_agent_v1 semantic role SEED_CONSUMPTION_PROOF declared by family contract.",
       "expected_gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
       "build_task_path": "self_build_programs/generated/remediation_intake_agent_v1/tasks/TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_001",
+      "capability_id": "generated_family_autonomous_conveyor_contract_v1",
+      "status": "ACTIVE"
     }
   ]
 }

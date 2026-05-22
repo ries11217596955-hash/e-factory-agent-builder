@@ -9,7 +9,8 @@ function Invoke-GeneratedFamilyAutonomousConveyor {
         [string]$ReportPath,
         [Parameter(Mandatory)]
         [string]$ProofPath,
-        [bool]$DryRun = $true
+        [bool]$DryRun = $true,
+        [string[]]$ExcludedTaskIds = @()
     )
 
     Set-StrictMode -Version Latest
@@ -25,7 +26,12 @@ function Invoke-GeneratedFamilyAutonomousConveyor {
     $roadmap = Get-Content (Join-Path $RepoRoot "CAPABILITY_ROADMAP.json") -Raw | ConvertFrom-Json
     $genesis = Get-Content (Join-Path $RepoRoot "GENESIS_STATE.json") -Raw | ConvertFrom-Json
 
-    $activeTaskId = [string]$queue.active_task_id
+    $activeTaskIdObserved = [string]$queue.active_task_id
+    $effectiveTaskId = $activeTaskIdObserved
+    if ($ExcludedTaskIds -contains $activeTaskIdObserved) {
+        $effectiveTaskId = "NONE"
+    }
+
     $reportDir = Split-Path -Parent $ReportPath
     $proofDir = Split-Path -Parent $ProofPath
     if (-not [string]::IsNullOrWhiteSpace($reportDir)) { New-Item -ItemType Directory -Force -Path $reportDir | Out-Null }
@@ -36,7 +42,9 @@ function Invoke-GeneratedFamilyAutonomousConveyor {
         run_id = $RunId
         status = "PASS"
         dry_run = [bool]$DryRun
-        active_task_id_observed = $activeTaskId
+        active_task_id_observed = $activeTaskIdObserved
+        effective_conveyor_task_id = $effectiveTaskId
+        excluded_task_ids = @($ExcludedTaskIds)
         conveyor_status = "UNKNOWN"
         packs_executed = 0
         generated_pack_execution_attempted = $false
@@ -51,12 +59,12 @@ function Invoke-GeneratedFamilyAutonomousConveyor {
         genesis_capability = [string]$genesis.current_capability
     }
 
-    if ($activeTaskId -eq "NONE") {
-        $result.conveyor_status = "READY_NO_ACTIVE_TASK"
+    if ($effectiveTaskId -eq "NONE") {
+        $result.conveyor_status = "READY_NO_ACTIVE_GENERATED_FAMILY_TASK"
         $result.conclusion = "The generated-family autonomous conveyor control surface is installed and can inspect live Builder queue state safely. No active generated-family task is currently available for live conveyor execution."
     }
     elseif ($DryRun) {
-        $selected = Select-SelfBuildPack -Registry $registry -ActiveTaskId $activeTaskId
+        $selected = Select-SelfBuildPack -Registry $registry -ActiveTaskId $effectiveTaskId
         $result.conveyor_status = "READY_ACTIVE_TASK_DETECTED"
         $result.selected_pack = $selected
         $result.conclusion = "Active task detected and pack resolved in dry-run mode."
@@ -66,10 +74,11 @@ function Invoke-GeneratedFamilyAutonomousConveyor {
         $remaining = [Math]::Max(1, $MaxPacks)
         while ($remaining -gt 0) {
             $queue = Read-TaskQueue -RepoRoot $RepoRoot
-            $activeTaskId = [string]$queue.active_task_id
-            if ($activeTaskId -eq "NONE") { break }
+            $effectiveTaskId = [string]$queue.active_task_id
+            if ($ExcludedTaskIds -contains $effectiveTaskId) { $effectiveTaskId = "NONE" }
+            if ($effectiveTaskId -eq "NONE") { break }
 
-            $selected = Select-SelfBuildPack -Registry $registry -ActiveTaskId $activeTaskId
+            $selected = Select-SelfBuildPack -Registry $registry -ActiveTaskId $effectiveTaskId
             $execution = Invoke-SelfBuildPack -RepoRoot $RepoRoot -Pack $selected -RunId $RunId
             $result.per_pack_results += $execution
             $result.packs_executed = @($result.per_pack_results).Count
@@ -93,6 +102,8 @@ function Invoke-GeneratedFamilyAutonomousConveyor {
         run_id = $RunId
         conveyor_status = $result.conveyor_status
         active_task_id_observed = $result.active_task_id_observed
+        effective_conveyor_task_id = $result.effective_conveyor_task_id
+        excluded_task_ids = $result.excluded_task_ids
         packs_executed = $result.packs_executed
         dry_run = $result.dry_run
         generated_pack_execution_attempted = $result.generated_pack_execution_attempted

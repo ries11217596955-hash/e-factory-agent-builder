@@ -1,0 +1,35 @@
+{
+  "raw_idea_id": "RAW_IDEA_REMEDIATION_INTAKE_AGENT_GAP_PROOF",
+  "raw_idea_version": "1.0",
+  "title": "Remediation intake agent gap proof",
+  "family_id": "remediation_intake_agent_v1",
+  "target_profile_id": "remediation_intake_agent_v1",
+  "target_agent_kind": "remediation_intake_agent",
+  "package_profile": "operational_specialized",
+  "requested_mode": "BUILD_FROM_RAW_IDEA_SPECIALIZED",
+  "purpose": "Prove that the remediation intake agent can close the generated self-build gap path using the admitted remediation specialization profile.",
+  "problem": "Generated remediation family live consumption exposed missing dependency and specialization behavior gaps. The closure proof must rebuild through the specialized raw-idea route and produce remediation intake operational output.",
+  "expected_specialization_profile_id": "remediation_intake_agent_v1",
+  "expected_operation": "remediation_intake_mode_v1",
+  "expected_next_alert_id": "remediation_intake_agent_intake_request",
+  "expected_escalation_status": "INTAKE_READY",
+  "required_profile_proof_path": "proofs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1.json",
+  "generated_program_root": "self_build_programs/generated/remediation_intake_agent_v1",
+  "expected_active_task": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_001",
+  "expected_next_task": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+  "acceptance": {
+    "factory_report_status": "PASS",
+    "selected_profile_id": "remediation_intake_agent_v1",
+    "overlay_status": "PASS",
+    "specialized_operation": "remediation_intake_mode_v1",
+    "next_alert_id": "remediation_intake_agent_intake_request",
+    "escalation_status": "INTAKE_READY"
+  },
+  "forbidden_scope": [
+    "Do not modify admission.",
+    "Do not create PHASE64.",
+    "Do not modify monitoring_agent_v1 artifacts.",
+    "Do not execute seed consumption proof inside closure proof."
+  ],
+  "status": "READY_FOR_SPECIALIZED_CLOSURE_PROOF"
+}

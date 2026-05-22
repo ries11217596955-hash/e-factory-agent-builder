@@ -408,8 +408,32 @@
     {
       "id": "second_generated_program_family_live_admission_v1",
       "phase": "PHASE_63",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1"
+    },
+    {
+      "id": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+      "phase": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PHASE_1",
+      "status": "ACTIVE",
+      "gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_READY",
+      "semantic_role": "PROFILE_MATERIALIZATION",
+      "source_capability_hint": "remediation_intake_agent_specialization_profile_v1"
+    },
+    {
+      "id": "generated_remediation_intake_agent_v1_closure_proof_v1",
+      "phase": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PHASE_2",
+      "status": "QUEUED",
+      "gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1",
+      "semantic_role": "SPECIALIZED_CLOSURE_PROOF",
+      "source_capability_hint": "remediation_intake_agent_closure_proof_v1"
+    },
+    {
+      "id": "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
+      "phase": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PHASE_3",
+      "status": "QUEUED",
+      "gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "semantic_role": "SEED_CONSUMPTION_PROOF",
+      "source_capability_hint": "remediation_intake_seed_consumption_proof_v1"
     }
   ]
 }

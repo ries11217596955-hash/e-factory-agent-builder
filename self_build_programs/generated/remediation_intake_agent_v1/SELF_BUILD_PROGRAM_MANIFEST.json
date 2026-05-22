@@ -17,7 +17,7 @@
   "tasks_root": "self_build_programs/generated/remediation_intake_agent_v1/tasks",
   "patches_root": "self_build_programs/generated/remediation_intake_agent_v1/patches",
   "execution_recipes_root": "self_build_programs/generated/remediation_intake_agent_v1/execution_recipes",
-  "admission_status": "NOT_ADMITTED_YET",
+  "admission_status": "ADMITTED_TO_LIVE_EXECUTION",
   "live_admission_attempted": false,
   "generated_pack_execution_attempted": false
 }

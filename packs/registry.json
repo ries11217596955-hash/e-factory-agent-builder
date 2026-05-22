@@ -441,6 +441,27 @@
       "pack_contract_path": "packs/PHASE63_SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1/PACK.json",
       "entry_script": "packs/PHASE63_SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1/APPLY.ps1",
       "shell": "PowerShell"
+    },
+    {
+      "pack_id": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+      "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+      "pack_contract_path": "self_build_programs/generated/remediation_intake_agent_v1/packs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1/PACK.json",
+      "entry_script": "self_build_programs/generated/remediation_intake_agent_v1/packs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1",
+      "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_001",
+      "pack_contract_path": "self_build_programs/generated/remediation_intake_agent_v1/packs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1/PACK.json",
+      "entry_script": "self_build_programs/generated/remediation_intake_agent_v1/packs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+      "pack_contract_path": "self_build_programs/generated/remediation_intake_agent_v1/packs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1/PACK.json",
+      "entry_script": "self_build_programs/generated/remediation_intake_agent_v1/packs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1/APPLY.ps1",
+      "shell": "PowerShell"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1_001",
+  "active_task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -531,10 +531,34 @@
     {
       "task_id": "TASK_SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1_001",
       "capability_id": "second_generated_program_family_live_admission_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Admit remediation_intake_agent_v1 into live Builder execution using the generalized generated-program admission module without executing generated remediation packs.",
       "expected_gate": "SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1",
       "build_task_path": "tasks/TASK_SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+      "capability_id": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+      "status": "ACTIVE",
+      "objective": "Generated self-build task for remediation_intake_agent_v1 semantic role PROFILE_MATERIALIZATION declared by family contract.",
+      "expected_gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_READY",
+      "build_task_path": "self_build_programs/generated/remediation_intake_agent_v1/tasks/TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_001",
+      "capability_id": "generated_remediation_intake_agent_v1_closure_proof_v1",
+      "status": "QUEUED",
+      "objective": "Generated self-build task for remediation_intake_agent_v1 semantic role SPECIALIZED_CLOSURE_PROOF declared by family contract.",
+      "expected_gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1",
+      "build_task_path": "self_build_programs/generated/remediation_intake_agent_v1/tasks/TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_001.json"
+    },
+    {
+      "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+      "capability_id": "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
+      "status": "QUEUED",
+      "objective": "Generated self-build task for remediation_intake_agent_v1 semantic role SEED_CONSUMPTION_PROOF declared by family contract.",
+      "expected_gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "build_task_path": "self_build_programs/generated/remediation_intake_agent_v1/tasks/TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001.json"
     }
   ]
 }

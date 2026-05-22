@@ -1,0 +1,21 @@
+{
+  "proof_id": "SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1",
+  "run_id": "SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1_001__PACK_1",
+  "status": "PASS",
+  "family_id": "remediation_intake_agent_v1",
+  "source_program_manifest": ".\\self_build_programs\\generated\\remediation_intake_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "pre_admission_readiness_decision": "ADMISSION_READY",
+  "live_admission_status": "PASS",
+  "live_admission_mode": "LIVE_ADMISSION",
+  "admission_module_precondition_bridge_applied": true,
+  "resolved_pack_count": 3,
+  "resolved_capability_count": 3,
+  "resolved_task_count": 3,
+  "first_activatable_task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+  "first_activatable_capability_id": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+  "active_task_after_admission": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+  "generated_pack_execution_attempted": false,
+  "next_required_capability": "second_generated_program_family_consumption_proof_v1",
+  "conclusion": "The second generated self-build program family has been admitted into live Builder execution and is ready for ordinary SELF_BUILD consumption.",
+  "report_path": ".\\reports\\second_generated_program_family_live_admission\\REMEDIATION_INTAKE_AGENT_V1_LIVE_ADMISSION.json"
+}

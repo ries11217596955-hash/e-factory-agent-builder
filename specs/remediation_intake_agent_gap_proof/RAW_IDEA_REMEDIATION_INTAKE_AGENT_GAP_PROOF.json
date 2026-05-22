@@ -61,6 +61,21 @@
       "do not modify monitoring_agent_v1 artifacts",
       "do not bypass generated remediation closure proof",
       "do not execute seed consumption proof inside closure proof"
+    ],
+    "constraints": [
+      "Must use remediation_intake_agent_v1 specialization profile.",
+      "Must use operational_specialized package profile.",
+      "Must preserve generated remediation closure proof path.",
+      "Must not bypass generated self-build task queue.",
+      "Must produce output suitable for closure proof validation."
+    ],
+    "non_goals": [
+      "Do not modify live admission.",
+      "Do not create PHASE64.",
+      "Do not modify monitoring_agent_v1 artifacts.",
+      "Do not bypass closure proof.",
+      "Do not execute seed consumption proof inside closure proof.",
+      "Do not change orchestrator or core build modules."
     ]
   },
   "metadata": {

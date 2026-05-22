@@ -190,5 +190,18 @@
     "missing_payload_fields": [],
     "semantic_failures": [],
     "status": "PASS"
+  },
+  "architect_raw_idea_schema_contract": {
+    "source_schema_path": "applied_agents/agent_spec_architect/overlay/contracts/raw_agent_idea.schema.json",
+    "required_fields": [
+      "problem",
+      "target_user",
+      "operator_goal",
+      "expected_outputs",
+      "constraints",
+      "non_goals"
+    ],
+    "missing_fields": [],
+    "status": "PASS"
   }
 }

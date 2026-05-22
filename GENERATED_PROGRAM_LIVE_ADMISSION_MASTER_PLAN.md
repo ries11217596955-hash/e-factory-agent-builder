@@ -76,3 +76,11 @@ Status: SEEDED / GENERATED FAMILY AUTONOMOUS CONVEYOR CONTRACT.
 SP-N15 second generated family live consumption is accepted. PHASE64 seeds a reusable generated-family autonomous conveyor control surface that can safely inspect current live queue state and emit report/proof without executing generated packs when no active task is available.
 
 Next frontier after PHASE64: generated_family_autonomous_conveyor_live_trial_v1.
+
+## PHASE65 - Generated Family Autonomous Conveyor Live Trial
+
+Status: SEEDED / GENERATED FAMILY AUTONOMOUS CONVEYOR LIVE TRIAL.
+
+Goal: prove conveyor live execution of one generated-family trial pack through `Invoke-GeneratedFamilyAutonomousConveyor` with `DryRun=false`, while returning the Builder queue to `NONE`.
+
+Next frontier after PHASE65: generated_family_autonomous_conveyor_failure_recovery_v1.

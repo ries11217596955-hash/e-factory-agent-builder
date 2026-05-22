@@ -1,6 +1,6 @@
 {
   "roadmap_id": "recipe_driven_generated_program_executable_materialization_v1",
-  "roadmap_version": "22.0",
+  "roadmap_version": "23.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -440,6 +440,20 @@
       "phase": "PHASE_64",
       "status": "COMPLETED",
       "gate": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1"
+    },
+    {
+      "id": "generated_family_autonomous_conveyor_live_trial_v1",
+      "phase": "PHASE_65",
+      "status": "ACTIVE",
+      "gate": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1"
+    },
+    {
+      "id": "generated_conveyor_trial_family_v1_live_pack_v1",
+      "phase": "GENERATED_CONVEYOR_TRIAL_FAMILY_V1_PHASE_1",
+      "status": "QUEUED",
+      "gate": "GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1",
+      "semantic_role": "CONVEYOR_LIVE_TRIAL_PROOF",
+      "family_id": "conveyor_trial_family_v1"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "registry_version": "20.0",
+  "registry_version": "21.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -468,6 +468,20 @@
       "task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_001",
       "pack_contract_path": "packs/PHASE64_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1/PACK.json",
       "entry_script": "packs/PHASE64_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE65_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1",
+      "task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1_001",
+      "pack_contract_path": "packs/PHASE65_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1/PACK.json",
+      "entry_script": "packs/PHASE65_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1",
+      "task_id": "TASK_GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1_001",
+      "pack_contract_path": "self_build_programs/generated/conveyor_trial_family_v1/packs/GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1/PACK.json",
+      "entry_script": "self_build_programs/generated/conveyor_trial_family_v1/packs/GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

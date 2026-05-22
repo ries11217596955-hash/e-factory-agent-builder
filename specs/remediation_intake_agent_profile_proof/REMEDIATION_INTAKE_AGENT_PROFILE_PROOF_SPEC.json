@@ -1,0 +1,22 @@
+{
+  "spec_id": "REMEDIATION_INTAKE_AGENT_PROFILE_PROOF_SPEC",
+  "spec_version": "1.0",
+  "family_id": "remediation_intake_agent_v1",
+  "target_profile_id": "remediation_intake_agent_v1",
+  "target_agent_kind": "remediation_intake_agent",
+  "generated_program_root": "self_build_programs/generated/remediation_intake_agent_v1",
+  "program_seed_path": "remediation_programs/REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+  "expected_task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+  "expected_capability_id": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+  "expected_pack_id": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+  "expected_next_task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+  "expected_next_capability_id": "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
+  "status": "READY_FOR_GENERATED_PROFILE_MATERIALIZATION",
+  "proof_scope": {
+    "proves_profile_materialization_input_contract": true,
+    "proves_remediation_seed_contract_available": true,
+    "proves_profile_proof_spec_available": true,
+    "generated_pack_execution_attempted_by_repair": false
+  },
+  "required_operator_move": "RUN_ACTIVE_GENERATED_REMEDIATION_PROFILE_MATERIALIZATION_PACK"
+}

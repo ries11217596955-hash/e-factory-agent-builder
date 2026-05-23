@@ -84,3 +84,11 @@ Status: SEEDED / GENERATED FAMILY AUTONOMOUS CONVEYOR LIVE TRIAL.
 Goal: prove conveyor live execution of one generated-family trial pack through `Invoke-GeneratedFamilyAutonomousConveyor` with `DryRun=false`, while returning the Builder queue to `NONE`.
 
 Next frontier after PHASE65: generated_family_autonomous_conveyor_failure_recovery_v1.
+
+## PHASE66 - Generated Family Autonomous Conveyor Failure Recovery
+
+Status: SEEDED / GENERATED FAMILY AUTONOMOUS CONVEYOR FAILURE RECOVERY.
+
+Goal: prove conveyor records and recovers from a controlled generated-pack failure without fake PASS.
+
+Next frontier after PHASE66: external_agent_production_program_test_v1.

@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_65",
-  "current_capability": "generated_family_autonomous_conveyor_live_trial_v1",
+  "current_phase": "PHASE_66",
+  "current_capability": "generated_family_autonomous_conveyor_failure_recovery_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",

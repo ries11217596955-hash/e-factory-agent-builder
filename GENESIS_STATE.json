@@ -75,7 +75,8 @@
     "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
     "generated_family_autonomous_conveyor_contract_v1",
     "generated_conveyor_trial_family_v1_live_pack_v1",
-    "generated_family_autonomous_conveyor_live_trial_v1"
+    "generated_family_autonomous_conveyor_live_trial_v1",
+    "generated_family_autonomous_conveyor_failure_recovery_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

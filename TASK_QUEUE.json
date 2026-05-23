@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -586,7 +586,7 @@
     {
       "task_id": "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1_001",
       "capability_id": "generated_family_autonomous_conveyor_failure_recovery_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Prove the generated-family autonomous conveyor detects a controlled generated-pack failure, records failure evidence, and recovers the Builder queue to NONE without faking PASS.",
       "expected_gate": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1",
       "build_task_path": "tasks/TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1_001.json"
@@ -594,7 +594,7 @@
     {
       "task_id": "TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001",
       "capability_id": "generated_conveyor_failure_trial_family_v1_failure_pack_v1",
-      "status": "QUEUED",
+      "status": "FAILED",
       "objective": "Disposable generated-family conveyor failure trial pack for PHASE66 failure-recovery proof.",
       "expected_gate": "GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1",
       "build_task_path": "tasks/TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001.json",

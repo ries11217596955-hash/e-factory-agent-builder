@@ -458,13 +458,13 @@
     {
       "id": "generated_family_autonomous_conveyor_failure_recovery_v1",
       "phase": "PHASE_66",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1"
     },
     {
       "id": "generated_conveyor_failure_trial_family_v1_failure_pack_v1",
       "phase": "GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_PHASE_1",
-      "status": "QUEUED",
+      "status": "FAILED",
       "gate": "GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1",
       "semantic_role": "CONVEYOR_FAILURE_RECOVERY_PROOF",
       "family_id": "conveyor_failure_trial_family_v1"

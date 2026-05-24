@@ -204,5 +204,6 @@ if (-not [string]::IsNullOrWhiteSpace($OutputDirectory) -and -not (Test-Path -Li
 
 $Output | ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $OutputPath -Encoding UTF8
 
-Write-Host "REMEDIATION_INTAKE_OPERATOR_STATUS=PASS"
-Write-Host "REMEDIATION_INTAKE_OPERATOR_OUTPUT=$OutputPath"
+Write-Output "REMEDIATION_INTAKE_OPERATOR_STATUS=PASS"
+Write-Output "REMEDIATION_INTAKE_OPERATOR_OUTPUT=$OutputPath"
+

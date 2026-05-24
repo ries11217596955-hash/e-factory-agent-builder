@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_AGENT_GITHUB_ACTION_LAUNCH_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -608,6 +608,14 @@
       "objective": "Produce the first standalone external remediation intake operator agent package through a terminal proof pack.",
       "expected_gate": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1",
       "build_task_path": "tasks/TASK_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_001.json"
+    },
+    {
+      "task_id": "TASK_AGENT_GITHUB_ACTION_LAUNCH_V1_001",
+      "capability_id": "agent_github_action_launch_v1",
+      "status": "ACTIVE",
+      "objective": "Add a GitHub Actions manual launch workflow for remediation_intake_operator_agent_v1 through a Builder self-build pack.",
+      "expected_gate": "AGENT_GITHUB_ACTION_LAUNCH_V1",
+      "build_task_path": "tasks/TASK_AGENT_GITHUB_ACTION_LAUNCH_V1_001.json"
     }
   ]
 }

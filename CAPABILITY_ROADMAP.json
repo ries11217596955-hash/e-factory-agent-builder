@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "external_agent_production_program_test_v1",
-  "roadmap_version": "24.0",
+  "roadmap_id": "agent_github_action_launch_v1",
+  "roadmap_version": "25.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -474,6 +474,12 @@
       "phase": "PHASE_67",
       "status": "COMPLETED",
       "gate": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1"
+    },
+    {
+      "id": "agent_github_action_launch_v1",
+      "phase": "PHASE_68",
+      "status": "ACTIVE",
+      "gate": "AGENT_GITHUB_ACTION_LAUNCH_V1"
     }
   ]
 }

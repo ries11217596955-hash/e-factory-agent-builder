@@ -1,5 +1,5 @@
 {
-  "registry_version": "23.0",
+  "registry_version": "24.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -503,6 +503,13 @@
       "task_id": "TASK_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_001",
       "pack_contract_path": "packs/PHASE67_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1/PACK.json",
       "entry_script": "packs/PHASE67_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE68_AGENT_GITHUB_ACTION_LAUNCH_V1",
+      "task_id": "TASK_AGENT_GITHUB_ACTION_LAUNCH_V1_001",
+      "pack_contract_path": "packs/PHASE68_AGENT_GITHUB_ACTION_LAUNCH_V1/PACK.json",
+      "entry_script": "packs/PHASE68_AGENT_GITHUB_ACTION_LAUNCH_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

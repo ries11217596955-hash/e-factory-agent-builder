@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -600,6 +600,14 @@
       "build_task_path": "tasks/TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001.json",
       "family_id": "conveyor_failure_trial_family_v1",
       "semantic_role": "CONVEYOR_FAILURE_RECOVERY_PROOF"
+    },
+    {
+      "task_id": "TASK_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_001",
+      "capability_id": "external_agent_production_program_test_v1",
+      "status": "ACTIVE",
+      "objective": "Produce the first standalone external remediation intake operator agent package through a terminal proof pack.",
+      "expected_gate": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1",
+      "build_task_path": "tasks/TASK_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_001.json"
     }
   ]
 }

@@ -87,8 +87,16 @@ Next frontier after PHASE65: generated_family_autonomous_conveyor_failure_recove
 
 ## PHASE66 - Generated Family Autonomous Conveyor Failure Recovery
 
-Status: SEEDED / GENERATED FAMILY AUTONOMOUS CONVEYOR FAILURE RECOVERY.
+Status: CLOSED.
 
 Goal: prove conveyor records and recovers from a controlled generated-pack failure without fake PASS.
 
 Next frontier after PHASE66: external_agent_production_program_test_v1.
+
+## PHASE67 - External Agent Production Program Test
+
+Status: SEEDED / EXTERNAL AGENT PRODUCTION PROGRAM TEST V1.
+
+Goal: produce the first standalone external remediation intake operator agent package under `generated_agents/remediation_intake_operator_agent_v1/`, validate its local runtime without external APIs, and emit a terminal proof/report through the PHASE67 pack.
+
+Next frontier after PHASE67: external_agent_production_test_2.

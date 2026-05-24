@@ -472,7 +472,7 @@
     {
       "id": "external_agent_production_program_test_v1",
       "phase": "PHASE_67",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1"
     }
   ]

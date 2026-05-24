@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -604,7 +604,7 @@
     {
       "task_id": "TASK_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_001",
       "capability_id": "external_agent_production_program_test_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Produce the first standalone external remediation intake operator agent package through a terminal proof pack.",
       "expected_gate": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1",
       "build_task_path": "tasks/TASK_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_001.json"

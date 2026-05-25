@@ -30,6 +30,28 @@ function Convert-GhCreatedAtUtc {
     return $parsed.UtcDateTime
 }
 
+function Copy-IfDifferentPath {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$SourcePath,
+
+    [Parameter(Mandatory = $true)]
+    [string]$DestinationPath
+  )
+
+  $resolvedSourcePath = (Resolve-Path -LiteralPath $SourcePath).Path
+
+  if (Test-Path -LiteralPath $DestinationPath) {
+    $resolvedDestinationPath = (Resolve-Path -LiteralPath $DestinationPath).Path
+    if ([string]::Equals($resolvedSourcePath, $resolvedDestinationPath, [System.StringComparison]::OrdinalIgnoreCase)) {
+      Write-Output "SKIP_COPY_SAME_PATH=$resolvedSourcePath"
+      return
+    }
+  }
+
+  Copy-Item -LiteralPath $resolvedSourcePath -Destination $DestinationPath -Force
+}
+
 function Read-JsonFile {
   param([string]$Path)
   return Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
@@ -269,8 +291,8 @@ if ($null -eq $specPath) {
   throw "Downloaded artifact missing AGENT_SPEC.json"
 }
 
-Copy-Item -LiteralPath $outputPath.FullName -Destination (Join-Path $ArtifactRoot "GITHUB_ACTION_OUTPUT.json") -Force
-Copy-Item -LiteralPath $specPath.FullName -Destination (Join-Path $ArtifactRoot "AGENT_SPEC.json") -Force
+Copy-IfDifferentPath -SourcePath $outputPath.FullName -DestinationPath (Join-Path $ArtifactRoot "GITHUB_ACTION_OUTPUT.json")
+Copy-IfDifferentPath -SourcePath $specPath.FullName -DestinationPath (Join-Path $ArtifactRoot "AGENT_SPEC.json")
 
 $output = Read-JsonFile (Join-Path $ArtifactRoot "GITHUB_ACTION_OUTPUT.json")
 foreach ($field in @(

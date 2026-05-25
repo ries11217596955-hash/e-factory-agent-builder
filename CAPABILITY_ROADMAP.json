@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "runbook_executor_agent_program_trial_v1",
-  "roadmap_version": "29.0",
+  "roadmap_id": "runbook_executor_agent_production_v1",
+  "roadmap_version": "30.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -504,6 +504,12 @@
       "phase": "PHASE_72",
       "status": "COMPLETED",
       "gate": "RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1"
+    },
+    {
+      "id": "runbook_executor_agent_production_v1",
+      "phase": "PHASE_73",
+      "status": "ACTIVE",
+      "gate": "RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1"
     }
   ]
 }

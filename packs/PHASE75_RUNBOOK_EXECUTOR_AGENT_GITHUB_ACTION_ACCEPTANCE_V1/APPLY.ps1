@@ -41,7 +41,7 @@ function Invoke-NativeGitCommand {
   }
 
   foreach ($line in $output) {
-    Write-Output ($line.ToString())
+    Write-Host ($line.ToString())
   }
 
   if ($exitCode -ne 0) {
@@ -71,7 +71,7 @@ function Invoke-Gh {
   }
 
   foreach ($line in $output) {
-    Write-Output ($line.ToString())
+    Write-Host ($line.ToString())
   }
 
   if ($exitCode -ne 0) {
@@ -435,3 +435,4 @@ Invoke-NativeGitCommand -Label "PUSH" -Arguments @(
 
 Write-Output "PACK_COMMIT_PUSH=PASS"
 Write-Output "RUNBOOK_EXECUTOR_AGENT_ACCEPTED=PASS"
+

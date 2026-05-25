@@ -527,12 +527,11 @@
       "status": "COMPLETED",
       "gate": "AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1",
       "goal": "Codify the proven external-agent production acceptance loop as the factory standard"
-    }
-    ,
+    },
     {
       "id": "evidence_packager_agent_closed_loop_trial_v1",
       "phase": "PHASE_77",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "EVIDENCE_PACKAGER_AGENT_CLOSED_LOOP_TRIAL_V1",
       "goal": "Prove the closed-loop agent production standard on Evidence Packager Agent v1"
     }

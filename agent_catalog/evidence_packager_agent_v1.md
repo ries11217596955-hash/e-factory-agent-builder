@@ -2,7 +2,7 @@
 
 ## Status
 
-PENDING_GITHUB_ACCEPTANCE
+ACCEPTED
 
 ## Purpose
 

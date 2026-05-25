@@ -515,6 +515,11 @@
       "id": "runbook_executor_agent_github_action_launch_v1",
       "status": "COMPLETED",
       "goal": "Add GitHub Actions launch workflow for Runbook Executor Agent v1"
+    },
+    {
+      "id": "runbook_executor_agent_github_action_acceptance_v1",
+      "status": "ACTIVE",
+      "goal": "Accept Runbook Executor Agent v1 after GitHub Actions artifact verification"
     }
   ]
 }

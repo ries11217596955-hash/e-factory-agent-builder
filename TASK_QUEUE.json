@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_ACCEPTANCE_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -663,6 +663,13 @@
       "status": "COMPLETED",
       "objective": "Add GitHub Actions launch workflow for Runbook Executor Agent v1",
       "expected_delta": "RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_READY"
+    },
+    {
+      "task_id": "TASK_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_ACCEPTANCE_V1_001",
+      "capability_id": "runbook_executor_agent_github_action_acceptance_v1",
+      "status": "ACTIVE",
+      "objective": "Run GitHub Actions workflow for Runbook Executor Agent v1, verify artifact, and mark the agent accepted",
+      "expected_delta": "RUNBOOK_EXECUTOR_AGENT_ACCEPTED"
     }
   ]
 }

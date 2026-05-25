@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_github_action_launch_v1",
-  "roadmap_version": "25.0",
+  "roadmap_id": "agent_catalog_v1",
+  "roadmap_version": "26.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -480,6 +480,12 @@
       "phase": "PHASE_68",
       "status": "COMPLETED",
       "gate": "AGENT_GITHUB_ACTION_LAUNCH_V1"
+    },
+    {
+      "id": "agent_catalog_v1",
+      "phase": "PHASE_69",
+      "status": "ACTIVE",
+      "gate": "AGENT_CATALOG_V1"
     }
   ]
 }

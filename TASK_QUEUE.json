@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_LAUNCH_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -656,6 +656,13 @@
       "objective": "Produce Runbook Executor Agent v1 from the existing production program and execution plan, validate local runtime, and register it in the agent catalog pending GitHub Action launch.",
       "expected_gate": "RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1",
       "build_task_path": "tasks/TASK_RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1_001.json"
+    },
+    {
+      "task_id": "TASK_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_LAUNCH_V1_001",
+      "capability_id": "runbook_executor_agent_github_action_launch_v1",
+      "status": "ACTIVE",
+      "objective": "Add GitHub Actions launch workflow for Runbook Executor Agent v1",
+      "expected_delta": "RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_READY"
     }
   ]
 }

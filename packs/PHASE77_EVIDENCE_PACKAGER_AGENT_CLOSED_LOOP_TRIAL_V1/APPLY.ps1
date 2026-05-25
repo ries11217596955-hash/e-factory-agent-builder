@@ -324,9 +324,14 @@ if ([string]$localOutput.validation_status -ne "PASS") {
 Set-AgentCatalogEntry -Status "PENDING_GITHUB_ACCEPTANCE" -GithubActionValidation "PENDING"
 Write-AgentCatalogMarkdown -Status "PENDING_GITHUB_ACCEPTANCE"
 
+Invoke-NativeGitCommand -Label "ADD_INTERMEDIATE_GENERATED_AGENT" -Arguments @(
+  "add",
+  "-f",
+  ".\generated_agents\evidence_packager_agent_v1"
+)
+
 Invoke-NativeGitCommand -Label "ADD_INTERMEDIATE" -Arguments @(
   "add",
-  ".\generated_agents\evidence_packager_agent_v1",
   ".\.github\workflows\run-evidence-packager-agent-v1.yml",
   ".\agent_catalog\AGENT_CATALOG.json",
   ".\agent_catalog\evidence_packager_agent_v1.md",

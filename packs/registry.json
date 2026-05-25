@@ -1,5 +1,5 @@
 {
-  "registry_version": "26.0",
+  "registry_version": "27.0",
   "packs": [
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",
@@ -524,6 +524,13 @@
       "task_id": "TASK_AGENT_PROGRAM_INPUT_FORMAT_V1_001",
       "pack_contract_path": "packs/PHASE70_AGENT_PROGRAM_INPUT_FORMAT_V1/PACK.json",
       "entry_script": "packs/PHASE70_AGENT_PROGRAM_INPUT_FORMAT_V1/APPLY.ps1",
+      "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE71_AGENT_PROGRAM_EXECUTOR_V1",
+      "task_id": "TASK_AGENT_PROGRAM_EXECUTOR_V1_001",
+      "pack_contract_path": "packs/PHASE71_AGENT_PROGRAM_EXECUTOR_V1/PACK.json",
+      "entry_script": "packs/PHASE71_AGENT_PROGRAM_EXECUTOR_V1/APPLY.ps1",
       "shell": "PowerShell"
     }
   ]

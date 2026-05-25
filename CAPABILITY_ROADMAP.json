@@ -1,6 +1,6 @@
 {
-  "roadmap_id": "agent_program_input_format_v1",
-  "roadmap_version": "27.0",
+  "roadmap_id": "agent_program_executor_v1",
+  "roadmap_version": "28.0",
   "capabilities": [
     {
       "id": "repo_genesis",
@@ -492,6 +492,12 @@
       "phase": "PHASE_70",
       "status": "COMPLETED",
       "gate": "AGENT_PROGRAM_INPUT_FORMAT_V1"
+    },
+    {
+      "id": "agent_program_executor_v1",
+      "phase": "PHASE_71",
+      "status": "ACTIVE",
+      "gate": "AGENT_PROGRAM_EXECUTOR_V1"
     }
   ]
 }

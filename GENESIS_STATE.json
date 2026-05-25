@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_70",
-  "current_capability": "agent_program_input_format_v1",
+  "current_phase": "PHASE_71",
+  "current_capability": "agent_program_executor_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",

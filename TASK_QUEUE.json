@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_AGENT_CATALOG_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -620,7 +620,7 @@
     {
       "task_id": "TASK_AGENT_CATALOG_V1_001",
       "capability_id": "agent_catalog_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Create a unified runtime catalog for accepted external agents and register remediation_intake_operator_agent_v1 as the first catalog entry.",
       "expected_gate": "AGENT_CATALOG_V1",
       "build_task_path": "tasks/TASK_AGENT_CATALOG_V1_001.json"

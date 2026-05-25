@@ -1,0 +1,37 @@
+{
+  "report_id": "AGENT_CATALOG_V1_REPORT",
+  "proof_id": "AGENT_CATALOG_V1",
+  "status": "PASS",
+  "catalog_path": "agent_catalog/AGENT_CATALOG.json",
+  "agent_card_path": "agent_catalog/remediation_intake_operator_agent_v1.md",
+  "registered_agents_count": 1,
+  "registered_agent_ids": [
+    "remediation_intake_operator_agent_v1"
+  ],
+  "registered_agent": {
+    "agent_id": "remediation_intake_operator_agent_v1",
+    "agent_name": "Remediation Intake Operator Agent v1",
+    "location": "generated_agents/remediation_intake_operator_agent_v1/",
+    "github_workflow": ".github/workflows/run-remediation-intake-operator-agent-v1.yml",
+    "artifact_name": "remediation-intake-operator-agent-v1-output",
+    "status": "ACCEPTED"
+  },
+  "validation_summary": [
+    "agent_catalog/AGENT_CATALOG.json exists and parses as JSON",
+    "agent markdown card exists and documents local and GitHub Actions usage",
+    "remediation_intake_operator_agent_v1 is registered exactly once",
+    "registered agent folder and run.ps1 exist",
+    "registered GitHub workflow exists",
+    "catalog proof/report references are present and point to existing evidence",
+    "PHASE69 task and capability completed",
+    "TASK_QUEUE active_task_id returned to NONE"
+  ],
+  "created_runtime_outputs": [
+    "agent_catalog/AGENT_CATALOG.json",
+    "agent_catalog/remediation_intake_operator_agent_v1.md",
+    "proofs/AGENT_CATALOG_V1.json",
+    "reports/external_agent_production/AGENT_CATALOG_V1_REPORT.json",
+    "validators/validate_agent_catalog_v1.ps1"
+  ],
+  "next_recommended_step": "agent_program_input_format_v1"
+}

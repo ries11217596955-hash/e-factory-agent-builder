@@ -484,7 +484,7 @@
     {
       "id": "agent_catalog_v1",
       "phase": "PHASE_69",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "AGENT_CATALOG_V1"
     }
   ]

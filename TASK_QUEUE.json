@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_AGENT_PROGRAM_EXECUTOR_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -636,7 +636,7 @@
     {
       "task_id": "TASK_AGENT_PROGRAM_EXECUTOR_V1_001",
       "capability_id": "agent_program_executor_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Read the first agent production PROGRAM.json and create a structured execution plan for producing an agent from that program.",
       "expected_gate": "AGENT_PROGRAM_EXECUTOR_V1",
       "build_task_path": "tasks/TASK_AGENT_PROGRAM_EXECUTOR_V1_001.json"

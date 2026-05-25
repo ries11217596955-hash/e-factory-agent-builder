@@ -496,7 +496,7 @@
     {
       "id": "agent_program_executor_v1",
       "phase": "PHASE_71",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "AGENT_PROGRAM_EXECUTOR_V1"
     }
   ]

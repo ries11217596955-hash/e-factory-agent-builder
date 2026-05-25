@@ -1,0 +1,11 @@
+{
+  "proof_id": "AGENT_PROGRAM_EXECUTOR_V1",
+  "status": "PASS",
+  "source_program_path": "agent_programs/remediation_intake_operator_agent_v1/PROGRAM.json",
+  "execution_plan_path": "agent_program_runs/remediation_intake_operator_agent_v1/EXECUTION_PLAN.json",
+  "example_agent_id": "remediation_intake_operator_agent_v1",
+  "program_read_status": "PASS",
+  "execution_plan_status": "READY",
+  "active_task_after": "NONE",
+  "next_recommended_step": "produce_second_agent_from_program_v1"
+}

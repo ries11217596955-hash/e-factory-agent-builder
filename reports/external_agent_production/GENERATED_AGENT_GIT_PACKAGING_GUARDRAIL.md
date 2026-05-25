@@ -10,34 +10,36 @@ During PHASE73, Builder produced the second external agent:
 
 generated_agents/runbook_executor_agent_v1/
 
-The agent runtime validation passed, but the pack failed during git add because .gitignore blocked generated_agents/<agent_id>/ folders.
+The agent runtime validation passed, but the pack failed during git add because .gitignore blocked generated_agents/<agent_id>/.
 
-## Root cause
+## Corrected rule
 
-The previous .gitignore rule ignored generated agent folders:
+generated_agents/ may contain both accepted product agents and old scratch/generated folders.
+
+Therefore we do not open the whole folder.
+
+We keep the broad ignore rule:
 
 generated_agents/*
 
-That rule was useful when generated outputs were disposable, but it is wrong now because generated agents are product outputs of Builder.
+Then we explicitly allow accepted product agents:
 
-## Fix
+generated_agents/remediation_intake_operator_agent_v1/
+generated_agents/runbook_executor_agent_v1/
 
-The ignore rule for generated_agents/* was removed.
+## Rule for future agents
 
-Generated agents must be committed as product artifacts when Builder produces them.
+Future Builder packs must not rely on the whole generated_agents folder being unignored.
+
+When Builder produces a new accepted product agent, the pack must either:
+
+1. add that exact agent folder with git add -f, or
+2. update .gitignore with an explicit allow rule for that exact accepted agent folder.
+
+Do not blindly unignore all generated_agents/*.
 
 ## Why this matters
 
-Future agents should not require manual recovery with:
+This prevents old scratch/generated folders from polluting git status while still allowing accepted Builder-produced agents to be committed as product outputs.
 
-git add -f generated_agents/<agent_id>
-
-Builder must be able to produce an agent, validate it, commit it, and push it without manual git recovery.
-
-## Rule
-
-Do not ignore:
-
-generated_agents/<agent_id>/
-
-Generated agents are accepted product outputs, not temporary runtime junk.
+The failure class is closed only when future packs handle the exact produced agent folder intentionally.

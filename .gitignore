@@ -1,5 +1,13 @@
 runs/*
 !runs/.gitkeep
 
-# Generated agents are product outputs of Builder and must be tracked.
-# Do not ignore generated_agents/<agent_id>/ folders.
+# Keep legacy/generated scratch agents hidden by default.
+generated_agents/*
+!generated_agents/.gitkeep
+
+# Accepted product agents must stay visible/tracked.
+!generated_agents/remediation_intake_operator_agent_v1/
+!generated_agents/remediation_intake_operator_agent_v1/**
+
+!generated_agents/runbook_executor_agent_v1/
+!generated_agents/runbook_executor_agent_v1/**

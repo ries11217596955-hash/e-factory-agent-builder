@@ -1,0 +1,20 @@
+{
+  "report_id": "RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_LAUNCH_V1_REPORT",
+  "proof_id": "RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_LAUNCH_V1",
+  "status": "PASS",
+  "launched_agent_id": "runbook_executor_agent_v1",
+  "produced_workflow_path": ".github/workflows/run-runbook-executor-agent-v1.yml",
+  "github_action_visible_name": "Run Runbook Executor Agent v1",
+  "expected_artifact": "runbook-executor-agent-v1-output",
+  "owner_run_instructions": "In GitHub, open Actions, choose 'Run Runbook Executor Agent v1', select 'Run workflow', and wait for the run to complete.",
+  "validation_summary": [
+    "workflow_dispatch present",
+    "PowerShell runtime command present",
+    "artifact upload present",
+    "agent package files present",
+    "agent catalog updated to GITHUB_ACTION_READY_PENDING_RUN",
+    "TASK_QUEUE active_task_id returned to NONE"
+  ],
+  "github_run_status": "PENDING_OWNER_RUN",
+  "next_recommended_step": "run_runbook_executor_github_action_and_verify_artifact"
+}

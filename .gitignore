@@ -1,4 +1,5 @@
 runs/*
 !runs/.gitkeep
-generated_agents/*
-!generated_agents/.gitkeep
+
+# Generated agents are product outputs of Builder and must be tracked.
+# Do not ignore generated_agents/<agent_id>/ folders.

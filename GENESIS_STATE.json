@@ -85,7 +85,8 @@
     "runbook_executor_agent_program_trial_v1",
     "runbook_executor_agent_production_v1",
     "runbook_executor_agent_github_action_launch_v1",
-    "runbook_executor_agent_github_action_acceptance_v1"
+    "runbook_executor_agent_github_action_acceptance_v1",
+    "agent_production_closed_loop_standard_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

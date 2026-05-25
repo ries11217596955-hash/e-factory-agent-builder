@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -674,7 +674,7 @@
     {
       "task_id": "TASK_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1_001",
       "capability_id": "agent_production_closed_loop_standard_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Codify the closed-loop external-agent production path as the Builder factory standard.",
       "expected_gate": "AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1",
       "build_task_path": "tasks/TASK_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1_001.json"

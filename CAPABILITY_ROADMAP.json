@@ -524,7 +524,7 @@
     {
       "id": "agent_production_closed_loop_standard_v1",
       "phase": "PHASE_76",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1",
       "goal": "Codify the proven external-agent production acceptance loop as the factory standard"
     }

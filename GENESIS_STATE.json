@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_76",
-  "current_capability": "agent_production_closed_loop_standard_v1",
+  "current_phase": "PHASE_77",
+  "current_capability": "evidence_packager_agent_closed_loop_trial_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",

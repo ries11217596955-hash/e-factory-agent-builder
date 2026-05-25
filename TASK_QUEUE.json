@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_AGENT_PROGRAM_INPUT_FORMAT_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -624,6 +624,14 @@
       "objective": "Create a unified runtime catalog for accepted external agents and register remediation_intake_operator_agent_v1 as the first catalog entry.",
       "expected_gate": "AGENT_CATALOG_V1",
       "build_task_path": "tasks/TASK_AGENT_CATALOG_V1_001.json"
+    },
+    {
+      "task_id": "TASK_AGENT_PROGRAM_INPUT_FORMAT_V1_001",
+      "capability_id": "agent_program_input_format_v1",
+      "status": "ACTIVE",
+      "objective": "Create a standard input program format for future external-agent production and document remediation_intake_operator_agent_v1 as the first example production program.",
+      "expected_gate": "AGENT_PROGRAM_INPUT_FORMAT_V1",
+      "build_task_path": "tasks/TASK_AGENT_PROGRAM_INPUT_FORMAT_V1_001.json"
     }
   ]
 }

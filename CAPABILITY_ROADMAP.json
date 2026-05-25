@@ -478,7 +478,7 @@
     {
       "id": "agent_github_action_launch_v1",
       "phase": "PHASE_68",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "AGENT_GITHUB_ACTION_LAUNCH_V1"
     }
   ]

@@ -77,13 +77,14 @@
     "generated_conveyor_trial_family_v1_live_pack_v1",
     "generated_family_autonomous_conveyor_live_trial_v1",
     "generated_family_autonomous_conveyor_failure_recovery_v1",
-    "external_agent_production_program_test_v1"
+    "external_agent_production_program_test_v1",
+    "agent_github_action_launch_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
   "external_agent_build_ready": true,
   "first_external_agent_proof": true,
-  "last_run_status": "PENDING",
+  "last_run_status": "PASS",
   "truth_correction": {
     "correction_id": "SELF_BUILD_MODEL_CORRECTION_002",
     "reason": "Automatic coding-backend bridge was rejected. Approved model: serial execution of repo-defined PowerShell/Bash packs through a local pack executor.",

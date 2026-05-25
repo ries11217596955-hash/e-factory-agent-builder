@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_AGENT_GITHUB_ACTION_LAUNCH_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -612,7 +612,7 @@
     {
       "task_id": "TASK_AGENT_GITHUB_ACTION_LAUNCH_V1_001",
       "capability_id": "agent_github_action_launch_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "objective": "Add a GitHub Actions manual launch workflow for remediation_intake_operator_agent_v1 through a Builder self-build pack.",
       "expected_gate": "AGENT_GITHUB_ACTION_LAUNCH_V1",
       "build_task_path": "tasks/TASK_AGENT_GITHUB_ACTION_LAUNCH_V1_001.json"

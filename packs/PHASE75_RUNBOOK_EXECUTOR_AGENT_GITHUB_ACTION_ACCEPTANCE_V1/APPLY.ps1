@@ -7,6 +7,29 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
+function Convert-GhCreatedAtUtc {
+    param(
+        [Parameter(Mandatory = $true)]
+        [object]$Value
+    )
+
+    if ($Value -is [datetime]) {
+        return $Value.ToUniversalTime()
+    }
+
+    if ($Value -is [datetimeoffset]) {
+        return $Value.UtcDateTime
+    }
+
+    $parsed = [System.DateTimeOffset]::Parse(
+        [string]$Value,
+        [System.Globalization.CultureInfo]::InvariantCulture,
+        [System.Globalization.DateTimeStyles]::AssumeUniversal -bor [System.Globalization.DateTimeStyles]::AdjustToUniversal
+    )
+
+    return $parsed.UtcDateTime
+}
+
 function Read-JsonFile {
   param([string]$Path)
   return Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
@@ -193,8 +216,8 @@ for ($i = 0; $i -lt 60; $i++) {
   $candidates = @(
     $runs | Where-Object {
       $_.event -eq "workflow_dispatch" -and
-      ([DateTime]::Parse([string]$_.createdAt).ToUniversalTime() -ge $dispatchStartUtc)
-    } | Sort-Object { [DateTime]::Parse([string]$_.createdAt) } -Descending
+      ((Convert-GhCreatedAtUtc $_.createdAt) -ge $dispatchStartUtc)
+    } | Sort-Object { Convert-GhCreatedAtUtc $_.createdAt } -Descending
   )
 
   if ($candidates.Count -eq 0) {

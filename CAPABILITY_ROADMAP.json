@@ -490,7 +490,7 @@
     {
       "id": "agent_program_input_format_v1",
       "phase": "PHASE_70",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "AGENT_PROGRAM_INPUT_FORMAT_V1"
     }
   ]

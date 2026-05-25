@@ -79,7 +79,8 @@
     "generated_family_autonomous_conveyor_failure_recovery_v1",
     "external_agent_production_program_test_v1",
     "agent_github_action_launch_v1",
-    "agent_catalog_v1"
+    "agent_catalog_v1",
+    "agent_program_input_format_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

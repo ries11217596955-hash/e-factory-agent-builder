@@ -1,0 +1,36 @@
+{
+  "report_id": "AGENT_PROGRAM_INPUT_FORMAT_V1_REPORT",
+  "proof_id": "AGENT_PROGRAM_INPUT_FORMAT_V1",
+  "status": "PASS",
+  "program_root": "agent_programs/",
+  "schema_path": "agent_programs/AGENT_PROGRAM_SCHEMA.json",
+  "template_markdown_path": "agent_programs/AGENT_PROGRAM_TEMPLATE.md",
+  "template_json_path": "agent_programs/AGENT_PROGRAM_TEMPLATE.json",
+  "example_program_markdown_path": "agent_programs/remediation_intake_operator_agent_v1/PROGRAM.md",
+  "example_program_json_path": "agent_programs/remediation_intake_operator_agent_v1/PROGRAM.json",
+  "example_program_agent_id": "remediation_intake_operator_agent_v1",
+  "validation_summary": [
+    "agent_programs/README.md exists",
+    "AGENT_PROGRAM_SCHEMA.json exists, parses, and declares required fields",
+    "AGENT_PROGRAM_TEMPLATE.md and AGENT_PROGRAM_TEMPLATE.json exist",
+    "remediation_intake_operator_agent_v1 PROGRAM.md and PROGRAM.json exist",
+    "PROGRAM.json parses and declares the accepted remediation intake operator agent",
+    "PROGRAM.json requires GitHub Action and expected artifact",
+    "existing agent_catalog/AGENT_CATALOG.json exists",
+    "existing agent, catalog, workflows, and orchestrator remained unchanged",
+    "PHASE70 task and capability completed",
+    "TASK_QUEUE active_task_id returned to NONE"
+  ],
+  "created_runtime_outputs": [
+    "agent_programs/README.md",
+    "agent_programs/AGENT_PROGRAM_SCHEMA.json",
+    "agent_programs/AGENT_PROGRAM_TEMPLATE.md",
+    "agent_programs/AGENT_PROGRAM_TEMPLATE.json",
+    "agent_programs/remediation_intake_operator_agent_v1/PROGRAM.md",
+    "agent_programs/remediation_intake_operator_agent_v1/PROGRAM.json",
+    "validators/validate_agent_program_input_format_v1.ps1",
+    "proofs/AGENT_PROGRAM_INPUT_FORMAT_V1.json",
+    "reports/external_agent_production/AGENT_PROGRAM_INPUT_FORMAT_V1_REPORT.json"
+  ],
+  "next_recommended_step": "agent_program_executor_v1"
+}

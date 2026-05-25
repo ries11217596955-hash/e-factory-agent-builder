@@ -502,7 +502,7 @@
     {
       "id": "runbook_executor_agent_program_trial_v1",
       "phase": "PHASE_72",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1"
     }
   ]

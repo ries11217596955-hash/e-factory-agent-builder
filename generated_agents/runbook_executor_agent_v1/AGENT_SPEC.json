@@ -1,0 +1,94 @@
+{
+  "agent_id": "runbook_executor_agent_v1",
+  "agent_name": "Runbook Executor Agent v1",
+  "agent_kind": "external_operator_agent",
+  "purpose": "превращает runbook и задачу в операторский план действий",
+  "source_program_path": "agent_programs/runbook_executor_agent_v1/PROGRAM.json",
+  "source_execution_plan_path": "agent_program_runs/runbook_executor_agent_v1/EXECUTION_PLAN.json",
+  "github_action_required": true,
+  "github_action_name": "Run Runbook Executor Agent v1",
+  "artifact_name": "runbook-executor-agent-v1-output",
+  "runtime": {
+    "entrypoint": "run.ps1",
+    "parameters": [
+      "-InputPath",
+      "-OutputPath"
+    ],
+    "external_api_usage": false
+  },
+  "input_contract": {
+    "type": "object",
+    "required": [
+      "runbook_title",
+      "runbook_steps",
+      "task_or_incident",
+      "environment",
+      "constraints"
+    ],
+    "fields": {
+      "runbook_title": {
+        "type": "string",
+        "min_length": 1
+      },
+      "runbook_steps": {
+        "type": "array",
+        "items": "string",
+        "min_items": 1
+      },
+      "task_or_incident": {
+        "type": "string",
+        "min_length": 1
+      },
+      "environment": {
+        "type": "string",
+        "min_length": 1
+      },
+      "constraints": {
+        "type": "array",
+        "items": "string"
+      }
+    }
+  },
+  "output_contract": {
+    "type": "object",
+    "required": [
+      "execution_checklist",
+      "risk_flags",
+      "required_evidence",
+      "next_operator_action",
+      "validation_status"
+    ],
+    "fields": {
+      "execution_checklist": {
+        "type": "array",
+        "items": "string"
+      },
+      "risk_flags": {
+        "type": "array",
+        "items": "string"
+      },
+      "required_evidence": {
+        "type": "array",
+        "items": "string"
+      },
+      "next_operator_action": {
+        "type": "string"
+      },
+      "validation_status": {
+        "type": "string",
+        "required_value": "PASS"
+      }
+    }
+  },
+  "validation_contract": {
+    "required_status": "PASS",
+    "runtime_example_output": "generated_agents/runbook_executor_agent_v1/OUTPUT_EXAMPLE_RUNTIME.json",
+    "checks": [
+      "required files present",
+      "JSON examples valid",
+      "run.ps1 parser check passes",
+      "runtime output contains checklist, risks, evidence, next action",
+      "validation_status is PASS"
+    ]
+  }
+}

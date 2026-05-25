@@ -508,7 +508,7 @@
     {
       "id": "runbook_executor_agent_production_v1",
       "phase": "PHASE_73",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1"
     }
   ]

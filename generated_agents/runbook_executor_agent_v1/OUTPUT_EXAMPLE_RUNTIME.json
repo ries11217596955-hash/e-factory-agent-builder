@@ -1,0 +1,43 @@
+{
+  "execution_checklist": [
+    {
+      "step_number": 1,
+      "action": "Confirm the current incident scope and affected environment.",
+      "operator_context": "Apply to 'Background worker is stuck and queued remediation jobs are not progressing.' in 'staging'."
+    },
+    {
+      "step_number": 2,
+      "action": "Check worker queue depth and last successful job timestamp.",
+      "operator_context": "Apply to 'Background worker is stuck and queued remediation jobs are not progressing.' in 'staging'."
+    },
+    {
+      "step_number": 3,
+      "action": "Restart the worker service using the approved operational command.",
+      "operator_context": "Apply to 'Background worker is stuck and queued remediation jobs are not progressing.' in 'staging'."
+    },
+    {
+      "step_number": 4,
+      "action": "Verify queue depth decreases and no new critical errors appear.",
+      "operator_context": "Apply to 'Background worker is stuck and queued remediation jobs are not progressing.' in 'staging'."
+    },
+    {
+      "step_number": 5,
+      "action": "Record evidence and hand off unresolved symptoms to engineering.",
+      "operator_context": "Apply to 'Background worker is stuck and queued remediation jobs are not progressing.' in 'staging'."
+    }
+  ],
+  "risk_flags": [
+    "Constraint: Do not change production systems.",
+    "Constraint: Do not delete queued jobs.",
+    "Constraint: Collect evidence before and after restart."
+  ],
+  "required_evidence": [
+    "Original runbook title: Restart stuck background worker",
+    "Task or incident: Background worker is stuck and queued remediation jobs are not progressing.",
+    "Environment: staging",
+    "Before and after observation for each checklist step",
+    "Final operator note with unresolved symptoms or confirmation of completion"
+  ],
+  "next_operator_action": "Review risks, execute the checklist in order, collect the required evidence, and escalate if any step cannot be completed safely.",
+  "validation_status": "PASS"
+}

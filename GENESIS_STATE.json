@@ -82,7 +82,8 @@
     "agent_catalog_v1",
     "agent_program_input_format_v1",
     "agent_program_executor_v1",
-    "runbook_executor_agent_program_trial_v1"
+    "runbook_executor_agent_program_trial_v1",
+    "runbook_executor_agent_production_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,

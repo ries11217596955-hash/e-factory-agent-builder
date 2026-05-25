@@ -23,6 +23,29 @@
         "reports/external_agent_production/AGENT_GITHUB_ACTION_LAUNCH_V1_REPORT.json",
         "reports/external_agent_production/REMEDIATION_INTAKE_OPERATOR_AGENT_V1_GITHUB_ACTION_ACCEPTANCE.md"
       ]
+    },
+    {
+      "agent_id": "runbook_executor_agent_v1",
+      "agent_name": "Runbook Executor Agent v1",
+      "purpose": "превращает runbook и задачу в операторский план действий",
+      "location": "generated_agents/runbook_executor_agent_v1/",
+      "run_script": "generated_agents/runbook_executor_agent_v1/run.ps1",
+      "github_workflow": "",
+      "github_workflow_name": "Run Runbook Executor Agent v1",
+      "artifact_name": "runbook-executor-agent-v1-output",
+      "status": "PRODUCED_LOCAL_PENDING_GITHUB_ACTION",
+      "local_validation": "PASS",
+      "github_action_validation": "PENDING",
+      "proof_paths": [
+        "proofs/RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1.json",
+        "proofs/RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1.json"
+      ],
+      "report_paths": [
+        "reports/external_agent_production/RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1_REPORT.json",
+        "reports/external_agent_production/RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1_REPORT.json"
+      ],
+      "source_program_path": "agent_programs/runbook_executor_agent_v1/PROGRAM.json",
+      "execution_plan_path": "agent_program_runs/runbook_executor_agent_v1/EXECUTION_PLAN.json"
     }
   ]
 }

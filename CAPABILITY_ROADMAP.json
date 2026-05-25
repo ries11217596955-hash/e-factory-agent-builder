@@ -518,7 +518,7 @@
     },
     {
       "id": "runbook_executor_agent_github_action_acceptance_v1",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "goal": "Accept Runbook Executor Agent v1 after GitHub Actions artifact verification"
     }
   ]

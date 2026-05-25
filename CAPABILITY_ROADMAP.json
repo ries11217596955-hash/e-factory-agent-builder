@@ -520,6 +520,13 @@
       "id": "runbook_executor_agent_github_action_acceptance_v1",
       "status": "COMPLETED",
       "goal": "Accept Runbook Executor Agent v1 after GitHub Actions artifact verification"
+    },
+    {
+      "id": "agent_production_closed_loop_standard_v1",
+      "phase": "PHASE_76",
+      "status": "ACTIVE",
+      "gate": "AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1",
+      "goal": "Codify the proven external-agent production acceptance loop as the factory standard"
     }
   ]
 }

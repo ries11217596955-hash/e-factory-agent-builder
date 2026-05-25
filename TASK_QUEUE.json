@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "NONE",
+  "active_task_id": "TASK_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1_001",
   "tasks": [
     {
       "task_id": "TASK_REPO_GENESIS_001",
@@ -670,6 +670,14 @@
       "status": "COMPLETED",
       "objective": "Run GitHub Actions workflow for Runbook Executor Agent v1, verify artifact, and mark the agent accepted",
       "expected_delta": "RUNBOOK_EXECUTOR_AGENT_ACCEPTED"
+    },
+    {
+      "task_id": "TASK_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1_001",
+      "capability_id": "agent_production_closed_loop_standard_v1",
+      "status": "ACTIVE",
+      "objective": "Codify the closed-loop external-agent production path as the Builder factory standard.",
+      "expected_gate": "AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1",
+      "build_task_path": "tasks/TASK_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1_001.json"
     }
   ]
 }

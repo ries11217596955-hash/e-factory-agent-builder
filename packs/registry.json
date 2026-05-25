@@ -560,6 +560,13 @@
       "pack_contract_path": "packs/PHASE75_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_ACCEPTANCE_V1/PACK.json",
       "entry_script": "packs/PHASE75_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_ACCEPTANCE_V1/APPLY.ps1",
       "shell": "PowerShell"
+    },
+    {
+      "pack_id": "PHASE76_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1",
+      "task_id": "TASK_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1_001",
+      "pack_contract_path": "packs/PHASE76_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1/PACK.json",
+      "entry_script": "packs/PHASE76_AGENT_PRODUCTION_CLOSED_LOOP_STANDARD_V1/APPLY.ps1",
+      "shell": "PowerShell"
     }
   ]
 }

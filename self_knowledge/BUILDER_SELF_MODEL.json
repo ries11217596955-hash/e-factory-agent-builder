@@ -1,0 +1,119 @@
+{
+  "schema_version": "AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1",
+  "generated_at_utc": "PREPARED_NOT_RUN",
+  "collection_status": "prepared_not_run",
+  "status_taxonomy": [
+    "proven",
+    "completed",
+    "active",
+    "candidate",
+    "planned",
+    "failed",
+    "unknown",
+    "missing_surface"
+  ],
+  "builder_identity": {
+    "system": "Agent Builder",
+    "line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+    "purpose": "Build its own verified operating contour, then build other agents from formal specs.",
+    "status": "active"
+  },
+  "repo_markers": [],
+  "current_state": {},
+  "queue_state": {},
+  "roadmap_summary": {},
+  "capability_manifest": {},
+  "module_inventory": {},
+  "generated_programs": [],
+  "produced_agents": [],
+  "launch_surfaces": [],
+  "proof_index": [],
+  "report_index": [],
+  "missing_surfaces": [
+    {
+      "path": "operations",
+      "area": "Operation System",
+      "kind": "directory",
+      "status": "missing_surface"
+    },
+    {
+      "path": "operation_registry.json",
+      "area": "Operation System",
+      "kind": "file",
+      "status": "missing_surface"
+    },
+    {
+      "path": "contracts/operation.schema.json",
+      "area": "Operation System",
+      "kind": "file",
+      "status": "missing_surface"
+    },
+    {
+      "path": "reports/operations",
+      "area": "Operation System",
+      "kind": "directory",
+      "status": "missing_surface"
+    },
+    {
+      "path": "proofs/operations",
+      "area": "Operation System",
+      "kind": "directory",
+      "status": "missing_surface"
+    },
+    {
+      "path": "agent_intents",
+      "area": "Blueprint Compiler",
+      "kind": "directory",
+      "status": "missing_surface"
+    },
+    {
+      "path": "blueprints",
+      "area": "Blueprint Compiler",
+      "kind": "directory",
+      "status": "missing_surface"
+    },
+    {
+      "path": "contracts/blueprint.schema.json",
+      "area": "Blueprint Compiler",
+      "kind": "file",
+      "status": "missing_surface"
+    },
+    {
+      "path": "templates/agent_blueprint",
+      "area": "Blueprint Compiler",
+      "kind": "directory",
+      "status": "missing_surface"
+    },
+    {
+      "path": "reports/blueprint_compiler",
+      "area": "Blueprint Compiler",
+      "kind": "directory",
+      "status": "missing_surface"
+    },
+    {
+      "path": "proofs/blueprint_compiler",
+      "area": "Blueprint Compiler",
+      "kind": "directory",
+      "status": "missing_surface"
+    }
+  ],
+  "failed_or_partial_items": [],
+  "next_strongest_move": {
+    "status": "candidate",
+    "recommendation": "Run PHASE78 apply pack to generate repo-native self-knowledge from current artifacts.",
+    "basis": [
+      "Seed file prepared before runtime evidence exists."
+    ]
+  },
+  "cut_list": [
+    {
+      "item": "Do not mark Operation System or Blueprint Compiler as completed before their files and proof exist.",
+      "status": "planned"
+    }
+  ],
+  "evidence_policy": {
+    "no_proof_claim_without_file": true,
+    "missing_directories_are_missing_surface": true,
+    "chat_is_not_source_of_truth": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": "AGENT_BUILDER_ROADMAP_STATE_V1",
+  "generated_at_utc": "PREPARED_NOT_RUN",
+  "collection_status": "prepared_not_run",
+  "current_capability": null,
+  "active_task_id": null,
+  "phase_78": {
+    "id": "agent_builder_self_knowledge_system_full_contract_v1",
+    "status": "active",
+    "gate": "AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "AGENT_BUILDER_CAPABILITY_MANIFEST_V1",
+  "generated_at_utc": "PREPARED_NOT_RUN",
+  "collection_status": "prepared_not_run",
+  "source_files": [],
+  "capabilities": [],
+  "counts": {},
+  "evidence_policy": {
+    "no_proof_claim_without_file": true
+  }
+}

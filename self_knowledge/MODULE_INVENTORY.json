@@ -1,0 +1,12 @@
+{
+  "schema_version": "AGENT_BUILDER_MODULE_INVENTORY_V1",
+  "generated_at_utc": "PREPARED_NOT_RUN",
+  "collection_status": "prepared_not_run",
+  "modules": [],
+  "validators": [],
+  "contracts": [],
+  "packs": [],
+  "workflows": [],
+  "counts": {},
+  "missing_surfaces": []
+}

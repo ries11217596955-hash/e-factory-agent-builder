@@ -3,6 +3,13 @@
   "roadmap_version": "30.0",
   "capabilities": [
     {
+      "id": "agent_builder_self_knowledge_system_full_contract_v1",
+      "phase": "PHASE_78",
+      "status": "ACTIVE",
+      "gate": "AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1",
+      "goal": "Establish repo-native self-knowledge system for Agent Builder with evidence-indexed owner-readable self-description."
+    },
+    {
       "id": "repo_genesis",
       "phase": "PHASE_0",
       "status": "COMPLETED",

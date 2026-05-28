@@ -3,6 +3,13 @@
   "roadmap_version": "30.0",
   "capabilities": [
     {
+      "id": "manual_scout_pass_import_v1",
+      "phase": "PHASE_80",
+      "status": "COMPLETED",
+      "gate": "MANUAL_SCOUT_PASS_IMPORT_V1",
+      "goal": "Import MANUAL_SCOUT_PASS_001 into the controlled material catalog without trusting, installing, scanning, or admitting materials."
+    },
+    {
       "id": "material_acquisition_bootstrap_v1",
       "phase": "PHASE_79",
       "status": "COMPLETED",

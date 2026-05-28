@@ -1,0 +1,39 @@
+{
+  "proof_id": "MANUAL_SCOUT_PASS_IMPORT_V1",
+  "phase": "PHASE_80",
+  "capability_id": "manual_scout_pass_import_v1",
+  "task_id": "TASK_MANUAL_SCOUT_PASS_IMPORT_V1_001",
+  "pack_id": "PHASE80_MANUAL_SCOUT_PASS_IMPORT_V1",
+  "status": "PASS",
+  "generated_at": "2026-05-28T21:23:09.2846563Z",
+  "evidence_files": [
+    "materials/inbox/MANUAL_SCOUT_PASS_001.json",
+    "materials/MATERIAL_CATALOG.json",
+    "reports/materials/MANUAL_SCOUT_PASS_IMPORT_REPORT.json"
+  ],
+  "validation_gates": [
+    "manual_scout_pass_parsed",
+    "candidate_count_9",
+    "catalog_mutated_by_explicit_import",
+    "trusted_count_zero",
+    "queue_returned_to_none"
+  ],
+  "queue_state_after": {
+    "active_task_id": "NONE"
+  },
+  "catalog_state_after": {
+    "entries": 9,
+    "imported_from_manual_scout_pass_001": 9,
+    "trusted_count": 0
+  },
+  "forbidden_actions_confirmed": {
+    "no_external_tools_installed": true,
+    "no_external_repos_fetched": true,
+    "no_materials_marked_trusted": true,
+    "no_external_agent_created": true,
+    "no_scout_file_mutated": true,
+    "no_phase78_files_modified": true,
+    "no_phase79_runtime_files_modified": true
+  },
+  "next_allowed_step": "STEP6_OR_PHASE81_MATERIAL_ADMISSION_POLICY_V1"
+}

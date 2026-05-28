@@ -1,0 +1,39 @@
+{
+  "catalog_version": "MATERIAL_CATALOG_V1",
+  "generated_at": "2026-05-28T19:06:58.4283221Z",
+  "policy": {
+    "phase": "PHASE_79",
+    "capability_id": "material_acquisition_bootstrap_v1",
+    "trust_policy": "No material may be marked TRUSTED during PHASE79.",
+    "next_allowed_step": "STEP4_MANUAL_SCOUT_PASS_001",
+    "allowed_statuses": [
+      "DISCOVERED",
+      "CANDIDATE",
+      "QUARANTINED",
+      "WRAPPED",
+      "TESTED",
+      "TRUSTED",
+      "REJECTED",
+      "REFERENCE_ONLY",
+      "OWNER_APPROVAL_REQUIRED"
+    ],
+    "allowed_usage_modes": [
+      "USE_AS_TOOL",
+      "WRAP_ONLY",
+      "COPY_WITH_ATTRIBUTION",
+      "ADAPT",
+      "REIMPLEMENT",
+      "REFERENCE_ONLY",
+      "ASK_PERMISSION",
+      "REJECT"
+    ],
+    "allowed_risk_levels": [
+      "LOW",
+      "MEDIUM",
+      "HIGH",
+      "FORBIDDEN",
+      "UNKNOWN"
+    ]
+  },
+  "entries": []
+}

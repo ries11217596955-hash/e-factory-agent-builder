@@ -68,7 +68,21 @@ function Write-JsonFile {
     New-Item -ItemType Directory -Path $directory -Force | Out-Null
   }
 
-  $Object | ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $Path -Encoding UTF8
+  $json = ($Object | ConvertTo-Json -Depth 100) -replace "`r`n", "`n"
+  if (-not $json.EndsWith("`n")) {
+    $json += "`n"
+  }
+  [System.IO.File]::WriteAllText($Path, $json, [System.Text.UTF8Encoding]::new($false))
+}
+
+function Safe-PSObjectProperties {
+  param([object]$Object)
+
+  if ($null -eq $Object) {
+    return @()
+  }
+
+  return @($Object.PSObject.Properties)
 }
 
 function Get-PropertyValue {
@@ -82,7 +96,7 @@ function Get-PropertyValue {
   }
 
   foreach ($name in $Names) {
-    $property = $Object.PSObject.Properties | Where-Object { $_.Name -ieq $name } | Select-Object -First 1
+    $property = Safe-PSObjectProperties $Object | Where-Object { $_.Name -ieq $name } | Select-Object -First 1
     if ($null -ne $property -and $null -ne $property.Value -and "$($property.Value)" -ne "") {
       return $property.Value
     }
@@ -103,6 +117,12 @@ function As-Array {
   }
 
   return @($Value)
+}
+
+function Safe-Count {
+  param([object]$Value)
+
+  return @(As-Array $Value).Count
 }
 
 function Normalize-Status {
@@ -226,7 +246,7 @@ function Get-RoadmapEntries {
     }
   }
 
-  foreach ($property in $Node.PSObject.Properties) {
+  foreach ($property in (Safe-PSObjectProperties $Node)) {
     if ($property.Value -is [pscustomobject] -or $property.Value -is [System.Array]) {
       $entries += Get-RoadmapEntries -Node $property.Value -SourcePath $SourcePath
     }
@@ -385,15 +405,15 @@ $phase78 = $roadmapEntries | Where-Object { $_.id -eq $CapabilityId -or $_.phase
 
 $capabilities = @()
 foreach ($entry in $roadmapEntries) {
-  $evidencePaths = Find-EvidencePaths -Id $entry.id -Gate $entry.gate -ProofFiles $proofFiles -ReportFiles $reportFiles
+  $evidencePaths = @(Find-EvidencePaths -Id $entry.id -Gate $entry.gate -ProofFiles $proofFiles -ReportFiles $reportFiles)
   $capabilities += [pscustomobject]@{
     id = $entry.id
     phase = $entry.phase
     gate = $entry.gate
     status = $entry.status
     raw_status = $entry.raw_status
-    evidence_status = $(if ($evidencePaths.Count -gt 0) { "proven" } else { "unknown" })
-    evidence_paths = $evidencePaths
+    evidence_status = $(if ((Safe-Count $evidencePaths) -gt 0) { "proven" } else { "unknown" })
+    evidence_paths = @(As-Array $evidencePaths)
     source_path = $entry.source_path
   }
 }

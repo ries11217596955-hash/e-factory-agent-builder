@@ -1,6 +1,8 @@
 [CmdletBinding()]
 param(
-  [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
+  [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path,
+  [string]$RunId = "AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_001",
+  [switch]$InvokedByOrchestrator
 )
 
 $ErrorActionPreference = "Stop"
@@ -45,7 +47,21 @@ function Write-JsonFile {
     New-Item -ItemType Directory -Path $directory -Force | Out-Null
   }
 
-  $Object | ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $fullPath -Encoding UTF8
+  $json = ($Object | ConvertTo-Json -Depth 100) -replace "`r`n", "`n"
+  if (-not $json.EndsWith("`n")) {
+    $json += "`n"
+  }
+  [System.IO.File]::WriteAllText($fullPath, $json, [System.Text.UTF8Encoding]::new($false))
+}
+
+function Safe-PSObjectProperties {
+  param([object]$Object)
+
+  if ($null -eq $Object) {
+    return @()
+  }
+
+  return @($Object.PSObject.Properties)
 }
 
 function Get-PropertyValue {
@@ -59,7 +75,7 @@ function Get-PropertyValue {
   }
 
   foreach ($name in $Names) {
-    $property = $Object.PSObject.Properties | Where-Object { $_.Name -ieq $name } | Select-Object -First 1
+    $property = Safe-PSObjectProperties $Object | Where-Object { $_.Name -ieq $name } | Select-Object -First 1
     if ($null -ne $property) {
       return $property.Value
     }
@@ -75,7 +91,7 @@ function Set-PropertyValue {
     [object]$Value
   )
 
-  $property = $Object.PSObject.Properties | Where-Object { $_.Name -ieq $Name } | Select-Object -First 1
+  $property = Safe-PSObjectProperties $Object | Where-Object { $_.Name -ieq $Name } | Select-Object -First 1
   if ($null -ne $property) {
     $property.Value = $Value
   } else {
@@ -93,6 +109,12 @@ function As-Array {
     return $Value
   }
   return @($Value)
+}
+
+function Safe-Count {
+  param([object]$Value)
+
+  return @(As-Array $Value).Count
 }
 
 function New-PhaseEntry {
@@ -120,10 +142,10 @@ function Ensure-RoadmapPhase {
     Set-PropertyValue -Object $topLevelPhase -Name "gate" -Value $GateId
   }
 
-  $containerProperty = $Roadmap.PSObject.Properties | Where-Object { $_.Name -in @("phases", "capabilities", "roadmap") } | Select-Object -First 1
+  $containerProperty = Safe-PSObjectProperties $Roadmap | Where-Object { $_.Name -in @("phases", "capabilities", "roadmap") } | Select-Object -First 1
   if ($null -eq $containerProperty) {
     Set-PropertyValue -Object $Roadmap -Name "phases" -Value @()
-    $containerProperty = $Roadmap.PSObject.Properties["phases"]
+    $containerProperty = Safe-PSObjectProperties $Roadmap | Where-Object { $_.Name -eq "phases" } | Select-Object -First 1
   }
 
   $container = $containerProperty.Value
@@ -208,7 +230,7 @@ function Ensure-TaskQueue {
 
   $topLevelTask = Get-PropertyValue -Object $TaskQueue -Names @("phase78_active_task_entry")
   if ($topLevelTask -is [pscustomobject]) {
-    foreach ($property in (New-TaskEntry -Status $Status).PSObject.Properties) {
+    foreach ($property in (Safe-PSObjectProperties (New-TaskEntry -Status $Status))) {
       Set-PropertyValue -Object $topLevelTask -Name $property.Name -Value $property.Value
     }
     Set-PropertyValue -Object $topLevelTask -Name "path" -Value "tasks/TASK_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_001.json"
@@ -252,6 +274,10 @@ function New-PackRegistryEntry {
     active_line = $ActiveLine
     mode = $Mode
     path = "packs/$PackId"
+    task_id = $TaskId
+    pack_contract_path = "packs/$PackId/PACK.json"
+    entry_script = "packs/$PackId/APPLY.ps1"
+    shell = "PowerShell"
     apply = "APPLY.ps1"
     validate = "VALIDATE.ps1"
   }
@@ -265,15 +291,15 @@ function Ensure-PackRegistry {
 
   $topLevelPack = Get-PropertyValue -Object $Registry -Names @($PackId)
   if ($topLevelPack -is [pscustomobject]) {
-    foreach ($property in (New-PackRegistryEntry -Status $Status).PSObject.Properties) {
+    foreach ($property in (Safe-PSObjectProperties (New-PackRegistryEntry -Status $Status))) {
       Set-PropertyValue -Object $topLevelPack -Name $property.Name -Value $property.Value
     }
   }
 
-  $packsProperty = $Registry.PSObject.Properties | Where-Object { $_.Name -in @("packs", "registry") } | Select-Object -First 1
+  $packsProperty = Safe-PSObjectProperties $Registry | Where-Object { $_.Name -in @("packs", "registry") } | Select-Object -First 1
   if ($null -eq $packsProperty) {
     Set-PropertyValue -Object $Registry -Name "packs" -Value @()
-    $packsProperty = $Registry.PSObject.Properties["packs"]
+    $packsProperty = Safe-PSObjectProperties $Registry | Where-Object { $_.Name -eq "packs" } | Select-Object -First 1
   }
 
   $container = $packsProperty.Value
@@ -283,7 +309,7 @@ function Ensure-PackRegistry {
       $entry = [pscustomobject]@{}
       Set-PropertyValue -Object $container -Name $PackId -Value $entry
     }
-    foreach ($property in (New-PackRegistryEntry -Status $Status).PSObject.Properties) {
+    foreach ($property in (Safe-PSObjectProperties (New-PackRegistryEntry -Status $Status))) {
       Set-PropertyValue -Object $entry -Name $property.Name -Value $property.Value
     }
     return
@@ -295,7 +321,7 @@ function Ensure-PackRegistry {
     if ($pack -is [pscustomobject]) {
       $id = Get-PropertyValue -Object $pack -Names @("pack_id", "id", "name")
       if ("$id" -eq $PackId) {
-        foreach ($property in (New-PackRegistryEntry -Status $Status).PSObject.Properties) {
+        foreach ($property in (Safe-PSObjectProperties (New-PackRegistryEntry -Status $Status))) {
           Set-PropertyValue -Object $pack -Name $property.Name -Value $property.Value
         }
         $found = $true
@@ -308,6 +334,60 @@ function Ensure-PackRegistry {
   }
 
   Set-PropertyValue -Object $Registry -Name $packsProperty.Name -Value @($packs)
+}
+
+function Find-PackRegistryEntry {
+  param([object]$Registry)
+
+  if ($null -eq $Registry) {
+    return $null
+  }
+
+  $topLevelPack = Get-PropertyValue -Object $Registry -Names @($PackId)
+  if ($topLevelPack -is [pscustomobject]) {
+    return $topLevelPack
+  }
+
+  $container = Get-PropertyValue -Object $Registry -Names @("packs", "registry")
+  if ($container -is [pscustomobject]) {
+    return Get-PropertyValue -Object $container -Names @($PackId)
+  }
+
+  foreach ($pack in As-Array $container) {
+    if ($pack -is [pscustomobject]) {
+      $id = Get-PropertyValue -Object $pack -Names @("pack_id", "id", "name")
+      if ("$id" -eq $PackId) {
+        return $pack
+      }
+    }
+  }
+
+  return $null
+}
+
+function Test-PackRegistryContract {
+  param([object]$Registry)
+
+  $entry = Find-PackRegistryEntry -Registry $Registry
+  if ($null -eq $entry) {
+    return $false
+  }
+
+  $expected = [ordered]@{
+    task_id = $TaskId
+    pack_contract_path = "packs/$PackId/PACK.json"
+    entry_script = "packs/$PackId/APPLY.ps1"
+    shell = "PowerShell"
+  }
+
+  foreach ($key in $expected.Keys) {
+    $actual = Get-PropertyValue -Object $entry -Names @($key)
+    if ("$actual" -ne "$($expected[$key])") {
+      return $false
+    }
+  }
+
+  return $true
 }
 
 function Save-StateFiles {
@@ -326,12 +406,15 @@ function Save-StateFiles {
   Ensure-RoadmapPhase -Roadmap $roadmap -Status $PhaseStatus
   Ensure-GenesisState -Genesis $genesis -Completed $Completed
   Ensure-TaskQueue -TaskQueue $queue -Status $TaskStatus -ActiveTaskId $ActiveTaskId
-  Ensure-PackRegistry -Registry $registry -Status $PhaseStatus
 
   Write-JsonFile -Path "CAPABILITY_ROADMAP.json" -Object $roadmap
   Write-JsonFile -Path "GENESIS_STATE.json" -Object $genesis
   Write-JsonFile -Path "TASK_QUEUE.json" -Object $queue
-  Write-JsonFile -Path "packs/registry.json" -Object $registry
+
+  if (-not (Test-PackRegistryContract -Registry $registry)) {
+    Ensure-PackRegistry -Registry $registry -Status $PhaseStatus
+    Write-JsonFile -Path "packs/registry.json" -Object $registry
+  }
 }
 
 function Invoke-SelfKnowledgeBuild {
@@ -385,6 +468,57 @@ function Write-Proof {
   Write-JsonFile -Path $ProofPath -Object $proof
 }
 
+function Capture-StateFileSnapshots {
+  $snapshots = @{}
+  foreach ($path in @("CAPABILITY_ROADMAP.json", "GENESIS_STATE.json", "TASK_QUEUE.json", "packs/registry.json")) {
+    $fullPath = Join-RepoPath $path
+    if (Test-Path -LiteralPath $fullPath) {
+      $snapshots[$path] = [System.IO.File]::ReadAllBytes($fullPath)
+    }
+  }
+
+  return $snapshots
+}
+
+function Restore-StateFileSnapshots {
+  param([hashtable]$Snapshots)
+
+  foreach ($path in $Snapshots.Keys) {
+    $fullPath = Join-RepoPath $path
+    [System.IO.File]::WriteAllBytes($fullPath, [byte[]]$Snapshots[$path])
+  }
+}
+
+function Write-FailureDiagnostic {
+  param(
+    [object]$ErrorRecord,
+    [string]$Stage,
+    [bool]$StateRestored
+  )
+
+  $diagnosticPath = "reports/phase78/PHASE78_FAILURE_DIAGNOSTIC.json"
+  $diagnostic = [ordered]@{
+    diagnostic_id = "PHASE78_FAILURE_DIAGNOSTIC"
+    status = "FAIL"
+    generated_at_utc = Get-UtcStamp
+    run_id = $RunId
+    invoked_by_orchestrator = [bool]$InvokedByOrchestrator
+    stage = $Stage
+    state_restored = $StateRestored
+    error_message = "$($ErrorRecord.Exception.Message)"
+    script_stack = "$($ErrorRecord.ScriptStackTrace)"
+    protected_state_files = @(
+      "CAPABILITY_ROADMAP.json",
+      "GENESIS_STATE.json",
+      "TASK_QUEUE.json",
+      "packs/registry.json"
+    )
+  }
+
+  Write-JsonFile -Path $diagnosticPath -Object $diagnostic
+  Write-Host "FAILURE_DIAGNOSTIC=$diagnosticPath"
+}
+
 Write-Host "PHASE78_APPLY=START"
 
 $markers = @(
@@ -405,6 +539,7 @@ $directories = @(
   "contracts/self_knowledge",
   "self_knowledge",
   "reports/self_knowledge",
+  "reports/phase78",
   "proofs/self_knowledge",
   "tasks",
   "packs/$PackId"
@@ -416,17 +551,45 @@ foreach ($directory in $directories) {
   }
 }
 
-Save-StateFiles -PhaseStatus "ACTIVE" -TaskStatus "ACTIVE" -ActiveTaskId $TaskId -Completed $false
-Invoke-SelfKnowledgeBuild
-Invoke-Validator -Stage "PreCompletion"
+$stateSnapshots = Capture-StateFileSnapshots
+$script:Phase78Stage = "STATE_SNAPSHOT_CAPTURED"
 
-Write-Proof -Status "LOCAL PASS" -ValidationStages @("PreCompletion")
-Save-StateFiles -PhaseStatus "COMPLETED" -TaskStatus "COMPLETED" -ActiveTaskId "NONE" -Completed $true
-Invoke-SelfKnowledgeBuild
-Invoke-Validator -Stage "Completed"
-Write-Proof -Status "LOCAL PASS" -ValidationStages @("PreCompletion", "Completed")
-Invoke-SelfKnowledgeBuild
-Invoke-Validator -Stage "Completed"
+try {
+  $script:Phase78Stage = "SET_ACTIVE_STATE"
+  Save-StateFiles -PhaseStatus "ACTIVE" -TaskStatus "ACTIVE" -ActiveTaskId $TaskId -Completed $false
 
-Write-Host "PHASE78_APPLY=PASS"
-Write-Host "COMMIT_PUSH=NOT_ATTEMPTED_NO_PACK_CONVENTION_ASSUMED"
+  $script:Phase78Stage = "BUILD_SELF_KNOWLEDGE_PRE_COMPLETION"
+  Invoke-SelfKnowledgeBuild
+
+  $script:Phase78Stage = "VALIDATE_PRE_COMPLETION"
+  Invoke-Validator -Stage "PreCompletion"
+
+  $script:Phase78Stage = "WRITE_PRE_COMPLETION_PROOF"
+  Write-Proof -Status "LOCAL PASS" -ValidationStages @("PreCompletion")
+
+  $script:Phase78Stage = "SET_COMPLETED_STATE"
+  Save-StateFiles -PhaseStatus "COMPLETED" -TaskStatus "COMPLETED" -ActiveTaskId "NONE" -Completed $true
+
+  $script:Phase78Stage = "BUILD_SELF_KNOWLEDGE_COMPLETED"
+  Invoke-SelfKnowledgeBuild
+
+  $script:Phase78Stage = "VALIDATE_COMPLETED"
+  Invoke-Validator -Stage "Completed"
+
+  $script:Phase78Stage = "WRITE_COMPLETED_PROOF"
+  Write-Proof -Status "LOCAL PASS" -ValidationStages @("PreCompletion", "Completed")
+
+  $script:Phase78Stage = "REBUILD_SELF_KNOWLEDGE_WITH_PROOF_INDEX"
+  Invoke-SelfKnowledgeBuild
+
+  $script:Phase78Stage = "FINAL_VALIDATE_COMPLETED"
+  Invoke-Validator -Stage "Completed"
+
+  Write-Host "PHASE78_APPLY=PASS"
+  Write-Host "COMMIT_PUSH=NOT_ATTEMPTED_NO_PACK_CONVENTION_ASSUMED"
+} catch {
+  Restore-StateFileSnapshots -Snapshots $stateSnapshots
+  Write-FailureDiagnostic -ErrorRecord $_ -Stage $script:Phase78Stage -StateRestored $true
+  Write-Host "PHASE78_APPLY=FAIL"
+  throw
+}

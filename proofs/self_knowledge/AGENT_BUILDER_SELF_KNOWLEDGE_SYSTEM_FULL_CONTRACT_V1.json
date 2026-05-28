@@ -1,0 +1,34 @@
+{
+  "proof_id": "AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1",
+  "capability_id": "agent_builder_self_knowledge_system_full_contract_v1",
+  "phase": "PHASE_78",
+  "pack_id": "PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1",
+  "task_id": "TASK_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_001",
+  "status": "LOCAL PASS",
+  "generated_at_utc": "2026-05-28T15:44:58.6053310Z",
+  "validation_stages": [
+    "PreCompletion",
+    "Completed"
+  ],
+  "outputs": [
+    "self_knowledge/BUILDER_SELF_MODEL.json",
+    "self_knowledge/CAPABILITY_MANIFEST.json",
+    "self_knowledge/MODULE_INVENTORY.json",
+    "self_knowledge/EVIDENCE_INDEX.json",
+    "self_knowledge/PRODUCED_AGENTS_INDEX.json",
+    "self_knowledge/ROADMAP_STATE.json",
+    "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
+    "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
+  ],
+  "forbidden_drift_checks": {
+    "operation_system_not_marked_completed": true,
+    "blueprint_compiler_not_marked_completed": true,
+    "no_external_agent_created": true,
+    "orchestrator_not_modified_by_pack": true
+  },
+  "evidence_policy": {
+    "no_proof_claim_without_file": true,
+    "proof_written_by_apply_after_validation": true,
+    "task_closed_only_after_validation": true
+  }
+}

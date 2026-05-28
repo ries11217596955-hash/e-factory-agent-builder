@@ -35,7 +35,29 @@ function Write-JsonFile {
     New-Item -ItemType Directory -Path $directory -Force | Out-Null
   }
 
-  $Object | ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $Path -Encoding UTF8
+  $json = ($Object | ConvertTo-Json -Depth 100) -replace "`r`n", "`n"
+  if (-not $json.EndsWith("`n")) {
+    $json += "`n"
+  }
+  [System.IO.File]::WriteAllText($Path, $json, [System.Text.UTF8Encoding]::new($false))
+}
+
+function Write-TextFile {
+  param(
+    [string]$Path,
+    [string]$Text
+  )
+
+  $directory = Split-Path -Parent $Path
+  if (-not (Test-Path -LiteralPath $directory)) {
+    New-Item -ItemType Directory -Path $directory -Force | Out-Null
+  }
+
+  $normalized = $Text -replace "`r`n", "`n"
+  if (-not $normalized.EndsWith("`n")) {
+    $normalized += "`n"
+  }
+  [System.IO.File]::WriteAllText($Path, $normalized, [System.Text.UTF8Encoding]::new($false))
 }
 
 function As-Array {
@@ -50,6 +72,30 @@ function As-Array {
   return @($Value)
 }
 
+function Safe-Count {
+  param([object]$Value)
+
+  return @(As-Array $Value).Count
+}
+
+function Safe-Property {
+  param(
+    [object]$Object,
+    [string]$Name
+  )
+
+  if ($null -eq $Object) {
+    return $null
+  }
+
+  $property = $Object.PSObject.Properties | Where-Object { $_.Name -ieq $Name } | Select-Object -First 1
+  if ($null -eq $property) {
+    return $null
+  }
+
+  return $property.Value
+}
+
 function Select-Paths {
   param(
     [object[]]$Items,
@@ -60,12 +106,15 @@ function Select-Paths {
     $Items |
       Select-Object -First $Limit |
       ForEach-Object {
-        if ($_.PSObject.Properties["path"]) {
-          $_.path
-        } elseif ($_.PSObject.Properties["source_path"]) {
-          $_.source_path
-        } elseif ($_.PSObject.Properties["id"]) {
-          $_.id
+        $path = Safe-Property -Object $_ -Name "path"
+        $sourcePath = Safe-Property -Object $_ -Name "source_path"
+        $id = Safe-Property -Object $_ -Name "id"
+        if ($null -ne $path -and "$path" -ne "") {
+          $path
+        } elseif ($null -ne $sourcePath -and "$sourcePath" -ne "") {
+          $sourcePath
+        } elseif ($null -ne $id -and "$id" -ne "") {
+          $id
         } else {
           "$_"
         }
@@ -77,7 +126,7 @@ function Format-ListText {
   param([object[]]$Values)
 
   $items = @($Values | Where-Object { $null -ne $_ -and "$_" -ne "" })
-  if ($items.Count -eq 0) {
+  if ((Safe-Count $items) -eq 0) {
     return "None recorded."
   }
 
@@ -101,8 +150,8 @@ $existingSystems = @(
 $existingSystems += @(
   "Capabilities indexed: $($model.capability_manifest.counts.total)"
   "Modules indexed: $($model.module_inventory.counts.modules)"
-  "Proof files indexed: $((As-Array $model.proof_index).Count)"
-  "Report files indexed: $((As-Array $model.report_index).Count)"
+  "Proof files indexed: $(Safe-Count $model.proof_index)"
+  "Report files indexed: $(Safe-Count $model.report_index)"
 )
 
 $missingSystems = @(
@@ -129,8 +178,8 @@ $answers = [ordered]@{
   queue_state = $(if ($model.queue_state.clean) { "Queue is clean: active_task_id is NONE." } else { "Queue is active: active_task_id is $($model.queue_state.active_task_id)." })
   major_systems_exist = $existingSystems
   major_systems_missing = $missingSystems
-  agent_like_products_evidenced = $(if ($agentProducts.Count -gt 0) { $agentProducts } else { @("No produced-agent files were evidenced in the scanned source surfaces.") })
-  proofs_reports_supporting_claims = $(if ($supportingEvidence.Count -gt 0) { $supportingEvidence } else { @("No proof or report files were indexed.") })
+  agent_like_products_evidenced = $(if ((Safe-Count $agentProducts) -gt 0) { $agentProducts } else { @("No produced-agent files were evidenced in the scanned source surfaces.") })
+  proofs_reports_supporting_claims = $(if ((Safe-Count $supportingEvidence) -gt 0) { $supportingEvidence } else { @("No proof or report files were indexed.") })
   what_should_be_built_next = "$($model.next_strongest_move.recommendation)"
   what_should_not_be_done_next = @(
     As-Array $model.cut_list |
@@ -204,7 +253,7 @@ $($answers.what_should_be_built_next)
 $cutMarkdown
 "@
 
-$markdown | Set-Content -LiteralPath $markdownPath -Encoding UTF8
+Write-TextFile -Path $markdownPath -Text $markdown
 
 Write-Host "SELF_DESCRIBE_REPORT=PASS"
 Write-Host "OUTPUT=reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json"

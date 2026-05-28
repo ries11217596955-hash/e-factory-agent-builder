@@ -9,7 +9,13 @@
       "status": "ACTIVE",
       "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
       "mode": "SELF_BUILD",
-      "path": "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1"
+      "path": "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1",
+      "task_id": "TASK_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_001",
+      "pack_contract_path": "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/PACK.json",
+      "entry_script": "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/APPLY.ps1",
+      "shell": "PowerShell",
+      "apply": "APPLY.ps1",
+      "validate": "VALIDATE.ps1"
     },
     {
       "pack_id": "PHASE4_SELF_VALIDATION_RELEASE_GATES_V1",

@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
-  [ValidateSet("Seed", "PreRuntime", "PreCompletion", "Completed")]
-  [string]$Stage = "Seed",
+  [ValidateSet("Auto", "Seed", "PreRuntime", "PreCompletion", "Completed")]
+  [string]$Stage = "Auto",
   [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 )
 
@@ -28,6 +28,16 @@ function Add-Failure {
 function Add-Warning {
   param([string]$Message)
   $script:Warnings += $Message
+}
+
+function Safe-PSObjectProperties {
+  param([object]$Object)
+
+  if ($null -eq $Object) {
+    return @()
+  }
+
+  return @($Object.PSObject.Properties)
 }
 
 function Read-JsonFile {
@@ -58,7 +68,7 @@ function Get-PropertyValue {
   }
 
   foreach ($name in $Names) {
-    $property = $Object.PSObject.Properties | Where-Object { $_.Name -ieq $name } | Select-Object -First 1
+    $property = Safe-PSObjectProperties $Object | Where-Object { $_.Name -ieq $name } | Select-Object -First 1
     if ($null -ne $property) {
       return $property.Value
     }
@@ -78,7 +88,7 @@ function Test-PropertyExists {
   }
 
   foreach ($name in $Names) {
-    $property = $Object.PSObject.Properties | Where-Object { $_.Name -ieq $name } | Select-Object -First 1
+    $property = Safe-PSObjectProperties $Object | Where-Object { $_.Name -ieq $name } | Select-Object -First 1
     if ($null -ne $property) {
       return $true
     }
@@ -97,6 +107,12 @@ function As-Array {
     return $Value
   }
   return @($Value)
+}
+
+function Safe-Count {
+  param([object]$Value)
+
+  return @(As-Array $Value).Count
 }
 
 function Assert-Path {
@@ -183,7 +199,7 @@ function Find-PhaseStatus {
     }
   }
 
-  foreach ($property in $Node.PSObject.Properties) {
+  foreach ($property in (Safe-PSObjectProperties $Node)) {
     if ($property.Value -is [System.Array] -or $property.Value -is [pscustomobject]) {
       $found = Find-PhaseStatus -Node $property.Value
       if ($null -ne $found) {
@@ -252,7 +268,29 @@ function Find-CanonicalPackEntry {
   return $null
 }
 
+function Resolve-ValidationStage {
+  param([string]$RequestedStage)
+
+  if ($RequestedStage -ne "Auto") {
+    return $RequestedStage
+  }
+
+  $queue = Read-JsonFile "TASK_QUEUE.json"
+  $activeTaskId = Get-PropertyValue -Object $queue -Names @("active_task_id", "activeTaskId")
+  if ("$activeTaskId" -eq "NONE") {
+    return "Completed"
+  }
+
+  return "Seed"
+}
+
+$requestedStage = $Stage
+$Stage = Resolve-ValidationStage -RequestedStage $requestedStage
+
 Write-Host "VALIDATION_STAGE=$Stage"
+if ($requestedStage -eq "Auto") {
+  Write-Host "VALIDATION_STAGE_AUTO_RESOLVED=$Stage"
+}
 
 $seedMode = $Stage -in @("Seed", "PreRuntime")
 
@@ -297,6 +335,7 @@ $runtimeFiles = @(
   "modules/build_builder_self_knowledge.ps1",
   "modules/write_builder_self_describe_report.ps1",
   "tasks/$TaskId.json",
+  "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/PACK.json",
   "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/APPLY.ps1",
   "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/VALIDATE.ps1",
   "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/README.md"
@@ -316,6 +355,34 @@ foreach ($file in $reportFiles) {
 }
 
 Assert-Path -Path $ProofPath -Kind "file" -Required ($Stage -eq "Completed")
+
+$packContract = Read-JsonFile "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/PACK.json"
+if ($null -ne $packContract) {
+  $packContractExpected = [ordered]@{
+    pack_id = "PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1"
+    task_id = $TaskId
+    capability_id = $CapabilityId
+    phase = "PHASE_78"
+    gate = $GateId
+    active_line = "AGENT_BUILDER_SELF_DEVELOPMENT"
+    mode = "SELF_BUILD"
+    entry_script = "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/APPLY.ps1"
+    validate_script = "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/VALIDATE.ps1"
+    shell = "PowerShell"
+  }
+
+  foreach ($key in $packContractExpected.Keys) {
+    $actual = Get-PropertyValue -Object $packContract -Names @($key)
+    if ("$actual" -ne "$($packContractExpected[$key])") {
+      Add-Failure "PACK_CONTRACT_FIELD_MISMATCH=$($key)::$actual"
+    }
+  }
+
+  $purpose = Get-PropertyValue -Object $packContract -Names @("purpose")
+  if ($null -eq $purpose -or "$purpose" -eq "") {
+    Add-Failure "PACK_CONTRACT_MISSING_PURPOSE"
+  }
+}
 
 $selfModel = Read-JsonFile "self_knowledge/BUILDER_SELF_MODEL.json"
 if ($null -ne $selfModel) {
@@ -372,14 +439,16 @@ if ($null -ne $selfModel) {
   }
 
   foreach ($proof in As-Array (Get-PropertyValue -Object $selfModel -Names @("proof_index"))) {
-    if ($proof.PSObject.Properties["path"] -and -not (Test-Path -LiteralPath (Join-RepoPath $proof.path))) {
-      Add-Failure "FAKE_PROOF_INDEX_PATH=$($proof.path)"
+    $proofPath = Get-PropertyValue -Object $proof -Names @("path")
+    if ($null -ne $proofPath -and "$proofPath" -ne "" -and -not (Test-Path -LiteralPath (Join-RepoPath $proofPath))) {
+      Add-Failure "FAKE_PROOF_INDEX_PATH=$proofPath"
     }
   }
 
   foreach ($report in As-Array (Get-PropertyValue -Object $selfModel -Names @("report_index"))) {
-    if ($report.PSObject.Properties["path"] -and -not (Test-Path -LiteralPath (Join-RepoPath $report.path))) {
-      Add-Failure "FAKE_REPORT_INDEX_PATH=$($report.path)"
+    $reportPath = Get-PropertyValue -Object $report -Names @("path")
+    if ($null -ne $reportPath -and "$reportPath" -ne "" -and -not (Test-Path -LiteralPath (Join-RepoPath $reportPath))) {
+      Add-Failure "FAKE_REPORT_INDEX_PATH=$reportPath"
     }
   }
 
@@ -388,19 +457,25 @@ if ($null -ne $selfModel) {
   foreach ($capability in $capabilities) {
     foreach ($evidencePath in As-Array (Get-PropertyValue -Object $capability -Names @("evidence_paths"))) {
       if (-not (Test-Path -LiteralPath (Join-RepoPath $evidencePath))) {
-        Add-Failure "FAKE_CAPABILITY_EVIDENCE_PATH=$($capability.id)::$evidencePath"
+        $capabilityId = Get-PropertyValue -Object $capability -Names @("id")
+        Add-Failure "FAKE_CAPABILITY_EVIDENCE_PATH=$($capabilityId)::$evidencePath"
       }
     }
 
-    $idText = "$($capability.id) $($capability.gate)"
+    $capabilityIdText = Get-PropertyValue -Object $capability -Names @("id")
+    $capabilityGateText = Get-PropertyValue -Object $capability -Names @("gate")
+    $idText = "$capabilityIdText $capabilityGateText"
     $status = Normalize-Status (Get-PropertyValue -Object $capability -Names @("status"))
-    if ($idText -match "(operation|blueprint)" -and $status -in @("completed", "proven")) {
-      $area = $(if ($idText -match "operation") { "Operation System" } else { "Blueprint Compiler" })
+    $identityKey = (($idText).ToLowerInvariant() -replace "[^a-z0-9]+", "_").Trim("_")
+    $claimsOperationSystem = $identityKey -match "(^|_)operation_system($|_)"
+    $claimsBlueprintCompiler = $identityKey -match "(^|_)blueprint_compiler($|_)"
+    if (($claimsOperationSystem -or $claimsBlueprintCompiler) -and $status -in @("completed", "proven")) {
+      $area = $(if ($claimsOperationSystem) { "Operation System" } else { "Blueprint Compiler" })
       $areaMissing = @(
         As-Array (Get-PropertyValue -Object $selfModel -Names @("missing_surfaces")) |
           Where-Object { $_.area -eq $area }
       )
-      if ($areaMissing.Count -gt 0) {
+      if ((Safe-Count $areaMissing) -gt 0) {
         Add-Failure "FORBIDDEN_FALSE_COMPLETED_SYSTEM=$idText"
       }
     }
@@ -484,9 +559,18 @@ if ($seedMode) {
   if ($null -eq $packEntry) {
     Add-Failure "SEED_PACK_NOT_IN_PACKS_ARRAY=PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1"
   } else {
-    $packPath = Get-PropertyValue -Object $packEntry -Names @("path", "pack_path", "directory")
-    if ("$packPath" -ne "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1") {
-      Add-Failure "SEED_PACK_REGISTRY_PATH_MISMATCH=$packPath"
+    $registryExpected = [ordered]@{
+      path = "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1"
+      task_id = $TaskId
+      pack_contract_path = "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/PACK.json"
+      entry_script = "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/APPLY.ps1"
+      shell = "PowerShell"
+    }
+    foreach ($key in $registryExpected.Keys) {
+      $actual = Get-PropertyValue -Object $packEntry -Names @($key)
+      if ("$actual" -ne "$($registryExpected[$key])") {
+        Add-Failure "SEED_PACK_REGISTRY_FIELD_MISMATCH=$($key)::$actual"
+      }
     }
   }
 }
@@ -496,6 +580,15 @@ if ($Stage -eq "Completed") {
   $activeTaskId = Get-PropertyValue -Object $queue -Names @("active_task_id", "activeTaskId")
   if ("$activeTaskId" -ne "NONE") {
     Add-Failure "ACTIVE_TASK_NOT_CLOSED=$activeTaskId"
+  }
+  $taskEntry = Find-CanonicalTaskEntry -TaskQueue $queue
+  if ($null -eq $taskEntry) {
+    Add-Failure "COMPLETED_TASK_ENTRY_MISSING=$TaskId"
+  } else {
+    $taskStatus = Normalize-Status (Get-PropertyValue -Object $taskEntry -Names @("status"))
+    if ($taskStatus -ne "completed") {
+      Add-Failure "TASK_STATUS_NOT_COMPLETED=$taskStatus"
+    }
   }
 
   $roadmap = Read-JsonFile "CAPABILITY_ROADMAP.json"
@@ -521,7 +614,7 @@ foreach ($warning in $script:Warnings) {
   Write-Host "WARNING=$warning"
 }
 
-if ($script:Failures.Count -gt 0) {
+if ((Safe-Count $script:Failures) -gt 0) {
   foreach ($failure in $script:Failures) {
     Write-Host "FAIL=$failure"
   }
@@ -535,6 +628,6 @@ if ($seedMode) {
 } else {
   Write-Host "VALIDATION_RESULT=PASS"
 }
-if ($script:Warnings.Count -gt 0) {
-  Write-Host "VALIDATION_LIMITATIONS=$($script:Warnings.Count)"
+if ((Safe-Count $script:Warnings) -gt 0) {
+  Write-Host "VALIDATION_LIMITATIONS=$(Safe-Count $script:Warnings)"
 }

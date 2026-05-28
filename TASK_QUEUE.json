@@ -1,10 +1,10 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_001",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "path": "tasks/TASK_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_001.json",
       "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
       "mode": "SELF_BUILD",

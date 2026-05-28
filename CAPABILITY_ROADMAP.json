@@ -5,7 +5,7 @@
     {
       "id": "agent_builder_self_knowledge_system_full_contract_v1",
       "phase": "PHASE_78",
-      "status": "ACTIVE",
+      "status": "COMPLETED",
       "gate": "AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1",
       "goal": "Establish repo-native self-knowledge system for Agent Builder with evidence-indexed owner-readable self-description."
     },

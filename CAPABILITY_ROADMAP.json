@@ -608,5 +608,6 @@
   ],
   "phase88_self_build_program_generator_v1": "COMPLETED",
   "phase89_generated_program_admission_v1": "COMPLETED",
-  "phase90_builder_executes_own_generated_self_build_program_v1": "COMPLETED"
+  "phase90_builder_executes_own_generated_self_build_program_v1": "COMPLETED",
+  "phase91_route_v1_closure_and_v2_r2_activation": "COMPLETED"
 }

@@ -146,5 +146,6 @@
   "self_development_decision_kernel_ready": true,
   "self_build_program_generator_v1": "PROVEN",
   "generated_program_admission_v1": "PROVEN",
-  "generated_self_build_execution_v1": "PROVEN"
+  "generated_self_build_execution_v1": "PROVEN",
+  "route_lock_v2_r2_active": "PROVEN"
 }

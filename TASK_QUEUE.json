@@ -3,6 +3,18 @@
   "active_task_id": "NONE",
   "tasks": [
     {
+      "task_id": "TASK_ROUTE_V1_CLOSURE_AND_V2_R2_ACTIVATION_001",
+      "status": "COMPLETED",
+      "path": "tasks/TASK_ROUTE_V1_CLOSURE_AND_V2_R2_ACTIVATION_001.json",
+      "active_line": "AGENT_BUILDER / SELF_BUILD",
+      "mode": "SELF_BUILD",
+      "capability_id": "route_v1_closure_and_v2_r2_activation",
+      "phase": "PHASE91",
+      "gate": "ROUTE_V1_CLOSURE_AND_V2_R2_ACTIVATION",
+      "pack_id": "PHASE91_ROUTE_V1_CLOSURE_AND_V2_R2_ACTIVATION",
+      "completed_at": "2026-05-29T13:32:44.9894671Z"
+    },
+    {
       "task_id": "TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001",
       "status": "COMPLETED",
       "path": "tasks/TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001.json",

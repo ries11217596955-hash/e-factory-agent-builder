@@ -696,5 +696,14 @@
     "proof": "proofs/self_development/BATCH_PROOF_AGGREGATOR_V1.json",
     "report": "reports/self_development/BATCH_PROOF_AGGREGATOR_V1_REPORT.json",
     "next_allowed_step": "PHASE102_AUTO_NEXT_GAP_DECISION_V1"
+  },
+  "phase102_auto_next_gap_decision_v1": {
+    "status": "COMPLETED",
+    "decision_kernel": "self_build_batch/next_actions/AUTO_NEXT_GAP_DECISION_KERNEL_V1.json",
+    "schema": "contracts/self_development/auto_next_gap_decision_v1.schema.json",
+    "dry_run_action_plan": "self_build_batch/next_actions/BATCH_PLAN_EXAMPLE_V1_NEXT_ACTION_PLAN_DRY_RUN.json",
+    "proof": "proofs/self_development/AUTO_NEXT_GAP_DECISION_V1.json",
+    "report": "reports/self_development/AUTO_NEXT_GAP_DECISION_V1_REPORT.json",
+    "next_allowed_step": "PHASE103_REPAIR_LOOP_GENERATOR_V1"
   }
 }

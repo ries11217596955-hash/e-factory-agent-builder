@@ -213,5 +213,11 @@
     "aggregator_contract": "self_build_batch/proof_aggregation/BATCH_PROOF_AGGREGATOR_V1.json",
     "schema": "contracts/self_development/batch_proof_aggregator_v1.schema.json",
     "proof": "proofs/self_development/BATCH_PROOF_AGGREGATOR_V1.json"
+  },
+  "auto_next_gap_decision_v1": {
+    "status": "PROVEN",
+    "decision_kernel": "self_build_batch/next_actions/AUTO_NEXT_GAP_DECISION_KERNEL_V1.json",
+    "schema": "contracts/self_development/auto_next_gap_decision_v1.schema.json",
+    "proof": "proofs/self_development/AUTO_NEXT_GAP_DECISION_V1.json"
   }
 }

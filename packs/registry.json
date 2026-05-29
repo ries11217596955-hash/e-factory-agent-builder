@@ -2,6 +2,22 @@
   "registry_version": "29.0",
   "packs": [
     {
+      "pack_id": "PHASE83_OPERATION_CONTRACT_SKELETON_V1",
+      "capability_id": "operation_contract_skeleton_v1",
+      "phase": "PHASE_83",
+      "gate": "OPERATION_CONTRACT_SKELETON_V1",
+      "status": "ACTIVE",
+      "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+      "mode": "SELF_BUILD",
+      "path": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1",
+      "task_id": "TASK_OPERATION_CONTRACT_SKELETON_V1_001",
+      "pack_contract_path": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1/PACK.json",
+      "entry_script": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1/APPLY.ps1",
+      "shell": "PowerShell",
+      "apply": "APPLY.ps1",
+      "validate": "VALIDATE.ps1"
+    },
+    {
       "pack_id": "PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1",
       "capability_id": "first_material_quarantine_trial_v1",
       "phase": "PHASE_82",

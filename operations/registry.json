@@ -1,0 +1,18 @@
+{
+  "registry_id": "OPERATION_REGISTRY_V1",
+  "registry_version": "1.0",
+  "generated_at": "2026-05-29T00:00:00Z",
+  "status": "SKELETON_READY",
+  "operations": [],
+  "policy": {
+    "phase": "PHASE_83",
+    "capability_id": "operation_contract_skeleton_v1",
+    "trust_policy": "PHASE83 cannot create TRUSTED_OPERATION entries.",
+    "execution_policy": "PHASE83 permits NO_EXECUTION or DRY_RUN_ONLY contract states only.",
+    "install_performed": false,
+    "external_fetch_performed": false,
+    "smoke_tests_run": false,
+    "wrappers_created": false
+  },
+  "next_allowed_step": "PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1"
+}

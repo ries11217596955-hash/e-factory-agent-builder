@@ -3,6 +3,13 @@
   "roadmap_version": "30.0",
   "capabilities": [
     {
+      "id": "operation_contract_skeleton_v1",
+      "phase": "PHASE_83",
+      "status": "COMPLETED",
+      "gate": "OPERATION_CONTRACT_SKELETON_V1",
+      "goal": "Create operation contract schemas, registry skeleton, and report/proof path without wrappers, execution, installs, fetches, or trusted operations."
+    },
+    {
       "id": "first_material_quarantine_trial_v1",
       "phase": "PHASE_82",
       "status": "COMPLETED",

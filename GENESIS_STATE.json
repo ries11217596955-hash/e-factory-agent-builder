@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_82",
-  "current_capability": "first_material_quarantine_trial_v1",
+  "current_phase": "PHASE_83",
+  "current_capability": "operation_contract_skeleton_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -92,7 +92,8 @@
     "material_acquisition_bootstrap_v1",
     "manual_scout_pass_import_v1",
     "material_admission_policy_v1",
-    "first_material_quarantine_trial_v1"
+    "first_material_quarantine_trial_v1",
+    "operation_contract_skeleton_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -133,5 +134,6 @@
   "material_acquisition_bootstrap_ready": true,
   "manual_scout_pass_import_ready": true,
   "material_admission_policy_ready": true,
-  "first_material_quarantine_trial_ready": true
+  "first_material_quarantine_trial_ready": true,
+  "operation_contract_skeleton_ready": true
 }

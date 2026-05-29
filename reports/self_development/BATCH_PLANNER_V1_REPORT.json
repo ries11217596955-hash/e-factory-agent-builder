@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "phase": "PHASE96_BATCH_PLANNER_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "generated_at": "2026-05-29T15:35:29.6302004Z",
+  "baseline_commit": "00a7ee1",
+  "planner_created": "self_build_batch/planner/BATCH_PLANNER_V1.json",
+  "schema_created": "contracts/self_development/batch_plan_v1.schema.json",
+  "example_plan_created": "self_build_batch/plans/BATCH_PLAN_EXAMPLE_V1.json",
+  "example_plan_status": "PLANNED",
+  "example_plan_admission_required": true,
+  "example_plan_execution_allowed": false,
+  "planner_does_not_execute_batches": true,
+  "planner_does_not_admit_batches": true,
+  "batch_count": 2,
+  "item_count": 5,
+  "no_external_agent_production": true,
+  "no_external_install": true,
+  "no_external_fetch": true,
+  "phase97_not_executed": true,
+  "next_allowed_step": "PHASE97_BATCH_ADMISSION_POLICY_V1"
+}

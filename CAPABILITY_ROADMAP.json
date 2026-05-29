@@ -640,5 +640,14 @@
     "proof": "proofs/self_development/SELF_BUILD_PROGRAM_GENERATOR_V2.json",
     "report": "reports/self_development/SELF_BUILD_PROGRAM_GENERATOR_V2_REPORT.json",
     "next_allowed_step": "PHASE96_BATCH_PLANNER_V1"
+  },
+  "phase96_batch_planner_v1": {
+    "status": "COMPLETED",
+    "planner": "self_build_batch/planner/BATCH_PLANNER_V1.json",
+    "schema": "contracts/self_development/batch_plan_v1.schema.json",
+    "example_plan": "self_build_batch/plans/BATCH_PLAN_EXAMPLE_V1.json",
+    "proof": "proofs/self_development/BATCH_PLANNER_V1.json",
+    "report": "reports/self_development/BATCH_PLANNER_V1_REPORT.json",
+    "next_allowed_step": "PHASE97_BATCH_ADMISSION_POLICY_V1"
   }
 }

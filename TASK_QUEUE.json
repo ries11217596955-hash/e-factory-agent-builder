@@ -3,6 +3,18 @@
   "active_task_id": "NONE",
   "tasks": [
     {
+      "task_id": "TASK_BATCH_PLANNER_V1_001",
+      "status": "COMPLETED",
+      "path": "tasks/TASK_BATCH_PLANNER_V1_001.json",
+      "active_line": "AGENT_BUILDER / SELF_BUILD",
+      "mode": "SELF_BUILD",
+      "capability_id": "batch_planner_v1",
+      "phase": "PHASE96",
+      "gate": "BATCH_PLANNER_V1",
+      "pack_id": "PHASE96_BATCH_PLANNER_V1",
+      "completed_at": "2026-05-29T15:35:29.7486064Z"
+    },
+    {
       "task_id": "TASK_SELF_BUILD_PROGRAM_GENERATOR_V2_001",
       "status": "COMPLETED",
       "path": "tasks/TASK_SELF_BUILD_PROGRAM_GENERATOR_V2_001.json",
@@ -12,7 +24,7 @@
       "phase": "PHASE95",
       "gate": "SELF_BUILD_PROGRAM_GENERATOR_V2",
       "pack_id": "PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2",
-      "completed_at": "2026-05-29T15:17:27.5048800Z"
+      "completed_at": "2026-05-29T15:17:27.50488Z"
     },
     {
       "task_id": "TASK_OWNER_ORDER_TO_GAP_MAP_V1_001",

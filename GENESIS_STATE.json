@@ -171,5 +171,11 @@
     "generator": "self_build_programs/generator/SELF_BUILD_PROGRAM_GENERATOR_V2.json",
     "schema": "contracts/self_development/self_build_program_v2.schema.json",
     "proof": "proofs/self_development/SELF_BUILD_PROGRAM_GENERATOR_V2.json"
+  },
+  "batch_planner_v1": {
+    "status": "PROVEN",
+    "planner": "self_build_batch/planner/BATCH_PLANNER_V1.json",
+    "schema": "contracts/self_development/batch_plan_v1.schema.json",
+    "proof": "proofs/self_development/BATCH_PLANNER_V1.json"
   }
 }

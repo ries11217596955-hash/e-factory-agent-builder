@@ -1,0 +1,88 @@
+{
+  "report_id": "FIRST_SMOKE_INSTALL_TRIAL_REPORT",
+  "phase": "PHASE_85",
+  "capability_id": "first_smoke_install_trial_v1",
+  "status": "PASS",
+  "generated_at": "2026-05-29T10:18:02.7330814Z",
+  "operation_id": "validate_json_schema_with_python_jsonschema",
+  "related_material_id": "mat_python_jsonschema_001",
+  "package_name": "jsonschema",
+  "install_mode": "TEMP_VENV_ONLY",
+  "sandbox_path": "C:\\Users\\Azerbaijan\\AppData\\Local\\Temp\\e_factory_phase85_151b447c166a4eb99e68e733dab7cc85",
+  "venv_path": "C:\\Users\\Azerbaijan\\AppData\\Local\\Temp\\e_factory_phase85_151b447c166a4eb99e68e733dab7cc85\\venv",
+  "sandbox_path_inside_repo": false,
+  "python_discovered": "py -3",
+  "python_version": "Python 3.14.0",
+  "pip_version": "pip 25.2 from C:\\Users\\Azerbaijan\\AppData\\Local\\Temp\\e_factory_phase85_151b447c166a4eb99e68e733dab7cc85\\venv\\Lib\\site-packages\\pip (python 3.14)",
+  "package_version": "4.26.0",
+  "venv_created": true,
+  "sandbox_install_attempted": true,
+  "sandbox_install_exit_code": 0,
+  "package_import_pass": true,
+  "smoke_valid_case_pass": true,
+  "smoke_invalid_case_pass": true,
+  "global_install_performed": false,
+  "repo_dependency_folder_created": false,
+  "operation_marked_trusted": false,
+  "material_marked_trusted": false,
+  "execution_scope": "TEMP_VENV_ONLY",
+  "fixture_paths": {
+    "schema_path": "operations/smoke_trials/fixtures/json_schema_validation/schema.json",
+    "valid_instance_path": "operations/smoke_trials/fixtures/json_schema_validation/valid_instance.json",
+    "invalid_instance_path": "operations/smoke_trials/fixtures/json_schema_validation/invalid_instance.json"
+  },
+  "command_evidence_summary": {
+    "venv_create": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "install": {
+      "exit_code": 0,
+      "stdout_tail": "Collecting jsonschema\r\n  Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)\r\nCollecting attrs>=22.2.0 (from jsonschema)\r\n  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)\r\nCollecting jsonschema-specifications>=2023.03.6 (from jsonschema)\r\n  Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)\r\nCollecting referencing>=0.28.4 (from jsonschema)\r\n  Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)\r\nCollecting rpds-py>=0.25.0 (from jsonschema)\r\n  Downloading rpds_py-2026.5.1-cp314-cp314-win_amd64.whl.metadata (4.2 kB)\r\nDownloading jsonschema-4.26.0-py3-none-any.whl (90 kB)\r\nDownloading attrs-26.1.0-py3-none-any.whl (67 kB)\r\nDownloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)\r\nDownloading referencing-0.37.0-py3-none-any.whl (26 kB)\r\nDownloading rpds_py-2026.5.1-cp314-cp314-win_amd64.whl (225 kB)\r\nInstalling collected packages: rpds-py, attrs, referencing, jsonschema-specifications, jsonschema\r\n\r\nSuccessfully installed attrs-26.1.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 referencing-0.37.0 rpds-py-2026.5.1",
+      "stderr_tail": ""
+    },
+    "package_import": {
+      "exit_code": 0,
+      "stdout": "4.26.0",
+      "stderr": ""
+    },
+    "smoke": {
+      "exit_code": 0,
+      "stdout": "{\"invalid_case_pass\": true, \"invalid_error\": \"-1 is less than the minimum of 0\", \"valid_case_pass\": true}",
+      "stderr": ""
+    }
+  },
+  "protected_state_hashes_before": {
+    "materials/MATERIAL_CATALOG.json": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+    "materials/MATERIAL_POLICY.json": "122B92C7D03D240E6737C57FFE68DD8E2E0AF6B223B3998B12B22E06661F0E2A",
+    "materials/quarantine/QUARANTINE_BATCH_001.json": "9A75D4A070D1756917E946806C4AE553BCC617E8F90539753100C5A5F22E0555",
+    "materials/quarantine/mat_json_schema_ajv_001/MATERIAL_CARD.json": "438EE168E32B2C0AE4C9ED7CB11F2A8FA2516A2B7C8083BC4D8C48D8EE182AF0",
+    "materials/quarantine/mat_python_jsonschema_001/MATERIAL_CARD.json": "2E87E32432FF6D70C255888705BA70D7CB910585F3B16130EF879384C492B7BF",
+    "operations/registry.json": "1A8CC9B07857F4D067BE6E54059CCFCE9847A0AF26E0D5DFDC39345CEC485C5E",
+    "operations/contracts/validate_json_schema_with_ajv.contract.json": "5A9230FF764115BDFBFCAA743E3F55CC0F296DB39D8193A4F09E0D4934E5D860",
+    "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json": "BAB43E5B8A45157CF719D0267DC87E29A524B644884743CD439427020F019E36"
+  },
+  "protected_state_hashes_after": {
+    "materials/MATERIAL_CATALOG.json": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+    "materials/MATERIAL_POLICY.json": "122B92C7D03D240E6737C57FFE68DD8E2E0AF6B223B3998B12B22E06661F0E2A",
+    "materials/quarantine/QUARANTINE_BATCH_001.json": "9A75D4A070D1756917E946806C4AE553BCC617E8F90539753100C5A5F22E0555",
+    "materials/quarantine/mat_json_schema_ajv_001/MATERIAL_CARD.json": "438EE168E32B2C0AE4C9ED7CB11F2A8FA2516A2B7C8083BC4D8C48D8EE182AF0",
+    "materials/quarantine/mat_python_jsonschema_001/MATERIAL_CARD.json": "2E87E32432FF6D70C255888705BA70D7CB910585F3B16130EF879384C492B7BF",
+    "operations/registry.json": "1A8CC9B07857F4D067BE6E54059CCFCE9847A0AF26E0D5DFDC39345CEC485C5E",
+    "operations/contracts/validate_json_schema_with_ajv.contract.json": "5A9230FF764115BDFBFCAA743E3F55CC0F296DB39D8193A4F09E0D4934E5D860",
+    "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json": "BAB43E5B8A45157CF719D0267DC87E29A524B644884743CD439427020F019E36"
+  },
+  "protected_state_unchanged": true,
+  "next_allowed_step": "PHASE86_OPERATION_RUNTIME_SKELETON_V1",
+  "cut_list": [
+    "Do not install globally.",
+    "Do not use per-user package installation.",
+    "Do not run npm, choco, or winget.",
+    "Do not clone repositories.",
+    "Do not create repo-local dependency folders.",
+    "Do not create production wrappers.",
+    "Do not mark operations or materials trusted.",
+    "Do not mutate catalog, policy, quarantine cards, registry, or operation contracts."
+  ]
+}

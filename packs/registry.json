@@ -1,6 +1,22 @@
 {
-  "registry_version": "30.0",
+  "registry_version": "31.0",
   "packs": [
+    {
+      "pack_id": "PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1",
+      "capability_id": "first_smoke_install_trial_v1",
+      "phase": "PHASE_85",
+      "gate": "FIRST_SMOKE_INSTALL_TRIAL_V1",
+      "status": "ACTIVE",
+      "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+      "mode": "SELF_BUILD",
+      "path": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1",
+      "task_id": "TASK_FIRST_SMOKE_INSTALL_TRIAL_V1_001",
+      "pack_contract_path": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1/PACK.json",
+      "entry_script": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1/APPLY.ps1",
+      "shell": "PowerShell",
+      "apply": "APPLY.ps1",
+      "validate": "VALIDATE.ps1"
+    },
     {
       "pack_id": "PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1",
       "capability_id": "first_wrapper_operation_contracts_v1",

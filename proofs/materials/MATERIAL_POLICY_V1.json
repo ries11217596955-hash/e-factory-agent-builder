@@ -1,0 +1,57 @@
+{
+  "proof_id": "MATERIAL_POLICY_V1",
+  "phase": "PHASE_81",
+  "capability_id": "material_admission_policy_v1",
+  "task_id": "TASK_MATERIAL_ADMISSION_POLICY_V1_001",
+  "pack_id": "PHASE81_MATERIAL_ADMISSION_POLICY_V1",
+  "status": "PASS",
+  "generated_at": "2026-05-29T07:06:16.9390185Z",
+  "evidence_files": [
+    "materials/MATERIAL_CATALOG.json",
+    "materials/MATERIAL_POLICY.json",
+    "reports/materials/MATERIAL_POLICY_V1_REPORT.json"
+  ],
+  "validation_gates": [
+    "catalog_parsed",
+    "catalog_entry_count_9",
+    "trusted_count_zero",
+    "policy_evaluation_one_decision_per_material",
+    "catalog_hash_unchanged",
+    "queue_returned_to_none"
+  ],
+  "queue_state_after": {
+    "active_task_id": "NONE"
+  },
+  "catalog_state_after": {
+    "path": "materials/MATERIAL_CATALOG.json",
+    "entries": 9,
+    "trusted_count": 0,
+    "sha256_before": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+    "sha256_after": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+    "unchanged": true
+  },
+  "policy_state_after": {
+    "policy_id": "MATERIAL_ADMISSION_POLICY_V1",
+    "policy_version": "1.0",
+    "decisions_count": 9,
+    "counts_by_decision": {
+      "CANDIDATE_FOR_QUARANTINE": 2,
+      "OWNER_APPROVAL_REQUIRED": 1,
+      "REFERENCE_ONLY": 2,
+      "CANDIDATE_FOR_WRAPPER_CONTRACT": 2,
+      "NEEDS_METADATA": 2
+    }
+  },
+  "forbidden_actions_confirmed": {
+    "no_external_tools_installed": true,
+    "no_external_repos_fetched": true,
+    "no_materials_marked_trusted": true,
+    "no_catalog_mutation": true,
+    "no_quarantine_trial_created": true,
+    "no_external_agent_created": true,
+    "no_phase78_files_modified": true,
+    "no_phase79_files_modified": true,
+    "no_phase80_files_modified": true
+  },
+  "next_allowed_step": "PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1"
+}

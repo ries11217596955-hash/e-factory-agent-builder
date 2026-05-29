@@ -3,6 +3,13 @@
   "roadmap_version": "30.0",
   "capabilities": [
     {
+      "id": "material_admission_policy_v1",
+      "phase": "PHASE_81",
+      "status": "COMPLETED",
+      "gate": "MATERIAL_ADMISSION_POLICY_V1",
+      "goal": "Evaluate material catalog entries through a conservative admission policy without trusting, installing, scanning, quarantining, or wrapping materials."
+    },
+    {
       "id": "manual_scout_pass_import_v1",
       "phase": "PHASE_80",
       "status": "COMPLETED",

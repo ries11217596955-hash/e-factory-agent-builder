@@ -201,5 +201,11 @@
     "runtime_contract": "self_build_batch/runtime/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
     "schema": "contracts/self_development/continue_on_failure_runtime_v1.schema.json",
     "proof": "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json"
+  },
+  "quarantine_and_blocker_registry_v1": {
+    "status": "PROVEN",
+    "registry_contract": "self_build_batch/quarantine/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
+    "schema": "contracts/self_development/quarantine_and_blocker_registry_v1.schema.json",
+    "proof": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json"
   }
 }

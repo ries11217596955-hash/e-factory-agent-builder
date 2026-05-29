@@ -678,5 +678,14 @@
     "proof": "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
     "report": "reports/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1_REPORT.json",
     "next_allowed_step": "PHASE100_QUARANTINE_AND_BLOCKER_REGISTRY_V1"
+  },
+  "phase100_quarantine_and_blocker_registry_v1": {
+    "status": "COMPLETED",
+    "registry_contract": "self_build_batch/quarantine/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
+    "schema": "contracts/self_development/quarantine_and_blocker_registry_v1.schema.json",
+    "dry_run_registry": "self_build_batch/quarantine/BATCH_PLAN_EXAMPLE_V1_QUARANTINE_BLOCKER_DRY_RUN.json",
+    "proof": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
+    "report": "reports/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1_REPORT.json",
+    "next_allowed_step": "PHASE101_BATCH_PROOF_AGGREGATOR_V1"
   }
 }

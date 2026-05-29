@@ -3,6 +3,13 @@
   "roadmap_version": "30.0",
   "capabilities": [
     {
+      "id": "first_material_quarantine_trial_v1",
+      "phase": "PHASE_82",
+      "status": "COMPLETED",
+      "gate": "FIRST_MATERIAL_QUARANTINE_TRIAL_V1",
+      "goal": "Create first quarantine records for materials selected by policy without trusting, installing, fetching, scanning, wrapping, or using materials."
+    },
+    {
       "id": "material_admission_policy_v1",
       "phase": "PHASE_81",
       "status": "COMPLETED",

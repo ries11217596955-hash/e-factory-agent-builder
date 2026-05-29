@@ -3,6 +3,17 @@
   "active_task_id": "NONE",
   "tasks": [
     {
+      "task_id": "TASK_FIRST_MATERIAL_QUARANTINE_TRIAL_V1_001",
+      "status": "COMPLETED",
+      "path": "tasks/TASK_FIRST_MATERIAL_QUARANTINE_TRIAL_V1_001.json",
+      "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+      "mode": "SELF_BUILD",
+      "capability_id": "first_material_quarantine_trial_v1",
+      "phase": "PHASE_82",
+      "gate": "FIRST_MATERIAL_QUARANTINE_TRIAL_V1",
+      "pack_id": "PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1"
+    },
+    {
       "task_id": "TASK_MATERIAL_ADMISSION_POLICY_V1_001",
       "status": "COMPLETED",
       "path": "tasks/TASK_MATERIAL_ADMISSION_POLICY_V1_001.json",

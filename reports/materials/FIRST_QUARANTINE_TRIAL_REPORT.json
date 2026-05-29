@@ -1,0 +1,98 @@
+{
+  "report_id": "FIRST_QUARANTINE_TRIAL_REPORT",
+  "phase": "PHASE_82",
+  "capability_id": "first_material_quarantine_trial_v1",
+  "status": "PASS",
+  "generated_at": "2026-05-29T07:33:21.2258328Z",
+  "source_catalog_path": "materials/MATERIAL_CATALOG.json",
+  "source_policy_path": "materials/MATERIAL_POLICY.json",
+  "source_policy_report_path": "reports/materials/MATERIAL_POLICY_V1_REPORT.json",
+  "catalog_entry_count": 9,
+  "catalog_hash_before": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+  "catalog_hash_after": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+  "catalog_unchanged": true,
+  "selected_material_ids": [
+    "mat_json_schema_ajv_001",
+    "mat_python_jsonschema_001"
+  ],
+  "selected_count": 2,
+  "deferred_material_ids": [
+    {
+      "material_id": "mat_license_scancode_toolkit_001",
+      "decision": "OWNER_APPROVAL_REQUIRED",
+      "reason": "owner_approval_required_before_quarantine"
+    },
+    {
+      "material_id": "mat_policy_conftest_001",
+      "decision": "REFERENCE_ONLY",
+      "reason": "reference_only_not_quarantine_candidate"
+    },
+    {
+      "material_id": "mat_policy_opa_001",
+      "decision": "REFERENCE_ONLY",
+      "reason": "reference_only_not_quarantine_candidate"
+    },
+    {
+      "material_id": "mat_sbom_syft_001",
+      "decision": "CANDIDATE_FOR_WRAPPER_CONTRACT",
+      "reason": "wrapper_contract_before_quarantine_or_later_phase"
+    },
+    {
+      "material_id": "mat_template_copier_001",
+      "decision": "NEEDS_METADATA",
+      "reason": "metadata_required_before_quarantine"
+    },
+    {
+      "material_id": "mat_vuln_grype_001",
+      "decision": "CANDIDATE_FOR_WRAPPER_CONTRACT",
+      "reason": "wrapper_contract_before_quarantine_or_later_phase"
+    },
+    {
+      "material_id": "mat_vuln_osv_scanner_001",
+      "decision": "NEEDS_METADATA",
+      "reason": "metadata_required_before_quarantine"
+    }
+  ],
+  "rejected_material_ids": [],
+  "quarantine_batch_path": "materials/quarantine/QUARANTINE_BATCH_001.json",
+  "quarantine_card_paths": [
+    "materials/quarantine/mat_json_schema_ajv_001/MATERIAL_CARD.json",
+    "materials/quarantine/mat_python_jsonschema_001/MATERIAL_CARD.json"
+  ],
+  "source_notes_paths": [
+    "materials/quarantine/mat_json_schema_ajv_001/SOURCE_NOTES.md",
+    "materials/quarantine/mat_python_jsonschema_001/SOURCE_NOTES.md"
+  ],
+  "admission_checklist_paths": [
+    "materials/quarantine/mat_json_schema_ajv_001/ADMISSION_CHECKLIST.json",
+    "materials/quarantine/mat_python_jsonschema_001/ADMISSION_CHECKLIST.json"
+  ],
+  "trusted_count": 0,
+  "install_performed": false,
+  "external_fetch_performed": false,
+  "counts_by_policy_decision": {
+    "CANDIDATE_FOR_QUARANTINE": 2,
+    "OWNER_APPROVAL_REQUIRED": 1,
+    "REFERENCE_ONLY": 2,
+    "CANDIDATE_FOR_WRAPPER_CONTRACT": 2,
+    "NEEDS_METADATA": 2
+  },
+  "policy_summary": {
+    "source_policy_report_status": "PASS",
+    "selection_rule": "Only CANDIDATE_FOR_QUARANTINE decisions are selected for PHASE82 quarantine records.",
+    "wrapper_contract_decisions_deferred": true,
+    "quarantine_is_not_trust": true,
+    "no_catalog_mutation": true,
+    "no_policy_mutation": true
+  },
+  "next_allowed_step": "PHASE83_OPERATION_CONTRACT_SKELETON_V1",
+  "cut_list": [
+    "Do not install tools.",
+    "Do not fetch external repositories.",
+    "Do not run scanners.",
+    "Do not run candidate tools.",
+    "Do not create wrappers.",
+    "Do not mark materials TRUSTED.",
+    "Do not create external agents."
+  ]
+}

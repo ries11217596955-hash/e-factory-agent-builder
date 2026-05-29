@@ -3,6 +3,18 @@
   "active_task_id": "NONE",
   "tasks": [
     {
+      "task_id": "TASK_OWNER_ORDER_TO_GAP_MAP_V1_001",
+      "status": "COMPLETED",
+      "path": "tasks/TASK_OWNER_ORDER_TO_GAP_MAP_V1_001.json",
+      "active_line": "AGENT_BUILDER / SELF_BUILD",
+      "mode": "SELF_BUILD",
+      "capability_id": "owner_order_to_gap_map_v1",
+      "phase": "PHASE94",
+      "gate": "OWNER_ORDER_TO_GAP_MAP_V1",
+      "pack_id": "PHASE94_OWNER_ORDER_TO_GAP_MAP_V1",
+      "completed_at": "2026-05-29T14:24:12.6312113Z"
+    },
+    {
       "task_id": "TASK_ROUTE_V1_CLOSURE_AND_V2_R2_ACTIVATION_001",
       "status": "COMPLETED",
       "path": "tasks/TASK_ROUTE_V1_CLOSURE_AND_V2_R2_ACTIVATION_001.json",

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "phase": "PHASE94_OWNER_ORDER_TO_GAP_MAP_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "generated_at": "2026-05-29T14:24:12.1742412Z",
+  "baseline_commit": "0fae637",
+  "owner_order_contract_created": "owner_orders/OWNER_ORDER_CONTRACT_V1.json",
+  "example_order_created": "owner_orders/examples/OWNER_ORDER_BATCH_SELF_BUILD_100_TASKS_EXAMPLE.json",
+  "gap_map_contract_created": "self_build_backlog/OWNER_ORDER_TO_GAP_MAP_V1.json",
+  "example_gap_map_created": "self_build_backlog/OWNER_ORDER_GAP_MAP_EXAMPLE_V1.json",
+  "future_workflow_input_contract_defined": true,
+  "execution_performed": false,
+  "no_external_agent_production": true,
+  "no_external_install": true,
+  "no_external_fetch": true,
+  "source_gap_index_path": "self_build_backlog/CAPABILITY_GAP_INDEX_V1.json",
+  "source_gap_index_status": "ACTIVE_GAP_INDEX",
+  "next_allowed_step": "PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2"
+}

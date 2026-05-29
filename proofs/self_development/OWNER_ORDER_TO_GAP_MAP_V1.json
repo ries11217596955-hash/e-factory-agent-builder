@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "phase": "PHASE94_OWNER_ORDER_TO_GAP_MAP_V1",
+  "task_id": "TASK_OWNER_ORDER_TO_GAP_MAP_V1_001",
+  "runtime_mode": "SELF_BUILD",
+  "generated_at": "2026-05-29T14:24:12.1742412Z",
+  "route_lock_version": "V2_R2",
+  "baseline_commit": "0fae637",
+  "owner_order_contract_created": true,
+  "example_owner_order_created": true,
+  "gap_map_contract_created": true,
+  "example_gap_map_created": true,
+  "future_workflow_input_contract_defined": true,
+  "execution_performed": false,
+  "no_external_agent_production": true,
+  "no_external_install": true,
+  "no_external_fetch": true,
+  "phase95_not_executed": true,
+  "queue_returned_to_none": true,
+  "next_allowed_step": "PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2",
+  "evidence_files": [
+    "contracts/self_development/owner_order_to_gap_map_v1.schema.json",
+    "owner_orders/OWNER_ORDER_CONTRACT_V1.json",
+    "owner_orders/examples/OWNER_ORDER_BATCH_SELF_BUILD_100_TASKS_EXAMPLE.json",
+    "self_build_backlog/OWNER_ORDER_TO_GAP_MAP_V1.json",
+    "self_build_backlog/OWNER_ORDER_GAP_MAP_EXAMPLE_V1.json",
+    "reports/self_development/OWNER_ORDER_TO_GAP_MAP_REPORT.json"
+  ]
+}

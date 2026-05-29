@@ -1,8 +1,8 @@
 {
   "agent_id": "e_factory_agent_builder",
   "genesis_version": "0.3",
-  "current_phase": "PHASE_86",
-  "current_capability": "operation_runtime_skeleton_v1",
+  "current_phase": "PHASE_87",
+  "current_capability": "self_development_decision_kernel_v1",
   "completed_capabilities": [
     "repo_genesis",
     "self_build_control_core",
@@ -96,7 +96,8 @@
     "operation_contract_skeleton_v1",
     "first_wrapper_operation_contracts_v1",
     "first_smoke_install_trial_v1",
-    "operation_runtime_skeleton_v1"
+    "operation_runtime_skeleton_v1",
+    "self_development_decision_kernel_v1"
   ],
   "blocked_capabilities": [],
   "self_build_ready": true,
@@ -141,5 +142,6 @@
   "operation_contract_skeleton_ready": true,
   "first_wrapper_operation_contracts_ready": true,
   "first_smoke_install_trial_ready": true,
-  "operation_runtime_skeleton_ready": true
+  "operation_runtime_skeleton_ready": true,
+  "self_development_decision_kernel_ready": true
 }

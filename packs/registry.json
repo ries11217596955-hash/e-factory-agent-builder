@@ -1,6 +1,22 @@
 {
-  "registry_version": "32.0",
+  "registry_version": "33.0",
   "packs": [
+    {
+      "pack_id": "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+      "capability_id": "self_development_decision_kernel_v1",
+      "phase": "PHASE_87",
+      "gate": "SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+      "status": "ACTIVE",
+      "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+      "mode": "SELF_BUILD",
+      "path": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+      "task_id": "TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001",
+      "pack_contract_path": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1/PACK.json",
+      "entry_script": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1/APPLY.ps1",
+      "shell": "PowerShell",
+      "apply": "APPLY.ps1",
+      "validate": "VALIDATE.ps1"
+    },
     {
       "pack_id": "PHASE86_OPERATION_RUNTIME_SKELETON_V1",
       "capability_id": "operation_runtime_skeleton_v1",

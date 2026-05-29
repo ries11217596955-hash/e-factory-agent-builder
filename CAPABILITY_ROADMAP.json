@@ -1,7 +1,14 @@
 {
   "roadmap_id": "runbook_executor_agent_production_v1",
-  "roadmap_version": "32.0",
+  "roadmap_version": "33.0",
   "capabilities": [
+    {
+      "id": "self_development_decision_kernel_v1",
+      "phase": "PHASE_87",
+      "status": "COMPLETED",
+      "gate": "SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+      "goal": "Create a self-development decision kernel that reads repo evidence and recommends the next self-development gap without generating programs or external agents."
+    },
     {
       "id": "operation_runtime_skeleton_v1",
       "phase": "PHASE_86",

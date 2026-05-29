@@ -3,6 +3,18 @@
   "active_task_id": "NONE",
   "tasks": [
     {
+      "task_id": "TASK_CONTINUE_ON_FAILURE_RUNTIME_V1_001",
+      "status": "COMPLETED",
+      "path": "tasks/TASK_CONTINUE_ON_FAILURE_RUNTIME_V1_001.json",
+      "active_line": "AGENT_BUILDER / SELF_BUILD",
+      "mode": "SELF_BUILD",
+      "capability_id": "continue_on_failure_runtime_v1",
+      "phase": "PHASE99",
+      "gate": "CONTINUE_ON_FAILURE_RUNTIME_V1",
+      "pack_id": "PHASE99_CONTINUE_ON_FAILURE_RUNTIME_V1",
+      "completed_at": "2026-05-29T16:58:57.2813218Z"
+    },
+    {
       "task_id": "TASK_ITEM_LEVEL_EXECUTION_LEDGER_V1_001",
       "status": "COMPLETED",
       "path": "tasks/TASK_ITEM_LEVEL_EXECUTION_LEDGER_V1_001.json",

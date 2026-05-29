@@ -669,5 +669,14 @@
     "proof": "proofs/self_development/ITEM_LEVEL_EXECUTION_LEDGER_V1.json",
     "report": "reports/self_development/ITEM_LEVEL_EXECUTION_LEDGER_V1_REPORT.json",
     "next_allowed_step": "PHASE99_CONTINUE_ON_FAILURE_RUNTIME_V1"
+  },
+  "phase99_continue_on_failure_runtime_v1": {
+    "status": "COMPLETED",
+    "runtime_contract": "self_build_batch/runtime/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
+    "schema": "contracts/self_development/continue_on_failure_runtime_v1.schema.json",
+    "simulation": "self_build_batch/runtime/CONTINUE_ON_FAILURE_SIMULATION_V1.json",
+    "proof": "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
+    "report": "reports/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1_REPORT.json",
+    "next_allowed_step": "PHASE100_QUARANTINE_AND_BLOCKER_REGISTRY_V1"
   }
 }

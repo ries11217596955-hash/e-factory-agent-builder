@@ -195,5 +195,11 @@
     "contract": "contracts/operations/self_build_delivery_conveyor_v1.json",
     "doc": "docs/operations/SELF_BUILD_DELIVERY_CONVEYOR_V1.md",
     "created_in_phase": "PHASE98_ITEM_LEVEL_EXECUTION_LEDGER_V1"
+  },
+  "continue_on_failure_runtime_v1": {
+    "status": "PROVEN",
+    "runtime_contract": "self_build_batch/runtime/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
+    "schema": "contracts/self_development/continue_on_failure_runtime_v1.schema.json",
+    "proof": "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json"
   }
 }

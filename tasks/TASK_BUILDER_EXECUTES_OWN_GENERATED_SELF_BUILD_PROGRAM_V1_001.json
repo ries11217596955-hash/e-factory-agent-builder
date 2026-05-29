@@ -1,0 +1,21 @@
+{
+  "task_id": "TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001",
+  "phase": "PHASE90",
+  "pack_id": "PHASE90_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1",
+  "status": "PENDING",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "mode": "SELF_BUILD",
+  "capability_id": "generated_self_build_execution_v1",
+  "gate": "BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1",
+  "path": "tasks/TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001.json",
+  "created_at": "2026-05-29T00:00:00Z",
+  "purpose": "Execute admitted SELF_BUILD_PROGRAM_001 in controlled self-build runtime without external agents, installs, fetches, or route lock changes.",
+  "cut_list": [
+    "No external agent production",
+    "No installs",
+    "No external fetch",
+    "No route lock change",
+    "No PHASE91 creation",
+    "No PHASE78-PHASE89 pack edits"
+  ]
+}

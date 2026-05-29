@@ -3,6 +3,18 @@
   "active_task_id": "NONE",
   "tasks": [
     {
+      "task_id": "TASK_BATCH_ADMISSION_POLICY_V1_001",
+      "status": "COMPLETED",
+      "path": "tasks/TASK_BATCH_ADMISSION_POLICY_V1_001.json",
+      "active_line": "AGENT_BUILDER / SELF_BUILD",
+      "mode": "SELF_BUILD",
+      "capability_id": "batch_admission_policy_v1",
+      "phase": "PHASE97",
+      "gate": "BATCH_ADMISSION_POLICY_V1",
+      "pack_id": "PHASE97_BATCH_ADMISSION_POLICY_V1",
+      "completed_at": "2026-05-29T16:00:37.5102448Z"
+    },
+    {
       "task_id": "TASK_BATCH_PLANNER_V1_001",
       "status": "COMPLETED",
       "path": "tasks/TASK_BATCH_PLANNER_V1_001.json",

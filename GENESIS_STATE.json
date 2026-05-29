@@ -177,5 +177,11 @@
     "planner": "self_build_batch/planner/BATCH_PLANNER_V1.json",
     "schema": "contracts/self_development/batch_plan_v1.schema.json",
     "proof": "proofs/self_development/BATCH_PLANNER_V1.json"
+  },
+  "batch_admission_policy_v1": {
+    "status": "PROVEN",
+    "policy": "self_build_batch/admission/BATCH_ADMISSION_POLICY_V1.json",
+    "schema": "contracts/self_development/batch_admission_policy_v1.schema.json",
+    "proof": "proofs/self_development/BATCH_ADMISSION_POLICY_V1.json"
   }
 }

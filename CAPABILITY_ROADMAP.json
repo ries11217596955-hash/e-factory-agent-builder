@@ -649,5 +649,14 @@
     "proof": "proofs/self_development/BATCH_PLANNER_V1.json",
     "report": "reports/self_development/BATCH_PLANNER_V1_REPORT.json",
     "next_allowed_step": "PHASE97_BATCH_ADMISSION_POLICY_V1"
+  },
+  "phase97_batch_admission_policy_v1": {
+    "status": "COMPLETED",
+    "policy": "self_build_batch/admission/BATCH_ADMISSION_POLICY_V1.json",
+    "schema": "contracts/self_development/batch_admission_policy_v1.schema.json",
+    "admission": "self_build_batch/admission/BATCH_PLAN_EXAMPLE_V1_ADMISSION.json",
+    "proof": "proofs/self_development/BATCH_ADMISSION_POLICY_V1.json",
+    "report": "reports/self_development/BATCH_ADMISSION_POLICY_V1_REPORT.json",
+    "next_allowed_step": "PHASE98_ITEM_LEVEL_EXECUTION_LEDGER_V1"
   }
 }

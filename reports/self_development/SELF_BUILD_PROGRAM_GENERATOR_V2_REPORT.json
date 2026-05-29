@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "phase": "PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "generated_at": "2026-05-29T15:17:27.3938516Z",
+  "baseline_commit": "9785fe2",
+  "generator_created": "self_build_programs/generator/SELF_BUILD_PROGRAM_GENERATOR_V2.json",
+  "schema_created": "contracts/self_development/self_build_program_v2.schema.json",
+  "example_program_created": "self_build_programs/generated/SELF_BUILD_PROGRAM_V2_EXAMPLE_001.json",
+  "example_program_status": "GENERATED_CANDIDATE",
+  "example_program_admission_required": true,
+  "example_program_execution_allowed": false,
+  "generator_does_not_execute_program": true,
+  "no_external_agent_production": true,
+  "no_external_install": true,
+  "no_external_fetch": true,
+  "phase96_not_executed": true,
+  "next_allowed_step": "PHASE96_BATCH_PLANNER_V1"
+}

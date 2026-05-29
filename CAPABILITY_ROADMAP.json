@@ -631,5 +631,14 @@
     "proof": "proofs/self_development/OWNER_ORDER_TO_GAP_MAP_V1.json",
     "report": "reports/self_development/OWNER_ORDER_TO_GAP_MAP_REPORT.json",
     "next_allowed_step": "PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2"
+  },
+  "phase95_self_build_program_generator_v2": {
+    "status": "COMPLETED",
+    "generator": "self_build_programs/generator/SELF_BUILD_PROGRAM_GENERATOR_V2.json",
+    "schema": "contracts/self_development/self_build_program_v2.schema.json",
+    "example_program": "self_build_programs/generated/SELF_BUILD_PROGRAM_V2_EXAMPLE_001.json",
+    "proof": "proofs/self_development/SELF_BUILD_PROGRAM_GENERATOR_V2.json",
+    "report": "reports/self_development/SELF_BUILD_PROGRAM_GENERATOR_V2_REPORT.json",
+    "next_allowed_step": "PHASE96_BATCH_PLANNER_V1"
   }
 }

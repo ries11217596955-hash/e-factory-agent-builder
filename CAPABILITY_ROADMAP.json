@@ -609,5 +609,11 @@
   "phase88_self_build_program_generator_v1": "COMPLETED",
   "phase89_generated_program_admission_v1": "COMPLETED",
   "phase90_builder_executes_own_generated_self_build_program_v1": "COMPLETED",
-  "phase91_route_v1_closure_and_v2_r2_activation": "COMPLETED"
+  "phase91_route_v1_closure_and_v2_r2_activation": "COMPLETED",
+  "phase92_self_build_backlog_contract_v1": {
+    "status": "COMPLETED",
+    "proof": "proofs/self_development/SELF_BUILD_BACKLOG_CONTRACT_V1.json",
+    "report": "reports/self_development/SELF_BUILD_BACKLOG_CONTRACT_REPORT.json",
+    "next_allowed_step": "PHASE93_CAPABILITY_GAP_DETECTOR_V1"
+  }
 }

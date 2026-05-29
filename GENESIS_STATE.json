@@ -147,5 +147,11 @@
   "self_build_program_generator_v1": "PROVEN",
   "generated_program_admission_v1": "PROVEN",
   "generated_self_build_execution_v1": "PROVEN",
-  "route_lock_v2_r2_active": "PROVEN"
+  "route_lock_v2_r2_active": "PROVEN",
+  "self_build_backlog_contract_v1": {
+    "status": "PROVEN",
+    "contract": "self_build_backlog/SELF_BUILD_BACKLOG_CONTRACT_V1.json",
+    "schema": "contracts/self_development/self_build_backlog_contract_v1.schema.json",
+    "proof": "proofs/self_development/SELF_BUILD_BACKLOG_CONTRACT_V1.json"
+  }
 }

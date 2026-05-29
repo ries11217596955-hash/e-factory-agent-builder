@@ -793,6 +793,16 @@
       "shell": "PowerShell",
       "validate": "VALIDATE.ps1",
       "apply": "APPLY.ps1"
+    },
+    {
+      "pack_id": "PHASE92_SELF_BUILD_BACKLOG_CONTRACT_V1",
+      "task_id": "TASK_SELF_BUILD_BACKLOG_CONTRACT_V1_001",
+      "mode": "SELF_BUILD",
+      "shell": "PowerShell",
+      "entry_script": "packs/PHASE92_SELF_BUILD_BACKLOG_CONTRACT_V1/APPLY.ps1",
+      "validate_script": "packs/PHASE92_SELF_BUILD_BACKLOG_CONTRACT_V1/VALIDATE.ps1",
+      "phase": "PHASE92",
+      "status": "READY"
     }
   ]
 }

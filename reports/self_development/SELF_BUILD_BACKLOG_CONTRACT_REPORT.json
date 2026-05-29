@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "phase": "PHASE92_SELF_BUILD_BACKLOG_CONTRACT_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "baseline_commit": "ec162b8",
+  "contract_created": "self_build_backlog/SELF_BUILD_BACKLOG_CONTRACT_V1.json",
+  "schema_created": "contracts/self_development/self_build_backlog_contract_v1.schema.json",
+  "item_statuses": [
+    "PLANNED",
+    "RUNNING",
+    "PASS",
+    "FAILED",
+    "QUARANTINED",
+    "BLOCKED",
+    "NEEDS_OWNER_DECISION",
+    "NEEDS_CODEX_REPAIR",
+    "NEEDS_MATERIAL",
+    "SKIPPED_BY_POLICY"
+  ],
+  "batch_self_build_engine_route": true,
+  "no_external_agents": true,
+  "no_external_install": true,
+  "no_external_fetch": true,
+  "continue_after_safe_item_failure_defined": true,
+  "quarantine_and_blocker_statuses_defined": true,
+  "next_allowed_step": "PHASE93_CAPABILITY_GAP_DETECTOR_V1"
+}

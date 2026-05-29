@@ -1,7 +1,14 @@
 {
   "roadmap_id": "runbook_executor_agent_production_v1",
-  "roadmap_version": "31.0",
+  "roadmap_version": "32.0",
   "capabilities": [
+    {
+      "id": "operation_runtime_skeleton_v1",
+      "phase": "PHASE_86",
+      "status": "COMPLETED",
+      "gate": "OPERATION_RUNTIME_SKELETON_V1",
+      "goal": "Create operation runtime skeleton for contract-gated dry-run operation requests without execution, installs, wrappers, trust changes, or protected state mutation."
+    },
     {
       "id": "first_smoke_install_trial_v1",
       "phase": "PHASE_85",

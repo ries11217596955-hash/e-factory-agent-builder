@@ -687,5 +687,14 @@
     "proof": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
     "report": "reports/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1_REPORT.json",
     "next_allowed_step": "PHASE101_BATCH_PROOF_AGGREGATOR_V1"
+  },
+  "phase101_batch_proof_aggregator_v1": {
+    "status": "COMPLETED",
+    "aggregator_contract": "self_build_batch/proof_aggregation/BATCH_PROOF_AGGREGATOR_V1.json",
+    "schema": "contracts/self_development/batch_proof_aggregator_v1.schema.json",
+    "dry_run_summary": "self_build_batch/proof_aggregation/BATCH_PLAN_EXAMPLE_V1_PROOF_SUMMARY_DRY_RUN.json",
+    "proof": "proofs/self_development/BATCH_PROOF_AGGREGATOR_V1.json",
+    "report": "reports/self_development/BATCH_PROOF_AGGREGATOR_V1_REPORT.json",
+    "next_allowed_step": "PHASE102_AUTO_NEXT_GAP_DECISION_V1"
   }
 }

@@ -207,5 +207,11 @@
     "registry_contract": "self_build_batch/quarantine/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
     "schema": "contracts/self_development/quarantine_and_blocker_registry_v1.schema.json",
     "proof": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json"
+  },
+  "batch_proof_aggregator_v1": {
+    "status": "PROVEN",
+    "aggregator_contract": "self_build_batch/proof_aggregation/BATCH_PROOF_AGGREGATOR_V1.json",
+    "schema": "contracts/self_development/batch_proof_aggregator_v1.schema.json",
+    "proof": "proofs/self_development/BATCH_PROOF_AGGREGATOR_V1.json"
   }
 }

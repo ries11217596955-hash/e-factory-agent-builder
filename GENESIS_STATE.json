@@ -183,5 +183,17 @@
     "policy": "self_build_batch/admission/BATCH_ADMISSION_POLICY_V1.json",
     "schema": "contracts/self_development/batch_admission_policy_v1.schema.json",
     "proof": "proofs/self_development/BATCH_ADMISSION_POLICY_V1.json"
+  },
+  "item_level_execution_ledger_v1": {
+    "status": "PROVEN",
+    "ledger_contract": "self_build_batch/ledger/ITEM_LEVEL_EXECUTION_LEDGER_V1.json",
+    "schema": "contracts/self_development/item_level_execution_ledger_v1.schema.json",
+    "proof": "proofs/self_development/ITEM_LEVEL_EXECUTION_LEDGER_V1.json"
+  },
+  "self_build_delivery_conveyor_v1": {
+    "status": "ACTIVE",
+    "contract": "contracts/operations/self_build_delivery_conveyor_v1.json",
+    "doc": "docs/operations/SELF_BUILD_DELIVERY_CONVEYOR_V1.md",
+    "created_in_phase": "PHASE98_ITEM_LEVEL_EXECUTION_LEDGER_V1"
   }
 }

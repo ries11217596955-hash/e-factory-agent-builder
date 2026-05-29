@@ -734,6 +734,19 @@
       "pack_contract_path": "packs/PHASE77_EVIDENCE_PACKAGER_AGENT_CLOSED_LOOP_TRIAL_V1/PACK.json",
       "entry_script": "packs/PHASE77_EVIDENCE_PACKAGER_AGENT_CLOSED_LOOP_TRIAL_V1/APPLY.ps1",
       "shell": "PowerShell"
+    },
+    {
+      "path": "packs/PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
+      "phase": "PHASE88",
+      "validate_script": "packs/PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1/VALIDATE.ps1",
+      "status": "READY",
+      "working_directory": ".",
+      "pack_id": "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
+      "task_id": "TASK_SELF_BUILD_PROGRAM_GENERATOR_V1_001",
+      "entry_script": "packs/PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1/APPLY.ps1",
+      "shell": "PowerShell",
+      "validate": "VALIDATE.ps1",
+      "apply": "APPLY.ps1"
     }
   ]
 }

@@ -1,0 +1,67 @@
+{
+  "program_id": "SELF_BUILD_PROGRAM_001",
+  "status": "GENERATED_CANDIDATE",
+  "generated_at": "2026-05-29T11:49:55.3122252Z",
+  "generated_by_phase": "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
+  "source_decision_report": "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
+  "source_decision_proof": "proofs/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_V1.json",
+  "target_next_step": "PHASE89_GENERATED_PROGRAM_ADMISSION_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "purpose": "Create an admission-ready candidate program that will be evaluated in PHASE89 before any execution is allowed.",
+  "required_inputs": [
+    "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
+    "proofs/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_V1.json",
+    "CAPABILITY_ROADMAP.json",
+    "GENESIS_STATE.json",
+    "TASK_QUEUE.json",
+    "packs/registry.json"
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "admit_self_build_program_001",
+      "description": "PHASE89 should evaluate SELF_BUILD_PROGRAM_001 and decide whether it can be admitted for controlled execution.",
+      "target_phase": "PHASE89_GENERATED_PROGRAM_ADMISSION_V1",
+      "risk": "Program must not execute before admission proof."
+    }
+  ],
+  "files_in_scope": [
+    "self_build_programs/generated/SELF_BUILD_PROGRAM_001.json",
+    "reports/self_development/SELF_BUILD_PROGRAM_GENERATOR_REPORT.json",
+    "proofs/self_development/SELF_BUILD_PROGRAM_GENERATOR_V1.json"
+  ],
+  "files_out_of_scope": [
+    "orchestrator/run.ps1",
+    "materials/MATERIAL_CATALOG.json",
+    "materials/MATERIAL_POLICY.json",
+    "operations/registry.json",
+    "operations/contracts/",
+    "generated_agents/",
+    "applied_agents/"
+  ],
+  "validation_requirements": [
+    "Generated program JSON parses.",
+    "Generated program status is GENERATED_CANDIDATE.",
+    "admission_required is true.",
+    "execution_allowed is false.",
+    "PHASE88 report status is PASS.",
+    "PHASE88 proof status is PASS.",
+    "Queue returns to NONE after runtime."
+  ],
+  "proof_requirements": [
+    "Proof must show generated_program_created=true.",
+    "Proof must show admission_performed=false.",
+    "Proof must show execution_performed=false.",
+    "Proof must set next_allowed_step=PHASE89_GENERATED_PROGRAM_ADMISSION_V1."
+  ],
+  "cut_list": [
+    "Do not admit generated program in PHASE88.",
+    "Do not execute generated program in PHASE88.",
+    "Do not install tools.",
+    "Do not fetch external sources.",
+    "Do not mark materials TRUSTED.",
+    "Do not produce external agents.",
+    "Do not change route lock."
+  ],
+  "admission_required": true,
+  "execution_allowed": false
+}

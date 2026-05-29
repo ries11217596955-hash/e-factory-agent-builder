@@ -144,5 +144,6 @@
   "first_smoke_install_trial_ready": true,
   "operation_runtime_skeleton_ready": true,
   "self_development_decision_kernel_ready": true,
-  "self_build_program_generator_v1": "PROVEN"
+  "self_build_program_generator_v1": "PROVEN",
+  "generated_program_admission_v1": "PROVEN"
 }

@@ -705,5 +705,14 @@
     "proof": "proofs/self_development/AUTO_NEXT_GAP_DECISION_V1.json",
     "report": "reports/self_development/AUTO_NEXT_GAP_DECISION_V1_REPORT.json",
     "next_allowed_step": "PHASE103_REPAIR_LOOP_GENERATOR_V1"
+  },
+  "phase103_repair_loop_generator_v1": {
+    "status": "COMPLETED",
+    "repair_loop_generator": "self_build_batch/repair_loop/REPAIR_LOOP_GENERATOR_V1.json",
+    "schema": "contracts/self_development/repair_loop_generator_v1.schema.json",
+    "dry_run_program_bundle": "self_build_batch/repair_loop/BATCH_PLAN_EXAMPLE_V1_REPAIR_LOOP_PROGRAMS_DRY_RUN.json",
+    "proof": "proofs/self_development/REPAIR_LOOP_GENERATOR_V1.json",
+    "report": "reports/self_development/REPAIR_LOOP_GENERATOR_V1_REPORT.json",
+    "next_allowed_step": "PHASE104_CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1"
   }
 }

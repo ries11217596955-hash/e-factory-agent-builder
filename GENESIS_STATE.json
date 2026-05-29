@@ -219,5 +219,11 @@
     "decision_kernel": "self_build_batch/next_actions/AUTO_NEXT_GAP_DECISION_KERNEL_V1.json",
     "schema": "contracts/self_development/auto_next_gap_decision_v1.schema.json",
     "proof": "proofs/self_development/AUTO_NEXT_GAP_DECISION_V1.json"
+  },
+  "repair_loop_generator_v1": {
+    "status": "PROVEN",
+    "repair_loop_generator": "self_build_batch/repair_loop/REPAIR_LOOP_GENERATOR_V1.json",
+    "schema": "contracts/self_development/repair_loop_generator_v1.schema.json",
+    "proof": "proofs/self_development/REPAIR_LOOP_GENERATOR_V1.json"
   }
 }

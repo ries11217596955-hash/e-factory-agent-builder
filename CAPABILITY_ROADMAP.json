@@ -615,5 +615,13 @@
     "proof": "proofs/self_development/SELF_BUILD_BACKLOG_CONTRACT_V1.json",
     "report": "reports/self_development/SELF_BUILD_BACKLOG_CONTRACT_REPORT.json",
     "next_allowed_step": "PHASE93_CAPABILITY_GAP_DETECTOR_V1"
+  },
+  "phase93_capability_gap_detector_v1": {
+    "status": "COMPLETED",
+    "detector": "self_build_backlog/CAPABILITY_GAP_DETECTOR_V1.json",
+    "gap_index": "self_build_backlog/CAPABILITY_GAP_INDEX_V1.json",
+    "proof": "proofs/self_development/CAPABILITY_GAP_DETECTOR_V1.json",
+    "report": "reports/self_development/CAPABILITY_GAP_DETECTOR_REPORT.json",
+    "next_allowed_step": "PHASE94_OWNER_ORDER_TO_GAP_MAP_V1"
   }
 }

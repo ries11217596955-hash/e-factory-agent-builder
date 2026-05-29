@@ -153,5 +153,11 @@
     "contract": "self_build_backlog/SELF_BUILD_BACKLOG_CONTRACT_V1.json",
     "schema": "contracts/self_development/self_build_backlog_contract_v1.schema.json",
     "proof": "proofs/self_development/SELF_BUILD_BACKLOG_CONTRACT_V1.json"
+  },
+  "capability_gap_detector_v1": {
+    "status": "PROVEN",
+    "detector": "self_build_backlog/CAPABILITY_GAP_DETECTOR_V1.json",
+    "gap_index": "self_build_backlog/CAPABILITY_GAP_INDEX_V1.json",
+    "proof": "proofs/self_development/CAPABILITY_GAP_DETECTOR_V1.json"
   }
 }

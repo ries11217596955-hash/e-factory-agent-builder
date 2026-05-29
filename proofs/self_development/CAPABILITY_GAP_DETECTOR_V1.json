@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "phase": "PHASE93_CAPABILITY_GAP_DETECTOR_V1",
+  "task_id": "TASK_CAPABILITY_GAP_DETECTOR_V1_001",
+  "runtime_mode": "SELF_BUILD",
+  "route_lock_version": "V2_R2",
+  "baseline_commit": "339a060",
+  "detector_created": "self_build_backlog/CAPABILITY_GAP_DETECTOR_V1.json",
+  "gap_index_created": "self_build_backlog/CAPABILITY_GAP_INDEX_V1.json",
+  "schema_created": "contracts/self_development/capability_gap_detector_v1.schema.json",
+  "detected_gap_count": 12,
+  "next_primary_gap": "PHASE94_OWNER_ORDER_TO_GAP_MAP_V1",
+  "includes_owner_order_gap": true,
+  "includes_batch_planner_gap": true,
+  "includes_item_ledger_gap": true,
+  "includes_quarantine_registry_gap": true,
+  "no_external_agent_production": true,
+  "no_external_install": true,
+  "no_external_fetch": true,
+  "phase94_not_executed": true,
+  "queue_returned_to_none": true,
+  "next_allowed_step": "PHASE94_OWNER_ORDER_TO_GAP_MAP_V1"
+}

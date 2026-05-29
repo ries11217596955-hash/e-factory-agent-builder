@@ -803,6 +803,16 @@
       "validate_script": "packs/PHASE92_SELF_BUILD_BACKLOG_CONTRACT_V1/VALIDATE.ps1",
       "phase": "PHASE92",
       "status": "READY"
+    },
+    {
+      "pack_id": "PHASE93_CAPABILITY_GAP_DETECTOR_V1",
+      "task_id": "TASK_CAPABILITY_GAP_DETECTOR_V1_001",
+      "mode": "SELF_BUILD",
+      "shell": "PowerShell",
+      "entry_script": "packs/PHASE93_CAPABILITY_GAP_DETECTOR_V1/APPLY.ps1",
+      "validate_script": "packs/PHASE93_CAPABILITY_GAP_DETECTOR_V1/VALIDATE.ps1",
+      "phase": "PHASE93",
+      "status": "READY"
     }
   ]
 }

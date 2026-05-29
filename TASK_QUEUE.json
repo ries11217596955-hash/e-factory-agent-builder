@@ -3,6 +3,17 @@
   "active_task_id": "NONE",
   "tasks": [
     {
+      "task_id": "TASK_FIRST_WRAPPER_OPERATION_CONTRACTS_V1_001",
+      "status": "COMPLETED",
+      "path": "tasks/TASK_FIRST_WRAPPER_OPERATION_CONTRACTS_V1_001.json",
+      "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+      "mode": "SELF_BUILD",
+      "capability_id": "first_wrapper_operation_contracts_v1",
+      "phase": "PHASE_84",
+      "gate": "FIRST_WRAPPER_OPERATION_CONTRACTS_V1",
+      "pack_id": "PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1"
+    },
+    {
       "task_id": "TASK_OPERATION_CONTRACT_SKELETON_V1_001",
       "status": "COMPLETED",
       "path": "tasks/TASK_OPERATION_CONTRACT_SKELETON_V1_001.json",

@@ -1,0 +1,63 @@
+{
+  "proof_id": "FIRST_WRAPPER_OPERATION_CONTRACTS_V1",
+  "phase": "PHASE_84",
+  "capability_id": "first_wrapper_operation_contracts_v1",
+  "task_id": "TASK_FIRST_WRAPPER_OPERATION_CONTRACTS_V1_001",
+  "pack_id": "PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1",
+  "status": "PASS",
+  "generated_at": "2026-05-29T09:41:16.3237494Z",
+  "evidence_files": [
+    "operations/registry.json",
+    "operations/contracts/validate_json_schema_with_ajv.contract.json",
+    "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json",
+    "materials/quarantine/QUARANTINE_BATCH_001.json",
+    "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
+    "reports/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_REPORT.json"
+  ],
+  "validation_gates": [
+    "phase83_proof_pass",
+    "quarantine_batch_selected_count_2",
+    "operation_contracts_parse",
+    "operation_contracts_registered",
+    "contract_ready_status_only",
+    "trusted_operation_count_zero",
+    "execution_performed_false",
+    "queue_returned_to_none"
+  ],
+  "queue_state_after": {
+    "active_task_id": "NONE"
+  },
+  "operation_state_after": {
+    "registry_path": "operations/registry.json",
+    "registry_status": "CONTRACTS_REGISTERED",
+    "operation_count": 2,
+    "registered_operation_ids": [
+      "validate_json_schema_with_ajv",
+      "validate_json_schema_with_python_jsonschema"
+    ],
+    "trusted_operation_count": 0,
+    "execution_performed": false,
+    "report_status": "PASS"
+  },
+  "forbidden_actions_confirmed": {
+    "no_external_tools_installed": true,
+    "no_external_repos_fetched": true,
+    "no_tool_execution": true,
+    "no_smoke_tests_run": true,
+    "no_wrapper_implementation_created": true,
+    "no_materials_marked_trusted": true,
+    "no_trusted_operations_created": true,
+    "no_catalog_mutation": true,
+    "no_policy_mutation": true,
+    "no_quarantine_batch_mutation": true,
+    "no_quarantine_card_mutation": true,
+    "no_external_agent_created": true,
+    "no_phase78_files_modified": true,
+    "no_phase79_files_modified": true,
+    "no_phase80_files_modified": true,
+    "no_phase81_files_modified": true,
+    "no_phase82_files_modified": true,
+    "no_phase83_files_modified": true
+  },
+  "next_allowed_step": "PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1"
+}

@@ -1,0 +1,49 @@
+{
+  "report_id": "FIRST_WRAPPER_OPERATION_CONTRACTS_REPORT",
+  "phase": "PHASE_84",
+  "capability_id": "first_wrapper_operation_contracts_v1",
+  "status": "PASS",
+  "generated_at": "2026-05-29T09:41:16.0993119Z",
+  "operation_registry_path": "operations/registry.json",
+  "contract_paths": [
+    "operations/contracts/validate_json_schema_with_ajv.contract.json",
+    "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json"
+  ],
+  "registered_operation_ids": [
+    "validate_json_schema_with_ajv",
+    "validate_json_schema_with_python_jsonschema"
+  ],
+  "operation_count": 2,
+  "trusted_operation_count": 0,
+  "execution_performed": false,
+  "install_performed": false,
+  "external_fetch_performed": false,
+  "quarantine_batch_path": "materials/quarantine/QUARANTINE_BATCH_001.json",
+  "related_material_ids": [
+    "mat_json_schema_ajv_001",
+    "mat_python_jsonschema_001"
+  ],
+  "registry_status_after": "CONTRACTS_REGISTERED",
+  "catalog_unchanged": true,
+  "policy_unchanged": true,
+  "quarantine_unchanged": true,
+  "quarantine_cards_unchanged": true,
+  "safety_hashes": {
+    "catalog_before": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+    "catalog_after": "",
+    "policy_before": "122B92C7D03D240E6737C57FFE68DD8E2E0AF6B223B3998B12B22E06661F0E2A",
+    "policy_after": "",
+    "quarantine_before": "9A75D4A070D1756917E946806C4AE553BCC617E8F90539753100C5A5F22E0555",
+    "quarantine_after": ""
+  },
+  "next_allowed_step": "PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1",
+  "cut_list": [
+    "Do not create executable wrapper implementations.",
+    "Do not install tools.",
+    "Do not fetch external repositories.",
+    "Do not run candidate tools.",
+    "Do not run smoke tests.",
+    "Do not create TRUSTED_OPERATION entries.",
+    "Do not create external agents."
+  ]
+}

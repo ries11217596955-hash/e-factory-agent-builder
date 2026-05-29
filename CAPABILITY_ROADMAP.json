@@ -3,6 +3,13 @@
   "roadmap_version": "30.0",
   "capabilities": [
     {
+      "id": "first_wrapper_operation_contracts_v1",
+      "phase": "PHASE_84",
+      "status": "COMPLETED",
+      "gate": "FIRST_WRAPPER_OPERATION_CONTRACTS_V1",
+      "goal": "Create first JSON Schema validation operation contracts without wrappers, installs, fetches, execution, smoke tests, trusted operations, or material trust."
+    },
+    {
       "id": "operation_contract_skeleton_v1",
       "phase": "PHASE_83",
       "status": "COMPLETED",

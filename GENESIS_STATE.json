@@ -225,5 +225,12 @@
     "repair_loop_generator": "self_build_batch/repair_loop/REPAIR_LOOP_GENERATOR_V1.json",
     "schema": "contracts/self_development/repair_loop_generator_v1.schema.json",
     "proof": "proofs/self_development/REPAIR_LOOP_GENERATOR_V1.json"
+  },
+  "controlled_multi_cycle_self_build_run_v1": {
+    "status": "PROVEN",
+    "controlled_run_contract": "self_build_batch/controlled_runs/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1.json",
+    "schema": "contracts/self_development/controlled_multi_cycle_self_build_run_v1.schema.json",
+    "controlled_run_result": "self_build_batch/controlled_runs/BATCH_PLAN_EXAMPLE_V1_CONTROLLED_MULTI_CYCLE_RUN_RESULT.json",
+    "proof": "proofs/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1.json"
   }
 }

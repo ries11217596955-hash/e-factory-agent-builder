@@ -724,5 +724,20 @@
     "report": "reports/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1_REPORT.json",
     "selected_program": "REPAIR_PROGRAM_SELF_BUILD_REQUIRED_MODULES_001",
     "next_allowed_step": "PHASE105_SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1"
+  },
+  "phase105_scale_trial_10_30_100_item_simulation_v1": {
+    "status": "COMPLETED",
+    "scale_trial_contract": "self_build_batch/scale_trials/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json",
+    "schema": "contracts/self_development/scale_trial_10_30_100_item_simulation_v1.schema.json",
+    "scale_trial_result": "self_build_batch/scale_trials/BATCH_PLAN_EXAMPLE_V1_SCALE_TRIAL_RESULT.json",
+    "proof": "proofs/self_development/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json",
+    "report": "reports/self_development/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1_REPORT.json",
+    "scale_tiers": [
+      10,
+      30,
+      100
+    ],
+    "total_simulated_item_count": 140,
+    "next_allowed_step": "PHASE106_SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1"
   }
 }

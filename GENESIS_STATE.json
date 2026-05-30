@@ -232,5 +232,12 @@
     "schema": "contracts/self_development/controlled_multi_cycle_self_build_run_v1.schema.json",
     "controlled_run_result": "self_build_batch/controlled_runs/BATCH_PLAN_EXAMPLE_V1_CONTROLLED_MULTI_CYCLE_RUN_RESULT.json",
     "proof": "proofs/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1.json"
+  },
+  "scale_trial_10_30_100_item_simulation_v1": {
+    "status": "PROVEN",
+    "scale_trial_contract": "self_build_batch/scale_trials/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json",
+    "schema": "contracts/self_development/scale_trial_10_30_100_item_simulation_v1.schema.json",
+    "scale_trial_result": "self_build_batch/scale_trials/BATCH_PLAN_EXAMPLE_V1_SCALE_TRIAL_RESULT.json",
+    "proof": "proofs/self_development/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json"
   }
 }

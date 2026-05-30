@@ -739,5 +739,20 @@
     ],
     "total_simulated_item_count": 140,
     "next_allowed_step": "PHASE106_SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1"
+  },
+  "phase106_scale_trial_promotion_gate_and_route_lock_refresh_v1": {
+    "status": "COMPLETED",
+    "schema": "contracts/self_development/scale_trial_promotion_gate_and_route_lock_refresh_v1.schema.json",
+    "route_lock_v3": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md",
+    "route_transition_report": "reports/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_REPORT.json",
+    "route_transition_proof": "proofs/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_PROOF.json",
+    "proof": "proofs/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1.json",
+    "report": "reports/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1_REPORT.json",
+    "source_scale_trial_proof": "proofs/self_development/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json",
+    "source_scale_trial_result": "self_build_batch/scale_trials/BATCH_PLAN_EXAMPLE_V1_SCALE_TRIAL_RESULT.json",
+    "scale_trial_promoted_as": "SIMULATION_PROVEN",
+    "full_autonomy_claimed": false,
+    "codex_dependency_risk_recorded": true,
+    "next_allowed_step": "PHASE107_BUILDER_SELF_PACK_AUTHOR_V1"
   }
 }

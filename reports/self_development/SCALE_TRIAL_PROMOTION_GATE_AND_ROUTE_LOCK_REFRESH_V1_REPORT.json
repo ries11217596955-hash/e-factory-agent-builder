@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "phase": "PHASE106_SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "generated_at": "2026-05-30T16:38:56.1125158Z",
+  "baseline_commit": "e66cf8e",
+  "source_scale_trial_proof": "proofs/self_development/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json",
+  "source_scale_trial_result": "self_build_batch/scale_trials/BATCH_PLAN_EXAMPLE_V1_SCALE_TRIAL_RESULT.json",
+  "scale_trial_promoted_as": "SIMULATION_PROVEN",
+  "full_autonomy_claimed": false,
+  "codex_dependency_risk_recorded": true,
+  "route_correction_created": true,
+  "route_lock_v3_created": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md",
+  "next_allowed_step": "PHASE107_BUILDER_SELF_PACK_AUTHOR_V1",
+  "phase107_not_executed": true
+}

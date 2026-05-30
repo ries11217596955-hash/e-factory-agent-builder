@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "phase": "CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1",
+  "runtime_mode": "TERMINAL_REPAIR_AFTER_PROVEN_RUNTIME_CONTRACT_FAILURE",
+  "baseline_commit": "d8da941",
+  "candidate_pack_id": "PHASE108_BUILDER_GENERATED_PACK_ADMISSION_V1_CANDIDATE",
+  "apply_accepts_repo_root": true,
+  "apply_accepts_run_id": true,
+  "apply_accepts_invoked_by_orchestrator": true,
+  "validate_accepts_repo_root": true,
+  "validate_accepts_run_id": true,
+  "validate_accepts_invoked_by_orchestrator": true,
+  "codex_used": false,
+  "full_autonomy_claimed": false,
+  "repair_scope": "candidate script signature only",
+  "created_at": "2026-05-30T22:04:25.8077127+04:00"
+}

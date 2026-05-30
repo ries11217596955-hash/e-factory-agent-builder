@@ -754,5 +754,18 @@
     "full_autonomy_claimed": false,
     "codex_dependency_risk_recorded": true,
     "next_allowed_step": "PHASE107_BUILDER_SELF_PACK_AUTHOR_V1"
+  },
+  "phase107_builder_self_pack_author_v1": {
+    "status": "COMPLETED",
+    "schema": "contracts/self_development/builder_self_pack_author_v1.schema.json",
+    "self_pack_author_contract": "self_build_batch/self_pack_author/BUILDER_SELF_PACK_AUTHOR_V1.json",
+    "generated_candidate_path": "self_build_batch/self_pack_author/generated_candidates/PHASE108_BUILDER_GENERATED_PACK_ADMISSION_V1_CANDIDATE",
+    "proof": "proofs/self_development/BUILDER_SELF_PACK_AUTHOR_V1.json",
+    "report": "reports/self_development/BUILDER_SELF_PACK_AUTHOR_V1_REPORT.json",
+    "generated_by_builder_runtime": true,
+    "codex_authored_candidate": false,
+    "candidate_registered_live": false,
+    "candidate_executed": false,
+    "next_allowed_step": "PHASE108_BUILDER_GENERATED_PACK_ADMISSION_V1"
   }
 }

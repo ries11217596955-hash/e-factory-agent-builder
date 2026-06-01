@@ -405,6 +405,21 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                 return
             }
 
+            if ($Entry.current_need -eq "NEED_SELF_BUILD_OPERATION_READINESS_GATE") {
+                . ".\modules\invoke_self_build_operation_readiness_gate.ps1"
+                $ReadinessGateRoot = ".\self_build_batch\autonomy_trials\PHASE130_BUILD_SELF_BUILD_OPERATION_READINESS_GATE_V1"
+                $ReadinessGate = Invoke-SelfBuildOperationReadinessGate -RepoRoot $RepoRoot -RunId $RunId -Entry $Entry -OutputRoot $ReadinessGateRoot
+
+                Write-Host "SELF_BUILD_OPERATION_READINESS_GATE=SELF_BUILD_OPERATION_READINESS_GATE_BUILDER_V1"
+                Write-Host "SELF_BUILD_OPERATION_READINESS_GATE_STATUS=$($ReadinessGate.status)"
+                Write-Host "SELF_BUILD_OPERATION_READINESS_GATE_CREATED=$($ReadinessGate.gate_created)"
+                Write-Host "SELF_BUILD_OPERATION_READINESS_GATE_DECISION=$($ReadinessGate.decision)"
+                Write-Host "SELF_BUILD_OPERATION_READINESS_GATE_PATH=$($ReadinessGate.gate_path)"
+                Write-Host "SELF_BUILD_OPERATION_READINESS_GATE_NEXT_STEP=$($ReadinessGate.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_SELF_BUILD_OPERATION_READINESS_GATE_BUILT"
+                return
+            }
+
             Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_FIRST_ENTRYPOINT"
             return
         }
@@ -546,6 +561,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

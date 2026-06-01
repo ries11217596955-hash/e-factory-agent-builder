@@ -1,0 +1,12 @@
+{
+  "status": "BLOCKED",
+  "report_id": "PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1_REPORT",
+  "phase": "PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1",
+  "summary": "Probe tested whether Builder runtime selects a next self-build action without manual queue seeding.",
+  "classification": "NO_AUTONOMOUS_NEXT_ACTION_SELECTION_FOUND",
+  "selected_pack": "",
+  "selected_task": "",
+  "manual_active_task_seed": false,
+  "autonomy_claimed": false,
+  "next_allowed_step": "PHASE111_BUILD_NEXT_ACTION_DECISION_KERNEL_V1"
+}

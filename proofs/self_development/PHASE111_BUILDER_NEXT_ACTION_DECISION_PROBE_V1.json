@@ -1,0 +1,22 @@
+{
+  "status": "BLOCKED",
+  "proof_id": "PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1",
+  "phase": "PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1",
+  "runtime_mode": "SELF_BUILD_NO_MANUAL_QUEUE_SEED",
+  "baseline_commit": "9729728",
+  "manual_active_task_seed": false,
+  "manual_pack_priority_change": false,
+  "runtime_executed": true,
+  "selected_pack": "",
+  "selected_task": "",
+  "queue_before": "NONE",
+  "queue_after": "NONE",
+  "classification": "NO_AUTONOMOUS_NEXT_ACTION_SELECTION_FOUND",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "result_path": "self_build_batch/autonomy_trials/PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1/PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1_RESULT.json",
+  "report_path": "reports/self_development/PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1_REPORT.json",
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1/PHASE111_BUILDER_NEXT_ACTION_DECISION_PROBE_V1_RUNTIME_LOG.txt",
+  "next_allowed_step": "PHASE111_BUILD_NEXT_ACTION_DECISION_KERNEL_V1"
+}

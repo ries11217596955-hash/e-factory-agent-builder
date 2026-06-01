@@ -367,7 +367,18 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
         Write-Host "SELF_NEED_DETECTION_MISSING_CAPABILITY=$($Need.missing_capability)"
         Write-Host "SELF_NEED_DETECTION_RECOMMENDED_NEXT_STEP=$($Need.recommended_next_step)"
         Write-Host "SELF_NEED_DETECTION_REASON=$($Need.reason)"
-        Write-Host "STATUS=PASS_STOPPED_SELF_NEED_DETECTED"
+
+        . ".\modules\invoke_decision_to_action_engine.ps1"
+        $ActionOutputRoot = ".\self_build_batch\autonomy_trials\PHASE112_BUILD_DECISION_TO_ACTION_ENGINE_V1"
+        $Action = Invoke-DecisionToActionEngine -RepoRoot $RepoRoot -RunId $RunId -Need $Need -OutputRoot $ActionOutputRoot
+
+        Write-Host "DECISION_TO_ACTION_ENGINE=DECISION_TO_ACTION_ENGINE_V1"
+        Write-Host "DECISION_TO_ACTION_STATUS=$($Action.status)"
+        Write-Host "DECISION_TO_ACTION_DECISION_ID=$($Action.decision_id)"
+        Write-Host "DECISION_TO_ACTION_ACTION_KIND=$($Action.action_kind)"
+        Write-Host "DECISION_TO_ACTION_ACTION_REQUEST_PATH=$($Action.action_request_path)"
+        Write-Host "DECISION_TO_ACTION_PROPOSED_NEXT_STEP=$($Action.proposed_next_step)"
+        Write-Host "STATUS=PASS_STOPPED_DECISION_ACTION_CREATED"
         return
     }
     $Pack = $Registry.packs |
@@ -402,6 +413,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

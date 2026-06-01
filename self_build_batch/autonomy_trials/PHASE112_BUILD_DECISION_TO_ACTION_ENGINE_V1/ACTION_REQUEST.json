@@ -1,0 +1,33 @@
+{
+  "action_request_id": "ACTION_REQUEST_FROM_SELF_NEED_PHASE112_DECISION_TO_ACTION_ENGINE_SELF_TEST_001",
+  "status": "PASS",
+  "decision_id": "DECISION_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1",
+  "action_kind": "BUILD_NEXT_CAPABILITY",
+  "source_engine": "SELF_NEED_DETECTION_ENGINE_V1",
+  "source_need_id": "NEED_DECISION_TO_ACTION_ENGINE",
+  "source_diagnosis": "MISSING_DECISION_TO_ACTION_CAPABILITY",
+  "source_missing_capability": "BUILDER_CAN_REPEAT_RUNTIME_OPERATION_BUT_CANNOT_TRANSLATE_STATE_NEED_INTO_NEXT_ACTION",
+  "target_capability": "DECISION_ACTION_ADMISSION_BRIDGE",
+  "proposed_next_step": "PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1",
+  "requested_outcome": "Convert a self-diagnosed need into an admissible self-build task/pack without manual active_task_id seeding.",
+  "acceptance_criteria": [
+    "action request is generated from self-need output",
+    "active_task_id remains NONE during generation",
+    "no manual pack priority change is required",
+    "next phase can admit this action request safely",
+    "no full autonomy is claimed"
+  ],
+  "constraints": [
+    "do not touch main",
+    "do not use Codex",
+    "do not fetch internet materials",
+    "do not install dependencies",
+    "do not fake PASS",
+    "do not directly execute the requested action in this phase"
+  ],
+  "reason": "Self-need detection found that Builder cannot yet translate a detected need into an executable self-build action. The next honest action is to build the admission bridge.",
+  "created_by_builder_runtime": true,
+  "manual_active_task_seed": false,
+  "autonomy_claimed": false,
+  "codex_used": false
+}

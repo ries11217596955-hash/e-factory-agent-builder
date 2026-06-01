@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE125_RUN_SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_V1_REPORT",
+  "phase": "PHASE125_RUN_SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_V1",
+  "summary": "Builder ran the controller-governed trial through the self-model-first runtime entrypoint without replaying legacy organ-build path.",
+  "classification": "SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_PASS",
+  "proven": [
+    "runtime started from queue NONE",
+    "self-model-first entrypoint was used",
+    "legacy replay signals were absent",
+    "queue remained NONE",
+    "next step is trial-aware self-model advance"
+  ],
+  "next_allowed_step": "PHASE126_BUILD_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1"
+}

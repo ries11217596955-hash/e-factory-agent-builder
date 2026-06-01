@@ -416,7 +416,17 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                 Write-Host "SELF_BUILD_OPERATION_READINESS_GATE_DECISION=$($ReadinessGate.decision)"
                 Write-Host "SELF_BUILD_OPERATION_READINESS_GATE_PATH=$($ReadinessGate.gate_path)"
                 Write-Host "SELF_BUILD_OPERATION_READINESS_GATE_NEXT_STEP=$($ReadinessGate.proposed_next_step)"
-                Write-Host "STATUS=PASS_STOPPED_SELF_BUILD_OPERATION_READINESS_GATE_BUILT"
+
+                . ".\modules\invoke_operation_trial_aware_self_model_advance.ps1"
+                $OperationTrialAwareRoot = ".\self_build_batch\autonomy_trials\PHASE132_BUILD_OPERATION_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1"
+                $OperationTrialAware = Invoke-OperationTrialAwareSelfModelAdvance -RepoRoot $RepoRoot -RunId $RunId -Entry $Entry -ReadinessGate $ReadinessGate -OutputRoot $OperationTrialAwareRoot
+
+                Write-Host "OPERATION_TRIAL_AWARE_SELF_MODEL_ADVANCE=OPERATION_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1"
+                Write-Host "OPERATION_TRIAL_AWARE_STATUS=$($OperationTrialAware.status)"
+                Write-Host "OPERATION_TRIAL_AWARE_CLOSED_NEED=$($OperationTrialAware.closed_need)"
+                Write-Host "OPERATION_TRIAL_AWARE_CURRENT_NEED=$($OperationTrialAware.current_detected_need)"
+                Write-Host "OPERATION_TRIAL_AWARE_NEXT_STEP=$($OperationTrialAware.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_OPERATION_TRIAL_AWARE_SELF_MODEL_ADVANCED"
                 return
             }
 
@@ -561,6 +571,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

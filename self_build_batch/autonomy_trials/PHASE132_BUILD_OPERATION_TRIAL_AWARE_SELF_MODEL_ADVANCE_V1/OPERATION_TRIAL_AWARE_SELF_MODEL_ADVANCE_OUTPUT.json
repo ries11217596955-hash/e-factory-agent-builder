@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "engine_name": "OPERATION_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1",
+  "run_id": "PHASE132_OPERATION_TRIAL_AWARE_SELF_MODEL_ADVANCE_001",
+  "self_model_path": "self_model/BUILDER_SELF_MODEL.json",
+  "self_model_updated": true,
+  "closed_need": "NEED_SELF_BUILD_OPERATION_READINESS_GATE",
+  "current_detected_need": "NEED_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR",
+  "proposed_next_step": "PHASE133_BUILD_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_V1",
+  "reason": "PHASE131 proved one bounded contract-governed self-build operation trial. Self-model can close readiness gate need and move to selecting the first real operational self-build capability.",
+  "queue_mutated": false,
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

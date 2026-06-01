@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1_REPORT",
+  "phase": "PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1",
+  "summary": "Self-need detection now reads proof chain and no longer repeats the stale decision-to-action need after PHASE112-PHASE116.",
+  "fixed": "Stale NEED_DECISION_TO_ACTION_ENGINE diagnosis",
+  "current_need": "NEED_SELF_MODEL_UPDATE_ENGINE",
+  "next_allowed_step": "PHASE118_BUILD_SELF_MODEL_UPDATE_ENGINE_V1"
+}

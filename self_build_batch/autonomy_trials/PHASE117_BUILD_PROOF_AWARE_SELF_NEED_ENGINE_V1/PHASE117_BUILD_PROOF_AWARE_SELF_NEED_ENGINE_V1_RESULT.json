@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "phase": "PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "baseline_commit": "b27b961",
+  "runtime_executed": true,
+  "builder_runtime_invoked": true,
+  "proof_aware_self_need_engine": true,
+  "old_stale_need": "NEED_DECISION_TO_ACTION_ENGINE",
+  "new_detected_need": "NEED_SELF_MODEL_UPDATE_ENGINE",
+  "diagnosis": "MISSING_SELF_MODEL_UPDATE_CAPABILITY",
+  "recommended_next_step": "PHASE118_BUILD_SELF_MODEL_UPDATE_ENGINE_V1",
+  "queue_after": "NONE",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1/PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1_RUNTIME_LOG.txt",
+  "engine_output_path": "self_build_batch/autonomy_trials/PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1/PROOF_AWARE_SELF_NEED_ENGINE_OUTPUT.json",
+  "next_allowed_step": "PHASE118_BUILD_SELF_MODEL_UPDATE_ENGINE_V1"
+}

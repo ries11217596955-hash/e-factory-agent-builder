@@ -368,6 +368,15 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
         Write-Host "SELF_NEED_DETECTION_RECOMMENDED_NEXT_STEP=$($Need.recommended_next_step)"
         Write-Host "SELF_NEED_DETECTION_REASON=$($Need.reason)"
 
+        if ($Need.detected_need_id -ne "NEED_DECISION_TO_ACTION_ENGINE") {
+            Write-Host "PROOF_AWARE_SELF_NEED_STOP=YES"
+            Write-Host "PROOF_AWARE_SELF_NEED_DIAGNOSIS=$($Need.diagnosis)"
+            Write-Host "PROOF_AWARE_SELF_NEED_DETECTED_NEED=$($Need.detected_need_id)"
+            Write-Host "PROOF_AWARE_SELF_NEED_NEXT_STEP=$($Need.recommended_next_step)"
+            Write-Host "STATUS=PASS_STOPPED_PROOF_AWARE_SELF_NEED_DETECTED"
+            return
+        }
+
         . ".\modules\invoke_decision_to_action_engine.ps1"
         $ActionOutputRoot = ".\self_build_batch\autonomy_trials\PHASE112_BUILD_DECISION_TO_ACTION_ENGINE_V1"
         $Action = Invoke-DecisionToActionEngine -RepoRoot $RepoRoot -RunId $RunId -Need $Need -OutputRoot $ActionOutputRoot
@@ -434,6 +443,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

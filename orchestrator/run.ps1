@@ -355,6 +355,37 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase136StepId = "PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1"
+        $Phase135ProofPath = ".\proofs\self_development\PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1.json"
+
+        if (Test-Path -LiteralPath $Phase135ProofPath) {
+            $Phase135Proof = Get-Content -LiteralPath $Phase135ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase135Proof.status -eq "PASS" -and $Phase135Proof.next_allowed_step -eq $Phase136StepId) {
+                . ".\modules\invoke_material_governance_series_001.ps1"
+
+                $MaterialGovernanceRoot = ".\self_build_batch\autonomy_trials\$Phase136StepId"
+                $MaterialGovernance = Invoke-MaterialGovernanceSeries001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $MaterialGovernanceRoot
+
+                Write-Host "MATERIAL_GOVERNANCE_SERIES=PHASE136_MATERIAL_GOVERNANCE_SERIES_001"
+                Write-Host "MATERIAL_GOVERNANCE_SERIES_STATUS=$($MaterialGovernance.status)"
+                Write-Host "MATERIAL_IMPORTED_COUNT=$($MaterialGovernance.imported_material_count)"
+                Write-Host "MATERIAL_CANDIDATE_COUNT=$($MaterialGovernance.candidate_material_count)"
+                Write-Host "MATERIAL_REFERENCE_ONLY_COUNT=$($MaterialGovernance.reference_only_material_count)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($MaterialGovernance.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($MaterialGovernance.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($MaterialGovernance.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($MaterialGovernance.executable_materials_used)"
+                Write-Host "MATERIAL_GOVERNANCE_CATALOG_PATH=$($MaterialGovernance.material_catalog_path)"
+                Write-Host "MATERIAL_GOVERNANCE_QUARANTINE_REGISTER_PATH=$($MaterialGovernance.quarantine_register_path)"
+                Write-Host "MATERIAL_GOVERNANCE_USE_POLICY_PATH=$($MaterialGovernance.use_policy_path)"
+                Write-Host "MATERIAL_GOVERNANCE_EVALUATION_QUEUE_PATH=$($MaterialGovernance.evaluation_queue_path)"
+                Write-Host "MATERIAL_GOVERNANCE_NEXT_STEP=$($MaterialGovernance.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_MATERIAL_GOVERNANCE_SERIES_BUILT"
+                return
+            }
+        }
+
         . ".\modules\invoke_self_model_first_runtime_entrypoint.ps1"
         $SelfModelFirstRoot = ".\self_build_batch\autonomy_trials\PHASE124_BUILD_SELF_MODEL_FIRST_RUNTIME_ENTRYPOINT_V1"
         $Entry = Invoke-SelfModelFirstRuntimeEntrypoint -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $SelfModelFirstRoot

@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1_REPORT",
+  "phase": "PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1",
+  "run_id": "PHASE136_MATERIAL_GOVERNANCE_SERIES_001",
+  "summary": "Imported MANUAL_SCOUT_PASS_001 into governed material catalog structures. Three candidate materials were routed to bounded evaluation readiness; one reference-only material was excluded from executable evaluation. No material was trusted, fetched, installed, wrapped, tested, or used.",
+  "source_scout_pass_path": "materials/MANUAL_SCOUT_PASS_001.json",
+  "source_proof_path": "proofs/self_development/PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1.json",
+  "material_catalog_path": "materials/MATERIAL_CATALOG.json",
+  "quarantine_register_path": "materials/MATERIAL_QUARANTINE_REGISTER.json",
+  "use_policy_path": "materials/MATERIAL_USE_POLICY.json",
+  "evaluation_queue_path": "materials/MATERIAL_EVALUATION_QUEUE.json",
+  "imported_material_count": 4,
+  "candidate_material_count": 3,
+  "reference_only_material_count": 1,
+  "trusted_material_count": 0,
+  "candidate_material_ids": [
+    "candidate_pester_powershell_test_framework",
+    "candidate_psscriptanalyzer_static_checker",
+    "candidate_syft_sbom_cli"
+  ],
+  "reference_only_material_ids": [
+    "reference_json_schema_official"
+  ],
+  "policy_summary": {
+    "default_allow": false,
+    "trusted_material_count": 0,
+    "owner_approval_required": true,
+    "license_provenance_review_required": true,
+    "quarantine_required_for_candidates": true,
+    "wrapper_decision_required": true,
+    "smoke_test_required": true
+  },
+  "cut_list": [
+    "Do not install external materials.",
+    "Do not fetch external repositories or packages.",
+    "Do not execute imported materials.",
+    "Do not wrap imported materials.",
+    "Do not smoke test imported materials in PHASE136.",
+    "Do not mark any material TRUSTED.",
+    "Do not put reference-only material into executable evaluation.",
+    "Do not mutate main branch or external agent folders."
+  ],
+  "next_allowed_step": "PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1"
+}

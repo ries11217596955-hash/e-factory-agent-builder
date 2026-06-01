@@ -354,6 +354,22 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Queue = Get-Content ".\TASK_QUEUE.json" -Raw | ConvertFrom-Json
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
+    if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        . ".\modules\invoke_self_need_detection_engine.ps1"
+
+        $NeedOutputRoot = ".\self_build_batch\autonomy_trials\PHASE111_BUILD_NEXT_ACTION_DECISION_KERNEL_V1"
+        $Need = Invoke-SelfNeedDetectionEngine -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $NeedOutputRoot
+
+        Write-Host "SELF_NEED_DETECTION_ENGINE=SELF_NEED_DETECTION_ENGINE_V1"
+        Write-Host "SELF_NEED_DETECTION_STATUS=$($Need.status)"
+        Write-Host "SELF_NEED_DETECTION_DIAGNOSIS=$($Need.diagnosis)"
+        Write-Host "SELF_NEED_DETECTION_DETECTED_NEED=$($Need.detected_need_id)"
+        Write-Host "SELF_NEED_DETECTION_MISSING_CAPABILITY=$($Need.missing_capability)"
+        Write-Host "SELF_NEED_DETECTION_RECOMMENDED_NEXT_STEP=$($Need.recommended_next_step)"
+        Write-Host "SELF_NEED_DETECTION_REASON=$($Need.reason)"
+        Write-Host "STATUS=PASS_STOPPED_SELF_NEED_DETECTED"
+        return
+    }
     $Pack = $Registry.packs |
         Where-Object { $_.task_id -eq $Queue.active_task_id } |
         Select-Object -First 1
@@ -386,6 +402,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE111_BUILD_NEXT_ACTION_DECISION_KERNEL_V1_REPORT",
+  "phase": "PHASE111_BUILD_NEXT_ACTION_DECISION_KERNEL_V1",
+  "summary": "Builder runtime now detects its own missing capability when active_task_id is NONE.",
+  "engine_name": "SELF_NEED_DETECTION_ENGINE_V1",
+  "diagnosis": "MISSING_DECISION_TO_ACTION_CAPABILITY",
+  "detected_need_id": "NEED_DECISION_TO_ACTION_ENGINE",
+  "missing_capability": "BUILDER_CAN_REPEAT_RUNTIME_OPERATION_BUT_CANNOT_TRANSLATE_STATE_NEED_INTO_NEXT_ACTION",
+  "recommended_next_step": "PHASE112_BUILD_DECISION_TO_ACTION_ENGINE_V1",
+  "what_changed": "Runtime no longer only says no registered pack; it explains the missing self-development capability.",
+  "what_is_not_yet_proven": "Builder still cannot transform the detected need into a new pack/task/action without the next engine.",
+  "next_allowed_step": "PHASE112_BUILD_DECISION_TO_ACTION_ENGINE_V1"
+}

@@ -394,6 +394,20 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                 Write-Host "SELF_MODEL_AWARE_SELECTED_NEED=$($DecisionLoop.selected_need_id)"
                 Write-Host "SELF_MODEL_AWARE_TARGET_CAPABILITY=$($DecisionLoop.selected_target_capability)"
                 Write-Host "SELF_MODEL_AWARE_NEXT_STEP=$($DecisionLoop.proposed_next_step)"
+
+                if ($DecisionLoop.selected_need_id -eq "NEED_AUTONOMOUS_LOOP_CONTROLLER") {
+                    . ".\modules\invoke_autonomous_loop_controller.ps1"
+                    $ControllerRoot = ".\self_build_batch\autonomy_trials\PHASE120_BUILD_AUTONOMOUS_LOOP_CONTROLLER_V1"
+                    $Controller = Invoke-AutonomousLoopController -RepoRoot $RepoRoot -RunId $RunId -DecisionLoop $DecisionLoop -OutputRoot $ControllerRoot
+                    Write-Host "AUTONOMOUS_LOOP_CONTROLLER=AUTONOMOUS_LOOP_CONTROLLER_V1"
+                    Write-Host "AUTONOMOUS_LOOP_CONTROLLER_STATUS=$($Controller.status)"
+                    Write-Host "AUTONOMOUS_LOOP_CONTROLLER_CREATED=$($Controller.controller_created)"
+                    Write-Host "AUTONOMOUS_LOOP_CONTROLLER_PATH=$($Controller.controller_path)"
+                    Write-Host "AUTONOMOUS_LOOP_CONTROLLER_NEXT_STEP=$($Controller.proposed_next_step)"
+                    Write-Host "STATUS=PASS_STOPPED_AUTONOMOUS_LOOP_CONTROLLER_CREATED"
+                    return
+                }
+
                 Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_AWARE_DECISION"
                 return
             }
@@ -468,6 +482,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

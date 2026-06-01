@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "cycle_id": "PHASE110_BATCH5_CYCLE_01",
+  "cycle_number": 1,
+  "runtime_exit_code": 0,
+  "selected_pack_ok": true,
+  "pack_status_pass": true,
+  "replay_phase107_no": true,
+  "active_task_id_after": "NONE",
+  "queue_returned_to_none": true,
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1/cycles/PHASE110_BATCH5_CYCLE_01/RUNTIME_LOG.txt"
+}

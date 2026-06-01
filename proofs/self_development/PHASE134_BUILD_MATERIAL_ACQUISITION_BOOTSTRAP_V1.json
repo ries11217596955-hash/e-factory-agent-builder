@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "proof_id": "PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1",
+  "phase": "PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1",
+  "runtime_mode": "SELF_BUILD_QUEUE_NONE_SELECTOR_TO_MATERIAL_BOOTSTRAP",
+  "material_acquisition_bootstrap_created": true,
+  "handoff": "CAPABILITY_SELECTOR_TO_MATERIAL_BOOTSTRAP",
+  "bootstrap_path": "self_control/MATERIAL_ACQUISITION_BOOTSTRAP.json",
+  "material_catalog_path": "materials/MATERIAL_CATALOG.json",
+  "manual_scout_template_path": "materials/MANUAL_SCOUT_PASS_001_INPUT_TEMPLATE.json",
+  "external_fetch_performed": false,
+  "dependency_install_performed": false,
+  "trusted_material_count": 0,
+  "queue_after": "NONE",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "result_path": "self_build_batch/autonomy_trials/PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1/PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1_RESULT.json",
+  "report_path": "reports/self_development/PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1_REPORT.json",
+  "output_path": "self_build_batch/autonomy_trials/PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1/MATERIAL_ACQUISITION_BOOTSTRAP_OUTPUT.json",
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1/PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1_RUNTIME_LOG.txt",
+  "next_allowed_step": "PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1"
+}

@@ -442,6 +442,29 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                 Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_SELECTED_CAPABILITY=$($CapabilitySelector.selected_capability_id)"
                 Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_PATH=$($CapabilitySelector.selector_path)"
                 Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_NEXT_STEP=$($CapabilitySelector.proposed_next_step)"
+
+                if ($CapabilitySelector.selected_need_id -eq "NEED_MATERIAL_ACQUISITION_BOOTSTRAP") {
+                    Write-Host "MATERIAL_BOOTSTRAP_AFTER_CAPABILITY_SELECTOR_V1=YES"
+                    . ".\modules\invoke_material_acquisition_bootstrap.ps1"
+                    $MaterialBootstrapRoot = ".\self_build_batch\autonomy_trials\PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1"
+                    $MaterialEntry = [pscustomobject]@{
+                        status = "PASS"
+                        current_need = "NEED_MATERIAL_ACQUISITION_BOOTSTRAP"
+                    }
+                    $MaterialBootstrap = Invoke-MaterialAcquisitionBootstrap -RepoRoot $RepoRoot -RunId $RunId -Entry $MaterialEntry -OutputRoot $MaterialBootstrapRoot
+
+                    Write-Host "MATERIAL_ACQUISITION_BOOTSTRAP=MATERIAL_ACQUISITION_BOOTSTRAP_BUILDER_V1"
+                    Write-Host "MATERIAL_ACQUISITION_BOOTSTRAP_STATUS=$($MaterialBootstrap.status)"
+                    Write-Host "MATERIAL_ACQUISITION_BOOTSTRAP_CREATED=$($MaterialBootstrap.bootstrap_created)"
+                    Write-Host "MATERIAL_ACQUISITION_BOOTSTRAP_PATH=$($MaterialBootstrap.bootstrap_path)"
+                    Write-Host "MATERIAL_CATALOG_PATH=$($MaterialBootstrap.material_catalog_path)"
+                    Write-Host "MATERIAL_TRUSTED_COUNT=$($MaterialBootstrap.trusted_material_count)"
+                    Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($MaterialBootstrap.external_fetch_performed)"
+                    Write-Host "MATERIAL_BOOTSTRAP_NEXT_STEP=$($MaterialBootstrap.proposed_next_step)"
+                    Write-Host "STATUS=PASS_STOPPED_MATERIAL_ACQUISITION_BOOTSTRAP_BUILT"
+                    return
+                }
+
                 Write-Host "STATUS=PASS_STOPPED_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_BUILT"
                 return
             }
@@ -587,6 +610,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

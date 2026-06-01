@@ -1,6 +1,6 @@
 {
   "queue_version": "0.3",
-  "active_task_id": "TASK_PHASE115_EXECUTE_BUILDER_QUEUED_ADMITTED_ACTION_V1_001",
+  "active_task_id": "NONE",
   "tasks": [
     {
       "task_id": "TASK_BUILDER_SELF_PACK_AUTHOR_V1_001",
@@ -1107,7 +1107,7 @@
     },
     {
       "task_id": "TASK_PHASE115_EXECUTE_BUILDER_QUEUED_ADMITTED_ACTION_V1_001",
-      "status": "READY",
+      "status": "COMPLETED",
       "mode": "SELF_BUILD",
       "phase": "PHASE115_EXECUTE_BUILDER_QUEUED_ADMITTED_ACTION_V1",
       "active_line": "AGENT_BUILDER / SELF_BUILD",

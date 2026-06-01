@@ -355,6 +355,35 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase138BStepId = "PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1"
+        $Phase138AProofPath = ".\proofs\self_development\PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_V1.json"
+
+        if (Test-Path -LiteralPath $Phase138AProofPath) {
+            $Phase138AProof = Get-Content -LiteralPath $Phase138AProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase138AProof.status -eq "PASS" -and $Phase138AProof.next_allowed_step -eq $Phase138BStepId) {
+                . ".\modules\invoke_review_autonomous_material_decision_stress_results_001.ps1"
+
+                $AutonomousMaterialDecisionReviewRoot = ".\self_build_batch\autonomy_trials\$Phase138BStepId"
+                $AutonomousMaterialDecisionReview = Invoke-ReviewAutonomousMaterialDecisionStressResults001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $AutonomousMaterialDecisionReviewRoot
+
+                Write-Host "AUTONOMOUS_MATERIAL_DECISION_REVIEW=PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_001"
+                Write-Host "REVIEW_STATUS=$($AutonomousMaterialDecisionReview.status)"
+                Write-Host "REVIEW_SELECTED_MATERIAL=$($AutonomousMaterialDecisionReview.selected_material_id)"
+                Write-Host "REVIEW_DATASET_RECORD_COUNT=$($AutonomousMaterialDecisionReview.stress_dataset_record_count)"
+                Write-Host "REVIEW_POLICY_VIOLATION_COUNT=$($AutonomousMaterialDecisionReview.policy_violation_count)"
+                Write-Host "REVIEW_VIOLATION_SUM=$($AutonomousMaterialDecisionReview.violation_sum)"
+                Write-Host "REVIEW_PRODUCTION_ADOPTION_ALLOWED=$($AutonomousMaterialDecisionReview.production_adoption_allowed)"
+                Write-Host "REVIEW_TRUSTED=$($false)"
+                Write-Host "REVIEW_EXTERNAL_FETCH_PERFORMED=$($AutonomousMaterialDecisionReview.external_fetch_performed)"
+                Write-Host "REVIEW_DEPENDENCY_INSTALL_PERFORMED=$($AutonomousMaterialDecisionReview.dependency_install_performed)"
+                Write-Host "REVIEW_EXECUTABLE_USED=$($AutonomousMaterialDecisionReview.executable_materials_used)"
+                Write-Host "REVIEW_NEXT_STEP=$($AutonomousMaterialDecisionReview.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_AUTONOMOUS_MATERIAL_DECISION_REVIEW_BUILT"
+                return
+            }
+        }
+
         $Phase138AStepId = "PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_V1"
         $Phase137ProofPath = ".\proofs\self_development\PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1.json"
 

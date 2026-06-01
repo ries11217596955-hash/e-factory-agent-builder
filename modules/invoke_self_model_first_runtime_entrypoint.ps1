@@ -84,6 +84,19 @@ function Invoke-SelfModelFirstRuntimeEntrypoint {
       $currentNeed = "NEED_SELF_BUILD_OPERATION_READINESS_GATE"
       $nextStep = "PHASE130_BUILD_SELF_BUILD_OPERATION_READINESS_GATE_V1"
       $reason = "Self-model requests the self-build operation readiness gate. Runtime should build the gate without replaying old routes."
+    } elseif (
+      $null -ne $SelfModel -and
+      $null -ne $Controller -and
+      $SelfModel.status -eq "PASS" -and
+      $Controller.status -eq "PASS" -and
+      $SelfModel.current_detected_need -eq "NEED_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR"
+    ) {
+      $status = "PASS"
+      $decisionId = "ENTRYPOINT_USE_SELF_MODEL_CAPABILITY_SELECTOR_NEED_V1"
+      $entryMode = "SELF_MODEL_FIRST_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_READY"
+      $currentNeed = "NEED_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR"
+      $nextStep = "PHASE133_BUILD_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_V1"
+      $reason = "Self-model requests the operation capability selector. Runtime should build the selector without replaying old routes."
     } else {
       $status = "BLOCKED"
       $decisionId = "ENTRY_BLOCKED_SELF_MODEL_OR_CONTROLLER_UNEXPECTED_V1"
@@ -119,5 +132,6 @@ function Invoke-SelfModelFirstRuntimeEntrypoint {
     Pop-Location
   }
 }
+
 
 

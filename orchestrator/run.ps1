@@ -430,6 +430,22 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                 return
             }
 
+            if ($Entry.current_need -eq "NEED_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR") {
+                . ".\modules\invoke_self_build_operation_capability_selector.ps1"
+                $CapabilitySelectorRoot = ".\self_build_batch\autonomy_trials\PHASE133_BUILD_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_V1"
+                $CapabilitySelector = Invoke-SelfBuildOperationCapabilitySelector -RepoRoot $RepoRoot -RunId $RunId -Entry $Entry -OutputRoot $CapabilitySelectorRoot
+
+                Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR=SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_BUILDER_V1"
+                Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_STATUS=$($CapabilitySelector.status)"
+                Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_CREATED=$($CapabilitySelector.selector_created)"
+                Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_SELECTED_NEED=$($CapabilitySelector.selected_need_id)"
+                Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_SELECTED_CAPABILITY=$($CapabilitySelector.selected_capability_id)"
+                Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_PATH=$($CapabilitySelector.selector_path)"
+                Write-Host "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_NEXT_STEP=$($CapabilitySelector.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_BUILT"
+                return
+            }
+
             Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_FIRST_ENTRYPOINT"
             return
         }
@@ -571,6 +587,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

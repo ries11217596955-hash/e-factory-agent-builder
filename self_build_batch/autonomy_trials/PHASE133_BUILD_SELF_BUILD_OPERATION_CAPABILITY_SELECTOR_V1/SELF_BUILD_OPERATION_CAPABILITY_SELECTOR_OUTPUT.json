@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "engine_name": "SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_BUILDER_V1",
+  "run_id": "PHASE133_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR_001",
+  "selector_created": true,
+  "selector_path": "self_control/SELF_BUILD_OPERATION_CAPABILITY_SELECTOR.json",
+  "source_need": "NEED_SELF_BUILD_OPERATION_CAPABILITY_SELECTOR",
+  "selected_need_id": "NEED_MATERIAL_ACQUISITION_BOOTSTRAP",
+  "selected_capability_id": "MATERIAL_ACQUISITION_BOOTSTRAP",
+  "proposed_next_step": "PHASE134_BUILD_MATERIAL_ACQUISITION_BOOTSTRAP_V1",
+  "reason": "Builder is past readiness gate and has a contract-governed operation trial. Next real self-build operation should bootstrap material acquisition so Builder can accept external materials through governance instead of writing everything from scratch.",
+  "queue_mutated": false,
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

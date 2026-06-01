@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "proof_id": "PHASE121_RUN_BOUNDED_AUTONOMOUS_LOOP_TRIAL_V1",
+  "phase": "PHASE121_RUN_BOUNDED_AUTONOMOUS_LOOP_TRIAL_V1",
+  "runtime_mode": "BOUNDED_AUTONOMOUS_LOOP_TRIAL_UNDER_CONTROLLER",
+  "controller_path": "self_control/AUTONOMOUS_LOOP_CONTROLLER.json",
+  "max_runtime_calls_allowed": 2,
+  "runtime_calls_executed": 2,
+  "bounded_by_controller": true,
+  "controller_stop_observed": true,
+  "stale_controller_need_detected": true,
+  "classification": "BOUNDED_LOOP_PASS_BUT_CONTROLLER_NEED_IS_STALE",
+  "queue_after": "NONE",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "result_path": "self_build_batch/autonomy_trials/PHASE121_RUN_BOUNDED_AUTONOMOUS_LOOP_TRIAL_V1/PHASE121_RUN_BOUNDED_AUTONOMOUS_LOOP_TRIAL_V1_RESULT.json",
+  "report_path": "reports/self_development/PHASE121_RUN_BOUNDED_AUTONOMOUS_LOOP_TRIAL_V1_REPORT.json",
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE121_RUN_BOUNDED_AUTONOMOUS_LOOP_TRIAL_V1/PHASE121_RUN_BOUNDED_AUTONOMOUS_LOOP_TRIAL_V1_RUNTIME_LOG.txt",
+  "next_allowed_step": "PHASE122_BUILD_CONTROLLER_AWARE_SELF_MODEL_UPDATE_V1"
+}

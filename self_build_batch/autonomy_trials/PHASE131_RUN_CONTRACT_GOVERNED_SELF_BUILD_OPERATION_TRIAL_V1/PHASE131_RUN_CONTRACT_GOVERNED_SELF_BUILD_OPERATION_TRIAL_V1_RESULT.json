@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "phase": "PHASE131_RUN_CONTRACT_GOVERNED_SELF_BUILD_OPERATION_TRIAL_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "baseline_commit": "1c22bbc",
+  "runtime_executed": true,
+  "builder_runtime_invoked": true,
+  "contract_governed_operation_trial": true,
+  "runtime_calls_executed": 1,
+  "max_runtime_calls_allowed": 1,
+  "readiness_gate_used": true,
+  "readiness_decision": "READY_FOR_CONTRACT_GOVERNED_SELF_BUILD_OPERATION_TRIAL",
+  "classification": "CONTRACT_GOVERNED_SELF_BUILD_OPERATION_TRIAL_PASS",
+  "queue_after": "NONE",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE131_RUN_CONTRACT_GOVERNED_SELF_BUILD_OPERATION_TRIAL_V1/PHASE131_RUN_CONTRACT_GOVERNED_SELF_BUILD_OPERATION_TRIAL_V1_RUNTIME_LOG.txt",
+  "next_allowed_step": "PHASE132_BUILD_OPERATION_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1"
+}

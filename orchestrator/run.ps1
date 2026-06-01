@@ -355,6 +355,22 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        . ".\modules\invoke_self_model_first_runtime_entrypoint.ps1"
+        $SelfModelFirstRoot = ".\self_build_batch\autonomy_trials\PHASE124_BUILD_SELF_MODEL_FIRST_RUNTIME_ENTRYPOINT_V1"
+        $Entry = Invoke-SelfModelFirstRuntimeEntrypoint -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $SelfModelFirstRoot
+
+        if ($Entry.status -eq "PASS") {
+            Write-Host "SELF_MODEL_FIRST_RUNTIME_ENTRYPOINT=SELF_MODEL_FIRST_RUNTIME_ENTRYPOINT_V1"
+            Write-Host "SELF_MODEL_FIRST_STATUS=$($Entry.status)"
+            Write-Host "SELF_MODEL_FIRST_DECISION_ID=$($Entry.decision_id)"
+            Write-Host "SELF_MODEL_FIRST_ENTRY_MODE=$($Entry.entry_mode)"
+            Write-Host "SELF_MODEL_FIRST_CURRENT_NEED=$($Entry.current_need)"
+            Write-Host "SELF_MODEL_FIRST_NEXT_STEP=$($Entry.proposed_next_step)"
+            Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_FIRST_ENTRYPOINT"
+            return
+        }
+    }
+    if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
         . ".\modules\invoke_self_need_detection_engine.ps1"
 
         $NeedOutputRoot = ".\self_build_batch\autonomy_trials\PHASE111_BUILD_NEXT_ACTION_DECISION_KERNEL_V1"
@@ -491,6 +507,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

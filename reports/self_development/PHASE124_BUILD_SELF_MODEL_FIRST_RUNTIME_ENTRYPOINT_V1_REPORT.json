@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE124_BUILD_SELF_MODEL_FIRST_RUNTIME_ENTRYPOINT_V1_REPORT",
+  "phase": "PHASE124_BUILD_SELF_MODEL_FIRST_RUNTIME_ENTRYPOINT_V1",
+  "summary": "Builder now enters queue-NONE runtime through self-model first and avoids replaying the earlier controller-build path.",
+  "current_need": "NEED_CONTROLLER_GOVERNED_SELF_BUILD_TRIAL",
+  "next_allowed_step": "PHASE125_RUN_SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_V1"
+}

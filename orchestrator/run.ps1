@@ -378,7 +378,17 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
         Write-Host "DECISION_TO_ACTION_ACTION_KIND=$($Action.action_kind)"
         Write-Host "DECISION_TO_ACTION_ACTION_REQUEST_PATH=$($Action.action_request_path)"
         Write-Host "DECISION_TO_ACTION_PROPOSED_NEXT_STEP=$($Action.proposed_next_step)"
-        Write-Host "STATUS=PASS_STOPPED_DECISION_ACTION_CREATED"
+
+        . ".\modules\invoke_decision_action_admission_bridge.ps1"
+        $AdmissionOutputRoot = ".\self_build_batch\autonomy_trials\PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1"
+        $Admission = Invoke-DecisionActionAdmissionBridge -RepoRoot $RepoRoot -RunId $RunId -Action $Action -OutputRoot $AdmissionOutputRoot
+
+        Write-Host "DECISION_ACTION_ADMISSION_BRIDGE=DECISION_ACTION_ADMISSION_BRIDGE_V1"
+        Write-Host "DECISION_ACTION_ADMISSION_STATUS=$($Admission.status)"
+        Write-Host "DECISION_ACTION_ADMISSION_ID=$($Admission.admission_id)"
+        Write-Host "DECISION_ACTION_ADMISSION_ADMITTED_ACTION_ID=$($Admission.admitted_action_id)"
+        Write-Host "DECISION_ACTION_ADMISSION_NEXT_STEP=$($Admission.proposed_next_step)"
+        Write-Host "STATUS=PASS_STOPPED_ACTION_ADMITTED"
         return
     }
     $Pack = $Registry.packs |
@@ -413,6 +423,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

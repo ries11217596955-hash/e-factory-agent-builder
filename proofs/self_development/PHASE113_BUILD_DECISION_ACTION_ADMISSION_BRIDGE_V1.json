@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "proof_id": "PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1",
+  "phase": "PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1",
+  "runtime_mode": "SELF_BUILD_QUEUE_NONE_ACTION_ADMISSION",
+  "manual_active_task_seed": false,
+  "action_request_admitted": true,
+  "admitted_action_created": true,
+  "admitted_action_executed": false,
+  "admission_record_path": "self_build_batch/autonomy_trials/PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1/ACTION_ADMISSION_RECORD.json",
+  "admitted_action_path": "self_build_batch/autonomy_trials/PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1/ADMITTED_ACTION.json",
+  "queue_after": "NONE",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "result_path": "self_build_batch/autonomy_trials/PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1/PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1_RESULT.json",
+  "report_path": "reports/self_development/PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1_REPORT.json",
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1/PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1_RUNTIME_LOG.txt",
+  "next_allowed_step": "PHASE114_BUILD_ADMITTED_ACTION_EXECUTION_ENGINE_V1"
+}

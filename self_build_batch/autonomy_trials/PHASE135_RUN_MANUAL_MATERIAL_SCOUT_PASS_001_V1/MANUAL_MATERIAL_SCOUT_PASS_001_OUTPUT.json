@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "engine_name": "MANUAL_MATERIAL_SCOUT_PASS_001_V1",
+  "run_id": "PHASE135_MANUAL_MATERIAL_SCOUT_PASS_001",
+  "scout_pass_recorded": true,
+  "scout_pass_path": "materials/MANUAL_SCOUT_PASS_001.json",
+  "material_catalog_path": "materials/MATERIAL_CATALOG.json",
+  "candidate_material_count": 3,
+  "reference_only_material_count": 1,
+  "trusted_material_count": 0,
+  "external_fetch_performed_by_runtime": false,
+  "dependency_install_performed": false,
+  "proposed_next_step": "PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1",
+  "reason": "Manual scout pass recorded candidate/reference materials only. No external material was fetched, installed, wrapped, tested, or trusted.",
+  "queue_mutated": false,
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

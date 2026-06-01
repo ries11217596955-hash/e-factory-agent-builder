@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "phase": "PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "baseline_commit": "9771a49",
+  "runtime_executed": true,
+  "builder_runtime_invoked": true,
+  "manual_scout_pass_recorded": true,
+  "scout_pass_path": "materials/MANUAL_SCOUT_PASS_001.json",
+  "material_catalog_path": "materials/MATERIAL_CATALOG.json",
+  "candidate_material_count": 3,
+  "reference_only_material_count": 1,
+  "trusted_material_count": 0,
+  "external_fetch_performed_by_runtime": false,
+  "dependency_install_performed": false,
+  "queue_after": "NONE",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1/PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1_RUNTIME_LOG.txt",
+  "output_path": "self_build_batch/autonomy_trials/PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1/MANUAL_MATERIAL_SCOUT_PASS_001_OUTPUT.json",
+  "next_allowed_step": "PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1"
+}

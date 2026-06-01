@@ -1,25 +1,17 @@
 {
-  "status": "MANUAL_SCOUT_PASS_001_RECORDED",
-  "catalog_id": "MATERIAL_CATALOG_V1",
-  "updated_by": "PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1",
-  "default_trust": false,
+  "status": "PASS",
+  "scout_pass_id": "MANUAL_MATERIAL_SCOUT_PASS_001",
+  "created_by": "PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1",
+  "run_id": "PHASE135_MANUAL_MATERIAL_SCOUT_PASS_001",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "mode": "MANUAL_SCOUT_PASS",
+  "external_fetch_performed_by_runtime": false,
+  "dependency_install_performed": false,
   "trusted_material_count": 0,
   "candidate_material_count": 3,
   "reference_only_material_count": 1,
   "owner_decision_required_count": 4,
-  "quarantine_required_before_use": true,
-  "material_statuses": [
-    "DISCOVERED",
-    "CANDIDATE",
-    "QUARANTINED",
-    "WRAPPED",
-    "TESTED",
-    "TRUSTED",
-    "REJECTED",
-    "REFERENCE_ONLY",
-    "OWNER_APPROVAL_REQUIRED"
-  ],
-  "materials": [
+  "candidate_materials": [
     {
       "material_id": "candidate_pester_powershell_test_framework",
       "name": "Pester",

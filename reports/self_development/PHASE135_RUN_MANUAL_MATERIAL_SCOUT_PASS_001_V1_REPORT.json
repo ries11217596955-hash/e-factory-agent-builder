@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1_REPORT",
+  "phase": "PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1",
+  "summary": "Manual scout pass recorded 3 candidate materials and 1 reference-only material. None are trusted, installed, wrapped, or tested.",
+  "candidate_material_count": 3,
+  "reference_only_material_count": 1,
+  "trusted_material_count": 0,
+  "next_allowed_step": "PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1"
+}

@@ -461,6 +461,25 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                     Write-Host "MATERIAL_TRUSTED_COUNT=$($MaterialBootstrap.trusted_material_count)"
                     Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($MaterialBootstrap.external_fetch_performed)"
                     Write-Host "MATERIAL_BOOTSTRAP_NEXT_STEP=$($MaterialBootstrap.proposed_next_step)"
+
+                    if ($MaterialBootstrap.proposed_next_step -eq "PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1") {
+                        . ".\modules\invoke_manual_material_scout_pass_001.ps1"
+                        $ManualScoutRoot = ".\self_build_batch\autonomy_trials\PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1"
+                        $ManualScout = Invoke-ManualMaterialScoutPass001 -RepoRoot $RepoRoot -RunId $RunId -MaterialBootstrap $MaterialBootstrap -OutputRoot $ManualScoutRoot
+
+                        Write-Host "MANUAL_MATERIAL_SCOUT_PASS=MANUAL_MATERIAL_SCOUT_PASS_001_V1"
+                        Write-Host "MANUAL_MATERIAL_SCOUT_PASS_STATUS=$($ManualScout.status)"
+                        Write-Host "MANUAL_MATERIAL_SCOUT_PASS_RECORDED=$($ManualScout.scout_pass_recorded)"
+                        Write-Host "MATERIAL_CANDIDATE_COUNT=$($ManualScout.candidate_material_count)"
+                        Write-Host "MATERIAL_REFERENCE_ONLY_COUNT=$($ManualScout.reference_only_material_count)"
+                        Write-Host "MATERIAL_TRUSTED_COUNT=$($ManualScout.trusted_material_count)"
+                        Write-Host "MATERIAL_RUNTIME_EXTERNAL_FETCH=$($ManualScout.external_fetch_performed_by_runtime)"
+                        Write-Host "MATERIAL_RUNTIME_DEPENDENCY_INSTALL=$($ManualScout.dependency_install_performed)"
+                        Write-Host "MANUAL_MATERIAL_SCOUT_PASS_NEXT_STEP=$($ManualScout.proposed_next_step)"
+                        Write-Host "STATUS=PASS_STOPPED_MANUAL_MATERIAL_SCOUT_PASS_RECORDED"
+                        return
+                    }
+
                     Write-Host "STATUS=PASS_STOPPED_MATERIAL_ACQUISITION_BOOTSTRAP_BUILT"
                     return
                 }
@@ -610,6 +629,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

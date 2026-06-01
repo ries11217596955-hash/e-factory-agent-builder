@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE128_RUN_SELF_BUILD_OPERATION_CONTRACT_SMOKE_V1_REPORT",
+  "phase": "PHASE128_RUN_SELF_BUILD_OPERATION_CONTRACT_SMOKE_V1",
+  "summary": "Builder ran a smoke test for the self-build operation contract through the self-model-first runtime path.",
+  "classification": "SELF_BUILD_OPERATION_CONTRACT_SMOKE_PASS_BUT_CONTRACT_NEED_STILL_OPEN",
+  "proven": [
+    "runtime started from queue NONE",
+    "self-model-first entrypoint was used",
+    "operation contract path was reached",
+    "legacy replay signals were absent",
+    "queue remained NONE"
+  ],
+  "finding": "Contract exists and smokes successfully; self-model still needs to close NEED_SELF_BUILD_OPERATION_CONTRACT.",
+  "next_allowed_step": "PHASE129_BUILD_OPERATION_CONTRACT_AWARE_SELF_MODEL_ADVANCE_V1"
+}

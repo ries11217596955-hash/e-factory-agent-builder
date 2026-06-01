@@ -355,6 +355,36 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase138CStepId = "PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1"
+        $Phase138BProofPath = ".\proofs\self_development\PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1.json"
+
+        if (Test-Path -LiteralPath $Phase138BProofPath) {
+            $Phase138BProof = Get-Content -LiteralPath $Phase138BProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase138BProof.status -eq "PASS" -and $Phase138BProof.next_allowed_step -eq $Phase138CStepId) {
+                . ".\modules\invoke_sandbox_branch_merge_decision_001.ps1"
+
+                $SandboxBranchMergeRoot = ".\self_build_batch\autonomy_trials\$Phase138CStepId"
+                $SandboxBranchMerge = Invoke-SandboxBranchMergeDecision001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $SandboxBranchMergeRoot
+
+                Write-Host "SANDBOX_BRANCH_MERGE_DECISION=PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_001"
+                Write-Host "MERGE_DECISION_STATUS=$($SandboxBranchMerge.status)"
+                Write-Host "MERGE_SOURCE_BRANCH=$($SandboxBranchMerge.source_branch)"
+                Write-Host "MERGE_TARGET_BRANCH=$($SandboxBranchMerge.target_branch)"
+                Write-Host "MERGE_RECOMMENDATION=$($SandboxBranchMerge.merge_recommendation)"
+                Write-Host "MERGE_ALLOWED_NOW=$($SandboxBranchMerge.merge_allowed_now)"
+                Write-Host "OWNER_APPROVAL_REQUIRED=$($SandboxBranchMerge.owner_approval_required)"
+                Write-Host "PRODUCTION_ADOPTION_ALLOWED=$($SandboxBranchMerge.production_adoption_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($SandboxBranchMerge.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($SandboxBranchMerge.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($SandboxBranchMerge.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($SandboxBranchMerge.executable_materials_used)"
+                Write-Host "MERGE_DECISION_NEXT_STEP=$($SandboxBranchMerge.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_SANDBOX_BRANCH_MERGE_DECISION_BUILT"
+                return
+            }
+        }
+
         $Phase138BStepId = "PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1"
         $Phase138AProofPath = ".\proofs\self_development\PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_V1.json"
 

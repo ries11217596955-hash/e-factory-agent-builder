@@ -404,7 +404,16 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                     Write-Host "AUTONOMOUS_LOOP_CONTROLLER_CREATED=$($Controller.controller_created)"
                     Write-Host "AUTONOMOUS_LOOP_CONTROLLER_PATH=$($Controller.controller_path)"
                     Write-Host "AUTONOMOUS_LOOP_CONTROLLER_NEXT_STEP=$($Controller.proposed_next_step)"
-                    Write-Host "STATUS=PASS_STOPPED_AUTONOMOUS_LOOP_CONTROLLER_CREATED"
+
+                    . ".\modules\invoke_controller_aware_self_model_update.ps1"
+                    $ControllerAwareRoot = ".\self_build_batch\autonomy_trials\PHASE122_BUILD_CONTROLLER_AWARE_SELF_MODEL_UPDATE_V1"
+                    $ControllerAware = Invoke-ControllerAwareSelfModelUpdate -RepoRoot $RepoRoot -RunId $RunId -Controller $Controller -OutputRoot $ControllerAwareRoot
+                    Write-Host "CONTROLLER_AWARE_SELF_MODEL_UPDATE=CONTROLLER_AWARE_SELF_MODEL_UPDATE_V1"
+                    Write-Host "CONTROLLER_AWARE_SELF_MODEL_STATUS=$($ControllerAware.status)"
+                    Write-Host "CONTROLLER_AWARE_CLOSED_NEED=$($ControllerAware.closed_need)"
+                    Write-Host "CONTROLLER_AWARE_CURRENT_NEED=$($ControllerAware.current_detected_need)"
+                    Write-Host "CONTROLLER_AWARE_NEXT_STEP=$($ControllerAware.proposed_next_step)"
+                    Write-Host "STATUS=PASS_STOPPED_CONTROLLER_AWARE_SELF_MODEL_UPDATED"
                     return
                 }
 
@@ -482,6 +491,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

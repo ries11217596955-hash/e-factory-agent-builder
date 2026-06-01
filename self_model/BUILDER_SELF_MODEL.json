@@ -1,13 +1,13 @@
 {
   "status": "PASS",
-  "self_model_id": "BUILDER_SELF_MODEL_V1",
-  "updated_by": "SELF_MODEL_UPDATE_ENGINE_V1",
-  "run_id": "PHASE118_SELF_MODEL_UPDATE_ENGINE_SELF_TEST_001",
+  "self_model_id": "BUILDER_SELF_MODEL_V2_CONTROLLER_AWARE",
+  "updated_by": "CONTROLLER_AWARE_SELF_MODEL_UPDATE_V1",
+  "run_id": "PHASE122_CONTROLLER_AWARE_SELF_MODEL_UPDATE_SELF_TEST_001",
   "active_line": "AGENT_BUILDER / SELF_BUILD",
   "identity": "primitive_brain_cell_with_hands",
   "local_first": true,
   "external_brain_dependency": false,
-  "current_state_summary": "Builder has a proof-backed self-build chain and can now update its self-model from proofs.",
+  "current_state_summary": "Builder has a proof-backed self-build chain, a self-model, a self-model-aware decision loop, and a bounded autonomous loop controller.",
   "proven_capabilities": [
     {
       "id": "RUNTIME_REPEATABILITY",
@@ -48,20 +48,32 @@
       "id": "PROOF_AWARE_SELF_NEED",
       "status": "PROVEN",
       "proof": "PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1"
+    },
+    {
+      "id": "AUTONOMOUS_LOOP_CONTROLLER",
+      "status": "PROVEN",
+      "proof": "PHASE120_BUILD_AUTONOMOUS_LOOP_CONTROLLER_V1"
+    },
+    {
+      "id": "BOUNDED_AUTONOMOUS_LOOP_TRIAL",
+      "status": "PROVEN",
+      "proof": "PHASE121_RUN_BOUNDED_AUTONOMOUS_LOOP_TRIAL_V1"
     }
   ],
   "closed_needs": [
-    "NEED_DECISION_TO_ACTION_ENGINE",
-    "NEED_DECISION_ACTION_ADMISSION_BRIDGE",
     "NEED_ADMITTED_ACTION_EXECUTION_ENGINE",
+    "NEED_AUTONOMOUS_LOOP_CONTROLLER",
+    "NEED_DECISION_ACTION_ADMISSION_BRIDGE",
+    "NEED_DECISION_TO_ACTION_ENGINE",
     "NEED_PROOF_AWARE_SELF_NEED_ENGINE",
     "NEED_SELF_MODEL_UPDATE_ENGINE"
   ],
-  "current_detected_need": "NEED_SELF_MODEL_AWARE_DECISION_LOOP",
-  "current_missing_capability": "SELF_MODEL_AWARE_DECISION_LOOP",
-  "recommended_next_step": "PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1",
-  "last_source_need": "NEED_SELF_MODEL_UPDATE_ENGINE",
-  "last_source_diagnosis": "MISSING_SELF_MODEL_UPDATE_CAPABILITY",
+  "current_detected_need": "NEED_CONTROLLER_GOVERNED_SELF_BUILD_TRIAL",
+  "current_missing_capability": "CONTROLLER_GOVERNED_SELF_BUILD_TRIAL",
+  "recommended_next_step": "PHASE123_RUN_CONTROLLER_GOVERNED_SELF_BUILD_TRIAL_V1",
+  "controller_aware": true,
+  "controller_path": "self_control/AUTONOMOUS_LOOP_CONTROLLER.json",
+  "source_phase121_classification": "BOUNDED_LOOP_PASS_BUT_CONTROLLER_NEED_IS_STALE",
   "autonomy_claimed": false,
   "codex_used": false,
   "main_touched": false

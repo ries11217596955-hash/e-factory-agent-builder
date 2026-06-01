@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT",
+  "phase": "PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1",
+  "summary": "Builder used its self-model to select the next missing capability: autonomous loop controller.",
+  "selected_need_id": "NEED_AUTONOMOUS_LOOP_CONTROLLER",
+  "selected_target_capability": "AUTONOMOUS_LOOP_CONTROLLER",
+  "next_allowed_step": "PHASE120_BUILD_AUTONOMOUS_LOOP_CONTROLLER_V1"
+}

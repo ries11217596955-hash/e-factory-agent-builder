@@ -384,7 +384,17 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                 Write-Host "SELF_MODEL_PATH=$($SelfModel.self_model_path)"
                 Write-Host "SELF_MODEL_CURRENT_NEED=$($SelfModel.current_detected_need)"
                 Write-Host "SELF_MODEL_NEXT_STEP=$($SelfModel.proposed_next_step)"
-                Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_UPDATED"
+
+                . ".\modules\invoke_self_model_aware_decision_loop.ps1"
+                $DecisionLoopRoot = ".\self_build_batch\autonomy_trials\PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1"
+                $DecisionLoop = Invoke-SelfModelAwareDecisionLoop -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $DecisionLoopRoot
+                Write-Host "SELF_MODEL_AWARE_DECISION_LOOP=SELF_MODEL_AWARE_DECISION_LOOP_V1"
+                Write-Host "SELF_MODEL_AWARE_DECISION_STATUS=$($DecisionLoop.status)"
+                Write-Host "SELF_MODEL_AWARE_DECISION_ID=$($DecisionLoop.decision_id)"
+                Write-Host "SELF_MODEL_AWARE_SELECTED_NEED=$($DecisionLoop.selected_need_id)"
+                Write-Host "SELF_MODEL_AWARE_TARGET_CAPABILITY=$($DecisionLoop.selected_target_capability)"
+                Write-Host "SELF_MODEL_AWARE_NEXT_STEP=$($DecisionLoop.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_AWARE_DECISION"
                 return
             }
 
@@ -458,6 +468,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

@@ -355,6 +355,36 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase138AStepId = "PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_V1"
+        $Phase137ProofPath = ".\proofs\self_development\PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1.json"
+
+        if (Test-Path -LiteralPath $Phase137ProofPath) {
+            $Phase137Proof = Get-Content -LiteralPath $Phase137ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase137Proof.status -eq "PASS" -and $Phase137Proof.next_allowed_step -eq "PHASE138_OWNER_DECISION_FOR_FIRST_MATERIAL_ADOPTION_V1") {
+                . ".\modules\invoke_autonomous_material_decision_stress_lab_001.ps1"
+
+                $AutonomousMaterialDecisionRoot = ".\self_build_batch\autonomy_trials\$Phase138AStepId"
+                $AutonomousMaterialDecision = Invoke-AutonomousMaterialDecisionStressLab001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $AutonomousMaterialDecisionRoot
+
+                Write-Host "AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB=PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_001"
+                Write-Host "STRESS_DATASET_RECORD_COUNT=$($AutonomousMaterialDecision.stress_dataset_record_count)"
+                Write-Host "AUTONOMOUS_SELECTED_COUNT=$($AutonomousMaterialDecision.autonomous_selected_count)"
+                Write-Host "OWNER_DELEGATED_SANDBOX_DECISION=$($AutonomousMaterialDecision.owner_delegated_sandbox_decision)"
+                Write-Host "OWNER_MANUAL_PICK=$($AutonomousMaterialDecision.owner_manual_pick)"
+                Write-Host "PRODUCTION_ADOPTION_ALLOWED=$($AutonomousMaterialDecision.production_adoption_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($AutonomousMaterialDecision.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($AutonomousMaterialDecision.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($AutonomousMaterialDecision.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($AutonomousMaterialDecision.executable_materials_used)"
+                Write-Host "MATERIAL_WRAPPER_CREATED=$($AutonomousMaterialDecision.wrapper_created)"
+                Write-Host "MATERIAL_SMOKE_TEST_EXECUTED=$($AutonomousMaterialDecision.smoke_test_executed)"
+                Write-Host "AUTONOMOUS_DECISION_NEXT_STEP=$($AutonomousMaterialDecision.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_BUILT"
+                return
+            }
+        }
+
         $Phase137StepId = "PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1"
         $Phase136ProofPath = ".\proofs\self_development\PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1.json"
 

@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_V1_REPORT",
+  "phase": "PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_V1",
+  "run_id": "PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_001",
+  "summary": "Autonomous material decision stress lab generated 300 synthetic records, selected exactly one sandbox-only candidate, and recorded error ledger counts without fetch/install/execute/wrap/smoke/trust actions.",
+  "dataset_generation_method": "Deterministic in-repo synthetic generator: first 3 records are PHASE137 candidates; records 4-300 cycle risk bands and inject controlled malformed, duplicate/conflict, and policy-violation flags.",
+  "autonomous_selection_method": "Deterministic policy filter rejects malformed, conflicting, unknown-license, missing-provenance, and simulated policy-violation records, then selects the highest decision_score record inside delegated sandbox scope.",
+  "selected_material_id": "candidate_pester_powershell_test_framework",
+  "stress_dataset_record_count": 300,
+  "autonomous_selected_count": 1,
+  "invalid_record_count": 20,
+  "duplicate_or_conflict_count": 20,
+  "policy_violation_count": 30,
+  "trusted_material_count": 0,
+  "cut_list": [
+    "Do not install external materials.",
+    "Do not fetch external repositories or packages.",
+    "Do not execute material code.",
+    "Do not create wrappers.",
+    "Do not smoke test materials.",
+    "Do not mark any material trusted.",
+    "Do not allow production adoption.",
+    "Do not mutate main branch, package manager configs, workflows, or external agent folders."
+  ],
+  "next_allowed_step": "PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1"
+}

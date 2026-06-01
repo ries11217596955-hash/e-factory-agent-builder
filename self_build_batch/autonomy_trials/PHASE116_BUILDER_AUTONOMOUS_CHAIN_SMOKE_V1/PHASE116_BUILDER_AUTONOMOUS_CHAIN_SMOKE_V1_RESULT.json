@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "phase": "PHASE116_BUILDER_AUTONOMOUS_CHAIN_SMOKE_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "baseline_commit": "cdb2dc9",
+  "runtime_executed": true,
+  "builder_runtime_invoked": true,
+  "manual_active_task_seed": false,
+  "step1_queue_before": "NONE",
+  "step1_created_active_task": "TASK_PHASE115_EXECUTE_BUILDER_QUEUED_ADMITTED_ACTION_V1_001",
+  "step2_executed_active_task": "TASK_PHASE115_EXECUTE_BUILDER_QUEUED_ADMITTED_ACTION_V1_001",
+  "queue_after_step2": "NONE",
+  "chain_from_need_to_execution_passed": true,
+  "stale_need_detected": true,
+  "classification": "CHAIN_EXECUTION_PASS_BUT_SELF_NEED_IS_STALE",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE116_BUILDER_AUTONOMOUS_CHAIN_SMOKE_V1/PHASE116_BUILDER_AUTONOMOUS_CHAIN_SMOKE_V1_RUNTIME_LOG.txt",
+  "next_allowed_step": "PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1"
+}

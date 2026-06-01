@@ -381,6 +381,20 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
                 return
             }
 
+            if ($Entry.current_need -eq "NEED_SELF_BUILD_OPERATION_CONTRACT") {
+                . ".\modules\invoke_self_build_operation_contract.ps1"
+                $ContractRoot = ".\self_build_batch\autonomy_trials\PHASE127_BUILD_SELF_BUILD_OPERATION_CONTRACT_V1"
+                $Contract = Invoke-SelfBuildOperationContract -RepoRoot $RepoRoot -RunId $RunId -Entry $Entry -OutputRoot $ContractRoot
+
+                Write-Host "SELF_BUILD_OPERATION_CONTRACT=SELF_BUILD_OPERATION_CONTRACT_BUILDER_V1"
+                Write-Host "SELF_BUILD_OPERATION_CONTRACT_STATUS=$($Contract.status)"
+                Write-Host "SELF_BUILD_OPERATION_CONTRACT_CREATED=$($Contract.contract_created)"
+                Write-Host "SELF_BUILD_OPERATION_CONTRACT_PATH=$($Contract.contract_path)"
+                Write-Host "SELF_BUILD_OPERATION_CONTRACT_NEXT_STEP=$($Contract.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_SELF_BUILD_OPERATION_CONTRACT_CREATED"
+                return
+            }
+
             Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_FIRST_ENTRYPOINT"
             return
         }
@@ -522,6 +536,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE127_BUILD_SELF_BUILD_OPERATION_CONTRACT_V1_REPORT",
+  "phase": "PHASE127_BUILD_SELF_BUILD_OPERATION_CONTRACT_V1",
+  "summary": "Builder created a self-build operation contract to govern live self-build phases after the self-model-first trial path.",
+  "contract_path": "self_control/SELF_BUILD_OPERATION_CONTRACT.json",
+  "next_allowed_step": "PHASE128_RUN_SELF_BUILD_OPERATION_CONTRACT_SMOKE_V1"
+}

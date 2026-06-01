@@ -355,6 +355,38 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase139StepId = "PHASE139_BUILD_BUILDER_SELF_PACK_AUTHOR_CONVEYOR_V1"
+        $Phase138DProofPath = ".\proofs\self_development\PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1.json"
+
+        if (Test-Path -LiteralPath $Phase138DProofPath) {
+            $Phase138DProof = Get-Content -LiteralPath $Phase138DProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase138DProof.status -eq "PASS" -and $Phase138DProof.next_allowed_step -eq "PHASE139_DELEGATED_AUTONOMY_POLICY_ENFORCEMENT_V1") {
+                . ".\modules\invoke_builder_self_pack_author_conveyor_001.ps1"
+
+                $BuilderSelfPackAuthorRoot = ".\self_build_batch\autonomy_trials\$Phase139StepId"
+                $BuilderSelfPackAuthor = Invoke-BuilderSelfPackAuthorConveyor001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $BuilderSelfPackAuthorRoot
+
+                Write-Host "BUILDER_SELF_PACK_AUTHOR_CONVEYOR=PHASE139_BUILDER_SELF_PACK_AUTHOR_CONVEYOR_001"
+                Write-Host "SELF_PACK_AUTHOR_STATUS=$($BuilderSelfPackAuthor.status)"
+                Write-Host "BUILDER_GENERATED_PACK_COUNT=$($BuilderSelfPackAuthor.builder_generated_pack_count)"
+                Write-Host "BUILDER_GENERATED_PACK_ID=$($BuilderSelfPackAuthor.generated_pack_id)"
+                Write-Host "GENERATED_PACK_AUTHOR=$($BuilderSelfPackAuthor.generated_pack_author)"
+                Write-Host "CODEX_AUTHORED_GENERATED_PACK=$($BuilderSelfPackAuthor.codex_authored_generated_pack)"
+                Write-Host "CODEX_BOOTSTRAP_USED=$($BuilderSelfPackAuthor.codex_bootstrap_used)"
+                Write-Host "GENERATED_PACK_ADMITTED=$($BuilderSelfPackAuthor.generated_pack_admitted)"
+                Write-Host "GENERATED_PACK_EXECUTED=$($BuilderSelfPackAuthor.generated_pack_executed)"
+                Write-Host "EXTERNAL_AGENT_PRODUCTION_ALLOWED=$($BuilderSelfPackAuthor.external_agent_production_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($BuilderSelfPackAuthor.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($BuilderSelfPackAuthor.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($BuilderSelfPackAuthor.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($BuilderSelfPackAuthor.executable_materials_used)"
+                Write-Host "SELF_PACK_AUTHOR_NEXT_STEP=$($BuilderSelfPackAuthor.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_BUILDER_SELF_PACK_AUTHOR_CONVEYOR_BUILT"
+                return
+            }
+        }
+
         $Phase138CStepId = "PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1"
         $Phase138BProofPath = ".\proofs\self_development\PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1.json"
 

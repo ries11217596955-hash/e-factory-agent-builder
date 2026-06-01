@@ -355,6 +355,95 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase138CStepId = "PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1"
+        $Phase138BProofPath = ".\proofs\self_development\PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1.json"
+
+        if (Test-Path -LiteralPath $Phase138BProofPath) {
+            $Phase138BProof = Get-Content -LiteralPath $Phase138BProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase138BProof.status -eq "PASS" -and $Phase138BProof.next_allowed_step -eq $Phase138CStepId) {
+                . ".\modules\invoke_sandbox_branch_merge_decision_001.ps1"
+
+                $SandboxBranchMergeRoot = ".\self_build_batch\autonomy_trials\$Phase138CStepId"
+                $SandboxBranchMerge = Invoke-SandboxBranchMergeDecision001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $SandboxBranchMergeRoot
+
+                Write-Host "SANDBOX_BRANCH_MERGE_DECISION=PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_001"
+                Write-Host "MERGE_DECISION_STATUS=$($SandboxBranchMerge.status)"
+                Write-Host "MERGE_SOURCE_BRANCH=$($SandboxBranchMerge.source_branch)"
+                Write-Host "MERGE_TARGET_BRANCH=$($SandboxBranchMerge.target_branch)"
+                Write-Host "MERGE_RECOMMENDATION=$($SandboxBranchMerge.merge_recommendation)"
+                Write-Host "MERGE_ALLOWED_NOW=$($SandboxBranchMerge.merge_allowed_now)"
+                Write-Host "OWNER_APPROVAL_REQUIRED=$($SandboxBranchMerge.owner_approval_required)"
+                Write-Host "PRODUCTION_ADOPTION_ALLOWED=$($SandboxBranchMerge.production_adoption_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($SandboxBranchMerge.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($SandboxBranchMerge.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($SandboxBranchMerge.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($SandboxBranchMerge.executable_materials_used)"
+                Write-Host "MERGE_DECISION_NEXT_STEP=$($SandboxBranchMerge.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_SANDBOX_BRANCH_MERGE_DECISION_BUILT"
+                return
+            }
+        }
+
+        $Phase138BStepId = "PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1"
+        $Phase138AProofPath = ".\proofs\self_development\PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_V1.json"
+
+        if (Test-Path -LiteralPath $Phase138AProofPath) {
+            $Phase138AProof = Get-Content -LiteralPath $Phase138AProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase138AProof.status -eq "PASS" -and $Phase138AProof.next_allowed_step -eq $Phase138BStepId) {
+                . ".\modules\invoke_review_autonomous_material_decision_stress_results_001.ps1"
+
+                $AutonomousMaterialDecisionReviewRoot = ".\self_build_batch\autonomy_trials\$Phase138BStepId"
+                $AutonomousMaterialDecisionReview = Invoke-ReviewAutonomousMaterialDecisionStressResults001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $AutonomousMaterialDecisionReviewRoot
+
+                Write-Host "AUTONOMOUS_MATERIAL_DECISION_REVIEW=PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_001"
+                Write-Host "REVIEW_STATUS=$($AutonomousMaterialDecisionReview.status)"
+                Write-Host "REVIEW_SELECTED_MATERIAL=$($AutonomousMaterialDecisionReview.selected_material_id)"
+                Write-Host "REVIEW_DATASET_RECORD_COUNT=$($AutonomousMaterialDecisionReview.stress_dataset_record_count)"
+                Write-Host "REVIEW_POLICY_VIOLATION_COUNT=$($AutonomousMaterialDecisionReview.policy_violation_count)"
+                Write-Host "REVIEW_VIOLATION_SUM=$($AutonomousMaterialDecisionReview.violation_sum)"
+                Write-Host "REVIEW_PRODUCTION_ADOPTION_ALLOWED=$($AutonomousMaterialDecisionReview.production_adoption_allowed)"
+                Write-Host "REVIEW_TRUSTED=$($false)"
+                Write-Host "REVIEW_EXTERNAL_FETCH_PERFORMED=$($AutonomousMaterialDecisionReview.external_fetch_performed)"
+                Write-Host "REVIEW_DEPENDENCY_INSTALL_PERFORMED=$($AutonomousMaterialDecisionReview.dependency_install_performed)"
+                Write-Host "REVIEW_EXECUTABLE_USED=$($AutonomousMaterialDecisionReview.executable_materials_used)"
+                Write-Host "REVIEW_NEXT_STEP=$($AutonomousMaterialDecisionReview.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_AUTONOMOUS_MATERIAL_DECISION_REVIEW_BUILT"
+                return
+            }
+        }
+
+        $Phase138AStepId = "PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_V1"
+        $Phase137ProofPath = ".\proofs\self_development\PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1.json"
+
+        if (Test-Path -LiteralPath $Phase137ProofPath) {
+            $Phase137Proof = Get-Content -LiteralPath $Phase137ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase137Proof.status -eq "PASS" -and $Phase137Proof.next_allowed_step -eq "PHASE138_OWNER_DECISION_FOR_FIRST_MATERIAL_ADOPTION_V1") {
+                . ".\modules\invoke_autonomous_material_decision_stress_lab_001.ps1"
+
+                $AutonomousMaterialDecisionRoot = ".\self_build_batch\autonomy_trials\$Phase138AStepId"
+                $AutonomousMaterialDecision = Invoke-AutonomousMaterialDecisionStressLab001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $AutonomousMaterialDecisionRoot
+
+                Write-Host "AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB=PHASE138A_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_001"
+                Write-Host "STRESS_DATASET_RECORD_COUNT=$($AutonomousMaterialDecision.stress_dataset_record_count)"
+                Write-Host "AUTONOMOUS_SELECTED_COUNT=$($AutonomousMaterialDecision.autonomous_selected_count)"
+                Write-Host "OWNER_DELEGATED_SANDBOX_DECISION=$($AutonomousMaterialDecision.owner_delegated_sandbox_decision)"
+                Write-Host "OWNER_MANUAL_PICK=$($AutonomousMaterialDecision.owner_manual_pick)"
+                Write-Host "PRODUCTION_ADOPTION_ALLOWED=$($AutonomousMaterialDecision.production_adoption_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($AutonomousMaterialDecision.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($AutonomousMaterialDecision.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($AutonomousMaterialDecision.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($AutonomousMaterialDecision.executable_materials_used)"
+                Write-Host "MATERIAL_WRAPPER_CREATED=$($AutonomousMaterialDecision.wrapper_created)"
+                Write-Host "MATERIAL_SMOKE_TEST_EXECUTED=$($AutonomousMaterialDecision.smoke_test_executed)"
+                Write-Host "AUTONOMOUS_DECISION_NEXT_STEP=$($AutonomousMaterialDecision.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_AUTONOMOUS_MATERIAL_DECISION_STRESS_LAB_BUILT"
+                return
+            }
+        }
+
         $Phase137StepId = "PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1"
         $Phase136ProofPath = ".\proofs\self_development\PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1.json"
 

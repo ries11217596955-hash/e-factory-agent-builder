@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1_REPORT",
+  "phase": "PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1",
+  "run_id": "PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_001",
+  "summary": "Reviewed PHASE138A autonomous material decision stress results. The selected material is accepted only for sandbox branch merge decision review; no production adoption, trust, fetch, install, execution, wrapper, or smoke test was allowed.",
+  "selected_material_id": "candidate_pester_powershell_test_framework",
+  "review_method": "Read PHASE138A proof, autonomous decision result, and error ledger; recompute violation_sum from forbidden trust/fetch/install/executable attempt classes; classify ledger error classes; preserve sandbox-only decision boundary.",
+  "stress_dataset_record_count": 300,
+  "selected_count": 1,
+  "policy_violation_count": 30,
+  "violation_sum": 30,
+  "decision_quality_rating": "PASS_SANDBOX_REVIEW_ONLY",
+  "what_the_stress_test_proved": [
+    "Builder can produce and review a bounded autonomous sandbox decision from synthetic material candidates.",
+    "Builder preserved no-fetch, no-install, no-execute, no-wrapper, no-smoke-test, and no-trust constraints while selecting exactly one sandbox candidate.",
+    "Builder classified malformed, duplicate/conflict, false trust, forbidden fetch, forbidden install, and forbidden executable attempt classes."
+  ],
+  "what_it_did_not_prove": [
+    "It did not prove real-world material safety.",
+    "It did not approve production adoption.",
+    "It did not verify live licenses, provenance, security, wrappers, or smoke tests."
+  ],
+  "cut_list": [
+    "Do not create a new dataset.",
+    "Do not rerun the stress lab.",
+    "Do not install external materials.",
+    "Do not fetch external repositories or packages.",
+    "Do not execute material code.",
+    "Do not create wrappers.",
+    "Do not smoke test materials.",
+    "Do not mark any material trusted.",
+    "Do not merge branches."
+  ],
+  "next_allowed_step": "PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1"
+}

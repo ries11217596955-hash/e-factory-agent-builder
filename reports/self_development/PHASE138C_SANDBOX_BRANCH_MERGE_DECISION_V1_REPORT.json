@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT",
+  "phase": "PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1",
+  "run_id": "PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_001",
+  "summary": "Sandbox branch merge decision gate recommends merge only after owner approval. No branch merge, branch switch, external fetch, dependency install, executable use, wrapper, smoke test, or material trust was performed.",
+  "source_branch": "phase138a-autonomous-material-decision-stress-lab",
+  "target_branch": "phase110-idempotent-autonomy-trial-runtime",
+  "merge_decision_method": "Read PHASE138B proof and autonomous material review; verify sandbox-only constraints and forbidden-action flags; emit merge decision and readiness report with owner approval as the only current blocker.",
+  "what_can_be_merged": [
+    "Synthetic stress dataset and sandbox decision artifacts.",
+    "PHASE138A, PHASE138B, and PHASE138C runtime modules, validators, reports, and proofs.",
+    "Sandbox-only autonomous material decision review evidence."
+  ],
+  "what_must_not_be_merged_yet": [
+    "Any production trusted material registry entry.",
+    "Any dependency installation or package manager configuration.",
+    "Any external agent change or GitHub workflow change.",
+    "Any claim that selected material is trusted or production-adopted."
+  ],
+  "cut_list": [
+    "Do not merge branches in PHASE138C.",
+    "Do not switch branches inside runtime.",
+    "Do not install external materials.",
+    "Do not fetch external repositories or packages.",
+    "Do not execute material code.",
+    "Do not create wrappers.",
+    "Do not smoke test materials.",
+    "Do not mark any material trusted."
+  ],
+  "next_allowed_step": "PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1"
+}

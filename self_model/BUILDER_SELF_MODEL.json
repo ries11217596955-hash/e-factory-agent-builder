@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "self_model_id": "BUILDER_SELF_MODEL_V1",
+  "updated_by": "SELF_MODEL_UPDATE_ENGINE_V1",
+  "run_id": "PHASE118_SELF_MODEL_UPDATE_ENGINE_SELF_TEST_001",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "identity": "primitive_brain_cell_with_hands",
+  "local_first": true,
+  "external_brain_dependency": false,
+  "current_state_summary": "Builder has a proof-backed self-build chain and can now update its self-model from proofs.",
+  "proven_capabilities": [
+    {
+      "id": "RUNTIME_REPEATABILITY",
+      "status": "PROVEN",
+      "proof": "PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1"
+    },
+    {
+      "id": "SELF_NEED_DETECTION",
+      "status": "PROVEN",
+      "proof": "PHASE111_BUILD_NEXT_ACTION_DECISION_KERNEL_V1"
+    },
+    {
+      "id": "DECISION_TO_ACTION",
+      "status": "PROVEN",
+      "proof": "PHASE112_BUILD_DECISION_TO_ACTION_ENGINE_V1"
+    },
+    {
+      "id": "ACTION_ADMISSION",
+      "status": "PROVEN",
+      "proof": "PHASE113_BUILD_DECISION_ACTION_ADMISSION_BRIDGE_V1"
+    },
+    {
+      "id": "ADMITTED_ACTION_TO_EXECUTABLE_MOVE",
+      "status": "PROVEN",
+      "proof": "PHASE114_BUILD_ADMITTED_ACTION_EXECUTION_ENGINE_V1"
+    },
+    {
+      "id": "BUILDER_QUEUED_ACTION_EXECUTION",
+      "status": "PROVEN",
+      "proof": "PHASE115_EXECUTE_BUILDER_QUEUED_ADMITTED_ACTION_V1"
+    },
+    {
+      "id": "TWO_STEP_AUTONOMOUS_CHAIN_SMOKE",
+      "status": "PROVEN",
+      "proof": "PHASE116_BUILDER_AUTONOMOUS_CHAIN_SMOKE_V1"
+    },
+    {
+      "id": "PROOF_AWARE_SELF_NEED",
+      "status": "PROVEN",
+      "proof": "PHASE117_BUILD_PROOF_AWARE_SELF_NEED_ENGINE_V1"
+    }
+  ],
+  "closed_needs": [
+    "NEED_DECISION_TO_ACTION_ENGINE",
+    "NEED_DECISION_ACTION_ADMISSION_BRIDGE",
+    "NEED_ADMITTED_ACTION_EXECUTION_ENGINE",
+    "NEED_PROOF_AWARE_SELF_NEED_ENGINE",
+    "NEED_SELF_MODEL_UPDATE_ENGINE"
+  ],
+  "current_detected_need": "NEED_SELF_MODEL_AWARE_DECISION_LOOP",
+  "current_missing_capability": "SELF_MODEL_AWARE_DECISION_LOOP",
+  "recommended_next_step": "PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1",
+  "last_source_need": "NEED_SELF_MODEL_UPDATE_ENGINE",
+  "last_source_diagnosis": "MISSING_SELF_MODEL_UPDATE_CAPABILITY",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

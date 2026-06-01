@@ -373,6 +373,21 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
             Write-Host "PROOF_AWARE_SELF_NEED_DIAGNOSIS=$($Need.diagnosis)"
             Write-Host "PROOF_AWARE_SELF_NEED_DETECTED_NEED=$($Need.detected_need_id)"
             Write-Host "PROOF_AWARE_SELF_NEED_NEXT_STEP=$($Need.recommended_next_step)"
+
+            if ($Need.detected_need_id -eq "NEED_SELF_MODEL_UPDATE_ENGINE") {
+                . ".\modules\invoke_self_model_update_engine.ps1"
+                $SelfModelOutputRoot = ".\self_build_batch\autonomy_trials\PHASE118_BUILD_SELF_MODEL_UPDATE_ENGINE_V1"
+                $SelfModel = Invoke-SelfModelUpdateEngine -RepoRoot $RepoRoot -RunId $RunId -Need $Need -OutputRoot $SelfModelOutputRoot
+                Write-Host "SELF_MODEL_UPDATE_ENGINE=SELF_MODEL_UPDATE_ENGINE_V1"
+                Write-Host "SELF_MODEL_UPDATE_STATUS=$($SelfModel.status)"
+                Write-Host "SELF_MODEL_UPDATED=$($SelfModel.self_model_updated)"
+                Write-Host "SELF_MODEL_PATH=$($SelfModel.self_model_path)"
+                Write-Host "SELF_MODEL_CURRENT_NEED=$($SelfModel.current_detected_need)"
+                Write-Host "SELF_MODEL_NEXT_STEP=$($SelfModel.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_UPDATED"
+                return
+            }
+
             Write-Host "STATUS=PASS_STOPPED_PROOF_AWARE_SELF_NEED_DETECTED"
             return
         }
@@ -443,6 +458,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

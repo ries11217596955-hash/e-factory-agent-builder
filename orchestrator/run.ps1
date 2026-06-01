@@ -388,7 +388,18 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
         Write-Host "DECISION_ACTION_ADMISSION_ID=$($Admission.admission_id)"
         Write-Host "DECISION_ACTION_ADMISSION_ADMITTED_ACTION_ID=$($Admission.admitted_action_id)"
         Write-Host "DECISION_ACTION_ADMISSION_NEXT_STEP=$($Admission.proposed_next_step)"
-        Write-Host "STATUS=PASS_STOPPED_ACTION_ADMITTED"
+
+        . ".\modules\invoke_admitted_action_execution_engine.ps1"
+        $ExecutionOutputRoot = ".\self_build_batch\autonomy_trials\PHASE114_BUILD_ADMITTED_ACTION_EXECUTION_ENGINE_V1"
+        $Execution = Invoke-AdmittedActionExecutionEngine -RepoRoot $RepoRoot -RunId $RunId -Admission $Admission -OutputRoot $ExecutionOutputRoot
+
+        Write-Host "ADMITTED_ACTION_EXECUTION_ENGINE=ADMITTED_ACTION_EXECUTION_ENGINE_V1"
+        Write-Host "ADMITTED_ACTION_EXECUTION_STATUS=$($Execution.status)"
+        Write-Host "ADMITTED_ACTION_EXECUTION_GENERATED_PACK=$($Execution.generated_pack_id)"
+        Write-Host "ADMITTED_ACTION_EXECUTION_GENERATED_TASK=$($Execution.generated_task_id)"
+        Write-Host "ADMITTED_ACTION_EXECUTION_ACTIVE_TASK_ID=$($Execution.active_task_id)"
+        Write-Host "ADMITTED_ACTION_EXECUTION_NEXT_STEP=$($Execution.proposed_next_step)"
+        Write-Host "STATUS=PASS_STOPPED_EXECUTABLE_MOVE_CREATED"
         return
     }
     $Pack = $Registry.packs |
@@ -423,6 +434,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

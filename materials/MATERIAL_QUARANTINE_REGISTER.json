@@ -1,8 +1,8 @@
 {
-  "status": "GOVERNED_QUARANTINE_REGISTER_CREATED",
+  "status": "METADATA_EVALUATED_AWAITING_OWNER_DECISION",
   "register_id": "MATERIAL_QUARANTINE_REGISTER_V1",
   "created_by": "PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1",
-  "run_id": "PHASE136_MATERIAL_GOVERNANCE_SERIES_001",
+  "run_id": "PHASE137_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_001",
   "source_catalog_path": "materials/MATERIAL_CATALOG.json",
   "material_count": 4,
   "candidate_material_count": 3,
@@ -26,7 +26,11 @@
         "QUARANTINE",
         "WRAPPER_DECISION",
         "SMOKE_TEST"
-      ]
+      ],
+      "quarantine_status": "METADATA_EVALUATED_AWAITING_OWNER_DECISION",
+      "trusted": false,
+      "executable_used": false,
+      "evaluation_status": "QUARANTINE_EVALUATED_METADATA_ONLY"
     },
     {
       "material_id": "candidate_psscriptanalyzer_static_checker",
@@ -43,7 +47,11 @@
         "QUARANTINE",
         "WRAPPER_DECISION",
         "SMOKE_TEST"
-      ]
+      ],
+      "quarantine_status": "METADATA_EVALUATED_AWAITING_OWNER_DECISION",
+      "trusted": false,
+      "executable_used": false,
+      "evaluation_status": "QUARANTINE_EVALUATED_METADATA_ONLY"
     },
     {
       "material_id": "candidate_syft_sbom_cli",
@@ -60,7 +68,11 @@
         "QUARANTINE",
         "WRAPPER_DECISION",
         "SMOKE_TEST"
-      ]
+      ],
+      "quarantine_status": "METADATA_EVALUATED_AWAITING_OWNER_DECISION",
+      "trusted": false,
+      "executable_used": false,
+      "evaluation_status": "QUARANTINE_EVALUATED_METADATA_ONLY"
     },
     {
       "material_id": "reference_json_schema_official",
@@ -83,5 +95,8 @@
   "external_fetch_performed": false,
   "dependency_install_performed": false,
   "executable_materials_used": false,
-  "next_allowed_step": "PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1"
+  "next_allowed_step": "PHASE138_OWNER_DECISION_FOR_FIRST_MATERIAL_ADOPTION_V1",
+  "updated_by": "PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1",
+  "evaluated_candidate_material_count": 3,
+  "reference_only_evaluated_as_executable": false
 }

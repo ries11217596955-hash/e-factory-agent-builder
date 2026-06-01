@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1_REPORT",
+  "phase": "PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1",
+  "run_id": "PHASE137_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_001",
+  "summary": "Metadata-only quarantine evaluation completed for three candidate materials. No external material was fetched, installed, executed, trusted, wrapped, or smoke tested. Reference-only material stayed excluded from executable evaluation.",
+  "evaluated_material_count": 3,
+  "evaluated_material_ids": [
+    "candidate_pester_powershell_test_framework",
+    "candidate_psscriptanalyzer_static_checker",
+    "candidate_syft_sbom_cli"
+  ],
+  "trusted_material_count": 0,
+  "owner_decision_required_count": 3,
+  "reference_only_evaluated_as_executable": false,
+  "material_evaluation_queue_path": "materials/MATERIAL_EVALUATION_QUEUE.json",
+  "material_quarantine_register_path": "materials/MATERIAL_QUARANTINE_REGISTER.json",
+  "material_quarantine_evaluation_results_path": "materials/MATERIAL_QUARANTINE_EVALUATION_RESULTS.json",
+  "cut_list": [
+    "Do not install external materials.",
+    "Do not fetch external repositories or packages.",
+    "Do not execute imported materials.",
+    "Do not trust materials.",
+    "Do not wrap materials.",
+    "Do not smoke test materials in PHASE137.",
+    "Do not evaluate reference-only material as executable.",
+    "Do not mutate main branch or external agent folders."
+  ],
+  "next_allowed_step": "PHASE138_OWNER_DECISION_FOR_FIRST_MATERIAL_ADOPTION_V1"
+}

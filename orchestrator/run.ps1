@@ -355,6 +355,33 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase137StepId = "PHASE137_BUILD_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_V1"
+        $Phase136ProofPath = ".\proofs\self_development\PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1.json"
+
+        if (Test-Path -LiteralPath $Phase136ProofPath) {
+            $Phase136Proof = Get-Content -LiteralPath $Phase136ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase136Proof.status -eq "PASS" -and $Phase136Proof.next_allowed_step -eq $Phase137StepId) {
+                . ".\modules\invoke_material_quarantine_evaluation_runtime_001.ps1"
+
+                $MaterialQuarantineRoot = ".\self_build_batch\autonomy_trials\$Phase137StepId"
+                $MaterialQuarantine = Invoke-MaterialQuarantineEvaluationRuntime001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $MaterialQuarantineRoot
+
+                Write-Host "MATERIAL_QUARANTINE_EVALUATION_RUNTIME=PHASE137_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_001"
+                Write-Host "MATERIAL_QUARANTINE_EVALUATION_STATUS=$($MaterialQuarantine.status)"
+                Write-Host "MATERIAL_EVALUATED_COUNT=$($MaterialQuarantine.evaluated_material_count)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($MaterialQuarantine.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($MaterialQuarantine.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($MaterialQuarantine.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($MaterialQuarantine.executable_materials_used)"
+                Write-Host "MATERIAL_REFERENCE_ONLY_EVALUATED_AS_EXECUTABLE=$($MaterialQuarantine.reference_only_evaluated_as_executable)"
+                Write-Host "MATERIAL_OWNER_DECISION_REQUIRED_COUNT=$($MaterialQuarantine.owner_decision_required_count)"
+                Write-Host "MATERIAL_QUARANTINE_NEXT_STEP=$($MaterialQuarantine.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_MATERIAL_QUARANTINE_EVALUATION_RUNTIME_BUILT"
+                return
+            }
+        }
+
         $Phase136StepId = "PHASE136_IMPORT_MANUAL_MATERIAL_SCOUT_PASS_TO_CATALOG_V1"
         $Phase135ProofPath = ".\proofs\self_development\PHASE135_RUN_MANUAL_MATERIAL_SCOUT_PASS_001_V1.json"
 

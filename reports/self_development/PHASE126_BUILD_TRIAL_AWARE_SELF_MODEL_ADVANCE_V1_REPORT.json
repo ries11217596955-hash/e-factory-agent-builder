@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE126_BUILD_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1_REPORT",
+  "phase": "PHASE126_BUILD_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1",
+  "summary": "Builder advanced self-model after the successful self-model-first controller-governed trial and selected the self-build operation contract as the next missing capability.",
+  "closed_need": "NEED_CONTROLLER_GOVERNED_SELF_BUILD_TRIAL",
+  "current_need": "NEED_SELF_BUILD_OPERATION_CONTRACT",
+  "next_allowed_step": "PHASE127_BUILD_SELF_BUILD_OPERATION_CONTRACT_V1"
+}

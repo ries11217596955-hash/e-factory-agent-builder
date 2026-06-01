@@ -366,6 +366,21 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
             Write-Host "SELF_MODEL_FIRST_ENTRY_MODE=$($Entry.entry_mode)"
             Write-Host "SELF_MODEL_FIRST_CURRENT_NEED=$($Entry.current_need)"
             Write-Host "SELF_MODEL_FIRST_NEXT_STEP=$($Entry.proposed_next_step)"
+
+            if ($Entry.current_need -eq "NEED_CONTROLLER_GOVERNED_SELF_BUILD_TRIAL") {
+                . ".\modules\invoke_trial_aware_self_model_advance.ps1"
+                $TrialAwareRoot = ".\self_build_batch\autonomy_trials\PHASE126_BUILD_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1"
+                $TrialAware = Invoke-TrialAwareSelfModelAdvance -RepoRoot $RepoRoot -RunId $RunId -Entry $Entry -OutputRoot $TrialAwareRoot
+
+                Write-Host "TRIAL_AWARE_SELF_MODEL_ADVANCE=TRIAL_AWARE_SELF_MODEL_ADVANCE_V1"
+                Write-Host "TRIAL_AWARE_STATUS=$($TrialAware.status)"
+                Write-Host "TRIAL_AWARE_CLOSED_NEED=$($TrialAware.closed_need)"
+                Write-Host "TRIAL_AWARE_CURRENT_NEED=$($TrialAware.current_detected_need)"
+                Write-Host "TRIAL_AWARE_NEXT_STEP=$($TrialAware.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_TRIAL_AWARE_SELF_MODEL_ADVANCED"
+                return
+            }
+
             Write-Host "STATUS=PASS_STOPPED_SELF_MODEL_FIRST_ENTRYPOINT"
             return
         }
@@ -507,6 +522,7 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
 
 Write-Host "PACKS_EXECUTED=$Executed"
 Write-Host "STATUS=PASS_MAX_PACKS_REACHED"
+
 
 
 

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1_REPORT",
+  "step_id": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1",
+  "run_id": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_001",
+  "orchestrator_hook": "orchestrator/run.ps1 invokes Invoke-BuilderCorrectionInboxResponseTrial001 when PHASE142 proof is PASS and next_allowed_step is PHASE143.",
+  "correction_written": "Runtime writes PHASE143_CORRECTION_001 into runtime_sessions/builder_life_loop/current/correction_inbox.json before the 12-cycle trial session starts.",
+  "correction_initial_inbox_path": "runtime_sessions/builder_life_loop/correction_trials/PHASE143_CORRECTION_RESPONSE_TRIAL_001/correction_inbox_initial.json",
+  "correction_seen": "Each cycle rereads correction_inbox.json; the pending PHASE143 correction is seen in cycle 1 and counted once.",
+  "correction_applied": "The runtime records one CORRECTION_APPLIED event and switches to a correction-aware task sequence that prioritizes WRITE_LEARNING_NOTE and SELECT_NEXT_MICRO_GAP after reading state.",
+  "behavior_change_detection": "The trial task sequence is compared with the first 12 LIVE_LOOP_002 baseline decision tasks. The sequences differ, and decision_trace plus observation_ledger both include correction-aware reasons/results.",
+  "baseline_comparison_method": "Read LIVE_LOOP_002 decision_trace.jsonl, take the first 12 selected_task_type values, compare them to the PHASE143 trial sequence, and require inequality plus correction references.",
+  "validator_behavior": "Validator fails on missing PHASE142 proof or LIVE_LOOP_002 baseline, missing correction inbox/logs, zero seen/applied counts, no behavior change, missing correction references in decision/observation ledgers, wrong next gap, owner prompt, external-agent changes, trusted materials, fetch/install/executable flags, active queue, or wrong next step.",
+  "proof_path": "proofs/self_development/PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1.json",
+  "trial_result_path": "self_control/BUILDER_CORRECTION_RESPONSE_TRIAL_RESULT.json",
+  "trial_artifact_root": "runtime_sessions/builder_life_loop/correction_trials/PHASE143_CORRECTION_RESPONSE_TRIAL_001",
+  "remaining_risks": [
+    "PHASE143 proves a single correction changes one bounded session; PHASE144 must scale adaptation across more corrections and cycles.",
+    "Behavior change is deterministic and rule-based, not yet a learned scoring model.",
+    "The trial keeps correction response inside repo session artifacts only."
+  ],
+  "cut_list": [
+    "No external agent production.",
+    "No generated_agents, agent_catalog, or applied_agents changes.",
+    "No dependency install.",
+    "No internet fetch.",
+    "No executable material use.",
+    "No material trust.",
+    "No main branch change.",
+    "No commit or push."
+  ],
+  "next_allowed_step": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1"
+}

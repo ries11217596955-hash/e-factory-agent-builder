@@ -355,6 +355,39 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase143StepId = "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1"
+        $Phase142ProofPath = ".\proofs\self_development\PHASE142_BUILDER_NEXT_GAP_SELECTOR_RUNTIME_V1.json"
+
+        if (Test-Path -LiteralPath $Phase142ProofPath) {
+            $Phase142Proof = Get-Content -LiteralPath $Phase142ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase142Proof.status -eq "PASS" -and $Phase142Proof.next_allowed_step -eq $Phase143StepId) {
+                . ".\modules\invoke_builder_correction_inbox_response_trial_001.ps1"
+
+                $BuilderCorrectionResponseRoot = ".\self_build_batch\autonomy_trials\$Phase143StepId"
+                $BuilderCorrectionResponse = Invoke-BuilderCorrectionInboxResponseTrial001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $BuilderCorrectionResponseRoot
+
+                Write-Host "BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL=PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_001"
+                Write-Host "CORRECTION_RESPONSE_STATUS=$($BuilderCorrectionResponse.status)"
+                Write-Host "CORRECTION_SEEN=$($BuilderCorrectionResponse.correction_seen)"
+                Write-Host "CORRECTION_APPLIED=$($BuilderCorrectionResponse.correction_applied)"
+                Write-Host "CORRECTION_SEEN_COUNT=$($BuilderCorrectionResponse.correction_seen_count)"
+                Write-Host "CORRECTION_APPLIED_COUNT=$($BuilderCorrectionResponse.correction_applied_count)"
+                Write-Host "BEHAVIOR_CHANGED_AFTER_CORRECTION=$($BuilderCorrectionResponse.behavior_changed_after_correction)"
+                Write-Host "CORRECTION_RESPONSE_SESSION_ID=$($BuilderCorrectionResponse.trial_session)"
+                Write-Host "BASELINE_SESSION_ID=$($BuilderCorrectionResponse.baseline_session)"
+                Write-Host "OWNER_INTERACTIVE_PROMPT_REQUIRED=$($BuilderCorrectionResponse.owner_interactive_prompt_required)"
+                Write-Host "EXTERNAL_AGENT_PRODUCTION_ALLOWED=$($BuilderCorrectionResponse.external_agent_production_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($BuilderCorrectionResponse.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($BuilderCorrectionResponse.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($BuilderCorrectionResponse.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($BuilderCorrectionResponse.executable_materials_used)"
+                Write-Host "NEXT_ALLOWED_STEP=$($BuilderCorrectionResponse.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_BUILT"
+                return
+            }
+        }
+
         $Phase142StepId = "PHASE142_BUILDER_NEXT_GAP_SELECTOR_RUNTIME_V1"
         $Phase141ProofPath = ".\proofs\self_development\PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1.json"
 

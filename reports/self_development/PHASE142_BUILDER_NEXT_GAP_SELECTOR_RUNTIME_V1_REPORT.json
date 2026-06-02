@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE142_BUILDER_NEXT_GAP_SELECTOR_RUNTIME_V1_REPORT",
+  "step_id": "PHASE142_BUILDER_NEXT_GAP_SELECTOR_RUNTIME_V1",
+  "run_id": "PHASE142_BUILDER_NEXT_GAP_SELECTOR_OBSERVABLE_LIFE_LOOP_001",
+  "orchestrator_hook": "orchestrator/run.ps1 invokes Invoke-BuilderNextGapSelectorObservableLifeLoop001 when PHASE141 proof is PASS and next_allowed_step is PHASE142.",
+  "runtime_session_artifact_design": "The loop writes a current session folder with heartbeat, state, JSONL observation and decision streams, an empty error stream unless ambiguity appears, learning metrics, correction inbox, correction observation log, summary, and checkpoint_005.",
+  "cycle_selection": "The bounded loop rotates safe internal tasks: READ_CURRENT_STATE, READ_NEXT_ACTION, FIND_LAST_ACCEPTED_PROOF, COMPARE_NEXT_STEP, WRITE_LEARNING_NOTE, and SELECT_NEXT_MICRO_GAP. Each cycle rereads current control state, NEXT_ACTION, PHASE141 proof/metrics, and the correction inbox.",
+  "watcher_behavior": "tools/watch_builder_life_loop.ps1 repeatedly reads heartbeat, state, and recent ledger lines without mutating the repo.",
+  "correction_inbox_behavior": "correction_inbox.json is always present. PHASE142 records pending corrections as observed but defers behavior changes to PHASE143.",
+  "smoke_session": "Set BUILDER_LIFE_LOOP_MAX_CYCLES=6 and run tools/start_builder_life_loop.ps1 for a short bounded proof session.",
+  "remaining_risks": [
+    "PHASE142 observes corrections but does not yet alter behavior from them.",
+    "Cycle task selection is deterministic rotation, not yet a learned ranking.",
+    "Watcher is a terminal reader and was not run as a concurrent process during validation."
+  ],
+  "cut_list": [
+    "No external agent production.",
+    "No generated_agents, agent_catalog, or applied_agents changes.",
+    "No dependency install.",
+    "No internet fetch.",
+    "No executable material use.",
+    "No material trust.",
+    "No main branch change.",
+    "No infinite loop.",
+    "No commit or push."
+  ],
+  "artifact_paths": {
+    "heartbeat": "runtime_sessions/builder_life_loop/current/heartbeat.json",
+    "life_loop_state": "runtime_sessions/builder_life_loop/current/life_loop_state.json",
+    "observation_ledger": "runtime_sessions/builder_life_loop/current/observation_ledger.jsonl",
+    "decision_trace": "runtime_sessions/builder_life_loop/current/decision_trace.jsonl",
+    "error_ledger": "runtime_sessions/builder_life_loop/current/error_ledger.jsonl",
+    "learning_metrics": "runtime_sessions/builder_life_loop/current/learning_metrics.json",
+    "correction_inbox": "runtime_sessions/builder_life_loop/current/correction_inbox.json",
+    "session_summary": "runtime_sessions/builder_life_loop/current/session_summary.json",
+    "checkpoint": "runtime_sessions/builder_life_loop/current/checkpoints/checkpoint_005.json",
+    "policy": "self_control/BUILDER_LIFE_LOOP_POLICY.json",
+    "selector_result": "self_control/BUILDER_NEXT_GAP_SELECTOR_RESULT.json",
+    "proof": "proofs/self_development/PHASE142_BUILDER_NEXT_GAP_SELECTOR_RUNTIME_V1.json"
+  },
+  "next_allowed_step": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1"
+}

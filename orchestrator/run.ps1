@@ -355,6 +355,40 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase142StepId = "PHASE142_BUILDER_NEXT_GAP_SELECTOR_RUNTIME_V1"
+        $Phase141ProofPath = ".\proofs\self_development\PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1.json"
+
+        if (Test-Path -LiteralPath $Phase141ProofPath) {
+            $Phase141Proof = Get-Content -LiteralPath $Phase141ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase141Proof.status -eq "PASS" -and $Phase141Proof.next_allowed_step -eq $Phase142StepId) {
+                . ".\modules\invoke_builder_next_gap_selector_observable_life_loop_001.ps1"
+
+                $BuilderNextGapSelectorRoot = ".\self_build_batch\autonomy_trials\$Phase142StepId"
+                $BuilderNextGapSelector = Invoke-BuilderNextGapSelectorObservableLifeLoop001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $BuilderNextGapSelectorRoot
+
+                Write-Host "BUILDER_NEXT_GAP_SELECTOR_RUNTIME=PHASE142_BUILDER_NEXT_GAP_SELECTOR_OBSERVABLE_LIFE_LOOP_001"
+                Write-Host "OBSERVABLE_LIFE_LOOP_STATUS=$($BuilderNextGapSelector.status)"
+                Write-Host "LIFE_LOOP_MAX_CYCLES=$($BuilderNextGapSelector.life_loop_max_cycles)"
+                Write-Host "LIFE_LOOP_COMPLETED_CYCLES=$($BuilderNextGapSelector.life_loop_completed_cycles)"
+                Write-Host "LIFE_LOOP_OBSERVATION_LEDGER_CREATED=$($BuilderNextGapSelector.observation_ledger_created)"
+                Write-Host "LIFE_LOOP_DECISION_TRACE_CREATED=$($BuilderNextGapSelector.decision_trace_created)"
+                Write-Host "LIFE_LOOP_CORRECTION_INBOX_SUPPORTED=$($BuilderNextGapSelector.correction_inbox_supported)"
+                Write-Host "LIFE_LOOP_TERMINAL_WATCHER_SUPPORTED=$($BuilderNextGapSelector.terminal_watcher_supported)"
+                Write-Host "LIFE_LOOP_REPO_SESSION_ARTIFACTS_CREATED=$($BuilderNextGapSelector.repo_session_artifacts_created)"
+                Write-Host "BUILDER_SELECTED_NEXT_GAP=$($BuilderNextGapSelector.selected_next_gap)"
+                Write-Host "OWNER_INTERACTIVE_PROMPT_REQUIRED=$($BuilderNextGapSelector.owner_interactive_prompt_required)"
+                Write-Host "EXTERNAL_AGENT_PRODUCTION_ALLOWED=$($BuilderNextGapSelector.external_agent_production_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($BuilderNextGapSelector.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($BuilderNextGapSelector.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($BuilderNextGapSelector.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($BuilderNextGapSelector.executable_materials_used)"
+                Write-Host "NEXT_ALLOWED_STEP=$($BuilderNextGapSelector.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_BUILDER_NEXT_GAP_SELECTOR_OBSERVABLE_LIFE_LOOP_BUILT"
+                return
+            }
+        }
+
         $Phase141StepId = "PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1"
         $Phase140ProofPath = ".\proofs\self_development\PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1.json"
 

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "metrics_id": "BUILDER_LIFE_LOOP_LEARNING_METRICS_CURRENT",
+  "session_id": "PHASE142_SMOKE_001",
+  "run_id": "PHASE142_BUILDER_NEXT_GAP_SELECTOR_OBSERVABLE_LIFE_LOOP_001",
+  "source_phase141_metrics_path": "self_control/BUILDER_SELF_LEARNING_LOOP_METRICS.json",
+  "source_phase141_proof_path": "proofs/self_development/PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1.json",
+  "completed_cycles": 7,
+  "task_types_completed": [
+    "READ_CURRENT_STATE",
+    "READ_NEXT_ACTION",
+    "FIND_LAST_ACCEPTED_PROOF",
+    "COMPARE_NEXT_STEP",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP"
+  ],
+  "builder_generated_pack_total_observed": 4,
+  "generated_pack_failure_count_observed": 0,
+  "correction_seen_count": 0,
+  "selected_next_gap": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1",
+  "next_allowed_step": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1"
+}

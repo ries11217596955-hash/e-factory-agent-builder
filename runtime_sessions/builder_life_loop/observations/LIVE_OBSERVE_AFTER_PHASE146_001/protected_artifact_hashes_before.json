@@ -1,0 +1,352 @@
+[
+  {
+    "path": "proofs/self_development/PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "C1361AF5FD92F6BEF6EFC78363435FCA8868280499A9096013F990AB8AF3CD3F",
+    "length": 3789
+  },
+  {
+    "path": "reports/self_development/PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1_REPORT.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "A3153DDEF819CAA4477CBE4AD7897ECF5D9A527216C82DD744CA09A5E7DA7713",
+    "length": 3775
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/adaptation_metrics.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "0C20BF01C9EDD63F0A122FBD9F154317192178B130D00EB218D93997A04D55B4",
+    "length": 3756
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/checkpoints/checkpoint_004.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "0E11AB6DAD949E8B21C749F42E2E351CB4E633C6CB708D8FCCD221D9D24F13C4",
+    "length": 445
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/checkpoints/checkpoint_005.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "FD72C544987F3420E70153CA7E82AC9ACE26B3046617EAAA30D6B26DE34378D6",
+    "length": 891
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/checkpoints/checkpoint_006.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "7F6A69F8A36B9D8F03A788607BDB2BC79964E687EDCE0AF78F531AA3CFE51EA1",
+    "length": 447
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/checkpoints/checkpoint_012.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "4E5D0FC78425609BED97F1F4E874644AD305BA011F8712DC700163C67B655382",
+    "length": 448
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/checkpoints/checkpoint_018.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "93BE2F09FD8B689CF33643160294074BC6123B5C32DF2F9BFBC2E9488BF944F9",
+    "length": 448
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/correction_applied_log.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "27C50ECAA8FCF301021EC03A44471FFD1BF7535F9AC5EF76CB9F3CD6AA2FD8E4",
+    "length": 1470
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/correction_inbox_initial.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "2C5B3163DB078AAB03731D8BF54B43FC46DD147D023CBAD83CD9715F0AB29497",
+    "length": 1767
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/correction_inbox.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "721A244FC2A06DCA773ECBD6472B478F1F5818102178C224D6F95CE4D34A4B35",
+    "length": 1656
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/decision_trace.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "AC6CAF4A0159736319D45C3443C00FC641FBE584B4E44B521127F55BB2100098",
+    "length": 21224
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/error_ledger.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "length": 0
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/heartbeat.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "BA36EE22805304E0F255FB59F162E00BAC0AEB43A14617DF49E20A485BF9D04D",
+    "length": 443
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/learning_metrics.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "36879F8123CCBF447FE647F2B9E9BC28A908A3646DC426FB738C947744228D82",
+    "length": 3134
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/life_loop_state.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "318953FF0F184220580F8A28D29B96A8B5D664DC796B1A97E1B562DACB8046F5",
+    "length": 658
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/observation_ledger.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "569F1CCCA7BAE816DFAABC99A2068924EB2E5384DF0CD10D451291768C2F0881",
+    "length": 18552
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/current/session_summary.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "36879F8123CCBF447FE647F2B9E9BC28A908A3646DC426FB738C947744228D82",
+    "length": 3134
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/cross_session_decision_trace.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "AC6CAF4A0159736319D45C3443C00FC641FBE584B4E44B521127F55BB2100098",
+    "length": 21224
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/learning_memory_snapshots.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "843B761225C28C6DEB027710DAB15A3E673139F97EAB2FE66850F96D9F5E0A11",
+    "length": 10408
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/multi_session_summary.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "36879F8123CCBF447FE647F2B9E9BC28A908A3646DC426FB738C947744228D82",
+    "length": 3134
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_001/checkpoints/checkpoint_004.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "012B442E185FF1621F94AA2D23360949AD4CBF8F1F1956A29CAAB6767DE04410",
+    "length": 506
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_001/checkpoints/checkpoint_008.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "463661372ECE9DD4A99599DF2D18D821CED846110DEC362C233A70EEE8504012",
+    "length": 506
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_001/decision_trace.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "CCF51856B902C326EA221B5DA639E24F643EEF455FE45CB3322E524D271506A5",
+    "length": 6804
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_001/heartbeat.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "0248567D2488E9F02D74C08A337C8E62CF8FEA1C5CCA3C15FF9CDB7E621EAF4F",
+    "length": 471
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_001/learning_metrics.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "16AE7D056BEBC0D00D46CCEF2443BCCBF02302587F329FCEEDF4C280EB314042",
+    "length": 1208
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_001/life_loop_state.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "408EDF1F7B4568F10A69AF1DF0F17D1FB6FC5BF90E2830F83861F8E5D85193BE",
+    "length": 578
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_001/observation_ledger.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "74EB89FA39201B23F30B8FCDA51C99774A6FDC23B492A2F5AE3141963357C269",
+    "length": 6188
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_001/session_summary.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "CAC60CECF5A67FFA4D382BED7FEE8B5686C7D10DBA82F22E8B079B319371AC9F",
+    "length": 1187
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_002/checkpoints/checkpoint_004.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "315AA26949D52314762136B890B70B259DFB2077E95BFC75361BF5992D9EA047",
+    "length": 488
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_002/checkpoints/checkpoint_008.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "3CF9AD2B9CBBFFB52E1462D78B8A6FEC7B1466DC5F4228D5F45291E40E32F274",
+    "length": 488
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_002/decision_trace.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "0AB0A2CA403E15F2A6209A98BB9394A022B69970C656B284628552D0232F147D",
+    "length": 6992
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_002/heartbeat.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "54558E0CF4E0E124EFFCF6DE7161E696E85DC2DDB3BD0C0745D4C7117F2A5120",
+    "length": 469
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_002/learning_metrics.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "F0907B04524C249BE7B3CCD29C2168EE48AE0EC275258D4B3549B56BA8EDF4E4",
+    "length": 1196
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_002/life_loop_state.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "9B80D5A23EB0202C3CE3150E0A4F5E87F2D13497528EE4536D8638A995E1A102",
+    "length": 559
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_002/observation_ledger.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "601E2DBF2E97808E56A8AEA84805D4E31A6EB367BE9AF68DFF7826C5A787DDC8",
+    "length": 6048
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_002/session_summary.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "12E2F33E3CF4798D2BF78DA596B318BC043C2F3AA3745F11752A3C084AF45F00",
+    "length": 1173
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_003/checkpoints/checkpoint_004.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "942D85442776BD8185173166F2F90D8A531012CDABFC9B16CC19454249DE0585",
+    "length": 515
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_003/checkpoints/checkpoint_008.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "13737D3928028FF837B334A6ED50C513F1D2640DACC6ED8BD17E950EE7AE9CAF",
+    "length": 515
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_003/decision_trace.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "977E2B807431BCDAEA0C1218B4A2F5E543A3C95401062AB6BC41E9BCB476CF52",
+    "length": 7428
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_003/heartbeat.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "928C6716E18BB621D9F5EC5597A3002C3DC97C1E7492C54D1E537E1AE5F8C34A",
+    "length": 471
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_003/learning_metrics.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "EF73AF878A36C3957237F52DBA60E788AEBAD2E82898973CCEDF4437326F7119",
+    "length": 1225
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_003/life_loop_state.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "24866ADD88971205D1F4C074EBD7910EBDA1E1CE3F2F970E45A2CC1DCA9744C4",
+    "length": 586
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_003/observation_ledger.jsonl",
+    "exists": true,
+    "kind": "file",
+    "hash": "FCDF1845F0D971C5430AFFB5CEC2E5F710E21DB80E70966EB4829C67494C3E06",
+    "length": 6316
+  },
+  {
+    "path": "runtime_sessions/builder_life_loop/multi_session_trials/PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001/session_003/session_summary.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "C609772F09D55CA4A45605DE02CF1CCE26E0E62CB60161AE6603416C96E98903",
+    "length": 1200
+  },
+  {
+    "path": "self_build_batch/autonomy_trials/PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1/BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_OUTPUT.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "A2F41503C79713DB0D2F714C04E9B1A2B3D4A501DC10CCB5B89769AD2CC16F2F",
+    "length": 3174
+  },
+  {
+    "path": "self_build_batch/autonomy_trials/PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1/PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1_RESULT.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "577435A0EECB279BBA0CC33E9C97A052F26799E206E31F55FA25E589E4693007",
+    "length": 979
+  },
+  {
+    "path": "self_build_batch/autonomy_trials/PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1/PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1_RUNTIME_LOG.txt",
+    "exists": true,
+    "kind": "file",
+    "hash": "70C8B7ACC3BBEF97C9D92BA62EABB57DD2C44267B92BCB8C6670F0E10EEB3914",
+    "length": 771
+  },
+  {
+    "path": "self_control/BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_RESULT.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "94B86E374AE5BE4B39CE4D788606C74B673FA1254255864D274FA186A1BD315D",
+    "length": 949
+  },
+  {
+    "path": "self_control/BUILDER_MULTI_SESSION_LEARNING_MEMORY.json",
+    "exists": true,
+    "kind": "file",
+    "hash": "6C9F2AFF459DBAE11E0458AF9A6DFE15078FD653E95C9E9AFD6F43071932E752",
+    "length": 4211
+  }
+]

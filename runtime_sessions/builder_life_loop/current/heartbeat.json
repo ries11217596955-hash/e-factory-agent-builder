@@ -1,14 +1,10 @@
 {
   "status": "PASS",
-  "heartbeat_id": "BUILDER_BEHAVIOR_ADAPTATION_SCALE_HEARTBEAT_CURRENT",
-  "session_id": "PHASE144_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001",
-  "run_id": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001",
-  "completed_cycles": 18,
-  "max_cycles": 18,
-  "corrections_seen_count": 3,
-  "corrections_applied_count": 3,
-  "behavior_changes_count": 3,
-  "last_task_type": "SELECT_NEXT_MICRO_GAP",
-  "last_seen_at": "2026-06-02T11:14:17.2283307Z",
-  "next_allowed_step": "PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1"
+  "heartbeat_id": "PHASE145_AUTONOMOUS_MULTI_SESSION_HEARTBEAT_CURRENT",
+  "trial_session": "PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001",
+  "sessions_completed_count": 3,
+  "learning_memory_updated_count": 3,
+  "last_session_id": "PHASE145_MULTI_SESSION_003",
+  "last_seen_at": "2026-06-02T11:31:53.1675107Z",
+  "next_allowed_step": "PHASE146_BUILDER_LONG_RUNNING_OBSERVABLE_LEARNING_SUPERVISOR_V1"
 }

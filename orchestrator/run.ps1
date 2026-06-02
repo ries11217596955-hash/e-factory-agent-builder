@@ -355,6 +355,39 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase145StepId = "PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1"
+        $Phase144ProofPath = ".\proofs\self_development\PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1.json"
+
+        if (Test-Path -LiteralPath $Phase144ProofPath) {
+            $Phase144Proof = Get-Content -LiteralPath $Phase144ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase144Proof.status -eq "PASS" -and $Phase144Proof.next_allowed_step -eq $Phase145StepId) {
+                . ".\modules\invoke_builder_autonomous_multi_session_learning_trial_001.ps1"
+
+                $BuilderAutonomousMultiSessionRoot = ".\self_build_batch\autonomy_trials\$Phase145StepId"
+                $BuilderAutonomousMultiSession = Invoke-BuilderAutonomousMultiSessionLearningTrial001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $BuilderAutonomousMultiSessionRoot
+
+                Write-Host "BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL=PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001"
+                Write-Host "AUTONOMOUS_MULTI_SESSION_LEARNING_STATUS=$($BuilderAutonomousMultiSession.status)"
+                Write-Host "SESSIONS_COMPLETED_COUNT=$($BuilderAutonomousMultiSession.sessions_completed_count)"
+                Write-Host "LEARNING_MEMORY_CREATED=$($BuilderAutonomousMultiSession.learning_memory_created)"
+                Write-Host "LEARNING_MEMORY_UPDATED_COUNT=$($BuilderAutonomousMultiSession.learning_memory_updated_count)"
+                Write-Host "CROSS_SESSION_CARRYOVER_DETECTED=$($BuilderAutonomousMultiSession.cross_session_carryover_detected)"
+                Write-Host "BEHAVIOR_CHANGED_BETWEEN_SESSIONS=$($BuilderAutonomousMultiSession.behavior_changed_between_sessions)"
+                Write-Host "OLD_SAFE_CAROUSEL_NOT_REPEATED=$($BuilderAutonomousMultiSession.old_safe_carousel_not_repeated)"
+                Write-Host "AUTONOMOUS_NEXT_TASK_SELECTION_COUNT=$($BuilderAutonomousMultiSession.autonomous_next_task_selection_count)"
+                Write-Host "OWNER_INTERACTIVE_PROMPT_REQUIRED=$($BuilderAutonomousMultiSession.owner_interactive_prompt_required)"
+                Write-Host "EXTERNAL_AGENT_PRODUCTION_ALLOWED=$($BuilderAutonomousMultiSession.external_agent_production_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($BuilderAutonomousMultiSession.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($BuilderAutonomousMultiSession.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($BuilderAutonomousMultiSession.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($BuilderAutonomousMultiSession.executable_materials_used)"
+                Write-Host "NEXT_ALLOWED_STEP=$($BuilderAutonomousMultiSession.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_BUILT"
+                return
+            }
+        }
+
         $Phase144StepId = "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1"
         $Phase143ProofPath = ".\proofs\self_development\PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1.json"
 

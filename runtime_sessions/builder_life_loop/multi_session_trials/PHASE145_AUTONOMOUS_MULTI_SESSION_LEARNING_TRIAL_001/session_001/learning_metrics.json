@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "metrics_id": "PHASE145_SESSION_LEARNING_METRICS",
+  "session_id": "PHASE145_MULTI_SESSION_001",
+  "trial_session": "PHASE145_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_001",
+  "purpose": "establish learned-state carryover from PHASE144",
+  "completed_cycles": 8,
+  "max_cycles": 8,
+  "checkpoint_every": 4,
+  "memory_source": "PHASE144_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001",
+  "uses_prior_session_memory": false,
+  "learning_memory_created": true,
+  "learning_memory_updated_count": 1,
+  "autonomous_next_task_selection_count": 1,
+  "task_sequence": [
+    "READ_CURRENT_STATE",
+    "LOAD_LEARNING_MEMORY",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP",
+    "EXPLAIN_BEHAVIOR_CHANGE",
+    "COMPARE_NEXT_STEP",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP"
+  ],
+  "old_safe_carousel_not_repeated": true,
+  "new_owner_correction_supplied": false,
+  "owner_interactive_prompt_required": false,
+  "assistant_or_codex_per_session_authoring_required": false,
+  "selected_next_gap": "PHASE146_BUILDER_LONG_RUNNING_OBSERVABLE_LEARNING_SUPERVISOR_V1",
+  "selected_by": "BUILDER_RUNTIME",
+  "next_allowed_step": "PHASE146_BUILDER_LONG_RUNNING_OBSERVABLE_LEARNING_SUPERVISOR_V1"
+}

@@ -355,6 +355,40 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase144StepId = "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1"
+        $Phase143ProofPath = ".\proofs\self_development\PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1.json"
+
+        if (Test-Path -LiteralPath $Phase143ProofPath) {
+            $Phase143Proof = Get-Content -LiteralPath $Phase143ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase143Proof.status -eq "PASS" -and $Phase143Proof.next_allowed_step -eq $Phase144StepId) {
+                . ".\modules\invoke_builder_behavior_adaptation_scale_trial_001.ps1"
+
+                $BuilderBehaviorAdaptationScaleRoot = ".\self_build_batch\autonomy_trials\$Phase144StepId"
+                $BuilderBehaviorAdaptationScale = Invoke-BuilderBehaviorAdaptationScaleTrial001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $BuilderBehaviorAdaptationScaleRoot
+
+                Write-Host "BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL=PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001"
+                Write-Host "BEHAVIOR_ADAPTATION_SCALE_STATUS=$($BuilderBehaviorAdaptationScale.status)"
+                Write-Host "CORRECTIONS_SEEN_COUNT=$($BuilderBehaviorAdaptationScale.corrections_seen_count)"
+                Write-Host "CORRECTIONS_APPLIED_COUNT=$($BuilderBehaviorAdaptationScale.corrections_applied_count)"
+                Write-Host "BEHAVIOR_CHANGES_COUNT=$($BuilderBehaviorAdaptationScale.behavior_changes_count)"
+                Write-Host "ADAPTATION_SCALED=$($BuilderBehaviorAdaptationScale.adaptation_scaled)"
+                Write-Host "REPEATED_SAFE_CAROUSEL_REDUCED=$($BuilderBehaviorAdaptationScale.repeated_safe_carousel_reduced)"
+                Write-Host "BASELINE_SESSION_ID=$($BuilderBehaviorAdaptationScale.baseline_session)"
+                Write-Host "PHASE143_TRIAL_SESSION_ID=$($BuilderBehaviorAdaptationScale.phase143_trial_session)"
+                Write-Host "ADAPTATION_TRIAL_SESSION_ID=$($BuilderBehaviorAdaptationScale.trial_session)"
+                Write-Host "OWNER_INTERACTIVE_PROMPT_REQUIRED=$($BuilderBehaviorAdaptationScale.owner_interactive_prompt_required)"
+                Write-Host "EXTERNAL_AGENT_PRODUCTION_ALLOWED=$($BuilderBehaviorAdaptationScale.external_agent_production_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($BuilderBehaviorAdaptationScale.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($BuilderBehaviorAdaptationScale.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($BuilderBehaviorAdaptationScale.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($BuilderBehaviorAdaptationScale.executable_materials_used)"
+                Write-Host "NEXT_ALLOWED_STEP=$($BuilderBehaviorAdaptationScale.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_BUILT"
+                return
+            }
+        }
+
         $Phase143StepId = "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1"
         $Phase142ProofPath = ".\proofs\self_development\PHASE142_BUILDER_NEXT_GAP_SELECTOR_RUNTIME_V1.json"
 

@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1_REPORT",
+  "step_id": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1",
+  "run_id": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001",
+  "orchestrator_hook": "orchestrator/run.ps1 invokes Invoke-BuilderBehaviorAdaptationScaleTrial001 when PHASE143 proof is PASS and next_allowed_step is PHASE144.",
+  "corrections_created": [
+    {
+      "correction_id": "PHASE144_CORRECTION_001",
+      "message": "Reduce repetitive READ_CURRENT_STATE loops. Prioritize practical tasks after state read.",
+      "initial_status": "pending",
+      "application_cycle": 1
+    },
+    {
+      "correction_id": "PHASE144_CORRECTION_002",
+      "message": "When a correction is present, explain the behavior change in decision_trace before selecting the next task.",
+      "initial_status": "pending",
+      "application_cycle": 4
+    },
+    {
+      "correction_id": "PHASE144_CORRECTION_003",
+      "message": "After applying a correction, select a stronger micro-gap than the baseline safe carousel.",
+      "initial_status": "pending",
+      "application_cycle": 10
+    }
+  ],
+  "correction_creation_method": "Runtime writes exactly three PHASE144 pending corrections into current and trial correction_inbox_initial.json before the 18-cycle session starts.",
+  "behavior_change_detection": "Each correction maps to one behavior change, increments behavior_changes_count, writes CORRECTION_APPLIED, and changes decision_trace/observation_ledger with correction-aware task selection.",
+  "baseline_comparison_method": "Read LIVE_LOOP_002 first 18 selected_task_type values, detect the repeated six-task carousel, then require the PHASE144 trial sequence to differ and reduce READ_CURRENT_STATE repetitions.",
+  "phase143_comparison_method": "Read PHASE143_CORRECTION_RESPONSE_TRIAL_001 first 12 selected_task_type values and require the first 12 PHASE144 tasks to differ from the single-correction pattern.",
+  "validator_behavior": "Validator fails on missing PHASE143 proof/result, missing LIVE_LOOP_002 or PHASE143 trial, fewer than three seen/applied corrections, fewer than three behavior changes, missing correction-aware decisions/observations/log entries, no sequence change, wrong next gap, owner prompt, external-agent changes, trusted materials, fetch/install/executable flags, or active queue.",
+  "proof_path": "proofs/self_development/PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1.json",
+  "report_path": "reports/self_development/PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1_REPORT.json",
+  "trial_result_path": "self_control/BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_RESULT.json",
+  "trial_artifact_root": "runtime_sessions/builder_life_loop/adaptation_trials/PHASE144_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001",
+  "remaining_risks": [
+    "PHASE144 proves deterministic scaling across three corrections in one bounded session; PHASE145 must prove autonomous learning across multiple sessions.",
+    "Correction-to-behavior mapping is explicit and rule-based, not yet learned from open-ended feedback.",
+    "The trial remains SELF_BUILD only and does not validate external-agent production."
+  ],
+  "cut_list": [
+    "No external agent production.",
+    "No generated_agents, agent_catalog, or applied_agents changes.",
+    "No dependency install.",
+    "No internet fetch.",
+    "No executable material use.",
+    "No material trust.",
+    "No main branch change.",
+    "No commit or push."
+  ],
+  "next_allowed_step": "PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1"
+}

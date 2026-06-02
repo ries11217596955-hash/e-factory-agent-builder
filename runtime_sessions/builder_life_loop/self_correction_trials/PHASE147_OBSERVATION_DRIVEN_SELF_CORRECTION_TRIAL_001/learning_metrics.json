@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "metrics_id": "PHASE147_SELF_CORRECTION_LEARNING_METRICS",
+  "session_id": "PHASE147_SELF_CORRECTION_SESSION_001",
+  "run_id": "PHASE147_BUILDER_OBSERVATION_DRIVEN_SELF_CORRECTION_TRIAL_001",
+  "completed_cycles": 20,
+  "max_cycles": 20,
+  "checkpoint_every": 5,
+  "sleep_seconds": 0,
+  "baseline_session": "LIVE_OBSERVE_AFTER_PHASE146_001",
+  "baseline_observation_analyzed": true,
+  "repetition_detected": true,
+  "self_correction_created": true,
+  "self_correction_created_by": "BUILDER_RUNTIME",
+  "self_correction_applied": true,
+  "behavior_changed_after_self_correction": true,
+  "self_correction_task_count": 10,
+  "repeated_task_dominance_reduced": true,
+  "baseline_repeated_task_dominance_count": 20,
+  "baseline_repeated_task_dominance_ratio": 0.5,
+  "trial_repeated_task_dominance_count": 4,
+  "trial_repeated_task_dominance_ratio": 0.2,
+  "baseline_task_counts": [
+    {
+      "task_type": "APPLY_SESSION_MEMORY",
+      "count": 3
+    },
+    {
+      "task_type": "COMPARE_NEXT_STEP",
+      "count": 3
+    },
+    {
+      "task_type": "EXPLAIN_BEHAVIOR_CHANGE",
+      "count": 7
+    },
+    {
+      "task_type": "LOAD_LEARNING_MEMORY",
+      "count": 7
+    },
+    {
+      "task_type": "SELECT_NEXT_MICRO_GAP",
+      "count": 10
+    },
+    {
+      "task_type": "WRITE_LEARNING_NOTE",
+      "count": 10
+    }
+  ],
+  "trial_task_counts": [
+    {
+      "task_type": "APPLY_SELF_CORRECTION",
+      "count": 2
+    },
+    {
+      "task_type": "DIAGNOSE_REPETITION",
+      "count": 2
+    },
+    {
+      "task_type": "MEASURE_REPETITION_REDUCTION",
+      "count": 1
+    },
+    {
+      "task_type": "MEASURE_TASK_DIVERSITY",
+      "count": 1
+    },
+    {
+      "task_type": "PLAN_BEHAVIOR_VARIATION",
+      "count": 2
+    },
+    {
+      "task_type": "PLAN_NEXT_GAP",
+      "count": 1
+    },
+    {
+      "task_type": "READ_BASELINE_SUMMARY",
+      "count": 1
+    },
+    {
+      "task_type": "RECORD_SELF_CORRECTION_PROOF",
+      "count": 1
+    },
+    {
+      "task_type": "SELECT_NEXT_MICRO_GAP",
+      "count": 2
+    },
+    {
+      "task_type": "VERIFY_BEHAVIOR_CHANGE",
+      "count": 3
+    },
+    {
+      "task_type": "WRITE_LEARNING_NOTE",
+      "count": 2
+    },
+    {
+      "task_type": "WRITE_RETENTION_NOTE",
+      "count": 1
+    },
+    {
+      "task_type": "WRITE_SELF_CORRECTION",
+      "count": 1
+    }
+  ],
+  "baseline_task_sequence": [
+    "LOAD_LEARNING_MEMORY",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP",
+    "EXPLAIN_BEHAVIOR_CHANGE",
+    "COMPARE_NEXT_STEP",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP",
+    "LOAD_LEARNING_MEMORY",
+    "APPLY_SESSION_MEMORY",
+    "EXPLAIN_BEHAVIOR_CHANGE",
+    "SELECT_NEXT_MICRO_GAP",
+    "WRITE_LEARNING_NOTE",
+    "LOAD_LEARNING_MEMORY",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP",
+    "EXPLAIN_BEHAVIOR_CHANGE",
+    "COMPARE_NEXT_STEP",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP",
+    "LOAD_LEARNING_MEMORY"
+  ],
+  "trial_task_sequence": [
+    "DIAGNOSE_REPETITION",
+    "WRITE_SELF_CORRECTION",
+    "APPLY_SELF_CORRECTION",
+    "PLAN_BEHAVIOR_VARIATION",
+    "VERIFY_BEHAVIOR_CHANGE",
+    "READ_BASELINE_SUMMARY",
+    "MEASURE_TASK_DIVERSITY",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP",
+    "PLAN_BEHAVIOR_VARIATION",
+    "DIAGNOSE_REPETITION",
+    "APPLY_SELF_CORRECTION",
+    "VERIFY_BEHAVIOR_CHANGE",
+    "WRITE_LEARNING_NOTE",
+    "SELECT_NEXT_MICRO_GAP",
+    "MEASURE_REPETITION_REDUCTION",
+    "WRITE_RETENTION_NOTE",
+    "PLAN_NEXT_GAP",
+    "VERIFY_BEHAVIOR_CHANGE",
+    "RECORD_SELF_CORRECTION_PROOF"
+  ],
+  "selected_next_gap": "PHASE148_BUILDER_SELF_CORRECTION_RETENTION_TRIAL_V1",
+  "selected_by": "BUILDER_RUNTIME",
+  "lifecycle_authority": "OBSERVATION_RUNNER_ONLY",
+  "supervisor_lifecycle_only": true,
+  "routed_phase_runtime_invoked": false,
+  "owner_interactive_prompt_required": false,
+  "assistant_or_codex_per_cycle_authoring_required": false,
+  "external_agent_production_allowed": false,
+  "trusted_material_count": 0,
+  "material_trusted_count": 0,
+  "external_fetch_performed": false,
+  "material_external_fetch_performed": false,
+  "dependency_install_performed": false,
+  "material_dependency_install_performed": false,
+  "executable_materials_used": false,
+  "material_executable_used": false,
+  "next_allowed_step": "PHASE148_BUILDER_SELF_CORRECTION_RETENTION_TRIAL_V1"
+}

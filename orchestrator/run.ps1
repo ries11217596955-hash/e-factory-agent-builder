@@ -355,6 +355,42 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase147StepId = "PHASE147_BUILDER_OBSERVATION_DRIVEN_SELF_CORRECTION_TRIAL_V1"
+        $Phase146ProofPath = ".\proofs\self_development\PHASE146_BUILDER_OBSERVATION_ONLY_LIVE_RUNNER_V1.json"
+
+        if (Test-Path -LiteralPath $Phase146ProofPath) {
+            $Phase146Proof = Get-Content -LiteralPath $Phase146ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase146Proof.status -eq "PASS" -and $Phase146Proof.next_allowed_step -eq $Phase147StepId) {
+                . ".\modules\invoke_builder_observation_driven_self_correction_trial_001.ps1"
+
+                $BuilderObservationDrivenSelfCorrection = Invoke-BuilderObservationDrivenSelfCorrectionTrial001 -RepoRoot $RepoRoot -RunId $RunId
+
+                Write-Host "BUILDER_OBSERVATION_DRIVEN_SELF_CORRECTION_TRIAL=PHASE147_BUILDER_OBSERVATION_DRIVEN_SELF_CORRECTION_TRIAL_001"
+                Write-Host "BASELINE_SESSION_ID=$($BuilderObservationDrivenSelfCorrection.baseline_session)"
+                Write-Host "SELF_CORRECTION_SESSION_ID=$($BuilderObservationDrivenSelfCorrection.trial_session)"
+                Write-Host "BASELINE_OBSERVATION_ANALYZED=$($BuilderObservationDrivenSelfCorrection.baseline_observation_analyzed)"
+                Write-Host "REPETITION_DETECTED=$($BuilderObservationDrivenSelfCorrection.repetition_detected)"
+                Write-Host "SELF_CORRECTION_CREATED=$($BuilderObservationDrivenSelfCorrection.self_correction_created)"
+                Write-Host "SELF_CORRECTION_CREATED_BY=$($BuilderObservationDrivenSelfCorrection.self_correction_created_by)"
+                Write-Host "SELF_CORRECTION_APPLIED=$($BuilderObservationDrivenSelfCorrection.self_correction_applied)"
+                Write-Host "BEHAVIOR_CHANGED_AFTER_SELF_CORRECTION=$($BuilderObservationDrivenSelfCorrection.behavior_changed_after_self_correction)"
+                Write-Host "REPEATED_TASK_DOMINANCE_REDUCED=$($BuilderObservationDrivenSelfCorrection.repeated_task_dominance_reduced)"
+                Write-Host "OWNER_INTERACTIVE_PROMPT_REQUIRED=$($BuilderObservationDrivenSelfCorrection.owner_interactive_prompt_required)"
+                Write-Host "ASSISTANT_OR_CODEX_PER_CYCLE_AUTHORING_REQUIRED=$($BuilderObservationDrivenSelfCorrection.assistant_or_codex_per_cycle_authoring_required)"
+                Write-Host "SUPERVISOR_LIFECYCLE_ONLY=$($BuilderObservationDrivenSelfCorrection.supervisor_lifecycle_only)"
+                Write-Host "ROUTED_PHASE_RUNTIME_INVOKED=$($BuilderObservationDrivenSelfCorrection.routed_phase_runtime_invoked)"
+                Write-Host "EXTERNAL_AGENT_PRODUCTION_ALLOWED=$($BuilderObservationDrivenSelfCorrection.external_agent_production_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($BuilderObservationDrivenSelfCorrection.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($BuilderObservationDrivenSelfCorrection.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($BuilderObservationDrivenSelfCorrection.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($BuilderObservationDrivenSelfCorrection.executable_materials_used)"
+                Write-Host "NEXT_ALLOWED_STEP=$($BuilderObservationDrivenSelfCorrection.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_BUILDER_OBSERVATION_DRIVEN_SELF_CORRECTION_TRIAL_BUILT"
+                return
+            }
+        }
+
         $Phase145StepId = "PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1"
         $Phase144ProofPath = ".\proofs\self_development\PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1.json"
 

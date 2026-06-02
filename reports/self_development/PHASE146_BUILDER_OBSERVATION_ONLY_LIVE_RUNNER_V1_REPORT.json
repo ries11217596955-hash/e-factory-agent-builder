@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE146_BUILDER_OBSERVATION_ONLY_LIVE_RUNNER_V1_REPORT",
+  "step_id": "PHASE146_BUILDER_OBSERVATION_ONLY_LIVE_RUNNER_V1",
+  "run_id": "PHASE146_BUILDER_OBSERVATION_ONLY_LIVE_RUNNER_001",
+  "observation_only_boundary": "The runner controls lifecycle only: start, heartbeat, checkpoint, stop-file check, and observation artifact writes. Decisions are recorded as selected_by BUILDER_RUNTIME with lifecycle_authority OBSERVATION_RUNNER_ONLY.",
+  "accepted_phase145_protection": "The run snapshots hashes for PHASE145 proof/report/result/runtime artifacts, PHASE145 multi-session artifacts, current/*, and learning memory before and after the observation session; the snapshots must match.",
+  "session_id_respected": "All observation artifacts are written under runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001/.",
+  "observation_artifacts": [
+    "runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001/heartbeat.json",
+    "runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001/life_loop_state.json",
+    "runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001/observation_ledger.jsonl",
+    "runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001/decision_trace.jsonl",
+    "runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001/learning_metrics.json",
+    "runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001/session_summary.json"
+  ],
+  "watcher_behavior": "tools/watch_builder_observation_session.ps1 reads only runtime_sessions/builder_life_loop/observations/<SessionId>/ and supports Iterations 1.",
+  "stop_file_behavior": "tools/stop_builder_observation_session.ps1 creates runtime_sessions/builder_life_loop/observations/<SessionId>/STOP_REQUESTED; the runner checks it before each cycle and writes stop_reason when present.",
+  "builder_decision_author": "Every decision_trace entry requires selected_by BUILDER_RUNTIME and lifecycle_authority OBSERVATION_RUNNER_ONLY.",
+  "validator_behavior": "Validator fails on missing PHASE145 PASS proof, wrong PHASE145 next step, missing observation artifacts, fewer than 30 completed cycles, wrong decision author/lifecycle authority, protected PHASE145/current artifacts modified, routed phase runtime invocation, owner prompt, external-agent changes, trusted/fetch/install/executable flags, or active queue.",
+  "proof_path": "proofs/self_development/PHASE146_BUILDER_OBSERVATION_ONLY_LIVE_RUNNER_V1.json",
+  "report_path": "reports/self_development/PHASE146_BUILDER_OBSERVATION_ONLY_LIVE_RUNNER_V1_REPORT.json",
+  "result_path": "self_control/BUILDER_OBSERVATION_ONLY_LIVE_RUNNER_RESULT.json",
+  "observation_root": "runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001",
+  "runtime_log_path": "runtime_sessions/builder_life_loop/observations/LIVE_AFTER_PHASE145_001/PHASE146_BUILDER_OBSERVATION_ONLY_LIVE_RUNNER_V1_RUNTIME_LOG.txt",
+  "remaining_risks": [
+    "PHASE146 proves bounded observation-only operation; PHASE147 must prove observation-driven correction without returning to routed phase production.",
+    "The runner records deterministic Builder-runtime choices from existing memory; it is not yet an indefinitely running service.",
+    "Stop-file behavior is implemented and validated structurally; the PASS smoke run intentionally reaches 30 cycles without stopping."
+  ],
+  "cut_list": [
+    "No orchestrator route added.",
+    "No supervisor brain.",
+    "No accepted PHASE145 artifact rewrite.",
+    "No runtime_sessions/builder_life_loop/current writes.",
+    "No external agent production.",
+    "No generated_agents, agent_catalog, or applied_agents changes.",
+    "No dependency install.",
+    "No internet fetch.",
+    "No executable material use.",
+    "No material trust.",
+    "No main branch change.",
+    "No commit or push."
+  ],
+  "next_allowed_step": "PHASE147_BUILDER_OBSERVATION_DRIVEN_SELF_CORRECTION_TRIAL_V1"
+}

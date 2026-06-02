@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "report_id": "PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1_REPORT",
+  "step_id": "PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1",
+  "run_id": "PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_001",
+  "summary": "PHASE141 measures Builder self-pack authorship progress from accepted PHASE139 and PHASE140 proofs and selects the next self-development gap without generating new packs.",
+  "orchestrator_hook": "orchestrator/run.ps1 invokes Invoke-BuilderSelfLearningLoopMetrics001 when PHASE140 proof is PASS and next_allowed_step is PHASE141.",
+  "metrics_source_proofs_used": [
+    "proofs/self_development/PHASE139_BUILD_BUILDER_SELF_PACK_AUTHOR_CONVEYOR_V1.json",
+    "proofs/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1.json"
+  ],
+  "no_new_self_build_packs_reason": "PHASE141 is a retrospective self-learning metrics runtime. It measures existing accepted proofs and writes control-state metrics only; pack generation resumes only if a later selected gap requires it.",
+  "validator_behavior": "Validator fails on missing or invalid PHASE140 proof, wrong metric counts, generated pack failures, codex-authored generated pack count, external-agent creation, missing restore/state capsule, wrong selected next gap, forbidden material/fetch/install/executable flags, active queue, generated PHASE141 pack artifacts, or wrong next step.",
+  "metrics_path": "self_control/BUILDER_SELF_LEARNING_LOOP_METRICS.json",
+  "error_ledger_path": "self_control/BUILDER_SELF_LEARNING_ERROR_LEDGER.json",
+  "next_gap_selection_path": "self_control/BUILDER_NEXT_GAP_SELECTION.json",
+  "current_state_path": "self_control/CURRENT_AGENT_BUILDER_STATE.json",
+  "next_action_path": "self_control/NEXT_ACTION.json",
+  "proof_pointer_path": "self_control/LAST_ACCEPTED_PROOF_POINTER.json",
+  "result_path": "./self_build_batch/autonomy_trials/PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1/PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1_RESULT.json",
+  "runtime_log_path": "./self_build_batch/autonomy_trials/PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1/PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1_RUNTIME_LOG.txt",
+  "proof_path": "proofs/self_development/PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1.json",
+  "remaining_risks": [
+    "Metrics are retrospective and do not yet prove autonomous decision quality.",
+    "The next selected gap must make gap selection runtime-driven instead of owner/assistant-directed.",
+    "Validation is local and does not prove hosted CI execution."
+  ],
+  "cut_list": [
+    "No external agent production.",
+    "No generated_agents, agent_catalog, or applied_agents changes.",
+    "No new self-build packs generated.",
+    "No dependency install.",
+    "No external fetch by runtime.",
+    "No executable material use.",
+    "No material trust.",
+    "No production adoption.",
+    "No restore tool modification.",
+    "No main branch touch.",
+    "No commit or push."
+  ],
+  "next_allowed_step": "PHASE142_BUILDER_NEXT_GAP_SELECTOR_RUNTIME_V1"
+}

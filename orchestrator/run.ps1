@@ -355,6 +355,41 @@ for ($i = 1; $i -le $MaxPacks; $i++) {
     $Registry = Read-SelfBuildPackRegistry -RepoRoot $RepoRoot
 
     if ($Mode -eq "SELF_BUILD" -and "$($Queue.active_task_id)" -eq "NONE") {
+        $Phase141StepId = "PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1"
+        $Phase140ProofPath = ".\proofs\self_development\PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1.json"
+
+        if (Test-Path -LiteralPath $Phase140ProofPath) {
+            $Phase140Proof = Get-Content -LiteralPath $Phase140ProofPath -Raw | ConvertFrom-Json
+
+            if ($Phase140Proof.status -eq "PASS" -and $Phase140Proof.next_allowed_step -eq $Phase141StepId) {
+                . ".\modules\invoke_builder_self_learning_loop_metrics_001.ps1"
+
+                $BuilderSelfLearningLoopMetricsRoot = ".\self_build_batch\autonomy_trials\$Phase141StepId"
+                $BuilderSelfLearningLoopMetrics = Invoke-BuilderSelfLearningLoopMetrics001 -RepoRoot $RepoRoot -RunId $RunId -OutputRoot $BuilderSelfLearningLoopMetricsRoot
+
+                Write-Host "BUILDER_SELF_LEARNING_LOOP_METRICS=PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_001"
+                Write-Host "SELF_LEARNING_METRICS_STATUS=$($BuilderSelfLearningLoopMetrics.status)"
+                Write-Host "MEASURED_PHASE_COUNT=$($BuilderSelfLearningLoopMetrics.measured_phase_count)"
+                Write-Host "BUILDER_GENERATED_PACK_TOTAL=$($BuilderSelfLearningLoopMetrics.builder_generated_pack_total)"
+                Write-Host "GENERATED_PACK_ADMISSION_SUCCESS_COUNT=$($BuilderSelfLearningLoopMetrics.generated_pack_admission_success_count)"
+                Write-Host "GENERATED_PACK_EXECUTION_SUCCESS_COUNT=$($BuilderSelfLearningLoopMetrics.generated_pack_execution_success_count)"
+                Write-Host "GENERATED_PACK_FAILURE_COUNT=$($BuilderSelfLearningLoopMetrics.generated_pack_failure_count)"
+                Write-Host "CODEX_AUTHORED_GENERATED_PACK_COUNT=$($BuilderSelfLearningLoopMetrics.codex_authored_generated_pack_count)"
+                Write-Host "EXTERNAL_AGENT_CREATED_COUNT=$($BuilderSelfLearningLoopMetrics.external_agent_created_count)"
+                Write-Host "REPO_STATE_SYNC_CAPSULE_AVAILABLE=$($BuilderSelfLearningLoopMetrics.repo_state_sync_capsule_available)"
+                Write-Host "RESTORE_TOOL_AVAILABLE=$($BuilderSelfLearningLoopMetrics.restore_tool_available)"
+                Write-Host "NEXT_GAP_SELECTED=$($BuilderSelfLearningLoopMetrics.selected_next_gap)"
+                Write-Host "EXTERNAL_AGENT_PRODUCTION_ALLOWED=$($BuilderSelfLearningLoopMetrics.external_agent_production_allowed)"
+                Write-Host "MATERIAL_TRUSTED_COUNT=$($BuilderSelfLearningLoopMetrics.trusted_material_count)"
+                Write-Host "MATERIAL_EXTERNAL_FETCH_PERFORMED=$($BuilderSelfLearningLoopMetrics.external_fetch_performed)"
+                Write-Host "MATERIAL_DEPENDENCY_INSTALL_PERFORMED=$($BuilderSelfLearningLoopMetrics.dependency_install_performed)"
+                Write-Host "MATERIAL_EXECUTABLE_USED=$($BuilderSelfLearningLoopMetrics.executable_materials_used)"
+                Write-Host "SELF_LEARNING_METRICS_NEXT_STEP=$($BuilderSelfLearningLoopMetrics.proposed_next_step)"
+                Write-Host "STATUS=PASS_STOPPED_BUILDER_SELF_LEARNING_LOOP_METRICS_BUILT"
+                return
+            }
+        }
+
         $Phase140StepId = "PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1"
         $Phase139ProofPath = ".\proofs\self_development\PHASE139_BUILD_BUILDER_SELF_PACK_AUTHOR_CONVEYOR_V1.json"
 

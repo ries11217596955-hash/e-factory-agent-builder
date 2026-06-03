@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "read_id": "PHASE156_PHASE155_TICKET_READ",
+  "step_id": "PHASE156_BUILDER_SELF_SELECTED_GAP_SELF_BUILD_TRIAL_V1",
+  "run_id": "PHASE156_SELF_SELECTED_GAP_SELF_BUILD_TRIAL_001",
+  "source_ticket_path": "living_learning_environment/admission_reviews/PHASE155_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_001/next_trial_ticket.json",
+  "ticket_status": "ISSUED_FOR_PHASE156_ONLY",
+  "trial_type": "SELF_SELECTED_GAP_SELF_BUILD_TRIAL",
+  "allowed_scope": "sandbox_only",
+  "max_cycle_count": 3,
+  "next_allowed_step_from_ticket": "PHASE156_BUILDER_SELF_SELECTED_GAP_SELF_BUILD_TRIAL_V1",
+  "next_allowed_step": "PHASE157_BUILDER_SELF_SELECTED_GAP_TRIAL_REVIEW_V1"
+}

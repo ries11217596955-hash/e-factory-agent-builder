@@ -1,0 +1,30 @@
+# PHASE160 Live Observer Console Repair Request
+
+status: PREPARED
+line: AGENT_BUILDER_SELF_DEVELOPMENT
+mode: VERIFY
+repair_id: PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_V1
+target_step_id: PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1
+repair_type: live_observer_console_visibility_repair
+new_phase_created: false
+phase161_created: false
+root_cause: PHASE160 observer wrote file logs and final JSON but did not stream a readable owner console during live execution.
+owner_operating_model: Terminal 1 runs the Builder daemon; Terminal 2 runs an online observer console for screenshots and live supervision.
+expected_head_source: CURRENT_SYNCED_REPO_HEAD
+head_rule: local_head_must_equal_remote_head_for_phase_branch
+static_expected_head_allowed: false
+repo_root_resolution_rule: scripts_resolve_repo_root_from_own_file_location
+required_branch: phase110-idempotent-autonomy-trial-runtime
+live_console_module: modules/watch_builder_live_console_001.ps1
+validator: validators/validate_phase160_live_observer_console_repair_v1.ps1
+console_runtime_root: runtime_sessions/live_growth_console/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_001
+accepted_phase159_artifacts_mutation_allowed: false
+accepted_phase160_runtime_or_proof_mutation_allowed: false
+accepted_state_mutation_allowed: false
+accepted_memory_mutation_allowed: false
+accepted_self_model_mutation_allowed: false
+queue_mutation_allowed: false
+external_fetch_allowed: false
+dependency_install_allowed: false
+phase161_allowed: false
+next_action: READY_FOR_TWO_TERMINAL_LIVE_RUN_WITH_VISIBLE_CONSOLE

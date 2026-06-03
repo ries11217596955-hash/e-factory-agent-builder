@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "repair_id": "PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_V1",
+  "line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "mode": "VERIFY",
+  "repair_type": "PHASE160 repair, not PHASE161",
+  "root_cause": "Observer watcher logged files but did not stream a readable live console for owner supervision.",
+  "replacement_logic": "watch_builder_live_console_001.ps1 reads heartbeat, current_state, event log tail, observer log tail, blocker queue, teacher inbox, teacher outbox, stale heartbeat state, and stop flag status, then prints LIVE_CONSOLE lines every poll.",
+  "resolved_repo_root": "C:\\Users\\Azerbaijan\\Documents\\e-factory-agent-builder",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "local_head": "7df4203",
+  "remote_head": "7df4203",
+  "expected_head_source": "CURRENT_SYNCED_REPO_HEAD",
+  "console_script_path": "modules/watch_builder_live_console_001.ps1",
+  "validator_path": "validators/validate_phase160_live_observer_console_repair_v1.ps1",
+  "route_request_path": "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
+  "exact_validator_command": ".\\validators\\validate_phase160_live_observer_console_repair_v1.ps1 -RepoRoot .",
+  "exact_terminal_2_live_console_command": ".\\modules\\watch_builder_live_console_001.ps1 -SessionRoot runtime_sessions/live_growth/PHASE160_OWNER_SUPERVISED_LIVE_RUN_001 -DurationSeconds 900 -PollIntervalSeconds 5",
+  "validator_test_command_used": ".\\modules\\watch_builder_live_console_001.ps1 -SessionRoot runtime_sessions/live_growth/PHASE160_OWNER_SUPERVISED_LIVE_RUN_001 -DurationSeconds 20 -PollIntervalSeconds 5 -ShowTailEvents 3 -ShowTailObserver 3",
+  "runtime_outputs_created": [
+    "runtime_sessions/live_growth_console/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_001/console_run_result.json",
+    "runtime_sessions/live_growth_console/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_001/console_output_sample.txt"
+  ],
+  "proof_path": "proofs/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_V1.json",
+  "report_path": "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
+  "protected_state_mutated": false,
+  "accepted_phase160_runtime_or_proof_mutated": false,
+  "external_fetch_performed": false,
+  "dependency_install_performed": false,
+  "phase161_created": false,
+  "risks": [
+    "Console uses local remote-tracking ref for remote head and does not fetch.",
+    "Historical stopped sessions will report stale heartbeat by design.",
+    "Live visibility depends on the daemon continuing to update heartbeat and log files."
+  ],
+  "cut_list": [
+    "No PHASE161.",
+    "No TASK_QUEUE, GENESIS_STATE, CAPABILITY_ROADMAP, registry, or orchestrator edits.",
+    "No accepted PHASE159 or PHASE160 proof/result/runtime output edits.",
+    "No capability_shelf, body, self_growth_runtime, generated_agents, or applied_agents edits.",
+    "No internet fetch, dependency install, commit, or push."
+  ],
+  "validated_at": "2026-06-03T16:43:10.3051672Z"
+}

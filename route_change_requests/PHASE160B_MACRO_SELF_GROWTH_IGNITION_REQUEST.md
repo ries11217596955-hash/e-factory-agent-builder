@@ -1,0 +1,24 @@
+# PHASE160B Macro Self-Growth Ignition Request
+
+status: PREPARED
+line: AGENT_BUILDER_SELF_DEVELOPMENT
+mode: VERIFY
+repair_id: PHASE160B_MACRO_SELF_GROWTH_IGNITION_V1
+classification_before_validation: BOOTSTRAP_SCAFFOLDING
+target_phase: PHASE160
+phase161_created: false
+root_cause: Live duties proved bounded self-growth but could repeat a small gap list without forming a macro learning chain.
+mission: Prove a bounded seven-stage session-local macro self-growth chain with finalization.
+required_cycle_stages: SELF_OBSERVE_MAP_REFRESH, CAPABILITY_INVENTORY_DIFF, GAP_RANK_AND_SELECT, SELF_CHANGE_CANDIDATE_GENERATE, SANDBOX_DRY_RUN, VALIDATE_AND_DECIDE, EXPERIENCE_ABSORB_AND_NEXT_GOAL
+macro_schema: contracts/self_development/live_self_growth_macro_cycle.schema.json
+validator: validators/validate_phase160b_macro_self_growth_ignition_v1.ps1
+report: reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md
+proof: proofs/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_PROOF.json
+accepted_state_mutation_allowed: false
+accepted_memory_mutation_allowed: false
+accepted_self_model_mutation_allowed: false
+runtime_outputs_commit_allowed: false
+external_agents_allowed: false
+external_fetch_allowed: false
+dependency_install_allowed: false
+next_strongest_move: OWNER_SUPERVISED_MACRO_SELF_GROWTH_RUN_WITH_VISIBLE_CONSOLE

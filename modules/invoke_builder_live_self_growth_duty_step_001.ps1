@@ -5,7 +5,9 @@ param(
   [string]$DutyRoot = "",
   [string]$TeacherOutboxDir = "",
   [int]$MaxCandidateBytes = 8192,
-  [switch]$DryRun
+  [switch]$DryRun,
+  [switch]$EnableMacroCycle,
+  [string]$MacroCycleId = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -139,6 +141,73 @@ function Get-Phase160DutyGapForIndex {
   return $curriculum[(($Index - 1) % $curriculum.Count)]
 }
 
+function Get-Phase160DutyMacroStageForIndex {
+  param([int]$Index)
+  $stages = @(
+    "SELF_OBSERVE_MAP_REFRESH",
+    "CAPABILITY_INVENTORY_DIFF",
+    "GAP_RANK_AND_SELECT",
+    "SELF_CHANGE_CANDIDATE_GENERATE",
+    "SANDBOX_DRY_RUN",
+    "VALIDATE_AND_DECIDE",
+    "EXPERIENCE_ABSORB_AND_NEXT_GOAL"
+  )
+  if ($Index -lt 1) {
+    throw "PHASE160B_MACRO_DUTY_INVALID_INDEX=$Index"
+  }
+  return $stages[(($Index - 1) % $stages.Count)]
+}
+
+function Get-Phase160DutyMacroGapForStage {
+  param([string]$Stage)
+  switch ($Stage) {
+    "SELF_OBSERVE_MAP_REFRESH" { return "MACRO_SELF_OBSERVE_MAP_REFRESH_GAP" }
+    "CAPABILITY_INVENTORY_DIFF" { return "MACRO_CAPABILITY_INVENTORY_DIFF_GAP" }
+    "GAP_RANK_AND_SELECT" { return "MACRO_GAP_RANK_AND_SELECT_GAP" }
+    "SELF_CHANGE_CANDIDATE_GENERATE" { return "MACRO_SELF_CHANGE_CANDIDATE_GENERATE_GAP" }
+    "SANDBOX_DRY_RUN" { return "MACRO_SANDBOX_DRY_RUN_GAP" }
+    "VALIDATE_AND_DECIDE" { return "MACRO_VALIDATE_AND_DECIDE_GAP" }
+    "EXPERIENCE_ABSORB_AND_NEXT_GOAL" { return "MACRO_EXPERIENCE_ABSORB_AND_NEXT_GOAL_GAP" }
+    default { throw "PHASE160B_MACRO_STAGE_UNKNOWN=$Stage" }
+  }
+}
+
+function Get-Phase160DutyMacroNoveltyReason {
+  param([string]$Stage)
+  switch ($Stage) {
+    "SELF_OBSERVE_MAP_REFRESH" { return "Starts the macro cycle by grounding the session in current runtime evidence instead of repeating a gap label." }
+    "CAPABILITY_INVENTORY_DIFF" { return "Consumes the self-map and compares available session capabilities against the observed runtime contour." }
+    "GAP_RANK_AND_SELECT" { return "Consumes the capability diff and ranks a next gap with an explicit selection reason." }
+    "SELF_CHANGE_CANDIDATE_GENERATE" { return "Consumes the ranked gap and produces a bounded session-local change candidate." }
+    "SANDBOX_DRY_RUN" { return "Consumes the candidate and exercises it as a dry-run artifact without executing generated code." }
+    "VALIDATE_AND_DECIDE" { return "Consumes the dry-run and records a keep/quarantine/rollback decision." }
+    "EXPERIENCE_ABSORB_AND_NEXT_GOAL" { return "Consumes the decision and writes an experience ledger entry plus a non-repeated next goal." }
+    default { return "Macro stage advances the chain with a new artifact." }
+  }
+}
+
+function Get-Phase160DutyMacroProgressClaim {
+  param([string]$Stage)
+  switch ($Stage) {
+    "SELF_OBSERVE_MAP_REFRESH" { return "Session has a refreshed macro self-map input for the next duty." }
+    "CAPABILITY_INVENTORY_DIFF" { return "Session has a diff between observed needs and current live capabilities." }
+    "GAP_RANK_AND_SELECT" { return "Session has a ranked gap and selection reason." }
+    "SELF_CHANGE_CANDIDATE_GENERATE" { return "Session has a bounded self-change candidate kept local." }
+    "SANDBOX_DRY_RUN" { return "Session has a dry-run result without arbitrary code execution." }
+    "VALIDATE_AND_DECIDE" { return "Session has a validation decision for the candidate." }
+    "EXPERIENCE_ABSORB_AND_NEXT_GOAL" { return "Session has absorbed experience and selected a non-repeated next goal." }
+    default { return "Session macro chain advanced." }
+  }
+}
+
+function Get-Phase160DutyMacroDecision {
+  param([bool]$ValidationPassed)
+  if ($ValidationPassed) {
+    return "KEEP_SESSION_LOCAL"
+  }
+  return "QUARANTINE_RESULT"
+}
+
 function Test-Phase160DutyTeacherInterventionValid {
   param([object]$Intervention)
   if ($null -eq $Intervention) {
@@ -154,7 +223,7 @@ function Test-Phase160DutyTeacherInterventionValid {
 
 $RepoRoot = Resolve-Phase160DutyRepoRoot
 $ExpectedBranch = "phase110-idempotent-autonomy-trial-runtime"
-$RepairId = "PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_V1"
+$RepairId = if ($EnableMacroCycle) { "PHASE160B_MACRO_SELF_GROWTH_IGNITION_V1" } else { "PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_V1" }
 $Pushed = $false
 
 try {
@@ -216,8 +285,20 @@ try {
   }
 
   $StartedAt = Get-Date
-  $Gap = Get-Phase160DutyGapForIndex -Index $DutyIndex
-  $NextGap = Get-Phase160DutyGapForIndex -Index ($DutyIndex + 1)
+  if ([string]::IsNullOrWhiteSpace($MacroCycleId)) {
+    $MacroCycleId = "PHASE160B_MACRO_SELF_GROWTH_IGNITION_CYCLE_001"
+  }
+  $CycleStage = if ($EnableMacroCycle) { Get-Phase160DutyMacroStageForIndex -Index $DutyIndex } else { "MICRO_DUTY" }
+  $NextCycleStage = if ($EnableMacroCycle) { Get-Phase160DutyMacroStageForIndex -Index ($DutyIndex + 1) } else { "MICRO_DUTY" }
+  $Gap = if ($EnableMacroCycle) { Get-Phase160DutyMacroGapForStage -Stage $CycleStage } else { Get-Phase160DutyGapForIndex -Index $DutyIndex }
+  $NextGap = if ($EnableMacroCycle) { Get-Phase160DutyMacroGapForStage -Stage $NextCycleStage } else { Get-Phase160DutyGapForIndex -Index ($DutyIndex + 1) }
+  $PreviousDutyId = if ($DutyIndex -gt 1) { "duty_{0:d4}" -f ($DutyIndex - 1) } else { "NONE" }
+  $PreviousDutyArtifact = if ($DutyIndex -gt 1) { "$DutyRootRelative/$PreviousDutyId/macro_cycle_artifact.json" } else { "NONE" }
+  $PreviousDutyArtifactFull = if ($DutyIndex -gt 1) { Resolve-Phase160DutyPath -RepoRoot $RepoRoot -Path $PreviousDutyArtifact } else { $null }
+  $InputArtifact = if ($DutyIndex -gt 1 -and (Test-Path -LiteralPath $PreviousDutyArtifactFull)) { $PreviousDutyArtifact } else { "SESSION_START" }
+  $OutputArtifact = "$DutyDirRelative/macro_cycle_artifact.json"
+  $NoveltyReason = if ($EnableMacroCycle) { Get-Phase160DutyMacroNoveltyReason -Stage $CycleStage } else { "Bounded micro duty advances the deterministic session-local curriculum." }
+  $ProgressClaim = if ($EnableMacroCycle) { Get-Phase160DutyMacroProgressClaim -Stage $CycleStage } else { "Session-local duty completed without accepted-state mutation." }
   $Heartbeat = Read-Phase160DutyJsonSafe -Path $HeartbeatPath
   $CurrentState = Read-Phase160DutyJsonSafe -Path $CurrentStatePath
   $ProofPaths = @(
@@ -302,6 +383,11 @@ try {
     status = "PASS"
     duty_id = $DutyId
     policy = "DETERMINISTIC_PHASE160_SELF_GROWTH_CURRICULUM"
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
+    previous_duty_id = $PreviousDutyId
+    input_artifact = $InputArtifact
+    novelty_reason = $NoveltyReason
     duty_index = $DutyIndex
     selected_gap = $Gap
     next_gap = $NextGap
@@ -350,6 +436,11 @@ try {
     status = "PASS"
     duty_id = $DutyId
     selected_gap = $Gap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
+    previous_duty_id = $PreviousDutyId
+    input_artifact = $InputArtifact
+    output_artifact = $OutputArtifact
     intention = "perform_bounded_session_local_self_growth_duty"
     owner_visible = $true
     dry_run = [bool]$DryRun
@@ -363,18 +454,38 @@ try {
     status = "CANDIDATE"
     duty_id = $DutyId
     selected_gap = $Gap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
+    previous_duty_id = $PreviousDutyId
+    input_artifact = $InputArtifact
+    output_artifact = $OutputArtifact
     candidate_type = "sandbox_only_self_growth_action"
-    proposed_action = switch ($Gap) {
-      "SELF_MAP_REFRESH_GAP" { "refresh session-local map of current Builder runtime contour" }
-      "CAPABILITY_INVENTORY_REFRESH_GAP" { "refresh session-local inventory of live modules, validators, and channels" }
-      "TEACHER_CHANNEL_READINESS_GAP" { "verify teacher_outbox input handling and teacher_inbox suggestion visibility" }
-      "BLOCKER_CHANNEL_READINESS_GAP" { "verify blocker_queue support and safe help-request shape" }
-      "SELF_GROWTH_RESULT_SUMMARY_GAP" { "summarize prior self-growth duty outputs into session-local memory event" }
-      default { "select the next bounded self-growth goal from deterministic curriculum" }
+    proposed_action = if ($EnableMacroCycle) {
+      switch ($CycleStage) {
+        "SELF_OBSERVE_MAP_REFRESH" { "refresh the session macro self-map from heartbeat/current_state/event evidence" }
+        "CAPABILITY_INVENTORY_DIFF" { "compare observed runtime contour against available live modules and validators" }
+        "GAP_RANK_AND_SELECT" { "rank candidate macro gaps and select the next bounded improvement target" }
+        "SELF_CHANGE_CANDIDATE_GENERATE" { "generate a session-local change candidate from the ranked gap" }
+        "SANDBOX_DRY_RUN" { "dry-run the candidate as data without executing generated code" }
+        "VALIDATE_AND_DECIDE" { "validate the dry-run result and decide whether to keep it session-local" }
+        default { "absorb the cycle experience into a ledger and select a non-repeated next goal" }
+      }
+    } else {
+      switch ($Gap) {
+        "SELF_MAP_REFRESH_GAP" { "refresh session-local map of current Builder runtime contour" }
+        "CAPABILITY_INVENTORY_REFRESH_GAP" { "refresh session-local inventory of live modules, validators, and channels" }
+        "TEACHER_CHANNEL_READINESS_GAP" { "verify teacher_outbox input handling and teacher_inbox suggestion visibility" }
+        "BLOCKER_CHANNEL_READINESS_GAP" { "verify blocker_queue support and safe help-request shape" }
+        "SELF_GROWTH_RESULT_SUMMARY_GAP" { "summarize prior self-growth duty outputs into session-local memory event" }
+        default { "select the next bounded self-growth goal from deterministic curriculum" }
+      }
     }
     candidate_payload = [ordered]@{
       observe = $true
       select_gap = $Gap
+      cycle_stage = $CycleStage
+      input_artifact = $InputArtifact
+      output_artifact = $OutputArtifact
       validate_before_promotion = $true
       write_session_memory_event = $true
       mutate_accepted_state = $false
@@ -394,6 +505,11 @@ try {
     status = if ($ValidationPassed) { "PASS" } else { "FAIL" }
     duty_id = $DutyId
     selected_gap = $Gap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
+    previous_duty_id = $PreviousDutyId
+    input_artifact = $InputArtifact
+    output_artifact = $OutputArtifact
     candidate_bytes = $CandidateBytes
     max_candidate_bytes = $MaxCandidateBytes
     sandbox_only = $true
@@ -422,6 +538,11 @@ try {
     memory_scope = "session_local_only"
     event_type = "self_growth_duty_memory_event"
     selected_gap = $Gap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
+    previous_duty_id = $PreviousDutyId
+    input_artifact = $InputArtifact
+    output_artifact = $OutputArtifact
     lesson = "bounded duty completed without accepted state mutation"
     accepted_teacher_inputs = $AcceptedTeacherInputs
     rejected_teacher_inputs = $RejectedTeacherInputs
@@ -436,6 +557,10 @@ try {
     duty_id = $DutyId
     completed_gap = $Gap
     next_gap = $NextGap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
+    next_cycle_stage = $NextCycleStage
+    novelty_reason = $NoveltyReason
     next_action = "continue_bounded_self_growth_curriculum"
     codex_needed_for_next_step = $false
     created_at = (Get-Date).ToUniversalTime().ToString("o")
@@ -456,6 +581,87 @@ try {
     Write-Phase160DutyJsonFile -Path (Join-Path $DutyDirFull ("{0}.json" -f $entry.Key)) -Object $entry.Value
   }
 
+  $Decision = Get-Phase160DutyMacroDecision -ValidationPassed $ValidationPassed
+  if ($EnableMacroCycle) {
+    $MacroArtifact = [ordered]@{
+      status = if ($ValidationPassed) { "PASS" } else { "BLOCKED" }
+      duty_id = $DutyId
+      cycle_id = $MacroCycleId
+      cycle_stage = $CycleStage
+      selected_gap = $Gap
+      input_artifact = $InputArtifact
+      output_artifact = $OutputArtifact
+      previous_duty_id = $PreviousDutyId
+      novelty_reason = $NoveltyReason
+      progress_claim = $ProgressClaim
+      validation_status = if ($ValidationPassed) { "PASS" } else { "FAIL" }
+      decision = $Decision
+      next_gap = $NextGap
+      next_cycle_stage = $NextCycleStage
+      created_at = (Get-Date).ToUniversalTime().ToString("o")
+      accepted_state_mutated = $false
+      accepted_memory_mutated = $false
+      accepted_self_model_mutated = $false
+      arbitrary_code_execution_used = $false
+      external_agents_created = $false
+    }
+    Write-Phase160DutyJsonFile -Path (Join-Path $DutyDirFull "macro_cycle_artifact.json") -Object $MacroArtifact
+    Add-Phase160DutyJsonLine -Path (Join-Path $DutyRootFull "experience_ledger.jsonl") -Object ([ordered]@{
+      event_type = "macro_experience_ledger_entry"
+      duty_id = $DutyId
+      cycle_id = $MacroCycleId
+      cycle_stage = $CycleStage
+      selected_gap = $Gap
+      previous_duty_id = $PreviousDutyId
+      input_artifact = $InputArtifact
+      output_artifact = $OutputArtifact
+      novelty_reason = $NoveltyReason
+      progress_claim = $ProgressClaim
+      validation_status = if ($ValidationPassed) { "PASS" } else { "FAIL" }
+      decision = $Decision
+      next_gap = $NextGap
+      created_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+    Write-Phase160DutyJsonFile -Path (Join-Path $DutyRootFull "macro_cycle_summary.json") -Object ([ordered]@{
+      status = "PASS"
+      cycle_id = $MacroCycleId
+      repair_id = "PHASE160B_MACRO_SELF_GROWTH_IGNITION_V1"
+      session_root = $SessionRootRelative
+      duty_count_completed = $DutyIndex
+      latest_duty_id = $DutyId
+      latest_cycle_stage = $CycleStage
+      latest_selected_gap = $Gap
+      chain_requires_previous_artifact = $true
+      stage_sequence_target = @(
+        "SELF_OBSERVE_MAP_REFRESH",
+        "CAPABILITY_INVENTORY_DIFF",
+        "GAP_RANK_AND_SELECT",
+        "SELF_CHANGE_CANDIDATE_GENERATE",
+        "SANDBOX_DRY_RUN",
+        "VALIDATE_AND_DECIDE",
+        "EXPERIENCE_ABSORB_AND_NEXT_GOAL"
+      )
+      no_consecutive_stage_repeat_expected = $true
+      accepted_state_mutated = $false
+      accepted_memory_mutated = $false
+      accepted_self_model_mutated = $false
+      updated_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+    Write-Phase160DutyJsonFile -Path (Join-Path $DutyRootFull "next_goal.json") -Object ([ordered]@{
+      status = "PASS"
+      cycle_id = $MacroCycleId
+      source_duty_id = $DutyId
+      completed_stage = $CycleStage
+      next_gap = $NextGap
+      next_cycle_stage = $NextCycleStage
+      novelty_reason = "Next goal advances from $CycleStage to $NextCycleStage instead of blindly repeating the same gap."
+      blind_repeat = $false
+      selected_with_reason = $true
+      accepted_state_mutated = $false
+      created_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+  }
+
   Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
     event_type = "self_growth_gap_selected"
     source = "builder_self_growth_duty"
@@ -463,6 +669,8 @@ try {
     duty_index = $DutyIndex
     tick_number = $TickNumber
     selected_gap = $Gap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
     next_gap = $NextGap
     occurred_at = (Get-Date).ToUniversalTime().ToString("o")
   })
@@ -471,6 +679,8 @@ try {
     source = "builder_self_growth_duty"
     duty_id = $DutyId
     selected_gap = $Gap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
     memory_scope = "session_local_only"
     occurred_at = (Get-Date).ToUniversalTime().ToString("o")
   })
@@ -486,6 +696,15 @@ try {
     duty_dir = $DutyDirRelative
     selected_gap = $Gap
     next_gap = $NextGap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
+    input_artifact = $InputArtifact
+    output_artifact = $OutputArtifact
+    previous_duty_id = $PreviousDutyId
+    novelty_reason = $NoveltyReason
+    progress_claim = $ProgressClaim
+    validation_status = if ($ValidationPassed) { "PASS" } else { "FAIL" }
+    decision = $Decision
     elementary_knowledge_snapshot_created = $true
     self_map_snapshot_created = $true
     capability_inventory_snapshot_created = $true
@@ -517,6 +736,15 @@ try {
     duty_dir = $DutyDirRelative
     selected_gap = $Gap
     next_gap = $NextGap
+    cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+    cycle_stage = $CycleStage
+    input_artifact = $InputArtifact
+    output_artifact = $OutputArtifact
+    previous_duty_id = $PreviousDutyId
+    novelty_reason = $NoveltyReason
+    progress_claim = $ProgressClaim
+    validation_status = if ($ValidationPassed) { "PASS" } else { "FAIL" }
+    decision = $Decision
     sandbox_validation_passed = $ValidationPassed
     memory_event_created = $true
     accepted_state_mutated = $false

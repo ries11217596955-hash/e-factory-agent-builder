@@ -94,6 +94,21 @@ function Get-Phase160ObserverMatchingLineCount {
   return @(Get-Content -LiteralPath $Path -ErrorAction SilentlyContinue | Where-Object { $_ -match $Pattern }).Count
 }
 
+function Test-Phase160ObserverDaemonProcessPresent {
+  param([string]$SessionRoot)
+  try {
+    $escapedSession = [regex]::Escape($SessionRoot)
+    $matches = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object {
+      -not [string]::IsNullOrWhiteSpace([string]$_.CommandLine) -and
+      $_.CommandLine -match "start_builder_live_growth_daemon_001\.ps1" -and
+      $_.CommandLine -match $escapedSession
+    })
+    return $matches.Count -gt 0
+  } catch {
+    return $false
+  }
+}
+
 function Assert-Phase160ObserverEquals {
   param([object]$Actual, [object]$Expected, [string]$Name)
   if ($Actual -ne $Expected) {
@@ -146,6 +161,7 @@ try {
 
   $HeartbeatPath = Join-Path $SessionRootFull "heartbeat.json"
   $CurrentStatePath = Join-Path $SessionRootFull "current_state.json"
+  $FinalStatePath = Join-Path $SessionRootFull "final_state.json"
   $EventLogPath = Join-Path $SessionRootFull "event_log.jsonl"
   $ObserverLogPath = Join-Path $SessionRootFull "observer_log.jsonl"
   $ObserverSummaryPath = Join-Path $SessionRootFull "observer_summary.json"
@@ -172,6 +188,7 @@ try {
   $SameSelfGrowthDutyCountPolls = 0
   $RepeatedSameGapPolls = 0
   $PreviousSelfGrowthGap = $null
+  $StaleEndedSessionDetected = $false
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -228,6 +245,9 @@ try {
     $CurrentLastSelfGrowthGap = "NONE"
     $CurrentLastSelfGrowthStatus = "NONE"
     $CurrentNextSelfGrowthGap = "NONE"
+    $CurrentMacroCycleId = "NONE"
+    $CurrentMacroCycleStage = "NONE"
+    $CurrentMacroDecision = "NONE"
     if ($null -ne $CurrentState) {
       if ($CurrentState.PSObject.Properties.Name -contains "self_growth_duty_count") {
         $CurrentSelfGrowthDutyCount = [int]$CurrentState.self_growth_duty_count
@@ -246,6 +266,15 @@ try {
       }
       if ($CurrentState.PSObject.Properties.Name -contains "next_self_growth_gap") {
         $CurrentNextSelfGrowthGap = [string]$CurrentState.next_self_growth_gap
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "macro_cycle_id") {
+        $CurrentMacroCycleId = [string]$CurrentState.macro_cycle_id
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_macro_cycle_stage") {
+        $CurrentMacroCycleStage = [string]$CurrentState.last_macro_cycle_stage
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_macro_decision") {
+        $CurrentMacroDecision = [string]$CurrentState.last_macro_decision
       }
     }
     $SelfGrowthCompletedEventCount = Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern '"event_type":"self_growth_duty_completed"'
@@ -287,6 +316,26 @@ try {
     $BlockerQueueCount = Get-Phase160ObserverJsonFileCount -Path $BlockerQueuePath
     $TeacherInboxCount = Get-Phase160ObserverJsonFileCount -Path $TeacherInboxPath
 
+    if ($StaleThisPoll -and -not (Test-Path -LiteralPath $FinalStatePath)) {
+      $DaemonPresent = Test-Phase160ObserverDaemonProcessPresent -SessionRoot $SessionRoot
+      if (-not $DaemonPresent) {
+        $StaleEndedSessionDetected = $true
+        Write-Phase160ObserverJsonFile -Path $FinalStatePath -Object ([ordered]@{
+          status = "STALE_ENDED"
+          final_tick = if ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "current_tick") { $CurrentState.current_tick } else { $HeartbeatCount }
+          final_heartbeat_count = $HeartbeatCount
+          final_self_growth_duty_count = $CurrentSelfGrowthDutyCount
+          stop_flag_seen = Test-Path -LiteralPath (Join-Path $SessionRootFull "stop.flag")
+          process_exit_reason = "heartbeat_stale_and_daemon_process_not_present"
+          accepted_state_mutated = $false
+          accepted_memory_mutated = $false
+          accepted_self_model_mutated = $false
+          next_recommended_action = "owner_review_stale_ended_session_and_resume_with_visible_console"
+          finalized_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      }
+    }
+
     if (($StaleHeartbeatDetected -or $NoProgressDetected) -and -not $SuggestionWritten) {
       $SuggestionPath = Join-Path $TeacherInboxPath "observer_intervention_suggestion_0001.json"
       Write-Phase160ObserverJsonFile -Path $SuggestionPath -Object ([ordered]@{
@@ -324,7 +373,11 @@ try {
       last_self_growth_gap = $CurrentLastSelfGrowthGap
       last_self_growth_status = $CurrentLastSelfGrowthStatus
       next_self_growth_gap = $CurrentNextSelfGrowthGap
+      macro_cycle_id = $CurrentMacroCycleId
+      last_macro_cycle_stage = $CurrentMacroCycleStage
+      last_macro_decision = $CurrentMacroDecision
       self_growth_stagnation_detected = $SelfGrowthStagnationDetected
+      stale_ended_session_detected = $StaleEndedSessionDetected
       blocker_queue_count = $BlockerQueueCount
       teacher_inbox_count = $TeacherInboxCount
       occurred_at = $Now.ToUniversalTime().ToString("o")
@@ -358,6 +411,7 @@ try {
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
+    stale_ended_session_detected = $StaleEndedSessionDetected
     code_execution_requested = $false
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
@@ -389,6 +443,7 @@ try {
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
+    stale_ended_session_detected = $StaleEndedSessionDetected
     observer_log_created = (Test-Path -LiteralPath $ObserverLogPath)
     observer_summary_created = (Test-Path -LiteralPath $ObserverSummaryPath)
   } | ConvertTo-Json -Depth 20

@@ -6,7 +6,9 @@ param(
   [int]$SelfGrowthEveryTicks = 5,
   [int]$SelfGrowthStartTick = 2,
   [int]$MaxSelfGrowthDuties = 0,
-  [string]$SelfGrowthDutyRoot = ""
+  [string]$SelfGrowthDutyRoot = "",
+  [switch]$EnableMacroSelfGrowthCycle,
+  [string]$MacroCycleId = "PHASE160B_MACRO_SELF_GROWTH_IGNITION_CYCLE_001"
 )
 
 $ErrorActionPreference = "Stop"
@@ -163,6 +165,7 @@ try {
 
   $HeartbeatPath = Join-Path $SessionRootFull "heartbeat.json"
   $CurrentStatePath = Join-Path $SessionRootFull "current_state.json"
+  $FinalStatePath = Join-Path $SessionRootFull "final_state.json"
   $EventLogPath = Join-Path $SessionRootFull "event_log.jsonl"
   $TeacherOutboxPath = Join-Path $SessionRootFull "teacher_outbox"
   $BlockerQueuePath = Join-Path $SessionRootFull "blocker_queue"
@@ -186,12 +189,16 @@ try {
   $ProcessedInterventions = @{}
   $TickCount = 0
   $StopReason = "duration_limit"
+  $StopFlagSeen = $false
   $InvalidInterventionCount = 0
   $SelfGrowthDutyCount = 0
   $LastSelfGrowthDutyId = "NONE"
   $LastSelfGrowthGap = "NONE"
   $LastSelfGrowthStatus = if ($EnableSelfGrowthDuty) { "READY" } else { "DISABLED" }
   $NextSelfGrowthGap = if ($EnableSelfGrowthDuty) { "SELF_MAP_REFRESH_GAP" } else { "NONE" }
+  $LastMacroCycleStage = "NONE"
+  $LastMacroDecision = "NONE"
+  $ActiveMacroCycleId = if ($EnableMacroSelfGrowthCycle) { $MacroCycleId } else { "NONE" }
 
   Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
     event_type = "daemon_started"
@@ -207,6 +214,7 @@ try {
   while ((Get-Date) -lt $EndTime) {
     if (Test-Path -LiteralPath $StopFlagPath) {
       $StopReason = "stop_flag"
+      $StopFlagSeen = $true
       Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
         event_type = "stop_flag_detected"
         source = "builder_daemon"
@@ -320,6 +328,9 @@ try {
           "-DutyRoot", $SelfGrowthDutyRootRelative,
           "-TeacherOutboxDir", $TeacherOutboxRelative
         )
+        if ($EnableMacroSelfGrowthCycle) {
+          $DutyCommand += @("-EnableMacroCycle", "-MacroCycleId", $MacroCycleId)
+        }
         $DutyOutput = @(powershell @DutyCommand 2>&1 | ForEach-Object { [string]$_ })
         if ($LASTEXITCODE -ne 0) {
           throw "PHASE160_DAEMON_SELF_GROWTH_DUTY_PROCESS_FAILED exit=$LASTEXITCODE output=$($DutyOutput -join ' | ')"
@@ -330,6 +341,12 @@ try {
         $LastSelfGrowthGap = [string]$DutyResult.selected_gap
         $LastSelfGrowthStatus = [string]$DutyResult.status
         $NextSelfGrowthGap = [string]$DutyResult.next_gap
+        if ($DutyResult.PSObject.Properties.Name -contains "cycle_stage") {
+          $LastMacroCycleStage = [string]$DutyResult.cycle_stage
+        }
+        if ($DutyResult.PSObject.Properties.Name -contains "decision") {
+          $LastMacroDecision = [string]$DutyResult.decision
+        }
         Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
           event_type = "self_growth_duty_completed"
           source = "builder_daemon"
@@ -337,7 +354,11 @@ try {
           duty_index = $SelfGrowthDutyCount
           tick_number = $TickCount
           selected_gap = $LastSelfGrowthGap
+          macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+          cycle_id = $ActiveMacroCycleId
+          cycle_stage = $LastMacroCycleStage
           status = $LastSelfGrowthStatus
+          decision = $LastMacroDecision
           next_gap = $NextSelfGrowthGap
           occurred_at = (Get-Date).ToUniversalTime().ToString("o")
         })
@@ -345,6 +366,7 @@ try {
         $LastSelfGrowthDutyId = $NextDutyId
         $LastSelfGrowthGap = $NextSelfGrowthGap
         $LastSelfGrowthStatus = "FAILED"
+        $LastMacroDecision = "QUARANTINE_RESULT"
         $BlockerPath = Join-Path $BlockerQueuePath ("blocker_self_growth_{0}.json" -f $NextDutyId)
         Write-Phase160DaemonJsonFile -Path $BlockerPath -Object ([ordered]@{
           status = "BLOCKED"
@@ -363,6 +385,9 @@ try {
           duty_id = $NextDutyId
           tick_number = $TickCount
           selected_gap = $LastSelfGrowthGap
+          macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+          cycle_id = $ActiveMacroCycleId
+          cycle_stage = $LastMacroCycleStage
           error = $_.Exception.Message
           daemon_kept_alive = $true
           occurred_at = (Get-Date).ToUniversalTime().ToString("o")
@@ -383,6 +408,10 @@ try {
       stop_flag_supported = $true
       self_growth_enabled = [bool]$EnableSelfGrowthDuty
       self_growth_duty_count = $SelfGrowthDutyCount
+      macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+      macro_cycle_id = $ActiveMacroCycleId
+      last_macro_cycle_stage = $LastMacroCycleStage
+      last_macro_decision = $LastMacroDecision
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
     }
@@ -405,6 +434,10 @@ try {
       last_self_growth_gap = $LastSelfGrowthGap
       last_self_growth_status = $LastSelfGrowthStatus
       next_self_growth_gap = $NextSelfGrowthGap
+      macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+      macro_cycle_id = $ActiveMacroCycleId
+      last_macro_cycle_stage = $LastMacroCycleStage
+      last_macro_decision = $LastMacroDecision
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
       accepted_self_model_mutated = $false
@@ -428,6 +461,10 @@ try {
       last_self_growth_gap = $LastSelfGrowthGap
       last_self_growth_status = $LastSelfGrowthStatus
       next_self_growth_gap = $NextSelfGrowthGap
+      macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+      macro_cycle_id = $ActiveMacroCycleId
+      last_macro_cycle_stage = $LastMacroCycleStage
+      last_macro_decision = $LastMacroDecision
       duration_based_session = $true
       fixed_tick_batch_mode = $false
       occurred_at = $Now.ToUniversalTime().ToString("o")
@@ -447,6 +484,10 @@ try {
       last_self_growth_gap = $LastSelfGrowthGap
       last_self_growth_status = $LastSelfGrowthStatus
       next_self_growth_gap = $NextSelfGrowthGap
+      macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+      macro_cycle_id = $ActiveMacroCycleId
+      last_macro_cycle_stage = $LastMacroCycleStage
+      last_macro_decision = $LastMacroDecision
       duration_based_session = $true
       fixed_tick_batch_mode = $false
       occurred_at = $Now.ToUniversalTime().ToString("o")
@@ -460,6 +501,7 @@ try {
   }
 
   $StoppedAt = (Get-Date).ToUniversalTime().ToString("o")
+  $FinalStatus = if ($StopReason -eq "duration_limit") { "COMPLETED" } elseif ($StopReason -eq "stop_flag") { "STOPPED" } else { "STOPPED" }
   $FinalState = [ordered]@{
     status = "STOPPED"
     state_id = "PHASE160_BUILDER_DAEMON_CURRENT_STATE"
@@ -477,6 +519,10 @@ try {
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
     next_self_growth_gap = $NextSelfGrowthGap
+    macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+    macro_cycle_id = $ActiveMacroCycleId
+    last_macro_cycle_stage = $LastMacroCycleStage
+    last_macro_decision = $LastMacroDecision
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
     accepted_self_model_mutated = $false
@@ -496,8 +542,33 @@ try {
     stop_flag_supported = $true
     self_growth_enabled = [bool]$EnableSelfGrowthDuty
     self_growth_duty_count = $SelfGrowthDutyCount
+    macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+    macro_cycle_id = $ActiveMacroCycleId
+    last_macro_cycle_stage = $LastMacroCycleStage
+    last_macro_decision = $LastMacroDecision
   }
   Write-Phase160DaemonJsonFile -Path $HeartbeatPath -Object $FinalHeartbeat
+
+  $FinalStateRecord = [ordered]@{
+    status = $FinalStatus
+    final_tick = $TickCount
+    final_heartbeat_count = $TickCount
+    final_self_growth_duty_count = $SelfGrowthDutyCount
+    stop_flag_seen = $StopFlagSeen
+    process_exit_reason = $StopReason
+    macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+    macro_cycle_id = $ActiveMacroCycleId
+    last_macro_cycle_stage = $LastMacroCycleStage
+    last_self_growth_duty_id = $LastSelfGrowthDutyId
+    last_self_growth_gap = $LastSelfGrowthGap
+    last_self_growth_status = $LastSelfGrowthStatus
+    accepted_state_mutated = $false
+    accepted_memory_mutated = $false
+    accepted_self_model_mutated = $false
+    next_recommended_action = if ($EnableMacroSelfGrowthCycle) { "review_macro_cycle_summary_and_prepare_owner_supervised_macro_run" } else { "review_live_session_summary" }
+    finalized_at = $StoppedAt
+  }
+  Write-Phase160DaemonJsonFile -Path $FinalStatePath -Object $FinalStateRecord
 
   Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
     event_type = "daemon_stopped"
@@ -506,6 +577,14 @@ try {
     tick_count = $TickCount
     live_session_safe_stop = $true
     occurred_at = $StoppedAt
+  })
+  Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+    event_type = "final_state_written"
+    source = "builder_daemon"
+    final_state_path = "$SessionRootRelative/final_state.json"
+    status = $FinalStatus
+    stop_flag_seen = $StopFlagSeen
+    occurred_at = (Get-Date).ToUniversalTime().ToString("o")
   })
 
   [pscustomobject][ordered]@{
@@ -524,8 +603,13 @@ try {
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
     next_self_growth_gap = $NextSelfGrowthGap
+    macro_cycle_enabled = [bool]$EnableMacroSelfGrowthCycle
+    macro_cycle_id = $ActiveMacroCycleId
+    last_macro_cycle_stage = $LastMacroCycleStage
+    last_macro_decision = $LastMacroDecision
     heartbeat_written = (Test-Path -LiteralPath $HeartbeatPath)
     event_log_created = (Test-Path -LiteralPath $EventLogPath)
+    final_state_written = (Test-Path -LiteralPath $FinalStatePath)
     stop_reason = $StopReason
     live_session_safe_stop = $true
   } | ConvertTo-Json -Depth 20

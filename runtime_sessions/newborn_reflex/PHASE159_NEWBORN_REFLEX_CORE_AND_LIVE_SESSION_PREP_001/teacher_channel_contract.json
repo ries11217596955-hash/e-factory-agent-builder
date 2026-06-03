@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "contract_id": "PHASE159_TEACHER_CHANNEL_CONTRACT",
+  "step_id": "PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1",
+  "run_id": "PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001",
+  "channel_type": "file_based",
+  "execution_scope": "sandbox_only",
+  "teacher_inbox_path": "runtime_sessions/newborn_reflex/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001/teacher_inbox",
+  "teacher_outbox_path": "runtime_sessions/newborn_reflex/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001/teacher_outbox",
+  "blocker_queue_path": "runtime_sessions/newborn_reflex/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001/blocker_queue",
+  "allowed_message_types": [
+    "teacher_instruction",
+    "teacher_correction",
+    "builder_question",
+    "builder_status",
+    "blocker_notice"
+  ],
+  "accepted_memory_mutated": false,
+  "live_daemon_started": false,
+  "next_allowed_step": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1"
+}

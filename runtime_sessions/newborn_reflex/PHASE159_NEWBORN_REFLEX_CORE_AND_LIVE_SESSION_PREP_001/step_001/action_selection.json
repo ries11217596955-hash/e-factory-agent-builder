@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "step_id": "PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1",
+  "run_id": "PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001",
+  "newborn_step": "step_001",
+  "selected_action": "REFRESH_CAPABILITY_INVENTORY_FROM_PROOFS",
+  "selected_from": [
+    "runtime_sessions/newborn_reflex/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001/self_map_snapshot.json",
+    "runtime_sessions/newborn_reflex/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001/capability_inventory.json",
+    "runtime_sessions/newborn_reflex/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001/phase158_bridge_read.json"
+  ],
+  "execution_scope": "sandbox_only",
+  "action_selection_reflex_proven": true,
+  "next_allowed_step": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1"
+}

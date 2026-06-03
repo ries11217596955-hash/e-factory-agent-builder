@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "channel": "blocker_queue",
+  "step_id": "PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1",
+  "run_id": "PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001",
+  "purpose": "Sandbox-only queue for future live blockers that require teacher help or safe stop.",
+  "expected_payload": "JSON blocker files referencing help_request_contract.json when escalation is needed.",
+  "builder_may_read": true,
+  "builder_may_write": true,
+  "live_daemon_started": false,
+  "next_allowed_step": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1"
+}

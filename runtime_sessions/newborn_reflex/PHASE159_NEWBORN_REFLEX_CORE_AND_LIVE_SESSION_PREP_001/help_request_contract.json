@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "contract_id": "PHASE159_HELP_REQUEST_CONTRACT",
+  "step_id": "PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1",
+  "run_id": "PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001",
+  "channel_type": "file_based",
+  "execution_scope": "sandbox_only",
+  "required_fields": [
+    "request_id",
+    "created_at",
+    "blocking_condition",
+    "attempted_action",
+    "evidence_paths",
+    "requested_help",
+    "safe_stop_recommended"
+  ],
+  "help_request_reflex_prepared": true,
+  "accepted_memory_mutated": false,
+  "live_daemon_started": false,
+  "next_allowed_step": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1"
+}

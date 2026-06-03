@@ -2,7 +2,8 @@ param(
   [string]$RunId = "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
   [int]$SmokeDurationSeconds = 35,
   [int]$TickIntervalSeconds = 10,
-  [int]$ObserverPollIntervalSeconds = 5
+  [int]$ObserverPollIntervalSeconds = 5,
+  [string]$ExpectedHead = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -140,7 +141,8 @@ function Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 {
     [string]$RunId = "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
     [int]$SmokeDurationSeconds = 35,
     [int]$TickIntervalSeconds = 10,
-    [int]$ObserverPollIntervalSeconds = 5
+    [int]$ObserverPollIntervalSeconds = 5,
+    [string]$ExpectedHead = ""
   )
 
   $RepoRoot = Resolve-Phase160ScriptRepoRoot
@@ -153,7 +155,6 @@ function Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 {
     $StepId = "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1"
     $NextAllowedStep = "PHASE160_LIVE_GROWTH_SESSION_READY_FOR_OWNER_SUPERVISED_RUN_V1"
     $ExpectedBranch = "phase110-idempotent-autonomy-trial-runtime"
-    $ExpectedHead = "d3e1710"
     $RuntimeRoot = "runtime_sessions/live_growth/$RunId"
     $RouteAlignmentPath = "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md"
     $BootstrapModulePath = "modules/invoke_builder_live_growth_session_daemon_bootstrap_001.ps1"
@@ -244,9 +245,15 @@ function Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 {
     $Branch = (git branch --show-current).Trim()
     Assert-Phase160Equals -Actual $Branch -Expected $ExpectedBranch -Name "current_branch"
     $Head = (git rev-parse --short HEAD).Trim()
-    Assert-Phase160Equals -Actual $Head -Expected $ExpectedHead -Name "current_head"
     $RemoteHead = Get-Phase160RemoteHead -ExpectedBranch $ExpectedBranch
-    Assert-Phase160Equals -Actual $RemoteHead -Expected $ExpectedHead -Name "remote_head"
+    if ([string]::IsNullOrWhiteSpace($ExpectedHead)) {
+      Assert-Phase160Equals -Actual $Head -Expected $RemoteHead -Name "current_synced_repo_head"
+      $ExpectedHeadSource = "CURRENT_SYNCED_REPO_HEAD"
+    } else {
+      Assert-Phase160Equals -Actual $Head -Expected $ExpectedHead -Name "current_head"
+      Assert-Phase160Equals -Actual $RemoteHead -Expected $ExpectedHead -Name "remote_head"
+      $ExpectedHeadSource = "EXPLICIT_PARAMETER"
+    }
     $GitTopLevel = Normalize-Phase160FullPath -Path (git rev-parse --show-toplevel).Trim()
     Assert-Phase160Equals -Actual $GitTopLevel -Expected $RepoRoot -Name "git_top_level"
 
@@ -298,6 +305,7 @@ function Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 {
       branch = $Branch
       local_head = $Head
       remote_head = $RemoteHead
+      expected_head_source = $ExpectedHeadSource
       required_markers_present = $true
     }
     Write-Phase160JsonFile -RepoRoot $RepoRoot -Path $RepoIdentityCheckPath -Object $RepoIdentity
@@ -315,6 +323,7 @@ function Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 {
       branch = $Branch
       local_head = $Head
       remote_head = $RemoteHead
+      expected_head_source = $ExpectedHeadSource
       runtime_root = $RuntimeRoot
       queue_active_task_id = $Queue.active_task_id
       phase159_verified = $true
@@ -569,6 +578,7 @@ function Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 {
       codex_needed_for_next_step = $false
       local_head = $Head
       remote_head = $RemoteHead
+      expected_head_source = $ExpectedHeadSource
       runtime_root = $RuntimeRoot
       session_boot_path = $SessionBootPath
       repo_identity_check_path = $RepoIdentityCheckPath
@@ -690,5 +700,5 @@ function Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 {
 }
 
 if ($MyInvocation.InvocationName -ne ".") {
-  Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 -RunId $RunId -SmokeDurationSeconds $SmokeDurationSeconds -TickIntervalSeconds $TickIntervalSeconds -ObserverPollIntervalSeconds $ObserverPollIntervalSeconds | ConvertTo-Json -Depth 20
+  Invoke-BuilderLiveGrowthSessionDaemonBootstrap001 -RunId $RunId -SmokeDurationSeconds $SmokeDurationSeconds -TickIntervalSeconds $TickIntervalSeconds -ObserverPollIntervalSeconds $ObserverPollIntervalSeconds -ExpectedHead $ExpectedHead | ConvertTo-Json -Depth 20
 }

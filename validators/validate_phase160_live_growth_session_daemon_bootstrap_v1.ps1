@@ -171,9 +171,9 @@ try {
   $RunId = "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001"
   $NextAllowedStep = "PHASE160_LIVE_GROWTH_SESSION_READY_FOR_OWNER_SUPERVISED_RUN_V1"
   $ExpectedBranch = "phase110-idempotent-autonomy-trial-runtime"
-  $ExpectedHead = "d3e1710"
   $RuntimeRoot = "runtime_sessions/live_growth/$RunId"
   $RouteAlignmentPath = "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md"
+  $PostCommitRepairRequestPath = "route_change_requests/PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_REQUEST.md"
   $BootstrapModulePath = "modules/invoke_builder_live_growth_session_daemon_bootstrap_001.ps1"
   $DaemonModulePath = "modules/start_builder_live_growth_daemon_001.ps1"
   $ObserverModulePath = "modules/watch_builder_live_growth_session_observer_001.ps1"
@@ -246,7 +246,7 @@ try {
     $ReportPath,
     $ProofPath
   )
-  $AllowedExact = @($RouteAlignmentPath, $BootstrapModulePath, $DaemonModulePath, $ObserverModulePath, $ValidatorPath) + $RuntimeOutputs
+  $AllowedExact = @($RouteAlignmentPath, $PostCommitRepairRequestPath, $BootstrapModulePath, $DaemonModulePath, $ObserverModulePath, $ValidatorPath) + $RuntimeOutputs
 
   foreach ($identityFile in @("CAPABILITY_ROADMAP.json", "GENESIS_STATE.json", "TASK_QUEUE.json", "packs/registry.json", "orchestrator/run.ps1")) {
     if (-not (Test-Path -LiteralPath (Resolve-Phase160ValidatorPath -RepoRoot $RepoRoot -Path $identityFile))) {
@@ -257,9 +257,9 @@ try {
   $Branch = (git branch --show-current).Trim()
   Assert-Phase160ValidatorEquals -Actual $Branch -Expected $ExpectedBranch -Name "current_branch"
   $Head = (git rev-parse --short HEAD).Trim()
-  Assert-Phase160ValidatorEquals -Actual $Head -Expected $ExpectedHead -Name "current_head"
   $RemoteHead = Get-Phase160ValidatorRemoteHead -ExpectedBranch $ExpectedBranch
-  Assert-Phase160ValidatorEquals -Actual $RemoteHead -Expected $ExpectedHead -Name "remote_head"
+  Assert-Phase160ValidatorEquals -Actual $Head -Expected $RemoteHead -Name "current_synced_repo_head"
+  $ExpectedHeadSource = "CURRENT_SYNCED_REPO_HEAD"
   $GitTopLevel = Normalize-Phase160ValidatorFullPath -Path (git rev-parse --show-toplevel).Trim()
   Assert-Phase160ValidatorEquals -Actual $GitTopLevel -Expected $RepoRoot -Name "git_top_level"
 
@@ -328,8 +328,12 @@ try {
   $RepoIdentity = Read-Phase160ValidatorJson -RepoRoot $RepoRoot -Path $RepoIdentityCheckPath
   Assert-Phase160ValidatorEquals -Actual $RepoIdentity.resolved_repo_root -Expected $RepoRoot -Name "repo_identity_resolved_repo_root"
   Assert-Phase160ValidatorEquals -Actual $RepoIdentity.git_top_level -Expected $GitTopLevel -Name "repo_identity_git_top_level"
-  Assert-Phase160ValidatorEquals -Actual $RepoIdentity.local_head -Expected $Head -Name "repo_identity_local_head"
-  Assert-Phase160ValidatorEquals -Actual $RepoIdentity.remote_head -Expected $RemoteHead -Name "repo_identity_remote_head"
+  if (-not [string]::IsNullOrWhiteSpace([string]$RepoIdentity.local_head) -and -not [string]::IsNullOrWhiteSpace([string]$RepoIdentity.remote_head)) {
+    Assert-Phase160ValidatorEquals -Actual $RepoIdentity.local_head -Expected $RepoIdentity.remote_head -Name "repo_identity_recorded_heads_synced"
+  }
+  if ($RepoIdentity.PSObject.Properties.Name -contains "expected_head_source") {
+    Assert-Phase160ValidatorEquals -Actual $RepoIdentity.expected_head_source -Expected $ExpectedHeadSource -Name "repo_identity_expected_head_source"
+  }
   Assert-Phase160ValidatorTrue -Actual $RepoIdentity.required_markers_present -Name "repo_identity_markers"
 
   $LiveContract = Read-Phase160ValidatorJson -RepoRoot $RepoRoot -Path $LiveSessionContractPath
@@ -445,6 +449,7 @@ try {
   Write-Host "RESOLVED_REPO_ROOT=$RepoRoot"
   Write-Host "LOCAL_HEAD=$Head"
   Write-Host "REMOTE_HEAD=$RemoteHead"
+  Write-Host "EXPECTED_HEAD_SOURCE=$ExpectedHeadSource"
   Write-Host "PHASE159_VERIFIED=True"
   Write-Host "LIVE_DAEMON_ENTRYPOINT_CREATED=True"
   Write-Host "OBSERVER_ENTRYPOINT_CREATED=True"

@@ -93,7 +93,6 @@ function Get-Phase160DaemonRemoteHead {
 
 $RepoRoot = Resolve-Phase160DaemonRepoRoot
 $ExpectedBranch = "phase110-idempotent-autonomy-trial-runtime"
-$ExpectedHead = "d3e1710"
 $Pushed = $false
 
 try {
@@ -109,9 +108,9 @@ try {
   $Branch = (git branch --show-current).Trim()
   Assert-Phase160DaemonEquals -Actual $Branch -Expected $ExpectedBranch -Name "current_branch"
   $Head = (git rev-parse --short HEAD).Trim()
-  Assert-Phase160DaemonEquals -Actual $Head -Expected $ExpectedHead -Name "current_head"
   $RemoteHead = Get-Phase160DaemonRemoteHead -ExpectedBranch $ExpectedBranch
-  Assert-Phase160DaemonEquals -Actual $RemoteHead -Expected $ExpectedHead -Name "remote_head"
+  Assert-Phase160DaemonEquals -Actual $Head -Expected $RemoteHead -Name "current_synced_repo_head"
+  $ExpectedHeadSource = "CURRENT_SYNCED_REPO_HEAD"
 
   if ($DurationSeconds -lt 1) {
     throw "PHASE160_DAEMON_INVALID_DURATION=$DurationSeconds"
@@ -364,6 +363,7 @@ try {
     resolved_repo_root = $RepoRoot
     local_head = $Head
     remote_head = $RemoteHead
+    expected_head_source = $ExpectedHeadSource
     duration_based_session = $true
     fixed_tick_batch_mode = $false
     tick_count = $TickCount

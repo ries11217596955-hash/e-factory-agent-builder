@@ -1,5 +1,6 @@
 param(
-  [string]$SessionRoot = "runtime_sessions/live_growth/PHASE160_OWNER_SUPERVISED_LIVE_RUN_001",
+  [string]$SessionRoot = "",
+  [string]$RunId = "",
   [int]$DurationSeconds = 90,
   [int]$PollIntervalSeconds = 5,
   [int]$ShowTailEvents = 3,
@@ -95,6 +96,22 @@ function Get-Phase160ConsoleJsonLineCount {
   return @((Get-Content -LiteralPath $Path -ErrorAction SilentlyContinue) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count
 }
 
+function Get-Phase160ConsoleMacroStageCount {
+  param([string]$SessionRootFull)
+  $summaryPath = Join-Path $SessionRootFull "self_growth/macro_cycle_summary.json"
+  $summary = Read-Phase160ConsoleJsonSafe -Path $summaryPath
+  if ($null -ne $summary -and $summary.PSObject.Properties.Name -contains "duty_count_completed") {
+    return [int]$summary.duty_count_completed
+  }
+  $selfGrowthRoot = Join-Path $SessionRootFull "self_growth"
+  if (-not (Test-Path -LiteralPath $selfGrowthRoot)) {
+    return 0
+  }
+  return @(Get-ChildItem -LiteralPath $selfGrowthRoot -Directory -ErrorAction SilentlyContinue | Where-Object {
+    Test-Path -LiteralPath (Join-Path $_.FullName "macro_cycle_artifact.json")
+  }).Count
+}
+
 function Get-Phase160ConsoleTailLines {
   param([string]$Path, [int]$Count)
   if ($Count -lt 1 -or -not (Test-Path -LiteralPath $Path)) {
@@ -179,6 +196,16 @@ function Assert-Phase160ConsoleEquals {
   }
 }
 
+function Assert-Phase160ConsoleRunIdSafe {
+  param([string]$RunId)
+  if ([string]::IsNullOrWhiteSpace($RunId)) {
+    return
+  }
+  if ($RunId.IndexOfAny([char[]]@("/", "\")) -ge 0) {
+    throw "PHASE160_LIVE_CONSOLE_RUN_ID_MUST_BE_LEAF=$RunId"
+  }
+}
+
 function Get-Phase160ConsoleRemoteHead {
   param([string]$ExpectedBranch)
   $remoteHead = (git rev-parse --short "origin/$ExpectedBranch" 2>$null)
@@ -219,6 +246,15 @@ try {
   Assert-Phase160ConsoleEquals -Actual $Head -Expected $RemoteHead -Name "current_synced_repo_head"
   $ExpectedHeadSource = "CURRENT_SYNCED_REPO_HEAD"
 
+  $SessionRootExplicit = ($PSBoundParameters.ContainsKey("SessionRoot") -and -not [string]::IsNullOrWhiteSpace($SessionRoot))
+  Assert-Phase160ConsoleRunIdSafe -RunId $RunId
+  if (-not [string]::IsNullOrWhiteSpace($RunId) -and -not $SessionRootExplicit) {
+    $SessionRoot = "runtime_sessions/live_growth/$RunId"
+  }
+  if ([string]::IsNullOrWhiteSpace($SessionRoot)) {
+    $SessionRoot = "runtime_sessions/live_growth/PHASE160C_OWNER_SUPERVISED_LIVE_MACRO_RUN_001"
+  }
+
   if ($DurationSeconds -lt 1) {
     throw "PHASE160_LIVE_CONSOLE_INVALID_DURATION=$DurationSeconds"
   }
@@ -247,12 +283,15 @@ try {
 
   $HeartbeatPath = Join-Path $SessionRootFull "heartbeat.json"
   $CurrentStatePath = Join-Path $SessionRootFull "current_state.json"
+  $FinalStatePath = Join-Path $SessionRootFull "final_state.json"
   $EventLogPath = Join-Path $SessionRootFull "event_log.jsonl"
   $ObserverLogPath = Join-Path $SessionRootFull "observer_log.jsonl"
   $BlockerQueuePath = Join-Path $SessionRootFull "blocker_queue"
   $TeacherInboxPath = Join-Path $SessionRootFull "teacher_inbox"
   $TeacherOutboxPath = Join-Path $SessionRootFull "teacher_outbox"
   $StopFlagPath = Join-Path $SessionRootFull "stop.flag"
+  $ExperienceLedgerPath = Join-Path $SessionRootFull "self_growth/experience_ledger.jsonl"
+  $NextGoalPath = Join-Path $SessionRootFull "self_growth/next_goal.json"
 
   $StartTime = Get-Date
   $EndTime = $StartTime.AddSeconds($DurationSeconds)
@@ -268,6 +307,7 @@ try {
   $TeacherOutboxRead = $false
   $StopFlagRead = $false
   $SelfGrowthFieldsPrinted = $false
+  $MacroFieldsPrinted = $false
   $StaleAfterSeconds = [Math]::Max(25, $PollIntervalSeconds * 5)
 
   while ((Get-Date) -lt $EndTime) {
@@ -310,6 +350,7 @@ try {
     $LastSelfGrowthGap = "NONE"
     $LastSelfGrowthStatus = "NONE"
     $NextSelfGrowthGap = "NONE"
+    $MacroCycleEnabled = "False"
     $MacroCycleId = "NONE"
     $LastMacroCycleStage = "NONE"
     $LastMacroDecision = "NONE"
@@ -318,6 +359,18 @@ try {
     }
     if ($null -ne $Heartbeat -and $Heartbeat.PSObject.Properties.Name -contains "self_growth_duty_count") {
       $SelfGrowthDutyCount = Format-Phase160ConsoleValue -Value $Heartbeat.self_growth_duty_count
+    }
+    if ($null -ne $Heartbeat -and $Heartbeat.PSObject.Properties.Name -contains "macro_cycle_enabled") {
+      $MacroCycleEnabled = Format-Phase160ConsoleValue -Value $Heartbeat.macro_cycle_enabled
+    }
+    if ($null -ne $Heartbeat -and $Heartbeat.PSObject.Properties.Name -contains "macro_cycle_id") {
+      $MacroCycleId = Format-Phase160ConsoleValue -Value $Heartbeat.macro_cycle_id
+    }
+    if ($null -ne $Heartbeat -and $Heartbeat.PSObject.Properties.Name -contains "last_macro_cycle_stage") {
+      $LastMacroCycleStage = Format-Phase160ConsoleValue -Value $Heartbeat.last_macro_cycle_stage
+    }
+    if ($null -ne $Heartbeat -and $Heartbeat.PSObject.Properties.Name -contains "last_macro_decision") {
+      $LastMacroDecision = Format-Phase160ConsoleValue -Value $Heartbeat.last_macro_decision
     }
     if ($null -ne $CurrentState) {
       if ($CurrentState.PSObject.Properties.Name -contains "self_growth_enabled") {
@@ -338,6 +391,9 @@ try {
       if ($CurrentState.PSObject.Properties.Name -contains "next_self_growth_gap") {
         $NextSelfGrowthGap = Format-Phase160ConsoleValue -Value $CurrentState.next_self_growth_gap
       }
+      if ($CurrentState.PSObject.Properties.Name -contains "macro_cycle_enabled") {
+        $MacroCycleEnabled = Format-Phase160ConsoleValue -Value $CurrentState.macro_cycle_enabled
+      }
       if ($CurrentState.PSObject.Properties.Name -contains "macro_cycle_id") {
         $MacroCycleId = Format-Phase160ConsoleValue -Value $CurrentState.macro_cycle_id
       }
@@ -348,9 +404,31 @@ try {
         $LastMacroDecision = Format-Phase160ConsoleValue -Value $CurrentState.last_macro_decision
       }
     }
+    $FinalState = Read-Phase160ConsoleJsonSafe -Path $FinalStatePath
+    if ($null -ne $FinalState) {
+      if ($FinalState.PSObject.Properties.Name -contains "macro_cycle_enabled") {
+        $MacroCycleEnabled = Format-Phase160ConsoleValue -Value $FinalState.macro_cycle_enabled
+      }
+      if ($FinalState.PSObject.Properties.Name -contains "macro_cycle_id") {
+        $MacroCycleId = Format-Phase160ConsoleValue -Value $FinalState.macro_cycle_id
+      }
+      if ($FinalState.PSObject.Properties.Name -contains "last_macro_cycle_stage") {
+        $LastMacroCycleStage = Format-Phase160ConsoleValue -Value $FinalState.last_macro_cycle_stage
+      }
+      if ($FinalState.PSObject.Properties.Name -contains "last_macro_decision") {
+        $LastMacroDecision = Format-Phase160ConsoleValue -Value $FinalState.last_macro_decision
+      }
+    }
 
     $EventLineCount = Get-Phase160ConsoleJsonLineCount -Path $EventLogPath
     $ObserverLineCount = Get-Phase160ConsoleJsonLineCount -Path $ObserverLogPath
+    $MacroCycleStageCount = Get-Phase160ConsoleMacroStageCount -SessionRootFull $SessionRootFull
+    $ExperienceLedgerCount = Get-Phase160ConsoleJsonLineCount -Path $ExperienceLedgerPath
+    $NextGoal = Read-Phase160ConsoleJsonSafe -Path $NextGoalPath
+    $NextGoalSelectedWithReason = $false
+    if ($null -ne $NextGoal -and $NextGoal.PSObject.Properties.Name -contains "selected_with_reason") {
+      $NextGoalSelectedWithReason = [bool]$NextGoal.selected_with_reason
+    }
     $EventLogRead = $EventLogRead -or ($EventLineCount -gt 0)
     $ObserverLogRead = $ObserverLogRead -or ($ObserverLineCount -gt 0)
     $BlockerSummary = Get-Phase160ConsoleJsonFileSummary -Directory $BlockerQueuePath
@@ -361,12 +439,14 @@ try {
     $TeacherOutboxRead = $true
     $StopFlagPresent = Test-Path -LiteralPath $StopFlagPath
     $StopFlagRead = $true
+    $FinalStateWritten = Test-Path -LiteralPath $FinalStatePath
     $LastEvent = Get-Phase160ConsoleLatestEventName -EventLogPath $EventLogPath
 
-    $Line = "LIVE_CONSOLE POLL=$PollCount HEARTBEAT_STATUS=$HeartbeatStatus TICK=$CurrentTick HEARTBEAT_COUNT=$HeartbeatCount SELF_GROWTH_ENABLED=$SelfGrowthEnabled DUTY_COUNT=$SelfGrowthDutyCount LAST_DUTY=$LastSelfGrowthDuty LAST_GAP=$LastSelfGrowthGap LAST_DUTY_STATUS=$LastSelfGrowthStatus NEXT_GAP=$NextSelfGrowthGap MACRO_CYCLE=$MacroCycleId LAST_STAGE=$LastMacroCycleStage LAST_DECISION=$LastMacroDecision EVENT_LINES=$EventLineCount OBSERVER_LINES=$ObserverLineCount BLOCKERS=$($BlockerSummary.count) LATEST_BLOCKER=$($BlockerSummary.latest_name) TEACHER_INBOX=$($TeacherInboxSummary.count) LATEST_SUGGESTION=$($TeacherInboxSummary.latest_name) TEACHER_OUTBOX=$($TeacherOutboxSummary.count) STALE=$StaleThisPoll HEARTBEAT_AGE_SECONDS=$HeartbeatAgeSeconds STOP_FLAG=$StopFlagPresent LAST_EVENT=$LastEvent"
+    $Line = "LIVE_CONSOLE POLL=$PollCount HEARTBEAT_STATUS=$HeartbeatStatus TICK=$CurrentTick HEARTBEAT_COUNT=$HeartbeatCount SELF_GROWTH_ENABLED=$SelfGrowthEnabled DUTY_COUNT=$SelfGrowthDutyCount LAST_DUTY=$LastSelfGrowthDuty LAST_GAP=$LastSelfGrowthGap LAST_DUTY_STATUS=$LastSelfGrowthStatus NEXT_GAP=$NextSelfGrowthGap MACRO_CYCLE=$MacroCycleId LAST_STAGE=$LastMacroCycleStage LAST_DECISION=$LastMacroDecision macro_cycle_enabled=$MacroCycleEnabled macro_cycle_id=$MacroCycleId last_macro_cycle_stage=$LastMacroCycleStage last_macro_decision=$LastMacroDecision macro_cycle_stage_count=$MacroCycleStageCount experience_ledger_count=$ExperienceLedgerCount next_goal_selected_with_reason=$NextGoalSelectedWithReason final_state_written=$FinalStateWritten EVENT_LINES=$EventLineCount OBSERVER_LINES=$ObserverLineCount BLOCKERS=$($BlockerSummary.count) LATEST_BLOCKER=$($BlockerSummary.latest_name) TEACHER_INBOX=$($TeacherInboxSummary.count) LATEST_SUGGESTION=$($TeacherInboxSummary.latest_name) TEACHER_OUTBOX=$($TeacherOutboxSummary.count) STALE=$StaleThisPoll HEARTBEAT_AGE_SECONDS=$HeartbeatAgeSeconds STOP_FLAG=$StopFlagPresent LAST_EVENT=$LastEvent"
     Write-Phase160ConsoleVisibleLine -Line $Line -SamplePath $SamplePath
     $LiveLineCount += 1
     $SelfGrowthFieldsPrinted = $true
+    $MacroFieldsPrinted = $true
 
     $EventTail = Get-Phase160ConsoleTailLines -Path $EventLogPath -Count $ShowTailEvents
     for ($i = 0; $i -lt $EventTail.Count; $i += 1) {
@@ -391,6 +471,7 @@ try {
     status = "PASS"
     repair_id = $RepairId
     run_id = $ConsoleRunId
+    bound_run_id = if ([string]::IsNullOrWhiteSpace($RunId)) { "NONE" } else { $RunId }
     resolved_repo_root = $RepoRoot
     branch = $Branch
     local_head = $Head
@@ -413,6 +494,7 @@ try {
     console_detects_stale_heartbeat = $StaleHeartbeatDetected
     console_supports_owner_screenshot_mode = $true
     live_console_shows_self_growth_fields = $SelfGrowthFieldsPrinted
+    live_console_shows_macro_fields = $MacroFieldsPrinted
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
     accepted_self_model_mutated = $false

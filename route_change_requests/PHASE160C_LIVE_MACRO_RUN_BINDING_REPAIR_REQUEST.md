@@ -1,0 +1,26 @@
+# PHASE160C Live Macro Run Binding Repair Request
+
+status: PREPARED
+line: AGENT_BUILDER_SELF_DEVELOPMENT
+mode: VERIFY
+repair_id: PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_V1
+classification_before_validation: LIVE_MACRO_BINDING_REPAIR
+target_phase: PHASE160C
+phase161_created: false
+root_cause: Owner-supervised macro run launch did not bind daemon, observer, and console to runtime_sessions/live_growth/<RunId>.
+mission: Repair RunId-based live macro session binding end-to-end and prove it with a custom PHASE160C smoke run.
+owner_run_id: PHASE160B_OWNER_SUPERVISED_MACRO_SELF_GROWTH_RUN_001
+owner_session_root: runtime_sessions/live_growth/PHASE160B_OWNER_SUPERVISED_MACRO_SELF_GROWTH_RUN_001
+validator: validators/validate_phase160c_live_macro_run_binding_v1.ps1
+report: reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md
+proof: proofs/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_PROOF.json
+accepted_state_mutation_allowed: false
+accepted_memory_mutation_allowed: false
+accepted_self_model_mutation_allowed: false
+protected_state_mutation_allowed: false
+runtime_outputs_commit_allowed: false
+external_agents_allowed: false
+external_fetch_allowed: false
+dependency_install_allowed: false
+acceptance_language: PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_VALIDATE_RESULT=PASS
+next_strongest_move: OWNER_SUPERVISED_MACRO_RUN_BY_RUN_ID_WITH_VISIBLE_CONSOLE

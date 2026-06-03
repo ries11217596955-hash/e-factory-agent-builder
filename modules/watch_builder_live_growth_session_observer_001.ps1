@@ -1,5 +1,6 @@
 param(
-  [string]$SessionRoot = "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  [string]$SessionRoot = "",
+  [string]$RunId = "",
   [int]$DurationSeconds = 90,
   [int]$PollIntervalSeconds = 5,
   [int]$StaleAfterSeconds = 25,
@@ -116,6 +117,16 @@ function Assert-Phase160ObserverEquals {
   }
 }
 
+function Assert-Phase160ObserverRunIdSafe {
+  param([string]$RunId)
+  if ([string]::IsNullOrWhiteSpace($RunId)) {
+    return
+  }
+  if ($RunId.IndexOfAny([char[]]@("/", "\")) -ge 0) {
+    throw "PHASE160_OBSERVER_RUN_ID_MUST_BE_LEAF=$RunId"
+  }
+}
+
 function Get-Phase160ObserverRemoteHead {
   param([string]$ExpectedBranch)
   $remoteHead = (git rev-parse --short "origin/$ExpectedBranch" 2>$null)
@@ -145,6 +156,15 @@ try {
   $RemoteHead = Get-Phase160ObserverRemoteHead -ExpectedBranch $ExpectedBranch
   Assert-Phase160ObserverEquals -Actual $Head -Expected $RemoteHead -Name "current_synced_repo_head"
   $ExpectedHeadSource = "CURRENT_SYNCED_REPO_HEAD"
+
+  $SessionRootExplicit = ($PSBoundParameters.ContainsKey("SessionRoot") -and -not [string]::IsNullOrWhiteSpace($SessionRoot))
+  Assert-Phase160ObserverRunIdSafe -RunId $RunId
+  if (-not [string]::IsNullOrWhiteSpace($RunId) -and -not $SessionRootExplicit) {
+    $SessionRoot = "runtime_sessions/live_growth/$RunId"
+  }
+  if ([string]::IsNullOrWhiteSpace($SessionRoot)) {
+    $SessionRoot = "runtime_sessions/live_growth/PHASE160C_OWNER_SUPERVISED_LIVE_MACRO_RUN_001"
+  }
 
   if ($DurationSeconds -lt 1) {
     throw "PHASE160_OBSERVER_INVALID_DURATION=$DurationSeconds"
@@ -193,6 +213,7 @@ try {
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
     source = "observer"
+    run_id = if ([string]::IsNullOrWhiteSpace($RunId)) { "NONE" } else { $RunId }
     session_root = $SessionRootRelative
     duration_seconds = $DurationSeconds
     poll_interval_seconds = $PollIntervalSeconds
@@ -245,6 +266,7 @@ try {
     $CurrentLastSelfGrowthGap = "NONE"
     $CurrentLastSelfGrowthStatus = "NONE"
     $CurrentNextSelfGrowthGap = "NONE"
+    $CurrentMacroCycleEnabled = $false
     $CurrentMacroCycleId = "NONE"
     $CurrentMacroCycleStage = "NONE"
     $CurrentMacroDecision = "NONE"
@@ -266,6 +288,9 @@ try {
       }
       if ($CurrentState.PSObject.Properties.Name -contains "next_self_growth_gap") {
         $CurrentNextSelfGrowthGap = [string]$CurrentState.next_self_growth_gap
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "macro_cycle_enabled") {
+        $CurrentMacroCycleEnabled = [bool]$CurrentState.macro_cycle_enabled
       }
       if ($CurrentState.PSObject.Properties.Name -contains "macro_cycle_id") {
         $CurrentMacroCycleId = [string]$CurrentState.macro_cycle_id
@@ -373,6 +398,7 @@ try {
       last_self_growth_gap = $CurrentLastSelfGrowthGap
       last_self_growth_status = $CurrentLastSelfGrowthStatus
       next_self_growth_gap = $CurrentNextSelfGrowthGap
+      macro_cycle_enabled = $CurrentMacroCycleEnabled
       macro_cycle_id = $CurrentMacroCycleId
       last_macro_cycle_stage = $CurrentMacroCycleStage
       last_macro_decision = $CurrentMacroDecision
@@ -393,6 +419,7 @@ try {
   $Summary = [ordered]@{
     status = "PASS"
     summary_id = "PHASE160_OBSERVER_SUMMARY"
+    run_id = if ([string]::IsNullOrWhiteSpace($RunId)) { "NONE" } else { $RunId }
     session_root = $SessionRootRelative
     observer_completed = $true
     poll_count = $PollCount
@@ -430,6 +457,7 @@ try {
 
   [pscustomobject][ordered]@{
     status = "PASS"
+    run_id = if ([string]::IsNullOrWhiteSpace($RunId)) { "NONE" } else { $RunId }
     session_root = $SessionRootRelative
     resolved_repo_root = $RepoRoot
     local_head = $Head

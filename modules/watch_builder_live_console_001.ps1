@@ -3,7 +3,9 @@ param(
   [int]$DurationSeconds = 90,
   [int]$PollIntervalSeconds = 5,
   [int]$ShowTailEvents = 3,
-  [int]$ShowTailObserver = 3
+  [int]$ShowTailObserver = 3,
+  [string]$ConsoleRunId = "PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_001",
+  [string]$ConsoleRuntimeRoot = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -195,8 +197,9 @@ function Write-Phase160ConsoleVisibleLine {
 $RepoRoot = Resolve-Phase160ConsoleRepoRoot
 $ExpectedBranch = "phase110-idempotent-autonomy-trial-runtime"
 $RepairId = "PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_V1"
-$ConsoleRunId = "PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_001"
-$ConsoleRuntimeRoot = "runtime_sessions/live_growth_console/$ConsoleRunId"
+if ([string]::IsNullOrWhiteSpace($ConsoleRuntimeRoot)) {
+  $ConsoleRuntimeRoot = "runtime_sessions/live_growth_console/$ConsoleRunId"
+}
 $Pushed = $false
 
 try {
@@ -264,6 +267,7 @@ try {
   $TeacherInboxRead = $false
   $TeacherOutboxRead = $false
   $StopFlagRead = $false
+  $SelfGrowthFieldsPrinted = $false
   $StaleAfterSeconds = [Math]::Max(25, $PollIntervalSeconds * 5)
 
   while ((Get-Date) -lt $EndTime) {
@@ -300,6 +304,39 @@ try {
       $CurrentTick = $HeartbeatCount
     }
 
+    $SelfGrowthEnabled = "False"
+    $SelfGrowthDutyCount = "0"
+    $LastSelfGrowthDuty = "NONE"
+    $LastSelfGrowthGap = "NONE"
+    $LastSelfGrowthStatus = "NONE"
+    $NextSelfGrowthGap = "NONE"
+    if ($null -ne $Heartbeat -and $Heartbeat.PSObject.Properties.Name -contains "self_growth_enabled") {
+      $SelfGrowthEnabled = Format-Phase160ConsoleValue -Value $Heartbeat.self_growth_enabled
+    }
+    if ($null -ne $Heartbeat -and $Heartbeat.PSObject.Properties.Name -contains "self_growth_duty_count") {
+      $SelfGrowthDutyCount = Format-Phase160ConsoleValue -Value $Heartbeat.self_growth_duty_count
+    }
+    if ($null -ne $CurrentState) {
+      if ($CurrentState.PSObject.Properties.Name -contains "self_growth_enabled") {
+        $SelfGrowthEnabled = Format-Phase160ConsoleValue -Value $CurrentState.self_growth_enabled
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "self_growth_duty_count") {
+        $SelfGrowthDutyCount = Format-Phase160ConsoleValue -Value $CurrentState.self_growth_duty_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_self_growth_duty_id") {
+        $LastSelfGrowthDuty = Format-Phase160ConsoleValue -Value $CurrentState.last_self_growth_duty_id
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_self_growth_gap") {
+        $LastSelfGrowthGap = Format-Phase160ConsoleValue -Value $CurrentState.last_self_growth_gap
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_self_growth_status") {
+        $LastSelfGrowthStatus = Format-Phase160ConsoleValue -Value $CurrentState.last_self_growth_status
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "next_self_growth_gap") {
+        $NextSelfGrowthGap = Format-Phase160ConsoleValue -Value $CurrentState.next_self_growth_gap
+      }
+    }
+
     $EventLineCount = Get-Phase160ConsoleJsonLineCount -Path $EventLogPath
     $ObserverLineCount = Get-Phase160ConsoleJsonLineCount -Path $ObserverLogPath
     $EventLogRead = $EventLogRead -or ($EventLineCount -gt 0)
@@ -314,9 +351,10 @@ try {
     $StopFlagRead = $true
     $LastEvent = Get-Phase160ConsoleLatestEventName -EventLogPath $EventLogPath
 
-    $Line = "LIVE_CONSOLE POLL=$PollCount HEARTBEAT_STATUS=$HeartbeatStatus TICK=$CurrentTick HEARTBEAT_COUNT=$HeartbeatCount EVENT_LINES=$EventLineCount OBSERVER_LINES=$ObserverLineCount BLOCKERS=$($BlockerSummary.count) LATEST_BLOCKER=$($BlockerSummary.latest_name) TEACHER_INBOX=$($TeacherInboxSummary.count) LATEST_SUGGESTION=$($TeacherInboxSummary.latest_name) TEACHER_OUTBOX=$($TeacherOutboxSummary.count) STALE=$StaleThisPoll HEARTBEAT_AGE_SECONDS=$HeartbeatAgeSeconds STOP_FLAG=$StopFlagPresent LAST_EVENT=$LastEvent"
+    $Line = "LIVE_CONSOLE POLL=$PollCount HEARTBEAT_STATUS=$HeartbeatStatus TICK=$CurrentTick HEARTBEAT_COUNT=$HeartbeatCount SELF_GROWTH_ENABLED=$SelfGrowthEnabled DUTY_COUNT=$SelfGrowthDutyCount LAST_DUTY=$LastSelfGrowthDuty LAST_GAP=$LastSelfGrowthGap LAST_DUTY_STATUS=$LastSelfGrowthStatus NEXT_GAP=$NextSelfGrowthGap EVENT_LINES=$EventLineCount OBSERVER_LINES=$ObserverLineCount BLOCKERS=$($BlockerSummary.count) LATEST_BLOCKER=$($BlockerSummary.latest_name) TEACHER_INBOX=$($TeacherInboxSummary.count) LATEST_SUGGESTION=$($TeacherInboxSummary.latest_name) TEACHER_OUTBOX=$($TeacherOutboxSummary.count) STALE=$StaleThisPoll HEARTBEAT_AGE_SECONDS=$HeartbeatAgeSeconds STOP_FLAG=$StopFlagPresent LAST_EVENT=$LastEvent"
     Write-Phase160ConsoleVisibleLine -Line $Line -SamplePath $SamplePath
     $LiveLineCount += 1
+    $SelfGrowthFieldsPrinted = $true
 
     $EventTail = Get-Phase160ConsoleTailLines -Path $EventLogPath -Count $ShowTailEvents
     for ($i = 0; $i -lt $EventTail.Count; $i += 1) {
@@ -362,6 +400,7 @@ try {
     console_reads_stop_flag = $StopFlagRead
     console_detects_stale_heartbeat = $StaleHeartbeatDetected
     console_supports_owner_screenshot_mode = $true
+    live_console_shows_self_growth_fields = $SelfGrowthFieldsPrinted
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
     accepted_self_model_mutated = $false

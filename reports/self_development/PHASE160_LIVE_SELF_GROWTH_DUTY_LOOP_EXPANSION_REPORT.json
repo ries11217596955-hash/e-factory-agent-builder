@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "repair_id": "PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_V1",
+  "line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "mode": "VERIFY",
+  "root_cause": "live daemon only ticks, no meaningful self-growth duty loop",
+  "architecture_added": [
+    "Session-local duty step engine that observes, selects a deterministic gap, creates a sandbox candidate, validates it, writes memory_event, and decides the next gap.",
+    "Daemon opt-in self-growth scheduler with tick start/every/max controls.",
+    "Observer self-growth monitoring fields for duty count, latest gap, blocker count, and stagnation.",
+    "Live console self-growth fields for owner screenshots."
+  ],
+  "files_changed": [
+    "modules/invoke_builder_live_self_growth_duty_step_001.ps1",
+    "modules/start_builder_live_growth_daemon_001.ps1",
+    "modules/watch_builder_live_growth_session_observer_001.ps1",
+    "modules/watch_builder_live_console_001.ps1",
+    "validators/validate_phase160_live_self_growth_duty_loop_v1.ps1",
+    "route_change_requests/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REQUEST.md"
+  ],
+  "exact_validator_command": ".\\validators\\validate_phase160_live_self_growth_duty_loop_v1.ps1 -RepoRoot .",
+  "exact_terminal_1_command": ".\\modules\\start_builder_live_growth_daemon_001.ps1 -SessionRoot runtime_sessions/live_growth/PHASE160_OWNER_SUPERVISED_LIVE_SELF_GROWTH_RUN_001 -DurationSeconds 900 -TickIntervalSeconds 10 -EnableSelfGrowthDuty -SelfGrowthEveryTicks 5 -SelfGrowthStartTick 2",
+  "exact_terminal_2_observer_command": ".\\modules\\watch_builder_live_growth_session_observer_001.ps1 -SessionRoot runtime_sessions/live_growth/PHASE160_OWNER_SUPERVISED_LIVE_SELF_GROWTH_RUN_001 -DurationSeconds 900 -PollIntervalSeconds 5 -ExpectSelfGrowthDuty",
+  "exact_terminal_2_console_command": ".\\modules\\watch_builder_live_console_001.ps1 -SessionRoot runtime_sessions/live_growth/PHASE160_OWNER_SUPERVISED_LIVE_SELF_GROWTH_RUN_001 -DurationSeconds 900 -PollIntervalSeconds 5 -ConsoleRunId PHASE160_OWNER_SUPERVISED_LIVE_SELF_GROWTH_CONSOLE_001 -ConsoleRuntimeRoot runtime_sessions/live_growth_self_growth/PHASE160_OWNER_SUPERVISED_LIVE_SELF_GROWTH_CONSOLE_001",
+  "what_builder_does_every_self_growth_duty": [
+    "Reads heartbeat/current_state and accepted proof summaries.",
+    "Writes self_map, capability, and elementary operational knowledge snapshots.",
+    "Selects the next deterministic curriculum gap.",
+    "Creates and validates a sandbox-only self-growth action candidate.",
+    "Evaluates teacher_outbox inputs as suggestions.",
+    "Writes a session-local memory_event and next_self_growth_decision.",
+    "Appends self-growth events to event_log and writes blockers if validation fails."
+  ],
+  "runtime_outputs_created": [
+    "runtime_sessions/live_growth/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_SMOKE_001",
+    "runtime_sessions/live_growth_self_growth/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_001",
+    "self_control/BUILDER_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_RESULT.json",
+    "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
+    "proofs/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_V1.json"
+  ],
+  "risks": [
+    "Remote head verification uses local remote-tracking refs and does not fetch.",
+    "Self-growth duties are sandbox-only and do not promote capabilities yet.",
+    "Long owner-supervised runs should keep duration/stop.flag discipline because duties add per-tick work."
+  ],
+  "cut_list": [
+    "No PHASE161.",
+    "No accepted PHASE159 or PHASE160 bootstrap/runtime/proof output mutation.",
+    "No TASK_QUEUE, GENESIS_STATE, CAPABILITY_ROADMAP, registry, or orchestrator edits.",
+    "No capability_shelf, body, self_growth_runtime, generated_agents, or applied_agents edits.",
+    "No external fetch, dependency install, arbitrary generated-code execution, commit, or push."
+  ],
+  "validated_at": "2026-06-03T17:13:11.6531350Z"
+}

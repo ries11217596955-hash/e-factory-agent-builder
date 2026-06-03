@@ -1,0 +1,18 @@
+{
+    "status":  "PASS",
+    "duty_id":  "duty_0001",
+    "memory_scope":  "session_local_only",
+    "event_type":  "self_growth_duty_memory_event",
+    "selected_gap":  "SELF_MAP_REFRESH_GAP",
+    "lesson":  "bounded duty completed without accepted state mutation",
+    "accepted_teacher_inputs":  [
+
+                                ],
+    "rejected_teacher_inputs":  [
+
+                                ],
+    "accepted_state_mutated":  false,
+    "accepted_memory_mutated":  false,
+    "accepted_self_model_mutated":  false,
+    "created_at":  "2026-06-03T17:10:47.1963190Z"
+}

@@ -1,0 +1,14 @@
+{
+    "status":  "PASS",
+    "duty_id":  "duty_0002",
+    "selected_gap":  "CAPABILITY_INVENTORY_REFRESH_GAP",
+    "candidate_bytes":  526,
+    "max_candidate_bytes":  8192,
+    "sandbox_only":  true,
+    "arbitrary_code_execution_used":  false,
+    "accepted_state_mutated":  false,
+    "accepted_memory_mutated":  false,
+    "accepted_self_model_mutated":  false,
+    "external_agents_created":  false,
+    "validated_at":  "2026-06-03T17:11:07.9797723Z"
+}

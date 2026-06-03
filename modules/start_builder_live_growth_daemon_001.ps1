@@ -1,7 +1,12 @@
 param(
   [string]$SessionRoot = "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
   [int]$DurationSeconds = 90,
-  [int]$TickIntervalSeconds = 10
+  [int]$TickIntervalSeconds = 10,
+  [switch]$EnableSelfGrowthDuty,
+  [int]$SelfGrowthEveryTicks = 5,
+  [int]$SelfGrowthStartTick = 2,
+  [int]$MaxSelfGrowthDuties = 0,
+  [string]$SelfGrowthDutyRoot = ""
 )
 
 $ErrorActionPreference = "Stop"
@@ -34,6 +39,19 @@ function Resolve-Phase160DaemonPath {
     return [System.IO.Path]::GetFullPath($Path)
   }
   return [System.IO.Path]::GetFullPath((Join-Path $RepoRoot $Path))
+}
+
+function ConvertTo-Phase160DaemonRelativePath {
+  param([string]$RepoRoot, [string]$FullPath)
+  $normalizedRoot = Normalize-Phase160DaemonFullPath -Path $RepoRoot
+  $normalizedPath = Normalize-Phase160DaemonFullPath -Path $FullPath
+  if ($normalizedPath -eq $normalizedRoot) {
+    return "."
+  }
+  if (-not $normalizedPath.StartsWith($normalizedRoot + [System.IO.Path]::DirectorySeparatorChar, [System.StringComparison]::OrdinalIgnoreCase)) {
+    throw "PHASE160_DAEMON_PATH_OUTSIDE_REPO=$FullPath"
+  }
+  return ($normalizedPath.Substring($normalizedRoot.Length + 1) -replace "\\", "/")
 }
 
 function Write-Phase160DaemonJsonFile {
@@ -118,12 +136,22 @@ try {
   if ($TickIntervalSeconds -lt 1) {
     throw "PHASE160_DAEMON_INVALID_TICK_INTERVAL=$TickIntervalSeconds"
   }
+  if ($SelfGrowthEveryTicks -lt 1) {
+    throw "PHASE160_DAEMON_INVALID_SELF_GROWTH_EVERY_TICKS=$SelfGrowthEveryTicks"
+  }
+  if ($SelfGrowthStartTick -lt 1) {
+    throw "PHASE160_DAEMON_INVALID_SELF_GROWTH_START_TICK=$SelfGrowthStartTick"
+  }
+  if ($MaxSelfGrowthDuties -lt 0) {
+    throw "PHASE160_DAEMON_INVALID_MAX_SELF_GROWTH_DUTIES=$MaxSelfGrowthDuties"
+  }
 
   $SessionRootFull = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path $SessionRoot
-  $SessionRootRelative = $SessionRootFull.Substring($RepoRoot.Length + 1) -replace "\\", "/"
+  $SessionRootRelative = ConvertTo-Phase160DaemonRelativePath -RepoRoot $RepoRoot -FullPath $SessionRootFull
   foreach ($directory in @(
     $SessionRootFull,
     (Join-Path $SessionRootFull "tick_records"),
+    (Join-Path $SessionRootFull "self_growth"),
     (Join-Path $SessionRootFull "teacher_inbox"),
     (Join-Path $SessionRootFull "teacher_outbox"),
     (Join-Path $SessionRootFull "blocker_queue"),
@@ -141,6 +169,17 @@ try {
   $AcceptedInterventionsPath = Join-Path $SessionRootFull "accepted_interventions"
   $RejectedInterventionsPath = Join-Path $SessionRootFull "rejected_interventions"
   $StopFlagPath = Join-Path $SessionRootFull "stop.flag"
+  $SelfGrowthDutyScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/invoke_builder_live_self_growth_duty_step_001.ps1"
+  if ($EnableSelfGrowthDuty -and -not (Test-Path -LiteralPath $SelfGrowthDutyScriptPath)) {
+    throw "PHASE160_DAEMON_SELF_GROWTH_DUTY_SCRIPT_MISSING=modules/invoke_builder_live_self_growth_duty_step_001.ps1"
+  }
+  if ([string]::IsNullOrWhiteSpace($SelfGrowthDutyRoot)) {
+    $SelfGrowthDutyRootFull = Join-Path $SessionRootFull "self_growth"
+  } else {
+    $SelfGrowthDutyRootFull = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path $SelfGrowthDutyRoot
+  }
+  $SelfGrowthDutyRootRelative = ConvertTo-Phase160DaemonRelativePath -RepoRoot $RepoRoot -FullPath $SelfGrowthDutyRootFull
+  $TeacherOutboxRelative = ConvertTo-Phase160DaemonRelativePath -RepoRoot $RepoRoot -FullPath $TeacherOutboxPath
 
   $StartTime = Get-Date
   $EndTime = $StartTime.AddSeconds($DurationSeconds)
@@ -148,6 +187,11 @@ try {
   $TickCount = 0
   $StopReason = "duration_limit"
   $InvalidInterventionCount = 0
+  $SelfGrowthDutyCount = 0
+  $LastSelfGrowthDutyId = "NONE"
+  $LastSelfGrowthGap = "NONE"
+  $LastSelfGrowthStatus = if ($EnableSelfGrowthDuty) { "READY" } else { "DISABLED" }
+  $NextSelfGrowthGap = if ($EnableSelfGrowthDuty) { "SELF_MAP_REFRESH_GAP" } else { "NONE" }
 
   Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
     event_type = "daemon_started"
@@ -247,6 +291,85 @@ try {
       }
     }
 
+    $SelfGrowthDutyDue = (
+      $EnableSelfGrowthDuty -and
+      $TickCount -ge $SelfGrowthStartTick -and
+      ((($TickCount - $SelfGrowthStartTick) % $SelfGrowthEveryTicks) -eq 0) -and
+      ($MaxSelfGrowthDuties -eq 0 -or $SelfGrowthDutyCount -lt $MaxSelfGrowthDuties)
+    )
+    if ($SelfGrowthDutyDue) {
+      $NextDutyIndex = $SelfGrowthDutyCount + 1
+      $NextDutyId = "duty_{0:d4}" -f $NextDutyIndex
+      Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "self_growth_duty_started"
+        source = "builder_daemon"
+        duty_id = $NextDutyId
+        duty_index = $NextDutyIndex
+        tick_number = $TickCount
+        expected_gap = $NextSelfGrowthGap
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      try {
+        $DutyCommand = @(
+          "-NoProfile",
+          "-ExecutionPolicy", "Bypass",
+          "-File", $SelfGrowthDutyScriptPath,
+          "-SessionRoot", $SessionRootRelative,
+          "-TickNumber", [string]$TickCount,
+          "-DutyIndex", [string]$NextDutyIndex,
+          "-DutyRoot", $SelfGrowthDutyRootRelative,
+          "-TeacherOutboxDir", $TeacherOutboxRelative
+        )
+        $DutyOutput = @(powershell @DutyCommand 2>&1 | ForEach-Object { [string]$_ })
+        if ($LASTEXITCODE -ne 0) {
+          throw "PHASE160_DAEMON_SELF_GROWTH_DUTY_PROCESS_FAILED exit=$LASTEXITCODE output=$($DutyOutput -join ' | ')"
+        }
+        $DutyResult = ($DutyOutput -join "`n") | ConvertFrom-Json
+        $SelfGrowthDutyCount += 1
+        $LastSelfGrowthDutyId = [string]$DutyResult.duty_id
+        $LastSelfGrowthGap = [string]$DutyResult.selected_gap
+        $LastSelfGrowthStatus = [string]$DutyResult.status
+        $NextSelfGrowthGap = [string]$DutyResult.next_gap
+        Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+          event_type = "self_growth_duty_completed"
+          source = "builder_daemon"
+          duty_id = $LastSelfGrowthDutyId
+          duty_index = $SelfGrowthDutyCount
+          tick_number = $TickCount
+          selected_gap = $LastSelfGrowthGap
+          status = $LastSelfGrowthStatus
+          next_gap = $NextSelfGrowthGap
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      } catch {
+        $LastSelfGrowthDutyId = $NextDutyId
+        $LastSelfGrowthGap = $NextSelfGrowthGap
+        $LastSelfGrowthStatus = "FAILED"
+        $BlockerPath = Join-Path $BlockerQueuePath ("blocker_self_growth_{0}.json" -f $NextDutyId)
+        Write-Phase160DaemonJsonFile -Path $BlockerPath -Object ([ordered]@{
+          status = "BLOCKED"
+          blocker_id = "PHASE160_SELF_GROWTH_DUTY_FAILED"
+          duty_id = $NextDutyId
+          selected_gap = $LastSelfGrowthGap
+          blocking_condition = $_.Exception.Message
+          safe_stop_recommended = $false
+          accepted_state_mutated = $false
+          accepted_memory_mutated = $false
+          created_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+        Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+          event_type = "self_growth_duty_failed"
+          source = "builder_daemon"
+          duty_id = $NextDutyId
+          tick_number = $TickCount
+          selected_gap = $LastSelfGrowthGap
+          error = $_.Exception.Message
+          daemon_kept_alive = $true
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      }
+    }
+
     $Heartbeat = [ordered]@{
       status = "RUNNING"
       heartbeat_id = "PHASE160_BUILDER_DAEMON_HEARTBEAT"
@@ -258,6 +381,8 @@ try {
       fixed_tick_batch_mode = $false
       daemon_can_run_until_stop_flag = $true
       stop_flag_supported = $true
+      self_growth_enabled = [bool]$EnableSelfGrowthDuty
+      self_growth_duty_count = $SelfGrowthDutyCount
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
     }
@@ -274,6 +399,12 @@ try {
       duration_based_session = $true
       fixed_tick_batch_mode = $false
       stop_flag_seen = $false
+      self_growth_enabled = [bool]$EnableSelfGrowthDuty
+      self_growth_duty_count = $SelfGrowthDutyCount
+      last_self_growth_duty_id = $LastSelfGrowthDutyId
+      last_self_growth_gap = $LastSelfGrowthGap
+      last_self_growth_status = $LastSelfGrowthStatus
+      next_self_growth_gap = $NextSelfGrowthGap
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
       accepted_self_model_mutated = $false
@@ -291,6 +422,12 @@ try {
       accepted_interventions_supported = $true
       rejected_interventions_supported = $true
       blocker_queue_supported = $true
+      self_growth_enabled = [bool]$EnableSelfGrowthDuty
+      self_growth_duty_count = $SelfGrowthDutyCount
+      last_self_growth_duty_id = $LastSelfGrowthDutyId
+      last_self_growth_gap = $LastSelfGrowthGap
+      last_self_growth_status = $LastSelfGrowthStatus
+      next_self_growth_gap = $NextSelfGrowthGap
       duration_based_session = $true
       fixed_tick_batch_mode = $false
       occurred_at = $Now.ToUniversalTime().ToString("o")
@@ -304,6 +441,12 @@ try {
       tick_number = $TickCount
       heartbeat_written = $true
       current_state_written = $true
+      self_growth_enabled = [bool]$EnableSelfGrowthDuty
+      self_growth_duty_count = $SelfGrowthDutyCount
+      last_self_growth_duty_id = $LastSelfGrowthDutyId
+      last_self_growth_gap = $LastSelfGrowthGap
+      last_self_growth_status = $LastSelfGrowthStatus
+      next_self_growth_gap = $NextSelfGrowthGap
       duration_based_session = $true
       fixed_tick_batch_mode = $false
       occurred_at = $Now.ToUniversalTime().ToString("o")
@@ -328,6 +471,12 @@ try {
     duration_based_session = $true
     fixed_tick_batch_mode = $false
     live_session_safe_stop = $true
+    self_growth_enabled = [bool]$EnableSelfGrowthDuty
+    self_growth_duty_count = $SelfGrowthDutyCount
+    last_self_growth_duty_id = $LastSelfGrowthDutyId
+    last_self_growth_gap = $LastSelfGrowthGap
+    last_self_growth_status = $LastSelfGrowthStatus
+    next_self_growth_gap = $NextSelfGrowthGap
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
     accepted_self_model_mutated = $false
@@ -345,6 +494,8 @@ try {
     fixed_tick_batch_mode = $false
     daemon_can_run_until_stop_flag = $true
     stop_flag_supported = $true
+    self_growth_enabled = [bool]$EnableSelfGrowthDuty
+    self_growth_duty_count = $SelfGrowthDutyCount
   }
   Write-Phase160DaemonJsonFile -Path $HeartbeatPath -Object $FinalHeartbeat
 
@@ -367,6 +518,12 @@ try {
     duration_based_session = $true
     fixed_tick_batch_mode = $false
     tick_count = $TickCount
+    self_growth_enabled = [bool]$EnableSelfGrowthDuty
+    self_growth_duty_count = $SelfGrowthDutyCount
+    last_self_growth_duty_id = $LastSelfGrowthDutyId
+    last_self_growth_gap = $LastSelfGrowthGap
+    last_self_growth_status = $LastSelfGrowthStatus
+    next_self_growth_gap = $NextSelfGrowthGap
     heartbeat_written = (Test-Path -LiteralPath $HeartbeatPath)
     event_log_created = (Test-Path -LiteralPath $EventLogPath)
     stop_reason = $StopReason

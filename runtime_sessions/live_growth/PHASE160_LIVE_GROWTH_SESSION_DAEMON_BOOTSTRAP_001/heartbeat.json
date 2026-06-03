@@ -1,0 +1,12 @@
+{
+  "status": "STOPPED",
+  "heartbeat_id": "PHASE160_BUILDER_DAEMON_HEARTBEAT",
+  "session_root": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  "heartbeat_count": 10,
+  "updated_at": "2026-06-03T15:39:39.5860093Z",
+  "stop_reason": "duration_limit",
+  "duration_based_session": true,
+  "fixed_tick_batch_mode": false,
+  "daemon_can_run_until_stop_flag": true,
+  "stop_flag_supported": true
+}

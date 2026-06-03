@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "channel": "blocker_queue",
+  "step_id": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1",
+  "run_id": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  "purpose": "Sandbox-only blockers created when invalid interventions or stuck conditions appear.",
+  "file_based": true,
+  "execution_scope": "sandbox_only",
+  "accepted_state_mutated": false
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "config_id": "PHASE160_BUILDER_DAEMON_RUNTIME_CONFIG",
+  "session_root": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  "duration_seconds": 90,
+  "tick_interval_seconds": 10,
+  "reads_teacher_outbox": true,
+  "writes_heartbeat": true,
+  "writes_event_log": true,
+  "writes_current_state": true,
+  "writes_tick_records": true,
+  "stop_flag_supported": true,
+  "duration_based_session": true,
+  "fixed_tick_batch_mode": false
+}

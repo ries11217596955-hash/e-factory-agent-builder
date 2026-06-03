@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "command_id": "PHASE160_OBSERVER_START_COMMAND",
+  "command": ".\\modules\\watch_builder_live_growth_session_observer_001.ps1 -SessionRoot runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001 -DurationSeconds 90 -PollIntervalSeconds 5",
+  "module_path": "modules/watch_builder_live_growth_session_observer_001.ps1",
+  "session_root": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  "duration_based_session": true
+}

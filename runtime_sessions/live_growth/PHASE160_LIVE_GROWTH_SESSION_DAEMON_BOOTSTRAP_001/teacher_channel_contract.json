@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "contract_id": "PHASE160_TEACHER_CHANNEL_CONTRACT",
+  "channel_type": "file_based",
+  "execution_scope": "sandbox_only",
+  "teacher_inbox_path": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001/teacher_inbox",
+  "teacher_outbox_path": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001/teacher_outbox",
+  "blocker_queue_path": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001/blocker_queue",
+  "accepted_interventions_path": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001/accepted_interventions",
+  "rejected_interventions_path": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001/rejected_interventions",
+  "required_outbox_fields": [
+    "intervention_id",
+    "message_type",
+    "requested_action"
+  ],
+  "allowed_message_types": [
+    "teacher_instruction",
+    "teacher_correction",
+    "teacher_stop_request",
+    "observer_suggestion"
+  ]
+}

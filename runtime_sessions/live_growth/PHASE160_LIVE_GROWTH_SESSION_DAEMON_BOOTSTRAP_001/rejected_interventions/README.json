@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "channel": "rejected_interventions",
+  "step_id": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1",
+  "run_id": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  "purpose": "Invalid teacher interventions recorded with rejection reasons.",
+  "file_based": true,
+  "execution_scope": "sandbox_only",
+  "accepted_state_mutated": false
+}

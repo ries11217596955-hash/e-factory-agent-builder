@@ -1,51 +1,62 @@
-# EF_GPT_KNOWLEDGE_LIVE_BUILDER_MODE_UPDATE_2026_06_03
+# E-Factory Agent Builder
 
 ## Purpose
 
-This update aligns GPT Knowledge with the new Agent Builder working cycle:
+Canonical repository for the Agent Builder line.
 
-```text
-stable accepted HEAD
-→ Builder live daemon
-→ visible live console
-→ self-growth duty loop
-→ Codex as bounded teacher/repair only
-→ terminal proof pack
-→ archive local runtime outputs
-→ commit/push accepted artifacts
-```
+This system has two sequential functions:
 
-## What Changed
+1. **SELF_BUILD**  
+   Build itself from a repo-defined genesis plan through validated staged capability packs.
 
-This pack updates only the files that needed rule changes.
+2. **BUILD_EXTERNAL_AGENT**  
+   After self-build readiness is proven, construct other agents from formal specifications.
 
-Main corrections:
-- old PHASE78 route lock is now marked as superseded reference;
-- live Builder mode is treated as the current operating cycle;
-- stale static ExpectedHead is forbidden for live scripts;
-- repo identity must be resolved from script location;
-- live-run outputs must be archived outside repo unless explicitly accepted;
-- external PowerShell watcher is allowed when only operator visibility is needed;
-- internal observer console is allowed when accepted as Builder capability;
-- self-growth duty loop evidence is classified as `VALIDATED_PENDING_ACCEPTANCE` until commit/push.
+## Product boundary
 
-## Current Evidence Classification
+This repository is not an extension of Site Auditor V3.  
+It is a separate AGENTOPS product line that reuses proven architectural discipline:
 
-Accepted:
-```text
-6903d7b Add PHASE160 live observer console repair
-```
+- orchestrator-first;
+- contract-first;
+- module-owned logic;
+- validator-gated releases;
+- artifact truth;
+- serial execution packs.
 
-Validated but not accepted:
-```text
-PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_V1
-validator PASS
-proof PASS
-diff scope FAIL due previous console sample output
-```
+## Current stage
 
-## Upload Guidance
+Agent Builder has already proven the baseline readiness gates recorded in repo truth:
 
-Replace existing GPT Knowledge files with these same filenames.
+- `SELF_BUILD_READY = PASS`
+- `EXTERNAL_AGENT_BUILD_READY = PASS`
+- `FIRST_EXTERNAL_AGENT_PROOF = PASS`
+- GitHub Actions self-build surface exists.
+- Generated external agents carry a GitHub Actions launch delivery artifact.
 
-Do not keep older duplicate active copies if this pack marks them as superseded or delete candidates.
+Current owner-facing truth:
+
+- PHASE54 owner-visible self-build acceptance is completed.
+- Task queue: `active_task_id = NONE`
+- Committed proof artifact: `proofs/OWNER_VISIBLE_SELF_BUILD_ACCEPTANCE_V1.json`
+- GitHub Actions owner-visible self-build acceptance is proven.
+
+The Build From Raw Idea owner-visible GitHub Action has passed runtime acceptance in the latest owner verification run, producing a generated external agent package from the canonical raw idea fixture. This README does not claim a committed repo proof file for that second runtime unless such an artifact exists in repo truth.
+
+The owner-visible factory loop is now proven at the interaction layer. The next product frontier is reducing external pack-authoring dependence by allowing generated self-build programs to be admitted into the live Builder execution contour.
+
+## Source of truth
+
+- `AGENT_MISSION.md`
+- `GENESIS_MASTER_PLAN.md`
+- `CAPABILITY_ROADMAP.json`
+- `GENESIS_STATE.json`
+- `TASK_QUEUE.json`
+
+## Absolute rule
+
+The agent must not transition into external-agent generation unless:
+
+`SELF_BUILD_READY = PASS`
+
+That gate is currently true in `GENESIS_STATE.json`; runtime proof artifacts remain the source of truth for each later acceptance claim.

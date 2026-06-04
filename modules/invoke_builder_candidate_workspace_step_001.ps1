@@ -559,6 +559,7 @@ try {
   $BacklogAdvancementLogPath = Join-Path $TaskLifecycleRoot "backlog_advancement_log.jsonl"
   $PlanAdvancementLogPath = Join-Path $TaskLifecycleRoot "plan_item_advancement_log.jsonl"
   $ActiveTaskStatePath = Join-Path $TaskLifecycleRoot "active_task_state.json"
+  $BlockerQueuePath = Join-Path $SessionRootFull "blocker_queue"
   foreach ($directory in @(
     $CandidateWorkspace,
     $CandidateBundleRoot,
@@ -566,6 +567,7 @@ try {
     $CandidateQuarantineRoot,
     $TaskLifecycleRoot,
     $TaskCompletionReceiptRoot,
+    $BlockerQueuePath,
     (Join-Path $SessionRootFull "promotion_bundle"),
     (Join-Path $SessionRootFull "active_task"),
     (Join-Path $SessionRootFull "task_backlog"),
@@ -575,12 +577,31 @@ try {
   }
 
   if ([string]$RuntimeGuard.status -ne "PASS" -or [bool]$RuntimeGuard.candidate_production_enabled -ne $true) {
+    $BlockedReasons = if ($RuntimeGuard.PSObject.Properties.Name -contains "blocked_reasons") { @($RuntimeGuard.blocked_reasons | ForEach-Object { [string]$_ }) } else { @("runtime_guard_blocked") }
+    if ($BlockedReasons.Count -lt 1) {
+      $BlockedReasons = @("runtime_guard_blocked")
+    }
     Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
       event_type = "candidate_workspace_step_blocked"
       source = "candidate_workspace_step"
       duty_id = $DutyId
       runtime_guard_status = [string]$RuntimeGuard.status
+      candidate_production_enabled = [bool]$RuntimeGuard.candidate_production_enabled
+      blocked_reasons = @($BlockedReasons)
       occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+    Write-Phase160ECandidateJsonFile -Path (Join-Path $BlockerQueuePath ("blocker_candidate_workspace_runtime_guard_{0}.json" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value $DutyId -MaxLength 40))) -Object ([ordered]@{
+      status = "BLOCKED"
+      blocker_id = "PHASE160G_CANDIDATE_WORKSPACE_RUNTIME_GUARD_BLOCKED"
+      source = "candidate_workspace_step"
+      duty_id = $DutyId
+      runtime_guard_status = [string]$RuntimeGuard.status
+      candidate_production_enabled = [bool]$RuntimeGuard.candidate_production_enabled
+      blocked_reasons = @($BlockedReasons)
+      blocked_reasons_source = "$SessionRootRelative/runtime_guard.json"
+      candidate_created = $false
+      promotion_ready_claim_created = $false
+      created_at = (Get-Date).ToUniversalTime().ToString("o")
     })
     [pscustomobject][ordered]@{
       status = "BLOCKED"
@@ -588,6 +609,7 @@ try {
       session_root = $SessionRootRelative
       runtime_guard_status = [string]$RuntimeGuard.status
       candidate_production_enabled = $false
+      blocked_reasons = @($BlockedReasons)
       candidate_count = (Get-Phase160ECandidateBundleCounts -CandidateBundleRoot $CandidateBundleRoot).candidate_count
     } | ConvertTo-Json -Depth 20
     return
@@ -633,6 +655,7 @@ try {
         desired_next_gap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
         run_id = [string]$RunManifest.run_id
         run_head = [string]$RunManifest.run_head
+        owner_approval_required = $true
         owner_review_required = $true
         restart_required_after_promotion = $true
         updated_at = (Get-Date).ToUniversalTime().ToString("o")
@@ -749,6 +772,7 @@ try {
         desired_next_gap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
         run_id = [string]$RunManifest.run_id
         run_head = [string]$RunManifest.run_head
+        owner_approval_required = $true
         owner_review_required = $true
         restart_required_after_promotion = $true
         updated_at = (Get-Date).ToUniversalTime().ToString("o")

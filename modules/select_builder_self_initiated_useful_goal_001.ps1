@@ -161,7 +161,7 @@ try {
   $BacklogCount = Get-Phase160FSelectFileCount -Path (Join-Path $SessionRootFull "task_backlog")
   $RuntimeGuardStatus = Get-Phase160FSelectString -Object $RuntimeGuard -Name "status" -Default "UNKNOWN"
   $RuntimeGuardPass = ($null -ne $RuntimeGuard -and $RuntimeGuardStatus -eq "PASS")
-  $MacroStageEligible = @("GAP_RANK_AND_SELECT", "EXPERIENCE_ABSORB_AND_NEXT_GOAL") -contains $MacroCycleStage
+  $MacroStageEligible = @("DAEMON_START", "EARLY_TICK", "SAFE_PRE_CANDIDATE", "GAP_RANK_AND_SELECT", "EXPERIENCE_ABSORB_AND_NEXT_GOAL", "NONE") -contains $MacroCycleStage
   $ActiveStatus = Get-Phase160FSelectString -Object $ActiveTaskState -Name "status" -Default "NONE"
   $ActivePlanStatus = Get-Phase160FSelectString -Object $ActivePlanItem -Name "status" -Default "NONE"
   $ActiveTaskRequiresWork = ($null -ne $ActiveTask -and $ActiveStatus -notin @("WAITING_OWNER_PROMOTION", "DONE_SESSION_LOCAL", "BLOCKED", "QUARANTINED"))
@@ -174,7 +174,7 @@ try {
     $BacklogCount -eq 0 -and
     (-not $ActiveTaskRequiresWork) -and
     (-not $ActivePlanRequiresWork) -and
-    ($MacroStageEligible -or $MacroCycleStage -eq "NONE") -and
+    $MacroStageEligible -and
     -not $AlreadySelected
   )
 

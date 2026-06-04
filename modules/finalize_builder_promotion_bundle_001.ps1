@@ -147,7 +147,9 @@ try {
   $SessionRootFull = Resolve-Phase160EPromotionPath -RepoRoot $RepoRoot -Path $SessionRoot
   $SessionRootRelative = ConvertTo-Phase160EPromotionRelativePath -RepoRoot $RepoRoot -FullPath $SessionRootFull
   $ManifestPath = Join-Path $SessionRootFull "run_manifest.json"
+  $RuntimeGuardPath = Join-Path $SessionRootFull "runtime_guard.json"
   $Manifest = Read-Phase160EPromotionJsonSafe -Path $ManifestPath
+  $RuntimeGuard = Read-Phase160EPromotionJsonSafe -Path $RuntimeGuardPath
   if ($null -eq $Manifest) {
     throw "PHASE160E_PROMOTION_RUN_MANIFEST_MISSING=$SessionRootRelative/run_manifest.json"
   }
@@ -200,13 +202,30 @@ try {
   })
   $requiredValidators = @($CandidateRecords | ForEach-Object { @($_.acceptance_validator_needed) + @($_.proposed_validator_paths) } | ForEach-Object { [string]$_ } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)
   $proposedFiles = @($CandidateRecords | ForEach-Object { $_.proposed_file_paths } | ForEach-Object { [string]$_ } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)
+  $RuntimeGuardStatus = Get-Phase160EPromotionString -Object $RuntimeGuard -Name "status" -Default "UNKNOWN"
+  $BlockedReasons = if ($null -ne $RuntimeGuard -and $RuntimeGuard.PSObject.Properties.Name -contains "blocked_reasons") { @($RuntimeGuard.blocked_reasons | ForEach-Object { [string]$_ }) } else { @() }
+  $PromotionStatus = "BLOCKED_NO_READY_CANDIDATES"
+  if ($CandidateRecords.Count -eq 0) {
+    if ($RuntimeGuardStatus -eq "BLOCKED") {
+      $PromotionStatus = "BLOCKED_NO_CANDIDATES"
+    } else {
+      $PromotionStatus = "NO_CANDIDATES"
+    }
+  } elseif ($readyCandidates.Count -gt 0) {
+    $PromotionStatus = "WAITING_OWNER_REVIEW"
+  }
+  $OwnerReviewRequired = ($PromotionStatus -eq "WAITING_OWNER_REVIEW" -or $PromotionStatus -eq "BLOCKED_NO_CANDIDATES" -or $PromotionStatus -eq "BLOCKED_NO_READY_CANDIDATES")
+  $OwnerPromotionGateRequired = $PromotionStatus -eq "WAITING_OWNER_REVIEW"
+  $RestartRequiredAfterPromotion = $PromotionStatus -eq "WAITING_OWNER_REVIEW"
 
   $PromotionManifest = [ordered]@{
     status = "PASS"
-    promotion_status = "WAITING_OWNER_REVIEW"
+    promotion_status = $PromotionStatus
     run_id = [string]$Manifest.run_id
     run_head = [string]$Manifest.run_head
     branch = [string]$Manifest.branch
+    runtime_guard_status = $RuntimeGuardStatus
+    blocked_reasons = @($BlockedReasons)
     candidate_count = $CandidateRecords.Count
     ready_candidate_count = $readyCandidates.Count
     quarantined_candidate_count = $quarantinedCandidates.Count
@@ -217,11 +236,11 @@ try {
     source_internal_goals = $sourceInternalGoals
     proposed_files_summary = $proposedFiles
     required_validators = $requiredValidators
-    owner_review_required = $true
-    owner_promotion_gate_required = $true
+    owner_review_required = $OwnerReviewRequired
+    owner_promotion_gate_required = $OwnerPromotionGateRequired
     candidate_output_is_not_accepted_code = $true
     accepted_head_after_promotion = "UNKNOWN_UNTIL_OWNER_COMMIT"
-    restart_required_after_promotion = $true
+    restart_required_after_promotion = $RestartRequiredAfterPromotion
     commit_performed = $false
     push_performed = $false
     branch_switch_performed = $false
@@ -232,17 +251,18 @@ try {
   Write-Phase160EPromotionJsonFile -Path $PromotionManifestPath -Object $PromotionManifest
 
   $summaryLines = @(
-    "# PHASE160F Owner Review Summary",
+    "# PHASE160G Owner Review Summary",
     "",
-    "status: WAITING_OWNER_REVIEW",
+    "status: $PromotionStatus",
     "run_id: $($PromotionManifest.run_id)",
     "run_head: $($PromotionManifest.run_head)",
     "candidate_count: $($PromotionManifest.candidate_count)",
     "ready_candidate_count: $($PromotionManifest.ready_candidate_count)",
+    "runtime_guard_status: $RuntimeGuardStatus",
     "",
     "## Owner Gate",
     "- Candidate output is not accepted code.",
-    "- Promotion requires owner stop, check, promotion, commit, and daemon restart.",
+    "- Promotion requires owner stop, check, promotion, commit, and daemon restart only when a ready candidate exists.",
     "- Runtime outputs must not be staged.",
     "- No commit, push, or branch switch was performed by the live daemon.",
     "",
@@ -256,6 +276,25 @@ try {
       $summaryLines += "- $($candidate.candidate_id) from $sourceLabel task $($candidate.source_task_id) plan_item $($candidate.source_plan_item_id) internal_goal $($candidate.source_internal_goal_id)"
     }
   }
+  if ($CandidateRecords.Count -eq 0) {
+    $reason = if ($RuntimeGuardStatus -eq "BLOCKED") { "runtime guard blocked candidate production: $($BlockedReasons -join ', ')" } else { "no active task produced a candidate in this session" }
+    $summaryLines += @(
+      "",
+      "## No Candidate Ready",
+      "- No candidate was created.",
+      "- Nothing is ready for promotion.",
+      "- Reason: $reason.",
+      "- Next required action: review the runtime guard, active task, and self-initiated trigger evidence before starting another live run."
+    )
+  } elseif ($readyCandidates.Count -eq 0) {
+    $summaryLines += @(
+      "",
+      "## No Ready Candidate",
+      "- Candidate records exist, but none are ready for owner promotion.",
+      "- Nothing is ready for promotion.",
+      "- Next required action: inspect blocked or quarantined candidate records before deciding whether to continue."
+    )
+  }
   $summaryLines += @(
     "",
     "## Review Notes",
@@ -265,7 +304,7 @@ try {
     "- Not applied to repo: no candidate payload was written to tracked accepted code.",
     "- Validators needed after promotion: $($requiredValidators -join ', ')",
     "- Risks and quarantine notes: incomplete candidates remain review-only and can be quarantined by the owner.",
-    "- Restart rule: promotion requires owner stop, check, promotion, commit, and daemon restart."
+    "- Restart rule: promotion requires owner stop, check, promotion, commit, and daemon restart only for ready candidates."
   )
   Write-Phase160EPromotionTextFile -Path (Join-Path $PromotionBundleRoot "owner_review_summary.md") -Text ($summaryLines -join "`n")
 
@@ -273,6 +312,7 @@ try {
     status = "PASS"
     run_id = [string]$Manifest.run_id
     run_head = [string]$Manifest.run_head
+    promotion_status = $PromotionStatus
     proof_entries = @(
       [ordered]@{ proof_type = "run_manifest"; path = "$SessionRootRelative/run_manifest.json"; required = $true },
       [ordered]@{ proof_type = "runtime_identity"; path = "$SessionRootRelative/runtime_identity.json"; required = $true },
@@ -292,8 +332,8 @@ try {
     run_id = [string]$Manifest.run_id
     candidate_count = $CandidateRecords.Count
     ready_candidate_count = $readyCandidates.Count
-    promotion_status = "WAITING_OWNER_REVIEW"
-    restart_required_after_promotion = $true
+    promotion_status = $PromotionStatus
+    restart_required_after_promotion = $RestartRequiredAfterPromotion
     occurred_at = (Get-Date).ToUniversalTime().ToString("o")
   })
 
@@ -301,7 +341,7 @@ try {
     $handoffLines = @(
       "# PHASE160E Final Handoff Summary",
       "",
-      "status: WAITING_OWNER_REVIEW",
+      "status: $PromotionStatus",
       "run_id: $($PromotionManifest.run_id)",
       "run_head: $($PromotionManifest.run_head)",
       "promotion_status: $($PromotionManifest.promotion_status)",
@@ -311,9 +351,9 @@ try {
       "## Required Owner Sequence",
       "1. Stop the live runner.",
       "2. Inspect the promotion bundle and candidate bundles.",
-      "3. Promote selected candidate work outside the live runtime session.",
-      "4. Run validators and commit accepted tracked code.",
-      "5. Restart a fresh live runner from the accepted head.",
+      "3. Promote selected candidate work outside the live runtime session only if a ready candidate exists.",
+      "4. Run validators and commit accepted tracked code only after owner promotion.",
+      "5. Restart a fresh live runner from the accepted head after accepted promotion.",
       "",
       "## Non-Mutation Claims",
       "- commit_performed: False",
@@ -334,12 +374,12 @@ try {
     ready_candidate_count = $readyCandidates.Count
     quarantined_candidate_count = $quarantinedCandidates.Count
     blocked_candidate_count = $blockedCandidates.Count
-    promotion_bundle_status = "WAITING_OWNER_REVIEW"
+    promotion_bundle_status = $PromotionStatus
     owner_review_summary_created = Test-Path -LiteralPath (Join-Path $PromotionBundleRoot "owner_review_summary.md")
     promotion_manifest_created = Test-Path -LiteralPath $PromotionManifestPath
     promotion_proof_index_created = Test-Path -LiteralPath (Join-Path $PromotionBundleRoot "promotion_proof_index.json")
     final_handoff_summary_created = Test-Path -LiteralPath (Join-Path $SessionRootFull "final_handoff_summary.md")
-    restart_required_after_promotion = $true
+    restart_required_after_promotion = $RestartRequiredAfterPromotion
   } | ConvertTo-Json -Depth 20
 } finally {
   if ($Pushed) {

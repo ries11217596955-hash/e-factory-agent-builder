@@ -201,6 +201,13 @@ function Get-Phase160DaemonLiveTaskSnapshot {
     current_head = $currentHead
     head_match = $headMatch
     live_repo_guard = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status") { [string]$runtimeGuard.status } elseif ($null -ne $runtimeIdentity -and $runtimeIdentity.PSObject.Properties.Name -contains "live_repo_guard") { [string]$runtimeIdentity.live_repo_guard } else { "UNKNOWN" }
+    runtime_guard_status = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status") { [string]$runtimeGuard.status } else { "UNKNOWN" }
+    guard_block_reason = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "blocked_reasons") { (@($runtimeGuard.blocked_reasons | ForEach-Object { [string]$_ }) -join ",") } else { "NONE" }
+    allowed_runtime_output_count = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "allowed_runtime_output_count") { [int]$runtimeGuard.allowed_runtime_output_count } else { 0 }
+    allowed_tracked_runtime_sample_change = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "allowed_tracked_runtime_sample_change") { [bool]$runtimeGuard.allowed_tracked_runtime_sample_change } else { $false }
+    unsafe_tracked_mutation_count = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "unsafe_tracked_code_mutation_count") { [int]$runtimeGuard.unsafe_tracked_code_mutation_count } else { 0 }
+    protected_state_mutation_count = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "protected_state_mutation_count") { [int]$runtimeGuard.protected_state_mutation_count } else { 0 }
+    candidate_production_enabled = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "candidate_production_enabled") { [bool]$runtimeGuard.candidate_production_enabled } else { $false }
     candidate_workspace_status = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status" -and [string]$runtimeGuard.status -eq "PASS") { "ENABLED" } elseif ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status" -and [string]$runtimeGuard.status -eq "BLOCKED") { "BLOCKED" } else { "UNKNOWN" }
     candidate_count = $candidateCount
     ready_candidate_count = $readyCandidateCount
@@ -419,6 +426,87 @@ try {
     fixed_tick_batch_mode = $false
     occurred_at = $StartTime.ToUniversalTime().ToString("o")
   })
+
+  if ($EnableCandidateWorkspacePromotion -and $CandidateProductionEnabled) {
+    try {
+      $EarlySelfSelectionOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $SelfInitiatedGoalSelectScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -DutyId "daemon_start" -TickNumber 0 -MacroCycleStage "DAEMON_START" -CandidateWorkspacePromotionEnabled 2>&1 | ForEach-Object { [string]$_ })
+      if ($LASTEXITCODE -ne 0) {
+        throw "PHASE160G_DAEMON_EARLY_SELF_INITIATED_GOAL_SELECTION_FAILED exit=$LASTEXITCODE output=$($EarlySelfSelectionOutput -join ' | ')"
+      }
+      $EarlySelfSelectionResult = ($EarlySelfSelectionOutput -join "`n") | ConvertFrom-Json
+      Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "early_self_initiated_goal_selection_checked"
+        source = "builder_daemon"
+        duty_id = "daemon_start"
+        tick_number = 0
+        macro_cycle_stage = "DAEMON_START"
+        status = [string]$EarlySelfSelectionResult.status
+        self_initiated_goal_selected = if ($EarlySelfSelectionResult.PSObject.Properties.Name -contains "self_initiated_goal_selected") { [bool]$EarlySelfSelectionResult.self_initiated_goal_selected } else { $false }
+        selected_useful_goal = if ($EarlySelfSelectionResult.PSObject.Properties.Name -contains "selected_goal_id") { [string]$EarlySelfSelectionResult.selected_goal_id } else { "NONE" }
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+
+      $EarlyRuntimeGuardOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $RuntimeIdentityScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -Mode GuardCheck -GuardLabel "after_early_self_selection" 2>&1 | ForEach-Object { [string]$_ })
+      if ($LASTEXITCODE -ne 0) {
+        throw "PHASE160G_DAEMON_EARLY_RUNTIME_GUARD_FAILED exit=$LASTEXITCODE output=$($EarlyRuntimeGuardOutput -join ' | ')"
+      }
+      $EarlyRuntimeGuardResult = ($EarlyRuntimeGuardOutput -join "`n") | ConvertFrom-Json
+      $RunHead = [string]$EarlyRuntimeGuardResult.run_head
+      $CurrentHead = [string]$EarlyRuntimeGuardResult.current_head
+      $HeadMatch = [bool]$EarlyRuntimeGuardResult.head_match
+      $LiveRepoGuard = [string]$EarlyRuntimeGuardResult.live_repo_guard
+      $CandidateProductionEnabled = [bool]$EarlyRuntimeGuardResult.candidate_production_enabled
+      if ($CandidateProductionEnabled) {
+        $EarlyCandidateWorkspaceOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $CandidateWorkspaceScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -DutyId "daemon_start" -TickNumber 0 2>&1 | ForEach-Object { [string]$_ })
+        if ($LASTEXITCODE -ne 0) {
+          throw "PHASE160G_DAEMON_EARLY_CANDIDATE_WORKSPACE_STEP_FAILED exit=$LASTEXITCODE output=$($EarlyCandidateWorkspaceOutput -join ' | ')"
+        }
+        $EarlyCandidateWorkspaceResult = ($EarlyCandidateWorkspaceOutput -join "`n") | ConvertFrom-Json
+        Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+          event_type = "early_candidate_workspace_step_completed"
+          source = "builder_daemon"
+          duty_id = "daemon_start"
+          tick_number = 0
+          status = [string]$EarlyCandidateWorkspaceResult.status
+          candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "candidate_count") { [int]$EarlyCandidateWorkspaceResult.candidate_count } else { 0 }
+          ready_candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$EarlyCandidateWorkspaceResult.ready_candidate_count } else { 0 }
+          last_candidate_id = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "last_candidate_id") { [string]$EarlyCandidateWorkspaceResult.last_candidate_id } else { "NONE" }
+          promotion_bundle_status = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "promotion_bundle_status") { [string]$EarlyCandidateWorkspaceResult.promotion_bundle_status } else { "NONE" }
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      } else {
+        Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+          event_type = "early_candidate_workspace_step_blocked_by_runtime_guard"
+          source = "builder_daemon"
+          duty_id = "daemon_start"
+          tick_number = 0
+          live_repo_guard = $LiveRepoGuard
+          run_head = $RunHead
+          current_head = $CurrentHead
+          blocked_reasons = if ($EarlyRuntimeGuardResult.PSObject.Properties.Name -contains "blocked_reasons") { @($EarlyRuntimeGuardResult.blocked_reasons | ForEach-Object { [string]$_ }) } else { @("runtime_guard_blocked") }
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      }
+      $LiveTaskSnapshot = Get-Phase160DaemonLiveTaskSnapshot -SessionRootFull $SessionRootFull
+    } catch {
+      Write-Phase160DaemonJsonFile -Path (Join-Path $BlockerQueuePath "blocker_phase160g_early_candidate_production.json") -Object ([ordered]@{
+        status = "BLOCKED"
+        blocker_id = "PHASE160G_EARLY_CANDIDATE_PRODUCTION_FAILED"
+        blocking_condition = $_.Exception.Message
+        accepted_state_mutated = $false
+        accepted_memory_mutated = $false
+        safe_stop_recommended = $false
+        created_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "early_candidate_production_failed"
+        source = "builder_daemon"
+        error = $_.Exception.Message
+        daemon_kept_alive = $true
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+    }
+  }
 
   while ($RunUntilStop -or (Get-Date) -lt $EndTime) {
     if (Test-Path -LiteralPath $StopFlagPath) {

@@ -93,7 +93,7 @@ function Get-Phase160EIdentityRemoteHead {
 }
 
 function Get-Phase160EIdentityTrackedStatus {
-  $lines = @(git status --short --untracked-files=no | ForEach-Object { [string]$_ } | Sort-Object)
+  $lines = @(git status --short --untracked-files=all | ForEach-Object { [string]$_ } | Sort-Object)
   return $lines
 }
 
@@ -119,6 +119,185 @@ function Get-Phase160EIdentityScriptHashes {
     }
   }
   return $hashes
+}
+
+function Get-Phase160EIdentityStatusCode {
+  param([string]$Line)
+  if ([string]::IsNullOrWhiteSpace($Line) -or $Line.Length -lt 2) {
+    return ""
+  }
+  return $Line.Substring(0, 2)
+}
+
+function Get-Phase160EIdentityStatusPaths {
+  param([string]$Line)
+  if ([string]::IsNullOrWhiteSpace($Line) -or $Line.Length -lt 4) {
+    return @()
+  }
+  $pathText = $Line.Substring(3).Trim()
+  if ([string]::IsNullOrWhiteSpace($pathText)) {
+    return @()
+  }
+  return @($pathText -split " -> " | ForEach-Object { ([string]$_).Trim() -replace "\\", "/" } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+}
+
+function Test-Phase160EIdentityStatusPathPrefix {
+  param([string]$Line, [string[]]$Prefixes)
+  foreach ($path in @(Get-Phase160EIdentityStatusPaths -Line $Line)) {
+    foreach ($prefix in $Prefixes) {
+      if ($path.StartsWith($prefix, [System.StringComparison]::OrdinalIgnoreCase)) {
+        return $true
+      }
+    }
+  }
+  return $false
+}
+
+function Test-Phase160EIdentityStatusPathExact {
+  param([string]$Line, [string[]]$Paths)
+  foreach ($path in @(Get-Phase160EIdentityStatusPaths -Line $Line)) {
+    foreach ($candidate in $Paths) {
+      if ($path -eq ($candidate -replace "\\", "/")) {
+        return $true
+      }
+    }
+  }
+  return $false
+}
+
+function Test-Phase160EIdentityAllowedRuntimeStatusLine {
+  param([string]$Line, [string]$RunId)
+  $code = Get-Phase160EIdentityStatusCode -Line $Line
+  if ($code -eq "??") {
+    $allowedPrefixes = @(
+      "runtime_sessions/live_growth_console/",
+      "runtime_sessions/live_growth_self_growth/",
+      "runtime_sessions/newborn_reflex/"
+    )
+    if (-not [string]::IsNullOrWhiteSpace($RunId) -and $RunId -ne "NONE") {
+      $allowedPrefixes += "runtime_sessions/live_growth/$RunId/"
+    }
+    return Test-Phase160EIdentityStatusPathPrefix -Line $Line -Prefixes $allowedPrefixes
+  }
+  if ($code -eq " M") {
+    return Test-Phase160EIdentityStatusPathExact -Line $Line -Paths @("runtime_sessions/live_growth_console/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_001/console_output_sample.txt")
+  }
+  return $false
+}
+
+function Test-Phase160EIdentityUnsafeRepoStatusLine {
+  param([string]$Line)
+  $unsafePrefixes = @(
+    "modules/",
+    "validators/",
+    "reports/",
+    "proofs/",
+    "contracts/",
+    "route_change_requests/"
+  )
+  return Test-Phase160EIdentityStatusPathPrefix -Line $Line -Prefixes $unsafePrefixes
+}
+
+function Test-Phase160EIdentityProtectedStatusLine {
+  param([string]$Line)
+  return Test-Phase160EIdentityStatusPathExact -Line $Line -Paths @(
+    "TASK_QUEUE.json",
+    "GENESIS_STATE.json",
+    "CAPABILITY_ROADMAP.json",
+    "packs/registry.json",
+    "orchestrator/run.ps1"
+  )
+}
+
+function ConvertTo-Phase160EIdentityStatusBaseline {
+  param([object]$Baseline, [string]$RunId)
+  $capturedAt = (Get-Date).ToUniversalTime().ToString("o")
+  if ($null -eq $Baseline) {
+    $statusLines = @()
+  } elseif ($Baseline.PSObject.Properties.Name -contains "status_lines") {
+    $statusLines = @($Baseline.status_lines | ForEach-Object { [string]$_ } | Sort-Object)
+    if ($Baseline.PSObject.Properties.Name -contains "captured_at" -and -not [string]::IsNullOrWhiteSpace([string]$Baseline.captured_at)) {
+      $capturedAt = [string]$Baseline.captured_at
+    }
+  } else {
+    $statusLines = @($Baseline | ForEach-Object { [string]$_ } | Sort-Object)
+  }
+  $allowedRuntime = @($statusLines | Where-Object { Test-Phase160EIdentityAllowedRuntimeStatusLine -Line $_ -RunId $RunId })
+  $unsafeLines = @($statusLines | Where-Object { -not (Test-Phase160EIdentityAllowedRuntimeStatusLine -Line $_ -RunId $RunId) -and (Test-Phase160EIdentityUnsafeRepoStatusLine -Line $_) })
+  return [ordered]@{
+    clean = $statusLines.Count -eq 0
+    status_lines = $statusLines
+    allowed_runtime_output_lines = $allowedRuntime
+    unsafe_tracked_mutation_lines = $unsafeLines
+    captured_at = $capturedAt
+  }
+}
+
+function New-Phase160EIdentityStatusClassification {
+  param(
+    [string[]]$StatusLines,
+    [string[]]$BaselineStatusLines,
+    [string]$RunId
+  )
+  $baselineSet = @{}
+  foreach ($line in @($BaselineStatusLines)) {
+    $baselineSet[[string]$line] = $true
+  }
+  $allowedRuntime = @()
+  $allowedTrackedSamples = @()
+  $unsafeCode = @()
+  $protected = @()
+  $unknown = @()
+  foreach ($line in @($StatusLines)) {
+    $lineText = [string]$line
+    $isAllowedRuntime = Test-Phase160EIdentityAllowedRuntimeStatusLine -Line $lineText -RunId $RunId
+    if ($isAllowedRuntime) {
+      $allowedRuntime += $lineText
+      if ((Get-Phase160EIdentityStatusCode -Line $lineText) -eq " M") {
+        $allowedTrackedSamples += $lineText
+      }
+      continue
+    }
+    $isBaseline = $baselineSet.ContainsKey($lineText)
+    $isProtected = Test-Phase160EIdentityProtectedStatusLine -Line $lineText
+    if ($isProtected) {
+      $protected += $lineText
+      continue
+    }
+    if ($isBaseline) {
+      continue
+    }
+    if (Test-Phase160EIdentityUnsafeRepoStatusLine -Line $lineText) {
+      $unsafeCode += $lineText
+      continue
+    }
+    $unknown += $lineText
+  }
+  return [ordered]@{
+    allowed_runtime_outputs = @($allowedRuntime | Sort-Object)
+    allowed_tracked_runtime_sample_changes = @($allowedTrackedSamples | Sort-Object)
+    unsafe_tracked_code_mutations = @($unsafeCode | Sort-Object)
+    unsafe_protected_state_mutations = @($protected | Sort-Object)
+    unknown_status_lines = @($unknown | Sort-Object)
+  }
+}
+
+function Get-Phase160EIdentityHashDriftLines {
+  param([string]$RepoRoot, [object]$BaselineHashes)
+  $drift = @()
+  if ($null -eq $BaselineHashes) {
+    return @()
+  }
+  foreach ($property in @($BaselineHashes.PSObject.Properties)) {
+    $path = [string]$property.Name
+    $baselineHash = [string]$property.Value
+    $full = Resolve-Phase160EIdentityPath -RepoRoot $RepoRoot -Path $path
+    $currentHash = if (Test-Path -LiteralPath $full) { (Get-FileHash -LiteralPath $full -Algorithm SHA256).Hash } else { "MISSING" }
+    if ($currentHash -ne $baselineHash) {
+      $drift += "HASH_CHANGED $path"
+    }
+  }
+  return @($drift | Sort-Object)
 }
 
 function Assert-Phase160EIdentityRunIdSafe {
@@ -192,16 +371,28 @@ try {
   )
 
   if ($Mode -eq "Initialize") {
-    $TrackedStatusBaseline = Get-Phase160EIdentityTrackedStatus
-    $ProtectedStatus = Get-Phase160EIdentityProtectedStatus
+    $RawTrackedStatusBaseline = Get-Phase160EIdentityTrackedStatus
+    $TrackedStatusBaseline = ConvertTo-Phase160EIdentityStatusBaseline -Baseline $RawTrackedStatusBaseline -RunId $RunId
+    $ProtectedStatusLines = Get-Phase160EIdentityProtectedStatus
+    $ProtectedStatus = [ordered]@{
+      clean = $ProtectedStatusLines.Count -eq 0
+      status_lines = $ProtectedStatusLines
+      captured_at = (Get-Date).ToUniversalTime().ToString("o")
+    }
     $ScriptHashes = Get-Phase160EIdentityScriptHashes -RepoRoot $RepoRoot -Paths $KeyScripts
     $StartedAt = (Get-Date).ToUniversalTime().ToString("o")
+    $CurrentBranchAtStart = (git branch --show-current).Trim()
+    $CurrentHeadAtStart = (git rev-parse --short HEAD).Trim()
     $Manifest = [ordered]@{
       run_id = if ([string]::IsNullOrWhiteSpace($RunId)) { "NONE" } else { $RunId }
       repo_root = $RepoRoot
       session_root = $SessionRootRelative
       branch = $Branch
+      current_branch = $CurrentBranchAtStart
       run_head = $Head
+      current_head = $CurrentHeadAtStart
+      head_match = $Head -eq $CurrentHeadAtStart
+      branch_match = $Branch -eq $CurrentBranchAtStart
       remote_head = $RemoteHead
       expected_head_source = $ExpectedHeadSource
       started_at = $StartedAt
@@ -227,6 +418,7 @@ try {
       remote_head = $RemoteHead
       head_match = $true
       tracked_status_baseline = $TrackedStatusBaseline
+      protected_status_at_start = $ProtectedStatus
       runtime_identity_written_at = $StartedAt
       live_repo_mutation_allowed = $false
     })
@@ -247,15 +439,32 @@ try {
   $CurrentBranch = (git branch --show-current).Trim()
   $CurrentHead = (git rev-parse --short HEAD).Trim()
   $CurrentTrackedStatus = Get-Phase160EIdentityTrackedStatus
-  $BaselineTrackedStatus = @($ManifestForGuard.tracked_status_baseline | ForEach-Object { [string]$_ } | Sort-Object)
+  $BaselineObject = ConvertTo-Phase160EIdentityStatusBaseline -Baseline $ManifestForGuard.tracked_status_baseline -RunId ([string]$ManifestForGuard.run_id)
+  $BaselineTrackedStatus = @($BaselineObject.status_lines | ForEach-Object { [string]$_ } | Sort-Object)
   $ProtectedStatus = Get-Phase160EIdentityProtectedStatus
   $RuntimeStaged = @(git diff --cached --name-only -- runtime_sessions)
   $BranchMatches = $CurrentBranch -eq [string]$ManifestForGuard.branch
   $HeadMatches = $CurrentHead -eq [string]$ManifestForGuard.run_head
-  $ProtectedClean = $ProtectedStatus.Count -eq 0
-  $TrackedStatusMatches = (($CurrentTrackedStatus -join "`n") -eq ($BaselineTrackedStatus -join "`n"))
+  $Classification = New-Phase160EIdentityStatusClassification -StatusLines $CurrentTrackedStatus -BaselineStatusLines $BaselineTrackedStatus -RunId ([string]$ManifestForGuard.run_id)
+  $HashDriftLines = Get-Phase160EIdentityHashDriftLines -RepoRoot $RepoRoot -BaselineHashes $ManifestForGuard.key_script_hashes
+  $Classification.unsafe_tracked_code_mutations = @(@($Classification.unsafe_tracked_code_mutations) + @($HashDriftLines) | Sort-Object)
+  $ProtectedClean = @($Classification.unsafe_protected_state_mutations).Count -eq 0
+  $baselineComparable = @($BaselineTrackedStatus | Where-Object { -not (Test-Phase160EIdentityAllowedRuntimeStatusLine -Line $_ -RunId ([string]$ManifestForGuard.run_id)) } | Sort-Object)
+  $currentComparable = @($CurrentTrackedStatus | Where-Object { -not (Test-Phase160EIdentityAllowedRuntimeStatusLine -Line $_ -RunId ([string]$ManifestForGuard.run_id)) } | Sort-Object)
+  $TrackedStatusMatches = (($currentComparable -join "`n") -eq ($baselineComparable -join "`n")) -and @($HashDriftLines).Count -eq 0
   $RuntimeOutputsStaged = $RuntimeStaged.Count -gt 0
-  $GuardPassed = ($BranchMatches -and $HeadMatches -and $ProtectedClean -and $TrackedStatusMatches -and -not $RuntimeOutputsStaged)
+  $BranchOrHeadMismatch = -not ($BranchMatches -and $HeadMatches)
+  $UnsafeTrackedCodeMutationCount = @($Classification.unsafe_tracked_code_mutations).Count
+  $ProtectedStateMutationCount = @($Classification.unsafe_protected_state_mutations).Count
+  $UnknownStatusLineCount = @($Classification.unknown_status_lines).Count
+  $BlockedReasons = @()
+  if ($BranchOrHeadMismatch) { $BlockedReasons += "branch_or_head_mismatch" }
+  if ($ProtectedStateMutationCount -gt 0) { $BlockedReasons += "protected_state_mutation" }
+  if ($RuntimeOutputsStaged) { $BlockedReasons += "runtime_outputs_staged" }
+  if ($UnsafeTrackedCodeMutationCount -gt 0) { $BlockedReasons += "unsafe_tracked_code_mutation" }
+  if ($UnknownStatusLineCount -gt 0) { $BlockedReasons += "unknown_status_lines" }
+  if (-not $TrackedStatusMatches -and $UnsafeTrackedCodeMutationCount -eq 0 -and $ProtectedStateMutationCount -eq 0 -and $UnknownStatusLineCount -eq 0) { $BlockedReasons += "tracked_status_baseline_mismatch" }
+  $GuardPassed = ($BranchMatches -and $HeadMatches -and $ProtectedClean -and $TrackedStatusMatches -and -not $RuntimeOutputsStaged -and $UnsafeTrackedCodeMutationCount -eq 0 -and $UnknownStatusLineCount -eq 0)
   $Guard = [ordered]@{
     status = if ($GuardPassed) { "PASS" } else { "BLOCKED" }
     guard_label = $GuardLabel
@@ -269,11 +478,24 @@ try {
     protected_files_clean = $ProtectedClean
     tracked_status_matches_run_baseline = $TrackedStatusMatches
     runtime_outputs_staged = $RuntimeOutputsStaged
+    allowed_runtime_outputs = @($Classification.allowed_runtime_outputs)
+    allowed_tracked_runtime_sample_changes = @($Classification.allowed_tracked_runtime_sample_changes)
+    unsafe_tracked_code_mutations = @($Classification.unsafe_tracked_code_mutations)
+    unsafe_protected_state_mutations = @($Classification.unsafe_protected_state_mutations)
+    staged_runtime_outputs = @($RuntimeStaged | ForEach-Object { [string]$_ } | Sort-Object)
+    branch_or_head_mismatch = $BranchOrHeadMismatch
+    unknown_status_lines = @($Classification.unknown_status_lines)
+    allowed_runtime_output_count = @($Classification.allowed_runtime_outputs).Count
+    allowed_tracked_runtime_sample_change = @($Classification.allowed_tracked_runtime_sample_changes).Count -gt 0
+    unsafe_tracked_code_mutation_count = $UnsafeTrackedCodeMutationCount
+    protected_state_mutation_count = $ProtectedStateMutationCount
+    unknown_status_line_count = $UnknownStatusLineCount
+    blocked_reasons = @($BlockedReasons)
     candidate_production_enabled = $GuardPassed
     commit_performed = $false
     push_performed = $false
     branch_switch_performed = $false
-    protected_state_mutated = -not $ProtectedClean
+    protected_state_mutated = $ProtectedStateMutationCount -gt 0
     checked_at = (Get-Date).ToUniversalTime().ToString("o")
   }
   Write-Phase160EIdentityJsonFile -Path $RuntimeGuardPath -Object $Guard
@@ -287,6 +509,7 @@ try {
     head_match = $HeadMatches
     live_repo_guard = $Guard.status
     candidate_production_enabled = $GuardPassed
+    blocked_reasons = @($BlockedReasons)
     updated_at = (Get-Date).ToUniversalTime().ToString("o")
   })
   Add-Phase160EIdentityJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
@@ -312,6 +535,11 @@ try {
       protected_files_clean = $ProtectedClean
       tracked_status_matches_run_baseline = $TrackedStatusMatches
       runtime_outputs_staged = $RuntimeOutputsStaged
+      blocked_reasons = @($BlockedReasons)
+      allowed_runtime_output_count = @($Classification.allowed_runtime_outputs).Count
+      unsafe_tracked_code_mutation_count = $UnsafeTrackedCodeMutationCount
+      protected_state_mutation_count = $ProtectedStateMutationCount
+      unknown_status_line_count = $UnknownStatusLineCount
       candidate_production_disabled = $true
       created_at = (Get-Date).ToUniversalTime().ToString("o")
     })
@@ -330,6 +558,14 @@ try {
     head_match = $HeadMatches
     live_repo_guard = $Guard.status
     candidate_production_enabled = $GuardPassed
+    tracked_status_matches_run_baseline = $TrackedStatusMatches
+    runtime_outputs_staged = $RuntimeOutputsStaged
+    allowed_runtime_output_count = @($Classification.allowed_runtime_outputs).Count
+    allowed_tracked_runtime_sample_change = @($Classification.allowed_tracked_runtime_sample_changes).Count -gt 0
+    unsafe_tracked_code_mutation_count = $UnsafeTrackedCodeMutationCount
+    protected_state_mutation_count = $ProtectedStateMutationCount
+    unknown_status_line_count = $UnknownStatusLineCount
+    blocked_reasons = @($BlockedReasons)
     run_manifest_written = Test-Path -LiteralPath $ManifestPath
     runtime_identity_written = Test-Path -LiteralPath $RuntimeIdentityPath
     runtime_guard_written = Test-Path -LiteralPath $RuntimeGuardPath

@@ -238,6 +238,10 @@ try {
   $CandidateBundleCreatedDetected = $false
   $LiveRepoGuardPassDetected = $false
   $UnsafeRepoMutationDetected = $false
+  $GuardPassWithAllowedRuntimeOutputsDetected = $false
+  $GuardBlockedUnsafeMutationDetected = $false
+  $ZeroCandidatePromotionTruthfulDetected = $false
+  $PromotionBundleWithRealCandidateOnlyDetected = $false
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -391,12 +395,33 @@ try {
     if (Test-Path -LiteralPath $PromotionManifestPath) {
       $PromotionBundleObserved = $true
     }
+    $PromotionManifest = Read-Phase160ObserverJsonSafe -Path $PromotionManifestPath
+    if ($null -ne $PromotionManifest) {
+      $promotionStatus = if ($PromotionManifest.PSObject.Properties.Name -contains "promotion_status") { [string]$PromotionManifest.promotion_status } else { "UNKNOWN" }
+      $promotionCandidateCount = if ($PromotionManifest.PSObject.Properties.Name -contains "candidate_count") { [int]$PromotionManifest.candidate_count } else { 0 }
+      $promotionReadyCount = if ($PromotionManifest.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$PromotionManifest.ready_candidate_count } else { 0 }
+      if ($promotionCandidateCount -eq 0 -and @("NO_CANDIDATES", "BLOCKED_NO_CANDIDATES") -contains $promotionStatus) {
+        $ZeroCandidatePromotionTruthfulDetected = $true
+      }
+      if ($promotionCandidateCount -gt 0 -and $promotionReadyCount -gt 0 -and $promotionStatus -eq "WAITING_OWNER_REVIEW") {
+        $PromotionBundleWithRealCandidateOnlyDetected = $true
+      }
+    }
     $RuntimeGuard = Read-Phase160ObserverJsonSafe -Path $RuntimeGuardPath
     if ($null -ne $RuntimeGuard -and $RuntimeGuard.PSObject.Properties.Name -contains "status" -and [string]$RuntimeGuard.status -eq "BLOCKED") {
       $RuntimeGuardViolationDetected = $true
+      $unsafeCount = if ($RuntimeGuard.PSObject.Properties.Name -contains "unsafe_tracked_code_mutation_count") { [int]$RuntimeGuard.unsafe_tracked_code_mutation_count } else { 0 }
+      $protectedCount = if ($RuntimeGuard.PSObject.Properties.Name -contains "protected_state_mutation_count") { [int]$RuntimeGuard.protected_state_mutation_count } else { 0 }
+      if ($unsafeCount -gt 0 -or $protectedCount -gt 0) {
+        $GuardBlockedUnsafeMutationDetected = $true
+        $UnsafeRepoMutationDetected = $true
+      }
     }
     if ($null -ne $RuntimeGuard -and $RuntimeGuard.PSObject.Properties.Name -contains "status" -and [string]$RuntimeGuard.status -eq "PASS") {
       $LiveRepoGuardPassDetected = $true
+      if ($RuntimeGuard.PSObject.Properties.Name -contains "allowed_runtime_output_count" -and [int]$RuntimeGuard.allowed_runtime_output_count -gt 0) {
+        $GuardPassWithAllowedRuntimeOutputsDetected = $true
+      }
       if ($CandidateWorkspaceObserved) {
         $CandidateWorkspaceEnabledDetected = $true
       }
@@ -542,6 +567,10 @@ try {
       internal_active_task_created = $InternalActiveTaskDetected
       candidate_bundle_created = $CandidateBundleCreatedDetected
       live_repo_guard_pass = $LiveRepoGuardPassDetected
+      guard_pass_with_allowed_runtime_outputs = $GuardPassWithAllowedRuntimeOutputsDetected
+      guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
+      zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
+      promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
       unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
       occurred_at = $Now.ToUniversalTime().ToString("o")
     })
@@ -595,6 +624,10 @@ try {
     internal_active_task_created = $InternalActiveTaskDetected
     candidate_bundle_created = $CandidateBundleCreatedDetected
     live_repo_guard_pass = $LiveRepoGuardPassDetected
+    guard_pass_with_allowed_runtime_outputs = $GuardPassWithAllowedRuntimeOutputsDetected
+    guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
+    zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
+    promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
     unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
     code_execution_requested = $false
     accepted_state_mutated = $false
@@ -643,6 +676,10 @@ try {
     internal_active_task_created = $InternalActiveTaskDetected
     candidate_bundle_created = $CandidateBundleCreatedDetected
     live_repo_guard_pass = $LiveRepoGuardPassDetected
+    guard_pass_with_allowed_runtime_outputs = $GuardPassWithAllowedRuntimeOutputsDetected
+    guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
+    zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
+    promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
     unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
     observer_log_created = (Test-Path -LiteralPath $ObserverLogPath)
     observer_summary_created = (Test-Path -LiteralPath $ObserverSummaryPath)

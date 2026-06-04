@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "audit_id": "PHASE160I_LONG_RUN_LIFECYCLE_AUDIT",
+  "line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "mode": "VERIFY",
+  "stage": "STAGE 1 - OWNER LIVE TASK INTAKE",
+  "stage_id": "stage_01_owner_task_intake_audit",
+  "synthetic_runtime_root": "runtime_sessions/live_growth/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_INTAKE_001",
+  "synthetic_task_count": 4,
+  "classifications": [
+    {
+      "fixture_id": "task_with_owner_goal_only",
+      "task_id": "NONE",
+      "safe_intent": true,
+      "classification": "QUARANTINED",
+      "reason": "invalid_live_task_envelope",
+      "envelope_valid": false,
+      "missing_or_invalid_envelope_fields": [
+        "event_type=owner_live_task_injection",
+        "task_id",
+        "source",
+        "priority",
+        "desired_next_gap"
+      ],
+      "safety_valid": false,
+      "missing_required_safety_fields": [
+        "safety_rules.accepted_state_mutation_allowed",
+        "safety_rules.accepted_memory_mutation_allowed",
+        "safety_rules.accepted_self_model_mutation_allowed",
+        "safety_rules.repo_commit_allowed",
+        "safety_rules.runtime_session_only"
+      ],
+      "wrong_value_safety_fields": [],
+      "synthetic_task_path": "runtime_sessions/live_growth/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_INTAKE_001/teacher_inbox/task_with_owner_goal_only.json"
+    },
+    {
+      "fixture_id": "task_with_safety_rules",
+      "task_id": "PHASE160I_SAFE_INTENT_ALTERNATE_SAFETY_RULES_001",
+      "safe_intent": true,
+      "classification": "QUARANTINED",
+      "reason": "unsafe_live_task_safety_rules",
+      "envelope_valid": true,
+      "missing_or_invalid_envelope_fields": [],
+      "safety_valid": false,
+      "missing_required_safety_fields": [
+        "safety_rules.accepted_state_mutation_allowed",
+        "safety_rules.accepted_memory_mutation_allowed",
+        "safety_rules.accepted_self_model_mutation_allowed",
+        "safety_rules.repo_commit_allowed",
+        "safety_rules.runtime_session_only"
+      ],
+      "wrong_value_safety_fields": [],
+      "synthetic_task_path": "runtime_sessions/live_growth/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_INTAKE_001/teacher_inbox/task_with_safety_rules.json"
+    },
+    {
+      "fixture_id": "task_with_expected_outputs",
+      "task_id": "PHASE160I_EXPECTED_OUTPUTS_SAFE_001",
+      "safe_intent": true,
+      "classification": "QUARANTINED",
+      "reason": "unsafe_live_task_safety_rules",
+      "envelope_valid": true,
+      "missing_or_invalid_envelope_fields": [],
+      "safety_valid": false,
+      "missing_required_safety_fields": [
+        "safety_rules.accepted_state_mutation_allowed",
+        "safety_rules.accepted_memory_mutation_allowed",
+        "safety_rules.accepted_self_model_mutation_allowed",
+        "safety_rules.repo_commit_allowed",
+        "safety_rules.runtime_session_only"
+      ],
+      "wrong_value_safety_fields": [],
+      "synthetic_task_path": "runtime_sessions/live_growth/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_INTAKE_001/teacher_inbox/task_with_expected_outputs.json"
+    },
+    {
+      "fixture_id": "task_with_multiple_plan_items",
+      "task_id": "PHASE160I_MULTI_PLAN_SAFE_001",
+      "safe_intent": true,
+      "classification": "QUARANTINED",
+      "reason": "unsafe_live_task_safety_rules",
+      "envelope_valid": true,
+      "missing_or_invalid_envelope_fields": [],
+      "safety_valid": false,
+      "missing_required_safety_fields": [
+        "safety_rules.accepted_state_mutation_allowed",
+        "safety_rules.accepted_memory_mutation_allowed",
+        "safety_rules.accepted_self_model_mutation_allowed",
+        "safety_rules.repo_commit_allowed",
+        "safety_rules.runtime_session_only"
+      ],
+      "wrong_value_safety_fields": [],
+      "synthetic_task_path": "runtime_sessions/live_growth/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_INTAKE_001/teacher_inbox/task_with_multiple_plan_items.json"
+    }
+  ],
+  "unsafe_live_task_safety_rules": {
+    "detected": true,
+    "reason": "unsafe_live_task_safety_rules",
+    "exact_triggering_fields": [
+      "safety_rules.accepted_state_mutation_allowed",
+      "safety_rules.accepted_memory_mutation_allowed",
+      "safety_rules.accepted_self_model_mutation_allowed",
+      "safety_rules.repo_commit_allowed",
+      "safety_rules.runtime_session_only",
+      null
+    ],
+    "root_cause": "Live intake accepts only exact safety flag names accepted_state_mutation_allowed=false, accepted_memory_mutation_allowed=false, accepted_self_model_mutation_allowed=false, repo_commit_allowed=false, and runtime_session_only=true. Safe-intent alternate rule names are quarantined.",
+    "safety_rules_schema_assessment": "TOO_STRICT_AND_BADLY_NAMED_FOR_SAFE_OWNER_TRAINING_TASKS",
+    "safe_owner_training_task_falsely_quarantined": true
+  },
+  "expected_outputs_field_effect": "expected_outputs is accepted when canonical envelope and canonical safety flags are present.",
+  "multiple_plan_items_effect": "plan_steps are acceptable and become backlog when another valid task already owns active_task.",
+  "observed_recent_run_alignment": {
+    "owner_reported_quarantine_reason": "unsafe_live_task_safety_rules",
+    "audit_reproduces_root_cause_class": true
+  },
+  "blocks_phase161": true,
+  "repair_package": "TASK_INTAKE_SCHEMA_AND_SAFETY_RULES_REPAIR",
+  "created_at": "2026-06-04T16:31:25.5296326Z"
+}

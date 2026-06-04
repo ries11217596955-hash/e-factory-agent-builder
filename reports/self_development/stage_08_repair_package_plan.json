@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "audit_id": "PHASE160I_LONG_RUN_LIFECYCLE_AUDIT",
+  "line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "mode": "VERIFY",
+  "stage": "STAGE 8 - REPAIR PACKAGE PLAN",
+  "stage_id": "stage_08_repair_package_plan",
+  "packages": [
+    {
+      "package_id": "TASK_INTAKE_SCHEMA_AND_SAFETY_RULES_REPAIR",
+      "problem": "Safe owner training tasks can be quarantined when safety_rules use safe-intent but noncanonical field names.",
+      "evidence": [
+        "stage_01 unsafe_live_task_safety_rules exact fields",
+        "observed owner task quarantine reason unsafe_live_task_safety_rules"
+      ],
+      "files_likely_in_scope": [
+        "modules/invoke_builder_live_self_growth_duty_step_001.ps1",
+        "validators/validate_phase161_task_intake_schema_safety_rules_v1.ps1"
+      ],
+      "risk": "Weakening the safety gate could admit accepted-state or commit requests if not tested with unsafe negatives.",
+      "proposed_validator_scenario": "Canonical safe, safe-intent alternate, expected_outputs, plan_steps, and unsafe mutation tasks classify with explicit field reasons.",
+      "dependency_order": 1,
+      "blocks_phase161": true
+    },
+    {
+      "package_id": "ACTIVE_TASK_BACKLOG_LIFECYCLE_REPAIR",
+      "problem": "Owner tasks can be delayed behind internal active tasks and backlog advancement is tied to owner-promotion wait state.",
+      "evidence": [
+        "stage_02 classifications ACTIVE_TASK_BLOCKS_OWNER_TASK and OWNER_TASK_BACKLOGGED",
+        "candidate workspace backlog_advanced condition"
+      ],
+      "files_likely_in_scope": [
+        "modules/invoke_builder_candidate_workspace_step_001.ps1",
+        "modules/select_builder_self_initiated_useful_goal_001.ps1",
+        "modules/start_builder_live_growth_daemon_001.ps1"
+      ],
+      "risk": "Preempting internal tasks incorrectly could discard useful work or duplicate candidates.",
+      "proposed_validator_scenario": "With internal active task plus safe owner task, owner task is backlogged, then advanced predictably without loss after current task reaches a clear handoff state.",
+      "dependency_order": 2,
+      "blocks_phase161": true
+    },
+    {
+      "package_id": "QUALITY_ARTIFACT_CONSISTENCY_REPAIR",
+      "problem": "Quality counters can disagree when scripts count legacy candidate_quality/quality_result.json instead of quality_gate/quality_gate_result.json.",
+      "evidence": [
+        "stage_04 classification CHECKER_WEAKNESS_LEGACY_PATH_MISMATCH",
+        "promotion_manifest.quality_decisions populated from quality_gate records"
+      ],
+      "files_likely_in_scope": [
+        "modules/watch_builder_live_console_001.ps1",
+        "modules/watch_builder_live_growth_session_observer_001.ps1",
+        "modules/finalize_builder_promotion_bundle_001.ps1"
+      ],
+      "risk": "A superficial counter fix could hide missing quality records instead of reconciling artifact namespaces.",
+      "proposed_validator_scenario": "A fixture with one ready candidate proves candidate quality file count, quality_gate record count, console counters, and promotion_manifest decisions agree or declare the designed alias.",
+      "dependency_order": 3,
+      "blocks_phase161": true
+    },
+    {
+      "package_id": "ROUTE_LOCK_SUPERSESSION_REPAIR",
+      "problem": "Route locks still contain active-looking PHASE91-PHASE105 and PHASE107-PHASE111 signals while accepted runtime is PHASE160H1.",
+      "evidence": [
+        "stage_06 root V2_R2 classified SUPERSEDED_CANDIDATE",
+        "stage_06 V3 classified EXHAUSTED"
+      ],
+      "files_likely_in_scope": [
+        "route_change_requests/",
+        "route_locks/",
+        "AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2_R2.md"
+      ],
+      "risk": "Silently retiring locks would erase route history; keeping stale locks active misroutes operators.",
+      "proposed_validator_scenario": "Route audit identifies active, exhausted, superseded, and archived locks and requires an explicit PHASE161 route request before state changes.",
+      "dependency_order": 4,
+      "blocks_phase161": true
+    },
+    {
+      "package_id": "PHASE161_BATCH_SCHOOL_FOUNDATION",
+      "problem": "Overnight Builder School needs a linked lifecycle runner, morning review report, stop/archive/clean flow, and failure clustering after the preceding repairs.",
+      "evidence": [
+        "stage_07 readiness criteria",
+        "phase161 blockers list"
+      ],
+      "files_likely_in_scope": [
+        "modules/start_builder_live_growth_daemon_001.ps1",
+        "modules/watch_builder_live_growth_session_observer_001.ps1",
+        "reports/self_development/",
+        "proofs/self_development/"
+      ],
+      "risk": "Launching school before lifecycle repairs would create unreviewable overnight work and ambiguous owner-task handling.",
+      "proposed_validator_scenario": "Batch-school dry run executes several safe tasks unattended, clusters failures, writes morning report, and proves no accepted repo mutation.",
+      "dependency_order": 5,
+      "blocks_phase161": true
+    }
+  ],
+  "dependency_order": [
+    "TASK_INTAKE_SCHEMA_AND_SAFETY_RULES_REPAIR",
+    "ACTIVE_TASK_BACKLOG_LIFECYCLE_REPAIR",
+    "QUALITY_ARTIFACT_CONSISTENCY_REPAIR",
+    "ROUTE_LOCK_SUPERSESSION_REPAIR",
+    "PHASE161_BATCH_SCHOOL_FOUNDATION"
+  ],
+  "blocks_phase161_package_count": 5,
+  "created_at": "2026-06-04T16:31:25.8429676Z"
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "audit_id": "PHASE160I_LONG_RUN_LIFECYCLE_AUDIT",
+  "line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "mode": "VERIFY",
+  "stage": "STAGE 4 - QUALITY ARTIFACT CONSISTENCY",
+  "stage_id": "stage_04_quality_artifact_consistency_audit",
+  "inspected_artifact_paths": {
+    "implemented_quality_record_path": "candidate_workspace/candidate_bundles/<candidate>/quality_gate/quality_gate_result.json",
+    "requested_or_legacy_quality_record_path": "candidate_quality/quality_result.json",
+    "promotion_manifest_path": "promotion_bundle/promotion_manifest.json"
+  },
+  "consistency_findings": {
+    "promotion_manifest_has_quality_decisions": true,
+    "candidate_manifest_decision_read": true,
+    "candidate_status_read": true,
+    "quality_gate_result_read": true,
+    "console_reads_quality_gate_result": true,
+    "observer_reads_promotion_manifest_quality_counts": true,
+    "legacy_candidate_quality_path_used_by_runtime": false
+  },
+  "quality_result_count_issue": {
+    "detected": true,
+    "classification": "CHECKER_WEAKNESS_LEGACY_PATH_MISMATCH",
+    "quality_result_count_can_be_zero_while_promotion_manifest_has_quality_decisions": true,
+    "valid_design": true,
+    "missing_artifact_write": false,
+    "reason": "The runtime writes and reads quality_gate/quality_gate_result.json. A checker counting candidate_quality/quality_result.json can return zero while promotion_manifest.quality_decisions is populated from the implemented quality_gate path."
+  },
+  "accepted_baseline_evidence": {
+    "phase160h_quality_gate_pass": true,
+    "phase160h_revision_feedback_enabled": true,
+    "phase160h1_materialization_parse_check_pass": true
+  },
+  "root_cause": "Quality artifacts are internally consistent on the quality_gate path, but external/script views using candidate_quality/quality_result.json can undercount.",
+  "repair_package": "QUALITY_ARTIFACT_CONSISTENCY_REPAIR",
+  "blocks_phase161": true,
+  "created_at": "2026-06-04T16:31:25.6706647Z"
+}

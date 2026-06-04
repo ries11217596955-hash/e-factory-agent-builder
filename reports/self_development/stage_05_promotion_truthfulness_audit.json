@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "audit_id": "PHASE160I_LONG_RUN_LIFECYCLE_AUDIT",
+  "line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "mode": "VERIFY",
+  "stage": "STAGE 5 - PROMOTION TRUTHFULNESS",
+  "stage_id": "stage_05_promotion_truthfulness_audit",
+  "promotion_truthfulness": {
+    "waiting_owner_review_allowed_only_for_quality_ready": true,
+    "owner_promotion_allowed_only_for_ready": true,
+    "weak_candidates_blocked": true,
+    "ready_candidates_require_owner_promotion_allowed": true,
+    "source_attribution_from_candidate_manifest": true,
+    "truthful": true
+  },
+  "accepted_baseline_evidence": {
+    "phase160h_promotion_waiting_owner_review_only_for_quality_ready": true,
+    "phase160h_owner_promotion_blocked_for_weak_candidates": true,
+    "phase160h1_real_payload_candidate_ready": true
+  },
+  "caveat": "Promotion truthfulness depends on candidate source manifests staying truthful; quarantined owner tasks must not be listed as source_tasks.",
+  "root_cause": "Promotion gate logic is truthful for quality-ready candidates, but lifecycle visibility must still prevent quarantined owner tasks from being inferred as executed.",
+  "repair_package": "QUALITY_ARTIFACT_CONSISTENCY_REPAIR",
+  "blocks_phase161": false,
+  "created_at": "2026-06-04T16:31:25.6759020Z"
+}

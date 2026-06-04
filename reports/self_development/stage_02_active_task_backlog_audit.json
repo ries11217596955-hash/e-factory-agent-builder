@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "audit_id": "PHASE160I_LONG_RUN_LIFECYCLE_AUDIT",
+  "line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "mode": "VERIFY",
+  "stage": "STAGE 2 - ACTIVE TASK / BACKLOG LIFECYCLE",
+  "stage_id": "stage_02_active_task_backlog_audit",
+  "synthetic_runtime_root": "runtime_sessions/live_growth/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_BACKLOG_001",
+  "simulated_internal_active_task_path": "runtime_sessions/live_growth/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_BACKLOG_001/active_task/active_task.json",
+  "simulated_owner_backlog_path": "runtime_sessions/live_growth/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_BACKLOG_001/task_backlog/PHASE160I_OWNER_SAFE_TASK_WHILE_INTERNAL_ACTIVE_001.json",
+  "classifications": [
+    "ACTIVE_TASK_BLOCKS_OWNER_TASK",
+    "OWNER_TASK_BACKLOGGED"
+  ],
+  "owner_task_state": {
+    "owner_task_quarantined": false,
+    "owner_task_consumed": true,
+    "owner_task_backlogged": true,
+    "owner_task_lost": false,
+    "classification": "OWNER_TASK_BACKLOGGED",
+    "reason": "existing_active_task_retained"
+  },
+  "active_internal_task_behavior": {
+    "blocks_immediate_activation": true,
+    "blocks_safe_intake": false,
+    "blocks_backlog_write": false,
+    "blocks_candidate_generation_for_owner_until_owner_review_gate_clears": true,
+    "finding": "An active internal task delays owner task activation, but canonical safe owner tasks should be backlogged instead of quarantined or lost."
+  },
+  "code_path_evidence": {
+    "intake_writes_backlog_when_existing_active": false,
+    "candidate_workspace_advances_backlog": true,
+    "backlog_advancement_requires_waiting_owner_promotion": true,
+    "selector_skips_internal_goal_when_teacher_or_backlog_exists": true,
+    "internal_task_creation_writes_active_task": true
+  },
+  "observed_recent_run_alignment": {
+    "injected_owner_task_quarantined_reason": "unsafe_live_task_safety_rules",
+    "internal_active_task_executed": "PHASE160F_INTERNAL_SELF_SELECTED_SELF_INITIATED_USEFUL_GOAL_SELECTOR_HARDENING",
+    "diagnosis": "The observed owner task did not reach active, consumed, backlog, or candidate source because it failed safety schema before the normal backlog path."
+  },
+  "root_cause": "Backlog lifecycle exists, but owner task intake depends on exact safety schema and backlog advancement is gated behind current active task promotion status.",
+  "repair_package": "ACTIVE_TASK_BACKLOG_LIFECYCLE_REPAIR",
+  "blocks_phase161": true,
+  "created_at": "2026-06-04T16:31:25.5924543Z"
+}

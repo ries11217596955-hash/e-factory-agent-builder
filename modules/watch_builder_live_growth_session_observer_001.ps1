@@ -186,6 +186,10 @@ try {
   $ObserverLogPath = Join-Path $SessionRootFull "observer_log.jsonl"
   $ObserverSummaryPath = Join-Path $SessionRootFull "observer_summary.json"
   $TeacherInboxPath = Join-Path $SessionRootFull "teacher_inbox"
+  $TeacherDigestPath = Join-Path $SessionRootFull "teacher_digest"
+  $TeacherConsumedPath = Join-Path $SessionRootFull "teacher_consumed"
+  $TeacherQuarantinePath = Join-Path $SessionRootFull "teacher_quarantine"
+  $TaskBacklogPath = Join-Path $SessionRootFull "task_backlog"
   $BlockerQueuePath = Join-Path $SessionRootFull "blocker_queue"
 
   $StartTime = Get-Date
@@ -340,6 +344,10 @@ try {
 
     $BlockerQueueCount = Get-Phase160ObserverJsonFileCount -Path $BlockerQueuePath
     $TeacherInboxCount = Get-Phase160ObserverJsonFileCount -Path $TeacherInboxPath
+    $TeacherDigestCount = Get-Phase160ObserverJsonFileCount -Path $TeacherDigestPath
+    $TeacherConsumedCount = Get-Phase160ObserverJsonFileCount -Path $TeacherConsumedPath
+    $TeacherQuarantineCount = Get-Phase160ObserverJsonFileCount -Path $TeacherQuarantinePath
+    $TaskBacklogCount = Get-Phase160ObserverJsonFileCount -Path $TaskBacklogPath
 
     if ($StaleThisPoll -and -not (Test-Path -LiteralPath $FinalStatePath)) {
       $DaemonPresent = Test-Phase160ObserverDaemonProcessPresent -SessionRoot $SessionRoot
@@ -364,13 +372,31 @@ try {
     if (($StaleHeartbeatDetected -or $NoProgressDetected) -and -not $SuggestionWritten) {
       $SuggestionPath = Join-Path $TeacherInboxPath "observer_intervention_suggestion_0001.json"
       Write-Phase160ObserverJsonFile -Path $SuggestionPath -Object ([ordered]@{
-        status = "SUGGESTED"
-        suggestion_id = "observer_intervention_suggestion_0001"
+        event_type = "owner_live_task_injection"
+        task_id = "observer_intervention_suggestion_0001"
         source = "observer"
-        reason = if ($StaleHeartbeatDetected) { "stale_heartbeat" } else { "no_progress" }
-        suggested_action = "teacher_review_live_session"
+        priority = "low"
+        owner_goal = if ($StaleHeartbeatDetected) { "Review stale heartbeat and decide whether the live session should stop or continue." } else { "Review no-progress signal and decide whether the live session should continue." }
+        desired_next_gap = "LIVE_SESSION_OBSERVER_REVIEW_GAP"
+        plan_steps = @(
+          "Inspect heartbeat/current_state freshness.",
+          "Inspect blocker_queue and event_log evidence.",
+          "Decide whether to continue, stop, or quarantine the session-local result."
+        )
+        safety_rules = [ordered]@{
+          accepted_state_mutation_allowed = $false
+          accepted_memory_mutation_allowed = $false
+          accepted_self_model_mutation_allowed = $false
+          repo_commit_allowed = $false
+          runtime_session_only = $true
+        }
+        success_signals = @("observer_suggestion_digest_written", "owner_review_possible")
         code_execution_requested = $false
-        accepted_state_mutated = $false
+        accepted_state_mutation_allowed = $false
+        accepted_memory_mutation_allowed = $false
+        accepted_self_model_mutation_allowed = $false
+        repo_commit_allowed = $false
+        runtime_session_only = $true
         created_at = (Get-Date).ToUniversalTime().ToString("o")
       })
       $SuggestionWritten = $true
@@ -406,6 +432,10 @@ try {
       stale_ended_session_detected = $StaleEndedSessionDetected
       blocker_queue_count = $BlockerQueueCount
       teacher_inbox_count = $TeacherInboxCount
+      teacher_digest_count = $TeacherDigestCount
+      teacher_consumed_count = $TeacherConsumedCount
+      teacher_quarantine_count = $TeacherQuarantineCount
+      task_backlog_count = $TaskBacklogCount
       occurred_at = $Now.ToUniversalTime().ToString("o")
     })
 
@@ -439,6 +469,11 @@ try {
     last_self_growth_status = $LastSelfGrowthStatus
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
+    teacher_inbox_count = $TeacherInboxCount
+    teacher_digest_count = $TeacherDigestCount
+    teacher_consumed_count = $TeacherConsumedCount
+    teacher_quarantine_count = $TeacherQuarantineCount
+    task_backlog_count = $TaskBacklogCount
     code_execution_requested = $false
     accepted_state_mutated = $false
     accepted_memory_mutated = $false

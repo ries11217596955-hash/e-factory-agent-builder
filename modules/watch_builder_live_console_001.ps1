@@ -121,14 +121,14 @@ function Get-Phase160ConsoleTailLines {
 }
 
 function Get-Phase160ConsoleJsonFileSummary {
-  param([string]$Directory)
+  param([string]$Directory, [string]$Pattern = "*.json")
   if (-not (Test-Path -LiteralPath $Directory)) {
     return [pscustomobject][ordered]@{
       count = 0
       latest_name = "NONE"
     }
   }
-  $files = @(Get-ChildItem -LiteralPath $Directory -File -Filter "*.json" -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" } | Sort-Object LastWriteTimeUtc, Name)
+  $files = @(Get-ChildItem -LiteralPath $Directory -File -Filter $Pattern -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" } | Sort-Object LastWriteTimeUtc, Name)
   $latest = "NONE"
   if ($files.Count -gt 0) {
     $latest = $files[-1].Name
@@ -288,6 +288,12 @@ try {
   $ObserverLogPath = Join-Path $SessionRootFull "observer_log.jsonl"
   $BlockerQueuePath = Join-Path $SessionRootFull "blocker_queue"
   $TeacherInboxPath = Join-Path $SessionRootFull "teacher_inbox"
+  $TeacherDigestPath = Join-Path $SessionRootFull "teacher_digest"
+  $TeacherConsumedPath = Join-Path $SessionRootFull "teacher_consumed"
+  $TeacherQuarantinePath = Join-Path $SessionRootFull "teacher_quarantine"
+  $TaskBacklogPath = Join-Path $SessionRootFull "task_backlog"
+  $ActiveTaskRecordPath = Join-Path $SessionRootFull "active_task/active_task.json"
+  $ActivePlanItemPath = Join-Path $SessionRootFull "active_task/active_plan_item.json"
   $TeacherOutboxPath = Join-Path $SessionRootFull "teacher_outbox"
   $StopFlagPath = Join-Path $SessionRootFull "stop.flag"
   $ExperienceLedgerPath = Join-Path $SessionRootFull "self_growth/experience_ledger.jsonl"
@@ -308,6 +314,7 @@ try {
   $StopFlagRead = $false
   $SelfGrowthFieldsPrinted = $false
   $MacroFieldsPrinted = $false
+  $TaskIntakeFieldsPrinted = $false
   $StaleAfterSeconds = [Math]::Max(25, $PollIntervalSeconds * 5)
 
   while ((Get-Date) -lt $EndTime) {
@@ -433,7 +440,23 @@ try {
     $ObserverLogRead = $ObserverLogRead -or ($ObserverLineCount -gt 0)
     $BlockerSummary = Get-Phase160ConsoleJsonFileSummary -Directory $BlockerQueuePath
     $TeacherInboxSummary = Get-Phase160ConsoleJsonFileSummary -Directory $TeacherInboxPath
+    $TeacherDigestSummary = Get-Phase160ConsoleJsonFileSummary -Directory $TeacherDigestPath
+    $TeacherConsumedSummary = Get-Phase160ConsoleJsonFileSummary -Directory $TeacherConsumedPath -Pattern "receipt_*.json"
+    $TeacherQuarantineSummary = Get-Phase160ConsoleJsonFileSummary -Directory $TeacherQuarantinePath -Pattern "quarantine_*.json"
+    $TaskBacklogSummary = Get-Phase160ConsoleJsonFileSummary -Directory $TaskBacklogPath
     $TeacherOutboxSummary = Get-Phase160ConsoleJsonFileSummary -Directory $TeacherOutboxPath
+    $ActiveTaskRecord = Read-Phase160ConsoleJsonSafe -Path $ActiveTaskRecordPath
+    $ActivePlanItem = Read-Phase160ConsoleJsonSafe -Path $ActivePlanItemPath
+    $LatestConsumedRecord = if ($TeacherConsumedSummary.latest_name -ne "NONE") { Read-Phase160ConsoleJsonSafe -Path (Join-Path $TeacherConsumedPath $TeacherConsumedSummary.latest_name) } else { $null }
+    $ActiveTaskId = if ($null -ne $ActiveTaskRecord -and $ActiveTaskRecord.PSObject.Properties.Name -contains "task_id") { Format-Phase160ConsoleValue -Value $ActiveTaskRecord.task_id } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "active_task_id") { Format-Phase160ConsoleValue -Value $CurrentState.active_task_id } else { "NONE" }
+    $ActivePlanItemId = if ($null -ne $ActivePlanItem -and $ActivePlanItem.PSObject.Properties.Name -contains "item_id") { Format-Phase160ConsoleValue -Value $ActivePlanItem.item_id } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "active_plan_item_id") { Format-Phase160ConsoleValue -Value $CurrentState.active_plan_item_id } else { "NONE" }
+    $LastConsumedTask = if ($null -ne $LatestConsumedRecord -and $LatestConsumedRecord.PSObject.Properties.Name -contains "task_id") { Format-Phase160ConsoleValue -Value $LatestConsumedRecord.task_id } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "last_consumed_task") { Format-Phase160ConsoleValue -Value $CurrentState.last_consumed_task } else { "NONE" }
+    $LastTaskInfluencedGap = "False"
+    if ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "last_task_influenced_gap_selection") {
+      $LastTaskInfluencedGap = Format-Phase160ConsoleValue -Value $CurrentState.last_task_influenced_gap_selection
+    } elseif ($null -ne $FinalState -and $FinalState.PSObject.Properties.Name -contains "last_task_influenced_gap_selection") {
+      $LastTaskInfluencedGap = Format-Phase160ConsoleValue -Value $FinalState.last_task_influenced_gap_selection
+    }
     $BlockerQueueRead = $true
     $TeacherInboxRead = $true
     $TeacherOutboxRead = $true
@@ -442,11 +465,12 @@ try {
     $FinalStateWritten = Test-Path -LiteralPath $FinalStatePath
     $LastEvent = Get-Phase160ConsoleLatestEventName -EventLogPath $EventLogPath
 
-    $Line = "LIVE_CONSOLE POLL=$PollCount HEARTBEAT_STATUS=$HeartbeatStatus TICK=$CurrentTick HEARTBEAT_COUNT=$HeartbeatCount SELF_GROWTH_ENABLED=$SelfGrowthEnabled DUTY_COUNT=$SelfGrowthDutyCount LAST_DUTY=$LastSelfGrowthDuty LAST_GAP=$LastSelfGrowthGap LAST_DUTY_STATUS=$LastSelfGrowthStatus NEXT_GAP=$NextSelfGrowthGap MACRO_CYCLE=$MacroCycleId LAST_STAGE=$LastMacroCycleStage LAST_DECISION=$LastMacroDecision macro_cycle_enabled=$MacroCycleEnabled macro_cycle_id=$MacroCycleId last_macro_cycle_stage=$LastMacroCycleStage last_macro_decision=$LastMacroDecision macro_cycle_stage_count=$MacroCycleStageCount experience_ledger_count=$ExperienceLedgerCount next_goal_selected_with_reason=$NextGoalSelectedWithReason final_state_written=$FinalStateWritten EVENT_LINES=$EventLineCount OBSERVER_LINES=$ObserverLineCount BLOCKERS=$($BlockerSummary.count) LATEST_BLOCKER=$($BlockerSummary.latest_name) TEACHER_INBOX=$($TeacherInboxSummary.count) LATEST_SUGGESTION=$($TeacherInboxSummary.latest_name) TEACHER_OUTBOX=$($TeacherOutboxSummary.count) STALE=$StaleThisPoll HEARTBEAT_AGE_SECONDS=$HeartbeatAgeSeconds STOP_FLAG=$StopFlagPresent LAST_EVENT=$LastEvent"
+    $Line = "LIVE_CONSOLE POLL=$PollCount HEARTBEAT_STATUS=$HeartbeatStatus TICK=$CurrentTick HEARTBEAT_COUNT=$HeartbeatCount SELF_GROWTH_ENABLED=$SelfGrowthEnabled DUTY_COUNT=$SelfGrowthDutyCount LAST_DUTY=$LastSelfGrowthDuty LAST_GAP=$LastSelfGrowthGap LAST_DUTY_STATUS=$LastSelfGrowthStatus NEXT_GAP=$NextSelfGrowthGap MACRO_CYCLE=$MacroCycleId LAST_STAGE=$LastMacroCycleStage LAST_DECISION=$LastMacroDecision TEACHER_INBOX_COUNT=$($TeacherInboxSummary.count) TEACHER_DIGEST_COUNT=$($TeacherDigestSummary.count) TEACHER_CONSUMED_COUNT=$($TeacherConsumedSummary.count) TEACHER_QUARANTINE_COUNT=$($TeacherQuarantineSummary.count) TASK_BACKLOG_COUNT=$($TaskBacklogSummary.count) ACTIVE_TASK=$ActiveTaskId ACTIVE_PLAN_ITEM=$ActivePlanItemId LAST_CONSUMED_TASK=$LastConsumedTask LAST_TASK_INFLUENCED_GAP=$LastTaskInfluencedGap macro_cycle_enabled=$MacroCycleEnabled macro_cycle_id=$MacroCycleId last_macro_cycle_stage=$LastMacroCycleStage last_macro_decision=$LastMacroDecision macro_cycle_stage_count=$MacroCycleStageCount experience_ledger_count=$ExperienceLedgerCount next_goal_selected_with_reason=$NextGoalSelectedWithReason final_state_written=$FinalStateWritten EVENT_LINES=$EventLineCount OBSERVER_LINES=$ObserverLineCount BLOCKERS=$($BlockerSummary.count) LATEST_BLOCKER=$($BlockerSummary.latest_name) TEACHER_INBOX=$($TeacherInboxSummary.count) LATEST_SUGGESTION=$($TeacherInboxSummary.latest_name) TEACHER_OUTBOX=$($TeacherOutboxSummary.count) STALE=$StaleThisPoll HEARTBEAT_AGE_SECONDS=$HeartbeatAgeSeconds STOP_FLAG=$StopFlagPresent LAST_EVENT=$LastEvent"
     Write-Phase160ConsoleVisibleLine -Line $Line -SamplePath $SamplePath
     $LiveLineCount += 1
     $SelfGrowthFieldsPrinted = $true
     $MacroFieldsPrinted = $true
+    $TaskIntakeFieldsPrinted = $true
 
     $EventTail = Get-Phase160ConsoleTailLines -Path $EventLogPath -Count $ShowTailEvents
     for ($i = 0; $i -lt $EventTail.Count; $i += 1) {
@@ -495,6 +519,7 @@ try {
     console_supports_owner_screenshot_mode = $true
     live_console_shows_self_growth_fields = $SelfGrowthFieldsPrinted
     live_console_shows_macro_fields = $MacroFieldsPrinted
+    live_console_shows_task_intake_fields = $TaskIntakeFieldsPrinted
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
     accepted_self_model_mutated = $false

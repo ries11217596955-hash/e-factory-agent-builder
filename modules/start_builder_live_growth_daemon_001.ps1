@@ -98,6 +98,43 @@ function Read-Phase160DaemonJsonSafe {
   }
 }
 
+function Get-Phase160DaemonJsonFileCount {
+  param([string]$Path, [string]$Pattern = "*.json")
+  if (-not (Test-Path -LiteralPath $Path)) {
+    return 0
+  }
+  return @(Get-ChildItem -LiteralPath $Path -File -Filter $Pattern -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" }).Count
+}
+
+function Get-Phase160DaemonLatestJson {
+  param([string]$Path, [string]$Pattern = "*.json")
+  if (-not (Test-Path -LiteralPath $Path)) {
+    return $null
+  }
+  $files = @(Get-ChildItem -LiteralPath $Path -File -Filter $Pattern -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" } | Sort-Object LastWriteTimeUtc, Name)
+  if ($files.Count -lt 1) {
+    return $null
+  }
+  return Read-Phase160DaemonJsonSafe -Path $files[-1].FullName
+}
+
+function Get-Phase160DaemonLiveTaskSnapshot {
+  param([string]$SessionRootFull)
+  $activeTask = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "active_task/active_task.json")
+  $activePlanItem = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "active_task/active_plan_item.json")
+  $latestConsumed = Get-Phase160DaemonLatestJson -Path (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
+  return [ordered]@{
+    teacher_inbox_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_inbox")
+    teacher_digest_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_digest")
+    teacher_consumed_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
+    teacher_quarantine_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_quarantine") -Pattern "quarantine_*.json"
+    task_backlog_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "task_backlog")
+    active_task_id = if ($null -ne $activeTask -and $activeTask.PSObject.Properties.Name -contains "task_id") { [string]$activeTask.task_id } else { "NONE" }
+    active_plan_item_id = if ($null -ne $activePlanItem -and $activePlanItem.PSObject.Properties.Name -contains "item_id") { [string]$activePlanItem.item_id } else { "NONE" }
+    last_consumed_task = if ($null -ne $latestConsumed -and $latestConsumed.PSObject.Properties.Name -contains "task_id") { [string]$latestConsumed.task_id } else { "NONE" }
+  }
+}
+
 function Assert-Phase160DaemonEquals {
   param([object]$Actual, [object]$Expected, [string]$Name)
   if ($Actual -ne $Expected) {
@@ -178,6 +215,12 @@ try {
     (Join-Path $SessionRootFull "tick_records"),
     (Join-Path $SessionRootFull "self_growth"),
     (Join-Path $SessionRootFull "teacher_inbox"),
+    (Join-Path $SessionRootFull "teacher_digest"),
+    (Join-Path $SessionRootFull "teacher_consumed"),
+    (Join-Path $SessionRootFull "teacher_quarantine"),
+    (Join-Path $SessionRootFull "task_backlog"),
+    (Join-Path $SessionRootFull "active_task"),
+    (Join-Path $SessionRootFull "plan_items"),
     (Join-Path $SessionRootFull "teacher_outbox"),
     (Join-Path $SessionRootFull "blocker_queue"),
     (Join-Path $SessionRootFull "accepted_interventions"),
@@ -222,6 +265,8 @@ try {
   $LastMacroCycleStage = "NONE"
   $LastMacroDecision = "NONE"
   $ActiveMacroCycleId = if ($MacroSelfGrowthEnabled) { $MacroCycleId } else { "NONE" }
+  $LastTaskInfluencedGapSelection = $false
+  $LiveTaskSnapshot = Get-Phase160DaemonLiveTaskSnapshot -SessionRootFull $SessionRootFull
 
   Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
     event_type = "daemon_started"
@@ -372,6 +417,10 @@ try {
         if ($DutyResult.PSObject.Properties.Name -contains "decision") {
           $LastMacroDecision = [string]$DutyResult.decision
         }
+        if ($DutyResult.PSObject.Properties.Name -contains "task_influenced_gap_selection") {
+          $LastTaskInfluencedGapSelection = [bool]$DutyResult.task_influenced_gap_selection
+        }
+        $LiveTaskSnapshot = Get-Phase160DaemonLiveTaskSnapshot -SessionRootFull $SessionRootFull
         Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
           event_type = "self_growth_duty_completed"
           source = "builder_daemon"
@@ -384,6 +433,12 @@ try {
           cycle_stage = $LastMacroCycleStage
           status = $LastSelfGrowthStatus
           decision = $LastMacroDecision
+          active_task_id = [string]$LiveTaskSnapshot.active_task_id
+          active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+          task_influenced_gap_selection = $LastTaskInfluencedGapSelection
+          backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+          consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+          quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
           next_gap = $NextSelfGrowthGap
           occurred_at = (Get-Date).ToUniversalTime().ToString("o")
         })
@@ -420,6 +475,8 @@ try {
       }
     }
 
+    $LiveTaskSnapshot = Get-Phase160DaemonLiveTaskSnapshot -SessionRootFull $SessionRootFull
+
     $Heartbeat = [ordered]@{
       status = "RUNNING"
       heartbeat_id = "PHASE160_BUILDER_DAEMON_HEARTBEAT"
@@ -437,6 +494,15 @@ try {
       macro_cycle_id = $ActiveMacroCycleId
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
+      teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+      teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+      teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+      teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
+      task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+      active_task_id = [string]$LiveTaskSnapshot.active_task_id
+      active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+      last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+      last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
     }
@@ -463,6 +529,15 @@ try {
       macro_cycle_id = $ActiveMacroCycleId
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
+      teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+      teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+      teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+      teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
+      task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+      active_task_id = [string]$LiveTaskSnapshot.active_task_id
+      active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+      last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+      last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
       accepted_self_model_mutated = $false
@@ -490,6 +565,15 @@ try {
       macro_cycle_id = $ActiveMacroCycleId
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
+      teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+      teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+      teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+      teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
+      task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+      active_task_id = [string]$LiveTaskSnapshot.active_task_id
+      active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+      last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+      last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
       duration_based_session = $true
       fixed_tick_batch_mode = $false
       occurred_at = $Now.ToUniversalTime().ToString("o")
@@ -513,6 +597,12 @@ try {
       macro_cycle_id = $ActiveMacroCycleId
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
+      active_task_id = [string]$LiveTaskSnapshot.active_task_id
+      active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+      task_influenced_gap_selection = $LastTaskInfluencedGapSelection
+      backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+      consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+      quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
       duration_based_session = $true
       fixed_tick_batch_mode = $false
       occurred_at = $Now.ToUniversalTime().ToString("o")
@@ -531,6 +621,7 @@ try {
 
   $StoppedAt = (Get-Date).ToUniversalTime().ToString("o")
   $FinalStatus = if ($StopReason -eq "duration_limit") { "COMPLETED" } elseif ($StopReason -eq "stop_flag") { "STOPPED" } else { "STOPPED" }
+  $LiveTaskSnapshot = Get-Phase160DaemonLiveTaskSnapshot -SessionRootFull $SessionRootFull
   $FinalState = [ordered]@{
     status = "STOPPED"
     state_id = "PHASE160_BUILDER_DAEMON_CURRENT_STATE"
@@ -552,6 +643,15 @@ try {
     macro_cycle_id = $ActiveMacroCycleId
     last_macro_cycle_stage = $LastMacroCycleStage
     last_macro_decision = $LastMacroDecision
+    teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+    teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+    teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+    teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
+    task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+    active_task_id = [string]$LiveTaskSnapshot.active_task_id
+    active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+    last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+    last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
     accepted_self_model_mutated = $false
@@ -576,6 +676,15 @@ try {
     macro_cycle_id = $ActiveMacroCycleId
     last_macro_cycle_stage = $LastMacroCycleStage
     last_macro_decision = $LastMacroDecision
+    teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+    teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+    teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+    teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
+    task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+    active_task_id = [string]$LiveTaskSnapshot.active_task_id
+    active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+    last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+    last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
   }
   Write-Phase160DaemonJsonFile -Path $HeartbeatPath -Object $FinalHeartbeat
 
@@ -593,6 +702,15 @@ try {
     last_self_growth_duty_id = $LastSelfGrowthDutyId
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
+    teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+    teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+    teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+    teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
+    task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+    active_task_id = [string]$LiveTaskSnapshot.active_task_id
+    active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+    last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+    last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
     accepted_self_model_mutated = $false
@@ -640,6 +758,15 @@ try {
     macro_cycle_id = $ActiveMacroCycleId
     last_macro_cycle_stage = $LastMacroCycleStage
     last_macro_decision = $LastMacroDecision
+    teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+    teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+    teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
+    teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
+    task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
+    active_task_id = [string]$LiveTaskSnapshot.active_task_id
+    active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
+    last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+    last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
     heartbeat_written = (Test-Path -LiteralPath $HeartbeatPath)
     event_log_created = (Test-Path -LiteralPath $EventLogPath)
     final_state_written = (Test-Path -LiteralPath $FinalStatePath)

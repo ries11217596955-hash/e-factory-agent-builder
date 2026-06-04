@@ -221,6 +221,644 @@ function Test-Phase160DutyTeacherInterventionValid {
   )
 }
 
+function Get-Phase160DutyObjectProperty {
+  param([object]$Object, [string]$Name, [object]$Default = $null)
+  if ($null -eq $Object) {
+    return $Default
+  }
+  if ($Object.PSObject.Properties.Name -contains $Name) {
+    return $Object.$Name
+  }
+  return $Default
+}
+
+function Get-Phase160DutyStringProperty {
+  param([object]$Object, [string]$Name, [string]$Default = "")
+  $value = Get-Phase160DutyObjectProperty -Object $Object -Name $Name -Default $Default
+  if ($null -eq $value) {
+    return $Default
+  }
+  return [string]$value
+}
+
+function Get-Phase160DutyTaskSafetyFlag {
+  param([object]$Task, [string]$Name)
+  $rules = Get-Phase160DutyObjectProperty -Object $Task -Name "safety_rules" -Default $null
+  if ($null -ne $rules -and $rules.PSObject.Properties.Name -contains $Name) {
+    return $rules.$Name
+  }
+  if ($Task.PSObject.Properties.Name -contains $Name) {
+    return $Task.$Name
+  }
+  return $null
+}
+
+function Test-Phase160DutyTaskSafetyAllowed {
+  param([object]$Task)
+  if ($null -eq $Task) {
+    return $false
+  }
+  $requiredFalse = @(
+    "accepted_state_mutation_allowed",
+    "accepted_memory_mutation_allowed",
+    "accepted_self_model_mutation_allowed",
+    "repo_commit_allowed"
+  )
+  foreach ($flag in $requiredFalse) {
+    $value = Get-Phase160DutyTaskSafetyFlag -Task $Task -Name $flag
+    if ($null -eq $value -or [bool]$value -ne $false) {
+      return $false
+    }
+  }
+  $runtimeOnly = Get-Phase160DutyTaskSafetyFlag -Task $Task -Name "runtime_session_only"
+  return ($null -ne $runtimeOnly -and [bool]$runtimeOnly -eq $true)
+}
+
+function Test-Phase160DutyTaskEnvelopeValid {
+  param([object]$Task)
+  if ($null -eq $Task) {
+    return $false
+  }
+  if ((Get-Phase160DutyStringProperty -Object $Task -Name "event_type") -ne "owner_live_task_injection") {
+    return $false
+  }
+  foreach ($required in @("task_id", "source", "priority", "owner_goal", "desired_next_gap")) {
+    if ([string]::IsNullOrWhiteSpace((Get-Phase160DutyStringProperty -Object $Task -Name $required))) {
+      return $false
+    }
+  }
+  return $true
+}
+
+function ConvertTo-Phase160DutySafeLeaf {
+  param([string]$Value)
+  $leaf = if ([string]::IsNullOrWhiteSpace($Value)) { "UNKNOWN" } else { $Value }
+  $leaf = $leaf -replace '[^A-Za-z0-9_.-]', '_'
+  if ($leaf.Length -gt 80) {
+    $leaf = $leaf.Substring(0, 80)
+  }
+  return $leaf
+}
+
+function Get-Phase160DutyContentHash {
+  param([string]$Content)
+  $bytes = [System.Text.Encoding]::UTF8.GetBytes($Content)
+  $sha = [System.Security.Cryptography.SHA256]::Create()
+  try {
+    return ([System.BitConverter]::ToString($sha.ComputeHash($bytes)) -replace "-", "").ToLowerInvariant()
+  } finally {
+    $sha.Dispose()
+  }
+}
+
+function Get-Phase160DutyPriorityRank {
+  param([string]$Priority)
+  switch ($Priority.ToLowerInvariant()) {
+    "high" { return 3 }
+    "normal" { return 2 }
+    "low" { return 1 }
+    default { return 0 }
+  }
+}
+
+function Get-Phase160DutySourceRank {
+  param([string]$Source)
+  switch ($Source.ToLowerInvariant()) {
+    "owner" { return 3 }
+    "observer" { return 2 }
+    "system" { return 1 }
+    default { return 0 }
+  }
+}
+
+function Get-Phase160DutyCreatedAtUtc {
+  param([object]$Task, [datetime]$Fallback)
+  $createdAt = Get-Phase160DutyStringProperty -Object $Task -Name "created_at"
+  if (-not [string]::IsNullOrWhiteSpace($createdAt)) {
+    try {
+      return ([datetime]$createdAt).ToUniversalTime().ToString("o")
+    } catch {
+      return $Fallback.ToUniversalTime().ToString("o")
+    }
+  }
+  return $Fallback.ToUniversalTime().ToString("o")
+}
+
+function Move-Phase160DutyFileUnique {
+  param([string]$SourcePath, [string]$DestinationDirectory, [string]$Prefix = "")
+  New-Item -ItemType Directory -Force -Path $DestinationDirectory | Out-Null
+  $name = [System.IO.Path]::GetFileName($SourcePath)
+  if (-not [string]::IsNullOrWhiteSpace($Prefix)) {
+    $name = "$Prefix$name"
+  }
+  $target = Join-Path $DestinationDirectory $name
+  $base = [System.IO.Path]::GetFileNameWithoutExtension($name)
+  $extension = [System.IO.Path]::GetExtension($name)
+  $index = 1
+  while (Test-Path -LiteralPath $target) {
+    $target = Join-Path $DestinationDirectory ("{0}_{1:d4}{2}" -f $base, $index, $extension)
+    $index += 1
+  }
+  Move-Item -LiteralPath $SourcePath -Destination $target
+  return $target
+}
+
+function Get-Phase160DutyUniqueFilePath {
+  param([string]$Directory, [string]$Name)
+  New-Item -ItemType Directory -Force -Path $Directory | Out-Null
+  $target = Join-Path $Directory $Name
+  $base = [System.IO.Path]::GetFileNameWithoutExtension($Name)
+  $extension = [System.IO.Path]::GetExtension($Name)
+  $index = 1
+  while (Test-Path -LiteralPath $target) {
+    $target = Join-Path $Directory ("{0}_{1:d4}{2}" -f $base, $index, $extension)
+    $index += 1
+  }
+  return $target
+}
+
+function Get-Phase160DutyJsonFileCount {
+  param([string]$Directory)
+  if (-not (Test-Path -LiteralPath $Directory)) {
+    return 0
+  }
+  return @(Get-ChildItem -LiteralPath $Directory -File -Filter "*.json" -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" }).Count
+}
+
+function Get-Phase160DutyLatestJson {
+  param([string]$Directory, [string]$Pattern = "*.json")
+  if (-not (Test-Path -LiteralPath $Directory)) {
+    return $null
+  }
+  $files = @(Get-ChildItem -LiteralPath $Directory -File -Filter $Pattern -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" } | Sort-Object LastWriteTimeUtc, Name)
+  if ($files.Count -lt 1) {
+    return $null
+  }
+  return $files[-1]
+}
+
+function Read-Phase160DutyActiveTask {
+  param([string]$SessionRootFull)
+  return Read-Phase160DutyJsonSafe -Path (Join-Path $SessionRootFull "active_task/active_task.json")
+}
+
+function Read-Phase160DutyActivePlanItem {
+  param([string]$SessionRootFull)
+  return Read-Phase160DutyJsonSafe -Path (Join-Path $SessionRootFull "active_task/active_plan_item.json")
+}
+
+function Get-Phase160DutyDesiredMacroGap {
+  param([object]$Task)
+  if ($null -eq $Task) {
+    return "NONE"
+  }
+  $desired = Get-Phase160DutyStringProperty -Object $Task -Name "desired_next_gap"
+  $goal = Get-Phase160DutyStringProperty -Object $Task -Name "owner_goal"
+  if ($desired -match "EXPERIENCE_ABSORPTION_GATE" -or $goal -match "Experience Absorption Gate") {
+    return "MACRO_EXPERIENCE_ABSORPTION_GATE_GAP"
+  }
+  if ([string]::IsNullOrWhiteSpace($desired)) {
+    return "NONE"
+  }
+  if ($desired.StartsWith("MACRO_", [System.StringComparison]::OrdinalIgnoreCase)) {
+    return $desired
+  }
+  return "MACRO_$desired"
+}
+
+function Get-Phase160DutyLiveTaskCounts {
+  param([string]$SessionRootFull)
+  $activeTask = Read-Phase160DutyActiveTask -SessionRootFull $SessionRootFull
+  $activePlanItem = Read-Phase160DutyActivePlanItem -SessionRootFull $SessionRootFull
+  $latestConsumed = Get-Phase160DutyLatestJson -Directory (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
+  $latestConsumedRecord = if ($null -ne $latestConsumed) { Read-Phase160DutyJsonSafe -Path $latestConsumed.FullName } else { $null }
+  return [ordered]@{
+    teacher_inbox_count = Get-Phase160DutyJsonFileCount -Directory (Join-Path $SessionRootFull "teacher_inbox")
+    teacher_digest_count = Get-Phase160DutyJsonFileCount -Directory (Join-Path $SessionRootFull "teacher_digest")
+    teacher_consumed_count = @(Get-ChildItem -LiteralPath (Join-Path $SessionRootFull "teacher_consumed") -File -Filter "receipt_*.json" -ErrorAction SilentlyContinue).Count
+    teacher_quarantine_count = @(Get-ChildItem -LiteralPath (Join-Path $SessionRootFull "teacher_quarantine") -File -Filter "quarantine_*.json" -ErrorAction SilentlyContinue).Count
+    task_backlog_count = Get-Phase160DutyJsonFileCount -Directory (Join-Path $SessionRootFull "task_backlog")
+    active_task_id = if ($null -ne $activeTask) { Get-Phase160DutyStringProperty -Object $activeTask -Name "task_id" -Default "NONE" } else { "NONE" }
+    active_plan_item_id = if ($null -ne $activePlanItem) { Get-Phase160DutyStringProperty -Object $activePlanItem -Name "item_id" -Default "NONE" } else { "NONE" }
+    last_consumed_task = if ($null -ne $latestConsumedRecord) { Get-Phase160DutyStringProperty -Object $latestConsumedRecord -Name "task_id" -Default "NONE" } else { "NONE" }
+  }
+}
+
+function Invoke-Phase160DutyLiveTaskIntake {
+  param(
+    [string]$RepoRoot,
+    [string]$SessionRootFull,
+    [string]$SessionRootRelative,
+    [string]$DutyId,
+    [string]$EventLogPath
+  )
+
+  $teacherInbox = Join-Path $SessionRootFull "teacher_inbox"
+  $teacherDigest = Join-Path $SessionRootFull "teacher_digest"
+  $teacherConsumed = Join-Path $SessionRootFull "teacher_consumed"
+  $teacherQuarantine = Join-Path $SessionRootFull "teacher_quarantine"
+  $taskBacklog = Join-Path $SessionRootFull "task_backlog"
+  $activeTaskDir = Join-Path $SessionRootFull "active_task"
+  $planItemsRoot = Join-Path $SessionRootFull "plan_items"
+  foreach ($directory in @($teacherInbox, $teacherDigest, $teacherConsumed, $teacherQuarantine, $taskBacklog, $activeTaskDir, $planItemsRoot)) {
+    New-Item -ItemType Directory -Force -Path $directory | Out-Null
+  }
+
+  $rawFiles = @(Get-ChildItem -LiteralPath $teacherInbox -File -Filter "*.json" -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" } | Sort-Object FullName)
+  Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+    event_type = "live_task_inbox_scan_started"
+    source = "builder_live_task_intake"
+    duty_id = $DutyId
+    inbox_count = $rawFiles.Count
+    occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+  })
+
+  $validCandidates = @()
+  $seenTaskIds = @{}
+  $seenHashes = @{}
+  $detectedCount = 0
+  $validatedCount = 0
+  $deduplicatedCount = 0
+  $digestCount = 0
+  $consumedCount = 0
+  $quarantineCount = 0
+  $planSplitCount = 0
+  $backlogCount = 0
+  $activeSelected = $false
+
+  foreach ($rawFile in $rawFiles) {
+    $detectedCount += 1
+    $rawText = Get-Content -LiteralPath $rawFile.FullName -Raw
+    $contentHash = Get-Phase160DutyContentHash -Content $rawText
+    $task = $null
+    $parseError = $null
+    try {
+      $task = $rawText | ConvertFrom-Json
+    } catch {
+      $parseError = $_.Exception.Message
+    }
+
+    $taskId = if ($null -ne $task) { Get-Phase160DutyStringProperty -Object $task -Name "task_id" -Default ("UNPARSED_" + $contentHash.Substring(0, 12)) } else { "UNPARSED_" + $contentHash.Substring(0, 12) }
+    $safeTaskId = ConvertTo-Phase160DutySafeLeaf -Value $taskId
+    $source = if ($null -ne $task) { Get-Phase160DutyStringProperty -Object $task -Name "source" -Default "unknown" } else { "unknown" }
+    $priority = if ($null -ne $task) { Get-Phase160DutyStringProperty -Object $task -Name "priority" -Default "unknown" } else { "unknown" }
+    $createdAtUtc = if ($null -ne $task) { Get-Phase160DutyCreatedAtUtc -Task $task -Fallback $rawFile.LastWriteTimeUtc } else { $rawFile.LastWriteTimeUtc.ToUniversalTime().ToString("o") }
+
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "live_task_detected"
+      source = "builder_live_task_intake"
+      duty_id = $DutyId
+      task_id = $taskId
+      raw_file = $rawFile.Name
+      content_hash = $contentHash
+      priority = $priority
+      task_source = $source
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+
+    $envelopeValid = Test-Phase160DutyTaskEnvelopeValid -Task $task
+    $safetyValid = Test-Phase160DutyTaskSafetyAllowed -Task $task
+    if (-not $envelopeValid -or -not $safetyValid) {
+      $reason = if ($null -ne $parseError) { "json_parse_error:$parseError" } elseif (-not $envelopeValid) { "invalid_live_task_envelope" } else { "unsafe_live_task_safety_rules" }
+      Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "live_task_validated"
+        source = "builder_live_task_intake"
+        duty_id = $DutyId
+        task_id = $taskId
+        valid = $false
+        reason = $reason
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      $quarantinePath = Get-Phase160DutyUniqueFilePath -Directory $teacherQuarantine -Name ("quarantine_{0}_{1}.json" -f $safeTaskId, $contentHash.Substring(0, 12))
+      Write-Phase160DutyJsonFile -Path $quarantinePath -Object ([ordered]@{
+        status = "QUARANTINED"
+        duty_id = $DutyId
+        task_id = $taskId
+        source_file = $rawFile.Name
+        reason = $reason
+        content_hash = $contentHash
+        accepted_state_mutated = $false
+        accepted_memory_mutated = $false
+        accepted_self_model_mutated = $false
+        repo_commit_performed = $false
+        created_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      $movedRaw = Move-Phase160DutyFileUnique -SourcePath $rawFile.FullName -DestinationDirectory $teacherQuarantine -Prefix "raw_"
+      $quarantineCount += 1
+      Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "live_task_quarantined"
+        source = "builder_live_task_intake"
+        duty_id = $DutyId
+        task_id = $taskId
+        reason = $reason
+        quarantine_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $quarantinePath)
+        moved_raw_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $movedRaw)
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      continue
+    }
+
+    $validatedCount += 1
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "live_task_validated"
+      source = "builder_live_task_intake"
+      duty_id = $DutyId
+      task_id = $taskId
+      valid = $true
+      safety = "runtime_session_only"
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+
+    $duplicateOf = "NONE"
+    $isDuplicate = $false
+    if ($seenTaskIds.ContainsKey($taskId)) {
+      $duplicateOf = [string]$seenTaskIds[$taskId]
+      $isDuplicate = $true
+    } elseif ($seenHashes.ContainsKey($contentHash)) {
+      $duplicateOf = [string]$seenHashes[$contentHash]
+      $isDuplicate = $true
+    }
+    if (-not $seenTaskIds.ContainsKey($taskId)) {
+      $seenTaskIds[$taskId] = $taskId
+    }
+    if (-not $seenHashes.ContainsKey($contentHash)) {
+      $seenHashes[$contentHash] = $taskId
+    }
+
+    $digestPath = Get-Phase160DutyUniqueFilePath -Directory $teacherDigest -Name ("digest_{0}_{1}.json" -f $safeTaskId, $contentHash.Substring(0, 12))
+    $planSteps = @(Get-Phase160DutyObjectProperty -Object $task -Name "plan_steps" -Default @())
+    $digestRecord = [ordered]@{
+      status = if ($isDuplicate) { "DUPLICATE" } else { "VALID" }
+      duty_id = $DutyId
+      task_id = $taskId
+      source = $source
+      priority = $priority
+      owner_goal = Get-Phase160DutyStringProperty -Object $task -Name "owner_goal"
+      desired_next_gap = Get-Phase160DutyStringProperty -Object $task -Name "desired_next_gap"
+      content_hash = $contentHash
+      duplicate = $isDuplicate
+      duplicate_of = $duplicateOf
+      plan_step_count = $planSteps.Count
+      raw_file_name = $rawFile.Name
+      created_at = $createdAtUtc
+      digested_at = (Get-Date).ToUniversalTime().ToString("o")
+    }
+    Write-Phase160DutyJsonFile -Path $digestPath -Object $digestRecord
+    $digestCount += 1
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "live_task_digest_written"
+      source = "builder_live_task_intake"
+      duty_id = $DutyId
+      task_id = $taskId
+      teacher_digest_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $digestPath)
+      content_hash = $contentHash
+      duplicate = $isDuplicate
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+
+    if ($isDuplicate) {
+      $deduplicatedCount += 1
+      Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "live_task_deduplicated"
+        source = "builder_live_task_intake"
+        duty_id = $DutyId
+        task_id = $taskId
+        duplicate_of = $duplicateOf
+        content_hash = $contentHash
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      $receiptPath = Get-Phase160DutyUniqueFilePath -Directory $teacherConsumed -Name ("receipt_duplicate_{0}_{1}.json" -f $safeTaskId, $contentHash.Substring(0, 12))
+      Write-Phase160DutyJsonFile -Path $receiptPath -Object ([ordered]@{
+        status = "CONSUMED_DUPLICATE"
+        duty_id = $DutyId
+        task_id = $taskId
+        source_file = $rawFile.Name
+        teacher_digest_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $digestPath)
+        duplicate_of = $duplicateOf
+        content_hash = $contentHash
+        consumed_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      $movedRaw = Move-Phase160DutyFileUnique -SourcePath $rawFile.FullName -DestinationDirectory $teacherConsumed -Prefix "raw_"
+      $consumedCount += 1
+      Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "live_task_consumed"
+        source = "builder_live_task_intake"
+        duty_id = $DutyId
+        task_id = $taskId
+        consumed_receipt_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $receiptPath)
+        moved_raw_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $movedRaw)
+        duplicate = $true
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      continue
+    }
+
+    $validCandidates += [pscustomobject][ordered]@{
+      task = $task
+      task_id = $taskId
+      safe_task_id = $safeTaskId
+      source = $source
+      source_rank = Get-Phase160DutySourceRank -Source $source
+      priority = $priority
+      priority_rank = Get-Phase160DutyPriorityRank -Priority $priority
+      owner_goal = Get-Phase160DutyStringProperty -Object $task -Name "owner_goal"
+      desired_next_gap = Get-Phase160DutyStringProperty -Object $task -Name "desired_next_gap"
+      content_hash = $contentHash
+      created_at_utc = $createdAtUtc
+      raw_file = $rawFile
+      digest_path = $digestPath
+      digest_relative_path = ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $digestPath
+      plan_steps = $planSteps
+      can_parallelize = [bool](Get-Phase160DutyObjectProperty -Object $task -Name "can_parallelize" -Default $false)
+      safety_rules = Get-Phase160DutyObjectProperty -Object $task -Name "safety_rules" -Default $null
+      success_signals = Get-Phase160DutyObjectProperty -Object $task -Name "success_signals" -Default @()
+    }
+  }
+
+  $existingActive = Read-Phase160DutyActiveTask -SessionRootFull $SessionRootFull
+  $sorted = @($validCandidates | Sort-Object `
+    @{ Expression = { -[int]$_.priority_rank } }, `
+    @{ Expression = { -[int]$_.source_rank } }, `
+    @{ Expression = { [string]$_.created_at_utc } }, `
+    @{ Expression = { [string]$_.task_id } }, `
+    @{ Expression = { [string]$_.content_hash } })
+  $selected = $null
+  if ($null -eq $existingActive -and $sorted.Count -gt 0) {
+    $selected = $sorted[0]
+  }
+
+  foreach ($candidate in $sorted) {
+    $isActive = ($null -ne $selected -and [string]$candidate.task_id -eq [string]$selected.task_id -and [string]$candidate.content_hash -eq [string]$selected.content_hash)
+    $planItemRecords = @()
+    if ($candidate.plan_steps.Count -gt 0) {
+      $taskPlanDir = Join-Path $planItemsRoot $candidate.safe_task_id
+      New-Item -ItemType Directory -Force -Path $taskPlanDir | Out-Null
+      $planDigestPath = Join-Path $taskPlanDir "plan_digest.json"
+      Write-Phase160DutyJsonFile -Path $planDigestPath -Object ([ordered]@{
+        status = "PASS"
+        duty_id = $DutyId
+        parent_task_id = $candidate.task_id
+        plan_step_count = $candidate.plan_steps.Count
+        teacher_digest_path = $candidate.digest_relative_path
+        split_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      $planSplitCount += 1
+      Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "live_task_plan_split"
+        source = "builder_live_task_intake"
+        duty_id = $DutyId
+        task_id = $candidate.task_id
+        plan_digest_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $planDigestPath)
+        plan_item_count = $candidate.plan_steps.Count
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      for ($i = 0; $i -lt $candidate.plan_steps.Count; $i += 1) {
+        $description = [string]$candidate.plan_steps[$i]
+        $itemId = "{0}_plan_item_{1:d3}" -f $candidate.safe_task_id, ($i + 1)
+        $itemStatus = if ($isActive -and $i -eq 0) { "ACTIVE" } else { "PENDING" }
+        $itemRecord = [ordered]@{
+          item_id = $itemId
+          parent_task_id = $candidate.task_id
+          item_index = $i + 1
+          description = $description
+          status = $itemStatus
+          dependency = if ($i -eq 0) { "NONE" } else { "{0}_plan_item_{1:d3}" -f $candidate.safe_task_id, $i }
+          expected_artifact = "session_local_runtime_artifact"
+          safety_boundary = "runtime_session_only_no_accepted_state_mutation"
+          teacher_digest_path = $candidate.digest_relative_path
+          created_at = (Get-Date).ToUniversalTime().ToString("o")
+        }
+        $itemPath = Join-Path $taskPlanDir ("{0}.json" -f $itemId)
+        Write-Phase160DutyJsonFile -Path $itemPath -Object $itemRecord
+        $planItemRecords += [pscustomobject][ordered]@{
+          item = $itemRecord
+          path = $itemPath
+          relative_path = ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $itemPath
+        }
+      }
+    }
+
+    if ($isActive) {
+      $activePlanItem = if ($planItemRecords.Count -gt 0) { $planItemRecords[0] } else { $null }
+      $activeRecord = [ordered]@{
+        status = "ACTIVE"
+        duty_id = $DutyId
+        task_id = $candidate.task_id
+        source = $candidate.source
+        priority = $candidate.priority
+        owner_goal = $candidate.owner_goal
+        desired_next_gap = $candidate.desired_next_gap
+        normalized_desired_macro_gap = Get-Phase160DutyDesiredMacroGap -Task $candidate.task
+        teacher_digest_path = $candidate.digest_relative_path
+        content_hash = $candidate.content_hash
+        can_parallelize = $candidate.can_parallelize
+        active_plan_item_id = if ($null -ne $activePlanItem) { [string]$activePlanItem.item.item_id } else { "NONE" }
+        active_plan_item_path = if ($null -ne $activePlanItem) { [string]$activePlanItem.relative_path } else { "NONE" }
+        plan_step_count = $candidate.plan_steps.Count
+        success_signals = $candidate.success_signals
+        selected_for_macro_cycle = $true
+        selected_at = (Get-Date).ToUniversalTime().ToString("o")
+      }
+      Write-Phase160DutyJsonFile -Path (Join-Path $activeTaskDir "active_task.json") -Object $activeRecord
+      if ($null -ne $activePlanItem) {
+        Write-Phase160DutyJsonFile -Path (Join-Path $activeTaskDir "active_plan_item.json") -Object $activePlanItem.item
+        Write-Phase160DutyJsonFile -Path (Join-Path $planItemsRoot "active_plan_item.json") -Object $activePlanItem.item
+      } elseif (Test-Path -LiteralPath (Join-Path $activeTaskDir "active_plan_item.json")) {
+        Remove-Item -LiteralPath (Join-Path $activeTaskDir "active_plan_item.json") -Force
+      }
+      $activeSelected = $true
+      Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "live_task_active_selected"
+        source = "builder_live_task_intake"
+        duty_id = $DutyId
+        task_id = $candidate.task_id
+        priority = $candidate.priority
+        teacher_digest_path = $candidate.digest_relative_path
+        active_plan_item_id = $activeRecord.active_plan_item_id
+        desired_next_gap = $candidate.desired_next_gap
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+    } else {
+      $backlogPath = Join-Path $taskBacklog ("{0}.json" -f $candidate.safe_task_id)
+      Write-Phase160DutyJsonFile -Path $backlogPath -Object ([ordered]@{
+        status = "BACKLOG"
+        duty_id = $DutyId
+        task_id = $candidate.task_id
+        source = $candidate.source
+        priority = $candidate.priority
+        owner_goal = $candidate.owner_goal
+        desired_next_gap = $candidate.desired_next_gap
+        teacher_digest_path = $candidate.digest_relative_path
+        content_hash = $candidate.content_hash
+        plan_step_count = $candidate.plan_steps.Count
+        reason = if ($null -ne $existingActive) { "existing_active_task_retained" } else { "valid_non_active_task" }
+        created_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      $backlogCount += 1
+      Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+        event_type = "live_task_backlog_written"
+        source = "builder_live_task_intake"
+        duty_id = $DutyId
+        task_id = $candidate.task_id
+        backlog_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $backlogPath)
+        teacher_digest_path = $candidate.digest_relative_path
+        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+    }
+
+    $receiptPath = Get-Phase160DutyUniqueFilePath -Directory $teacherConsumed -Name ("receipt_{0}_{1}.json" -f $candidate.safe_task_id, $candidate.content_hash.Substring(0, 12))
+    Write-Phase160DutyJsonFile -Path $receiptPath -Object ([ordered]@{
+      status = "CONSUMED"
+      duty_id = $DutyId
+      task_id = $candidate.task_id
+      source = $candidate.source
+      priority = $candidate.priority
+      source_file = $candidate.raw_file.Name
+      teacher_digest_path = $candidate.digest_relative_path
+      active_selected = $isActive
+      backlog_written = -not $isActive
+      plan_split = $candidate.plan_steps.Count -gt 0
+      content_hash = $candidate.content_hash
+      consumed_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+    $movedRaw = Move-Phase160DutyFileUnique -SourcePath $candidate.raw_file.FullName -DestinationDirectory $teacherConsumed -Prefix "raw_"
+    $consumedCount += 1
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "live_task_consumed"
+      source = "builder_live_task_intake"
+      duty_id = $DutyId
+      task_id = $candidate.task_id
+      consumed_receipt_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $receiptPath)
+      moved_raw_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $movedRaw)
+      active_selected = $isActive
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+  }
+
+  $counts = Get-Phase160DutyLiveTaskCounts -SessionRootFull $SessionRootFull
+  return [pscustomobject][ordered]@{
+    status = "PASS"
+    duty_id = $DutyId
+    detected_count = $detectedCount
+    validated_count = $validatedCount
+    digest_written_count = $digestCount
+    deduplicated_count = $deduplicatedCount
+    consumed_count = $consumedCount
+    quarantine_count = $quarantineCount
+    plan_split_count = $planSplitCount
+    backlog_written_count = $backlogCount
+    active_selected = $activeSelected
+    teacher_inbox_count = [int]$counts.teacher_inbox_count
+    teacher_digest_count = [int]$counts.teacher_digest_count
+    teacher_consumed_count = [int]$counts.teacher_consumed_count
+    teacher_quarantine_count = [int]$counts.teacher_quarantine_count
+    task_backlog_count = [int]$counts.task_backlog_count
+    active_task_id = [string]$counts.active_task_id
+    active_plan_item_id = [string]$counts.active_plan_item_id
+    last_consumed_task = [string]$counts.last_consumed_task
+  }
+}
+
 $RepoRoot = Resolve-Phase160DutyRepoRoot
 $ExpectedBranch = "phase110-idempotent-autonomy-trial-runtime"
 $RepairId = if ($EnableMacroCycle) { "PHASE160B_MACRO_SELF_GROWTH_IGNITION_V1" } else { "PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_V1" }
@@ -277,14 +915,31 @@ try {
   $CurrentStatePath = Join-Path $SessionRootFull "current_state.json"
   $EventLogPath = Join-Path $SessionRootFull "event_log.jsonl"
   $TeacherOutboxFull = Resolve-Phase160DutyPath -RepoRoot $RepoRoot -Path $TeacherOutboxDir
+  $TeacherInboxFull = Join-Path $SessionRootFull "teacher_inbox"
+  $TeacherDigestPath = Join-Path $SessionRootFull "teacher_digest"
+  $TeacherConsumedPath = Join-Path $SessionRootFull "teacher_consumed"
+  $TeacherQuarantinePath = Join-Path $SessionRootFull "teacher_quarantine"
+  $TaskBacklogPath = Join-Path $SessionRootFull "task_backlog"
+  $ActiveTaskPath = Join-Path $SessionRootFull "active_task"
+  $PlanItemsPath = Join-Path $SessionRootFull "plan_items"
   $AcceptedInterventionsPath = Join-Path $SessionRootFull "accepted_interventions"
   $RejectedInterventionsPath = Join-Path $SessionRootFull "rejected_interventions"
   $BlockerQueuePath = Join-Path $SessionRootFull "blocker_queue"
-  foreach ($directory in @($TeacherOutboxFull, $AcceptedInterventionsPath, $RejectedInterventionsPath, $BlockerQueuePath)) {
+  foreach ($directory in @($TeacherOutboxFull, $TeacherInboxFull, $TeacherDigestPath, $TeacherConsumedPath, $TeacherQuarantinePath, $TaskBacklogPath, $ActiveTaskPath, $PlanItemsPath, $AcceptedInterventionsPath, $RejectedInterventionsPath, $BlockerQueuePath)) {
     New-Item -ItemType Directory -Force -Path $directory | Out-Null
   }
 
   $StartedAt = Get-Date
+  $LiveTaskIntake = Invoke-Phase160DutyLiveTaskIntake -RepoRoot $RepoRoot -SessionRootFull $SessionRootFull -SessionRootRelative $SessionRootRelative -DutyId $DutyId -EventLogPath $EventLogPath
+  $ActiveTask = Read-Phase160DutyActiveTask -SessionRootFull $SessionRootFull
+  $ActivePlanItem = Read-Phase160DutyActivePlanItem -SessionRootFull $SessionRootFull
+  $LiveTaskCounts = Get-Phase160DutyLiveTaskCounts -SessionRootFull $SessionRootFull
+  $ActiveTaskId = if ($null -ne $ActiveTask) { Get-Phase160DutyStringProperty -Object $ActiveTask -Name "task_id" -Default "NONE" } else { "NONE" }
+  $ActivePlanItemId = if ($null -ne $ActivePlanItem) { Get-Phase160DutyStringProperty -Object $ActivePlanItem -Name "item_id" -Default "NONE" } else { "NONE" }
+  $ActiveTaskOwnerGoal = if ($null -ne $ActiveTask) { Get-Phase160DutyStringProperty -Object $ActiveTask -Name "owner_goal" -Default "NONE" } else { "NONE" }
+  $ActiveTaskDesiredGap = if ($null -ne $ActiveTask) { Get-Phase160DutyStringProperty -Object $ActiveTask -Name "desired_next_gap" -Default "NONE" } else { "NONE" }
+  $ActiveTaskDigestPath = if ($null -ne $ActiveTask) { Get-Phase160DutyStringProperty -Object $ActiveTask -Name "teacher_digest_path" -Default "NONE" } else { "NONE" }
+  $TaskInfluencedGapSelection = $false
   if ([string]::IsNullOrWhiteSpace($MacroCycleId)) {
     $MacroCycleId = "PHASE160B_MACRO_SELF_GROWTH_IGNITION_CYCLE_001"
   }
@@ -292,6 +947,22 @@ try {
   $NextCycleStage = if ($EnableMacroCycle) { Get-Phase160DutyMacroStageForIndex -Index ($DutyIndex + 1) } else { "MICRO_DUTY" }
   $Gap = if ($EnableMacroCycle) { Get-Phase160DutyMacroGapForStage -Stage $CycleStage } else { Get-Phase160DutyGapForIndex -Index $DutyIndex }
   $NextGap = if ($EnableMacroCycle) { Get-Phase160DutyMacroGapForStage -Stage $NextCycleStage } else { Get-Phase160DutyGapForIndex -Index ($DutyIndex + 1) }
+  if ($EnableMacroCycle -and $CycleStage -eq "GAP_RANK_AND_SELECT" -and $null -ne $ActiveTask) {
+    $Gap = Get-Phase160DutyDesiredMacroGap -Task $ActiveTask
+    $TaskInfluencedGapSelection = $true
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "live_task_injected_into_macro_ranking"
+      source = "builder_live_task_intake"
+      duty_id = $DutyId
+      task_id = $ActiveTaskId
+      active_plan_item_id = $ActivePlanItemId
+      owner_goal = $ActiveTaskOwnerGoal
+      desired_next_gap = $ActiveTaskDesiredGap
+      selected_gap = $Gap
+      teacher_digest_path = $ActiveTaskDigestPath
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+  }
   $PreviousDutyId = if ($DutyIndex -gt 1) { "duty_{0:d4}" -f ($DutyIndex - 1) } else { "NONE" }
   $PreviousDutyArtifact = if ($DutyIndex -gt 1) { "$DutyRootRelative/$PreviousDutyId/macro_cycle_artifact.json" } else { "NONE" }
   $PreviousDutyArtifactFull = if ($DutyIndex -gt 1) { Resolve-Phase160DutyPath -RepoRoot $RepoRoot -Path $PreviousDutyArtifact } else { $null }
@@ -357,7 +1028,11 @@ try {
       "validators/validate_phase160_live_observer_console_repair_v1.ps1",
       "validators/validate_phase160_live_self_growth_duty_loop_v1.ps1"
     )
-    channels_available = @("teacher_outbox", "teacher_inbox", "blocker_queue", "accepted_interventions", "rejected_interventions", "event_log")
+    channels_available = @("teacher_outbox", "teacher_inbox", "teacher_digest", "teacher_consumed", "teacher_quarantine", "task_backlog", "active_task", "plan_items", "blocker_queue", "accepted_interventions", "rejected_interventions", "event_log")
+    live_task_intake_queue_available = $true
+    live_task_intake_scan_status = [string]$LiveTaskIntake.status
+    live_task_intake_detected_count = [int]$LiveTaskIntake.detected_count
+    live_task_intake_quarantine_count = [int]$LiveTaskIntake.quarantine_count
     deterministic_gap_policy_available = $true
     arbitrary_code_execution_allowed = $false
     capability_shelf_promotion_allowed = $false
@@ -383,6 +1058,13 @@ try {
     status = "PASS"
     duty_id = $DutyId
     policy = "DETERMINISTIC_PHASE160_SELF_GROWTH_CURRICULUM"
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    owner_goal = $ActiveTaskOwnerGoal
+    desired_next_gap = $ActiveTaskDesiredGap
+    teacher_digest_path = $ActiveTaskDigestPath
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
+    live_task_binding_policy = if ($TaskInfluencedGapSelection) { "ACTIVE_TASK_DESIRED_GAP_OVERRIDES_MACRO_RANKING" } else { "NO_ACTIVE_TASK_OVERRIDE" }
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     previous_duty_id = $PreviousDutyId
@@ -436,6 +1118,11 @@ try {
     status = "PASS"
     duty_id = $DutyId
     selected_gap = $Gap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    owner_goal = $ActiveTaskOwnerGoal
+    desired_next_gap = $ActiveTaskDesiredGap
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     previous_duty_id = $PreviousDutyId
@@ -450,10 +1137,29 @@ try {
     created_at = (Get-Date).ToUniversalTime().ToString("o")
   }
 
+  $CandidateDecision = if ($null -ne $ActiveTask -and ($Gap -eq "MACRO_EXPERIENCE_ABSORPTION_GATE_GAP" -or $ActiveTaskDesiredGap -match "EXPERIENCE_ABSORPTION_GATE" -or $ActiveTaskOwnerGoal -match "Experience Absorption Gate")) {
+    "OWNER_DECISION_REQUIRED"
+  } else {
+    "KEEP_SESSION_LOCAL"
+  }
+  $ActiveTaskInfluenceReason = if ($ActiveTaskId -ne "NONE") {
+    "active_task selected from teacher_inbox digest/backlog intake influences macro candidate"
+  } else {
+    "no active_task selected"
+  }
+
   $Candidate = [ordered]@{
     status = "CANDIDATE"
     duty_id = $DutyId
     selected_gap = $Gap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    owner_goal = $ActiveTaskOwnerGoal
+    desired_next_gap = $ActiveTaskDesiredGap
+    teacher_digest_path = $ActiveTaskDigestPath
+    why_this_task_influenced_candidate = $ActiveTaskInfluenceReason
+    experience_absorption_gate_decision_options = if ($CandidateDecision -eq "OWNER_DECISION_REQUIRED") { @("promote", "archive", "quarantine", "Owner approval") } else { @() }
+    decision = $CandidateDecision
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     previous_duty_id = $PreviousDutyId
@@ -483,6 +1189,12 @@ try {
     candidate_payload = [ordered]@{
       observe = $true
       select_gap = $Gap
+      active_task_id = $ActiveTaskId
+      active_plan_item_id = $ActivePlanItemId
+      owner_goal = $ActiveTaskOwnerGoal
+      desired_next_gap = $ActiveTaskDesiredGap
+      task_influenced_gap_selection = $TaskInfluencedGapSelection
+      decision = $CandidateDecision
       cycle_stage = $CycleStage
       input_artifact = $InputArtifact
       output_artifact = $OutputArtifact
@@ -505,6 +1217,10 @@ try {
     status = if ($ValidationPassed) { "PASS" } else { "FAIL" }
     duty_id = $DutyId
     selected_gap = $Gap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
+    decision = $CandidateDecision
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     previous_duty_id = $PreviousDutyId
@@ -538,6 +1254,11 @@ try {
     memory_scope = "session_local_only"
     event_type = "self_growth_duty_memory_event"
     selected_gap = $Gap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    owner_goal = $ActiveTaskOwnerGoal
+    desired_next_gap = $ActiveTaskDesiredGap
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     previous_duty_id = $PreviousDutyId
@@ -557,6 +1278,10 @@ try {
     duty_id = $DutyId
     completed_gap = $Gap
     next_gap = $NextGap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
+    decision = $CandidateDecision
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     next_cycle_stage = $NextCycleStage
@@ -581,7 +1306,8 @@ try {
     Write-Phase160DutyJsonFile -Path (Join-Path $DutyDirFull ("{0}.json" -f $entry.Key)) -Object $entry.Value
   }
 
-  $Decision = Get-Phase160DutyMacroDecision -ValidationPassed $ValidationPassed
+  $Decision = if ($ValidationPassed) { $CandidateDecision } else { Get-Phase160DutyMacroDecision -ValidationPassed $ValidationPassed }
+  $ConsumedOwnerTask = ($ActiveTaskId -ne "NONE" -and $null -ne $ActiveTask -and (Get-Phase160DutyStringProperty -Object $ActiveTask -Name "source" -Default "unknown") -eq "owner")
   if ($EnableMacroCycle) {
     $MacroArtifact = [ordered]@{
       status = if ($ValidationPassed) { "PASS" } else { "BLOCKED" }
@@ -589,6 +1315,16 @@ try {
       cycle_id = $MacroCycleId
       cycle_stage = $CycleStage
       selected_gap = $Gap
+      active_task_id = $ActiveTaskId
+      active_plan_item_id = $ActivePlanItemId
+      owner_goal = $ActiveTaskOwnerGoal
+      desired_next_gap = $ActiveTaskDesiredGap
+      teacher_digest_path = $ActiveTaskDigestPath
+      consumed_owner_task = $ConsumedOwnerTask
+      task_influenced_gap_selection = $TaskInfluencedGapSelection
+      backlog_count = [int]$LiveTaskCounts.task_backlog_count
+      consumed_count = [int]$LiveTaskCounts.teacher_consumed_count
+      quarantine_count = [int]$LiveTaskCounts.teacher_quarantine_count
       input_artifact = $InputArtifact
       output_artifact = $OutputArtifact
       previous_duty_id = $PreviousDutyId
@@ -612,6 +1348,14 @@ try {
       cycle_id = $MacroCycleId
       cycle_stage = $CycleStage
       selected_gap = $Gap
+      active_task_id = $ActiveTaskId
+      teacher_digest_path = $ActiveTaskDigestPath
+      active_plan_item_id = $ActivePlanItemId
+      consumed_owner_task = $ConsumedOwnerTask
+      task_influenced_gap_selection = $TaskInfluencedGapSelection
+      backlog_count = [int]$LiveTaskCounts.task_backlog_count
+      consumed_count = [int]$LiveTaskCounts.teacher_consumed_count
+      quarantine_count = [int]$LiveTaskCounts.teacher_quarantine_count
       previous_duty_id = $PreviousDutyId
       input_artifact = $InputArtifact
       output_artifact = $OutputArtifact
@@ -631,6 +1375,14 @@ try {
       latest_duty_id = $DutyId
       latest_cycle_stage = $CycleStage
       latest_selected_gap = $Gap
+      active_task_id = $ActiveTaskId
+      active_plan_item_id = $ActivePlanItemId
+      teacher_digest_path = $ActiveTaskDigestPath
+      consumed_owner_task = $ConsumedOwnerTask
+      task_influenced_gap_selection = $TaskInfluencedGapSelection
+      backlog_count = [int]$LiveTaskCounts.task_backlog_count
+      consumed_count = [int]$LiveTaskCounts.teacher_consumed_count
+      quarantine_count = [int]$LiveTaskCounts.teacher_quarantine_count
       chain_requires_previous_artifact = $true
       stage_sequence_target = @(
         "SELF_OBSERVE_MAP_REFRESH",
@@ -654,6 +1406,10 @@ try {
       completed_stage = $CycleStage
       next_gap = $NextGap
       next_cycle_stage = $NextCycleStage
+      active_task_id = $ActiveTaskId
+      active_plan_item_id = $ActivePlanItemId
+      owner_goal = $ActiveTaskOwnerGoal
+      desired_next_gap = $ActiveTaskDesiredGap
       novelty_reason = "Next goal advances from $CycleStage to $NextCycleStage instead of blindly repeating the same gap."
       blind_repeat = $false
       selected_with_reason = $true
@@ -669,6 +1425,9 @@ try {
     duty_index = $DutyIndex
     tick_number = $TickNumber
     selected_gap = $Gap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     next_gap = $NextGap
@@ -679,6 +1438,9 @@ try {
     source = "builder_self_growth_duty"
     duty_id = $DutyId
     selected_gap = $Gap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     memory_scope = "session_local_only"
@@ -696,6 +1458,22 @@ try {
     duty_dir = $DutyDirRelative
     selected_gap = $Gap
     next_gap = $NextGap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    owner_goal = $ActiveTaskOwnerGoal
+    desired_next_gap = $ActiveTaskDesiredGap
+    teacher_digest_path = $ActiveTaskDigestPath
+    consumed_owner_task = $ConsumedOwnerTask
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
+    teacher_inbox_count = [int]$LiveTaskCounts.teacher_inbox_count
+    teacher_digest_count = [int]$LiveTaskCounts.teacher_digest_count
+    teacher_consumed_count = [int]$LiveTaskCounts.teacher_consumed_count
+    teacher_quarantine_count = [int]$LiveTaskCounts.teacher_quarantine_count
+    task_backlog_count = [int]$LiveTaskCounts.task_backlog_count
+    last_consumed_task = [string]$LiveTaskCounts.last_consumed_task
+    live_task_intake_detected_count = [int]$LiveTaskIntake.detected_count
+    live_task_intake_deduplicated_count = [int]$LiveTaskIntake.deduplicated_count
+    live_task_intake_plan_split_count = [int]$LiveTaskIntake.plan_split_count
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     input_artifact = $InputArtifact
@@ -736,6 +1514,15 @@ try {
     duty_dir = $DutyDirRelative
     selected_gap = $Gap
     next_gap = $NextGap
+    active_task_id = $ActiveTaskId
+    active_plan_item_id = $ActivePlanItemId
+    teacher_digest_path = $ActiveTaskDigestPath
+    consumed_owner_task = $ConsumedOwnerTask
+    task_influenced_gap_selection = $TaskInfluencedGapSelection
+    backlog_count = [int]$LiveTaskCounts.task_backlog_count
+    consumed_count = [int]$LiveTaskCounts.teacher_consumed_count
+    quarantine_count = [int]$LiveTaskCounts.teacher_quarantine_count
+    last_consumed_task = [string]$LiveTaskCounts.last_consumed_task
     cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
     cycle_stage = $CycleStage
     input_artifact = $InputArtifact

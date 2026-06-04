@@ -1,0 +1,324 @@
+param(
+  [string]$SessionRoot = "",
+  [string]$RunId = "",
+  [switch]$WriteFinalHandoff
+)
+
+$ErrorActionPreference = "Stop"
+
+function Normalize-Phase160EPromotionFullPath {
+  param([string]$Path)
+  return [System.IO.Path]::GetFullPath($Path).TrimEnd([System.IO.Path]::DirectorySeparatorChar, [System.IO.Path]::AltDirectorySeparatorChar)
+}
+
+function Resolve-Phase160EPromotionRepoRoot {
+  $scriptRootCandidate = $PSScriptRoot
+  if ([string]::IsNullOrWhiteSpace($scriptRootCandidate) -and -not [string]::IsNullOrWhiteSpace($PSCommandPath)) {
+    $scriptRootCandidate = Split-Path -Path $PSCommandPath -Parent
+  }
+  if ([string]::IsNullOrWhiteSpace($scriptRootCandidate) -and -not [string]::IsNullOrWhiteSpace($MyInvocation.MyCommand.Path)) {
+    $scriptRootCandidate = Split-Path -Path $MyInvocation.MyCommand.Path -Parent
+  }
+  if ([string]::IsNullOrWhiteSpace($scriptRootCandidate)) {
+    throw "PHASE160E_PROMOTION_SCRIPT_ROOT_UNAVAILABLE"
+  }
+  return Normalize-Phase160EPromotionFullPath -Path (Join-Path $scriptRootCandidate "..")
+}
+
+function Resolve-Phase160EPromotionPath {
+  param([string]$RepoRoot, [string]$Path)
+  if ([System.IO.Path]::IsPathRooted($Path)) {
+    return [System.IO.Path]::GetFullPath($Path)
+  }
+  return [System.IO.Path]::GetFullPath((Join-Path $RepoRoot $Path))
+}
+
+function ConvertTo-Phase160EPromotionRelativePath {
+  param([string]$RepoRoot, [string]$FullPath)
+  $root = Normalize-Phase160EPromotionFullPath -Path $RepoRoot
+  $full = Normalize-Phase160EPromotionFullPath -Path $FullPath
+  if ($full -eq $root) {
+    return "."
+  }
+  if (-not $full.StartsWith($root + [System.IO.Path]::DirectorySeparatorChar, [System.StringComparison]::OrdinalIgnoreCase)) {
+    throw "PHASE160E_PROMOTION_PATH_OUTSIDE_REPO=$FullPath"
+  }
+  return ($full.Substring($root.Length + 1) -replace "\\", "/")
+}
+
+function Write-Phase160EPromotionJsonFile {
+  param([string]$Path, [object]$Object, [int]$Depth = 100)
+  $directory = Split-Path -Path $Path -Parent
+  if ($directory -and -not (Test-Path -LiteralPath $directory)) {
+    New-Item -ItemType Directory -Force -Path $directory | Out-Null
+  }
+  $json = ($Object | ConvertTo-Json -Depth $Depth) -replace "`r`n", "`n"
+  if (-not $json.EndsWith("`n")) {
+    $json += "`n"
+  }
+  [System.IO.File]::WriteAllText($Path, $json, [System.Text.UTF8Encoding]::new($false))
+}
+
+function Write-Phase160EPromotionTextFile {
+  param([string]$Path, [string]$Text)
+  $directory = Split-Path -Path $Path -Parent
+  if ($directory -and -not (Test-Path -LiteralPath $directory)) {
+    New-Item -ItemType Directory -Force -Path $directory | Out-Null
+  }
+  if (-not $Text.EndsWith("`n")) {
+    $Text += "`n"
+  }
+  [System.IO.File]::WriteAllText($Path, $Text, [System.Text.UTF8Encoding]::new($false))
+}
+
+function Add-Phase160EPromotionJsonLine {
+  param([string]$Path, [object]$Object)
+  $directory = Split-Path -Path $Path -Parent
+  if ($directory -and -not (Test-Path -LiteralPath $directory)) {
+    New-Item -ItemType Directory -Force -Path $directory | Out-Null
+  }
+  $line = $Object | ConvertTo-Json -Depth 100 -Compress
+  [System.IO.File]::AppendAllText($Path, "$line`n", [System.Text.UTF8Encoding]::new($false))
+}
+
+function Read-Phase160EPromotionJsonSafe {
+  param([string]$Path)
+  try {
+    if (-not (Test-Path -LiteralPath $Path)) {
+      return $null
+    }
+    return Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
+  } catch {
+    return $null
+  }
+}
+
+function Get-Phase160EPromotionProperty {
+  param([object]$Object, [string]$Name, [object]$Default = $null)
+  if ($null -eq $Object) {
+    return $Default
+  }
+  if ($Object.PSObject.Properties.Name -contains $Name) {
+    return $Object.$Name
+  }
+  return $Default
+}
+
+function Get-Phase160EPromotionString {
+  param([object]$Object, [string]$Name, [string]$Default = "NONE")
+  $value = Get-Phase160EPromotionProperty -Object $Object -Name $Name -Default $Default
+  if ($null -eq $value -or [string]::IsNullOrWhiteSpace([string]$value)) {
+    return $Default
+  }
+  return [string]$value
+}
+
+function Assert-Phase160EPromotionRunIdSafe {
+  param([string]$RunId)
+  if ([string]::IsNullOrWhiteSpace($RunId)) {
+    return
+  }
+  if ($RunId.IndexOfAny([char[]]@("/", "\")) -ge 0) {
+    throw "PHASE160E_PROMOTION_RUN_ID_MUST_BE_LEAF=$RunId"
+  }
+}
+
+$RepoRoot = Resolve-Phase160EPromotionRepoRoot
+$Pushed = $false
+
+try {
+  Push-Location $RepoRoot
+  $Pushed = $true
+
+  foreach ($identityFile in @("CAPABILITY_ROADMAP.json", "GENESIS_STATE.json", "TASK_QUEUE.json", "packs/registry.json", "orchestrator/run.ps1")) {
+    if (-not (Test-Path -LiteralPath (Resolve-Phase160EPromotionPath -RepoRoot $RepoRoot -Path $identityFile))) {
+      throw "STOP=WRONG_AGENT_BUILDER_REPO missing=$identityFile"
+    }
+  }
+
+  Assert-Phase160EPromotionRunIdSafe -RunId $RunId
+  if (-not [string]::IsNullOrWhiteSpace($RunId) -and [string]::IsNullOrWhiteSpace($SessionRoot)) {
+    $SessionRoot = "runtime_sessions/live_growth/$RunId"
+  }
+  if ([string]::IsNullOrWhiteSpace($SessionRoot)) {
+    throw "PHASE160E_PROMOTION_SESSION_ROOT_REQUIRED"
+  }
+
+  $SessionRootFull = Resolve-Phase160EPromotionPath -RepoRoot $RepoRoot -Path $SessionRoot
+  $SessionRootRelative = ConvertTo-Phase160EPromotionRelativePath -RepoRoot $RepoRoot -FullPath $SessionRootFull
+  $ManifestPath = Join-Path $SessionRootFull "run_manifest.json"
+  $Manifest = Read-Phase160EPromotionJsonSafe -Path $ManifestPath
+  if ($null -eq $Manifest) {
+    throw "PHASE160E_PROMOTION_RUN_MANIFEST_MISSING=$SessionRootRelative/run_manifest.json"
+  }
+
+  $CandidateWorkspace = Join-Path $SessionRootFull "candidate_workspace"
+  $CandidateBundleRoot = Join-Path $CandidateWorkspace "candidate_bundles"
+  $CandidateQueueRoot = Join-Path $CandidateWorkspace "candidate_queue"
+  $CandidateQuarantineRoot = Join-Path $CandidateWorkspace "candidate_quarantine"
+  $ChangeLedgerPath = Join-Path $CandidateWorkspace "change_ledger.jsonl"
+  $PromotionBundleRoot = Join-Path $SessionRootFull "promotion_bundle"
+  New-Item -ItemType Directory -Force -Path $CandidateBundleRoot, $CandidateQueueRoot, $CandidateQuarantineRoot, $PromotionBundleRoot | Out-Null
+
+  $CandidateRecords = @()
+  $bundleDirectories = @(Get-ChildItem -LiteralPath $CandidateBundleRoot -Directory -ErrorAction SilentlyContinue | Sort-Object Name)
+  foreach ($bundleDirectory in $bundleDirectories) {
+    $candidateManifest = Read-Phase160EPromotionJsonSafe -Path (Join-Path $bundleDirectory.FullName "candidate_manifest.json")
+    $candidateStatus = Read-Phase160EPromotionJsonSafe -Path (Join-Path $bundleDirectory.FullName "candidate_status.json")
+    if ($null -eq $candidateManifest) {
+      continue
+    }
+    $decision = Get-Phase160EPromotionString -Object $candidateManifest -Name "decision" -Default (Get-Phase160EPromotionString -Object $candidateStatus -Name "status" -Default "UNKNOWN")
+    $CandidateRecords += [pscustomobject][ordered]@{
+      candidate_id = Get-Phase160EPromotionString -Object $candidateManifest -Name "candidate_id"
+      source_task_id = Get-Phase160EPromotionString -Object $candidateManifest -Name "source_task_id"
+      source_plan_item_id = Get-Phase160EPromotionString -Object $candidateManifest -Name "source_plan_item_id"
+      created_from_run_head = Get-Phase160EPromotionString -Object $candidateManifest -Name "created_from_run_head"
+      target_area = Get-Phase160EPromotionString -Object $candidateManifest -Name "target_area"
+      proposed_file_paths = @(Get-Phase160EPromotionProperty -Object $candidateManifest -Name "proposed_file_paths" -Default @())
+      acceptance_validator_needed = @(Get-Phase160EPromotionProperty -Object $candidateManifest -Name "acceptance_validator_needed" -Default @())
+      decision = $decision
+      bundle_path = ConvertTo-Phase160EPromotionRelativePath -RepoRoot $RepoRoot -FullPath $bundleDirectory.FullName
+    }
+  }
+
+  $readyCandidates = @($CandidateRecords | Where-Object { $_.decision -eq "CANDIDATE_READY" })
+  $quarantinedCandidates = @($CandidateRecords | Where-Object { $_.decision -match "QUARANTINE|QUARANTINED" })
+  $blockedCandidates = @($CandidateRecords | Where-Object { $_.decision -match "BLOCKED" })
+  $sourceTasks = @($CandidateRecords | ForEach-Object { [string]$_.source_task_id } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) -and $_ -ne "NONE" } | Select-Object -Unique)
+  $sourcePlanItems = @($CandidateRecords | ForEach-Object { [string]$_.source_plan_item_id } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) -and $_ -ne "NONE" } | Select-Object -Unique)
+  $requiredValidators = @($CandidateRecords | ForEach-Object { $_.acceptance_validator_needed } | ForEach-Object { [string]$_ } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)
+  $proposedFiles = @($CandidateRecords | ForEach-Object { $_.proposed_file_paths } | ForEach-Object { [string]$_ } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)
+
+  $PromotionManifest = [ordered]@{
+    status = "PASS"
+    promotion_status = "WAITING_OWNER_REVIEW"
+    run_id = [string]$Manifest.run_id
+    run_head = [string]$Manifest.run_head
+    branch = [string]$Manifest.branch
+    candidate_count = $CandidateRecords.Count
+    ready_candidate_count = $readyCandidates.Count
+    quarantined_candidate_count = $quarantinedCandidates.Count
+    blocked_candidate_count = $blockedCandidates.Count
+    candidate_ids = @($CandidateRecords | ForEach-Object { [string]$_.candidate_id })
+    source_tasks = $sourceTasks
+    source_plan_items = $sourcePlanItems
+    proposed_files_summary = $proposedFiles
+    required_validators = $requiredValidators
+    owner_review_required = $true
+    owner_promotion_gate_required = $true
+    candidate_output_is_not_accepted_code = $true
+    accepted_head_after_promotion = "UNKNOWN_UNTIL_OWNER_COMMIT"
+    restart_required_after_promotion = $true
+    commit_performed = $false
+    push_performed = $false
+    branch_switch_performed = $false
+    protected_state_mutated = $false
+    updated_at = (Get-Date).ToUniversalTime().ToString("o")
+  }
+  $PromotionManifestPath = Join-Path $PromotionBundleRoot "promotion_manifest.json"
+  Write-Phase160EPromotionJsonFile -Path $PromotionManifestPath -Object $PromotionManifest
+
+  $summaryLines = @(
+    "# PHASE160E Owner Review Summary",
+    "",
+    "status: WAITING_OWNER_REVIEW",
+    "run_id: $($PromotionManifest.run_id)",
+    "run_head: $($PromotionManifest.run_head)",
+    "candidate_count: $($PromotionManifest.candidate_count)",
+    "ready_candidate_count: $($PromotionManifest.ready_candidate_count)",
+    "",
+    "## Owner Gate",
+    "- Candidate output is not accepted code.",
+    "- Promotion requires owner stop, check, promotion, commit, and daemon restart.",
+    "- Runtime outputs must not be staged.",
+    "- No commit, push, or branch switch was performed by the live daemon.",
+    "",
+    "## Candidate IDs"
+  )
+  if ($CandidateRecords.Count -eq 0) {
+    $summaryLines += "- NONE"
+  } else {
+    foreach ($candidate in $CandidateRecords) {
+      $summaryLines += "- $($candidate.candidate_id) from task $($candidate.source_task_id) plan_item $($candidate.source_plan_item_id)"
+    }
+  }
+  Write-Phase160EPromotionTextFile -Path (Join-Path $PromotionBundleRoot "owner_review_summary.md") -Text ($summaryLines -join "`n")
+
+  $ProofIndex = [ordered]@{
+    status = "PASS"
+    run_id = [string]$Manifest.run_id
+    run_head = [string]$Manifest.run_head
+    proof_entries = @(
+      [ordered]@{ proof_type = "run_manifest"; path = "$SessionRootRelative/run_manifest.json"; required = $true },
+      [ordered]@{ proof_type = "runtime_identity"; path = "$SessionRootRelative/runtime_identity.json"; required = $true },
+      [ordered]@{ proof_type = "runtime_guard"; path = "$SessionRootRelative/runtime_guard.json"; required = $true },
+      [ordered]@{ proof_type = "candidate_workspace_ledger"; path = "$SessionRootRelative/candidate_workspace/change_ledger.jsonl"; required = $true },
+      [ordered]@{ proof_type = "promotion_manifest"; path = "$SessionRootRelative/promotion_bundle/promotion_manifest.json"; required = $true },
+      [ordered]@{ proof_type = "owner_review_summary"; path = "$SessionRootRelative/promotion_bundle/owner_review_summary.md"; required = $true }
+    )
+    candidate_bundle_paths = @($CandidateRecords | ForEach-Object { [string]$_.bundle_path })
+    created_at = (Get-Date).ToUniversalTime().ToString("o")
+  }
+  Write-Phase160EPromotionJsonFile -Path (Join-Path $PromotionBundleRoot "promotion_proof_index.json") -Object $ProofIndex
+
+  Add-Phase160EPromotionJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
+    event_type = "promotion_bundle_updated"
+    source = "promotion_finalizer"
+    run_id = [string]$Manifest.run_id
+    candidate_count = $CandidateRecords.Count
+    ready_candidate_count = $readyCandidates.Count
+    promotion_status = "WAITING_OWNER_REVIEW"
+    restart_required_after_promotion = $true
+    occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+  })
+
+  if ($WriteFinalHandoff) {
+    $handoffLines = @(
+      "# PHASE160E Final Handoff Summary",
+      "",
+      "status: WAITING_OWNER_REVIEW",
+      "run_id: $($PromotionManifest.run_id)",
+      "run_head: $($PromotionManifest.run_head)",
+      "promotion_status: $($PromotionManifest.promotion_status)",
+      "candidate_count: $($PromotionManifest.candidate_count)",
+      "ready_candidate_count: $($PromotionManifest.ready_candidate_count)",
+      "",
+      "## Required Owner Sequence",
+      "1. Stop the live runner.",
+      "2. Inspect the promotion bundle and candidate bundles.",
+      "3. Promote selected candidate work outside the live runtime session.",
+      "4. Run validators and commit accepted tracked code.",
+      "5. Restart a fresh live runner from the accepted head.",
+      "",
+      "## Non-Mutation Claims",
+      "- commit_performed: False",
+      "- push_performed: False",
+      "- branch_switch_performed: False",
+      "- protected_state_mutated: False",
+      "- candidate_output_is_not_accepted_code: True"
+    )
+    Write-Phase160EPromotionTextFile -Path (Join-Path $SessionRootFull "final_handoff_summary.md") -Text ($handoffLines -join "`n")
+  }
+
+  [pscustomobject][ordered]@{
+    status = "PASS"
+    run_id = [string]$Manifest.run_id
+    session_root = $SessionRootRelative
+    run_head = [string]$Manifest.run_head
+    candidate_count = $CandidateRecords.Count
+    ready_candidate_count = $readyCandidates.Count
+    quarantined_candidate_count = $quarantinedCandidates.Count
+    blocked_candidate_count = $blockedCandidates.Count
+    promotion_bundle_status = "WAITING_OWNER_REVIEW"
+    owner_review_summary_created = Test-Path -LiteralPath (Join-Path $PromotionBundleRoot "owner_review_summary.md")
+    promotion_manifest_created = Test-Path -LiteralPath $PromotionManifestPath
+    promotion_proof_index_created = Test-Path -LiteralPath (Join-Path $PromotionBundleRoot "promotion_proof_index.json")
+    final_handoff_summary_created = Test-Path -LiteralPath (Join-Path $SessionRootFull "final_handoff_summary.md")
+    restart_required_after_promotion = $true
+  } | ConvertTo-Json -Depth 20
+} finally {
+  if ($Pushed) {
+    Pop-Location
+  }
+}

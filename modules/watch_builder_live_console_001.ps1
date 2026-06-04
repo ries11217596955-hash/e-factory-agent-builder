@@ -298,6 +298,13 @@ try {
   $StopFlagPath = Join-Path $SessionRootFull "stop.flag"
   $ExperienceLedgerPath = Join-Path $SessionRootFull "self_growth/experience_ledger.jsonl"
   $NextGoalPath = Join-Path $SessionRootFull "self_growth/next_goal.json"
+  $RunManifestPath = Join-Path $SessionRootFull "run_manifest.json"
+  $RuntimeIdentityPath = Join-Path $SessionRootFull "runtime_identity.json"
+  $RuntimeGuardPath = Join-Path $SessionRootFull "runtime_guard.json"
+  $CandidateBundleRoot = Join-Path $SessionRootFull "candidate_workspace/candidate_bundles"
+  $PromotionManifestPath = Join-Path $SessionRootFull "promotion_bundle/promotion_manifest.json"
+  $ActiveTaskStatePath = Join-Path $SessionRootFull "task_lifecycle/active_task_state.json"
+  $ChangeLedgerPath = Join-Path $SessionRootFull "candidate_workspace/change_ledger.jsonl"
 
   $StartTime = Get-Date
   $EndTime = $StartTime.AddSeconds($DurationSeconds)
@@ -315,6 +322,7 @@ try {
   $SelfGrowthFieldsPrinted = $false
   $MacroFieldsPrinted = $false
   $TaskIntakeFieldsPrinted = $false
+  $Phase160EFieldsPrinted = $false
   $StaleAfterSeconds = [Math]::Max(25, $PollIntervalSeconds * 5)
 
   while ((Get-Date) -lt $EndTime) {
@@ -426,6 +434,53 @@ try {
         $LastMacroDecision = Format-Phase160ConsoleValue -Value $FinalState.last_macro_decision
       }
     }
+    $RunManifest = Read-Phase160ConsoleJsonSafe -Path $RunManifestPath
+    $RuntimeIdentity = Read-Phase160ConsoleJsonSafe -Path $RuntimeIdentityPath
+    $RuntimeGuard = Read-Phase160ConsoleJsonSafe -Path $RuntimeGuardPath
+    $PromotionManifest = Read-Phase160ConsoleJsonSafe -Path $PromotionManifestPath
+    $ActiveTaskState = Read-Phase160ConsoleJsonSafe -Path $ActiveTaskStatePath
+    $RunHead = if ($null -ne $RunManifest -and $RunManifest.PSObject.Properties.Name -contains "run_head") { Format-Phase160ConsoleValue -Value $RunManifest.run_head } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "run_head") { Format-Phase160ConsoleValue -Value $CurrentState.run_head } else { "NONE" }
+    $CurrentHead = if ($null -ne $RuntimeIdentity -and $RuntimeIdentity.PSObject.Properties.Name -contains "current_head") { Format-Phase160ConsoleValue -Value $RuntimeIdentity.current_head } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "current_head") { Format-Phase160ConsoleValue -Value $CurrentState.current_head } else { "NONE" }
+    $HeadMatch = if ($null -ne $RuntimeIdentity -and $RuntimeIdentity.PSObject.Properties.Name -contains "head_match") { Format-Phase160ConsoleValue -Value $RuntimeIdentity.head_match } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "head_match") { Format-Phase160ConsoleValue -Value $CurrentState.head_match } else { "False" }
+    $LiveRepoGuard = if ($null -ne $RuntimeGuard -and $RuntimeGuard.PSObject.Properties.Name -contains "status") { Format-Phase160ConsoleValue -Value $RuntimeGuard.status } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "live_repo_guard") { Format-Phase160ConsoleValue -Value $CurrentState.live_repo_guard } else { "UNKNOWN" }
+    $CandidateCount = 0
+    $ReadyCandidateCount = 0
+    $QuarantinedCandidateCount = 0
+    $LastCandidateId = "NONE"
+    if (Test-Path -LiteralPath $CandidateBundleRoot) {
+      $candidateBundleDirs = @(Get-ChildItem -LiteralPath $CandidateBundleRoot -Directory -ErrorAction SilentlyContinue | Sort-Object LastWriteTimeUtc, Name)
+      foreach ($candidateBundleDir in $candidateBundleDirs) {
+        $candidateManifest = Read-Phase160ConsoleJsonSafe -Path (Join-Path $candidateBundleDir.FullName "candidate_manifest.json")
+        if ($null -eq $candidateManifest) {
+          continue
+        }
+        $CandidateCount += 1
+        $decision = if ($candidateManifest.PSObject.Properties.Name -contains "decision") { [string]$candidateManifest.decision } else { "UNKNOWN" }
+        if ($decision -eq "CANDIDATE_READY") {
+          $ReadyCandidateCount += 1
+        }
+        if ($decision -match "QUARANTINE|QUARANTINED") {
+          $QuarantinedCandidateCount += 1
+        }
+        $LastCandidateId = if ($candidateManifest.PSObject.Properties.Name -contains "candidate_id") { Format-Phase160ConsoleValue -Value $candidateManifest.candidate_id } else { Format-Phase160ConsoleValue -Value $candidateBundleDir.Name }
+      }
+    }
+    $PromotionBundleStatus = if ($null -ne $PromotionManifest -and $PromotionManifest.PSObject.Properties.Name -contains "promotion_status") { Format-Phase160ConsoleValue -Value $PromotionManifest.promotion_status } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "promotion_bundle_status") { Format-Phase160ConsoleValue -Value $CurrentState.promotion_bundle_status } else { "NONE" }
+    $ActiveTaskStatus = if ($null -ne $ActiveTaskState -and $ActiveTaskState.PSObject.Properties.Name -contains "status") { Format-Phase160ConsoleValue -Value $ActiveTaskState.status } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "active_task_status") { Format-Phase160ConsoleValue -Value $CurrentState.active_task_status } else { "NONE" }
+    $PlanPendingCount = if ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "plan_pending_count") { [int]$CurrentState.plan_pending_count } else { 0 }
+    $PlanActiveCount = if ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "plan_active_count") { [int]$CurrentState.plan_active_count } else { 0 }
+    $PlanWaitingPromotionCount = if ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "plan_waiting_promotion_count") { [int]$CurrentState.plan_waiting_promotion_count } else { 0 }
+    $RestartRequiredAfterPromotion = if ($null -ne $PromotionManifest -and $PromotionManifest.PSObject.Properties.Name -contains "restart_required_after_promotion") { Format-Phase160ConsoleValue -Value $PromotionManifest.restart_required_after_promotion } elseif ($null -ne $CurrentState -and $CurrentState.PSObject.Properties.Name -contains "restart_required_after_promotion") { Format-Phase160ConsoleValue -Value $CurrentState.restart_required_after_promotion } else { "False" }
+    $LastPromotionEvent = "NONE"
+    if (Test-Path -LiteralPath $ChangeLedgerPath) {
+      $ledgerTail = @(Get-Content -LiteralPath $ChangeLedgerPath -Tail 25 -ErrorAction SilentlyContinue | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+      foreach ($ledgerLine in $ledgerTail) {
+        $ledgerEntry = Read-Phase160ConsoleJsonLineSafe -Line $ledgerLine
+        if ($null -ne $ledgerEntry -and $ledgerEntry.PSObject.Properties.Name -contains "event_type" -and [string]$ledgerEntry.event_type -match "promotion") {
+          $LastPromotionEvent = Format-Phase160ConsoleValue -Value $ledgerEntry.event_type
+        }
+      }
+    }
 
     $EventLineCount = Get-Phase160ConsoleJsonLineCount -Path $EventLogPath
     $ObserverLineCount = Get-Phase160ConsoleJsonLineCount -Path $ObserverLogPath
@@ -465,12 +520,13 @@ try {
     $FinalStateWritten = Test-Path -LiteralPath $FinalStatePath
     $LastEvent = Get-Phase160ConsoleLatestEventName -EventLogPath $EventLogPath
 
-    $Line = "LIVE_CONSOLE POLL=$PollCount HEARTBEAT_STATUS=$HeartbeatStatus TICK=$CurrentTick HEARTBEAT_COUNT=$HeartbeatCount SELF_GROWTH_ENABLED=$SelfGrowthEnabled DUTY_COUNT=$SelfGrowthDutyCount LAST_DUTY=$LastSelfGrowthDuty LAST_GAP=$LastSelfGrowthGap LAST_DUTY_STATUS=$LastSelfGrowthStatus NEXT_GAP=$NextSelfGrowthGap MACRO_CYCLE=$MacroCycleId LAST_STAGE=$LastMacroCycleStage LAST_DECISION=$LastMacroDecision TEACHER_INBOX_COUNT=$($TeacherInboxSummary.count) TEACHER_DIGEST_COUNT=$($TeacherDigestSummary.count) TEACHER_CONSUMED_COUNT=$($TeacherConsumedSummary.count) TEACHER_QUARANTINE_COUNT=$($TeacherQuarantineSummary.count) TASK_BACKLOG_COUNT=$($TaskBacklogSummary.count) ACTIVE_TASK=$ActiveTaskId ACTIVE_PLAN_ITEM=$ActivePlanItemId LAST_CONSUMED_TASK=$LastConsumedTask LAST_TASK_INFLUENCED_GAP=$LastTaskInfluencedGap macro_cycle_enabled=$MacroCycleEnabled macro_cycle_id=$MacroCycleId last_macro_cycle_stage=$LastMacroCycleStage last_macro_decision=$LastMacroDecision macro_cycle_stage_count=$MacroCycleStageCount experience_ledger_count=$ExperienceLedgerCount next_goal_selected_with_reason=$NextGoalSelectedWithReason final_state_written=$FinalStateWritten EVENT_LINES=$EventLineCount OBSERVER_LINES=$ObserverLineCount BLOCKERS=$($BlockerSummary.count) LATEST_BLOCKER=$($BlockerSummary.latest_name) TEACHER_INBOX=$($TeacherInboxSummary.count) LATEST_SUGGESTION=$($TeacherInboxSummary.latest_name) TEACHER_OUTBOX=$($TeacherOutboxSummary.count) STALE=$StaleThisPoll HEARTBEAT_AGE_SECONDS=$HeartbeatAgeSeconds STOP_FLAG=$StopFlagPresent LAST_EVENT=$LastEvent"
+    $Line = "LIVE_CONSOLE POLL=$PollCount HEARTBEAT_STATUS=$HeartbeatStatus TICK=$CurrentTick HEARTBEAT_COUNT=$HeartbeatCount SELF_GROWTH_ENABLED=$SelfGrowthEnabled DUTY_COUNT=$SelfGrowthDutyCount LAST_DUTY=$LastSelfGrowthDuty LAST_GAP=$LastSelfGrowthGap LAST_DUTY_STATUS=$LastSelfGrowthStatus NEXT_GAP=$NextSelfGrowthGap MACRO_CYCLE=$MacroCycleId LAST_STAGE=$LastMacroCycleStage LAST_DECISION=$LastMacroDecision RUN_HEAD=$RunHead CURRENT_HEAD=$CurrentHead HEAD_MATCH=$HeadMatch LIVE_REPO_GUARD=$LiveRepoGuard CANDIDATE_COUNT=$CandidateCount READY_CANDIDATE_COUNT=$ReadyCandidateCount QUARANTINED_CANDIDATE_COUNT=$QuarantinedCandidateCount PROMOTION_BUNDLE_STATUS=$PromotionBundleStatus ACTIVE_TASK_STATUS=$ActiveTaskStatus ACTIVE_TASK=$ActiveTaskId ACTIVE_PLAN_ITEM=$ActivePlanItemId BACKLOG_COUNT=$($TaskBacklogSummary.count) PLAN_PENDING_COUNT=$PlanPendingCount PLAN_ACTIVE_COUNT=$PlanActiveCount PLAN_WAITING_PROMOTION_COUNT=$PlanWaitingPromotionCount LAST_CANDIDATE_ID=$LastCandidateId LAST_PROMOTION_EVENT=$LastPromotionEvent RESTART_REQUIRED_AFTER_PROMOTION=$RestartRequiredAfterPromotion TEACHER_INBOX_COUNT=$($TeacherInboxSummary.count) TEACHER_DIGEST_COUNT=$($TeacherDigestSummary.count) TEACHER_CONSUMED_COUNT=$($TeacherConsumedSummary.count) TEACHER_QUARANTINE_COUNT=$($TeacherQuarantineSummary.count) TASK_BACKLOG_COUNT=$($TaskBacklogSummary.count) LAST_CONSUMED_TASK=$LastConsumedTask LAST_TASK_INFLUENCED_GAP=$LastTaskInfluencedGap macro_cycle_enabled=$MacroCycleEnabled macro_cycle_id=$MacroCycleId last_macro_cycle_stage=$LastMacroCycleStage last_macro_decision=$LastMacroDecision macro_cycle_stage_count=$MacroCycleStageCount experience_ledger_count=$ExperienceLedgerCount next_goal_selected_with_reason=$NextGoalSelectedWithReason final_state_written=$FinalStateWritten EVENT_LINES=$EventLineCount OBSERVER_LINES=$ObserverLineCount BLOCKERS=$($BlockerSummary.count) LATEST_BLOCKER=$($BlockerSummary.latest_name) TEACHER_INBOX=$($TeacherInboxSummary.count) LATEST_SUGGESTION=$($TeacherInboxSummary.latest_name) TEACHER_OUTBOX=$($TeacherOutboxSummary.count) STALE=$StaleThisPoll HEARTBEAT_AGE_SECONDS=$HeartbeatAgeSeconds STOP_FLAG=$StopFlagPresent LAST_EVENT=$LastEvent"
     Write-Phase160ConsoleVisibleLine -Line $Line -SamplePath $SamplePath
     $LiveLineCount += 1
     $SelfGrowthFieldsPrinted = $true
     $MacroFieldsPrinted = $true
     $TaskIntakeFieldsPrinted = $true
+    $Phase160EFieldsPrinted = $true
 
     $EventTail = Get-Phase160ConsoleTailLines -Path $EventLogPath -Count $ShowTailEvents
     for ($i = 0; $i -lt $EventTail.Count; $i += 1) {
@@ -520,6 +576,7 @@ try {
     live_console_shows_self_growth_fields = $SelfGrowthFieldsPrinted
     live_console_shows_macro_fields = $MacroFieldsPrinted
     live_console_shows_task_intake_fields = $TaskIntakeFieldsPrinted
+    live_console_shows_phase160e_fields = $Phase160EFieldsPrinted
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
     accepted_self_model_mutated = $false

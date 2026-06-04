@@ -11,7 +11,8 @@ param(
   [string]$SelfGrowthDutyRoot = "",
   [switch]$EnableMacroSelfGrowth,
   [switch]$EnableMacroSelfGrowthCycle,
-  [string]$MacroCycleId = "PHASE160B_MACRO_SELF_GROWTH_IGNITION_CYCLE_001"
+  [string]$MacroCycleId = "PHASE160B_MACRO_SELF_GROWTH_IGNITION_CYCLE_001",
+  [switch]$EnableCandidateWorkspacePromotion
 )
 
 $ErrorActionPreference = "Stop"
@@ -122,8 +123,93 @@ function Get-Phase160DaemonLiveTaskSnapshot {
   param([string]$SessionRootFull)
   $activeTask = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "active_task/active_task.json")
   $activePlanItem = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "active_task/active_plan_item.json")
+  $runManifest = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "run_manifest.json")
+  $runtimeIdentity = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "runtime_identity.json")
+  $runtimeGuard = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "runtime_guard.json")
+  $promotionManifest = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "promotion_bundle/promotion_manifest.json")
+  $activeTaskState = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "task_lifecycle/active_task_state.json")
   $latestConsumed = Get-Phase160DaemonLatestJson -Path (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
+  $candidateBundleRoot = Join-Path $SessionRootFull "candidate_workspace/candidate_bundles"
+  $candidateCount = 0
+  $readyCandidateCount = 0
+  $quarantinedCandidateCount = 0
+  $lastCandidateId = "NONE"
+  if (Test-Path -LiteralPath $candidateBundleRoot) {
+    $candidateBundleDirs = @(Get-ChildItem -LiteralPath $candidateBundleRoot -Directory -ErrorAction SilentlyContinue | Sort-Object LastWriteTimeUtc, Name)
+    foreach ($candidateBundleDir in $candidateBundleDirs) {
+      $candidateManifest = Read-Phase160DaemonJsonSafe -Path (Join-Path $candidateBundleDir.FullName "candidate_manifest.json")
+      if ($null -eq $candidateManifest) {
+        continue
+      }
+      $candidateCount += 1
+      $candidateDecision = if ($candidateManifest.PSObject.Properties.Name -contains "decision") { [string]$candidateManifest.decision } else { "UNKNOWN" }
+      if ($candidateDecision -eq "CANDIDATE_READY") {
+        $readyCandidateCount += 1
+      }
+      if ($candidateDecision -match "QUARANTINE|QUARANTINED") {
+        $quarantinedCandidateCount += 1
+      }
+      $lastCandidateId = if ($candidateManifest.PSObject.Properties.Name -contains "candidate_id") { [string]$candidateManifest.candidate_id } else { $candidateBundleDir.Name }
+    }
+  }
+  $planPendingCount = 0
+  $planActiveCount = 0
+  $planWaitingPromotionCount = 0
+  $planItemsRoot = Join-Path $SessionRootFull "plan_items"
+  if (Test-Path -LiteralPath $planItemsRoot) {
+    $planItemFiles = @(Get-ChildItem -LiteralPath $planItemsRoot -File -Filter "*_plan_item_*.json" -Recurse -ErrorAction SilentlyContinue)
+    foreach ($planItemFile in $planItemFiles) {
+      $planItem = Read-Phase160DaemonJsonSafe -Path $planItemFile.FullName
+      if ($null -eq $planItem -or -not ($planItem.PSObject.Properties.Name -contains "status")) {
+        continue
+      }
+      switch ([string]$planItem.status) {
+        "PENDING" { $planPendingCount += 1 }
+        "ACTIVE" { $planActiveCount += 1 }
+        "WAITING_OWNER_PROMOTION" { $planWaitingPromotionCount += 1 }
+      }
+    }
+  }
+  $lastPromotionEvent = "NONE"
+  $changeLedgerPath = Join-Path $SessionRootFull "candidate_workspace/change_ledger.jsonl"
+  if (Test-Path -LiteralPath $changeLedgerPath) {
+    $ledgerTail = @(Get-Content -LiteralPath $changeLedgerPath -Tail 25 -ErrorAction SilentlyContinue | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+    foreach ($ledgerLine in $ledgerTail) {
+      $ledgerEntry = $null
+      try {
+        $ledgerEntry = $ledgerLine | ConvertFrom-Json
+      } catch {
+        $ledgerEntry = $null
+      }
+      if ($null -ne $ledgerEntry -and $ledgerEntry.PSObject.Properties.Name -contains "event_type" -and [string]$ledgerEntry.event_type -match "promotion") {
+        $lastPromotionEvent = [string]$ledgerEntry.event_type
+      }
+    }
+  }
+  $currentHead = "UNKNOWN"
+  try {
+    $currentHead = (git rev-parse --short HEAD).Trim()
+  } catch {
+    $currentHead = "UNKNOWN"
+  }
+  $runHead = if ($null -ne $runManifest -and $runManifest.PSObject.Properties.Name -contains "run_head") { [string]$runManifest.run_head } else { "NONE" }
+  $headMatch = if ($runHead -eq "NONE" -or $currentHead -eq "UNKNOWN") { $false } else { $runHead -eq $currentHead }
   return [ordered]@{
+    run_head = $runHead
+    current_head = $currentHead
+    head_match = $headMatch
+    live_repo_guard = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status") { [string]$runtimeGuard.status } elseif ($null -ne $runtimeIdentity -and $runtimeIdentity.PSObject.Properties.Name -contains "live_repo_guard") { [string]$runtimeIdentity.live_repo_guard } else { "UNKNOWN" }
+    candidate_count = $candidateCount
+    ready_candidate_count = $readyCandidateCount
+    quarantined_candidate_count = $quarantinedCandidateCount
+    promotion_bundle_status = if ($null -ne $promotionManifest -and $promotionManifest.PSObject.Properties.Name -contains "promotion_status") { [string]$promotionManifest.promotion_status } else { "NONE" }
+    restart_required_after_promotion = if ($null -ne $promotionManifest -and $promotionManifest.PSObject.Properties.Name -contains "restart_required_after_promotion") { [bool]$promotionManifest.restart_required_after_promotion } else { $false }
+    active_task_status = if ($null -ne $activeTaskState -and $activeTaskState.PSObject.Properties.Name -contains "status") { [string]$activeTaskState.status } else { "NONE" }
+    plan_pending_count = $planPendingCount
+    plan_active_count = $planActiveCount
+    plan_waiting_promotion_count = $planWaitingPromotionCount
+    last_candidate_id = $lastCandidateId
+    last_promotion_event = $lastPromotionEvent
     teacher_inbox_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_inbox")
     teacher_digest_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_digest")
     teacher_consumed_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
@@ -210,6 +296,9 @@ try {
 
   $SessionRootFull = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path $SessionRoot
   $SessionRootRelative = ConvertTo-Phase160DaemonRelativePath -RepoRoot $RepoRoot -FullPath $SessionRootFull
+  if ([string]::IsNullOrWhiteSpace($RunId)) {
+    $RunId = [System.IO.Path]::GetFileName(($SessionRootRelative -replace "/", [System.IO.Path]::DirectorySeparatorChar))
+  }
   foreach ($directory in @(
     $SessionRootFull,
     (Join-Path $SessionRootFull "tick_records"),
@@ -221,6 +310,13 @@ try {
     (Join-Path $SessionRootFull "task_backlog"),
     (Join-Path $SessionRootFull "active_task"),
     (Join-Path $SessionRootFull "plan_items"),
+    (Join-Path $SessionRootFull "candidate_workspace"),
+    (Join-Path $SessionRootFull "candidate_workspace/candidate_bundles"),
+    (Join-Path $SessionRootFull "candidate_workspace/candidate_queue"),
+    (Join-Path $SessionRootFull "candidate_workspace/candidate_quarantine"),
+    (Join-Path $SessionRootFull "promotion_bundle"),
+    (Join-Path $SessionRootFull "task_lifecycle"),
+    (Join-Path $SessionRootFull "task_lifecycle/task_completion_receipts"),
     (Join-Path $SessionRootFull "teacher_outbox"),
     (Join-Path $SessionRootFull "blocker_queue"),
     (Join-Path $SessionRootFull "accepted_interventions"),
@@ -239,8 +335,20 @@ try {
   $RejectedInterventionsPath = Join-Path $SessionRootFull "rejected_interventions"
   $StopFlagPath = Join-Path $SessionRootFull "stop.flag"
   $SelfGrowthDutyScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/invoke_builder_live_self_growth_duty_step_001.ps1"
+  $RuntimeIdentityScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/inspect_builder_runtime_identity_001.ps1"
+  $CandidateWorkspaceScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/invoke_builder_candidate_workspace_step_001.ps1"
+  $PromotionFinalizeScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/finalize_builder_promotion_bundle_001.ps1"
   if ($EnableSelfGrowthDuty -and -not (Test-Path -LiteralPath $SelfGrowthDutyScriptPath)) {
     throw "PHASE160_DAEMON_SELF_GROWTH_DUTY_SCRIPT_MISSING=modules/invoke_builder_live_self_growth_duty_step_001.ps1"
+  }
+  if (-not (Test-Path -LiteralPath $RuntimeIdentityScriptPath)) {
+    throw "PHASE160E_DAEMON_RUNTIME_IDENTITY_SCRIPT_MISSING=modules/inspect_builder_runtime_identity_001.ps1"
+  }
+  if ($EnableCandidateWorkspacePromotion -and -not (Test-Path -LiteralPath $CandidateWorkspaceScriptPath)) {
+    throw "PHASE160E_DAEMON_CANDIDATE_WORKSPACE_SCRIPT_MISSING=modules/invoke_builder_candidate_workspace_step_001.ps1"
+  }
+  if ($EnableCandidateWorkspacePromotion -and -not (Test-Path -LiteralPath $PromotionFinalizeScriptPath)) {
+    throw "PHASE160E_DAEMON_PROMOTION_FINALIZE_SCRIPT_MISSING=modules/finalize_builder_promotion_bundle_001.ps1"
   }
   if ([string]::IsNullOrWhiteSpace($SelfGrowthDutyRoot)) {
     $SelfGrowthDutyRootFull = Join-Path $SessionRootFull "self_growth"
@@ -249,6 +357,17 @@ try {
   }
   $SelfGrowthDutyRootRelative = ConvertTo-Phase160DaemonRelativePath -RepoRoot $RepoRoot -FullPath $SelfGrowthDutyRootFull
   $TeacherOutboxRelative = ConvertTo-Phase160DaemonRelativePath -RepoRoot $RepoRoot -FullPath $TeacherOutboxPath
+
+  $RuntimeIdentityOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $RuntimeIdentityScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -Mode Initialize -GuardLabel "daemon_start" 2>&1 | ForEach-Object { [string]$_ })
+  if ($LASTEXITCODE -ne 0) {
+    throw "PHASE160E_DAEMON_RUNTIME_IDENTITY_INITIALIZE_FAILED exit=$LASTEXITCODE output=$($RuntimeIdentityOutput -join ' | ')"
+  }
+  $RuntimeIdentityResult = ($RuntimeIdentityOutput -join "`n") | ConvertFrom-Json
+  $RunHead = [string]$RuntimeIdentityResult.run_head
+  $CurrentHead = [string]$RuntimeIdentityResult.current_head
+  $HeadMatch = [bool]$RuntimeIdentityResult.head_match
+  $LiveRepoGuard = [string]$RuntimeIdentityResult.live_repo_guard
+  $CandidateProductionEnabled = [bool]$RuntimeIdentityResult.candidate_production_enabled
 
   $StartTime = Get-Date
   $EndTime = if ($RunUntilStop) { [datetime]::MaxValue } else { $StartTime.AddSeconds($DurationSeconds) }
@@ -276,6 +395,12 @@ try {
     duration_seconds = $DurationSeconds
     run_until_stop = [bool]$RunUntilStop
     tick_interval_seconds = $TickIntervalSeconds
+    run_head = $RunHead
+    current_head = $CurrentHead
+    head_match = $HeadMatch
+    live_repo_guard = $LiveRepoGuard
+    candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+    candidate_production_enabled = $CandidateProductionEnabled
     duration_based_session = $true
     fixed_tick_batch_mode = $false
     occurred_at = $StartTime.ToUniversalTime().ToString("o")
@@ -420,6 +545,54 @@ try {
         if ($DutyResult.PSObject.Properties.Name -contains "task_influenced_gap_selection") {
           $LastTaskInfluencedGapSelection = [bool]$DutyResult.task_influenced_gap_selection
         }
+        $CandidateWorkspaceResultStatus = "DISABLED"
+        $LastCandidateWorkspaceCandidateId = "NONE"
+        if ($EnableCandidateWorkspacePromotion) {
+          $RuntimeGuardOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $RuntimeIdentityScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -Mode GuardCheck -GuardLabel ("after_{0}" -f $NextDutyId) 2>&1 | ForEach-Object { [string]$_ })
+          if ($LASTEXITCODE -ne 0) {
+            throw "PHASE160E_DAEMON_RUNTIME_GUARD_FAILED exit=$LASTEXITCODE output=$($RuntimeGuardOutput -join ' | ')"
+          }
+          $RuntimeGuardResult = ($RuntimeGuardOutput -join "`n") | ConvertFrom-Json
+          $RunHead = [string]$RuntimeGuardResult.run_head
+          $CurrentHead = [string]$RuntimeGuardResult.current_head
+          $HeadMatch = [bool]$RuntimeGuardResult.head_match
+          $LiveRepoGuard = [string]$RuntimeGuardResult.live_repo_guard
+          $CandidateProductionEnabled = [bool]$RuntimeGuardResult.candidate_production_enabled
+          if ($CandidateProductionEnabled) {
+            $CandidateWorkspaceOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $CandidateWorkspaceScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -DutyId $LastSelfGrowthDutyId -TickNumber $TickCount 2>&1 | ForEach-Object { [string]$_ })
+            if ($LASTEXITCODE -ne 0) {
+              throw "PHASE160E_DAEMON_CANDIDATE_WORKSPACE_STEP_FAILED exit=$LASTEXITCODE output=$($CandidateWorkspaceOutput -join ' | ')"
+            }
+            $CandidateWorkspaceResult = ($CandidateWorkspaceOutput -join "`n") | ConvertFrom-Json
+            $CandidateWorkspaceResultStatus = [string]$CandidateWorkspaceResult.status
+            if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "last_candidate_id") {
+              $LastCandidateWorkspaceCandidateId = [string]$CandidateWorkspaceResult.last_candidate_id
+            }
+            Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+              event_type = "candidate_workspace_step_completed"
+              source = "builder_daemon"
+              duty_id = $LastSelfGrowthDutyId
+              tick_number = $TickCount
+              status = $CandidateWorkspaceResultStatus
+              candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "candidate_count") { [int]$CandidateWorkspaceResult.candidate_count } else { 0 }
+              ready_candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$CandidateWorkspaceResult.ready_candidate_count } else { 0 }
+              last_candidate_id = $LastCandidateWorkspaceCandidateId
+              promotion_bundle_status = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "promotion_bundle_status") { [string]$CandidateWorkspaceResult.promotion_bundle_status } else { "NONE" }
+              occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+            })
+          } else {
+            Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+              event_type = "candidate_workspace_step_blocked_by_runtime_guard"
+              source = "builder_daemon"
+              duty_id = $LastSelfGrowthDutyId
+              tick_number = $TickCount
+              live_repo_guard = $LiveRepoGuard
+              run_head = $RunHead
+              current_head = $CurrentHead
+              occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+            })
+          }
+        }
         $LiveTaskSnapshot = Get-Phase160DaemonLiveTaskSnapshot -SessionRootFull $SessionRootFull
         Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
           event_type = "self_growth_duty_completed"
@@ -439,6 +612,14 @@ try {
           backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
           consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
           quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
+          run_head = [string]$LiveTaskSnapshot.run_head
+          current_head = [string]$LiveTaskSnapshot.current_head
+          head_match = [bool]$LiveTaskSnapshot.head_match
+          live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+          candidate_workspace_status = $CandidateWorkspaceResultStatus
+          last_candidate_id = $LastCandidateWorkspaceCandidateId
+          candidate_count = [int]$LiveTaskSnapshot.candidate_count
+          promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
           next_gap = $NextSelfGrowthGap
           occurred_at = (Get-Date).ToUniversalTime().ToString("o")
         })
@@ -494,6 +675,22 @@ try {
       macro_cycle_id = $ActiveMacroCycleId
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
+      candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      run_head = [string]$LiveTaskSnapshot.run_head
+      current_head = [string]$LiveTaskSnapshot.current_head
+      head_match = [bool]$LiveTaskSnapshot.head_match
+      live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+      candidate_count = [int]$LiveTaskSnapshot.candidate_count
+      ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
+      active_task_status = [string]$LiveTaskSnapshot.active_task_status
+      plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
+      plan_active_count = [int]$LiveTaskSnapshot.plan_active_count
+      plan_waiting_promotion_count = [int]$LiveTaskSnapshot.plan_waiting_promotion_count
+      last_candidate_id = [string]$LiveTaskSnapshot.last_candidate_id
+      last_promotion_event = [string]$LiveTaskSnapshot.last_promotion_event
+      restart_required_after_promotion = [bool]$LiveTaskSnapshot.restart_required_after_promotion
       teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
       teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
       teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
@@ -529,6 +726,22 @@ try {
       macro_cycle_id = $ActiveMacroCycleId
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
+      candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      run_head = [string]$LiveTaskSnapshot.run_head
+      current_head = [string]$LiveTaskSnapshot.current_head
+      head_match = [bool]$LiveTaskSnapshot.head_match
+      live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+      candidate_count = [int]$LiveTaskSnapshot.candidate_count
+      ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
+      active_task_status = [string]$LiveTaskSnapshot.active_task_status
+      plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
+      plan_active_count = [int]$LiveTaskSnapshot.plan_active_count
+      plan_waiting_promotion_count = [int]$LiveTaskSnapshot.plan_waiting_promotion_count
+      last_candidate_id = [string]$LiveTaskSnapshot.last_candidate_id
+      last_promotion_event = [string]$LiveTaskSnapshot.last_promotion_event
+      restart_required_after_promotion = [bool]$LiveTaskSnapshot.restart_required_after_promotion
       teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
       teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
       teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
@@ -565,6 +778,22 @@ try {
       macro_cycle_id = $ActiveMacroCycleId
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
+      candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      run_head = [string]$LiveTaskSnapshot.run_head
+      current_head = [string]$LiveTaskSnapshot.current_head
+      head_match = [bool]$LiveTaskSnapshot.head_match
+      live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+      candidate_count = [int]$LiveTaskSnapshot.candidate_count
+      ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
+      active_task_status = [string]$LiveTaskSnapshot.active_task_status
+      plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
+      plan_active_count = [int]$LiveTaskSnapshot.plan_active_count
+      plan_waiting_promotion_count = [int]$LiveTaskSnapshot.plan_waiting_promotion_count
+      last_candidate_id = [string]$LiveTaskSnapshot.last_candidate_id
+      last_promotion_event = [string]$LiveTaskSnapshot.last_promotion_event
+      restart_required_after_promotion = [bool]$LiveTaskSnapshot.restart_required_after_promotion
       teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
       teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
       teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
@@ -597,6 +826,22 @@ try {
       macro_cycle_id = $ActiveMacroCycleId
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
+      candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      run_head = [string]$LiveTaskSnapshot.run_head
+      current_head = [string]$LiveTaskSnapshot.current_head
+      head_match = [bool]$LiveTaskSnapshot.head_match
+      live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+      candidate_count = [int]$LiveTaskSnapshot.candidate_count
+      ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
+      active_task_status = [string]$LiveTaskSnapshot.active_task_status
+      plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
+      plan_active_count = [int]$LiveTaskSnapshot.plan_active_count
+      plan_waiting_promotion_count = [int]$LiveTaskSnapshot.plan_waiting_promotion_count
+      last_candidate_id = [string]$LiveTaskSnapshot.last_candidate_id
+      last_promotion_event = [string]$LiveTaskSnapshot.last_promotion_event
+      restart_required_after_promotion = [bool]$LiveTaskSnapshot.restart_required_after_promotion
       active_task_id = [string]$LiveTaskSnapshot.active_task_id
       active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
       task_influenced_gap_selection = $LastTaskInfluencedGapSelection
@@ -621,6 +866,18 @@ try {
 
   $StoppedAt = (Get-Date).ToUniversalTime().ToString("o")
   $FinalStatus = if ($StopReason -eq "duration_limit") { "COMPLETED" } elseif ($StopReason -eq "stop_flag") { "STOPPED" } else { "STOPPED" }
+  if ($EnableCandidateWorkspacePromotion) {
+    $FinalPromotionOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $PromotionFinalizeScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -WriteFinalHandoff 2>&1 | ForEach-Object { [string]$_ })
+    if ($LASTEXITCODE -ne 0) {
+      throw "PHASE160E_DAEMON_FINAL_PROMOTION_BUNDLE_FAILED exit=$LASTEXITCODE output=$($FinalPromotionOutput -join ' | ')"
+    }
+    Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "final_promotion_bundle_written"
+      source = "builder_daemon"
+      stop_reason = $StopReason
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+  }
   $LiveTaskSnapshot = Get-Phase160DaemonLiveTaskSnapshot -SessionRootFull $SessionRootFull
   $FinalState = [ordered]@{
     status = "STOPPED"
@@ -639,12 +896,28 @@ try {
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
     next_self_growth_gap = $NextSelfGrowthGap
-    macro_cycle_enabled = [bool]$MacroSelfGrowthEnabled
-    macro_cycle_id = $ActiveMacroCycleId
-    last_macro_cycle_stage = $LastMacroCycleStage
-    last_macro_decision = $LastMacroDecision
-    teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
-    teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+      macro_cycle_enabled = [bool]$MacroSelfGrowthEnabled
+      macro_cycle_id = $ActiveMacroCycleId
+      last_macro_cycle_stage = $LastMacroCycleStage
+      last_macro_decision = $LastMacroDecision
+      candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      run_head = [string]$LiveTaskSnapshot.run_head
+      current_head = [string]$LiveTaskSnapshot.current_head
+      head_match = [bool]$LiveTaskSnapshot.head_match
+      live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+      candidate_count = [int]$LiveTaskSnapshot.candidate_count
+      ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
+      active_task_status = [string]$LiveTaskSnapshot.active_task_status
+      plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
+      plan_active_count = [int]$LiveTaskSnapshot.plan_active_count
+      plan_waiting_promotion_count = [int]$LiveTaskSnapshot.plan_waiting_promotion_count
+      last_candidate_id = [string]$LiveTaskSnapshot.last_candidate_id
+      last_promotion_event = [string]$LiveTaskSnapshot.last_promotion_event
+      restart_required_after_promotion = [bool]$LiveTaskSnapshot.restart_required_after_promotion
+      teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+      teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
     teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
     teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
     task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
@@ -672,12 +945,28 @@ try {
     stop_flag_supported = $true
     self_growth_enabled = [bool]$EnableSelfGrowthDuty
     self_growth_duty_count = $SelfGrowthDutyCount
-    macro_cycle_enabled = [bool]$MacroSelfGrowthEnabled
-    macro_cycle_id = $ActiveMacroCycleId
-    last_macro_cycle_stage = $LastMacroCycleStage
-    last_macro_decision = $LastMacroDecision
-    teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
-    teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
+      macro_cycle_enabled = [bool]$MacroSelfGrowthEnabled
+      macro_cycle_id = $ActiveMacroCycleId
+      last_macro_cycle_stage = $LastMacroCycleStage
+      last_macro_decision = $LastMacroDecision
+      candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      run_head = [string]$LiveTaskSnapshot.run_head
+      current_head = [string]$LiveTaskSnapshot.current_head
+      head_match = [bool]$LiveTaskSnapshot.head_match
+      live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+      candidate_count = [int]$LiveTaskSnapshot.candidate_count
+      ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
+      active_task_status = [string]$LiveTaskSnapshot.active_task_status
+      plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
+      plan_active_count = [int]$LiveTaskSnapshot.plan_active_count
+      plan_waiting_promotion_count = [int]$LiveTaskSnapshot.plan_waiting_promotion_count
+      last_candidate_id = [string]$LiveTaskSnapshot.last_candidate_id
+      last_promotion_event = [string]$LiveTaskSnapshot.last_promotion_event
+      restart_required_after_promotion = [bool]$LiveTaskSnapshot.restart_required_after_promotion
+      teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
+      teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
     teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count
     teacher_quarantine_count = [int]$LiveTaskSnapshot.teacher_quarantine_count
     task_backlog_count = [int]$LiveTaskSnapshot.task_backlog_count
@@ -699,6 +988,22 @@ try {
     macro_cycle_id = $ActiveMacroCycleId
     last_macro_cycle_stage = $LastMacroCycleStage
     last_macro_decision = $LastMacroDecision
+    candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+    run_head = [string]$LiveTaskSnapshot.run_head
+    current_head = [string]$LiveTaskSnapshot.current_head
+    head_match = [bool]$LiveTaskSnapshot.head_match
+    live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+    candidate_count = [int]$LiveTaskSnapshot.candidate_count
+    ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+    quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+    promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
+    active_task_status = [string]$LiveTaskSnapshot.active_task_status
+    plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
+    plan_active_count = [int]$LiveTaskSnapshot.plan_active_count
+    plan_waiting_promotion_count = [int]$LiveTaskSnapshot.plan_waiting_promotion_count
+    last_candidate_id = [string]$LiveTaskSnapshot.last_candidate_id
+    last_promotion_event = [string]$LiveTaskSnapshot.last_promotion_event
+    restart_required_after_promotion = [bool]$LiveTaskSnapshot.restart_required_after_promotion
     last_self_growth_duty_id = $LastSelfGrowthDutyId
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
@@ -758,6 +1063,22 @@ try {
     macro_cycle_id = $ActiveMacroCycleId
     last_macro_cycle_stage = $LastMacroCycleStage
     last_macro_decision = $LastMacroDecision
+    candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+    run_head = [string]$LiveTaskSnapshot.run_head
+    current_head = [string]$LiveTaskSnapshot.current_head
+    head_match = [bool]$LiveTaskSnapshot.head_match
+    live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
+    candidate_count = [int]$LiveTaskSnapshot.candidate_count
+    ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+    quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+    promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
+    active_task_status = [string]$LiveTaskSnapshot.active_task_status
+    plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
+    plan_active_count = [int]$LiveTaskSnapshot.plan_active_count
+    plan_waiting_promotion_count = [int]$LiveTaskSnapshot.plan_waiting_promotion_count
+    last_candidate_id = [string]$LiveTaskSnapshot.last_candidate_id
+    last_promotion_event = [string]$LiveTaskSnapshot.last_promotion_event
+    restart_required_after_promotion = [bool]$LiveTaskSnapshot.restart_required_after_promotion
     teacher_inbox_count = [int]$LiveTaskSnapshot.teacher_inbox_count
     teacher_digest_count = [int]$LiveTaskSnapshot.teacher_digest_count
     teacher_consumed_count = [int]$LiveTaskSnapshot.teacher_consumed_count

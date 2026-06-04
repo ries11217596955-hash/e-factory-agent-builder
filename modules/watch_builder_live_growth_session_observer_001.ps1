@@ -191,6 +191,14 @@ try {
   $TeacherQuarantinePath = Join-Path $SessionRootFull "teacher_quarantine"
   $TaskBacklogPath = Join-Path $SessionRootFull "task_backlog"
   $BlockerQueuePath = Join-Path $SessionRootFull "blocker_queue"
+  $RunManifestPath = Join-Path $SessionRootFull "run_manifest.json"
+  $RuntimeGuardPath = Join-Path $SessionRootFull "runtime_guard.json"
+  $CandidateWorkspacePath = Join-Path $SessionRootFull "candidate_workspace"
+  $PromotionManifestPath = Join-Path $SessionRootFull "promotion_bundle/promotion_manifest.json"
+  $ActiveTaskStatePath = Join-Path $SessionRootFull "task_lifecycle/active_task_state.json"
+  $TaskCompletionReceiptsPath = Join-Path $SessionRootFull "task_lifecycle/task_completion_receipts"
+  $BacklogAdvancementLogPath = Join-Path $SessionRootFull "task_lifecycle/backlog_advancement_log.jsonl"
+  $PlanAdvancementLogPath = Join-Path $SessionRootFull "task_lifecycle/plan_item_advancement_log.jsonl"
 
   $StartTime = Get-Date
   $EndTime = $StartTime.AddSeconds($DurationSeconds)
@@ -213,6 +221,14 @@ try {
   $RepeatedSameGapPolls = 0
   $PreviousSelfGrowthGap = $null
   $StaleEndedSessionDetected = $false
+  $RunManifestObserved = $false
+  $RunHeadMatchesCurrent = $false
+  $CandidateWorkspaceObserved = $false
+  $PromotionBundleObserved = $false
+  $ActiveTaskLifecycleMoved = $false
+  $BacklogAdvancementDetected = $false
+  $PlanItemAdvancementDetected = $false
+  $RuntimeGuardViolationDetected = $false
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -348,6 +364,39 @@ try {
     $TeacherConsumedCount = Get-Phase160ObserverJsonFileCount -Path $TeacherConsumedPath
     $TeacherQuarantineCount = Get-Phase160ObserverJsonFileCount -Path $TeacherQuarantinePath
     $TaskBacklogCount = Get-Phase160ObserverJsonFileCount -Path $TaskBacklogPath
+    $RunManifest = Read-Phase160ObserverJsonSafe -Path $RunManifestPath
+    if ($null -ne $RunManifest) {
+      $RunManifestObserved = $true
+      try {
+        $CurrentHeadForObserver = (git rev-parse --short HEAD).Trim()
+        if ($RunManifest.PSObject.Properties.Name -contains "run_head" -and [string]$RunManifest.run_head -eq $CurrentHeadForObserver) {
+          $RunHeadMatchesCurrent = $true
+        }
+      } catch {
+        $RunHeadMatchesCurrent = $false
+      }
+    }
+    if (Test-Path -LiteralPath $CandidateWorkspacePath) {
+      $CandidateWorkspaceObserved = $true
+    }
+    if (Test-Path -LiteralPath $PromotionManifestPath) {
+      $PromotionBundleObserved = $true
+    }
+    $RuntimeGuard = Read-Phase160ObserverJsonSafe -Path $RuntimeGuardPath
+    if ($null -ne $RuntimeGuard -and $RuntimeGuard.PSObject.Properties.Name -contains "status" -and [string]$RuntimeGuard.status -eq "BLOCKED") {
+      $RuntimeGuardViolationDetected = $true
+    }
+    $ActiveTaskState = Read-Phase160ObserverJsonSafe -Path $ActiveTaskStatePath
+    $TaskCompletionReceiptCount = Get-Phase160ObserverJsonFileCount -Path $TaskCompletionReceiptsPath
+    if (($null -ne $ActiveTaskState -and $ActiveTaskState.PSObject.Properties.Name -contains "status" -and [string]$ActiveTaskState.status -eq "WAITING_OWNER_PROMOTION") -or $TaskCompletionReceiptCount -gt 0) {
+      $ActiveTaskLifecycleMoved = $true
+    }
+    if (Get-Phase160ObserverJsonLineCount -Path $BacklogAdvancementLogPath -gt 0) {
+      $BacklogAdvancementDetected = $true
+    }
+    if (Get-Phase160ObserverJsonLineCount -Path $PlanAdvancementLogPath -gt 0) {
+      $PlanItemAdvancementDetected = $true
+    }
 
     if ($StaleThisPoll -and -not (Test-Path -LiteralPath $FinalStatePath)) {
       $DaemonPresent = Test-Phase160ObserverDaemonProcessPresent -SessionRoot $SessionRoot
@@ -436,6 +485,14 @@ try {
       teacher_consumed_count = $TeacherConsumedCount
       teacher_quarantine_count = $TeacherQuarantineCount
       task_backlog_count = $TaskBacklogCount
+      run_manifest_exists = $RunManifestObserved
+      run_head_matches_current = $RunHeadMatchesCurrent
+      candidate_workspace_exists = $CandidateWorkspaceObserved
+      promotion_bundle_exists = $PromotionBundleObserved
+      active_task_lifecycle_moved = $ActiveTaskLifecycleMoved
+      backlog_advancement_detected = $BacklogAdvancementDetected
+      plan_item_advancement_detected = $PlanItemAdvancementDetected
+      runtime_guard_violation_detected = $RuntimeGuardViolationDetected
       occurred_at = $Now.ToUniversalTime().ToString("o")
     })
 
@@ -474,6 +531,14 @@ try {
     teacher_consumed_count = $TeacherConsumedCount
     teacher_quarantine_count = $TeacherQuarantineCount
     task_backlog_count = $TaskBacklogCount
+    run_manifest_exists = $RunManifestObserved
+    run_head_matches_current = $RunHeadMatchesCurrent
+    candidate_workspace_exists = $CandidateWorkspaceObserved
+    promotion_bundle_exists = $PromotionBundleObserved
+    active_task_lifecycle_moved = $ActiveTaskLifecycleMoved
+    backlog_advancement_detected = $BacklogAdvancementDetected
+    plan_item_advancement_detected = $PlanItemAdvancementDetected
+    runtime_guard_violation_detected = $RuntimeGuardViolationDetected
     code_execution_requested = $false
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
@@ -507,6 +572,14 @@ try {
     last_self_growth_status = $LastSelfGrowthStatus
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
+    run_manifest_exists = $RunManifestObserved
+    run_head_matches_current = $RunHeadMatchesCurrent
+    candidate_workspace_exists = $CandidateWorkspaceObserved
+    promotion_bundle_exists = $PromotionBundleObserved
+    active_task_lifecycle_moved = $ActiveTaskLifecycleMoved
+    backlog_advancement_detected = $BacklogAdvancementDetected
+    plan_item_advancement_detected = $PlanItemAdvancementDetected
+    runtime_guard_violation_detected = $RuntimeGuardViolationDetected
     observer_log_created = (Test-Path -LiteralPath $ObserverLogPath)
     observer_summary_created = (Test-Path -LiteralPath $ObserverSummaryPath)
   } | ConvertTo-Json -Depth 20

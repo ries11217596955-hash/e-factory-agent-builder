@@ -57,26 +57,82 @@ function ConvertTo-Phase160HMaterializationRelativePath {
   return ($full.Substring($root.Length + 1) -replace "\\", "/")
 }
 
+function ConvertTo-Phase160HMaterializationDotNetFileSystemPath {
+  param([string]$Path)
+  $full = [System.IO.Path]::GetFullPath($Path)
+  if ([System.IO.Path]::DirectorySeparatorChar -ne '\') {
+    return $full
+  }
+  if ($full.StartsWith('\\?\', [System.StringComparison]::Ordinal)) {
+    return $full
+  }
+  if ($full.StartsWith('\\', [System.StringComparison]::Ordinal)) {
+    return '\\?\UNC\' + $full.Substring(2)
+  }
+  return '\\?\' + $full
+}
+
+function Test-Phase160HMaterializationFileExists {
+  param([string]$Path)
+  return [System.IO.File]::Exists((ConvertTo-Phase160HMaterializationDotNetFileSystemPath -Path $Path))
+}
+
+function Test-Phase160HMaterializationDirectoryExists {
+  param([string]$Path)
+  if ([string]::IsNullOrWhiteSpace($Path)) {
+    return $true
+  }
+  return [System.IO.Directory]::Exists((ConvertTo-Phase160HMaterializationDotNetFileSystemPath -Path $Path))
+}
+
+function New-Phase160HMaterializationDirectory {
+  param([string]$Path)
+  if (-not [string]::IsNullOrWhiteSpace($Path)) {
+    [System.IO.Directory]::CreateDirectory((ConvertTo-Phase160HMaterializationDotNetFileSystemPath -Path $Path)) | Out-Null
+  }
+}
+
+function Remove-Phase160HMaterializationDirectory {
+  param([string]$Path)
+  if (-not [string]::IsNullOrWhiteSpace($Path) -and (Test-Phase160HMaterializationDirectoryExists -Path $Path)) {
+    [System.IO.Directory]::Delete((ConvertTo-Phase160HMaterializationDotNetFileSystemPath -Path $Path), $true)
+  }
+}
+
+function Read-Phase160HMaterializationTextFile {
+  param([string]$Path)
+  return [System.IO.File]::ReadAllText((ConvertTo-Phase160HMaterializationDotNetFileSystemPath -Path $Path), [System.Text.UTF8Encoding]::new($false))
+}
+
+function Write-Phase160HMaterializationTextFile {
+  param([string]$Path, [string]$Text)
+  $directory = Split-Path -Path $Path -Parent
+  if ($directory -and -not (Test-Phase160HMaterializationDirectoryExists -Path $directory)) {
+    New-Phase160HMaterializationDirectory -Path $directory
+  }
+  [System.IO.File]::WriteAllText((ConvertTo-Phase160HMaterializationDotNetFileSystemPath -Path $Path), $Text, [System.Text.UTF8Encoding]::new($false))
+}
+
 function Write-Phase160HMaterializationJsonFile {
   param([string]$Path, [object]$Object, [int]$Depth = 100)
   $directory = Split-Path -Path $Path -Parent
-  if ($directory -and -not (Test-Path -LiteralPath $directory)) {
-    New-Item -ItemType Directory -Force -Path $directory | Out-Null
+  if ($directory -and -not (Test-Phase160HMaterializationDirectoryExists -Path $directory)) {
+    New-Phase160HMaterializationDirectory -Path $directory
   }
   $json = ($Object | ConvertTo-Json -Depth $Depth) -replace "`r`n", "`n"
   if (-not $json.EndsWith("`n")) {
     $json += "`n"
   }
-  [System.IO.File]::WriteAllText($Path, $json, [System.Text.UTF8Encoding]::new($false))
+  Write-Phase160HMaterializationTextFile -Path $Path -Text $json
 }
 
 function Read-Phase160HMaterializationJsonSafe {
   param([string]$Path)
   try {
-    if (-not (Test-Path -LiteralPath $Path)) {
+    if (-not (Test-Phase160HMaterializationFileExists -Path $Path)) {
       return $null
     }
-    return Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
+    return Read-Phase160HMaterializationTextFile -Path $Path | ConvertFrom-Json
   } catch {
     return $null
   }
@@ -109,7 +165,7 @@ function Test-Phase160HMaterializationPowerShellParse {
   param([string]$Path)
   $tokens = $null
   $parseErrors = $null
-  [System.Management.Automation.Language.Parser]::ParseFile($Path, [ref]$tokens, [ref]$parseErrors) | Out-Null
+  [System.Management.Automation.Language.Parser]::ParseFile((ConvertTo-Phase160HMaterializationDotNetFileSystemPath -Path $Path), [ref]$tokens, [ref]$parseErrors) | Out-Null
   if ($parseErrors.Count -gt 0) {
     return [pscustomobject][ordered]@{
       parser_checks_pass = $false
@@ -157,10 +213,8 @@ try {
     $SandboxRoot = Resolve-Phase160HMaterializationPath -RepoRoot $RepoRoot -Path $SandboxRoot
   }
   $SandboxRoot = Assert-Phase160HMaterializationPathInside -Root $RepoRoot -FullPath $SandboxRoot -Label "REPO"
-  if (Test-Path -LiteralPath $SandboxRoot) {
-    Remove-Item -LiteralPath $SandboxRoot -Recurse -Force
-  }
-  New-Item -ItemType Directory -Force -Path $SandboxRoot | Out-Null
+  Remove-Phase160HMaterializationDirectory -Path $SandboxRoot
+  New-Phase160HMaterializationDirectory -Path $SandboxRoot
 
   $failures = @()
   $materializedFiles = @()
@@ -201,11 +255,11 @@ try {
     }
     $payloadFullPath = [System.IO.Path]::GetFullPath((Join-Path $CandidateDirFull $payloadPath))
     $payloadFullPath = Assert-Phase160HMaterializationPathInside -Root $CandidateDirFull -FullPath $payloadFullPath -Label "CANDIDATE"
-    if (-not (Test-Path -LiteralPath $payloadFullPath)) {
+    if (-not (Test-Phase160HMaterializationFileExists -Path $payloadFullPath)) {
       $failures += "payload file missing kind=$kind path=$payloadPath"
       continue
     }
-    $payloadText = Get-Content -LiteralPath $payloadFullPath -Raw
+    $payloadText = Read-Phase160HMaterializationTextFile -Path $payloadFullPath
     if ([string]::IsNullOrWhiteSpace($payloadText)) {
       $failures += "payload file empty kind=$kind path=$payloadPath"
       continue
@@ -213,10 +267,10 @@ try {
     $materializedFullPath = [System.IO.Path]::GetFullPath((Join-Path $SandboxRoot $targetPath))
     $materializedFullPath = Assert-Phase160HMaterializationPathInside -Root $SandboxRoot -FullPath $materializedFullPath -Label "SANDBOX"
     $materializedDirectory = Split-Path -Path $materializedFullPath -Parent
-    if ($materializedDirectory -and -not (Test-Path -LiteralPath $materializedDirectory)) {
-      New-Item -ItemType Directory -Force -Path $materializedDirectory | Out-Null
+    if ($materializedDirectory -and -not (Test-Phase160HMaterializationDirectoryExists -Path $materializedDirectory)) {
+      New-Phase160HMaterializationDirectory -Path $materializedDirectory
     }
-    [System.IO.File]::WriteAllText($materializedFullPath, $payloadText, [System.Text.UTF8Encoding]::new($false))
+    Write-Phase160HMaterializationTextFile -Path $materializedFullPath -Text $payloadText
     $parseResult = [pscustomobject][ordered]@{
       parser_checks_pass = $true
       parser_error_count = 0

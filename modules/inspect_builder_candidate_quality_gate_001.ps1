@@ -57,26 +57,75 @@ function ConvertTo-Phase160HQualityRelativePath {
   return ($full.Substring($root.Length + 1) -replace "\\", "/")
 }
 
+function ConvertTo-Phase160HQualityDotNetFileSystemPath {
+  param([string]$Path)
+  $full = [System.IO.Path]::GetFullPath($Path)
+  if ([System.IO.Path]::DirectorySeparatorChar -ne '\') {
+    return $full
+  }
+  if ($full.StartsWith('\\?\', [System.StringComparison]::Ordinal)) {
+    return $full
+  }
+  if ($full.StartsWith('\\', [System.StringComparison]::Ordinal)) {
+    return '\\?\UNC\' + $full.Substring(2)
+  }
+  return '\\?\' + $full
+}
+
+function Test-Phase160HQualityFileExists {
+  param([string]$Path)
+  return [System.IO.File]::Exists((ConvertTo-Phase160HQualityDotNetFileSystemPath -Path $Path))
+}
+
+function Test-Phase160HQualityDirectoryExists {
+  param([string]$Path)
+  if ([string]::IsNullOrWhiteSpace($Path)) {
+    return $true
+  }
+  return [System.IO.Directory]::Exists((ConvertTo-Phase160HQualityDotNetFileSystemPath -Path $Path))
+}
+
+function New-Phase160HQualityDirectory {
+  param([string]$Path)
+  if (-not [string]::IsNullOrWhiteSpace($Path)) {
+    [System.IO.Directory]::CreateDirectory((ConvertTo-Phase160HQualityDotNetFileSystemPath -Path $Path)) | Out-Null
+  }
+}
+
+function Read-Phase160HQualityTextFile {
+  param([string]$Path)
+  return [System.IO.File]::ReadAllText((ConvertTo-Phase160HQualityDotNetFileSystemPath -Path $Path), [System.Text.UTF8Encoding]::new($false))
+}
+
+function Write-Phase160HQualityTextFile {
+  param([string]$Path, [string]$Text)
+  $directory = Split-Path -Path $Path -Parent
+  if ($directory -and -not (Test-Phase160HQualityDirectoryExists -Path $directory)) {
+    New-Phase160HQualityDirectory -Path $directory
+  }
+  [System.IO.File]::WriteAllText((ConvertTo-Phase160HQualityDotNetFileSystemPath -Path $Path), $Text, [System.Text.UTF8Encoding]::new($false))
+}
+
 function Write-Phase160HQualityJsonFile {
   param([string]$Path, [object]$Object, [int]$Depth = 100)
   $directory = Split-Path -Path $Path -Parent
-  if ($directory -and -not (Test-Path -LiteralPath $directory)) {
-    New-Item -ItemType Directory -Force -Path $directory | Out-Null
+  if ($directory -and -not (Test-Phase160HQualityDirectoryExists -Path $directory)) {
+    New-Phase160HQualityDirectory -Path $directory
   }
   $json = ($Object | ConvertTo-Json -Depth $Depth) -replace "`r`n", "`n"
   if (-not $json.EndsWith("`n")) {
     $json += "`n"
   }
-  [System.IO.File]::WriteAllText($Path, $json, [System.Text.UTF8Encoding]::new($false))
+  Write-Phase160HQualityTextFile -Path $Path -Text $json
 }
 
 function Read-Phase160HQualityJsonSafe {
   param([string]$Path)
   try {
-    if (-not (Test-Path -LiteralPath $Path)) {
+    if (-not (Test-Phase160HQualityFileExists -Path $Path)) {
       return $null
     }
-    return Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json
+    return Read-Phase160HQualityTextFile -Path $Path | ConvertFrom-Json
   } catch {
     return $null
   }
@@ -291,7 +340,7 @@ try {
     }
   }
 
-  if (-not (Test-Path -LiteralPath $payloadRoot)) {
+  if (-not (Test-Phase160HQualityDirectoryExists -Path $payloadRoot)) {
     $failedChecks += "missing_proposed_patch_or_file_payloads"
     $failureReasons += "proposed_patch_or_file_payloads directory is missing."
   }
@@ -326,12 +375,12 @@ try {
     }
     $payloadFullPath = [System.IO.Path]::GetFullPath((Join-Path $CandidateDirFull $payloadPath))
     $payloadFullPath = Assert-Phase160HQualityPathInside -Root $CandidateDirFull -FullPath $payloadFullPath -Label "CANDIDATE"
-    if (-not (Test-Path -LiteralPath $payloadFullPath)) {
+    if (-not (Test-Phase160HQualityFileExists -Path $payloadFullPath)) {
       $failedChecks += "payload_file_missing"
       $failureReasons += "Payload file is missing: $payloadPath"
       continue
     }
-    $payloadText = Get-Content -LiteralPath $payloadFullPath -Raw
+    $payloadText = Read-Phase160HQualityTextFile -Path $payloadFullPath
     $payloadTexts += $payloadText
     if (Test-Phase160HQualityStubPayloadText -Text $payloadText) {
       $failedChecks += "placeholder_empty_outline_or_stub_payload"
@@ -478,7 +527,7 @@ try {
   if ((Split-Path -Path $candidateBundlesRoot -Leaf) -eq "candidate_bundles") {
     $candidateWorkspaceRoot = Split-Path -Path $candidateBundlesRoot -Parent
     $candidateQueueRoot = Join-Path $candidateWorkspaceRoot "candidate_queue"
-    New-Item -ItemType Directory -Force -Path $candidateQueueRoot | Out-Null
+    New-Phase160HQualityDirectory -Path $candidateQueueRoot
     Write-Phase160HQualityJsonFile -Path (Join-Path $candidateQueueRoot "$candidateId.json") -Object ([ordered]@{
       status = $promotionStatus
       quality_status = $qualityStatus

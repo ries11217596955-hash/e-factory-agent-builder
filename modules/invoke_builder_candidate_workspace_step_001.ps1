@@ -47,39 +47,163 @@ function ConvertTo-Phase160ECandidateRelativePath {
   return ($full.Substring($root.Length + 1) -replace "\\", "/")
 }
 
+function ConvertTo-Phase160ECandidateDotNetFileSystemPath {
+  param([string]$Path)
+  $full = [System.IO.Path]::GetFullPath($Path)
+  if ([System.IO.Path]::DirectorySeparatorChar -ne '\') {
+    return $full
+  }
+  if ($full.StartsWith('\\?\', [System.StringComparison]::Ordinal)) {
+    return $full
+  }
+  if ($full.StartsWith('\\', [System.StringComparison]::Ordinal)) {
+    return '\\?\UNC\' + $full.Substring(2)
+  }
+  return '\\?\' + $full
+}
+
+function Test-Phase160ECandidateDirectoryExists {
+  param([string]$Path)
+  if ([string]::IsNullOrWhiteSpace($Path)) {
+    return $true
+  }
+  return [System.IO.Directory]::Exists((ConvertTo-Phase160ECandidateDotNetFileSystemPath -Path $Path))
+}
+
+function Ensure-Phase160ECandidateParentDirectory {
+  param([string]$Path)
+  $directory = Split-Path -Path $Path -Parent
+  $created = $false
+  $existsBefore = $false
+  if (-not [string]::IsNullOrWhiteSpace($directory)) {
+    $existsBefore = Test-Phase160ECandidateDirectoryExists -Path $directory
+    if (-not $existsBefore) {
+      [System.IO.Directory]::CreateDirectory((ConvertTo-Phase160ECandidateDotNetFileSystemPath -Path $directory)) | Out-Null
+      $created = $true
+    }
+  }
+  $existsAfter = if (-not [string]::IsNullOrWhiteSpace($directory)) { Test-Phase160ECandidateDirectoryExists -Path $directory } else { $true }
+  return [pscustomobject][ordered]@{
+    parent_directory = if ([string]::IsNullOrWhiteSpace($directory)) { "NONE" } else { $directory }
+    parent_directory_exists_before = $existsBefore
+    parent_directory_exists = $existsAfter
+    parent_directory_created = $created
+  }
+}
+
 function Write-Phase160ECandidateJsonFile {
   param([string]$Path, [object]$Object, [int]$Depth = 100)
-  $directory = Split-Path -Path $Path -Parent
-  if ($directory -and -not (Test-Path -LiteralPath $directory)) {
-    New-Item -ItemType Directory -Force -Path $directory | Out-Null
-  }
+  $null = Ensure-Phase160ECandidateParentDirectory -Path $Path
   $json = ($Object | ConvertTo-Json -Depth $Depth) -replace "`r`n", "`n"
   if (-not $json.EndsWith("`n")) {
     $json += "`n"
   }
-  [System.IO.File]::WriteAllText($Path, $json, [System.Text.UTF8Encoding]::new($false))
+  [System.IO.File]::WriteAllText((ConvertTo-Phase160ECandidateDotNetFileSystemPath -Path $Path), $json, [System.Text.UTF8Encoding]::new($false))
 }
 
 function Write-Phase160ECandidateTextFile {
   param([string]$Path, [string]$Text)
-  $directory = Split-Path -Path $Path -Parent
-  if ($directory -and -not (Test-Path -LiteralPath $directory)) {
-    New-Item -ItemType Directory -Force -Path $directory | Out-Null
-  }
+  $null = Ensure-Phase160ECandidateParentDirectory -Path $Path
   if (-not $Text.EndsWith("`n")) {
     $Text += "`n"
   }
-  [System.IO.File]::WriteAllText($Path, $Text, [System.Text.UTF8Encoding]::new($false))
+  [System.IO.File]::WriteAllText((ConvertTo-Phase160ECandidateDotNetFileSystemPath -Path $Path), $Text, [System.Text.UTF8Encoding]::new($false))
+}
+
+function Write-Phase160ECandidatePayloadWriteBlocker {
+  param(
+    [string]$RepoRoot,
+    [string]$CandidateId,
+    [string]$CandidateDir,
+    [string]$BlockerQueuePath,
+    [string]$FailedPath,
+    [string]$Reason,
+    [bool]$ParentDirectoryExists,
+    [bool]$ParentDirectoryCreated
+  )
+  $failedPathForRecord = try {
+    ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath $FailedPath
+  } catch {
+    [string]$FailedPath
+  }
+  $blocker = [ordered]@{
+    status = "BLOCKED"
+    blocker_id = "PHASE160H1_PAYLOAD_WRITE_FAILED"
+    candidate_id = $CandidateId
+    failed_path = $failedPathForRecord
+    reason = $Reason
+    parent_directory_exists = $ParentDirectoryExists
+    parent_directory_created = $ParentDirectoryCreated
+    next_action = "Create the payload parent directory before writing and retry candidate payload generation."
+    owner_promotion_allowed = $false
+    commit_performed = $false
+    push_performed = $false
+    branch_switch_performed = $false
+    protected_state_mutated = $false
+    created_at = (Get-Date).ToUniversalTime().ToString("o")
+  }
+  if (-not [string]::IsNullOrWhiteSpace($CandidateDir)) {
+    $payloadWriteBlockerPath = try {
+      ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath (Join-Path $CandidateDir "payload_write_blocker.json")
+    } catch {
+      "payload_write_blocker.json"
+    }
+    Write-Phase160ECandidateJsonFile -Path (Join-Path $CandidateDir "payload_write_blocker.json") -Object $blocker
+    Write-Phase160ECandidateJsonFile -Path (Join-Path $CandidateDir "candidate_status.json") -Object ([ordered]@{
+      status = "BLOCKED"
+      quality_status = "BLOCKED"
+      candidate_id = $CandidateId
+      blocker_id = "PHASE160H1_PAYLOAD_WRITE_FAILED"
+      payload_write_blocker_path = $payloadWriteBlockerPath
+      owner_promotion_allowed = $false
+      updated_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+  }
+  if (-not [string]::IsNullOrWhiteSpace($BlockerQueuePath)) {
+    Write-Phase160ECandidateJsonFile -Path (Join-Path $BlockerQueuePath ("blocker_payload_write_{0}.json" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value $CandidateId -MaxLength 60))) -Object $blocker
+  }
+  return [pscustomobject]$blocker
+}
+
+function Write-Phase160ECandidatePayloadTextFile {
+  param(
+    [string]$RepoRoot,
+    [string]$Path,
+    [string]$Text,
+    [string]$CandidateId,
+    [string]$CandidateDir,
+    [string]$BlockerQueuePath
+  )
+  $parentInfo = $null
+  try {
+    $parentInfo = Ensure-Phase160ECandidateParentDirectory -Path $Path
+    if (-not [bool]$parentInfo.parent_directory_exists) {
+      throw "PHASE160H1_PAYLOAD_PARENT_DIRECTORY_MISSING_AFTER_CREATE path=$Path"
+    }
+    if (-not $Text.EndsWith("`n")) {
+      $Text += "`n"
+    }
+    [System.IO.File]::WriteAllText((ConvertTo-Phase160ECandidateDotNetFileSystemPath -Path $Path), $Text, [System.Text.UTF8Encoding]::new($false))
+    return [pscustomobject][ordered]@{
+      status = "PASS"
+      path = $Path
+      parent_directory_exists = [bool]$parentInfo.parent_directory_exists
+      parent_directory_created = [bool]$parentInfo.parent_directory_created
+    }
+  } catch {
+    $directory = Split-Path -Path $Path -Parent
+    $parentExists = if (-not [string]::IsNullOrWhiteSpace($directory)) { Test-Phase160ECandidateDirectoryExists -Path $directory } else { $true }
+    $parentCreated = if ($null -ne $parentInfo) { [bool]$parentInfo.parent_directory_created } else { $false }
+    $null = Write-Phase160ECandidatePayloadWriteBlocker -RepoRoot $RepoRoot -CandidateId $CandidateId -CandidateDir $CandidateDir -BlockerQueuePath $BlockerQueuePath -FailedPath $Path -Reason $_.Exception.Message -ParentDirectoryExists $parentExists -ParentDirectoryCreated $parentCreated
+    throw "PHASE160H1_PAYLOAD_WRITE_FAILED candidate_id=$CandidateId failed_path=$Path reason=$($_.Exception.Message)"
+  }
 }
 
 function Add-Phase160ECandidateJsonLine {
   param([string]$Path, [object]$Object)
-  $directory = Split-Path -Path $Path -Parent
-  if ($directory -and -not (Test-Path -LiteralPath $directory)) {
-    New-Item -ItemType Directory -Force -Path $directory | Out-Null
-  }
+  $null = Ensure-Phase160ECandidateParentDirectory -Path $Path
   $line = $Object | ConvertTo-Json -Depth 100 -Compress
-  [System.IO.File]::AppendAllText($Path, "$line`n", [System.Text.UTF8Encoding]::new($false))
+  [System.IO.File]::AppendAllText((ConvertTo-Phase160ECandidateDotNetFileSystemPath -Path $Path), "$line`n", [System.Text.UTF8Encoding]::new($false))
 }
 
 function Read-Phase160ECandidateJsonSafe {
@@ -558,7 +682,7 @@ function New-Phase160ECandidateBundle {
     return Read-Phase160ECandidateJsonSafe -Path $candidateManifestPath
   }
 
-  New-Item -ItemType Directory -Force -Path $candidateDir, (Join-Path $candidateDir "proposed_patch_or_file_payloads/modules"), (Join-Path $candidateDir "proposed_patch_or_file_payloads/validators") | Out-Null
+  New-Item -ItemType Directory -Force -Path $candidateDir | Out-Null
   $ownerGoal = Get-Phase160ECandidateString -Object $ActiveTask -Name "owner_goal"
   $desiredGap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
   $taskSource = Get-Phase160ECandidateString -Object $ActiveTask -Name "source" -Default "owner"
@@ -593,8 +717,8 @@ function New-Phase160ECandidateBundle {
   $revisionFeedbackChecks = if ($null -ne $previousRevision -and $previousRevision.PSObject.Properties.Name -contains "what_failed") { @($previousRevision.what_failed | ForEach-Object { [string]$_ }) } else { @() }
   $modulePayloadText = New-Phase160ECandidateModulePayloadText -CandidateId $candidateId -TaskId $taskId -PlanItemId $planItemId -OwnerGoal $ownerGoal -DesiredGap $desiredGap
   $validatorPayloadText = New-Phase160ECandidateValidatorPayloadText -CandidateId $candidateId -ProposedModuleTarget $proposedModulePath
-  Write-Phase160ECandidateTextFile -Path (Join-Path $candidateDir $modulePayloadPath) -Text $modulePayloadText
-  Write-Phase160ECandidateTextFile -Path (Join-Path $candidateDir $validatorPayloadPath) -Text $validatorPayloadText
+  $modulePayloadWrite = Write-Phase160ECandidatePayloadTextFile -RepoRoot $RepoRoot -Path (Join-Path $candidateDir $modulePayloadPath) -Text $modulePayloadText -CandidateId $candidateId -CandidateDir $candidateDir -BlockerQueuePath (Join-Path $SessionRootFull "blocker_queue")
+  $validatorPayloadWrite = Write-Phase160ECandidatePayloadTextFile -RepoRoot $RepoRoot -Path (Join-Path $candidateDir $validatorPayloadPath) -Text $validatorPayloadText -CandidateId $candidateId -CandidateDir $candidateDir -BlockerQueuePath (Join-Path $SessionRootFull "blocker_queue")
   $manifest = [ordered]@{
     status = "PASS"
     candidate_id = $candidateId
@@ -623,6 +747,9 @@ function New-Phase160ECandidateBundle {
     proposed_payload_paths = @($modulePayloadPath, $validatorPayloadPath)
     proposed_module_payload_path = $modulePayloadPath
     proposed_validator_payload_path = $validatorPayloadPath
+    payload_parent_directories_created = ([bool]$modulePayloadWrite.parent_directory_created -or [bool]$validatorPayloadWrite.parent_directory_created)
+    module_payload_parent_directory_exists = [bool]$modulePayloadWrite.parent_directory_exists
+    validator_payload_parent_directory_exists = [bool]$validatorPayloadWrite.parent_directory_exists
     expected_candidate_capabilities = $expectedCapabilities
     owner_approval_required = $true
     owner_promotion_gate_required = $true

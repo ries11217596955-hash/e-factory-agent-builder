@@ -251,6 +251,11 @@ try {
   $LastQualityDecision = "NONE"
   $LastRevisionRequest = "NONE"
   $OwnerPromotionAllowedDetected = $false
+  $SafeOwnerTaskAcceptedDetected = $false
+  $SafeOwnerTaskBackloggedDetected = $false
+  $UnsafeOwnerTaskQuarantinedDetected = $false
+  $OwnerTaskNotLostDetected = $false
+  $InternalSourceAttributionTruthfulDetected = $false
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -312,6 +317,12 @@ try {
     $CurrentMacroCycleId = "NONE"
     $CurrentMacroCycleStage = "NONE"
     $CurrentMacroDecision = "NONE"
+    $CurrentOwnerTaskIntakeDecision = "NONE"
+    $CurrentOwnerTaskQuarantineReason = "NONE"
+    $CurrentOwnerTaskBacklogStatus = "NONE"
+    $CurrentOwnerTaskBacklogCount = 0
+    $CurrentOwnerTaskLost = $false
+    $CurrentActiveTaskBlocksOwnerTask = $false
     if ($null -ne $CurrentState) {
       if ($CurrentState.PSObject.Properties.Name -contains "self_growth_duty_count") {
         $CurrentSelfGrowthDutyCount = [int]$CurrentState.self_growth_duty_count
@@ -343,6 +354,36 @@ try {
       if ($CurrentState.PSObject.Properties.Name -contains "last_macro_decision") {
         $CurrentMacroDecision = [string]$CurrentState.last_macro_decision
       }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_owner_task_intake_decision") {
+        $CurrentOwnerTaskIntakeDecision = [string]$CurrentState.last_owner_task_intake_decision
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_owner_task_quarantine_reason") {
+        $CurrentOwnerTaskQuarantineReason = [string]$CurrentState.last_owner_task_quarantine_reason
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_owner_task_backlog_status") {
+        $CurrentOwnerTaskBacklogStatus = [string]$CurrentState.last_owner_task_backlog_status
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "owner_task_backlog_count") {
+        $CurrentOwnerTaskBacklogCount = [int]$CurrentState.owner_task_backlog_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "owner_task_lost") {
+        $CurrentOwnerTaskLost = [bool]$CurrentState.owner_task_lost
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "active_task_blocks_owner_task") {
+        $CurrentActiveTaskBlocksOwnerTask = [bool]$CurrentState.active_task_blocks_owner_task
+      }
+    }
+    if ($CurrentOwnerTaskIntakeDecision -eq "ACCEPT_SAFE_OWNER_TASK") {
+      $SafeOwnerTaskAcceptedDetected = $true
+    }
+    if ($CurrentOwnerTaskIntakeDecision -eq "BACKLOG_SAFE_OWNER_TASK" -or $CurrentOwnerTaskBacklogStatus -eq "BACKLOG_WAITING_ACTIVE_SLOT" -or ($CurrentOwnerTaskBacklogCount -gt 0 -and $CurrentActiveTaskBlocksOwnerTask)) {
+      $SafeOwnerTaskBackloggedDetected = $true
+    }
+    if ($CurrentOwnerTaskIntakeDecision -eq "QUARANTINE_UNSAFE_OWNER_TASK" -or ($CurrentOwnerTaskQuarantineReason -ne "NONE" -and -not [string]::IsNullOrWhiteSpace($CurrentOwnerTaskQuarantineReason))) {
+      $UnsafeOwnerTaskQuarantinedDetected = $true
+    }
+    if (-not $CurrentOwnerTaskLost) {
+      $OwnerTaskNotLostDetected = $true
     }
     $SelfGrowthCompletedEventCount = Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern '"event_type":"self_growth_duty_completed"'
     $SelfGrowthStartedEventCount = Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern '"event_type":"self_growth_duty_started"'
@@ -526,6 +567,12 @@ try {
     if (@($CandidateManifests | Where-Object { [string]$_.source -eq "owner_task" -and [string]$_.source_task_id -eq "PHASE160F_META_SELF_INITIATED_USEFUL_GOAL_SELECTION_001" }).Count -gt 0) {
       $OwnerActiveTaskToCandidateDetected = $true
     }
+    if (@($CandidateManifests | Where-Object { [string]$_.source -eq "internal_self_selected_goal" -and -not [string]::IsNullOrWhiteSpace([string]$_.source_task_id) }).Count -gt 0) {
+      $ownerSourceWhileBacklogged = @($CandidateManifests | Where-Object { [string]$_.source -eq "owner_task" -and $CurrentOwnerTaskBacklogCount -gt 0 }).Count
+      if ($ownerSourceWhileBacklogged -eq 0) {
+        $InternalSourceAttributionTruthfulDetected = $true
+      }
+    }
     if ((Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern '"event_type":"candidate_workspace_step_completed"') -gt 0 -and (Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern 'PHASE160F_META_SELF_INITIATED_USEFUL_GOAL_SELECTION_001') -gt 0) {
       $OwnerActiveTaskToCandidateDetected = $true
     }
@@ -617,6 +664,11 @@ try {
       teacher_consumed_count = $TeacherConsumedCount
       teacher_quarantine_count = $TeacherQuarantineCount
       task_backlog_count = $TaskBacklogCount
+      safe_owner_task_accepted = $SafeOwnerTaskAcceptedDetected
+      safe_owner_task_backlogged_behind_active_task = $SafeOwnerTaskBackloggedDetected
+      unsafe_owner_task_quarantined = $UnsafeOwnerTaskQuarantinedDetected
+      owner_task_not_lost = $OwnerTaskNotLostDetected
+      internal_source_attribution_truthful = $InternalSourceAttributionTruthfulDetected
       run_manifest_exists = $RunManifestObserved
       run_head_matches_current = $RunHeadMatchesCurrent
       candidate_workspace_exists = $CandidateWorkspaceObserved
@@ -683,6 +735,11 @@ try {
     teacher_consumed_count = $TeacherConsumedCount
     teacher_quarantine_count = $TeacherQuarantineCount
     task_backlog_count = $TaskBacklogCount
+    safe_owner_task_accepted = $SafeOwnerTaskAcceptedDetected
+    safe_owner_task_backlogged_behind_active_task = $SafeOwnerTaskBackloggedDetected
+    unsafe_owner_task_quarantined = $UnsafeOwnerTaskQuarantinedDetected
+    owner_task_not_lost = $OwnerTaskNotLostDetected
+    internal_source_attribution_truthful = $InternalSourceAttributionTruthfulDetected
     run_manifest_exists = $RunManifestObserved
     run_head_matches_current = $RunHeadMatchesCurrent
     candidate_workspace_exists = $CandidateWorkspaceObserved
@@ -744,6 +801,11 @@ try {
     last_self_growth_status = $LastSelfGrowthStatus
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
+    safe_owner_task_accepted = $SafeOwnerTaskAcceptedDetected
+    safe_owner_task_backlogged_behind_active_task = $SafeOwnerTaskBackloggedDetected
+    unsafe_owner_task_quarantined = $UnsafeOwnerTaskQuarantinedDetected
+    owner_task_not_lost = $OwnerTaskNotLostDetected
+    internal_source_attribution_truthful = $InternalSourceAttributionTruthfulDetected
     run_manifest_exists = $RunManifestObserved
     run_head_matches_current = $RunHeadMatchesCurrent
     candidate_workspace_exists = $CandidateWorkspaceObserved

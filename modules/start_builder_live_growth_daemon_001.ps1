@@ -17,6 +17,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+. (Join-Path $PSScriptRoot "inspect_builder_owner_task_lifecycle_state_001.ps1")
+
 function Normalize-Phase160DaemonFullPath {
   param([string]$Path)
   return [System.IO.Path]::GetFullPath($Path).TrimEnd([System.IO.Path]::DirectorySeparatorChar, [System.IO.Path]::AltDirectorySeparatorChar)
@@ -128,6 +130,7 @@ function Get-Phase160DaemonLiveTaskSnapshot {
   $runtimeGuard = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "runtime_guard.json")
   $promotionManifest = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "promotion_bundle/promotion_manifest.json")
   $activeTaskState = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "task_lifecycle/active_task_state.json")
+  $ownerLifecycle = Get-Phase160JOwnerTaskLifecycleState -SessionRootFull $SessionRootFull
   $selectedUsefulGoal = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "self_initiated_goal_selection/selected_useful_goal.json")
   $internalActiveTask = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "self_initiated_goal_selection/internal_active_task.json")
   $latestConsumed = Get-Phase160DaemonLatestJson -Path (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
@@ -262,6 +265,17 @@ function Get-Phase160DaemonLiveTaskSnapshot {
     active_task_id = if ($null -ne $activeTask -and $activeTask.PSObject.Properties.Name -contains "task_id") { [string]$activeTask.task_id } else { "NONE" }
     active_plan_item_id = if ($null -ne $activePlanItem -and $activePlanItem.PSObject.Properties.Name -contains "item_id") { [string]$activePlanItem.item_id } else { "NONE" }
     last_consumed_task = if ($null -ne $latestConsumed -and $latestConsumed.PSObject.Properties.Name -contains "task_id") { [string]$latestConsumed.task_id } else { "NONE" }
+    owner_task_intake_enabled = [bool]$ownerLifecycle.owner_task_intake_enabled
+    last_owner_task_intake_decision = [string]$ownerLifecycle.last_owner_task_intake_decision
+    last_owner_task_quarantine_reason = [string]$ownerLifecycle.last_owner_task_quarantine_reason
+    last_owner_task_backlog_status = [string]$ownerLifecycle.last_owner_task_backlog_status
+    owner_task_backlog_count = [int]$ownerLifecycle.owner_task_backlog_count
+    latest_owner_backlog_task_id = [string]$ownerLifecycle.latest_owner_backlog_task_id
+    latest_backlog_task_id = [string]$ownerLifecycle.latest_backlog_task_id
+    latest_backlog_reason = [string]$ownerLifecycle.latest_backlog_reason
+    active_task_blocks_owner_task = [bool]$ownerLifecycle.active_task_blocks_owner_task
+    backlog_activation_ready = [bool]$ownerLifecycle.backlog_activation_ready
+    owner_task_lost = [bool]$ownerLifecycle.owner_task_lost
   }
 }
 
@@ -900,6 +914,17 @@ try {
       active_task_id = [string]$LiveTaskSnapshot.active_task_id
       active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
       last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+      owner_task_intake_enabled = [bool]$LiveTaskSnapshot.owner_task_intake_enabled
+      last_owner_task_intake_decision = [string]$LiveTaskSnapshot.last_owner_task_intake_decision
+      last_owner_task_quarantine_reason = [string]$LiveTaskSnapshot.last_owner_task_quarantine_reason
+      last_owner_task_backlog_status = [string]$LiveTaskSnapshot.last_owner_task_backlog_status
+      owner_task_backlog_count = [int]$LiveTaskSnapshot.owner_task_backlog_count
+      latest_owner_backlog_task_id = [string]$LiveTaskSnapshot.latest_owner_backlog_task_id
+      latest_backlog_task_id = [string]$LiveTaskSnapshot.latest_backlog_task_id
+      latest_backlog_reason = [string]$LiveTaskSnapshot.latest_backlog_reason
+      active_task_blocks_owner_task = [bool]$LiveTaskSnapshot.active_task_blocks_owner_task
+      backlog_activation_ready = [bool]$LiveTaskSnapshot.backlog_activation_ready
+      owner_task_lost = [bool]$LiveTaskSnapshot.owner_task_lost
       last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
@@ -1173,6 +1198,17 @@ try {
     active_task_id = [string]$LiveTaskSnapshot.active_task_id
     active_plan_item_id = [string]$LiveTaskSnapshot.active_plan_item_id
     last_consumed_task = [string]$LiveTaskSnapshot.last_consumed_task
+    owner_task_intake_enabled = [bool]$LiveTaskSnapshot.owner_task_intake_enabled
+    last_owner_task_intake_decision = [string]$LiveTaskSnapshot.last_owner_task_intake_decision
+    last_owner_task_quarantine_reason = [string]$LiveTaskSnapshot.last_owner_task_quarantine_reason
+    last_owner_task_backlog_status = [string]$LiveTaskSnapshot.last_owner_task_backlog_status
+    owner_task_backlog_count = [int]$LiveTaskSnapshot.owner_task_backlog_count
+    latest_owner_backlog_task_id = [string]$LiveTaskSnapshot.latest_owner_backlog_task_id
+    latest_backlog_task_id = [string]$LiveTaskSnapshot.latest_backlog_task_id
+    latest_backlog_reason = [string]$LiveTaskSnapshot.latest_backlog_reason
+    active_task_blocks_owner_task = [bool]$LiveTaskSnapshot.active_task_blocks_owner_task
+    backlog_activation_ready = [bool]$LiveTaskSnapshot.backlog_activation_ready
+    owner_task_lost = [bool]$LiveTaskSnapshot.owner_task_lost
     last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
     accepted_state_mutated = $false
     accepted_memory_mutated = $false

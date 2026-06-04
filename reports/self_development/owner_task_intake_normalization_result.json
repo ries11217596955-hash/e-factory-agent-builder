@@ -1,0 +1,113 @@
+{
+  "status": "PASS",
+  "accepted_shapes": [
+    "owner_goal_only",
+    "owner_goal_expected_outputs",
+    "owner_goal_safety_rules",
+    "owner_goal_plan_items",
+    "curriculum_program"
+  ],
+  "safe_owner_task_normalized": {
+    "normalized_task_id": "PHASE160J_SAFE_OWNER_WITH_RULES_001",
+    "original_task_id": "PHASE160J_SAFE_OWNER_WITH_RULES_001",
+    "source": "owner",
+    "owner_goal": "Repair owner task intake and backlog lifecycle without accepted repo mutation.",
+    "plan_items": [],
+    "safety_profile": {
+      "repo_commit_allowed": false,
+      "repo_push_allowed": false,
+      "branch_switch_allowed": false,
+      "live_repo_file_mutation_allowed": false,
+      "protected_state_mutation_allowed": false,
+      "accepted_repo_mutation_allowed": false,
+      "runtime_session_only": true,
+      "owner_promotion_required": true
+    },
+    "accepted_by_intake": false,
+    "quarantine_required": false,
+    "quarantine_reason": "NONE",
+    "backlog_allowed": true,
+    "active_allowed": true,
+    "created_at": "2026-06-04T17:20:57.8335975Z",
+    "priority": "high",
+    "desired_next_gap": "OWNER_TASK_INTAKE_BACKLOG_REPAIR_GAP",
+    "expected_outputs": [
+      "normalized owner task",
+      "backlog lifecycle evidence"
+    ],
+    "task_shape": "owner_goal_expected_outputs",
+    "missing_goal": false,
+    "unsupported_task_shape": false,
+    "raw_file_name": "safe.json",
+    "content_hash": "safeowner000001"
+  },
+  "unsafe_commit_task_normalized": {
+    "normalized_task_id": "PHASE160J_UNSAFE_COMMIT_001",
+    "original_task_id": "PHASE160J_UNSAFE_COMMIT_001",
+    "source": "owner",
+    "owner_goal": "Repair owner task intake and backlog lifecycle without accepted repo mutation.",
+    "plan_items": [],
+    "safety_profile": {
+      "repo_commit_allowed": true,
+      "repo_push_allowed": false,
+      "branch_switch_allowed": false,
+      "live_repo_file_mutation_allowed": false,
+      "protected_state_mutation_allowed": false,
+      "accepted_repo_mutation_allowed": false,
+      "runtime_session_only": true,
+      "owner_promotion_required": true
+    },
+    "accepted_by_intake": false,
+    "quarantine_required": false,
+    "quarantine_reason": "NONE",
+    "backlog_allowed": true,
+    "active_allowed": true,
+    "created_at": "2026-06-04T17:20:57.9023960Z",
+    "priority": "high",
+    "desired_next_gap": "OWNER_TASK_INTAKE_BACKLOG_REPAIR_GAP",
+    "expected_outputs": [
+      "normalized owner task",
+      "backlog lifecycle evidence"
+    ],
+    "task_shape": "owner_goal_expected_outputs",
+    "missing_goal": false,
+    "unsupported_task_shape": false,
+    "raw_file_name": "unsafe_commit.json",
+    "content_hash": "unsafecommit001"
+  },
+  "unsafe_protected_task_normalized": {
+    "normalized_task_id": "PHASE160J_UNSAFE_PROTECTED_001",
+    "original_task_id": "PHASE160J_UNSAFE_PROTECTED_001",
+    "source": "owner",
+    "owner_goal": "Repair owner task intake and backlog lifecycle without accepted repo mutation.",
+    "plan_items": [],
+    "safety_profile": {
+      "repo_commit_allowed": false,
+      "repo_push_allowed": false,
+      "branch_switch_allowed": false,
+      "live_repo_file_mutation_allowed": false,
+      "protected_state_mutation_allowed": true,
+      "accepted_repo_mutation_allowed": false,
+      "runtime_session_only": true,
+      "owner_promotion_required": true
+    },
+    "accepted_by_intake": false,
+    "quarantine_required": false,
+    "quarantine_reason": "NONE",
+    "backlog_allowed": true,
+    "active_allowed": true,
+    "created_at": "2026-06-04T17:20:57.9180149Z",
+    "priority": "high",
+    "desired_next_gap": "OWNER_TASK_INTAKE_BACKLOG_REPAIR_GAP",
+    "expected_outputs": [
+      "normalized owner task",
+      "backlog lifecycle evidence"
+    ],
+    "task_shape": "owner_goal_expected_outputs",
+    "missing_goal": false,
+    "unsupported_task_shape": false,
+    "raw_file_name": "unsafe_protected.json",
+    "content_hash": "unsafeprotect1"
+  },
+  "generic_unsafe_safety_rules_false_quarantine_removed": true
+}

@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "active_internal_task_backlogged_owner_task": true,
+  "active_internal_task_id": "PHASE160J_INTERNAL_ACTIVE_TASK_001",
+  "owner_backlog_task_id": "PHASE160J_SAFE_OWNER_BACKLOG_001",
+  "owner_backlog_status": "BACKLOG_WAITING_ACTIVE_SLOT",
+  "no_active_task_accepted_owner_task": true,
+  "active_owner_task_id": "PHASE160J_SAFE_OWNER_ACTIVE_001",
+  "owner_task_not_lost": true,
+  "malformed_task_reason": "malformed_json"
+}

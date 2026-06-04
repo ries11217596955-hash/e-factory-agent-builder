@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "candidate_workspace_status": "PASS",
+  "promotion_source_tasks": [
+    "PHASE160J_INTERNAL_SOURCE_TASK_001"
+  ],
+  "internal_source_task_expected": "PHASE160J_INTERNAL_SOURCE_TASK_001",
+  "backlogged_owner_task_id": "PHASE160J_BACKLOGGED_OWNER_SOURCE_TEST",
+  "backlogged_owner_task_not_candidate_source": true,
+  "source_attribution_truthful": true
+}

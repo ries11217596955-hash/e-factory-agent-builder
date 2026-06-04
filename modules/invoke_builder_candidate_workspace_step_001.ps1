@@ -1176,6 +1176,28 @@ try {
     $SelectedBacklogFile = $BacklogFiles[0]
     $SelectedBacklog = Read-Phase160ECandidateJsonSafe -Path $SelectedBacklogFile.FullName
     if ($null -ne $SelectedBacklog) {
+      $selectedBacklogSource = Get-Phase160ECandidateString -Object $SelectedBacklog -Name "source" -Default "unknown"
+      $selectedBacklogStatus = Get-Phase160ECandidateString -Object $SelectedBacklog -Name "backlog_status" -Default "BACKLOG"
+      $selectedActivationConditions = @(Get-Phase160ECandidateProperty -Object $SelectedBacklog -Name "activation_conditions" -Default @() | ForEach-Object { [string]$_ })
+      if ($selectedBacklogSource -eq "owner" -and $selectedBacklogStatus -eq "BACKLOG_WAITING_ACTIVE_SLOT" -and @($selectedActivationConditions | Where-Object { $_ -eq "owner_promotion_or_restart_gate_required" }).Count -gt 0) {
+        Add-Phase160ECandidateJsonLine -Path $BacklogAdvancementLogPath -Object ([ordered]@{
+          event_type = "owner_backlog_activation_deferred"
+          source = "candidate_workspace_step"
+          active_task_id = Get-Phase160ECandidateString -Object $StateAfterCandidate -Name "active_task_id"
+          backlog_task_id = Get-Phase160ECandidateString -Object $SelectedBacklog -Name "task_id"
+          backlog_status = $selectedBacklogStatus
+          reason = "owner_promotion_or_restart_gate_required"
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+        Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
+          event_type = "owner_backlog_activation_deferred"
+          source = "candidate_workspace_step"
+          active_task_id = Get-Phase160ECandidateString -Object $StateAfterCandidate -Name "active_task_id"
+          backlog_task_id = Get-Phase160ECandidateString -Object $SelectedBacklog -Name "task_id"
+          reason = "owner_promotion_or_restart_gate_required"
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      } else {
       $previousTaskId = Get-Phase160ECandidateString -Object $StateAfterCandidate -Name "active_task_id"
       $newTaskId = Get-Phase160ECandidateString -Object $SelectedBacklog -Name "task_id"
       Write-Phase160ECandidateJsonFile -Path $ActiveTaskPath -Object ([ordered]@{
@@ -1229,6 +1251,7 @@ try {
         active_task_id = $newTaskId
         occurred_at = (Get-Date).ToUniversalTime().ToString("o")
       })
+      }
     }
   }
 

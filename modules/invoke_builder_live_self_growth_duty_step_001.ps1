@@ -12,6 +12,16 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+foreach ($phase160JModule in @(
+  "normalize_builder_owner_live_task_001.ps1",
+  "classify_builder_owner_live_task_safety_001.ps1",
+  "enqueue_builder_owner_task_backlog_001.ps1",
+  "promote_builder_backlog_task_to_active_001.ps1",
+  "inspect_builder_owner_task_lifecycle_state_001.ps1"
+)) {
+  . (Join-Path $PSScriptRoot $phase160JModule)
+}
+
 function Normalize-Phase160DutyFullPath {
   param([string]$Path)
   return [System.IO.Path]::GetFullPath($Path).TrimEnd([System.IO.Path]::DirectorySeparatorChar, [System.IO.Path]::AltDirectorySeparatorChar)
@@ -460,7 +470,9 @@ function Invoke-Phase160DutyLiveTaskIntake {
   $taskBacklog = Join-Path $SessionRootFull "task_backlog"
   $activeTaskDir = Join-Path $SessionRootFull "active_task"
   $planItemsRoot = Join-Path $SessionRootFull "plan_items"
-  foreach ($directory in @($teacherInbox, $teacherDigest, $teacherConsumed, $teacherQuarantine, $taskBacklog, $activeTaskDir, $planItemsRoot)) {
+  $ownerTaskLifecycleRoot = Join-Path $SessionRootFull "owner_task_lifecycle"
+  $taskLifecycleRoot = Join-Path $SessionRootFull "task_lifecycle"
+  foreach ($directory in @($teacherInbox, $teacherDigest, $teacherConsumed, $teacherQuarantine, $taskBacklog, $activeTaskDir, $planItemsRoot, $ownerTaskLifecycleRoot, $taskLifecycleRoot)) {
     New-Item -ItemType Directory -Force -Path $directory | Out-Null
   }
 
@@ -500,8 +512,10 @@ function Invoke-Phase160DutyLiveTaskIntake {
 
     $taskId = if ($null -ne $task) { Get-Phase160DutyStringProperty -Object $task -Name "task_id" -Default ("UNPARSED_" + $contentHash.Substring(0, 12)) } else { "UNPARSED_" + $contentHash.Substring(0, 12) }
     $safeTaskId = ConvertTo-Phase160DutySafeLeaf -Value $taskId
-    $source = if ($null -ne $task) { Get-Phase160DutyStringProperty -Object $task -Name "source" -Default "unknown" } else { "unknown" }
-    $priority = if ($null -ne $task) { Get-Phase160DutyStringProperty -Object $task -Name "priority" -Default "unknown" } else { "unknown" }
+    $source = if ($null -ne $task) { Get-Phase160DutyStringProperty -Object $task -Name "source" -Default "owner" } else { "owner" }
+    if ([string]::IsNullOrWhiteSpace($source)) { $source = "owner" }
+    $priority = if ($null -ne $task) { Get-Phase160DutyStringProperty -Object $task -Name "priority" -Default "normal" } else { "normal" }
+    if ([string]::IsNullOrWhiteSpace($priority)) { $priority = "normal" }
     $createdAtUtc = if ($null -ne $task) { Get-Phase160DutyCreatedAtUtc -Task $task -Fallback $rawFile.LastWriteTimeUtc } else { $rawFile.LastWriteTimeUtc.ToUniversalTime().ToString("o") }
 
     Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
@@ -516,10 +530,47 @@ function Invoke-Phase160DutyLiveTaskIntake {
       occurred_at = (Get-Date).ToUniversalTime().ToString("o")
     })
 
-    $envelopeValid = Test-Phase160DutyTaskEnvelopeValid -Task $task
-    $safetyValid = Test-Phase160DutyTaskSafetyAllowed -Task $task
-    if (-not $envelopeValid -or -not $safetyValid) {
-      $reason = if ($null -ne $parseError) { "json_parse_error:$parseError" } elseif (-not $envelopeValid) { "invalid_live_task_envelope" } else { "unsafe_live_task_safety_rules" }
+    $existingActiveForDecision = Read-Phase160DutyActiveTask -SessionRootFull $SessionRootFull
+    $existingActiveStateForDecision = Read-Phase160DutyJsonSafe -Path (Join-Path $taskLifecycleRoot "active_task_state.json")
+    $existingActiveStatusForDecision = if ($null -ne $existingActiveStateForDecision -and $existingActiveStateForDecision.PSObject.Properties.Name -contains "status") { [string]$existingActiveStateForDecision.status } elseif ($null -ne $existingActiveForDecision) { "ACTIVE" } else { "NONE" }
+    $normalizedTask = if ($null -ne $task) { ConvertTo-Phase160JOwnerLiveTaskNormalized -Task $task -ContentHash $contentHash -RawFileName $rawFile.Name -CreatedAtUtc $createdAtUtc } else { $null }
+    $safetyDecision = Invoke-Phase160JOwnerTaskSafetyClassification -Task $task -NormalizedTask $normalizedTask -ParseError $parseError -ExistingActiveTask $existingActiveForDecision -ExistingActiveStatus $existingActiveStatusForDecision
+    if ($null -ne $normalizedTask) {
+      $normalizedTask.accepted_by_intake = [bool]$safetyDecision.accepted_by_intake
+      $normalizedTask.quarantine_required = [bool]$safetyDecision.quarantine_required
+      $normalizedTask.quarantine_reason = [string]$safetyDecision.quarantine_reason
+      $normalizedTask.backlog_allowed = [bool]$safetyDecision.backlog_allowed
+      $normalizedTask.active_allowed = [bool]$safetyDecision.active_allowed
+    }
+    Write-Phase160DutyJsonFile -Path (Join-Path $ownerTaskLifecycleRoot "last_owner_task_intake.json") -Object ([ordered]@{
+      status = if ([bool]$safetyDecision.quarantine_required) { "QUARANTINED_OR_REJECTED" } else { "ACCEPTED_BY_INTAKE" }
+      duty_id = $DutyId
+      task_id = $taskId
+      normalized_task_id = [string]$safetyDecision.normalized_task_id
+      decision = [string]$safetyDecision.decision
+      quarantine_reason = [string]$safetyDecision.quarantine_reason
+      failed_fields = @($safetyDecision.failed_fields)
+      backlog_status = "NONE"
+      active_task_blocks_owner_task = [bool]$safetyDecision.active_task_blocks_owner_task
+      blocked_by_active_task_id = [string]$safetyDecision.blocked_by_active_task_id
+      blocked_by_status = [string]$safetyDecision.blocked_by_status
+      owner_task_lost = $false
+      updated_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "owner_task_intake_decision"
+      source = "builder_live_task_intake"
+      duty_id = $DutyId
+      task_id = $taskId
+      normalized_task_id = [string]$safetyDecision.normalized_task_id
+      decision = [string]$safetyDecision.decision
+      quarantine_reason = [string]$safetyDecision.quarantine_reason
+      active_task_blocks_owner_task = [bool]$safetyDecision.active_task_blocks_owner_task
+      blocked_by_active_task_id = [string]$safetyDecision.blocked_by_active_task_id
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+    if ([bool]$safetyDecision.quarantine_required) {
+      $reason = [string]$safetyDecision.quarantine_reason
       Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
         event_type = "live_task_validated"
         source = "builder_live_task_intake"
@@ -531,16 +582,23 @@ function Invoke-Phase160DutyLiveTaskIntake {
       })
       $quarantinePath = Get-Phase160DutyUniqueFilePath -Directory $teacherQuarantine -Name ("quarantine_{0}_{1}.json" -f $safeTaskId, $contentHash.Substring(0, 12))
       Write-Phase160DutyJsonFile -Path $quarantinePath -Object ([ordered]@{
-        status = "QUARANTINED"
+        status = if ([string]$safetyDecision.decision -eq "REJECT_MALFORMED_TASK") { "REJECTED" } else { "QUARANTINED" }
         duty_id = $DutyId
         task_id = $taskId
+        normalized_task_id = [string]$safetyDecision.normalized_task_id
+        decision = [string]$safetyDecision.decision
         source_file = $rawFile.Name
         reason = $reason
+        failed_fields = @($safetyDecision.failed_fields)
+        normalized_task = $normalizedTask
         content_hash = $contentHash
         accepted_state_mutated = $false
         accepted_memory_mutated = $false
         accepted_self_model_mutated = $false
         repo_commit_performed = $false
+        repo_push_performed = $false
+        branch_switch_performed = $false
+        protected_state_mutated = $false
         created_at = (Get-Date).ToUniversalTime().ToString("o")
       })
       $movedRaw = Move-Phase160DutyFileUnique -SourcePath $rawFile.FullName -DestinationDirectory $teacherQuarantine -Prefix "raw_"
@@ -565,6 +623,8 @@ function Invoke-Phase160DutyLiveTaskIntake {
       duty_id = $DutyId
       task_id = $taskId
       valid = $true
+      normalized_task_id = [string]$normalizedTask.normalized_task_id
+      decision = [string]$safetyDecision.decision
       safety = "runtime_session_only"
       occurred_at = (Get-Date).ToUniversalTime().ToString("o")
     })
@@ -586,19 +646,23 @@ function Invoke-Phase160DutyLiveTaskIntake {
     }
 
     $digestPath = Get-Phase160DutyUniqueFilePath -Directory $teacherDigest -Name ("digest_{0}_{1}.json" -f $safeTaskId, $contentHash.Substring(0, 12))
-    $planSteps = @(Get-Phase160DutyObjectProperty -Object $task -Name "plan_steps" -Default @())
+    $planItems = @($normalizedTask.plan_items)
+    $planSteps = @($planItems | ForEach-Object { [string]$_.description })
     $digestRecord = [ordered]@{
       status = if ($isDuplicate) { "DUPLICATE" } else { "VALID" }
       duty_id = $DutyId
       task_id = $taskId
+      normalized_task_id = [string]$normalizedTask.normalized_task_id
       source = $source
       priority = $priority
-      owner_goal = Get-Phase160DutyStringProperty -Object $task -Name "owner_goal"
-      desired_next_gap = Get-Phase160DutyStringProperty -Object $task -Name "desired_next_gap"
+      owner_goal = [string]$normalizedTask.owner_goal
+      desired_next_gap = [string]$normalizedTask.desired_next_gap
       content_hash = $contentHash
       duplicate = $isDuplicate
       duplicate_of = $duplicateOf
       plan_step_count = $planSteps.Count
+      plan_items = @($planItems)
+      intake_decision = [string]$safetyDecision.decision
       raw_file_name = $rawFile.Name
       created_at = $createdAtUtc
       digested_at = (Get-Date).ToUniversalTime().ToString("o")
@@ -655,22 +719,25 @@ function Invoke-Phase160DutyLiveTaskIntake {
 
     $validCandidates += [pscustomobject][ordered]@{
       task = $task
+      normalized_task = $normalizedTask
+      intake_decision = [string]$safetyDecision.decision
       task_id = $taskId
       safe_task_id = $safeTaskId
       source = $source
       source_rank = Get-Phase160DutySourceRank -Source $source
       priority = $priority
       priority_rank = Get-Phase160DutyPriorityRank -Priority $priority
-      owner_goal = Get-Phase160DutyStringProperty -Object $task -Name "owner_goal"
-      desired_next_gap = Get-Phase160DutyStringProperty -Object $task -Name "desired_next_gap"
+      owner_goal = [string]$normalizedTask.owner_goal
+      desired_next_gap = [string]$normalizedTask.desired_next_gap
       content_hash = $contentHash
       created_at_utc = $createdAtUtc
       raw_file = $rawFile
       digest_path = $digestPath
       digest_relative_path = ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $digestPath
       plan_steps = $planSteps
+      plan_items = @($planItems)
       can_parallelize = [bool](Get-Phase160DutyObjectProperty -Object $task -Name "can_parallelize" -Default $false)
-      safety_rules = Get-Phase160DutyObjectProperty -Object $task -Name "safety_rules" -Default $null
+      safety_rules = $normalizedTask.safety_profile
       success_signals = Get-Phase160DutyObjectProperty -Object $task -Name "success_signals" -Default @()
     }
   }
@@ -744,7 +811,8 @@ function Invoke-Phase160DutyLiveTaskIntake {
         status = "ACTIVE"
         duty_id = $DutyId
         task_id = $candidate.task_id
-        source = $candidate.source
+        normalized_task_id = [string]$candidate.normalized_task.normalized_task_id
+        source = "owner"
         priority = $candidate.priority
         owner_goal = $candidate.owner_goal
         desired_next_gap = $candidate.desired_next_gap
@@ -757,9 +825,36 @@ function Invoke-Phase160DutyLiveTaskIntake {
         plan_step_count = $candidate.plan_steps.Count
         success_signals = $candidate.success_signals
         selected_for_macro_cycle = $true
+        active_owner_task = $true
         selected_at = (Get-Date).ToUniversalTime().ToString("o")
       }
       Write-Phase160DutyJsonFile -Path (Join-Path $activeTaskDir "active_task.json") -Object $activeRecord
+      Write-Phase160DutyJsonFile -Path (Join-Path $taskLifecycleRoot "active_task_state.json") -Object ([ordered]@{
+        status = "ACTIVE"
+        source = "owner_task"
+        active_task_id = $candidate.task_id
+        active_plan_item_id = $activeRecord.active_plan_item_id
+        normalized_task_id = [string]$candidate.normalized_task.normalized_task_id
+        owner_task_active = $true
+        duty_id = $DutyId
+        updated_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
+      Write-Phase160DutyJsonFile -Path (Join-Path $ownerTaskLifecycleRoot "last_owner_task_intake.json") -Object ([ordered]@{
+        status = "ACCEPTED_ACTIVE"
+        duty_id = $DutyId
+        task_id = $candidate.task_id
+        normalized_task_id = [string]$candidate.normalized_task.normalized_task_id
+        decision = "ACCEPT_SAFE_OWNER_TASK"
+        quarantine_reason = "NONE"
+        failed_fields = @()
+        backlog_status = "NONE"
+        active_task_blocks_owner_task = $false
+        blocked_by_active_task_id = "NONE"
+        blocked_by_status = "NONE"
+        active_task_id = $candidate.task_id
+        owner_task_lost = $false
+        updated_at = (Get-Date).ToUniversalTime().ToString("o")
+      })
       if ($null -ne $activePlanItem) {
         Write-Phase160DutyJsonFile -Path (Join-Path $activeTaskDir "active_plan_item.json") -Object $activePlanItem.item
         Write-Phase160DutyJsonFile -Path (Join-Path $planItemsRoot "active_plan_item.json") -Object $activePlanItem.item
@@ -772,6 +867,8 @@ function Invoke-Phase160DutyLiveTaskIntake {
         source = "builder_live_task_intake"
         duty_id = $DutyId
         task_id = $candidate.task_id
+        normalized_task_id = [string]$candidate.normalized_task.normalized_task_id
+        decision = "ACCEPT_SAFE_OWNER_TASK"
         priority = $candidate.priority
         teacher_digest_path = $candidate.digest_relative_path
         active_plan_item_id = $activeRecord.active_plan_item_id
@@ -779,20 +876,28 @@ function Invoke-Phase160DutyLiveTaskIntake {
         occurred_at = (Get-Date).ToUniversalTime().ToString("o")
       })
     } else {
-      $backlogPath = Join-Path $taskBacklog ("{0}.json" -f $candidate.safe_task_id)
-      Write-Phase160DutyJsonFile -Path $backlogPath -Object ([ordered]@{
-        status = "BACKLOG"
+      $activeStateForBacklog = Read-Phase160DutyJsonSafe -Path (Join-Path $taskLifecycleRoot "active_task_state.json")
+      $blockingActiveForBacklog = $existingActive
+      if ($null -eq $blockingActiveForBacklog -and $null -ne $selected) {
+        $blockingActiveForBacklog = [pscustomobject][ordered]@{ task_id = [string]$selected.task_id }
+      }
+      $activeStatusForBacklog = if ($null -ne $activeStateForBacklog -and $activeStateForBacklog.PSObject.Properties.Name -contains "status") { [string]$activeStateForBacklog.status } elseif ($null -ne $blockingActiveForBacklog) { "ACTIVE" } else { "NONE" }
+      $backlogWrite = Add-Phase160JOwnerTaskBacklog -TaskBacklogDirectory $taskBacklog -NormalizedTask $candidate.normalized_task -ExistingActiveTask $blockingActiveForBacklog -ExistingActiveStatus $activeStatusForBacklog -DutyId $DutyId -TeacherDigestPath $candidate.digest_relative_path -ContentHash $candidate.content_hash
+      $backlogPath = [string]$backlogWrite.backlog_path
+      Write-Phase160DutyJsonFile -Path (Join-Path $ownerTaskLifecycleRoot "last_owner_task_intake.json") -Object ([ordered]@{
+        status = "BACKLOGGED"
         duty_id = $DutyId
         task_id = $candidate.task_id
-        source = $candidate.source
-        priority = $candidate.priority
-        owner_goal = $candidate.owner_goal
-        desired_next_gap = $candidate.desired_next_gap
-        teacher_digest_path = $candidate.digest_relative_path
-        content_hash = $candidate.content_hash
-        plan_step_count = $candidate.plan_steps.Count
-        reason = if ($null -ne $existingActive) { "existing_active_task_retained" } else { "valid_non_active_task" }
-        created_at = (Get-Date).ToUniversalTime().ToString("o")
+        normalized_task_id = [string]$candidate.normalized_task.normalized_task_id
+        decision = "BACKLOG_SAFE_OWNER_TASK"
+        quarantine_reason = "NONE"
+        failed_fields = @()
+        backlog_status = [string]$backlogWrite.backlog_status
+        active_task_blocks_owner_task = $true
+        blocked_by_active_task_id = [string]$backlogWrite.blocked_by_active_task_id
+        blocked_by_status = [string]$backlogWrite.blocked_by_status
+        owner_task_lost = $false
+        updated_at = (Get-Date).ToUniversalTime().ToString("o")
       })
       $backlogCount += 1
       Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
@@ -800,6 +905,10 @@ function Invoke-Phase160DutyLiveTaskIntake {
         source = "builder_live_task_intake"
         duty_id = $DutyId
         task_id = $candidate.task_id
+        normalized_task_id = [string]$candidate.normalized_task.normalized_task_id
+        decision = "BACKLOG_SAFE_OWNER_TASK"
+        backlog_status = [string]$backlogWrite.backlog_status
+        blocked_by_active_task_id = [string]$backlogWrite.blocked_by_active_task_id
         backlog_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $backlogPath)
         teacher_digest_path = $candidate.digest_relative_path
         occurred_at = (Get-Date).ToUniversalTime().ToString("o")
@@ -811,14 +920,17 @@ function Invoke-Phase160DutyLiveTaskIntake {
       status = "CONSUMED"
       duty_id = $DutyId
       task_id = $candidate.task_id
-      source = $candidate.source
+      normalized_task_id = [string]$candidate.normalized_task.normalized_task_id
+      source = "owner"
       priority = $candidate.priority
       source_file = $candidate.raw_file.Name
       teacher_digest_path = $candidate.digest_relative_path
+      intake_decision = if ($isActive) { "ACCEPT_SAFE_OWNER_TASK" } else { "BACKLOG_SAFE_OWNER_TASK" }
       active_selected = $isActive
       backlog_written = -not $isActive
       plan_split = $candidate.plan_steps.Count -gt 0
       content_hash = $candidate.content_hash
+      owner_task_lost = $false
       consumed_at = (Get-Date).ToUniversalTime().ToString("o")
     })
     $movedRaw = Move-Phase160DutyFileUnique -SourcePath $candidate.raw_file.FullName -DestinationDirectory $teacherConsumed -Prefix "raw_"
@@ -828,14 +940,17 @@ function Invoke-Phase160DutyLiveTaskIntake {
       source = "builder_live_task_intake"
       duty_id = $DutyId
       task_id = $candidate.task_id
+      normalized_task_id = [string]$candidate.normalized_task.normalized_task_id
       consumed_receipt_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $receiptPath)
       moved_raw_path = (ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $movedRaw)
+      intake_decision = if ($isActive) { "ACCEPT_SAFE_OWNER_TASK" } else { "BACKLOG_SAFE_OWNER_TASK" }
       active_selected = $isActive
       occurred_at = (Get-Date).ToUniversalTime().ToString("o")
     })
   }
 
   $counts = Get-Phase160DutyLiveTaskCounts -SessionRootFull $SessionRootFull
+  $ownerLifecycle = Get-Phase160JOwnerTaskLifecycleState -SessionRootFull $SessionRootFull
   return [pscustomobject][ordered]@{
     status = "PASS"
     duty_id = $DutyId
@@ -856,6 +971,15 @@ function Invoke-Phase160DutyLiveTaskIntake {
     active_task_id = [string]$counts.active_task_id
     active_plan_item_id = [string]$counts.active_plan_item_id
     last_consumed_task = [string]$counts.last_consumed_task
+    owner_task_intake_enabled = [bool]$ownerLifecycle.owner_task_intake_enabled
+    last_owner_task_intake_decision = [string]$ownerLifecycle.last_owner_task_intake_decision
+    last_owner_task_quarantine_reason = [string]$ownerLifecycle.last_owner_task_quarantine_reason
+    last_owner_task_backlog_status = [string]$ownerLifecycle.last_owner_task_backlog_status
+    owner_task_backlog_count = [int]$ownerLifecycle.owner_task_backlog_count
+    latest_owner_backlog_task_id = [string]$ownerLifecycle.latest_owner_backlog_task_id
+    active_task_blocks_owner_task = [bool]$ownerLifecycle.active_task_blocks_owner_task
+    backlog_activation_ready = [bool]$ownerLifecycle.backlog_activation_ready
+    owner_task_lost = [bool]$ownerLifecycle.owner_task_lost
   }
 }
 

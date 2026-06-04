@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "safe_owner_task_decision": "ACCEPT_SAFE_OWNER_TASK",
+  "unsafe_commit_task_decision": "QUARANTINE_UNSAFE_OWNER_TASK",
+  "unsafe_commit_reason": "unsafe_commit_allowed",
+  "unsafe_protected_task_decision": "QUARANTINE_UNSAFE_OWNER_TASK",
+  "unsafe_protected_reason": "unsafe_protected_state_mutation_allowed",
+  "generic_unsafe_live_task_safety_rules_used": false
+}

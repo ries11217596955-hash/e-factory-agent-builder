@@ -56,7 +56,9 @@ function Get-Phase160JOwnerTaskLifecycleState {
   $lastIntake = Read-Phase160JInspectJsonSafe -Path (Join-Path $SessionRootFull "owner_task_lifecycle/last_owner_task_intake.json")
   $latestBacklogFile = Get-Phase160JLatestJsonFile -Directory (Join-Path $SessionRootFull "task_backlog")
   $latestBacklog = if ($null -ne $latestBacklogFile) { Read-Phase160JInspectJsonSafe -Path $latestBacklogFile.FullName } else { $null }
-  $backlogFiles = @(Get-ChildItem -LiteralPath (Join-Path $SessionRootFull "task_backlog") -File -Filter "*.json" -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" })
+  $latestConsumedFile = Get-Phase160JLatestJsonFile -Directory (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
+  $latestConsumed = if ($null -ne $latestConsumedFile) { Read-Phase160JInspectJsonSafe -Path $latestConsumedFile.FullName } else { $null }
+  $backlogFiles = @(Get-ChildItem -LiteralPath (Join-Path $SessionRootFull "task_backlog") -File -Filter "*.json" -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" } | Sort-Object LastWriteTimeUtc, Name)
   $ownerBacklogRecords = @()
   foreach ($file in $backlogFiles) {
     $record = Read-Phase160JInspectJsonSafe -Path $file.FullName
@@ -68,6 +70,9 @@ function Get-Phase160JOwnerTaskLifecycleState {
   $activeTaskId = if ($null -ne $activeTask -and $activeTask.PSObject.Properties.Name -contains "task_id") { [string]$activeTask.task_id } else { "NONE" }
   $activeStatus = if ($null -ne $activeTaskState -and $activeTaskState.PSObject.Properties.Name -contains "status") { [string]$activeTaskState.status } elseif ($activeTaskId -ne "NONE") { "ACTIVE" } else { "NONE" }
   $ownerBacklogCount = $ownerBacklogRecords.Count
+  $lastIntakeTaskId = if ($null -ne $lastIntake -and $lastIntake.PSObject.Properties.Name -contains "task_id") { [string]$lastIntake.task_id } else { "NONE" }
+  $latestConsumedTaskId = if ($null -ne $latestConsumed -and $latestConsumed.PSObject.Properties.Name -contains "task_id") { [string]$latestConsumed.task_id } else { "NONE" }
+  $lastIntakeWasConsumed = ($lastIntakeTaskId -ne "NONE" -and $latestConsumedTaskId -eq $lastIntakeTaskId)
   $lastDecision = if ($null -ne $lastIntake -and $lastIntake.PSObject.Properties.Name -contains "decision") { [string]$lastIntake.decision } else { "NONE" }
   $lastQuarantineReason = if ($null -ne $lastIntake -and $lastIntake.PSObject.Properties.Name -contains "quarantine_reason") { [string]$lastIntake.quarantine_reason } else { "NONE" }
   $lastBacklogStatus = if ($null -ne $latestOwnerBacklog -and $latestOwnerBacklog.PSObject.Properties.Name -contains "backlog_status") { [string]$latestOwnerBacklog.backlog_status } elseif ($null -ne $lastIntake -and $lastIntake.PSObject.Properties.Name -contains "backlog_status") { [string]$lastIntake.backlog_status } else { "NONE" }
@@ -75,17 +80,22 @@ function Get-Phase160JOwnerTaskLifecycleState {
   $activeBlocksOwnerTask = ($ownerBacklogCount -gt 0 -and $activeTaskId -ne "NONE")
   $backlogActivationReady = ($ownerBacklogCount -gt 0 -and $activeTaskId -eq "NONE")
   $ownerTaskLost = $false
-  if ($lastDecision -match "SAFE_OWNER_TASK" -and $ownerBacklogCount -lt 1 -and $activeTaskId -eq "NONE") {
+  if ($lastDecision -eq "ACCEPT_SAFE_OWNER_TASK" -and $activeTaskId -eq "NONE" -and -not $lastIntakeWasConsumed) {
+    $ownerTaskLost = $true
+  }
+  if ($lastDecision -eq "BACKLOG_SAFE_OWNER_TASK" -and $ownerBacklogCount -lt 1 -and -not $lastIntakeWasConsumed) {
     $ownerTaskLost = $true
   }
 
   return [pscustomobject][ordered]@{
     owner_task_intake_enabled = $true
+    last_owner_task_id = $lastIntakeTaskId
     last_owner_task_intake_decision = $lastDecision
     last_owner_task_quarantine_reason = $lastQuarantineReason
     last_owner_task_backlog_status = $lastBacklogStatus
     owner_task_backlog_count = $ownerBacklogCount
     latest_owner_backlog_task_id = $latestOwnerBacklogTaskId
+    latest_consumed_task_id = $latestConsumedTaskId
     latest_backlog_task_id = if ($null -ne $latestBacklog -and $latestBacklog.PSObject.Properties.Name -contains "task_id") { [string]$latestBacklog.task_id } else { "NONE" }
     latest_backlog_reason = if ($null -ne $latestBacklog -and $latestBacklog.PSObject.Properties.Name -contains "blocked_by_status") { [string]$latestBacklog.blocked_by_status } else { "NONE" }
     active_task_blocks_owner_task = $activeBlocksOwnerTask

@@ -322,6 +322,7 @@ try {
     $CurrentOwnerTaskBacklogStatus = "NONE"
     $CurrentOwnerTaskBacklogCount = 0
     $CurrentOwnerTaskLost = $false
+    $CurrentOwnerTaskLostFieldPresent = $false
     $CurrentActiveTaskBlocksOwnerTask = $false
     if ($null -ne $CurrentState) {
       if ($CurrentState.PSObject.Properties.Name -contains "self_growth_duty_count") {
@@ -368,6 +369,7 @@ try {
       }
       if ($CurrentState.PSObject.Properties.Name -contains "owner_task_lost") {
         $CurrentOwnerTaskLost = [bool]$CurrentState.owner_task_lost
+        $CurrentOwnerTaskLostFieldPresent = $true
       }
       if ($CurrentState.PSObject.Properties.Name -contains "active_task_blocks_owner_task") {
         $CurrentActiveTaskBlocksOwnerTask = [bool]$CurrentState.active_task_blocks_owner_task
@@ -382,7 +384,7 @@ try {
     if ($CurrentOwnerTaskIntakeDecision -eq "QUARANTINE_UNSAFE_OWNER_TASK" -or ($CurrentOwnerTaskQuarantineReason -ne "NONE" -and -not [string]::IsNullOrWhiteSpace($CurrentOwnerTaskQuarantineReason))) {
       $UnsafeOwnerTaskQuarantinedDetected = $true
     }
-    if (-not $CurrentOwnerTaskLost) {
+    if ($CurrentOwnerTaskLostFieldPresent -and -not $CurrentOwnerTaskLost) {
       $OwnerTaskNotLostDetected = $true
     }
     $SelfGrowthCompletedEventCount = Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern '"event_type":"self_growth_duty_completed"'
@@ -668,6 +670,7 @@ try {
       safe_owner_task_backlogged_behind_active_task = $SafeOwnerTaskBackloggedDetected
       unsafe_owner_task_quarantined = $UnsafeOwnerTaskQuarantinedDetected
       owner_task_not_lost = $OwnerTaskNotLostDetected
+      owner_task_lost_false_detected = $OwnerTaskNotLostDetected
       internal_source_attribution_truthful = $InternalSourceAttributionTruthfulDetected
       run_manifest_exists = $RunManifestObserved
       run_head_matches_current = $RunHeadMatchesCurrent
@@ -739,6 +742,7 @@ try {
     safe_owner_task_backlogged_behind_active_task = $SafeOwnerTaskBackloggedDetected
     unsafe_owner_task_quarantined = $UnsafeOwnerTaskQuarantinedDetected
     owner_task_not_lost = $OwnerTaskNotLostDetected
+    owner_task_lost_false_detected = $OwnerTaskNotLostDetected
     internal_source_attribution_truthful = $InternalSourceAttributionTruthfulDetected
     run_manifest_exists = $RunManifestObserved
     run_head_matches_current = $RunHeadMatchesCurrent
@@ -805,6 +809,7 @@ try {
     safe_owner_task_backlogged_behind_active_task = $SafeOwnerTaskBackloggedDetected
     unsafe_owner_task_quarantined = $UnsafeOwnerTaskQuarantinedDetected
     owner_task_not_lost = $OwnerTaskNotLostDetected
+    owner_task_lost_false_detected = $OwnerTaskNotLostDetected
     internal_source_attribution_truthful = $InternalSourceAttributionTruthfulDetected
     run_manifest_exists = $RunManifestObserved
     run_head_matches_current = $RunHeadMatchesCurrent

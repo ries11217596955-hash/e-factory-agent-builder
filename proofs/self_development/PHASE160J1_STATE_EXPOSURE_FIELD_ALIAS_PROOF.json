@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "phase": "PHASE160J1_STATE_EXPOSURE_FIELD_ALIAS_REPAIR_V1",
+  "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "mode": "SELF_BUILD",
+  "running_current_state_owner_fields_exposed": true,
+  "owner_task_backlog_count_exposed": true,
+  "last_owner_task_intake_decision_exposed": true,
+  "last_owner_task_quarantine_reason_exposed": true,
+  "latest_owner_backlog_task_id_exposed": true,
+  "owner_task_lost_false_for_backlogged_task": true,
+  "owner_task_lost_false_for_accepted_task": true,
+  "unsafe_task_quarantine_reason_exposed": true,
+  "safe_task_generic_unsafe_false_quarantine_absent": true,
+  "phase160j_behavior_compatibility_pass": true,
+  "observer_owner_task_lost_false_detected": true,
+  "observer_source_attribution_truthful": true,
+  "console_owner_task_lost_visible": true,
+  "old_fields_preserved": [
+    "task_backlog_count",
+    "teacher_quarantine_count",
+    "last_consumed_task"
+  ],
+  "artifacts": [
+    "runtime_sessions/live_growth/PHASE160J1_ACTIVE_INTERNAL_BACKLOG_001_20260604220248558",
+    "runtime_sessions/live_growth/PHASE160J1_NO_ACTIVE_ACCEPT_001_20260604220248558",
+    "runtime_sessions/live_growth/PHASE160J1_UNSAFE_COMMIT_QUARANTINE_001_20260604220248558",
+    "runtime_sessions/live_growth/PHASE160J1_OBSERVER_SOURCE_001_20260604220248558",
+    "runtime_sessions/live_growth_console/PHASE160J1_CONSOLE_001_20260604220248558"
+  ],
+  "report": "reports/self_development/PHASE160J1_STATE_EXPOSURE_FIELD_ALIAS_REPORT.md",
+  "route_request": "route_change_requests/PHASE160J1_STATE_EXPOSURE_FIELD_ALIAS_REQUEST.md",
+  "accepted_state_mutated": false,
+  "protected_state_mutated": false,
+  "commit_performed": false,
+  "push_performed": false,
+  "branch_switch_performed": false,
+  "validated_at": "2026-06-04T18:03:11.2070160Z"
+}

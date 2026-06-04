@@ -1,0 +1,137 @@
+{
+  "mirror_name": "GPT_SETTINGS_KNOWLEDGE_MIRROR",
+  "created_at_utc": "2026-06-04T10:48:33.271970+00:00",
+  "source_archive": "_INBOX (1).zip",
+  "source_archive_sha256": "d799c81d3a32ffa70498f8cc1b8e9cb610540e24ddb5f0062f3996fdbe631c1f",
+  "file_count": 18,
+  "records": [
+    {
+      "source_name": "AGENT_BUILDER_MATERIAL_GOVERNANCE_REFERENCE_ARCHITECTURE_V1.md",
+      "repo_name": "AGENT_BUILDER_MATERIAL_GOVERNANCE_REFERENCE_ARCHITECTURE_V1.md",
+      "size_bytes": 3879,
+      "sha256": "ee63e995bc21ff8eb938222d5e683e26ae4b43d9f9129b91e362fb5f39fee032"
+    },
+    {
+      "source_name": "AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1 (3).md",
+      "repo_name": "AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
+      "size_bytes": 28997,
+      "sha256": "8d92ccb247eaf31399ea2f0887e3aebc0d710c07388f7925b8b5c8d16ec755d5"
+    },
+    {
+      "source_name": "CHANGELOG (2).md",
+      "repo_name": "CHANGELOG.md",
+      "size_bytes": 1853,
+      "sha256": "134dec9a0b8c851ee56b5b44013bceaa84a1754269a189c6c4e409c7b738f970"
+    },
+    {
+      "source_name": "DEEP_KNOWLEDGE_ALIGNMENT_REPORT_2026_06_01.md",
+      "repo_name": "DEEP_KNOWLEDGE_ALIGNMENT_REPORT_2026_06_01.md",
+      "size_bytes": 5554,
+      "sha256": "9ef0edf09a0ea168cb8552de4ecd26ce096d3b8da69d12cd3021624bd2d2db2a"
+    },
+    {
+      "source_name": "EF_ACTIVE_DIRECTIONS (1).md",
+      "repo_name": "EF_ACTIVE_DIRECTIONS.md",
+      "size_bytes": 8211,
+      "sha256": "e05600bacca60728b25460d6ec3e5994f87e0cb6e8fca7390de3da9167f0e6b0"
+    },
+    {
+      "source_name": "EF_AGENT_SELF_KNOWLEDGE_PROTOCOL (1).md",
+      "repo_name": "EF_AGENT_SELF_KNOWLEDGE_PROTOCOL.md",
+      "size_bytes": 5837,
+      "sha256": "46bab101d418c41311ed1c089f5f858b1da4937774a10eec4587d060b47556a0"
+    },
+    {
+      "source_name": "EF_CHAT_MIGRATION_RECOVERY_PROTOCOL (2).md",
+      "repo_name": "EF_CHAT_MIGRATION_RECOVERY_PROTOCOL.md",
+      "size_bytes": 7525,
+      "sha256": "5ce5ca2223edef9dafdc4d2b367e5a0e22187338a0e872f01d52446337f3c17f"
+    },
+    {
+      "source_name": "EF_CONTROL_BOOK (1).md",
+      "repo_name": "EF_CONTROL_BOOK.md",
+      "size_bytes": 8705,
+      "sha256": "a841b1cc8446f128e1163d38e2ddacc84e989c3ed285708a627aa206c77fdff0"
+    },
+    {
+      "source_name": "EF_CORE_KERNEL (1).md",
+      "repo_name": "EF_CORE_KERNEL.md",
+      "size_bytes": 12477,
+      "sha256": "d5d45ad2c6a12d7ff6683ddf4a735658c693511623bdab0ba931c803198048ee"
+    },
+    {
+      "source_name": "EF_EXECUTION_SYSTEM (1).md",
+      "repo_name": "EF_EXECUTION_SYSTEM.md",
+      "size_bytes": 10285,
+      "sha256": "5d86bbbc327c25287bda9a8ec3e387b4c6e69cc78af383a39a3c2ee3da4b289f"
+    },
+    {
+      "source_name": "EF_INDEPENDENT_ACTION_MACHINE_DOCTRINE_V1 (1).md",
+      "repo_name": "EF_INDEPENDENT_ACTION_MACHINE_DOCTRINE_V1.md",
+      "size_bytes": 4429,
+      "sha256": "046b9193939de48de3356b136e204f0268d0ad71d153a592a545cd907b514f47"
+    },
+    {
+      "source_name": "EF_INDEPENDENT_ACTION_MACHINE_DOCTRINE_V1.md",
+      "repo_name": "EF_INDEPENDENT_ACTION_MACHINE_DOCTRINE_V1__CONFLICT_FROM_UPLOAD_ae4440c9.md",
+      "size_bytes": 9291,
+      "sha256": "ae4440c9e8ea11e74a95160c6aaaa0326d8ee589e655c13c3381fae0f4eb301c"
+    },
+    {
+      "source_name": "EF_LIVE_SELF_DEVELOPMENT_LOOP_V1.md",
+      "repo_name": "EF_LIVE_SELF_DEVELOPMENT_LOOP_V1.md",
+      "size_bytes": 8421,
+      "sha256": "d1be4a4a7a489ddb8a74a73034fc6dd49752f0a0b9c2a94c7a32148dce627f32"
+    },
+    {
+      "source_name": "EF_PRIMITIVE_BRAIN_CELL_DOCTRINE_V1.md",
+      "repo_name": "EF_PRIMITIVE_BRAIN_CELL_DOCTRINE_V1.md",
+      "size_bytes": 7801,
+      "sha256": "c81b6773d3d8b461763842006d1fb87de0bca06b377d3a4a3d365e38225f5ca8"
+    },
+    {
+      "source_name": "EF_SETTINGS_EVOLUTION_AND_RULE_RETIREMENT_PROTOCOL (2).md",
+      "repo_name": "EF_SETTINGS_EVOLUTION_AND_RULE_RETIREMENT_PROTOCOL.md",
+      "size_bytes": 8750,
+      "sha256": "00d3444c7410e32383dc3418bf9e23f64d9c682a8af7c425689c056a0351a762"
+    },
+    {
+      "source_name": "EF_TASK_ADAPTATION_AND_AGENT_REPRODUCTION_V1.md",
+      "repo_name": "EF_TASK_ADAPTATION_AND_AGENT_REPRODUCTION_V1.md",
+      "size_bytes": 6694,
+      "sha256": "4abf9f0d409b3864059715602f129980fd2189577d94a7a9f7ccf27484a35caf"
+    },
+    {
+      "source_name": "MANIFEST (2).json",
+      "repo_name": "MANIFEST.json",
+      "size_bytes": 1906,
+      "sha256": "4d160baff074f426612f346f129dd1c2f9b120ccafc4fafe00eb96eb7ed7ff0b"
+    },
+    {
+      "source_name": "README (1).md",
+      "repo_name": "README.md",
+      "size_bytes": 1522,
+      "sha256": "5171cd73f46aa92832eb311981b020e96022dfe938d45585451b4807ac8ee39d"
+    }
+  ],
+  "conflicts": [
+    {
+      "source": "EF_INDEPENDENT_ACTION_MACHINE_DOCTRINE_V1.md",
+      "normalized": "EF_INDEPENDENT_ACTION_MACHINE_DOCTRINE_V1.md",
+      "status": "duplicate_name_different_content_preserved",
+      "sha256": "ae4440c9e8ea11e74a95160c6aaaa0326d8ee589e655c13c3381fae0f4eb301c",
+      "kept_as": "EF_INDEPENDENT_ACTION_MACHINE_DOCTRINE_V1__CONFLICT_FROM_UPLOAD_ae4440c9.md"
+    }
+  ],
+  "export_script": {
+    "path": "_gpt_settings_knowledge/EXPORT_FOR_GPT_SETTINGS.ps1",
+    "version": "2026-06-04-desktop-output-v1",
+    "default_output": "Desktop/GPT_KNOWLEDGE_SETTINGS_EXPORT_yyyyMMdd_HHmmss.zip",
+    "fallback_output": "_gpt_settings_knowledge/exports/",
+    "does_not_update_gpt_settings_automatically": true,
+    "excludes": [
+      "*__CONFLICT_FROM_UPLOAD_*"
+    ]
+  },
+  "mirror_pack_updated_at_utc": "2026-06-04T11:02:06.818907+00:00"
+}

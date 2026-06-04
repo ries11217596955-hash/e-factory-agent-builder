@@ -18,6 +18,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 . (Join-Path $PSScriptRoot "inspect_builder_owner_task_lifecycle_state_001.ps1")
+. (Join-Path $PSScriptRoot "inspect_builder_quality_decision_index_001.ps1")
 
 function Normalize-Phase160DaemonFullPath {
   param([string]$Path)
@@ -180,6 +181,36 @@ function Get-Phase160DaemonLiveTaskSnapshot {
       }
     }
   }
+  $qualityIndex = Get-Phase160KQualityDecisionIndex -RepoRoot $RepoRoot -SessionRootFull $SessionRootFull
+  if ([int]$qualityIndex.candidate_count_total -gt 0 -or [int]$qualityIndex.quality_decision_count -gt 0) {
+    $candidateCount = [int]$qualityIndex.candidate_count_total
+    $readyCandidateCount = [int]$qualityIndex.ready_candidate_count_after_quality
+    $revisionRequiredCount = [int]$qualityIndex.revision_required_count
+    $draftCandidateCount = [int]$qualityIndex.draft_candidate_count
+    $quarantinedCandidateCount = [int]$qualityIndex.quarantined_candidate_count
+    $blockedCandidateCount = [int]$qualityIndex.blocked_candidate_count
+    $lastQualityDecision = [string]$qualityIndex.last_quality_decision
+    $lastRevisionRequest = [string]$qualityIndex.last_revision_request
+    $ownerPromotionAllowed = [bool]$qualityIndex.owner_promotion_allowed
+    if (@($qualityIndex.candidate_records).Count -gt 0) {
+      $lastCandidateId = [string]$qualityIndex.candidate_records[-1].candidate_id
+    }
+  }
+  $qualityResultFileCount = if ($null -ne $promotionManifest -and $promotionManifest.PSObject.Properties.Name -contains "quality_result_file_count") { [int]$promotionManifest.quality_result_file_count } else { [int]$qualityIndex.quality_result_file_count }
+  $qualityDecisionCount = if ($null -ne $promotionManifest -and $promotionManifest.PSObject.Properties.Name -contains "quality_decision_count") { [int]$promotionManifest.quality_decision_count } else { [int]$qualityIndex.quality_decision_count }
+  $qualityArtifactConsistencyStatus = if ($null -ne $promotionManifest -and $promotionManifest.PSObject.Properties.Name -contains "quality_artifact_consistency_status") { [string]$promotionManifest.quality_artifact_consistency_status } else { [string]$qualityIndex.quality_artifact_consistency_status }
+  $missingQualityResultCount = if ($null -ne $promotionManifest -and $promotionManifest.PSObject.Properties.Name -contains "missing_quality_result_count") { [int]$promotionManifest.missing_quality_result_count } else { [int]$qualityIndex.missing_quality_result_count }
+  if ($null -ne $promotionManifest) {
+    if ($promotionManifest.PSObject.Properties.Name -contains "candidate_count_total") { $candidateCount = [int]$promotionManifest.candidate_count_total } elseif ($promotionManifest.PSObject.Properties.Name -contains "candidate_count") { $candidateCount = [int]$promotionManifest.candidate_count }
+    if ($promotionManifest.PSObject.Properties.Name -contains "ready_candidate_count_after_quality") { $readyCandidateCount = [int]$promotionManifest.ready_candidate_count_after_quality }
+    if ($promotionManifest.PSObject.Properties.Name -contains "revision_required_count") { $revisionRequiredCount = [int]$promotionManifest.revision_required_count }
+    if ($promotionManifest.PSObject.Properties.Name -contains "draft_candidate_count") { $draftCandidateCount = [int]$promotionManifest.draft_candidate_count }
+    if ($promotionManifest.PSObject.Properties.Name -contains "quarantined_candidate_count") { $quarantinedCandidateCount = [int]$promotionManifest.quarantined_candidate_count }
+    if ($promotionManifest.PSObject.Properties.Name -contains "blocked_candidate_count") { $blockedCandidateCount = [int]$promotionManifest.blocked_candidate_count }
+    if ($promotionManifest.PSObject.Properties.Name -contains "last_quality_decision") { $lastQualityDecision = [string]$promotionManifest.last_quality_decision }
+    if ($promotionManifest.PSObject.Properties.Name -contains "last_revision_request") { $lastRevisionRequest = [string]$promotionManifest.last_revision_request }
+    if ($promotionManifest.PSObject.Properties.Name -contains "owner_promotion_allowed") { $ownerPromotionAllowed = [bool]$promotionManifest.owner_promotion_allowed }
+  }
   $planPendingCount = 0
   $planActiveCount = 0
   $planWaitingPromotionCount = 0
@@ -239,6 +270,10 @@ function Get-Phase160DaemonLiveTaskSnapshot {
     ready_candidate_count = $readyCandidateCount
     quality_gate_enabled = $true
     quality_ready_count = $readyCandidateCount
+    quality_result_file_count = $qualityResultFileCount
+    quality_decision_count = $qualityDecisionCount
+    quality_artifact_consistency_status = $qualityArtifactConsistencyStatus
+    missing_quality_result_count = $missingQualityResultCount
     revision_required_count = $revisionRequiredCount
     draft_candidate_count = $draftCandidateCount
     quarantined_candidate_count = $quarantinedCandidateCount
@@ -517,6 +552,10 @@ try {
           ready_candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$EarlyCandidateWorkspaceResult.ready_candidate_count } else { 0 }
           quality_gate_enabled = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_gate_enabled") { [bool]$EarlyCandidateWorkspaceResult.quality_gate_enabled } else { $false }
           quality_ready_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_ready_count") { [int]$EarlyCandidateWorkspaceResult.quality_ready_count } else { 0 }
+          quality_result_file_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_result_file_count") { [int]$EarlyCandidateWorkspaceResult.quality_result_file_count } else { 0 }
+          quality_decision_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_decision_count") { [int]$EarlyCandidateWorkspaceResult.quality_decision_count } else { 0 }
+          quality_artifact_consistency_status = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_artifact_consistency_status") { [string]$EarlyCandidateWorkspaceResult.quality_artifact_consistency_status } else { "UNKNOWN" }
+          missing_quality_result_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "missing_quality_result_count") { [int]$EarlyCandidateWorkspaceResult.missing_quality_result_count } else { 0 }
           revision_required_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "revision_required_count") { [int]$EarlyCandidateWorkspaceResult.revision_required_count } else { 0 }
           draft_candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "draft_candidate_count") { [int]$EarlyCandidateWorkspaceResult.draft_candidate_count } else { 0 }
           quarantined_candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quarantined_candidate_count") { [int]$EarlyCandidateWorkspaceResult.quarantined_candidate_count } else { 0 }
@@ -759,6 +798,10 @@ try {
               ready_candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$CandidateWorkspaceResult.ready_candidate_count } else { 0 }
               quality_gate_enabled = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_gate_enabled") { [bool]$CandidateWorkspaceResult.quality_gate_enabled } else { $false }
               quality_ready_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_ready_count") { [int]$CandidateWorkspaceResult.quality_ready_count } else { 0 }
+              quality_result_file_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_result_file_count") { [int]$CandidateWorkspaceResult.quality_result_file_count } else { 0 }
+              quality_decision_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_decision_count") { [int]$CandidateWorkspaceResult.quality_decision_count } else { 0 }
+              quality_artifact_consistency_status = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_artifact_consistency_status") { [string]$CandidateWorkspaceResult.quality_artifact_consistency_status } else { "UNKNOWN" }
+              missing_quality_result_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "missing_quality_result_count") { [int]$CandidateWorkspaceResult.missing_quality_result_count } else { 0 }
               revision_required_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "revision_required_count") { [int]$CandidateWorkspaceResult.revision_required_count } else { 0 }
               draft_candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "draft_candidate_count") { [int]$CandidateWorkspaceResult.draft_candidate_count } else { 0 }
               quarantined_candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quarantined_candidate_count") { [int]$CandidateWorkspaceResult.quarantined_candidate_count } else { 0 }
@@ -815,6 +858,10 @@ try {
           ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
           quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
           quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+          quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+          quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+          quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+          missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
           revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
           draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
           quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
@@ -891,6 +938,10 @@ try {
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
       quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
       quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+      quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+      quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+      missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
       revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
       draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
@@ -965,6 +1016,10 @@ try {
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
       quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
       quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+      quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+      quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+      missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
       revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
       draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
@@ -1040,6 +1095,10 @@ try {
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
       quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
       quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+      quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+      quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+      missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
       revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
       draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
@@ -1100,6 +1159,10 @@ try {
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
       quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
       quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+      quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+      quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+      missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
       revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
       draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
@@ -1186,6 +1249,10 @@ try {
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
       quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
       quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+      quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+      quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+      missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
       revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
       draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
@@ -1258,6 +1325,10 @@ try {
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
       quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
       quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+      quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+      quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+      missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
       revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
       draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
@@ -1320,6 +1391,10 @@ try {
     ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
     quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
     quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+    quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+    quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+    quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+    missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
     revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
     draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
     quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
@@ -1418,6 +1493,10 @@ try {
     ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
     quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
     quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+    quality_result_file_count = [int]$LiveTaskSnapshot.quality_result_file_count
+    quality_decision_count = [int]$LiveTaskSnapshot.quality_decision_count
+    quality_artifact_consistency_status = [string]$LiveTaskSnapshot.quality_artifact_consistency_status
+    missing_quality_result_count = [int]$LiveTaskSnapshot.missing_quality_result_count
     revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
     draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
     quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count

@@ -7,6 +7,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+. (Join-Path $PSScriptRoot "normalize_builder_candidate_quality_artifacts_001.ps1")
+
 function Normalize-Phase160HQualityFullPath {
   param([string]$Path)
   return [System.IO.Path]::GetFullPath($Path).TrimEnd([System.IO.Path]::DirectorySeparatorChar, [System.IO.Path]::AltDirectorySeparatorChar)
@@ -462,6 +464,7 @@ try {
     status = $qualityStatus
     quality_status = $qualityStatus
     candidate_id = $candidateId
+    source_task_id = if ($null -ne $manifest -and $manifest.PSObject.Properties.Name -contains "source_task_id") { [string]$manifest.source_task_id } else { "NONE" }
     candidate_dir = $CandidateDirRelative
     quality_gate_enabled = $true
     owner_promotion_allowed = $ownerPromotionAllowed
@@ -476,6 +479,7 @@ try {
     blocked_reasons = @($blockedReasons | Select-Object -Unique)
     unsafe_reasons = @($unsafeReasons | Select-Object -Unique)
     revision_request_path = $revisionRequestPath
+    revision_required = ($qualityStatus -eq "REVISION_REQUIRED")
     retry_number = $retryNumber
     max_retry_limit = $MaxRetryLimit
     accepted_code_written = $false
@@ -487,13 +491,18 @@ try {
     checked_at = $checkedAt
   }
   Write-Phase160HQualityJsonFile -Path $qualityResultPath -Object $qualityResult
+  $canonicalQualityResult = ConvertTo-Phase160KCanonicalQualityResult -RepoRoot $RepoRoot -CandidateDirFull $CandidateDirFull -QualityRecord ([pscustomobject]$qualityResult) -CandidateManifest $manifest -CandidateStatus $candidateStatus -RepairSource "quality_gate_evaluation"
+  $canonicalQualityResultPath = Get-Phase160KQualityCanonicalPath -CandidateDirFull $CandidateDirFull
+  Write-Phase160KQualityJsonFile -Path $canonicalQualityResultPath -Object $canonicalQualityResult
 
   if ($null -ne $manifest) {
     Set-Phase160HQualityProperty -Object $manifest -Name "decision" -Value $qualityStatus
     Set-Phase160HQualityProperty -Object $manifest -Name "quality_status" -Value $qualityStatus
     Set-Phase160HQualityProperty -Object $manifest -Name "quality_gate_enabled" -Value $true
     Set-Phase160HQualityProperty -Object $manifest -Name "quality_gate_result_path" -Value (ConvertTo-Phase160HQualityRelativePath -RepoRoot $RepoRoot -FullPath $qualityResultPath)
+    Set-Phase160HQualityProperty -Object $manifest -Name "quality_result_path" -Value (ConvertTo-Phase160HQualityRelativePath -RepoRoot $RepoRoot -FullPath $canonicalQualityResultPath)
     Set-Phase160HQualityProperty -Object $manifest -Name "revision_request_path" -Value $revisionRequestPath
+    Set-Phase160HQualityProperty -Object $manifest -Name "revision_required" -Value ($qualityStatus -eq "REVISION_REQUIRED")
     Set-Phase160HQualityProperty -Object $manifest -Name "owner_promotion_allowed" -Value $ownerPromotionAllowed
     Set-Phase160HQualityProperty -Object $manifest -Name "materialization_parse_check_pass" -Value ([bool]$qualityResult.materialization_parse_check_pass)
     Set-Phase160HQualityProperty -Object $manifest -Name "quality_gate_failure_reasons" -Value @($qualityResult.failure_reasons + $qualityResult.blocked_reasons + $qualityResult.unsafe_reasons)
@@ -512,6 +521,9 @@ try {
   Set-Phase160HQualityProperty -Object $candidateStatus -Name "owner_promotion_allowed" -Value $ownerPromotionAllowed
   Set-Phase160HQualityProperty -Object $candidateStatus -Name "promotion_status" -Value $promotionStatus
   Set-Phase160HQualityProperty -Object $candidateStatus -Name "revision_request_path" -Value $revisionRequestPath
+  Set-Phase160HQualityProperty -Object $candidateStatus -Name "revision_required" -Value ($qualityStatus -eq "REVISION_REQUIRED")
+  Set-Phase160HQualityProperty -Object $candidateStatus -Name "source_task_id" -Value ([string]$qualityResult.source_task_id)
+  Set-Phase160HQualityProperty -Object $candidateStatus -Name "quality_result_path" -Value (ConvertTo-Phase160HQualityRelativePath -RepoRoot $RepoRoot -FullPath $canonicalQualityResultPath)
   Set-Phase160HQualityProperty -Object $candidateStatus -Name "materialization_parse_check_pass" -Value ([bool]$qualityResult.materialization_parse_check_pass)
   Set-Phase160HQualityProperty -Object $candidateStatus -Name "updated_at" -Value $checkedAt
   Write-Phase160HQualityJsonFile -Path $candidateStatusPath -Object $candidateStatus
@@ -519,6 +531,7 @@ try {
   if ($null -ne $proposedFiles) {
     Set-Phase160HQualityProperty -Object $proposedFiles -Name "quality_status" -Value $qualityStatus
     Set-Phase160HQualityProperty -Object $proposedFiles -Name "quality_gate_result_path" -Value (ConvertTo-Phase160HQualityRelativePath -RepoRoot $RepoRoot -FullPath $qualityResultPath)
+    Set-Phase160HQualityProperty -Object $proposedFiles -Name "quality_result_path" -Value (ConvertTo-Phase160HQualityRelativePath -RepoRoot $RepoRoot -FullPath $canonicalQualityResultPath)
     Set-Phase160HQualityProperty -Object $proposedFiles -Name "owner_promotion_allowed" -Value $ownerPromotionAllowed
     Write-Phase160HQualityJsonFile -Path $proposedFilesPath -Object $proposedFiles
   }
@@ -534,7 +547,9 @@ try {
       candidate_id = $candidateId
       candidate_manifest_path = ConvertTo-Phase160HQualityRelativePath -RepoRoot $RepoRoot -FullPath $manifestPath
       quality_gate_result_path = ConvertTo-Phase160HQualityRelativePath -RepoRoot $RepoRoot -FullPath $qualityResultPath
+      quality_result_path = ConvertTo-Phase160HQualityRelativePath -RepoRoot $RepoRoot -FullPath $canonicalQualityResultPath
       revision_request_path = $revisionRequestPath
+      revision_required = ($qualityStatus -eq "REVISION_REQUIRED")
       owner_promotion_allowed = $ownerPromotionAllowed
       updated_at = $checkedAt
     })

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "quality_result_file_count": 4,
+  "quality_decision_count": 4,
+  "ready_candidate_count_after_quality": 1,
+  "current_state_quality_result_file_count": 4,
+  "current_state_quality_decision_count": 4,
+  "current_state_quality_ready_count": 1,
+  "counters_match": true
+}

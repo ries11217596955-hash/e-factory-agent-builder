@@ -7,6 +7,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+. (Join-Path $PSScriptRoot "inspect_builder_quality_decision_index_001.ps1")
+
 function Normalize-Phase160ECandidateFullPath {
   param([string]$Path)
   return [System.IO.Path]::GetFullPath($Path).TrimEnd([System.IO.Path]::DirectorySeparatorChar, [System.IO.Path]::AltDirectorySeparatorChar)
@@ -288,6 +290,27 @@ function Get-Phase160ECandidateJsonFileCount {
 
 function Get-Phase160ECandidateBundleCounts {
   param([string]$CandidateBundleRoot)
+  $candidateWorkspaceRoot = Split-Path -Path $CandidateBundleRoot -Parent
+  $sessionRootForIndex = Split-Path -Path $candidateWorkspaceRoot -Parent
+  if (-not [string]::IsNullOrWhiteSpace($sessionRootForIndex) -and -not [string]::IsNullOrWhiteSpace($RepoRoot)) {
+    $qualityIndex = Get-Phase160KQualityDecisionIndex -RepoRoot $RepoRoot -SessionRootFull $sessionRootForIndex -RepairMissingQualityResults
+    return [pscustomobject][ordered]@{
+      candidate_count = [int]$qualityIndex.candidate_count_total
+      ready_candidate_count = [int]$qualityIndex.ready_candidate_count_after_quality
+      revision_required_count = [int]$qualityIndex.revision_required_count
+      draft_candidate_count = [int]$qualityIndex.draft_candidate_count
+      quarantined_candidate_count = [int]$qualityIndex.quarantined_candidate_count
+      blocked_candidate_count = [int]$qualityIndex.blocked_candidate_count
+      last_candidate_id = if (@($qualityIndex.candidate_records).Count -gt 0) { [string]$qualityIndex.candidate_records[-1].candidate_id } else { "NONE" }
+      last_quality_decision = [string]$qualityIndex.last_quality_decision
+      last_revision_request = [string]$qualityIndex.last_revision_request
+      owner_promotion_allowed = [bool]$qualityIndex.owner_promotion_allowed
+      quality_result_file_count = [int]$qualityIndex.quality_result_file_count
+      quality_decision_count = [int]$qualityIndex.quality_decision_count
+      quality_artifact_consistency_status = [string]$qualityIndex.quality_artifact_consistency_status
+      missing_quality_result_count = [int]$qualityIndex.missing_quality_result_count
+    }
+  }
   $candidateCount = 0
   $readyCount = 0
   $revisionCount = 0
@@ -1363,6 +1386,10 @@ try {
     ready_candidate_count = [int]$Counts.ready_candidate_count
     quality_gate_enabled = $true
     quality_ready_count = [int]$Counts.ready_candidate_count
+    quality_result_file_count = if ($Counts.PSObject.Properties.Name -contains "quality_result_file_count") { [int]$Counts.quality_result_file_count } else { 0 }
+    quality_decision_count = if ($Counts.PSObject.Properties.Name -contains "quality_decision_count") { [int]$Counts.quality_decision_count } else { [int]$Counts.candidate_count }
+    quality_artifact_consistency_status = if ($Counts.PSObject.Properties.Name -contains "quality_artifact_consistency_status") { [string]$Counts.quality_artifact_consistency_status } else { "UNKNOWN" }
+    missing_quality_result_count = if ($Counts.PSObject.Properties.Name -contains "missing_quality_result_count") { [int]$Counts.missing_quality_result_count } else { 0 }
     revision_required_count = [int]$Counts.revision_required_count
     draft_candidate_count = [int]$Counts.draft_candidate_count
     quarantined_candidate_count = [int]$Counts.quarantined_candidate_count

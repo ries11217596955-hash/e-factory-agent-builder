@@ -6,6 +6,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+. (Join-Path $PSScriptRoot "inspect_builder_quality_decision_index_001.ps1")
+
 function Normalize-Phase160EPromotionFullPath {
   param([string]$Path)
   return [System.IO.Path]::GetFullPath($Path).TrimEnd([System.IO.Path]::DirectorySeparatorChar, [System.IO.Path]::AltDirectorySeparatorChar)
@@ -220,6 +222,8 @@ try {
     }
   }
 
+  $QualityIndex = Get-Phase160KQualityDecisionIndex -RepoRoot $RepoRoot -SessionRootFull $SessionRootFull -RepairMissingQualityResults
+  $CandidateRecords = @($QualityIndex.candidate_records)
   $readyCandidates = @($CandidateRecords | Where-Object { $_.quality_status -eq "CANDIDATE_READY" -and $_.owner_promotion_allowed -eq $true })
   $revisionRequiredCandidates = @($CandidateRecords | Where-Object { $_.quality_status -eq "REVISION_REQUIRED" })
   $draftCandidates = @($CandidateRecords | Where-Object { $_.quality_status -eq "CANDIDATE_DRAFT" })
@@ -245,6 +249,8 @@ try {
     } else {
       $PromotionStatus = "NO_CANDIDATES"
     }
+  } elseif ([string]$QualityIndex.quality_artifact_consistency_status -eq "INCONSISTENT") {
+    $PromotionStatus = "BLOCKED_QUALITY_ARTIFACT_INCONSISTENCY"
   } elseif ($readyCandidates.Count -gt 0) {
     $PromotionStatus = "WAITING_OWNER_REVIEW"
   }
@@ -253,7 +259,7 @@ try {
   $RestartRequiredAfterPromotion = $PromotionStatus -eq "WAITING_OWNER_REVIEW"
   $LastQualityDecision = if ($CandidateRecords.Count -gt 0) { [string]$CandidateRecords[-1].quality_status } else { "NONE" }
   $LastRevisionRequest = if ($CandidateRecords.Count -gt 0) { [string]$CandidateRecords[-1].revision_request_path } else { "NONE" }
-  $OwnerPromotionAllowed = $readyCandidates.Count -gt 0
+  $OwnerPromotionAllowed = ($readyCandidates.Count -gt 0 -and [string]$QualityIndex.quality_artifact_consistency_status -ne "INCONSISTENT")
 
   $PromotionManifest = [ordered]@{
     status = "PASS"
@@ -263,15 +269,24 @@ try {
     branch = [string]$Manifest.branch
     runtime_guard_status = $RuntimeGuardStatus
     blocked_reasons = @($BlockedReasons)
+    candidate_count_total = [int]$QualityIndex.candidate_count_total
     candidate_count = $CandidateRecords.Count
     ready_candidate_count = $readyCandidates.Count
     ready_candidate_count_after_quality = $readyCandidates.Count
     quality_gate_enabled = $true
+    quality_result_file_count = [int]$QualityIndex.quality_result_file_count
+    quality_decision_count = [int]$QualityIndex.quality_decision_count
+    quality_artifact_consistency_status = [string]$QualityIndex.quality_artifact_consistency_status
+    missing_quality_result_count = [int]$QualityIndex.missing_quality_result_count
     quality_ready_count = $readyCandidates.Count
     revision_required_count = $revisionRequiredCandidates.Count
     draft_candidate_count = $draftCandidates.Count
     quarantined_candidate_count = $quarantinedCandidates.Count
     blocked_candidate_count = $blockedCandidates.Count
+    promotion_ready_candidate_ids = @($QualityIndex.promotion_ready_candidate_ids)
+    revision_required_candidate_ids = @($QualityIndex.revision_required_candidate_ids)
+    quarantined_candidate_ids = @($QualityIndex.quarantined_candidate_ids)
+    blocked_candidate_ids = @($QualityIndex.blocked_candidate_ids)
     last_quality_decision = $LastQualityDecision
     last_revision_request = $LastRevisionRequest
     candidate_ids = @($CandidateRecords | ForEach-Object { [string]$_.candidate_id })
@@ -280,8 +295,11 @@ try {
         candidate_id = [string]$_.candidate_id
         quality_status = [string]$_.quality_status
         owner_promotion_allowed = [bool]$_.owner_promotion_allowed
+        revision_required = [bool]$_.revision_required
         revision_request_path = [string]$_.revision_request_path
         materialization_parse_check_pass = [bool]$_.materialization_parse_check_pass
+        quality_result_path = [string]$_.canonical_quality_result_path
+        repair_source = [string]$_.repair_source
       }
     })
     source_tasks = $sourceTasks
@@ -396,6 +414,10 @@ try {
     candidate_count = $CandidateRecords.Count
     ready_candidate_count = $readyCandidates.Count
     ready_candidate_count_after_quality = $readyCandidates.Count
+    quality_result_file_count = [int]$QualityIndex.quality_result_file_count
+    quality_decision_count = [int]$QualityIndex.quality_decision_count
+    quality_artifact_consistency_status = [string]$QualityIndex.quality_artifact_consistency_status
+    missing_quality_result_count = [int]$QualityIndex.missing_quality_result_count
     quality_gate_enabled = $true
     quality_ready_count = $readyCandidates.Count
     revision_required_count = $revisionRequiredCandidates.Count
@@ -447,6 +469,10 @@ try {
     candidate_count = $CandidateRecords.Count
     ready_candidate_count = $readyCandidates.Count
     ready_candidate_count_after_quality = $readyCandidates.Count
+    quality_result_file_count = [int]$QualityIndex.quality_result_file_count
+    quality_decision_count = [int]$QualityIndex.quality_decision_count
+    quality_artifact_consistency_status = [string]$QualityIndex.quality_artifact_consistency_status
+    missing_quality_result_count = [int]$QualityIndex.missing_quality_result_count
     quality_gate_enabled = $true
     quality_ready_count = $readyCandidates.Count
     revision_required_count = $revisionRequiredCandidates.Count

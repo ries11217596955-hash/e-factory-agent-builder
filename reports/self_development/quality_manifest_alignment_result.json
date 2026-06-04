@@ -1,0 +1,192 @@
+{
+  "status": "PASS",
+  "quality_artifact_consistency_status": "INCONSISTENT",
+  "candidate_count_total": 1,
+  "candidate_count": 1,
+  "quality_result_file_count": 1,
+  "quality_decision_count": 1,
+  "missing_quality_result_count": 0,
+  "mismatch_detected": true,
+  "mismatch_count": 1,
+  "mismatched_fields": [
+    "candidate_manifest.quality_status",
+    "candidate_manifest.revision_required",
+    "candidate_manifest.owner_promotion_allowed"
+  ],
+  "repair_count": 0,
+  "ready_candidate_count_after_quality": 1,
+  "quality_ready_count": 1,
+  "revision_required_count": 0,
+  "draft_candidate_count": 0,
+  "quarantined_candidate_count": 0,
+  "blocked_candidate_count": 0,
+  "promotion_ready_candidate_ids": [
+    "kmism"
+  ],
+  "revision_required_candidate_ids": [],
+  "quarantined_candidate_ids": [],
+  "blocked_candidate_ids": [],
+  "ready_candidate_without_quality_result_count": 0,
+  "owner_promotion_allowed": false,
+  "promotion_status": "BLOCKED_QUALITY_ARTIFACT_INCONSISTENCY",
+  "last_quality_decision": "CANDIDATE_READY",
+  "last_revision_request": "NONE",
+  "candidate_records": [
+    {
+      "candidate_id": "kmism",
+      "source": "owner_task",
+      "source_task_id": "PHASE160K_SOURCE_TASK_kmism",
+      "source_plan_item_id": "NONE",
+      "source_internal_goal_id": "NONE",
+      "source_internal_goal_name": "NONE",
+      "created_from_run_head": "fixture",
+      "target_area": "NONE",
+      "proposed_file_paths": [
+        "modules/kmism_module.ps1"
+      ],
+      "proposed_validator_paths": [
+        "validators/validate_kmism_v1.ps1"
+      ],
+      "acceptance_validator_needed": [],
+      "decision": "CANDIDATE_READY",
+      "quality_status": "CANDIDATE_READY",
+      "owner_promotion_allowed": true,
+      "revision_required": false,
+      "revision_request_path": "NONE",
+      "materialization_parse_check_pass": true,
+      "placeholder_detected": false,
+      "repo_mutation_performed": false,
+      "commit_performed": false,
+      "push_performed": false,
+      "branch_switch_performed": false,
+      "protected_state_mutated": false,
+      "quality_gate_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/candidate_quality/quality_result.json",
+      "canonical_quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/candidate_quality/quality_result.json",
+      "quality_result_exists": true,
+      "repair_source": "NONE",
+      "mismatch_detected": true,
+      "mismatched_fields": [
+        "candidate_manifest.quality_status",
+        "candidate_manifest.revision_required",
+        "candidate_manifest.owner_promotion_allowed"
+      ],
+      "bundle_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism"
+    }
+  ],
+  "quality_decisions": [
+    {
+      "candidate_id": "kmism",
+      "quality_status": "CANDIDATE_READY",
+      "owner_promotion_allowed": true,
+      "revision_required": false,
+      "revision_request_path": "NONE",
+      "quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/candidate_quality/quality_result.json",
+      "repair_source": "NONE"
+    }
+  ],
+  "alignment_records": [
+    {
+      "status": "MISMATCH",
+      "candidate_id": "kmism",
+      "candidate_dir": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism",
+      "canonical_quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/candidate_quality/quality_result.json",
+      "quality_result_exists": true,
+      "missing_before_repair": false,
+      "repair_performed": false,
+      "repair_source": "NONE",
+      "mismatch_detected": true,
+      "mismatched_fields": [
+        "candidate_manifest.quality_status",
+        "candidate_manifest.revision_required",
+        "candidate_manifest.owner_promotion_allowed"
+      ],
+      "canonical_source": "candidate_quality/quality_result.json",
+      "recommended_repair": "align candidate_manifest.json and candidate_status.json to canonical quality_result.json",
+      "quality_result": {
+        "candidate_id": "kmism",
+        "source_task_id": "PHASE160K_SOURCE_TASK_kmism",
+        "quality_status": "CANDIDATE_READY",
+        "quality_score_total": 100,
+        "real_module_payload_present": true,
+        "real_validator_payload_present": true,
+        "proposed_payload_dir_exists": true,
+        "payload_file_count": 2,
+        "placeholder_detected": false,
+        "outline_only_detected": false,
+        "materialization_attempted": true,
+        "materialization_passed": true,
+        "parse_check_attempted": true,
+        "parse_check_passed": true,
+        "validation_plan_present": true,
+        "risk_review_present": true,
+        "repo_mutation_performed": false,
+        "commit_performed": false,
+        "push_performed": false,
+        "branch_switch_performed": false,
+        "protected_state_mutated": false,
+        "decision_reason": "quality_gate_passed",
+        "revision_required": false,
+        "revision_request_path": "NONE",
+        "owner_promotion_allowed": true,
+        "candidate_dir": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism",
+        "canonical_quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/candidate_quality/quality_result.json",
+        "legacy_quality_gate_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/quality_gate/quality_gate_result.json",
+        "repair_source": "quality_gate_evaluation",
+        "created_at": "2026-06-04T18:35:39.6863246Z"
+      },
+      "manifest": {
+        "status": "PASS",
+        "candidate_id": "kmism",
+        "source_task_id": "PHASE160K_SOURCE_TASK_kmism",
+        "source": "owner_task",
+        "created_from_run_head": "fixture",
+        "run_id": "PHASE160K_MISM_20260604223521150",
+        "owner_goal": "Verify canonical quality artifact consistency without relying on owner_goal keywords.",
+        "desired_next_gap": "QUALITY_ARTIFACT_NAMESPACE_AND_COUNTER_CONSISTENCY_GAP",
+        "proposed_file_paths": [
+          "modules/kmism_module.ps1"
+        ],
+        "proposed_validator_paths": "validators/validate_kmism_v1.ps1",
+        "proposed_payload_paths": [
+          "proposed_patch_or_file_payloads/modules/kmism_module.ps1",
+          "proposed_patch_or_file_payloads/validators/validate_kmism_v1.ps1"
+        ],
+        "owner_approval_required": true,
+        "owner_promotion_gate_required": true,
+        "candidate_output_is_not_accepted_code": true,
+        "repo_mutation_performed": false,
+        "commit_performed": false,
+        "push_performed": false,
+        "branch_switch_performed": false,
+        "protected_state_mutated": false,
+        "created_at": "2026-06-04T18:35:38.1910234Z",
+        "decision": "REVISION_REQUIRED",
+        "quality_status": "REVISION_REQUIRED",
+        "quality_gate_enabled": true,
+        "quality_gate_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/quality_gate/quality_gate_result.json",
+        "quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/candidate_quality/quality_result.json",
+        "revision_request_path": "NONE",
+        "revision_required": true,
+        "owner_promotion_allowed": false,
+        "materialization_parse_check_pass": true,
+        "quality_gate_failure_reasons": [],
+        "quality_checked_at": "2026-06-04T18:35:39.6863246Z"
+      },
+      "status_record": {
+        "candidate_id": "kmism",
+        "created_at": "2026-06-04T18:35:38.2044509Z",
+        "status": "CANDIDATE_READY",
+        "quality_status": "CANDIDATE_READY",
+        "quality_gate_enabled": true,
+        "owner_promotion_allowed": true,
+        "promotion_status": "WAITING_OWNER_REVIEW",
+        "revision_request_path": "NONE",
+        "revision_required": false,
+        "source_task_id": "PHASE160K_SOURCE_TASK_kmism",
+        "quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISM_20260604223521150/candidate_workspace/candidate_bundles/kmism/candidate_quality/quality_result.json",
+        "materialization_parse_check_pass": true,
+        "updated_at": "2026-06-04T18:35:39.6863246Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "quality_artifact_consistency_status": "INCONSISTENT",
+  "candidate_count_total": 1,
+  "candidate_count": 1,
+  "quality_result_file_count": 0,
+  "quality_decision_count": 1,
+  "missing_quality_result_count": 2,
+  "mismatch_detected": false,
+  "mismatch_count": 0,
+  "mismatched_fields": [],
+  "repair_count": 0,
+  "ready_candidate_count_after_quality": 0,
+  "quality_ready_count": 0,
+  "revision_required_count": 0,
+  "draft_candidate_count": 1,
+  "quarantined_candidate_count": 0,
+  "blocked_candidate_count": 0,
+  "promotion_ready_candidate_ids": [],
+  "revision_required_candidate_ids": [],
+  "quarantined_candidate_ids": [],
+  "blocked_candidate_ids": [],
+  "ready_candidate_without_quality_result_count": 0,
+  "owner_promotion_allowed": false,
+  "promotion_status": "BLOCKED_QUALITY_ARTIFACT_INCONSISTENCY",
+  "last_quality_decision": "CANDIDATE_DRAFT",
+  "last_revision_request": "NONE",
+  "candidate_records": [
+    {
+      "candidate_id": "kmiss",
+      "source": "owner_task",
+      "source_task_id": "PHASE160K_SOURCE_TASK_kmiss",
+      "source_plan_item_id": "NONE",
+      "source_internal_goal_id": "NONE",
+      "source_internal_goal_name": "NONE",
+      "created_from_run_head": "fixture",
+      "target_area": "NONE",
+      "proposed_file_paths": [
+        "modules/kmiss_module.ps1"
+      ],
+      "proposed_validator_paths": [
+        "validators/validate_kmiss_v1.ps1"
+      ],
+      "acceptance_validator_needed": [],
+      "decision": "CANDIDATE_DRAFT",
+      "quality_status": "CANDIDATE_DRAFT",
+      "owner_promotion_allowed": false,
+      "revision_required": false,
+      "revision_request_path": "NONE",
+      "materialization_parse_check_pass": false,
+      "placeholder_detected": false,
+      "repo_mutation_performed": false,
+      "commit_performed": false,
+      "push_performed": false,
+      "branch_switch_performed": false,
+      "protected_state_mutated": false,
+      "quality_gate_result_path": "runtime_sessions/live_growth/PHASE160K_MISS_20260604223521150/candidate_workspace/candidate_bundles/kmiss/candidate_quality/quality_result.json",
+      "canonical_quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISS_20260604223521150/candidate_workspace/candidate_bundles/kmiss/candidate_quality/quality_result.json",
+      "quality_result_exists": false,
+      "repair_source": "NONE",
+      "mismatch_detected": false,
+      "mismatched_fields": [],
+      "bundle_path": "runtime_sessions/live_growth/PHASE160K_MISS_20260604223521150/candidate_workspace/candidate_bundles/kmiss"
+    }
+  ],
+  "quality_decisions": [
+    {
+      "candidate_id": "kmiss",
+      "quality_status": "CANDIDATE_DRAFT",
+      "owner_promotion_allowed": false,
+      "revision_required": false,
+      "revision_request_path": "NONE",
+      "quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISS_20260604223521150/candidate_workspace/candidate_bundles/kmiss/candidate_quality/quality_result.json",
+      "repair_source": "NONE"
+    }
+  ],
+  "alignment_records": [
+    {
+      "status": "MISSING_QUALITY_RESULT",
+      "candidate_id": "kmiss",
+      "candidate_dir": "runtime_sessions/live_growth/PHASE160K_MISS_20260604223521150/candidate_workspace/candidate_bundles/kmiss",
+      "canonical_quality_result_path": "runtime_sessions/live_growth/PHASE160K_MISS_20260604223521150/candidate_workspace/candidate_bundles/kmiss/candidate_quality/quality_result.json",
+      "quality_result_exists": false,
+      "missing_before_repair": true,
+      "repair_performed": false,
+      "repair_source": "NONE",
+      "mismatch_detected": false,
+      "mismatched_fields": [],
+      "canonical_source": "candidate_quality/quality_result.json",
+      "recommended_repair": "run quality gate or backfill only from legacy evaluated quality_gate result",
+      "quality_result": null,
+      "manifest": {
+        "status": "PASS",
+        "candidate_id": "kmiss",
+        "source_task_id": "PHASE160K_SOURCE_TASK_kmiss",
+        "source": "owner_task",
+        "created_from_run_head": "fixture",
+        "run_id": "PHASE160K_MISS_20260604223521150",
+        "owner_goal": "Verify canonical quality artifact consistency without relying on owner_goal keywords.",
+        "desired_next_gap": "QUALITY_ARTIFACT_NAMESPACE_AND_COUNTER_CONSISTENCY_GAP",
+        "proposed_file_paths": [
+          "modules/kmiss_module.ps1"
+        ],
+        "proposed_validator_paths": "validators/validate_kmiss_v1.ps1",
+        "proposed_payload_paths": [
+          "proposed_patch_or_file_payloads/modules/kmiss_module.ps1",
+          "proposed_patch_or_file_payloads/validators/validate_kmiss_v1.ps1"
+        ],
+        "owner_approval_required": true,
+        "owner_promotion_gate_required": true,
+        "candidate_output_is_not_accepted_code": true,
+        "repo_mutation_performed": false,
+        "commit_performed": false,
+        "push_performed": false,
+        "branch_switch_performed": false,
+        "protected_state_mutated": false,
+        "decision": "CANDIDATE_READY",
+        "quality_status": "CANDIDATE_READY",
+        "quality_gate_enabled": true,
+        "owner_promotion_allowed": true,
+        "created_at": "2026-06-04T18:35:37.9457057Z"
+      },
+      "status_record": {
+        "status": "CANDIDATE_DRAFT",
+        "quality_status": "CANDIDATE_DRAFT",
+        "candidate_id": "kmiss",
+        "source_task_id": "PHASE160K_SOURCE_TASK_kmiss",
+        "owner_promotion_allowed": false,
+        "created_at": "2026-06-04T18:35:37.960797Z"
+      }
+    }
+  ]
+}

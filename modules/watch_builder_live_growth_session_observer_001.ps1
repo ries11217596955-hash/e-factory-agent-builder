@@ -256,6 +256,12 @@ try {
   $UnsafeOwnerTaskQuarantinedDetected = $false
   $OwnerTaskNotLostDetected = $false
   $InternalSourceAttributionTruthfulDetected = $false
+  $QualityResultFilesForEvaluatedCandidatesDetected = $false
+  $PromotionManifestAgreesWithQualityResultsDetected = $false
+  $ReadyCandidateWithoutQualityResultDetected = $false
+  $WaitingOwnerReviewBlockedWhenQualityInconsistentDetected = $false
+  $PlaceholderStillBlockedDetected = $false
+  $UnsafeCandidateStillQuarantinedDetected = $false
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -449,6 +455,10 @@ try {
     }
     $CurrentQualityGateEnabled = $false
     $CurrentQualityReadyCount = 0
+    $CurrentQualityResultFileCount = 0
+    $CurrentQualityDecisionCount = 0
+    $CurrentQualityArtifactConsistencyStatus = "UNKNOWN"
+    $CurrentMissingQualityResultCount = 0
     $CurrentRevisionRequiredCount = 0
     $CurrentDraftCandidateCount = 0
     $CurrentQuarantinedCandidateCount = 0
@@ -463,6 +473,10 @@ try {
       $promotionReadyCount = if ($PromotionManifest.PSObject.Properties.Name -contains "ready_candidate_count_after_quality") { [int]$PromotionManifest.ready_candidate_count_after_quality } elseif ($PromotionManifest.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$PromotionManifest.ready_candidate_count } else { 0 }
       $CurrentQualityGateEnabled = if ($PromotionManifest.PSObject.Properties.Name -contains "quality_gate_enabled") { [bool]$PromotionManifest.quality_gate_enabled } else { $true }
       $CurrentQualityReadyCount = if ($PromotionManifest.PSObject.Properties.Name -contains "quality_ready_count") { [int]$PromotionManifest.quality_ready_count } else { $promotionReadyCount }
+      $CurrentQualityResultFileCount = if ($PromotionManifest.PSObject.Properties.Name -contains "quality_result_file_count") { [int]$PromotionManifest.quality_result_file_count } else { 0 }
+      $CurrentQualityDecisionCount = if ($PromotionManifest.PSObject.Properties.Name -contains "quality_decision_count") { [int]$PromotionManifest.quality_decision_count } else { $promotionCandidateCount }
+      $CurrentQualityArtifactConsistencyStatus = if ($PromotionManifest.PSObject.Properties.Name -contains "quality_artifact_consistency_status") { [string]$PromotionManifest.quality_artifact_consistency_status } else { "UNKNOWN" }
+      $CurrentMissingQualityResultCount = if ($PromotionManifest.PSObject.Properties.Name -contains "missing_quality_result_count") { [int]$PromotionManifest.missing_quality_result_count } else { 0 }
       $CurrentRevisionRequiredCount = if ($PromotionManifest.PSObject.Properties.Name -contains "revision_required_count") { [int]$PromotionManifest.revision_required_count } else { 0 }
       $CurrentDraftCandidateCount = if ($PromotionManifest.PSObject.Properties.Name -contains "draft_candidate_count") { [int]$PromotionManifest.draft_candidate_count } else { 0 }
       $CurrentQuarantinedCandidateCount = if ($PromotionManifest.PSObject.Properties.Name -contains "quarantined_candidate_count") { [int]$PromotionManifest.quarantined_candidate_count } else { 0 }
@@ -479,6 +493,10 @@ try {
     } elseif ($null -ne $CurrentState) {
       $CurrentQualityGateEnabled = if ($CurrentState.PSObject.Properties.Name -contains "quality_gate_enabled") { [bool]$CurrentState.quality_gate_enabled } else { $false }
       $CurrentQualityReadyCount = if ($CurrentState.PSObject.Properties.Name -contains "quality_ready_count") { [int]$CurrentState.quality_ready_count } else { 0 }
+      $CurrentQualityResultFileCount = if ($CurrentState.PSObject.Properties.Name -contains "quality_result_file_count") { [int]$CurrentState.quality_result_file_count } else { 0 }
+      $CurrentQualityDecisionCount = if ($CurrentState.PSObject.Properties.Name -contains "quality_decision_count") { [int]$CurrentState.quality_decision_count } else { 0 }
+      $CurrentQualityArtifactConsistencyStatus = if ($CurrentState.PSObject.Properties.Name -contains "quality_artifact_consistency_status") { [string]$CurrentState.quality_artifact_consistency_status } else { "UNKNOWN" }
+      $CurrentMissingQualityResultCount = if ($CurrentState.PSObject.Properties.Name -contains "missing_quality_result_count") { [int]$CurrentState.missing_quality_result_count } else { 0 }
       $CurrentRevisionRequiredCount = if ($CurrentState.PSObject.Properties.Name -contains "revision_required_count") { [int]$CurrentState.revision_required_count } else { 0 }
       $CurrentDraftCandidateCount = if ($CurrentState.PSObject.Properties.Name -contains "draft_candidate_count") { [int]$CurrentState.draft_candidate_count } else { 0 }
       $CurrentQuarantinedCandidateCount = if ($CurrentState.PSObject.Properties.Name -contains "quarantined_candidate_count") { [int]$CurrentState.quarantined_candidate_count } else { 0 }
@@ -489,6 +507,24 @@ try {
     }
     if ($CurrentQualityGateEnabled) {
       $QualityGateEnabledDetected = $true
+    }
+    if ($CurrentQualityDecisionCount -gt 0 -and $CurrentQualityResultFileCount -ge $CurrentQualityDecisionCount -and $CurrentMissingQualityResultCount -eq 0) {
+      $QualityResultFilesForEvaluatedCandidatesDetected = $true
+    }
+    if ($CurrentQualityDecisionCount -gt 0 -and $CurrentQualityResultFileCount -eq $CurrentQualityDecisionCount -and @("PASS", "REPAIRED_WITH_CANONICAL_BACKFILL") -contains $CurrentQualityArtifactConsistencyStatus) {
+      $PromotionManifestAgreesWithQualityResultsDetected = $true
+    }
+    if ($CurrentQualityReadyCount -gt $CurrentQualityResultFileCount) {
+      $ReadyCandidateWithoutQualityResultDetected = $true
+    }
+    if ($CurrentQualityArtifactConsistencyStatus -eq "INCONSISTENT" -and $null -ne $PromotionManifest -and $PromotionManifest.PSObject.Properties.Name -contains "promotion_status" -and [string]$PromotionManifest.promotion_status -ne "WAITING_OWNER_REVIEW") {
+      $WaitingOwnerReviewBlockedWhenQualityInconsistentDetected = $true
+    }
+    if ($CurrentRevisionRequiredCount -gt 0 -or $CurrentLastQualityDecision -eq "REVISION_REQUIRED") {
+      $PlaceholderStillBlockedDetected = $true
+    }
+    if ($CurrentQuarantinedCandidateCount -gt 0 -or $CurrentBlockedCandidateCount -gt 0 -or $CurrentLastQualityDecision -match "QUARANTINED|BLOCKED") {
+      $UnsafeCandidateStillQuarantinedDetected = $true
     }
     if ($CurrentQualityReadyCount -gt $MaxQualityReadyCount) {
       $MaxQualityReadyCount = $CurrentQualityReadyCount
@@ -690,7 +726,17 @@ try {
       guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
       zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
       promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
+      quality_result_files_exist_for_evaluated_candidates = $QualityResultFilesForEvaluatedCandidatesDetected
+      promotion_manifest_agrees_with_quality_results = $PromotionManifestAgreesWithQualityResultsDetected
+      ready_candidate_without_quality_result_detected = $ReadyCandidateWithoutQualityResultDetected
+      waiting_owner_review_blocked_when_quality_inconsistent = $WaitingOwnerReviewBlockedWhenQualityInconsistentDetected
+      placeholder_still_blocked = $PlaceholderStillBlockedDetected
+      unsafe_still_quarantined = $UnsafeCandidateStillQuarantinedDetected
       quality_gate_enabled = $CurrentQualityGateEnabled
+      quality_result_file_count = $CurrentQualityResultFileCount
+      quality_decision_count = $CurrentQualityDecisionCount
+      quality_artifact_consistency_status = $CurrentQualityArtifactConsistencyStatus
+      missing_quality_result_count = $CurrentMissingQualityResultCount
       quality_ready_count = $CurrentQualityReadyCount
       revision_required_count = $CurrentRevisionRequiredCount
       draft_candidate_count = $CurrentDraftCandidateCount
@@ -762,6 +808,12 @@ try {
     guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
     zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
     promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
+    quality_result_files_exist_for_evaluated_candidates = $QualityResultFilesForEvaluatedCandidatesDetected
+    promotion_manifest_agrees_with_quality_results = $PromotionManifestAgreesWithQualityResultsDetected
+    ready_candidate_without_quality_result_detected = $ReadyCandidateWithoutQualityResultDetected
+    waiting_owner_review_blocked_when_quality_inconsistent = $WaitingOwnerReviewBlockedWhenQualityInconsistentDetected
+    placeholder_still_blocked = $PlaceholderStillBlockedDetected
+    unsafe_still_quarantined = $UnsafeCandidateStillQuarantinedDetected
     quality_gate_enabled = $QualityGateEnabledDetected
     quality_ready_count = $MaxQualityReadyCount
     revision_required_count = $MaxRevisionRequiredCount
@@ -829,6 +881,12 @@ try {
     guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
     zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
     promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
+    quality_result_files_exist_for_evaluated_candidates = $QualityResultFilesForEvaluatedCandidatesDetected
+    promotion_manifest_agrees_with_quality_results = $PromotionManifestAgreesWithQualityResultsDetected
+    ready_candidate_without_quality_result_detected = $ReadyCandidateWithoutQualityResultDetected
+    waiting_owner_review_blocked_when_quality_inconsistent = $WaitingOwnerReviewBlockedWhenQualityInconsistentDetected
+    placeholder_still_blocked = $PlaceholderStillBlockedDetected
+    unsafe_still_quarantined = $UnsafeCandidateStillQuarantinedDetected
     quality_gate_enabled = $QualityGateEnabledDetected
     quality_ready_count = $MaxQualityReadyCount
     revision_required_count = $MaxRevisionRequiredCount

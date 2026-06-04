@@ -128,6 +128,8 @@ function Get-Phase160DaemonLiveTaskSnapshot {
   $runtimeGuard = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "runtime_guard.json")
   $promotionManifest = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "promotion_bundle/promotion_manifest.json")
   $activeTaskState = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "task_lifecycle/active_task_state.json")
+  $selectedUsefulGoal = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "self_initiated_goal_selection/selected_useful_goal.json")
+  $internalActiveTask = Read-Phase160DaemonJsonSafe -Path (Join-Path $SessionRootFull "self_initiated_goal_selection/internal_active_task.json")
   $latestConsumed = Get-Phase160DaemonLatestJson -Path (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
   $candidateBundleRoot = Join-Path $SessionRootFull "candidate_workspace/candidate_bundles"
   $candidateCount = 0
@@ -199,6 +201,7 @@ function Get-Phase160DaemonLiveTaskSnapshot {
     current_head = $currentHead
     head_match = $headMatch
     live_repo_guard = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status") { [string]$runtimeGuard.status } elseif ($null -ne $runtimeIdentity -and $runtimeIdentity.PSObject.Properties.Name -contains "live_repo_guard") { [string]$runtimeIdentity.live_repo_guard } else { "UNKNOWN" }
+    candidate_workspace_status = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status" -and [string]$runtimeGuard.status -eq "PASS") { "ENABLED" } elseif ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status" -and [string]$runtimeGuard.status -eq "BLOCKED") { "BLOCKED" } else { "UNKNOWN" }
     candidate_count = $candidateCount
     ready_candidate_count = $readyCandidateCount
     quarantined_candidate_count = $quarantinedCandidateCount
@@ -210,6 +213,9 @@ function Get-Phase160DaemonLiveTaskSnapshot {
     plan_waiting_promotion_count = $planWaitingPromotionCount
     last_candidate_id = $lastCandidateId
     last_promotion_event = $lastPromotionEvent
+    self_initiated_goal_selected = $null -ne $selectedUsefulGoal
+    selected_useful_goal = if ($null -ne $selectedUsefulGoal -and $selectedUsefulGoal.PSObject.Properties.Name -contains "selected_goal_id") { [string]$selectedUsefulGoal.selected_goal_id } else { "NONE" }
+    internal_active_task_created = $null -ne $internalActiveTask
     teacher_inbox_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_inbox")
     teacher_digest_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_digest")
     teacher_consumed_count = Get-Phase160DaemonJsonFileCount -Path (Join-Path $SessionRootFull "teacher_consumed") -Pattern "receipt_*.json"
@@ -338,6 +344,7 @@ try {
   $RuntimeIdentityScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/inspect_builder_runtime_identity_001.ps1"
   $CandidateWorkspaceScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/invoke_builder_candidate_workspace_step_001.ps1"
   $PromotionFinalizeScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/finalize_builder_promotion_bundle_001.ps1"
+  $SelfInitiatedGoalSelectScriptPath = Resolve-Phase160DaemonPath -RepoRoot $RepoRoot -Path "modules/select_builder_self_initiated_useful_goal_001.ps1"
   if ($EnableSelfGrowthDuty -and -not (Test-Path -LiteralPath $SelfGrowthDutyScriptPath)) {
     throw "PHASE160_DAEMON_SELF_GROWTH_DUTY_SCRIPT_MISSING=modules/invoke_builder_live_self_growth_duty_step_001.ps1"
   }
@@ -349,6 +356,9 @@ try {
   }
   if ($EnableCandidateWorkspacePromotion -and -not (Test-Path -LiteralPath $PromotionFinalizeScriptPath)) {
     throw "PHASE160E_DAEMON_PROMOTION_FINALIZE_SCRIPT_MISSING=modules/finalize_builder_promotion_bundle_001.ps1"
+  }
+  if ($EnableCandidateWorkspacePromotion -and -not (Test-Path -LiteralPath $SelfInitiatedGoalSelectScriptPath)) {
+    throw "PHASE160F_DAEMON_SELF_INITIATED_GOAL_SELECT_SCRIPT_MISSING=modules/select_builder_self_initiated_useful_goal_001.ps1"
   }
   if ([string]::IsNullOrWhiteSpace($SelfGrowthDutyRoot)) {
     $SelfGrowthDutyRootFull = Join-Path $SessionRootFull "self_growth"
@@ -400,6 +410,10 @@ try {
     head_match = $HeadMatch
     live_repo_guard = $LiveRepoGuard
     candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+    candidate_workspace_status = if ($EnableCandidateWorkspacePromotion -and $CandidateProductionEnabled) { "ENABLED" } elseif ($EnableCandidateWorkspacePromotion) { "BLOCKED" } else { "DISABLED" }
+    self_initiated_goal_selected = $false
+    selected_useful_goal = "NONE"
+    internal_active_task_created = $false
     candidate_production_enabled = $CandidateProductionEnabled
     duration_based_session = $true
     fixed_tick_batch_mode = $false
@@ -547,6 +561,9 @@ try {
         }
         $CandidateWorkspaceResultStatus = "DISABLED"
         $LastCandidateWorkspaceCandidateId = "NONE"
+        $SelfInitiatedSelectionStatus = "NOT_RUN"
+        $SelfInitiatedGoalSelected = $false
+        $SelectedUsefulGoal = "NONE"
         if ($EnableCandidateWorkspacePromotion) {
           $RuntimeGuardOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $RuntimeIdentityScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -Mode GuardCheck -GuardLabel ("after_{0}" -f $NextDutyId) 2>&1 | ForEach-Object { [string]$_ })
           if ($LASTEXITCODE -ne 0) {
@@ -559,6 +576,29 @@ try {
           $LiveRepoGuard = [string]$RuntimeGuardResult.live_repo_guard
           $CandidateProductionEnabled = [bool]$RuntimeGuardResult.candidate_production_enabled
           if ($CandidateProductionEnabled) {
+            $SelfSelectionOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $SelfInitiatedGoalSelectScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -DutyId $LastSelfGrowthDutyId -TickNumber $TickCount -MacroCycleStage $LastMacroCycleStage -CandidateWorkspacePromotionEnabled 2>&1 | ForEach-Object { [string]$_ })
+            if ($LASTEXITCODE -ne 0) {
+              throw "PHASE160F_DAEMON_SELF_INITIATED_GOAL_SELECTION_FAILED exit=$LASTEXITCODE output=$($SelfSelectionOutput -join ' | ')"
+            }
+            $SelfSelectionResult = ($SelfSelectionOutput -join "`n") | ConvertFrom-Json
+            $SelfInitiatedSelectionStatus = [string]$SelfSelectionResult.status
+            if ($SelfSelectionResult.PSObject.Properties.Name -contains "self_initiated_goal_selected") {
+              $SelfInitiatedGoalSelected = [bool]$SelfSelectionResult.self_initiated_goal_selected
+            }
+            if ($SelfSelectionResult.PSObject.Properties.Name -contains "selected_goal_id") {
+              $SelectedUsefulGoal = [string]$SelfSelectionResult.selected_goal_id
+            }
+            Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
+              event_type = "self_initiated_goal_selection_checked"
+              source = "builder_daemon"
+              duty_id = $LastSelfGrowthDutyId
+              tick_number = $TickCount
+              macro_cycle_stage = $LastMacroCycleStage
+              status = $SelfInitiatedSelectionStatus
+              self_initiated_goal_selected = $SelfInitiatedGoalSelected
+              selected_useful_goal = $SelectedUsefulGoal
+              occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+            })
             $CandidateWorkspaceOutput = @(powershell -NoProfile -ExecutionPolicy Bypass -File $CandidateWorkspaceScriptPath -SessionRoot $SessionRootRelative -RunId $RunId -DutyId $LastSelfGrowthDutyId -TickNumber $TickCount 2>&1 | ForEach-Object { [string]$_ })
             if ($LASTEXITCODE -ne 0) {
               throw "PHASE160E_DAEMON_CANDIDATE_WORKSPACE_STEP_FAILED exit=$LASTEXITCODE output=$($CandidateWorkspaceOutput -join ' | ')"
@@ -581,6 +621,7 @@ try {
               occurred_at = (Get-Date).ToUniversalTime().ToString("o")
             })
           } else {
+            $CandidateWorkspaceResultStatus = "BLOCKED"
             Add-Phase160DaemonJsonLine -Path $EventLogPath -Object ([ordered]@{
               event_type = "candidate_workspace_step_blocked_by_runtime_guard"
               source = "builder_daemon"
@@ -617,6 +658,9 @@ try {
           head_match = [bool]$LiveTaskSnapshot.head_match
           live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
           candidate_workspace_status = $CandidateWorkspaceResultStatus
+          self_initiated_goal_selection_status = $SelfInitiatedSelectionStatus
+          self_initiated_goal_selected = $SelfInitiatedGoalSelected
+          selected_useful_goal = $SelectedUsefulGoal
           last_candidate_id = $LastCandidateWorkspaceCandidateId
           candidate_count = [int]$LiveTaskSnapshot.candidate_count
           promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
@@ -676,6 +720,10 @@ try {
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
       candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      candidate_workspace_status = if ($EnableCandidateWorkspacePromotion) { [string]$LiveTaskSnapshot.candidate_workspace_status } else { "DISABLED" }
+      self_initiated_goal_selected = [bool]$LiveTaskSnapshot.self_initiated_goal_selected
+      selected_useful_goal = [string]$LiveTaskSnapshot.selected_useful_goal
+      internal_active_task_created = [bool]$LiveTaskSnapshot.internal_active_task_created
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
@@ -727,6 +775,10 @@ try {
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
       candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      candidate_workspace_status = if ($EnableCandidateWorkspacePromotion) { [string]$LiveTaskSnapshot.candidate_workspace_status } else { "DISABLED" }
+      self_initiated_goal_selected = [bool]$LiveTaskSnapshot.self_initiated_goal_selected
+      selected_useful_goal = [string]$LiveTaskSnapshot.selected_useful_goal
+      internal_active_task_created = [bool]$LiveTaskSnapshot.internal_active_task_created
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
@@ -779,6 +831,10 @@ try {
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
       candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      candidate_workspace_status = if ($EnableCandidateWorkspacePromotion) { [string]$LiveTaskSnapshot.candidate_workspace_status } else { "DISABLED" }
+      self_initiated_goal_selected = [bool]$LiveTaskSnapshot.self_initiated_goal_selected
+      selected_useful_goal = [string]$LiveTaskSnapshot.selected_useful_goal
+      internal_active_task_created = [bool]$LiveTaskSnapshot.internal_active_task_created
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
@@ -827,6 +883,10 @@ try {
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
       candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      candidate_workspace_status = if ($EnableCandidateWorkspacePromotion) { [string]$LiveTaskSnapshot.candidate_workspace_status } else { "DISABLED" }
+      self_initiated_goal_selected = [bool]$LiveTaskSnapshot.self_initiated_goal_selected
+      selected_useful_goal = [string]$LiveTaskSnapshot.selected_useful_goal
+      internal_active_task_created = [bool]$LiveTaskSnapshot.internal_active_task_created
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
@@ -901,6 +961,10 @@ try {
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
       candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      candidate_workspace_status = if ($EnableCandidateWorkspacePromotion) { [string]$LiveTaskSnapshot.candidate_workspace_status } else { "DISABLED" }
+      self_initiated_goal_selected = [bool]$LiveTaskSnapshot.self_initiated_goal_selected
+      selected_useful_goal = [string]$LiveTaskSnapshot.selected_useful_goal
+      internal_active_task_created = [bool]$LiveTaskSnapshot.internal_active_task_created
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
@@ -950,6 +1014,10 @@ try {
       last_macro_cycle_stage = $LastMacroCycleStage
       last_macro_decision = $LastMacroDecision
       candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      candidate_workspace_status = if ($EnableCandidateWorkspacePromotion) { [string]$LiveTaskSnapshot.candidate_workspace_status } else { "DISABLED" }
+      self_initiated_goal_selected = [bool]$LiveTaskSnapshot.self_initiated_goal_selected
+      selected_useful_goal = [string]$LiveTaskSnapshot.selected_useful_goal
+      internal_active_task_created = [bool]$LiveTaskSnapshot.internal_active_task_created
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
@@ -986,10 +1054,14 @@ try {
     process_exit_reason = $StopReason
     macro_cycle_enabled = [bool]$MacroSelfGrowthEnabled
     macro_cycle_id = $ActiveMacroCycleId
-    last_macro_cycle_stage = $LastMacroCycleStage
-    last_macro_decision = $LastMacroDecision
-    candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
-    run_head = [string]$LiveTaskSnapshot.run_head
+      last_macro_cycle_stage = $LastMacroCycleStage
+      last_macro_decision = $LastMacroDecision
+      candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+      candidate_workspace_status = if ($EnableCandidateWorkspacePromotion) { [string]$LiveTaskSnapshot.candidate_workspace_status } else { "DISABLED" }
+      self_initiated_goal_selected = [bool]$LiveTaskSnapshot.self_initiated_goal_selected
+      selected_useful_goal = [string]$LiveTaskSnapshot.selected_useful_goal
+      internal_active_task_created = [bool]$LiveTaskSnapshot.internal_active_task_created
+      run_head = [string]$LiveTaskSnapshot.run_head
     current_head = [string]$LiveTaskSnapshot.current_head
     head_match = [bool]$LiveTaskSnapshot.head_match
     live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
@@ -1064,6 +1136,10 @@ try {
     last_macro_cycle_stage = $LastMacroCycleStage
     last_macro_decision = $LastMacroDecision
     candidate_workspace_promotion_enabled = [bool]$EnableCandidateWorkspacePromotion
+    candidate_workspace_status = if ($EnableCandidateWorkspacePromotion) { [string]$LiveTaskSnapshot.candidate_workspace_status } else { "DISABLED" }
+    self_initiated_goal_selected = [bool]$LiveTaskSnapshot.self_initiated_goal_selected
+    selected_useful_goal = [string]$LiveTaskSnapshot.selected_useful_goal
+    internal_active_task_created = [bool]$LiveTaskSnapshot.internal_active_task_created
     run_head = [string]$LiveTaskSnapshot.run_head
     current_head = [string]$LiveTaskSnapshot.current_head
     head_match = [bool]$LiveTaskSnapshot.head_match

@@ -303,26 +303,53 @@ function New-Phase160ECandidateBundle {
   New-Item -ItemType Directory -Force -Path $candidateDir, (Join-Path $candidateDir "proposed_patch_or_file_payloads") | Out-Null
   $ownerGoal = Get-Phase160ECandidateString -Object $ActiveTask -Name "owner_goal"
   $desiredGap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
-  $targetArea = if ($planItemId -ne "NONE") { "active_plan_item_candidate" } else { "active_task_candidate" }
+  $taskSource = Get-Phase160ECandidateString -Object $ActiveTask -Name "source" -Default "owner"
+  $candidateSource = if ($taskSource -eq "internal_self_selected_goal") { "internal_self_selected_goal" } elseif ($planItemId -ne "NONE") { "plan_item" } else { "owner_task" }
+  $sourceInternalGoalId = Get-Phase160ECandidateString -Object $ActiveTask -Name "internal_goal_id" -Default "NONE"
+  $sourceInternalGoalName = Get-Phase160ECandidateString -Object $ActiveTask -Name "internal_goal_name" -Default "NONE"
+  $targetArea = if ($candidateSource -eq "internal_self_selected_goal") { "self_initiated_useful_goal_selection" } elseif ($planItemId -ne "NONE") { "active_plan_item_candidate" } else { "active_task_candidate" }
   $proposedFile = if ($planItemId -ne "NONE") {
     "modules/{0}_accepted_candidate_placeholder.ps1" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value $planItemId -MaxLength 70)
   } else {
     "modules/{0}_accepted_candidate_placeholder.ps1" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value $taskId -MaxLength 70)
   }
-  $validatorNeeded = @("validators/validate_phase160e_full_long_lived_runner_candidate_workspace_promotion_task_lifecycle_v1.ps1")
+  $validatorNeeded = @(
+    "validators/validate_phase160e_full_long_lived_runner_candidate_workspace_promotion_task_lifecycle_v1.ps1",
+    "validators/validate_phase160f_full_self_initiated_goal_selection_live_candidate_production_v1.ps1"
+  )
+  $expectedCapabilities = @(Get-Phase160ECandidateProperty -Object $ActiveTask -Name "expected_candidate_capabilities" -Default @())
+  if ($expectedCapabilities.Count -lt 1 -or $desiredGap -match "SELF_INITIATED_USEFUL_GOAL_SELECTION|SELF_SELECTED_USEFUL_CANDIDATE_PRODUCTION" -or $ownerGoal -match "self-initiated|useful goal|candidate|organ|module|validator") {
+    $expectedCapabilities = @(
+      "SELF_INITIATED_USEFUL_GOAL_SELECTION",
+      "self_gap_inventory",
+      "usefulness_scoring",
+      "internal_active_task",
+      "internal_active_task_creation",
+      "no_teacher_inbox",
+      "no_teacher_inbox_required",
+      "candidate_bundle_creation",
+      "promotion_bundle_update",
+      "runtime_guard_required"
+    )
+  }
   $candidateCreatedAt = (Get-Date).ToUniversalTime().ToString("o")
   $manifest = [ordered]@{
     status = "PASS"
     candidate_id = $candidateId
     source_task_id = $taskId
+    source = $candidateSource
     source_plan_item_id = $planItemId
+    source_internal_goal_id = $sourceInternalGoalId
+    source_internal_goal_name = $sourceInternalGoalName
     created_from_run_head = [string]$RunManifest.run_head
     run_id = [string]$RunManifest.run_id
     target_area = $targetArea
     owner_goal = $ownerGoal
     desired_next_gap = $desiredGap
     proposed_file_paths = @($proposedFile)
+    proposed_validator_paths = $validatorNeeded
     acceptance_validator_needed = $validatorNeeded
+    expected_candidate_capabilities = $expectedCapabilities
     owner_approval_required = $true
     owner_promotion_gate_required = $true
     candidate_output_is_not_accepted_code = $true
@@ -341,28 +368,64 @@ function New-Phase160ECandidateBundle {
     status = "PASS"
     candidate_id = $candidateId
     proposed_file_paths = @($proposedFile)
+    proposed_validator_paths = $validatorNeeded
+    source = $candidateSource
     proposed_only = $true
     accepted_code_written = $false
   })
   Write-Phase160ECandidateJsonFile -Path (Join-Path $candidateDir "proposed_patch_or_file_payloads/payload.json") -Object ([ordered]@{
     status = "PASS"
     candidate_id = $candidateId
+    source = $candidateSource
     payload_type = "session_local_candidate_payload"
     proposed_file_path = $proposedFile
     payload_note = "Candidate payload is data for owner review only. The live daemon did not write accepted code."
+    required_payload_markers = @(
+      "SELF_INITIATED_USEFUL_GOAL_SELECTION",
+      "self_gap_inventory",
+      "usefulness_scoring",
+      "internal_active_task",
+      "internal_active_task_creation",
+      "no_teacher_inbox",
+      "no_teacher_inbox_required",
+      "candidate_bundle_creation",
+      "promotion_bundle_update",
+      "runtime_guard_required"
+    )
     proposed_content_outline = @(
       "Read run manifest and runtime guard.",
-      "Respect owner promotion gate.",
+      "Build SELF_INITIATED_USEFUL_GOAL_SELECTION support from self_gap_inventory evidence.",
+      "Use usefulness_scoring to rank at least five goals.",
+      "Create internal_active_task without no_teacher_inbox dependency.",
+      "Write candidate_bundle_creation payloads and promotion_bundle_update evidence.",
+      "Respect owner promotion gate and runtime_guard_required before future activation.",
       "Write proof before any future accepted-code promotion."
     )
+    proposed_module_payload = [ordered]@{
+      self_gap_inventory = $true
+      usefulness_scoring = $true
+      internal_active_task_creation = $true
+      no_teacher_inbox_required = $true
+      candidate_bundle_creation = $true
+      promotion_bundle_update = $true
+      runtime_guard_required = $true
+    }
+    proposed_validator_payload = [ordered]@{
+      validator_paths = $validatorNeeded
+      proves_no_teacher_inbox_required = $true
+      proves_owner_review_required = $true
+      proves_runtime_guard_required = $true
+    }
     repo_mutation_performed = $false
   })
   Write-Phase160ECandidateTextFile -Path (Join-Path $candidateDir "candidate_rationale.md") -Text (@(
     "# Candidate Rationale",
     "",
     "candidate_id: $candidateId",
+    "source: $candidateSource",
     "source_task_id: $taskId",
     "source_plan_item_id: $planItemId",
+    "source_internal_goal_id: $sourceInternalGoalId",
     "",
     "This candidate captures a session-local proposal from the live runner. It is intentionally not accepted code and requires owner promotion."
   ) -join "`n")
@@ -370,6 +433,7 @@ function New-Phase160ECandidateBundle {
     status = "PASS"
     candidate_id = $candidateId
     validators_required_before_acceptance = $validatorNeeded
+    proposed_validator_paths = $validatorNeeded
     owner_review_required = $true
     runtime_guard_required = $true
     promotion_requires_fresh_commit_after_owner_review = $true
@@ -391,8 +455,10 @@ function New-Phase160ECandidateBundle {
   Write-Phase160ECandidateJsonFile -Path (Join-Path $candidateDir "candidate_status.json") -Object ([ordered]@{
     status = "CANDIDATE_READY"
     candidate_id = $candidateId
+    source = $candidateSource
     source_task_id = $taskId
     source_plan_item_id = $planItemId
+    source_internal_goal_id = $sourceInternalGoalId
     owner_review_required = $true
     promotion_status = "WAITING_OWNER_REVIEW"
     created_at = $candidateCreatedAt
@@ -400,6 +466,7 @@ function New-Phase160ECandidateBundle {
   Write-Phase160ECandidateJsonFile -Path (Join-Path $CandidateQueueRoot "$candidateId.json") -Object ([ordered]@{
     status = "WAITING_OWNER_REVIEW"
     candidate_id = $candidateId
+    source = $candidateSource
     source_task_id = $taskId
     source_plan_item_id = $planItemId
     candidate_manifest_path = ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath $candidateManifestPath
@@ -555,12 +622,15 @@ try {
     if ($null -ne $candidate) {
       $CandidateCreated = $true
       $LastCandidateId = Get-Phase160ECandidateString -Object $candidate -Name "candidate_id"
+      $candidateSourceForState = Get-Phase160ECandidateString -Object $candidate -Name "source" -Default "owner_task"
       Set-Phase160ECandidatePlanItemWaiting -SessionRootFull $SessionRootFull -PlanItem $ActivePlanItem -CandidateId $LastCandidateId
       Write-Phase160ECandidateJsonFile -Path $ActiveTaskStatePath -Object ([ordered]@{
         status = "WAITING_OWNER_PROMOTION"
+        source = $candidateSourceForState
         active_task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
         active_plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
         candidate_id = $LastCandidateId
+        desired_next_gap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
         run_id = [string]$RunManifest.run_id
         run_head = [string]$RunManifest.run_head
         owner_review_required = $true
@@ -570,6 +640,7 @@ try {
       $receiptPath = Join-Path $TaskCompletionReceiptRoot ("receipt_{0}_{1}.json" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value (Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id") -MaxLength 70), $LastCandidateId)
       Write-Phase160ECandidateJsonFile -Path $receiptPath -Object ([ordered]@{
         status = "WAITING_OWNER_PROMOTION"
+        source = $candidateSourceForState
         task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
         plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
         candidate_id = $LastCandidateId
@@ -667,12 +738,15 @@ try {
     if ($null -ne $candidate) {
       $CandidateCreated = $true
       $LastCandidateId = Get-Phase160ECandidateString -Object $candidate -Name "candidate_id"
+      $candidateSourceForState = Get-Phase160ECandidateString -Object $candidate -Name "source" -Default "owner_task"
       Set-Phase160ECandidatePlanItemWaiting -SessionRootFull $SessionRootFull -PlanItem $ActivePlanItem -CandidateId $LastCandidateId
       Write-Phase160ECandidateJsonFile -Path $ActiveTaskStatePath -Object ([ordered]@{
         status = "WAITING_OWNER_PROMOTION"
+        source = $candidateSourceForState
         active_task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
         active_plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
         candidate_id = $LastCandidateId
+        desired_next_gap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
         run_id = [string]$RunManifest.run_id
         run_head = [string]$RunManifest.run_head
         owner_review_required = $true
@@ -681,6 +755,7 @@ try {
       })
       Write-Phase160ECandidateJsonFile -Path (Join-Path $TaskCompletionReceiptRoot ("receipt_{0}_{1}.json" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value (Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id") -MaxLength 70), $LastCandidateId)) -Object ([ordered]@{
         status = "WAITING_OWNER_PROMOTION"
+        source = $candidateSourceForState
         task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
         plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
         candidate_id = $LastCandidateId

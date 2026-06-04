@@ -184,7 +184,11 @@ try {
     "modules/watch_builder_live_growth_session_observer_001.ps1",
     "modules/inspect_builder_runtime_identity_001.ps1",
     "modules/invoke_builder_candidate_workspace_step_001.ps1",
-    "modules/finalize_builder_promotion_bundle_001.ps1"
+    "modules/finalize_builder_promotion_bundle_001.ps1",
+    "modules/select_builder_self_initiated_useful_goal_001.ps1",
+    "modules/invoke_builder_internal_active_task_creation_001.ps1",
+    "modules/score_builder_self_growth_goal_001.ps1",
+    "modules/inspect_builder_self_growth_evidence_001.ps1"
   )
 
   if ($Mode -eq "Initialize") {

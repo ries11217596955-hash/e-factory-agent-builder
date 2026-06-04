@@ -199,6 +199,8 @@ try {
   $TaskCompletionReceiptsPath = Join-Path $SessionRootFull "task_lifecycle/task_completion_receipts"
   $BacklogAdvancementLogPath = Join-Path $SessionRootFull "task_lifecycle/backlog_advancement_log.jsonl"
   $PlanAdvancementLogPath = Join-Path $SessionRootFull "task_lifecycle/plan_item_advancement_log.jsonl"
+  $SelectedUsefulGoalPath = Join-Path $SessionRootFull "self_initiated_goal_selection/selected_useful_goal.json"
+  $InternalActiveTaskPath = Join-Path $SessionRootFull "self_initiated_goal_selection/internal_active_task.json"
 
   $StartTime = Get-Date
   $EndTime = $StartTime.AddSeconds($DurationSeconds)
@@ -229,6 +231,13 @@ try {
   $BacklogAdvancementDetected = $false
   $PlanItemAdvancementDetected = $false
   $RuntimeGuardViolationDetected = $false
+  $CandidateWorkspaceEnabledDetected = $false
+  $OwnerActiveTaskToCandidateDetected = $false
+  $InternalSelfSelectedGoalDetected = $false
+  $InternalActiveTaskDetected = $false
+  $CandidateBundleCreatedDetected = $false
+  $LiveRepoGuardPassDetected = $false
+  $UnsafeRepoMutationDetected = $false
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -386,6 +395,12 @@ try {
     if ($null -ne $RuntimeGuard -and $RuntimeGuard.PSObject.Properties.Name -contains "status" -and [string]$RuntimeGuard.status -eq "BLOCKED") {
       $RuntimeGuardViolationDetected = $true
     }
+    if ($null -ne $RuntimeGuard -and $RuntimeGuard.PSObject.Properties.Name -contains "status" -and [string]$RuntimeGuard.status -eq "PASS") {
+      $LiveRepoGuardPassDetected = $true
+      if ($CandidateWorkspaceObserved) {
+        $CandidateWorkspaceEnabledDetected = $true
+      }
+    }
     $ActiveTaskState = Read-Phase160ObserverJsonSafe -Path $ActiveTaskStatePath
     $TaskCompletionReceiptCount = Get-Phase160ObserverJsonFileCount -Path $TaskCompletionReceiptsPath
     if (($null -ne $ActiveTaskState -and $ActiveTaskState.PSObject.Properties.Name -contains "status" -and [string]$ActiveTaskState.status -eq "WAITING_OWNER_PROMOTION") -or $TaskCompletionReceiptCount -gt 0) {
@@ -396,6 +411,34 @@ try {
     }
     if (Get-Phase160ObserverJsonLineCount -Path $PlanAdvancementLogPath -gt 0) {
       $PlanItemAdvancementDetected = $true
+    }
+    if (Test-Path -LiteralPath $SelectedUsefulGoalPath) {
+      $InternalSelfSelectedGoalDetected = $true
+    }
+    if (Test-Path -LiteralPath $InternalActiveTaskPath) {
+      $InternalActiveTaskDetected = $true
+    }
+    $CandidateManifestCount = 0
+    $CandidateManifests = @()
+    $CandidateBundleRoot = Join-Path $SessionRootFull "candidate_workspace/candidate_bundles"
+    if (Test-Path -LiteralPath $CandidateBundleRoot) {
+      $CandidateManifestFiles = @(Get-ChildItem -LiteralPath $CandidateBundleRoot -File -Filter "candidate_manifest.json" -Recurse -ErrorAction SilentlyContinue)
+      $CandidateManifestCount = $CandidateManifestFiles.Count
+      foreach ($CandidateManifestFile in $CandidateManifestFiles) {
+        $CandidateManifest = Read-Phase160ObserverJsonSafe -Path $CandidateManifestFile.FullName
+        if ($null -ne $CandidateManifest) {
+          $CandidateManifests += $CandidateManifest
+        }
+      }
+    }
+    if ($CandidateManifestCount -gt 0) {
+      $CandidateBundleCreatedDetected = $true
+    }
+    if (@($CandidateManifests | Where-Object { [string]$_.source -eq "owner_task" -and [string]$_.source_task_id -eq "PHASE160F_META_SELF_INITIATED_USEFUL_GOAL_SELECTION_001" }).Count -gt 0) {
+      $OwnerActiveTaskToCandidateDetected = $true
+    }
+    if ((Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern '"event_type":"candidate_workspace_step_completed"') -gt 0 -and (Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern 'PHASE160F_META_SELF_INITIATED_USEFUL_GOAL_SELECTION_001') -gt 0) {
+      $OwnerActiveTaskToCandidateDetected = $true
     }
 
     if ($StaleThisPoll -and -not (Test-Path -LiteralPath $FinalStatePath)) {
@@ -493,6 +536,13 @@ try {
       backlog_advancement_detected = $BacklogAdvancementDetected
       plan_item_advancement_detected = $PlanItemAdvancementDetected
       runtime_guard_violation_detected = $RuntimeGuardViolationDetected
+      candidate_workspace_enabled = $CandidateWorkspaceEnabledDetected
+      owner_active_task_to_candidate_production = $OwnerActiveTaskToCandidateDetected
+      internal_self_selected_goal_created = $InternalSelfSelectedGoalDetected
+      internal_active_task_created = $InternalActiveTaskDetected
+      candidate_bundle_created = $CandidateBundleCreatedDetected
+      live_repo_guard_pass = $LiveRepoGuardPassDetected
+      unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
       occurred_at = $Now.ToUniversalTime().ToString("o")
     })
 
@@ -539,6 +589,13 @@ try {
     backlog_advancement_detected = $BacklogAdvancementDetected
     plan_item_advancement_detected = $PlanItemAdvancementDetected
     runtime_guard_violation_detected = $RuntimeGuardViolationDetected
+    candidate_workspace_enabled = $CandidateWorkspaceEnabledDetected
+    owner_active_task_to_candidate_production = $OwnerActiveTaskToCandidateDetected
+    internal_self_selected_goal_created = $InternalSelfSelectedGoalDetected
+    internal_active_task_created = $InternalActiveTaskDetected
+    candidate_bundle_created = $CandidateBundleCreatedDetected
+    live_repo_guard_pass = $LiveRepoGuardPassDetected
+    unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
     code_execution_requested = $false
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
@@ -580,6 +637,13 @@ try {
     backlog_advancement_detected = $BacklogAdvancementDetected
     plan_item_advancement_detected = $PlanItemAdvancementDetected
     runtime_guard_violation_detected = $RuntimeGuardViolationDetected
+    candidate_workspace_enabled = $CandidateWorkspaceEnabledDetected
+    owner_active_task_to_candidate_production = $OwnerActiveTaskToCandidateDetected
+    internal_self_selected_goal_created = $InternalSelfSelectedGoalDetected
+    internal_active_task_created = $InternalActiveTaskDetected
+    candidate_bundle_created = $CandidateBundleCreatedDetected
+    live_repo_guard_pass = $LiveRepoGuardPassDetected
+    unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
     observer_log_created = (Test-Path -LiteralPath $ObserverLogPath)
     observer_summary_created = (Test-Path -LiteralPath $ObserverSummaryPath)
   } | ConvertTo-Json -Depth 20

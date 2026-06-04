@@ -171,11 +171,15 @@ try {
     $decision = Get-Phase160EPromotionString -Object $candidateManifest -Name "decision" -Default (Get-Phase160EPromotionString -Object $candidateStatus -Name "status" -Default "UNKNOWN")
     $CandidateRecords += [pscustomobject][ordered]@{
       candidate_id = Get-Phase160EPromotionString -Object $candidateManifest -Name "candidate_id"
+      source = Get-Phase160EPromotionString -Object $candidateManifest -Name "source" -Default "owner_task"
       source_task_id = Get-Phase160EPromotionString -Object $candidateManifest -Name "source_task_id"
       source_plan_item_id = Get-Phase160EPromotionString -Object $candidateManifest -Name "source_plan_item_id"
+      source_internal_goal_id = Get-Phase160EPromotionString -Object $candidateManifest -Name "source_internal_goal_id"
+      source_internal_goal_name = Get-Phase160EPromotionString -Object $candidateManifest -Name "source_internal_goal_name"
       created_from_run_head = Get-Phase160EPromotionString -Object $candidateManifest -Name "created_from_run_head"
       target_area = Get-Phase160EPromotionString -Object $candidateManifest -Name "target_area"
       proposed_file_paths = @(Get-Phase160EPromotionProperty -Object $candidateManifest -Name "proposed_file_paths" -Default @())
+      proposed_validator_paths = @(Get-Phase160EPromotionProperty -Object $candidateManifest -Name "proposed_validator_paths" -Default @())
       acceptance_validator_needed = @(Get-Phase160EPromotionProperty -Object $candidateManifest -Name "acceptance_validator_needed" -Default @())
       decision = $decision
       bundle_path = ConvertTo-Phase160EPromotionRelativePath -RepoRoot $RepoRoot -FullPath $bundleDirectory.FullName
@@ -187,7 +191,14 @@ try {
   $blockedCandidates = @($CandidateRecords | Where-Object { $_.decision -match "BLOCKED" })
   $sourceTasks = @($CandidateRecords | ForEach-Object { [string]$_.source_task_id } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) -and $_ -ne "NONE" } | Select-Object -Unique)
   $sourcePlanItems = @($CandidateRecords | ForEach-Object { [string]$_.source_plan_item_id } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) -and $_ -ne "NONE" } | Select-Object -Unique)
-  $requiredValidators = @($CandidateRecords | ForEach-Object { $_.acceptance_validator_needed } | ForEach-Object { [string]$_ } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)
+  $sourceInternalGoals = @($CandidateRecords | Where-Object { [string]$_.source_internal_goal_id -ne "NONE" } | ForEach-Object {
+    [ordered]@{
+      goal_id = [string]$_.source_internal_goal_id
+      goal_name = [string]$_.source_internal_goal_name
+      candidate_id = [string]$_.candidate_id
+    }
+  })
+  $requiredValidators = @($CandidateRecords | ForEach-Object { @($_.acceptance_validator_needed) + @($_.proposed_validator_paths) } | ForEach-Object { [string]$_ } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)
   $proposedFiles = @($CandidateRecords | ForEach-Object { $_.proposed_file_paths } | ForEach-Object { [string]$_ } | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)
 
   $PromotionManifest = [ordered]@{
@@ -203,6 +214,7 @@ try {
     candidate_ids = @($CandidateRecords | ForEach-Object { [string]$_.candidate_id })
     source_tasks = $sourceTasks
     source_plan_items = $sourcePlanItems
+    source_internal_goals = $sourceInternalGoals
     proposed_files_summary = $proposedFiles
     required_validators = $requiredValidators
     owner_review_required = $true
@@ -220,7 +232,7 @@ try {
   Write-Phase160EPromotionJsonFile -Path $PromotionManifestPath -Object $PromotionManifest
 
   $summaryLines = @(
-    "# PHASE160E Owner Review Summary",
+    "# PHASE160F Owner Review Summary",
     "",
     "status: WAITING_OWNER_REVIEW",
     "run_id: $($PromotionManifest.run_id)",
@@ -240,9 +252,21 @@ try {
     $summaryLines += "- NONE"
   } else {
     foreach ($candidate in $CandidateRecords) {
-      $summaryLines += "- $($candidate.candidate_id) from task $($candidate.source_task_id) plan_item $($candidate.source_plan_item_id)"
+      $sourceLabel = if ([string]$candidate.source -eq "internal_self_selected_goal") { "internal self-selected goal" } elseif ([string]$candidate.source -eq "plan_item") { "plan item" } else { "owner task" }
+      $summaryLines += "- $($candidate.candidate_id) from $sourceLabel task $($candidate.source_task_id) plan_item $($candidate.source_plan_item_id) internal_goal $($candidate.source_internal_goal_id)"
     }
   }
+  $summaryLines += @(
+    "",
+    "## Review Notes",
+    "- What candidate was created: session-local candidate bundles listed above.",
+    "- Source: owner task, plan item, or internal self-selected goal is recorded per candidate.",
+    "- Why useful: candidates target autonomy, safety, owner value, and validator-feasible self-growth.",
+    "- Not applied to repo: no candidate payload was written to tracked accepted code.",
+    "- Validators needed after promotion: $($requiredValidators -join ', ')",
+    "- Risks and quarantine notes: incomplete candidates remain review-only and can be quarantined by the owner.",
+    "- Restart rule: promotion requires owner stop, check, promotion, commit, and daemon restart."
+  )
   Write-Phase160EPromotionTextFile -Path (Join-Path $PromotionBundleRoot "owner_review_summary.md") -Text ($summaryLines -join "`n")
 
   $ProofIndex = [ordered]@{

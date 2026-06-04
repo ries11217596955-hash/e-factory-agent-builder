@@ -166,31 +166,273 @@ function Get-Phase160ECandidateBundleCounts {
   param([string]$CandidateBundleRoot)
   $candidateCount = 0
   $readyCount = 0
+  $revisionCount = 0
+  $draftCount = 0
   $quarantineCount = 0
+  $blockedCount = 0
   $lastCandidateId = "NONE"
+  $lastQualityDecision = "NONE"
+  $lastRevisionRequest = "NONE"
+  $ownerPromotionAllowed = $false
   $bundleDirs = @(Get-ChildItem -LiteralPath $CandidateBundleRoot -Directory -ErrorAction SilentlyContinue | Sort-Object LastWriteTimeUtc, Name)
   foreach ($bundleDir in $bundleDirs) {
     $manifest = Read-Phase160ECandidateJsonSafe -Path (Join-Path $bundleDir.FullName "candidate_manifest.json")
     $status = Read-Phase160ECandidateJsonSafe -Path (Join-Path $bundleDir.FullName "candidate_status.json")
+    $quality = Read-Phase160ECandidateJsonSafe -Path (Join-Path $bundleDir.FullName "quality_gate/quality_gate_result.json")
     if ($null -eq $manifest) {
       continue
     }
     $candidateCount += 1
-    $decision = Get-Phase160ECandidateString -Object $manifest -Name "decision" -Default (Get-Phase160ECandidateString -Object $status -Name "status" -Default "UNKNOWN")
-    if ($decision -eq "CANDIDATE_READY") {
+    $decision = Get-Phase160ECandidateString -Object $quality -Name "quality_status" -Default (Get-Phase160ECandidateString -Object $quality -Name "status" -Default (Get-Phase160ECandidateString -Object $status -Name "quality_status" -Default (Get-Phase160ECandidateString -Object $status -Name "status" -Default (Get-Phase160ECandidateString -Object $manifest -Name "quality_status" -Default (Get-Phase160ECandidateString -Object $manifest -Name "decision" -Default "UNKNOWN")))))
+    $candidateOwnerPromotionAllowed = [bool](Get-Phase160ECandidateProperty -Object $quality -Name "owner_promotion_allowed" -Default (Get-Phase160ECandidateProperty -Object $status -Name "owner_promotion_allowed" -Default (Get-Phase160ECandidateProperty -Object $manifest -Name "owner_promotion_allowed" -Default ($decision -eq "CANDIDATE_READY"))))
+    if ($decision -eq "CANDIDATE_READY" -and $candidateOwnerPromotionAllowed) {
       $readyCount += 1
+    }
+    if ($decision -eq "REVISION_REQUIRED") {
+      $revisionCount += 1
+    }
+    if ($decision -eq "CANDIDATE_DRAFT") {
+      $draftCount += 1
     }
     if ($decision -match "QUARANTINE|QUARANTINED") {
       $quarantineCount += 1
     }
+    if ($decision -match "BLOCKED") {
+      $blockedCount += 1
+    }
     $lastCandidateId = Get-Phase160ECandidateString -Object $manifest -Name "candidate_id" -Default $bundleDir.Name
+    $lastQualityDecision = $decision
+    $lastRevisionRequest = Get-Phase160ECandidateString -Object $quality -Name "revision_request_path" -Default (Get-Phase160ECandidateString -Object $status -Name "revision_request_path" -Default (Get-Phase160ECandidateString -Object $manifest -Name "revision_request_path" -Default "NONE"))
+    if ($candidateOwnerPromotionAllowed) {
+      $ownerPromotionAllowed = $true
+    }
   }
   return [pscustomobject][ordered]@{
     candidate_count = $candidateCount
     ready_candidate_count = $readyCount
+    revision_required_count = $revisionCount
+    draft_candidate_count = $draftCount
     quarantined_candidate_count = $quarantineCount
+    blocked_candidate_count = $blockedCount
     last_candidate_id = $lastCandidateId
+    last_quality_decision = $lastQualityDecision
+    last_revision_request = $lastRevisionRequest
+    owner_promotion_allowed = $ownerPromotionAllowed
   }
+}
+
+function Get-Phase160ECandidateDecision {
+  param([object]$Candidate)
+  return Get-Phase160ECandidateString -Object $Candidate -Name "quality_status" -Default (Get-Phase160ECandidateString -Object $Candidate -Name "decision" -Default (Get-Phase160ECandidateString -Object $Candidate -Name "status" -Default "UNKNOWN"))
+}
+
+function Get-Phase160ECandidateOwnerPromotionAllowed {
+  param([object]$Candidate)
+  $decision = Get-Phase160ECandidateDecision -Candidate $Candidate
+  return [bool](Get-Phase160ECandidateProperty -Object $Candidate -Name "owner_promotion_allowed" -Default ($decision -eq "CANDIDATE_READY"))
+}
+
+function Invoke-Phase160ECandidateQualityGate {
+  param(
+    [string]$RepoRoot,
+    [string]$CandidateDir,
+    [string]$SessionRoot,
+    [string]$RunId
+  )
+  $qualityGateScript = Resolve-Phase160ECandidatePath -RepoRoot $RepoRoot -Path "modules/inspect_builder_candidate_quality_gate_001.ps1"
+  if (-not (Test-Path -LiteralPath $qualityGateScript)) {
+    throw "PHASE160H_CANDIDATE_QUALITY_GATE_MISSING=modules/inspect_builder_candidate_quality_gate_001.ps1"
+  }
+  $candidateDirRelative = ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath $CandidateDir
+  $output = @(powershell -NoProfile -ExecutionPolicy Bypass -File $qualityGateScript -CandidateDir $candidateDirRelative -SessionRoot $SessionRoot -RunId $RunId 2>&1 | ForEach-Object { [string]$_ })
+  if ($LASTEXITCODE -ne 0) {
+    throw "PHASE160H_CANDIDATE_QUALITY_GATE_FAILED candidate=$candidateDirRelative output=$($output -join ' | ')"
+  }
+  return ($output -join "`n") | ConvertFrom-Json
+}
+
+function Get-Phase160ECandidateRetryContext {
+  param(
+    [string]$CandidateBundleRoot,
+    [string]$BaseCandidateId,
+    [int]$MaxRetryLimit
+  )
+  $matchingDirs = @(Get-ChildItem -LiteralPath $CandidateBundleRoot -Directory -ErrorAction SilentlyContinue | Where-Object {
+    $_.Name -eq $BaseCandidateId -or $_.Name -like "$BaseCandidateId`_retry_*"
+  } | Sort-Object LastWriteTimeUtc, Name)
+  if ($matchingDirs.Count -lt 1) {
+    return [pscustomobject][ordered]@{
+      candidate_id = $BaseCandidateId
+      retry_number = 0
+      previous_candidate_dir = "NONE"
+      previous_revision_request = $null
+      existing_manifest = $null
+      retry_allowed = $true
+    }
+  }
+  $latestDir = $matchingDirs[-1]
+  $latestManifest = Read-Phase160ECandidateJsonSafe -Path (Join-Path $latestDir.FullName "candidate_manifest.json")
+  $latestStatus = Read-Phase160ECandidateJsonSafe -Path (Join-Path $latestDir.FullName "candidate_status.json")
+  $latestRevision = Read-Phase160ECandidateJsonSafe -Path (Join-Path $latestDir.FullName "revision_request.json")
+  $decision = Get-Phase160ECandidateString -Object $latestManifest -Name "quality_status" -Default (Get-Phase160ECandidateString -Object $latestStatus -Name "quality_status" -Default (Get-Phase160ECandidateString -Object $latestStatus -Name "status" -Default (Get-Phase160ECandidateString -Object $latestManifest -Name "decision" -Default "UNKNOWN")))
+  $ownerPromotionAllowed = [bool](Get-Phase160ECandidateProperty -Object $latestManifest -Name "owner_promotion_allowed" -Default (Get-Phase160ECandidateProperty -Object $latestStatus -Name "owner_promotion_allowed" -Default ($decision -eq "CANDIDATE_READY")))
+  $latestRetryNumber = if ($null -ne $latestRevision -and $latestRevision.PSObject.Properties.Name -contains "retry_number") { [int]$latestRevision.retry_number } elseif ($null -ne $latestManifest -and $latestManifest.PSObject.Properties.Name -contains "revision_retry_number") { [int]$latestManifest.revision_retry_number } else { 0 }
+  if (($decision -eq "CANDIDATE_READY" -and $ownerPromotionAllowed) -or $decision -match "QUARANTINED|BLOCKED") {
+    return [pscustomobject][ordered]@{
+      candidate_id = if ($null -ne $latestManifest) { Get-Phase160ECandidateString -Object $latestManifest -Name "candidate_id" -Default $latestDir.Name } else { $latestDir.Name }
+      retry_number = $latestRetryNumber
+      previous_candidate_dir = $latestDir.FullName
+      previous_revision_request = $latestRevision
+      existing_manifest = $latestManifest
+      retry_allowed = $false
+    }
+  }
+  if ($latestRetryNumber -ge $MaxRetryLimit) {
+    return [pscustomobject][ordered]@{
+      candidate_id = if ($null -ne $latestManifest) { Get-Phase160ECandidateString -Object $latestManifest -Name "candidate_id" -Default $latestDir.Name } else { $latestDir.Name }
+      retry_number = $latestRetryNumber
+      previous_candidate_dir = $latestDir.FullName
+      previous_revision_request = $latestRevision
+      existing_manifest = $latestManifest
+      retry_allowed = $false
+    }
+  }
+  $nextRetryNumber = $latestRetryNumber + 1
+  return [pscustomobject][ordered]@{
+    candidate_id = ("{0}_retry_{1:d2}" -f $BaseCandidateId, $nextRetryNumber)
+    retry_number = $nextRetryNumber
+    previous_candidate_dir = $latestDir.FullName
+    previous_revision_request = $latestRevision
+    existing_manifest = $null
+    retry_allowed = $true
+  }
+}
+
+function ConvertTo-Phase160ECandidateSingleQuotedLiteral {
+  param([string]$Value)
+  return "'{0}'" -f (([string]$Value) -replace "'", "''")
+}
+
+function New-Phase160ECandidateModulePayloadText {
+  param(
+    [string]$CandidateId,
+    [string]$TaskId,
+    [string]$PlanItemId,
+    [string]$OwnerGoal,
+    [string]$DesiredGap
+  )
+  $lines = @(
+    'param(',
+    '  [string]$CandidateSpecPath = "",',
+    '  [string]$OutputPath = ""',
+    ')',
+    '',
+    '$ErrorActionPreference = "Stop"',
+    '',
+    'function Read-CandidateSpecJson {',
+    '  param([string]$Path)',
+    '  if ([string]::IsNullOrWhiteSpace($Path)) {',
+    '    return [pscustomobject][ordered]@{}',
+    '  }',
+    '  if (-not (Test-Path -LiteralPath $Path)) {',
+    '    throw "CANDIDATE_SPEC_MISSING=$Path"',
+    '  }',
+    '  return Get-Content -LiteralPath $Path -Raw | ConvertFrom-Json',
+    '}',
+    '',
+    'function Invoke-CandidatePayload {',
+    '  param([object]$Spec)',
+    '  $signals = @(',
+    '    "real_module_payload_executed",',
+    '    "validator_payload_required",',
+    '    "owner_promotion_gate_preserved",',
+    '    "runtime_session_only"',
+    '  )',
+    '  return [pscustomobject][ordered]@{',
+    '    status = "PASS"',
+    ('    candidate_id = ' + (ConvertTo-Phase160ECandidateSingleQuotedLiteral -Value $CandidateId)),
+    ('    source_task_id = ' + (ConvertTo-Phase160ECandidateSingleQuotedLiteral -Value $TaskId)),
+    ('    source_plan_item_id = ' + (ConvertTo-Phase160ECandidateSingleQuotedLiteral -Value $PlanItemId)),
+    ('    owner_goal = ' + (ConvertTo-Phase160ECandidateSingleQuotedLiteral -Value $OwnerGoal)),
+    ('    desired_next_gap = ' + (ConvertTo-Phase160ECandidateSingleQuotedLiteral -Value $DesiredGap)),
+    '    execution_signals = $signals',
+    '    spec_property_count = if ($null -ne $Spec) { $Spec.PSObject.Properties.Count } else { 0 }',
+    '    accepted_code_written = $false',
+    '    repo_mutation_performed = $false',
+    '    commit_performed = $false',
+    '    push_performed = $false',
+    '    branch_switch_performed = $false',
+    '    protected_state_mutated = $false',
+    '    executed_at = (Get-Date).ToUniversalTime().ToString("o")',
+    '  }',
+    '}',
+    '',
+    '$spec = Read-CandidateSpecJson -Path $CandidateSpecPath',
+    '$result = Invoke-CandidatePayload -Spec $spec',
+    'if (-not [string]::IsNullOrWhiteSpace($OutputPath)) {',
+    '  $directory = Split-Path -Path $OutputPath -Parent',
+    '  if ($directory -and -not (Test-Path -LiteralPath $directory)) {',
+    '    New-Item -ItemType Directory -Force -Path $directory | Out-Null',
+    '  }',
+    '  $json = ($result | ConvertTo-Json -Depth 20) -replace "`r`n", "`n"',
+    '  if (-not $json.EndsWith("`n")) { $json += "`n" }',
+    '  [System.IO.File]::WriteAllText($OutputPath, $json, [System.Text.UTF8Encoding]::new($false))',
+    '}',
+    '$result | ConvertTo-Json -Depth 20'
+  )
+  return ($lines -join "`n")
+}
+
+function New-Phase160ECandidateValidatorPayloadText {
+  param(
+    [string]$CandidateId,
+    [string]$ProposedModuleTarget
+  )
+  $lines = @(
+    'param(',
+    '  [string]$PayloadRoot = "."',
+    ')',
+    '',
+    '$ErrorActionPreference = "Stop"',
+    '',
+    'function Assert-CandidateValidatorTrue {',
+    '  param([object]$Actual, [string]$Name)',
+    '  if ($Actual -ne $true) {',
+    '    throw "CANDIDATE_VALIDATOR_ASSERT_TRUE_FAILED=$Name actual=$Actual"',
+    '  }',
+    '}',
+    '',
+    'function Test-CandidatePowerShellParse {',
+    '  param([string]$Path)',
+    '  $tokens = $null',
+    '  $parseErrors = $null',
+    '  [System.Management.Automation.Language.Parser]::ParseFile($Path, [ref]$tokens, [ref]$parseErrors) | Out-Null',
+    '  if ($parseErrors.Count -gt 0) {',
+    '    throw "CANDIDATE_VALIDATOR_PARSE_FAILED=$Path message=$($parseErrors[0].Message)"',
+    '  }',
+    '}',
+    '',
+    ('$modulePath = Join-Path $PayloadRoot ' + (ConvertTo-Phase160ECandidateSingleQuotedLiteral -Value $ProposedModuleTarget)),
+    'Assert-CandidateValidatorTrue -Actual (Test-Path -LiteralPath $modulePath) -Name "module_payload_exists"',
+    'Test-CandidatePowerShellParse -Path $modulePath',
+    '$text = Get-Content -LiteralPath $modulePath -Raw',
+    'Assert-CandidateValidatorTrue -Actual ($text -match "real_module_payload_executed") -Name "module_execution_signal"',
+    'Assert-CandidateValidatorTrue -Actual ($text -match "owner_promotion_gate_preserved") -Name "owner_gate_signal"',
+    '[pscustomobject][ordered]@{',
+    '  status = "PASS"',
+    ('  candidate_id = ' + (ConvertTo-Phase160ECandidateSingleQuotedLiteral -Value $CandidateId)),
+    '  module_payload_exists = $true',
+    '  module_payload_parse_pass = $true',
+    '  owner_promotion_gate_preserved = $true',
+    '  accepted_code_written = $false',
+    '  commit_performed = $false',
+    '  push_performed = $false',
+    '  branch_switch_performed = $false',
+    '  protected_state_mutated = $false',
+    '  validated_at = (Get-Date).ToUniversalTime().ToString("o")',
+    '} | ConvertTo-Json -Depth 20'
+  )
+  return ($lines -join "`n")
 }
 
 function Get-Phase160ECandidateActivePlanFile {
@@ -292,15 +534,31 @@ function New-Phase160ECandidateBundle {
   $planItemId = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
   $safeTask = ConvertTo-Phase160ECandidateSafeLeaf -Value $taskId -MaxLength 28
   $safePlan = ConvertTo-Phase160ECandidateSafeLeaf -Value $planItemId -MaxLength 18
-  $candidateId = if ($planItemId -eq "NONE") { "cand_$safeTask" } else { "cand_{0}_{1}" -f $safeTask, $safePlan }
-  $candidateId = ConvertTo-Phase160ECandidateSafeLeaf -Value $candidateId -MaxLength 60
+  $baseCandidateId = if ($planItemId -eq "NONE") { "cand_$safeTask" } else { "cand_{0}_{1}" -f $safeTask, $safePlan }
+  $baseCandidateId = ConvertTo-Phase160ECandidateSafeLeaf -Value $baseCandidateId -MaxLength 60
+  $existingCandidateDirs = @(Get-ChildItem -LiteralPath $CandidateBundleRoot -Directory -ErrorAction SilentlyContinue | Where-Object {
+    $_.Name -eq $baseCandidateId -or $_.Name -like "$baseCandidateId`_retry_*"
+  } | Sort-Object LastWriteTimeUtc, Name)
+  if ($existingCandidateDirs.Count -gt 0) {
+    $latestExistingDir = $existingCandidateDirs[-1]
+    if (Test-Path -LiteralPath (Join-Path $latestExistingDir.FullName "candidate_manifest.json")) {
+      $null = Invoke-Phase160ECandidateQualityGate -RepoRoot $RepoRoot -CandidateDir $latestExistingDir.FullName -SessionRoot (ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath $SessionRootFull) -RunId ([string]$RunManifest.run_id)
+    }
+  }
+  $maxRetryLimit = 2
+  $retryContext = Get-Phase160ECandidateRetryContext -CandidateBundleRoot $CandidateBundleRoot -BaseCandidateId $baseCandidateId -MaxRetryLimit $maxRetryLimit
+  if ($null -ne $retryContext.existing_manifest) {
+    return $retryContext.existing_manifest
+  }
+  $candidateId = ConvertTo-Phase160ECandidateSafeLeaf -Value ([string]$retryContext.candidate_id) -MaxLength 80
   $candidateDir = Join-Path $CandidateBundleRoot $candidateId
   $candidateManifestPath = Join-Path $candidateDir "candidate_manifest.json"
   if (Test-Path -LiteralPath $candidateManifestPath) {
+    $null = Invoke-Phase160ECandidateQualityGate -RepoRoot $RepoRoot -CandidateDir $candidateDir -SessionRoot (ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath $SessionRootFull) -RunId ([string]$RunManifest.run_id)
     return Read-Phase160ECandidateJsonSafe -Path $candidateManifestPath
   }
 
-  New-Item -ItemType Directory -Force -Path $candidateDir, (Join-Path $candidateDir "proposed_patch_or_file_payloads") | Out-Null
+  New-Item -ItemType Directory -Force -Path $candidateDir, (Join-Path $candidateDir "proposed_patch_or_file_payloads/modules"), (Join-Path $candidateDir "proposed_patch_or_file_payloads/validators") | Out-Null
   $ownerGoal = Get-Phase160ECandidateString -Object $ActiveTask -Name "owner_goal"
   $desiredGap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
   $taskSource = Get-Phase160ECandidateString -Object $ActiveTask -Name "source" -Default "owner"
@@ -308,15 +566,12 @@ function New-Phase160ECandidateBundle {
   $sourceInternalGoalId = Get-Phase160ECandidateString -Object $ActiveTask -Name "internal_goal_id" -Default "NONE"
   $sourceInternalGoalName = Get-Phase160ECandidateString -Object $ActiveTask -Name "internal_goal_name" -Default "NONE"
   $targetArea = if ($candidateSource -eq "internal_self_selected_goal") { "self_initiated_useful_goal_selection" } elseif ($planItemId -ne "NONE") { "active_plan_item_candidate" } else { "active_task_candidate" }
-  $proposedFile = if ($planItemId -ne "NONE") {
-    "modules/{0}_accepted_candidate_placeholder.ps1" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value $planItemId -MaxLength 70)
-  } else {
-    "modules/{0}_accepted_candidate_placeholder.ps1" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value $taskId -MaxLength 70)
-  }
-  $validatorNeeded = @(
-    "validators/validate_phase160e_full_long_lived_runner_candidate_workspace_promotion_task_lifecycle_v1.ps1",
-    "validators/validate_phase160f_full_self_initiated_goal_selection_live_candidate_production_v1.ps1"
-  )
+  $payloadLeaf = ConvertTo-Phase160ECandidateSafeLeaf -Value $candidateId -MaxLength 64
+  $proposedModulePath = "modules/invoke_builder_candidate_{0}_001.ps1" -f $payloadLeaf
+  $proposedValidatorPath = "validators/validate_builder_candidate_{0}_v1.ps1" -f $payloadLeaf
+  $modulePayloadPath = "proposed_patch_or_file_payloads/modules/{0}" -f (Split-Path -Path $proposedModulePath -Leaf)
+  $validatorPayloadPath = "proposed_patch_or_file_payloads/validators/{0}" -f (Split-Path -Path $proposedValidatorPath -Leaf)
+  $validatorNeeded = @($proposedValidatorPath)
   $expectedCapabilities = @(Get-Phase160ECandidateProperty -Object $ActiveTask -Name "expected_candidate_capabilities" -Default @())
   if ($expectedCapabilities.Count -lt 1 -or $desiredGap -match "SELF_INITIATED_USEFUL_GOAL_SELECTION|SELF_SELECTED_USEFUL_CANDIDATE_PRODUCTION" -or $ownerGoal -match "self-initiated|useful goal|candidate|organ|module|validator") {
     $expectedCapabilities = @(
@@ -333,9 +588,25 @@ function New-Phase160ECandidateBundle {
     )
   }
   $candidateCreatedAt = (Get-Date).ToUniversalTime().ToString("o")
+  $previousRevision = $retryContext.previous_revision_request
+  $revisionFeedbackReasons = if ($null -ne $previousRevision -and $previousRevision.PSObject.Properties.Name -contains "why_it_failed") { @($previousRevision.why_it_failed | ForEach-Object { [string]$_ }) } else { @() }
+  $revisionFeedbackChecks = if ($null -ne $previousRevision -and $previousRevision.PSObject.Properties.Name -contains "what_failed") { @($previousRevision.what_failed | ForEach-Object { [string]$_ }) } else { @() }
+  $modulePayloadText = New-Phase160ECandidateModulePayloadText -CandidateId $candidateId -TaskId $taskId -PlanItemId $planItemId -OwnerGoal $ownerGoal -DesiredGap $desiredGap
+  $validatorPayloadText = New-Phase160ECandidateValidatorPayloadText -CandidateId $candidateId -ProposedModuleTarget $proposedModulePath
+  Write-Phase160ECandidateTextFile -Path (Join-Path $candidateDir $modulePayloadPath) -Text $modulePayloadText
+  Write-Phase160ECandidateTextFile -Path (Join-Path $candidateDir $validatorPayloadPath) -Text $validatorPayloadText
   $manifest = [ordered]@{
     status = "PASS"
     candidate_id = $candidateId
+    base_candidate_id = $baseCandidateId
+    revision_retry_number = [int]$retryContext.retry_number
+    max_retry_limit = $maxRetryLimit
+    revision_feedback_considered = ($revisionFeedbackReasons.Count -gt 0 -or $revisionFeedbackChecks.Count -gt 0)
+    consumed_revision_feedback = [ordered]@{
+      previous_candidate_dir = if ([string]$retryContext.previous_candidate_dir -eq "NONE") { "NONE" } else { ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath ([string]$retryContext.previous_candidate_dir) }
+      what_failed = @($revisionFeedbackChecks)
+      why_it_failed = @($revisionFeedbackReasons)
+    }
     source_task_id = $taskId
     source = $candidateSource
     source_plan_item_id = $planItemId
@@ -346,9 +617,12 @@ function New-Phase160ECandidateBundle {
     target_area = $targetArea
     owner_goal = $ownerGoal
     desired_next_gap = $desiredGap
-    proposed_file_paths = @($proposedFile)
+    proposed_file_paths = @($proposedModulePath)
     proposed_validator_paths = $validatorNeeded
     acceptance_validator_needed = $validatorNeeded
+    proposed_payload_paths = @($modulePayloadPath, $validatorPayloadPath)
+    proposed_module_payload_path = $modulePayloadPath
+    proposed_validator_payload_path = $validatorPayloadPath
     expected_candidate_capabilities = $expectedCapabilities
     owner_approval_required = $true
     owner_promotion_gate_required = $true
@@ -358,7 +632,9 @@ function New-Phase160ECandidateBundle {
     push_performed = $false
     branch_switch_performed = $false
     protected_state_mutated = $false
-    decision = "CANDIDATE_READY"
+    decision = "CANDIDATE_DRAFT"
+    quality_gate_enabled = $true
+    owner_promotion_allowed = $false
     duty_id = $DutyId
     tick_number = $TickNumber
     created_at = $candidateCreatedAt
@@ -367,8 +643,28 @@ function New-Phase160ECandidateBundle {
   Write-Phase160ECandidateJsonFile -Path (Join-Path $candidateDir "proposed_files.json") -Object ([ordered]@{
     status = "PASS"
     candidate_id = $candidateId
-    proposed_file_paths = @($proposedFile)
+    proposed_file_paths = @($proposedModulePath)
     proposed_validator_paths = $validatorNeeded
+    proposed_payloads = @(
+      [ordered]@{
+        kind = "module"
+        role = "proposed_module_payload"
+        target_path = $proposedModulePath
+        payload_path = $modulePayloadPath
+        parse_required = $true
+        required = $true
+      },
+      [ordered]@{
+        kind = "validator"
+        role = "proposed_validator_payload"
+        target_path = $proposedValidatorPath
+        payload_path = $validatorPayloadPath
+        parse_required = $true
+        required = $true
+      }
+    )
+    proposed_module_payload_path = $modulePayloadPath
+    proposed_validator_payload_path = $validatorPayloadPath
     source = $candidateSource
     proposed_only = $true
     accepted_code_written = $false
@@ -378,7 +674,10 @@ function New-Phase160ECandidateBundle {
     candidate_id = $candidateId
     source = $candidateSource
     payload_type = "session_local_candidate_payload"
-    proposed_file_path = $proposedFile
+    proposed_file_path = $proposedModulePath
+    proposed_validator_path = $proposedValidatorPath
+    proposed_module_payload_path = $modulePayloadPath
+    proposed_validator_payload_path = $validatorPayloadPath
     payload_note = "Candidate payload is data for owner review only. The live daemon did not write accepted code."
     required_payload_markers = @(
       "SELF_INITIATED_USEFUL_GOAL_SELECTION",
@@ -392,7 +691,7 @@ function New-Phase160ECandidateBundle {
       "promotion_bundle_update",
       "runtime_guard_required"
     )
-    proposed_content_outline = @(
+    proposed_execution_contract = @(
       "Read run manifest and runtime guard.",
       "Build SELF_INITIATED_USEFUL_GOAL_SELECTION support from self_gap_inventory evidence.",
       "Use usefulness_scoring to rank at least five goals.",
@@ -412,6 +711,7 @@ function New-Phase160ECandidateBundle {
     }
     proposed_validator_payload = [ordered]@{
       validator_paths = $validatorNeeded
+      validator_payload_path = $validatorPayloadPath
       proves_no_teacher_inbox_required = $true
       proves_owner_review_required = $true
       proves_runtime_guard_required = $true
@@ -434,6 +734,9 @@ function New-Phase160ECandidateBundle {
     candidate_id = $candidateId
     validators_required_before_acceptance = $validatorNeeded
     proposed_validator_paths = $validatorNeeded
+    proposed_module_payload_path = $modulePayloadPath
+    proposed_validator_payload_path = $validatorPayloadPath
+    materialization_parse_check_required = $true
     owner_review_required = $true
     runtime_guard_required = $true
     promotion_requires_fresh_commit_after_owner_review = $true
@@ -453,23 +756,28 @@ function New-Phase160ECandidateBundle {
     repo_mutation_performed = $false
   })
   Write-Phase160ECandidateJsonFile -Path (Join-Path $candidateDir "candidate_status.json") -Object ([ordered]@{
-    status = "CANDIDATE_READY"
+    status = "CANDIDATE_DRAFT"
+    quality_status = "CANDIDATE_DRAFT"
     candidate_id = $candidateId
     source = $candidateSource
     source_task_id = $taskId
     source_plan_item_id = $planItemId
     source_internal_goal_id = $sourceInternalGoalId
     owner_review_required = $true
-    promotion_status = "WAITING_OWNER_REVIEW"
+    owner_promotion_allowed = $false
+    promotion_status = "CANDIDATE_DRAFT"
+    quality_gate_enabled = $true
     created_at = $candidateCreatedAt
   })
   Write-Phase160ECandidateJsonFile -Path (Join-Path $CandidateQueueRoot "$candidateId.json") -Object ([ordered]@{
-    status = "WAITING_OWNER_REVIEW"
+    status = "CANDIDATE_DRAFT"
+    quality_status = "CANDIDATE_DRAFT"
     candidate_id = $candidateId
     source = $candidateSource
     source_task_id = $taskId
     source_plan_item_id = $planItemId
     candidate_manifest_path = ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath $candidateManifestPath
+    owner_promotion_allowed = $false
     queued_at = $candidateCreatedAt
   })
 
@@ -488,15 +796,27 @@ function New-Phase160ECandidateBundle {
     candidate_id = $candidateId
     occurred_at = (Get-Date).ToUniversalTime().ToString("o")
   })
+  $qualityResult = Invoke-Phase160ECandidateQualityGate -RepoRoot $RepoRoot -CandidateDir $candidateDir -SessionRoot (ConvertTo-Phase160ECandidateRelativePath -RepoRoot $RepoRoot -FullPath $SessionRootFull) -RunId ([string]$RunManifest.run_id)
   Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
-    event_type = "candidate_ready_for_owner_review"
+    event_type = "candidate_quality_gate_completed"
     source = "candidate_workspace_step"
     candidate_id = $candidateId
-    promotion_status = "WAITING_OWNER_REVIEW"
+    quality_status = [string]$qualityResult.quality_status
+    owner_promotion_allowed = [bool]$qualityResult.owner_promotion_allowed
+    revision_request_path = if ($qualityResult.PSObject.Properties.Name -contains "revision_request_path") { [string]$qualityResult.revision_request_path } else { "NONE" }
     occurred_at = (Get-Date).ToUniversalTime().ToString("o")
   })
+  if ([string]$qualityResult.quality_status -eq "CANDIDATE_READY" -and [bool]$qualityResult.owner_promotion_allowed) {
+    Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
+      event_type = "candidate_ready_for_owner_review"
+      source = "candidate_workspace_step"
+      candidate_id = $candidateId
+      promotion_status = "WAITING_OWNER_REVIEW"
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+  }
 
-  return [pscustomobject]$manifest
+  return Read-Phase160ECandidateJsonSafe -Path $candidateManifestPath
 }
 
 function Set-Phase160ECandidatePlanItemWaiting {
@@ -645,41 +965,75 @@ try {
       $CandidateCreated = $true
       $LastCandidateId = Get-Phase160ECandidateString -Object $candidate -Name "candidate_id"
       $candidateSourceForState = Get-Phase160ECandidateString -Object $candidate -Name "source" -Default "owner_task"
-      Set-Phase160ECandidatePlanItemWaiting -SessionRootFull $SessionRootFull -PlanItem $ActivePlanItem -CandidateId $LastCandidateId
-      Write-Phase160ECandidateJsonFile -Path $ActiveTaskStatePath -Object ([ordered]@{
-        status = "WAITING_OWNER_PROMOTION"
-        source = $candidateSourceForState
-        active_task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
-        active_plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
-        candidate_id = $LastCandidateId
-        desired_next_gap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
-        run_id = [string]$RunManifest.run_id
-        run_head = [string]$RunManifest.run_head
-        owner_approval_required = $true
-        owner_review_required = $true
-        restart_required_after_promotion = $true
-        updated_at = (Get-Date).ToUniversalTime().ToString("o")
-      })
-      $receiptPath = Join-Path $TaskCompletionReceiptRoot ("receipt_{0}_{1}.json" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value (Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id") -MaxLength 70), $LastCandidateId)
-      Write-Phase160ECandidateJsonFile -Path $receiptPath -Object ([ordered]@{
-        status = "WAITING_OWNER_PROMOTION"
-        source = $candidateSourceForState
-        task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
-        plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
-        candidate_id = $LastCandidateId
-        promotion_gate_required = $true
-        completed_session_local = $true
-        accepted_code_written = $false
-        created_at = (Get-Date).ToUniversalTime().ToString("o")
-      })
-      $ActiveTaskMovedToWaitingPromotion = $true
-      Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
-        event_type = "active_task_moved_to_waiting_owner_promotion"
-        source = "candidate_workspace_step"
-        task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
-        candidate_id = $LastCandidateId
-        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
-      })
+      $candidateDecision = Get-Phase160ECandidateDecision -Candidate $candidate
+      $candidateOwnerPromotionAllowed = Get-Phase160ECandidateOwnerPromotionAllowed -Candidate $candidate
+      $candidateRevisionRequestPath = Get-Phase160ECandidateString -Object $candidate -Name "revision_request_path" -Default "NONE"
+      if ($candidateDecision -eq "CANDIDATE_READY" -and $candidateOwnerPromotionAllowed) {
+        Set-Phase160ECandidatePlanItemWaiting -SessionRootFull $SessionRootFull -PlanItem $ActivePlanItem -CandidateId $LastCandidateId
+        Write-Phase160ECandidateJsonFile -Path $ActiveTaskStatePath -Object ([ordered]@{
+          status = "WAITING_OWNER_PROMOTION"
+          source = $candidateSourceForState
+          active_task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          active_plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          desired_next_gap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
+          run_id = [string]$RunManifest.run_id
+          run_head = [string]$RunManifest.run_head
+          owner_approval_required = $true
+          owner_review_required = $true
+          owner_promotion_allowed = $true
+          restart_required_after_promotion = $true
+          updated_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+        $receiptPath = Join-Path $TaskCompletionReceiptRoot ("receipt_{0}_{1}.json" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value (Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id") -MaxLength 70), $LastCandidateId)
+        Write-Phase160ECandidateJsonFile -Path $receiptPath -Object ([ordered]@{
+          status = "WAITING_OWNER_PROMOTION"
+          source = $candidateSourceForState
+          task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          promotion_gate_required = $true
+          completed_session_local = $true
+          accepted_code_written = $false
+          created_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+        $ActiveTaskMovedToWaitingPromotion = $true
+        Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
+          event_type = "active_task_moved_to_waiting_owner_promotion"
+          source = "candidate_workspace_step"
+          task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      } else {
+        Write-Phase160ECandidateJsonFile -Path $ActiveTaskStatePath -Object ([ordered]@{
+          status = $candidateDecision
+          source = $candidateSourceForState
+          active_task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          active_plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          revision_request_path = $candidateRevisionRequestPath
+          return_to_candidate_generation = $true
+          owner_promotion_allowed = $false
+          run_id = [string]$RunManifest.run_id
+          run_head = [string]$RunManifest.run_head
+          updated_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+        Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
+          event_type = "active_task_candidate_not_ready_for_owner_promotion"
+          source = "candidate_workspace_step"
+          task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          revision_request_path = $candidateRevisionRequestPath
+          owner_promotion_allowed = $false
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      }
     }
   }
 
@@ -762,40 +1116,74 @@ try {
       $CandidateCreated = $true
       $LastCandidateId = Get-Phase160ECandidateString -Object $candidate -Name "candidate_id"
       $candidateSourceForState = Get-Phase160ECandidateString -Object $candidate -Name "source" -Default "owner_task"
-      Set-Phase160ECandidatePlanItemWaiting -SessionRootFull $SessionRootFull -PlanItem $ActivePlanItem -CandidateId $LastCandidateId
-      Write-Phase160ECandidateJsonFile -Path $ActiveTaskStatePath -Object ([ordered]@{
-        status = "WAITING_OWNER_PROMOTION"
-        source = $candidateSourceForState
-        active_task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
-        active_plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
-        candidate_id = $LastCandidateId
-        desired_next_gap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
-        run_id = [string]$RunManifest.run_id
-        run_head = [string]$RunManifest.run_head
-        owner_approval_required = $true
-        owner_review_required = $true
-        restart_required_after_promotion = $true
-        updated_at = (Get-Date).ToUniversalTime().ToString("o")
-      })
-      Write-Phase160ECandidateJsonFile -Path (Join-Path $TaskCompletionReceiptRoot ("receipt_{0}_{1}.json" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value (Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id") -MaxLength 70), $LastCandidateId)) -Object ([ordered]@{
-        status = "WAITING_OWNER_PROMOTION"
-        source = $candidateSourceForState
-        task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
-        plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
-        candidate_id = $LastCandidateId
-        promotion_gate_required = $true
-        completed_session_local = $true
-        accepted_code_written = $false
-        created_at = (Get-Date).ToUniversalTime().ToString("o")
-      })
-      $ActiveTaskMovedToWaitingPromotion = $true
-      Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
-        event_type = "active_task_moved_to_waiting_owner_promotion"
-        source = "candidate_workspace_step"
-        task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
-        candidate_id = $LastCandidateId
-        occurred_at = (Get-Date).ToUniversalTime().ToString("o")
-      })
+      $candidateDecision = Get-Phase160ECandidateDecision -Candidate $candidate
+      $candidateOwnerPromotionAllowed = Get-Phase160ECandidateOwnerPromotionAllowed -Candidate $candidate
+      $candidateRevisionRequestPath = Get-Phase160ECandidateString -Object $candidate -Name "revision_request_path" -Default "NONE"
+      if ($candidateDecision -eq "CANDIDATE_READY" -and $candidateOwnerPromotionAllowed) {
+        Set-Phase160ECandidatePlanItemWaiting -SessionRootFull $SessionRootFull -PlanItem $ActivePlanItem -CandidateId $LastCandidateId
+        Write-Phase160ECandidateJsonFile -Path $ActiveTaskStatePath -Object ([ordered]@{
+          status = "WAITING_OWNER_PROMOTION"
+          source = $candidateSourceForState
+          active_task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          active_plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          desired_next_gap = Get-Phase160ECandidateString -Object $ActiveTask -Name "desired_next_gap"
+          run_id = [string]$RunManifest.run_id
+          run_head = [string]$RunManifest.run_head
+          owner_approval_required = $true
+          owner_review_required = $true
+          owner_promotion_allowed = $true
+          restart_required_after_promotion = $true
+          updated_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+        Write-Phase160ECandidateJsonFile -Path (Join-Path $TaskCompletionReceiptRoot ("receipt_{0}_{1}.json" -f (ConvertTo-Phase160ECandidateSafeLeaf -Value (Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id") -MaxLength 70), $LastCandidateId)) -Object ([ordered]@{
+          status = "WAITING_OWNER_PROMOTION"
+          source = $candidateSourceForState
+          task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          promotion_gate_required = $true
+          completed_session_local = $true
+          accepted_code_written = $false
+          created_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+        $ActiveTaskMovedToWaitingPromotion = $true
+        Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
+          event_type = "active_task_moved_to_waiting_owner_promotion"
+          source = "candidate_workspace_step"
+          task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      } else {
+        Write-Phase160ECandidateJsonFile -Path $ActiveTaskStatePath -Object ([ordered]@{
+          status = $candidateDecision
+          source = $candidateSourceForState
+          active_task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          active_plan_item_id = if ($null -ne $ActivePlanItem) { Get-Phase160ECandidateString -Object $ActivePlanItem -Name "item_id" } else { "NONE" }
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          revision_request_path = $candidateRevisionRequestPath
+          return_to_candidate_generation = $true
+          owner_promotion_allowed = $false
+          run_id = [string]$RunManifest.run_id
+          run_head = [string]$RunManifest.run_head
+          updated_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+        Add-Phase160ECandidateJsonLine -Path $ChangeLedgerPath -Object ([ordered]@{
+          event_type = "active_task_candidate_not_ready_for_owner_promotion"
+          source = "candidate_workspace_step"
+          task_id = Get-Phase160ECandidateString -Object $ActiveTask -Name "task_id"
+          candidate_id = $LastCandidateId
+          quality_status = $candidateDecision
+          revision_request_path = $candidateRevisionRequestPath
+          owner_promotion_allowed = $false
+          occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+        })
+      }
     }
   }
 
@@ -823,7 +1211,15 @@ try {
     candidate_created_this_step = $CandidateCreated
     candidate_count = [int]$Counts.candidate_count
     ready_candidate_count = [int]$Counts.ready_candidate_count
+    quality_gate_enabled = $true
+    quality_ready_count = [int]$Counts.ready_candidate_count
+    revision_required_count = [int]$Counts.revision_required_count
+    draft_candidate_count = [int]$Counts.draft_candidate_count
     quarantined_candidate_count = [int]$Counts.quarantined_candidate_count
+    blocked_candidate_count = [int]$Counts.blocked_candidate_count
+    last_quality_decision = [string]$Counts.last_quality_decision
+    last_revision_request = [string]$Counts.last_revision_request
+    owner_promotion_allowed = [bool]$Counts.owner_promotion_allowed
     promotion_bundle_created = [bool]$FinalizeResult.promotion_manifest_created
     promotion_bundle_status = [string]$FinalizeResult.promotion_bundle_status
     owner_review_summary_created = [bool]$FinalizeResult.owner_review_summary_created

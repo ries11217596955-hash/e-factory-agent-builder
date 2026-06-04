@@ -134,24 +134,47 @@ function Get-Phase160DaemonLiveTaskSnapshot {
   $candidateBundleRoot = Join-Path $SessionRootFull "candidate_workspace/candidate_bundles"
   $candidateCount = 0
   $readyCandidateCount = 0
+  $revisionRequiredCount = 0
+  $draftCandidateCount = 0
   $quarantinedCandidateCount = 0
+  $blockedCandidateCount = 0
   $lastCandidateId = "NONE"
+  $lastQualityDecision = "NONE"
+  $lastRevisionRequest = "NONE"
+  $ownerPromotionAllowed = $false
   if (Test-Path -LiteralPath $candidateBundleRoot) {
     $candidateBundleDirs = @(Get-ChildItem -LiteralPath $candidateBundleRoot -Directory -ErrorAction SilentlyContinue | Sort-Object LastWriteTimeUtc, Name)
     foreach ($candidateBundleDir in $candidateBundleDirs) {
       $candidateManifest = Read-Phase160DaemonJsonSafe -Path (Join-Path $candidateBundleDir.FullName "candidate_manifest.json")
+      $candidateStatus = Read-Phase160DaemonJsonSafe -Path (Join-Path $candidateBundleDir.FullName "candidate_status.json")
+      $qualityRecord = Read-Phase160DaemonJsonSafe -Path (Join-Path $candidateBundleDir.FullName "quality_gate/quality_gate_result.json")
       if ($null -eq $candidateManifest) {
         continue
       }
       $candidateCount += 1
-      $candidateDecision = if ($candidateManifest.PSObject.Properties.Name -contains "decision") { [string]$candidateManifest.decision } else { "UNKNOWN" }
-      if ($candidateDecision -eq "CANDIDATE_READY") {
+      $candidateDecision = if ($null -ne $qualityRecord -and $qualityRecord.PSObject.Properties.Name -contains "quality_status") { [string]$qualityRecord.quality_status } elseif ($null -ne $candidateStatus -and $candidateStatus.PSObject.Properties.Name -contains "quality_status") { [string]$candidateStatus.quality_status } elseif ($null -ne $candidateStatus -and $candidateStatus.PSObject.Properties.Name -contains "status") { [string]$candidateStatus.status } elseif ($candidateManifest.PSObject.Properties.Name -contains "quality_status") { [string]$candidateManifest.quality_status } elseif ($candidateManifest.PSObject.Properties.Name -contains "decision") { [string]$candidateManifest.decision } else { "UNKNOWN" }
+      $candidateOwnerPromotionAllowed = if ($null -ne $qualityRecord -and $qualityRecord.PSObject.Properties.Name -contains "owner_promotion_allowed") { [bool]$qualityRecord.owner_promotion_allowed } elseif ($null -ne $candidateStatus -and $candidateStatus.PSObject.Properties.Name -contains "owner_promotion_allowed") { [bool]$candidateStatus.owner_promotion_allowed } elseif ($candidateManifest.PSObject.Properties.Name -contains "owner_promotion_allowed") { [bool]$candidateManifest.owner_promotion_allowed } else { $candidateDecision -eq "CANDIDATE_READY" }
+      if ($candidateDecision -eq "CANDIDATE_READY" -and $candidateOwnerPromotionAllowed) {
         $readyCandidateCount += 1
+      }
+      if ($candidateDecision -eq "REVISION_REQUIRED") {
+        $revisionRequiredCount += 1
+      }
+      if ($candidateDecision -eq "CANDIDATE_DRAFT") {
+        $draftCandidateCount += 1
       }
       if ($candidateDecision -match "QUARANTINE|QUARANTINED") {
         $quarantinedCandidateCount += 1
       }
+      if ($candidateDecision -match "BLOCKED") {
+        $blockedCandidateCount += 1
+      }
       $lastCandidateId = if ($candidateManifest.PSObject.Properties.Name -contains "candidate_id") { [string]$candidateManifest.candidate_id } else { $candidateBundleDir.Name }
+      $lastQualityDecision = $candidateDecision
+      $lastRevisionRequest = if ($null -ne $qualityRecord -and $qualityRecord.PSObject.Properties.Name -contains "revision_request_path") { [string]$qualityRecord.revision_request_path } elseif ($null -ne $candidateStatus -and $candidateStatus.PSObject.Properties.Name -contains "revision_request_path") { [string]$candidateStatus.revision_request_path } elseif ($candidateManifest.PSObject.Properties.Name -contains "revision_request_path") { [string]$candidateManifest.revision_request_path } else { "NONE" }
+      if ($candidateOwnerPromotionAllowed) {
+        $ownerPromotionAllowed = $true
+      }
     }
   }
   $planPendingCount = 0
@@ -211,7 +234,15 @@ function Get-Phase160DaemonLiveTaskSnapshot {
     candidate_workspace_status = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status" -and [string]$runtimeGuard.status -eq "PASS") { "ENABLED" } elseif ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status" -and [string]$runtimeGuard.status -eq "BLOCKED") { "BLOCKED" } else { "UNKNOWN" }
     candidate_count = $candidateCount
     ready_candidate_count = $readyCandidateCount
+    quality_gate_enabled = $true
+    quality_ready_count = $readyCandidateCount
+    revision_required_count = $revisionRequiredCount
+    draft_candidate_count = $draftCandidateCount
     quarantined_candidate_count = $quarantinedCandidateCount
+    blocked_candidate_count = $blockedCandidateCount
+    last_quality_decision = $lastQualityDecision
+    last_revision_request = $lastRevisionRequest
+    owner_promotion_allowed = $ownerPromotionAllowed
     promotion_bundle_status = if ($null -ne $promotionManifest -and $promotionManifest.PSObject.Properties.Name -contains "promotion_status") { [string]$promotionManifest.promotion_status } else { "NONE" }
     restart_required_after_promotion = if ($null -ne $promotionManifest -and $promotionManifest.PSObject.Properties.Name -contains "restart_required_after_promotion") { [bool]$promotionManifest.restart_required_after_promotion } else { $false }
     active_task_status = if ($null -ne $activeTaskState -and $activeTaskState.PSObject.Properties.Name -contains "status") { [string]$activeTaskState.status } else { "NONE" }
@@ -470,6 +501,14 @@ try {
           status = [string]$EarlyCandidateWorkspaceResult.status
           candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "candidate_count") { [int]$EarlyCandidateWorkspaceResult.candidate_count } else { 0 }
           ready_candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$EarlyCandidateWorkspaceResult.ready_candidate_count } else { 0 }
+          quality_gate_enabled = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_gate_enabled") { [bool]$EarlyCandidateWorkspaceResult.quality_gate_enabled } else { $false }
+          quality_ready_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_ready_count") { [int]$EarlyCandidateWorkspaceResult.quality_ready_count } else { 0 }
+          revision_required_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "revision_required_count") { [int]$EarlyCandidateWorkspaceResult.revision_required_count } else { 0 }
+          draft_candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "draft_candidate_count") { [int]$EarlyCandidateWorkspaceResult.draft_candidate_count } else { 0 }
+          quarantined_candidate_count = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "quarantined_candidate_count") { [int]$EarlyCandidateWorkspaceResult.quarantined_candidate_count } else { 0 }
+          last_quality_decision = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "last_quality_decision") { [string]$EarlyCandidateWorkspaceResult.last_quality_decision } else { "NONE" }
+          last_revision_request = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "last_revision_request") { [string]$EarlyCandidateWorkspaceResult.last_revision_request } else { "NONE" }
+          owner_promotion_allowed = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "owner_promotion_allowed") { [bool]$EarlyCandidateWorkspaceResult.owner_promotion_allowed } else { $false }
           last_candidate_id = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "last_candidate_id") { [string]$EarlyCandidateWorkspaceResult.last_candidate_id } else { "NONE" }
           promotion_bundle_status = if ($EarlyCandidateWorkspaceResult.PSObject.Properties.Name -contains "promotion_bundle_status") { [string]$EarlyCandidateWorkspaceResult.promotion_bundle_status } else { "NONE" }
           occurred_at = (Get-Date).ToUniversalTime().ToString("o")
@@ -704,6 +743,14 @@ try {
               status = $CandidateWorkspaceResultStatus
               candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "candidate_count") { [int]$CandidateWorkspaceResult.candidate_count } else { 0 }
               ready_candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$CandidateWorkspaceResult.ready_candidate_count } else { 0 }
+              quality_gate_enabled = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_gate_enabled") { [bool]$CandidateWorkspaceResult.quality_gate_enabled } else { $false }
+              quality_ready_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quality_ready_count") { [int]$CandidateWorkspaceResult.quality_ready_count } else { 0 }
+              revision_required_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "revision_required_count") { [int]$CandidateWorkspaceResult.revision_required_count } else { 0 }
+              draft_candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "draft_candidate_count") { [int]$CandidateWorkspaceResult.draft_candidate_count } else { 0 }
+              quarantined_candidate_count = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "quarantined_candidate_count") { [int]$CandidateWorkspaceResult.quarantined_candidate_count } else { 0 }
+              last_quality_decision = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "last_quality_decision") { [string]$CandidateWorkspaceResult.last_quality_decision } else { "NONE" }
+              last_revision_request = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "last_revision_request") { [string]$CandidateWorkspaceResult.last_revision_request } else { "NONE" }
+              owner_promotion_allowed = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "owner_promotion_allowed") { [bool]$CandidateWorkspaceResult.owner_promotion_allowed } else { $false }
               last_candidate_id = $LastCandidateWorkspaceCandidateId
               promotion_bundle_status = if ($CandidateWorkspaceResult.PSObject.Properties.Name -contains "promotion_bundle_status") { [string]$CandidateWorkspaceResult.promotion_bundle_status } else { "NONE" }
               occurred_at = (Get-Date).ToUniversalTime().ToString("o")
@@ -751,6 +798,16 @@ try {
           selected_useful_goal = $SelectedUsefulGoal
           last_candidate_id = $LastCandidateWorkspaceCandidateId
           candidate_count = [int]$LiveTaskSnapshot.candidate_count
+          ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+          quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+          quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+          revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+          draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
+          quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+          blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+          last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+          last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+          owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
           promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
           next_gap = $NextSelfGrowthGap
           occurred_at = (Get-Date).ToUniversalTime().ToString("o")
@@ -818,7 +875,15 @@ try {
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+      quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+      draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+      last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+      last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+      owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
       promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
       active_task_status = [string]$LiveTaskSnapshot.active_task_status
       plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
@@ -873,7 +938,15 @@ try {
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+      quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+      draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+      last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+      last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+      owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
       promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
       active_task_status = [string]$LiveTaskSnapshot.active_task_status
       plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
@@ -929,7 +1002,15 @@ try {
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+      quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+      draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+      last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+      last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+      owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
       promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
       active_task_status = [string]$LiveTaskSnapshot.active_task_status
       plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
@@ -981,7 +1062,15 @@ try {
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+      quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+      draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+      last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+      last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+      owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
       promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
       active_task_status = [string]$LiveTaskSnapshot.active_task_status
       plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
@@ -1059,7 +1148,15 @@ try {
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+      quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+      draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+      last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+      last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+      owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
       promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
       active_task_status = [string]$LiveTaskSnapshot.active_task_status
       plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
@@ -1112,7 +1209,15 @@ try {
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+      quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+      quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+      revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+      draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
       quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+      blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+      last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+      last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+      owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
       promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
       active_task_status = [string]$LiveTaskSnapshot.active_task_status
       plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
@@ -1155,7 +1260,15 @@ try {
     live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
     candidate_count = [int]$LiveTaskSnapshot.candidate_count
     ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+    quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+    quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+    revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+    draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
     quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+    blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+    last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+    last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+    owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
     promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
     active_task_status = [string]$LiveTaskSnapshot.active_task_status
     plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count
@@ -1234,7 +1347,15 @@ try {
     live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
     candidate_count = [int]$LiveTaskSnapshot.candidate_count
     ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
+    quality_gate_enabled = [bool]$LiveTaskSnapshot.quality_gate_enabled
+    quality_ready_count = [int]$LiveTaskSnapshot.quality_ready_count
+    revision_required_count = [int]$LiveTaskSnapshot.revision_required_count
+    draft_candidate_count = [int]$LiveTaskSnapshot.draft_candidate_count
     quarantined_candidate_count = [int]$LiveTaskSnapshot.quarantined_candidate_count
+    blocked_candidate_count = [int]$LiveTaskSnapshot.blocked_candidate_count
+    last_quality_decision = [string]$LiveTaskSnapshot.last_quality_decision
+    last_revision_request = [string]$LiveTaskSnapshot.last_revision_request
+    owner_promotion_allowed = [bool]$LiveTaskSnapshot.owner_promotion_allowed
     promotion_bundle_status = [string]$LiveTaskSnapshot.promotion_bundle_status
     active_task_status = [string]$LiveTaskSnapshot.active_task_status
     plan_pending_count = [int]$LiveTaskSnapshot.plan_pending_count

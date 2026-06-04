@@ -242,6 +242,15 @@ try {
   $GuardBlockedUnsafeMutationDetected = $false
   $ZeroCandidatePromotionTruthfulDetected = $false
   $PromotionBundleWithRealCandidateOnlyDetected = $false
+  $QualityGateEnabledDetected = $false
+  $MaxQualityReadyCount = 0
+  $MaxRevisionRequiredCount = 0
+  $MaxDraftCandidateCount = 0
+  $MaxQuarantinedCandidateCount = 0
+  $MaxBlockedCandidateCount = 0
+  $LastQualityDecision = "NONE"
+  $LastRevisionRequest = "NONE"
+  $OwnerPromotionAllowedDetected = $false
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -395,17 +404,72 @@ try {
     if (Test-Path -LiteralPath $PromotionManifestPath) {
       $PromotionBundleObserved = $true
     }
+    $CurrentQualityGateEnabled = $false
+    $CurrentQualityReadyCount = 0
+    $CurrentRevisionRequiredCount = 0
+    $CurrentDraftCandidateCount = 0
+    $CurrentQuarantinedCandidateCount = 0
+    $CurrentBlockedCandidateCount = 0
+    $CurrentLastQualityDecision = "NONE"
+    $CurrentLastRevisionRequest = "NONE"
+    $CurrentOwnerPromotionAllowed = $false
     $PromotionManifest = Read-Phase160ObserverJsonSafe -Path $PromotionManifestPath
     if ($null -ne $PromotionManifest) {
       $promotionStatus = if ($PromotionManifest.PSObject.Properties.Name -contains "promotion_status") { [string]$PromotionManifest.promotion_status } else { "UNKNOWN" }
       $promotionCandidateCount = if ($PromotionManifest.PSObject.Properties.Name -contains "candidate_count") { [int]$PromotionManifest.candidate_count } else { 0 }
-      $promotionReadyCount = if ($PromotionManifest.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$PromotionManifest.ready_candidate_count } else { 0 }
+      $promotionReadyCount = if ($PromotionManifest.PSObject.Properties.Name -contains "ready_candidate_count_after_quality") { [int]$PromotionManifest.ready_candidate_count_after_quality } elseif ($PromotionManifest.PSObject.Properties.Name -contains "ready_candidate_count") { [int]$PromotionManifest.ready_candidate_count } else { 0 }
+      $CurrentQualityGateEnabled = if ($PromotionManifest.PSObject.Properties.Name -contains "quality_gate_enabled") { [bool]$PromotionManifest.quality_gate_enabled } else { $true }
+      $CurrentQualityReadyCount = if ($PromotionManifest.PSObject.Properties.Name -contains "quality_ready_count") { [int]$PromotionManifest.quality_ready_count } else { $promotionReadyCount }
+      $CurrentRevisionRequiredCount = if ($PromotionManifest.PSObject.Properties.Name -contains "revision_required_count") { [int]$PromotionManifest.revision_required_count } else { 0 }
+      $CurrentDraftCandidateCount = if ($PromotionManifest.PSObject.Properties.Name -contains "draft_candidate_count") { [int]$PromotionManifest.draft_candidate_count } else { 0 }
+      $CurrentQuarantinedCandidateCount = if ($PromotionManifest.PSObject.Properties.Name -contains "quarantined_candidate_count") { [int]$PromotionManifest.quarantined_candidate_count } else { 0 }
+      $CurrentBlockedCandidateCount = if ($PromotionManifest.PSObject.Properties.Name -contains "blocked_candidate_count") { [int]$PromotionManifest.blocked_candidate_count } else { 0 }
+      $CurrentLastQualityDecision = if ($PromotionManifest.PSObject.Properties.Name -contains "last_quality_decision") { [string]$PromotionManifest.last_quality_decision } else { "NONE" }
+      $CurrentLastRevisionRequest = if ($PromotionManifest.PSObject.Properties.Name -contains "last_revision_request") { [string]$PromotionManifest.last_revision_request } else { "NONE" }
+      $CurrentOwnerPromotionAllowed = if ($PromotionManifest.PSObject.Properties.Name -contains "owner_promotion_allowed") { [bool]$PromotionManifest.owner_promotion_allowed } else { $promotionReadyCount -gt 0 }
       if ($promotionCandidateCount -eq 0 -and @("NO_CANDIDATES", "BLOCKED_NO_CANDIDATES") -contains $promotionStatus) {
         $ZeroCandidatePromotionTruthfulDetected = $true
       }
       if ($promotionCandidateCount -gt 0 -and $promotionReadyCount -gt 0 -and $promotionStatus -eq "WAITING_OWNER_REVIEW") {
         $PromotionBundleWithRealCandidateOnlyDetected = $true
       }
+    } elseif ($null -ne $CurrentState) {
+      $CurrentQualityGateEnabled = if ($CurrentState.PSObject.Properties.Name -contains "quality_gate_enabled") { [bool]$CurrentState.quality_gate_enabled } else { $false }
+      $CurrentQualityReadyCount = if ($CurrentState.PSObject.Properties.Name -contains "quality_ready_count") { [int]$CurrentState.quality_ready_count } else { 0 }
+      $CurrentRevisionRequiredCount = if ($CurrentState.PSObject.Properties.Name -contains "revision_required_count") { [int]$CurrentState.revision_required_count } else { 0 }
+      $CurrentDraftCandidateCount = if ($CurrentState.PSObject.Properties.Name -contains "draft_candidate_count") { [int]$CurrentState.draft_candidate_count } else { 0 }
+      $CurrentQuarantinedCandidateCount = if ($CurrentState.PSObject.Properties.Name -contains "quarantined_candidate_count") { [int]$CurrentState.quarantined_candidate_count } else { 0 }
+      $CurrentBlockedCandidateCount = if ($CurrentState.PSObject.Properties.Name -contains "blocked_candidate_count") { [int]$CurrentState.blocked_candidate_count } else { 0 }
+      $CurrentLastQualityDecision = if ($CurrentState.PSObject.Properties.Name -contains "last_quality_decision") { [string]$CurrentState.last_quality_decision } else { "NONE" }
+      $CurrentLastRevisionRequest = if ($CurrentState.PSObject.Properties.Name -contains "last_revision_request") { [string]$CurrentState.last_revision_request } else { "NONE" }
+      $CurrentOwnerPromotionAllowed = if ($CurrentState.PSObject.Properties.Name -contains "owner_promotion_allowed") { [bool]$CurrentState.owner_promotion_allowed } else { $false }
+    }
+    if ($CurrentQualityGateEnabled) {
+      $QualityGateEnabledDetected = $true
+    }
+    if ($CurrentQualityReadyCount -gt $MaxQualityReadyCount) {
+      $MaxQualityReadyCount = $CurrentQualityReadyCount
+    }
+    if ($CurrentRevisionRequiredCount -gt $MaxRevisionRequiredCount) {
+      $MaxRevisionRequiredCount = $CurrentRevisionRequiredCount
+    }
+    if ($CurrentDraftCandidateCount -gt $MaxDraftCandidateCount) {
+      $MaxDraftCandidateCount = $CurrentDraftCandidateCount
+    }
+    if ($CurrentQuarantinedCandidateCount -gt $MaxQuarantinedCandidateCount) {
+      $MaxQuarantinedCandidateCount = $CurrentQuarantinedCandidateCount
+    }
+    if ($CurrentBlockedCandidateCount -gt $MaxBlockedCandidateCount) {
+      $MaxBlockedCandidateCount = $CurrentBlockedCandidateCount
+    }
+    if ($CurrentLastQualityDecision -ne "NONE") {
+      $LastQualityDecision = $CurrentLastQualityDecision
+    }
+    if ($CurrentLastRevisionRequest -ne "NONE") {
+      $LastRevisionRequest = $CurrentLastRevisionRequest
+    }
+    if ($CurrentOwnerPromotionAllowed) {
+      $OwnerPromotionAllowedDetected = $true
     }
     $RuntimeGuard = Read-Phase160ObserverJsonSafe -Path $RuntimeGuardPath
     if ($null -ne $RuntimeGuard -and $RuntimeGuard.PSObject.Properties.Name -contains "status" -and [string]$RuntimeGuard.status -eq "BLOCKED") {
@@ -571,6 +635,15 @@ try {
       guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
       zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
       promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
+      quality_gate_enabled = $CurrentQualityGateEnabled
+      quality_ready_count = $CurrentQualityReadyCount
+      revision_required_count = $CurrentRevisionRequiredCount
+      draft_candidate_count = $CurrentDraftCandidateCount
+      quarantined_candidate_count = $CurrentQuarantinedCandidateCount
+      blocked_candidate_count = $CurrentBlockedCandidateCount
+      last_quality_decision = $CurrentLastQualityDecision
+      last_revision_request = $CurrentLastRevisionRequest
+      owner_promotion_allowed = $CurrentOwnerPromotionAllowed
       unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
       occurred_at = $Now.ToUniversalTime().ToString("o")
     })
@@ -628,6 +701,15 @@ try {
     guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
     zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
     promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
+    quality_gate_enabled = $QualityGateEnabledDetected
+    quality_ready_count = $MaxQualityReadyCount
+    revision_required_count = $MaxRevisionRequiredCount
+    draft_candidate_count = $MaxDraftCandidateCount
+    quarantined_candidate_count = $MaxQuarantinedCandidateCount
+    blocked_candidate_count = $MaxBlockedCandidateCount
+    last_quality_decision = $LastQualityDecision
+    last_revision_request = $LastRevisionRequest
+    owner_promotion_allowed = $OwnerPromotionAllowedDetected
     unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
     code_execution_requested = $false
     accepted_state_mutated = $false
@@ -680,6 +762,15 @@ try {
     guard_blocked_with_unsafe_mutation = $GuardBlockedUnsafeMutationDetected
     zero_candidate_promotion_truthful = $ZeroCandidatePromotionTruthfulDetected
     promotion_bundle_with_real_candidate_only = $PromotionBundleWithRealCandidateOnlyDetected
+    quality_gate_enabled = $QualityGateEnabledDetected
+    quality_ready_count = $MaxQualityReadyCount
+    revision_required_count = $MaxRevisionRequiredCount
+    draft_candidate_count = $MaxDraftCandidateCount
+    quarantined_candidate_count = $MaxQuarantinedCandidateCount
+    blocked_candidate_count = $MaxBlockedCandidateCount
+    last_quality_decision = $LastQualityDecision
+    last_revision_request = $LastRevisionRequest
+    owner_promotion_allowed = $OwnerPromotionAllowedDetected
     unsafe_repo_mutation_detected = $UnsafeRepoMutationDetected
     observer_log_created = (Test-Path -LiteralPath $ObserverLogPath)
     observer_summary_created = (Test-Path -LiteralPath $ObserverSummaryPath)

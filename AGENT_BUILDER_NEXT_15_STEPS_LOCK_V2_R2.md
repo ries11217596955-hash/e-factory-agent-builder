@@ -2,12 +2,16 @@
 
 # Agent Builder Next 15 Steps Lock V2_R2
 
-Status: ACTIVE_ROUTE_LOCK
+Status: SUPERSEDED_BY_PHASE160L_ROUTE_LOCK_SUPERSESSION_REPAIR
 Version: V2_R2
 Active line: AGENT_BUILDER / SELF_BUILD
 Supersedes: AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md
 Reason: previous V2 moved toward external agent production too early.
 Baseline: PHASE90 completed at commit 77a8839.
+Superseded by: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md
+Supersession phase: PHASE160L_ROUTE_LOCK_SUPERSESSION_REPAIR_V1
+Supersession reason: PHASE91-PHASE105 are completed historical batch-engine steps. Runtime work has advanced through the PHASE160 repair line to PHASE160K, and the next strategic target is PHASE161_BATCH_SCHOOL_FOUNDATION.
+Current classification: SUPERSEDED
 
 ## Main Doctrine
 

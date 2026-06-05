@@ -1,6 +1,8 @@
 # AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1
 
-Status: ACTIVE_ROUTE_LOCK
+Status: ARCHIVED_REFERENCE
+Archived by: PHASE160L_ROUTE_LOCK_SUPERSESSION_REPAIR_V1
+Archive reason: PHASE78-PHASE90 route governance is historical. This file remains as evidence only and is not an active route authority.
 Active line: AGENT_BUILDER / SELF_BUILD
 Baseline: PHASE78 accepted.
 Accepted commit: ba7f928 Close PHASE78 self knowledge runtime proof

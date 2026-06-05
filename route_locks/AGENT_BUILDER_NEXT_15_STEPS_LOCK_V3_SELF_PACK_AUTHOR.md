@@ -1,11 +1,15 @@
 # AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR
 
 route_lock_id: AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR
-status: ACTIVE_ROUTE_LOCK
+status: SUPERSEDED_BY_PHASE160L_ROUTE_LOCK_SUPERSESSION_REPAIR
+classification: SUPERSEDED
 supersedes: AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2_R2
+superseded_by: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md
+supersession_phase: PHASE160L_ROUTE_LOCK_SUPERSESSION_REPAIR_V1
 active_line: AGENT_BUILDER / SELF_BUILD
 proven_baseline_commit: e66cf8e
 proven_baseline_phase: PHASE105_SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1
+supersession_reason: The self-pack author route is historical and exhausted relative to the accepted PHASE160K repair baseline. The next route must govern PHASE161 batch school readiness rather than single-symptom repair.
 
 ## Strategic Correction
 

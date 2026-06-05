@@ -1,0 +1,204 @@
+{
+  "phase": "PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_V1",
+  "created_at": "2026-06-05T00:00:00Z",
+  "discovery_role": "PLAN_FIRST_DISCOVERY",
+  "repo_root": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder",
+  "accepted_head": "7ffea80880652315c21eaec2f75300ab9a8c0450",
+  "root_guard": {
+    "result": "PASS",
+    "required_files_present": [
+      "CAPABILITY_ROADMAP.json",
+      "GENESIS_STATE.json",
+      "TASK_QUEUE.json",
+      "packs/registry.json",
+      "orchestrator/run.ps1"
+    ]
+  },
+  "current_source_of_truth_candidate": {
+    "path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+    "status": "DERIVED_ACTIVE_MAP_CANDIDATE",
+    "why_status": "Existing protected and historical map organs are split across root state, self_knowledge, self_model, body, and capability_shelf. PHASE161C needs a current unified body map with why_status, wiring evidence, gap chain, stub inventory, and orphan inventory. Protected source-of-truth files are read-only in this phase, so the active map is derived under reports/self_development rather than replacing protected state."
+  },
+  "organs": [
+    {
+      "path": "CAPABILITY_ROADMAP.json",
+      "type": "protected_capability_roadmap",
+      "classification": "PROTECTED_SOURCE_OF_TRUTH",
+      "protected": true,
+      "current_or_stale": "current_but_phase_read_only",
+      "why_status": "Root roadmap is a protected source-of-truth for accepted capability state. It can be read and referenced, but direct mutation is out of scope for PHASE161C.",
+      "can_be_extended": false,
+      "should_be_read_only": true,
+      "recommended_handling": "Read as source input. Emit any update candidate under reports/self_development/protected_state_update_candidates if needed."
+    },
+    {
+      "path": "GENESIS_STATE.json",
+      "type": "protected_genesis_state",
+      "classification": "PROTECTED_SOURCE_OF_TRUTH",
+      "protected": true,
+      "current_or_stale": "current_but_phase_read_only",
+      "why_status": "Root genesis state is protected state. PHASE161C must not mutate it while producing a derived self-map.",
+      "can_be_extended": false,
+      "should_be_read_only": true,
+      "recommended_handling": "Read only."
+    },
+    {
+      "path": "TASK_QUEUE.json",
+      "type": "protected_task_queue",
+      "classification": "PROTECTED_SOURCE_OF_TRUTH",
+      "protected": true,
+      "current_or_stale": "current_but_phase_read_only",
+      "why_status": "Task queue is protected execution state. This phase builds map artifacts and must not update the queue.",
+      "can_be_extended": false,
+      "should_be_read_only": true,
+      "recommended_handling": "Read only."
+    },
+    {
+      "path": "packs/registry.json",
+      "type": "protected_pack_registry",
+      "classification": "PROTECTED_SOURCE_OF_TRUTH",
+      "protected": true,
+      "current_or_stale": "current_but_phase_read_only",
+      "why_status": "Pack registry is the protected registry for pack definitions. It can identify registered organs but must not be directly changed in PHASE161C.",
+      "can_be_extended": false,
+      "should_be_read_only": true,
+      "recommended_handling": "Read as registry input."
+    },
+    {
+      "path": "route_locks/ACTIVE_ROUTE_LOCK.json",
+      "type": "active_route_lock",
+      "classification": "PROTECTED_SOURCE_OF_TRUTH",
+      "protected": true,
+      "current_or_stale": "current_active_route",
+      "why_status": "Active route lock points to the current accepted route and is operational routing state. PHASE161C can reference it but must not change it.",
+      "can_be_extended": false,
+      "should_be_read_only": true,
+      "recommended_handling": "Read only; mention PHASE161C route request separately."
+    },
+    {
+      "path": "self_knowledge/BUILDER_SELF_MODEL.json",
+      "type": "self_model",
+      "classification": "INCOMPLETE",
+      "protected": false,
+      "current_or_stale": "stale_or_partial",
+      "why_status": "Existing self model is useful source material, but it does not provide PHASE161C body-map taxonomy, why_status for uncertain artifacts, wiring graph, stub inventory, orphan inventory, or gap-chain outputs.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse as input. Do not overwrite during PHASE161C; produce derived active map under reports/self_development."
+    },
+    {
+      "path": "self_model/BUILDER_SELF_MODEL.json",
+      "type": "self_model",
+      "classification": "INCOMPLETE",
+      "protected": false,
+      "current_or_stale": "stale_or_partial",
+      "why_status": "Parallel self-model artifact exists but is not sufficient as the active body map because it lacks current wiring and proof classification for the PHASE161C taxonomy.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse as input. Avoid declaring it replaced without owner approval."
+    },
+    {
+      "path": "self_knowledge/MODULE_INVENTORY.json",
+      "type": "module_inventory",
+      "classification": "INCOMPLETE",
+      "protected": false,
+      "current_or_stale": "stale_or_partial",
+      "why_status": "Inventory organ exists and can be reused, but it does not include full parser status, call graph edges, safety-sensitive operation detection, or why_status for every artifact.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse as source input and produce PHASE161C function_inventory.json."
+    },
+    {
+      "path": "self_knowledge/CAPABILITY_MANIFEST.json",
+      "type": "capability_manifest",
+      "classification": "INCOMPLETE",
+      "protected": false,
+      "current_or_stale": "stale_or_partial",
+      "why_status": "Capability manifest gives capability context but is not a living body map and lacks wiring/proof/stub/orphan classifications.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse as capability source input."
+    },
+    {
+      "path": "living_learning_environment/body/body_registry.json",
+      "type": "body_registry",
+      "classification": "ACTIVE",
+      "protected": false,
+      "current_or_stale": "active_body_source",
+      "why_status": "Body registry is an existing organ registry and should be reused as body-source evidence. It does not replace the PHASE161C derived map because it is not a repo-wide wiring/proof/gap map.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse as source evidence; do not create a blind parallel registry."
+    },
+    {
+      "path": "living_learning_environment/body/BUILDER_BODY_ORGAN_PACK_V1.json",
+      "type": "body_organ_pack",
+      "classification": "ACTIVE",
+      "protected": false,
+      "current_or_stale": "active_body_source",
+      "why_status": "Body organ pack records admitted body organs and can seed the derived map, but it lacks repo-wide module wiring, validator-only status, and gap-chain reasoning.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse as input to derived map."
+    },
+    {
+      "path": "capability_shelf/registry.json",
+      "type": "capability_shelf_registry",
+      "classification": "ACTIVE",
+      "protected": false,
+      "current_or_stale": "active_capability_source",
+      "why_status": "Capability shelf registry is an active capability source but not a full agent body map.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse as capability evidence input."
+    },
+    {
+      "path": "self_build_backlog/CAPABILITY_GAP_INDEX_V1.json",
+      "type": "gap_index",
+      "classification": "INCOMPLETE",
+      "protected": false,
+      "current_or_stale": "historical_gap_source",
+      "why_status": "Existing gap index helps identify historical capability gaps, but PHASE161C requires a current why-chain derived from live repository wiring and proof status.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse as gap-source input, then emit self_model_gap_chain.json."
+    },
+    {
+      "path": "modules/build_builder_self_knowledge.ps1",
+      "type": "self_knowledge_builder_module",
+      "classification": "NOT_WIRED_FOR_PHASE161C",
+      "protected": false,
+      "current_or_stale": "usable_but_insufficient",
+      "why_status": "Existing builder creates self-knowledge artifacts but does not emit the PHASE161C derived body map, function inventory, wiring graph, stub/orphan inventories, or required why_status taxonomy.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reuse its pattern and source inputs; create a PHASE161C-specific builder module rather than changing older accepted behavior."
+    },
+    {
+      "path": "modules/write_builder_self_describe_report.ps1",
+      "type": "self_describe_report_module",
+      "classification": "NOT_WIRED_FOR_PHASE161C",
+      "protected": false,
+      "current_or_stale": "usable_but_insufficient",
+      "why_status": "Existing report writer is useful for self-description, but PHASE161C needs machine-readable body-map and gap-chain reports.",
+      "can_be_extended": true,
+      "should_be_read_only": false,
+      "recommended_handling": "Reference pattern only; do not mutate existing report behavior."
+    },
+    {
+      "path": "runtime_sessions/",
+      "type": "runtime_evidence_directory",
+      "classification": "UNSAFE_TO_MUTATE_DIRECTLY",
+      "protected": false,
+      "current_or_stale": "runtime_outputs_untracked",
+      "why_status": "Runtime evidence may contain useful directory names but must remain untracked and must not be committed as PHASE161C outputs.",
+      "can_be_extended": false,
+      "should_be_read_only": true,
+      "recommended_handling": "List directory names only when needed."
+    }
+  ],
+  "reuse_decision": {
+    "decision": "CREATE_DERIVED_ACTIVE_MAP_FROM_EXISTING_ORGANS",
+    "why_status": "Existing map organs are real and must be reused as inputs, but none provide the current unified PHASE161C taxonomy, why_status, wiring graph, function inventory, stub/orphan inventory, and self-model gap chain. Protected root state cannot be safely mutated. The safe implementation is a derived active map under reports/self_development."
+  }
+}

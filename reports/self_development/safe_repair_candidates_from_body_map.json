@@ -1,0 +1,605 @@
+{
+  "phase": "PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_V1",
+  "candidates": [
+    {
+      "path": "capability_shelf/README.md",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/checkpoint_publish.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/correction_inbox.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/life_loop_runner.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/material_governance.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/observation_only_result.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/observation_runner.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/pack_registry.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/restore_state.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/self_correction_result.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/usage_examples/self_learning_memory.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/checkpoint_publish.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/correction_inbox.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/life_loop_runner.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/material_governance.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/observation_only_result.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/observation_runner.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/pack_registry.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/restore_state.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/self_correction_result.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "capability_shelf/validators/self_learning_memory.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/agent_package_blueprint.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/AGENT_PRODUCTION_CLOSED_LOOP_CONTRACT_V1.md",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/AGENT_PRODUCTION_CLOSED_LOOP_STATE_MACHINE_V1.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/build_decision.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/build_execution_result.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/build_task.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/capability_roadmap.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/external_agent_package_manifest.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/external_agent_spec.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/failure_diagnostic.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/GAP_REMEDIATION_INTAKE_REPORT_CONTRACT_V1.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/GAP_REMEDIATION_PROGRAM_SEED_CONTRACT_V1.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/generated_agent_github_action_launch_surface.contract.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/generated_agent_request.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/generated_agent_result.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/generated_agent_validation_report.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/generated_self_build_program_execution_recipe.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/genesis_state.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/materials/material_policy.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/materials/material_quarantine_card.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/operational_generated_agent_validation_report.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/remediation_seed_self_build_program_blueprint.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/run_report.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/self_build_pack_registry.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/self_build_pack.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/self_development/self_build_program.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/self_knowledge/builder_self_model.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/self_knowledge/capability_manifest.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/self_knowledge/evidence_index.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/self_knowledge/module_inventory.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/self_knowledge/produced_agents_index.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/self_knowledge/self_describe_report.schema.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/SPECIALIZATION_GAP_REPORT_CONTRACT_V1.json",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "contracts/task_queue.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "contracts/validation_report.schema.json",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "docs/AGENT_PRODUCTION_CLOSED_LOOP_OPERATOR_GUIDE_V1.md",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/apply_external_agent_overlay.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/classify_builder_owner_live_task_safety_001.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/complete_generated_self_build_program_executable_packs.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/emit_build_decision.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/emit_failure_diagnostic.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/emit_run_report.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/enqueue_builder_owner_task_backlog_001.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/execute_build_task.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/execute_self_build_pack.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/inspect_builder_owner_inbox_router_state_001.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/inspect_builder_owner_task_lifecycle_state_001.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/invoke_agent_spec_architect_handoff.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/invoke_external_agent_build.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/invoke_generated_family_autonomous_conveyor.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/load_build_task.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/materials/evaluate_material_policy.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/new_external_agent_package.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/new_gap_remediation_intake_report.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/new_gap_remediation_program_seed.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/new_generated_self_build_program_execution_recipe_bundle.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/new_remediation_seed_program_blueprint.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/new_specialization_gap_report.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/new_specialization_profile_candidate_brief.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/normalize_builder_owner_inbox_message_001.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/normalize_builder_owner_live_task_001.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/promote_builder_backlog_task_to_active_001.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/quarantine_builder_owner_inbox_message_001.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/read_capability_roadmap.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/read_genesis_plan.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/read_genesis_state.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/read_pack_registry.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/read_task_queue.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/render_generated_self_build_pack_apply_from_recipe.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/resolve_specialization_overlay.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/run_validators.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/select_next_capability.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/select_next_task.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/select_self_build_pack.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/test_generated_agent_package_operational.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/test_generated_agent_package.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/test_generated_self_build_program_admission_readiness.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has wiring/reference evidence but no proof evidence.",
+      "recommended_action": "Add proof or validator evidence before marking proven."
+    },
+    {
+      "path": "modules/update_genesis_state.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    },
+    {
+      "path": "modules/update_task_queue.ps1",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has wiring and validator references but no matching proof path.",
+      "recommended_action": "Run or add proof before promoting to active proven."
+    }
+  ]
+}

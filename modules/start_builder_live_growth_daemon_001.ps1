@@ -19,6 +19,12 @@ $ErrorActionPreference = "Stop"
 
 . (Join-Path $PSScriptRoot "inspect_builder_owner_task_lifecycle_state_001.ps1")
 . (Join-Path $PSScriptRoot "inspect_builder_quality_decision_index_001.ps1")
+$Phase161ADaemonSavedSessionRoot = $SessionRoot
+$Phase161ADaemonSavedRunId = $RunId
+. (Join-Path $PSScriptRoot "inspect_builder_school_entry_state_001.ps1")
+$SessionRoot = $Phase161ADaemonSavedSessionRoot
+$RunId = $Phase161ADaemonSavedRunId
+Remove-Variable -Name Phase161ADaemonSavedSessionRoot,Phase161ADaemonSavedRunId -ErrorAction SilentlyContinue
 
 function Normalize-Phase160DaemonFullPath {
   param([string]$Path)
@@ -253,10 +259,29 @@ function Get-Phase160DaemonLiveTaskSnapshot {
   }
   $runHead = if ($null -ne $runManifest -and $runManifest.PSObject.Properties.Name -contains "run_head") { [string]$runManifest.run_head } else { "NONE" }
   $headMatch = if ($runHead -eq "NONE" -or $currentHead -eq "UNKNOWN") { $false } else { $runHead -eq $currentHead }
+  $schoolEntryState = Get-Phase161ASchoolEntryState -RepoRoot $RepoRoot -SessionRoot $SessionRootFull
   return [ordered]@{
     run_head = $runHead
     current_head = $currentHead
     head_match = $headMatch
+    active_route_lock_stamp = [string]$schoolEntryState.active_route_lock_stamp
+    current_route_step_id = [string]$schoolEntryState.current_route_step_id
+    current_route_step_title = [string]$schoolEntryState.current_route_step_title
+    school_entry_enabled = [bool]$schoolEntryState.school_entry_enabled
+    active_school_run_id = [string]$schoolEntryState.active_school_run_id
+    active_curriculum_id = [string]$schoolEntryState.active_curriculum_id
+    school_lesson_total_count = [int]$schoolEntryState.school_lesson_total_count
+    school_lesson_pass_count = [int]$schoolEntryState.school_lesson_pass_count
+    school_lesson_fail_count = [int]$schoolEntryState.school_lesson_fail_count
+    school_lesson_quarantine_count = [int]$schoolEntryState.school_lesson_quarantine_count
+    school_morning_review_written = [bool]$schoolEntryState.school_morning_review_written
+    school_route_drift_detected = [bool]$schoolEntryState.school_route_drift_detected
+    school_owner_review_required = [bool]$schoolEntryState.school_owner_review_required
+    school_run_exists = [bool]$schoolEntryState.school_run_exists
+    run_continues_after_failed_lesson = [bool]$schoolEntryState.run_continues_after_failed_lesson
+    quarantine_handled_separately = [bool]$schoolEntryState.quarantine_handled_separately
+    school_no_accepted_repo_mutation = [bool]$schoolEntryState.no_accepted_repo_mutation
+    school_no_protected_state_mutation = [bool]$schoolEntryState.no_protected_state_mutation
     live_repo_guard = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status") { [string]$runtimeGuard.status } elseif ($null -ne $runtimeIdentity -and $runtimeIdentity.PSObject.Properties.Name -contains "live_repo_guard") { [string]$runtimeIdentity.live_repo_guard } else { "UNKNOWN" }
     runtime_guard_status = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status") { [string]$runtimeGuard.status } else { "UNKNOWN" }
     guard_block_reason = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "blocked_reasons") { (@($runtimeGuard.blocked_reasons | ForEach-Object { [string]$_ }) -join ",") } else { "NONE" }
@@ -933,6 +958,24 @@ try {
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
+      active_route_lock_stamp = [string]$LiveTaskSnapshot.active_route_lock_stamp
+      current_route_step_id = [string]$LiveTaskSnapshot.current_route_step_id
+      current_route_step_title = [string]$LiveTaskSnapshot.current_route_step_title
+      school_entry_enabled = [bool]$LiveTaskSnapshot.school_entry_enabled
+      active_school_run_id = [string]$LiveTaskSnapshot.active_school_run_id
+      active_curriculum_id = [string]$LiveTaskSnapshot.active_curriculum_id
+      school_lesson_total_count = [int]$LiveTaskSnapshot.school_lesson_total_count
+      school_lesson_pass_count = [int]$LiveTaskSnapshot.school_lesson_pass_count
+      school_lesson_fail_count = [int]$LiveTaskSnapshot.school_lesson_fail_count
+      school_lesson_quarantine_count = [int]$LiveTaskSnapshot.school_lesson_quarantine_count
+      school_morning_review_written = [bool]$LiveTaskSnapshot.school_morning_review_written
+      school_route_drift_detected = [bool]$LiveTaskSnapshot.school_route_drift_detected
+      school_owner_review_required = [bool]$LiveTaskSnapshot.school_owner_review_required
+      school_run_exists = [bool]$LiveTaskSnapshot.school_run_exists
+      run_continues_after_failed_lesson = [bool]$LiveTaskSnapshot.run_continues_after_failed_lesson
+      quarantine_handled_separately = [bool]$LiveTaskSnapshot.quarantine_handled_separately
+      school_no_accepted_repo_mutation = [bool]$LiveTaskSnapshot.school_no_accepted_repo_mutation
+      school_no_protected_state_mutation = [bool]$LiveTaskSnapshot.school_no_protected_state_mutation
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
@@ -1011,6 +1054,24 @@ try {
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
+      active_route_lock_stamp = [string]$LiveTaskSnapshot.active_route_lock_stamp
+      current_route_step_id = [string]$LiveTaskSnapshot.current_route_step_id
+      current_route_step_title = [string]$LiveTaskSnapshot.current_route_step_title
+      school_entry_enabled = [bool]$LiveTaskSnapshot.school_entry_enabled
+      active_school_run_id = [string]$LiveTaskSnapshot.active_school_run_id
+      active_curriculum_id = [string]$LiveTaskSnapshot.active_curriculum_id
+      school_lesson_total_count = [int]$LiveTaskSnapshot.school_lesson_total_count
+      school_lesson_pass_count = [int]$LiveTaskSnapshot.school_lesson_pass_count
+      school_lesson_fail_count = [int]$LiveTaskSnapshot.school_lesson_fail_count
+      school_lesson_quarantine_count = [int]$LiveTaskSnapshot.school_lesson_quarantine_count
+      school_morning_review_written = [bool]$LiveTaskSnapshot.school_morning_review_written
+      school_route_drift_detected = [bool]$LiveTaskSnapshot.school_route_drift_detected
+      school_owner_review_required = [bool]$LiveTaskSnapshot.school_owner_review_required
+      school_run_exists = [bool]$LiveTaskSnapshot.school_run_exists
+      run_continues_after_failed_lesson = [bool]$LiveTaskSnapshot.run_continues_after_failed_lesson
+      quarantine_handled_separately = [bool]$LiveTaskSnapshot.quarantine_handled_separately
+      school_no_accepted_repo_mutation = [bool]$LiveTaskSnapshot.school_no_accepted_repo_mutation
+      school_no_protected_state_mutation = [bool]$LiveTaskSnapshot.school_no_protected_state_mutation
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
@@ -1090,6 +1151,24 @@ try {
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
+      active_route_lock_stamp = [string]$LiveTaskSnapshot.active_route_lock_stamp
+      current_route_step_id = [string]$LiveTaskSnapshot.current_route_step_id
+      current_route_step_title = [string]$LiveTaskSnapshot.current_route_step_title
+      school_entry_enabled = [bool]$LiveTaskSnapshot.school_entry_enabled
+      active_school_run_id = [string]$LiveTaskSnapshot.active_school_run_id
+      active_curriculum_id = [string]$LiveTaskSnapshot.active_curriculum_id
+      school_lesson_total_count = [int]$LiveTaskSnapshot.school_lesson_total_count
+      school_lesson_pass_count = [int]$LiveTaskSnapshot.school_lesson_pass_count
+      school_lesson_fail_count = [int]$LiveTaskSnapshot.school_lesson_fail_count
+      school_lesson_quarantine_count = [int]$LiveTaskSnapshot.school_lesson_quarantine_count
+      school_morning_review_written = [bool]$LiveTaskSnapshot.school_morning_review_written
+      school_route_drift_detected = [bool]$LiveTaskSnapshot.school_route_drift_detected
+      school_owner_review_required = [bool]$LiveTaskSnapshot.school_owner_review_required
+      school_run_exists = [bool]$LiveTaskSnapshot.school_run_exists
+      run_continues_after_failed_lesson = [bool]$LiveTaskSnapshot.run_continues_after_failed_lesson
+      quarantine_handled_separately = [bool]$LiveTaskSnapshot.quarantine_handled_separately
+      school_no_accepted_repo_mutation = [bool]$LiveTaskSnapshot.school_no_accepted_repo_mutation
+      school_no_protected_state_mutation = [bool]$LiveTaskSnapshot.school_no_protected_state_mutation
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count
@@ -1244,6 +1323,24 @@ try {
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
+      active_route_lock_stamp = [string]$LiveTaskSnapshot.active_route_lock_stamp
+      current_route_step_id = [string]$LiveTaskSnapshot.current_route_step_id
+      current_route_step_title = [string]$LiveTaskSnapshot.current_route_step_title
+      school_entry_enabled = [bool]$LiveTaskSnapshot.school_entry_enabled
+      active_school_run_id = [string]$LiveTaskSnapshot.active_school_run_id
+      active_curriculum_id = [string]$LiveTaskSnapshot.active_curriculum_id
+      school_lesson_total_count = [int]$LiveTaskSnapshot.school_lesson_total_count
+      school_lesson_pass_count = [int]$LiveTaskSnapshot.school_lesson_pass_count
+      school_lesson_fail_count = [int]$LiveTaskSnapshot.school_lesson_fail_count
+      school_lesson_quarantine_count = [int]$LiveTaskSnapshot.school_lesson_quarantine_count
+      school_morning_review_written = [bool]$LiveTaskSnapshot.school_morning_review_written
+      school_route_drift_detected = [bool]$LiveTaskSnapshot.school_route_drift_detected
+      school_owner_review_required = [bool]$LiveTaskSnapshot.school_owner_review_required
+      school_run_exists = [bool]$LiveTaskSnapshot.school_run_exists
+      run_continues_after_failed_lesson = [bool]$LiveTaskSnapshot.run_continues_after_failed_lesson
+      quarantine_handled_separately = [bool]$LiveTaskSnapshot.quarantine_handled_separately
+      school_no_accepted_repo_mutation = [bool]$LiveTaskSnapshot.school_no_accepted_repo_mutation
+      school_no_protected_state_mutation = [bool]$LiveTaskSnapshot.school_no_protected_state_mutation
       live_repo_guard = [string]$LiveTaskSnapshot.live_repo_guard
       candidate_count = [int]$LiveTaskSnapshot.candidate_count
       ready_candidate_count = [int]$LiveTaskSnapshot.ready_candidate_count

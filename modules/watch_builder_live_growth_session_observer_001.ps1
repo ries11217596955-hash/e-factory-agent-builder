@@ -262,6 +262,21 @@ try {
   $WaitingOwnerReviewBlockedWhenQualityInconsistentDetected = $false
   $PlaceholderStillBlockedDetected = $false
   $UnsafeCandidateStillQuarantinedDetected = $false
+  $SchoolRunExistsDetected = $false
+  $SchoolMorningReviewDetected = $false
+  $SchoolRouteStampDetected = $false
+  $SchoolNoAcceptedMutationDetected = $false
+  $SchoolNoProtectedMutationDetected = $false
+  $SchoolContinuesAfterFailDetected = $false
+  $SchoolQuarantineSeparateDetected = $false
+  $SchoolOwnerReviewRequiredDetected = $false
+  $SchoolLessonTotalMax = 0
+  $SchoolLessonPassMax = 0
+  $SchoolLessonFailMax = 0
+  $SchoolLessonQuarantineMax = 0
+  $LastSchoolRunId = "NONE"
+  $LastSchoolCurriculumId = "NONE"
+  $LastSchoolRouteStepId = "NONE"
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -330,6 +345,22 @@ try {
     $CurrentOwnerTaskLost = $false
     $CurrentOwnerTaskLostFieldPresent = $false
     $CurrentActiveTaskBlocksOwnerTask = $false
+    $CurrentSchoolEntryEnabled = $false
+    $CurrentSchoolRunId = "NONE"
+    $CurrentSchoolCurriculumId = "NONE"
+    $CurrentSchoolLessonTotal = 0
+    $CurrentSchoolLessonPass = 0
+    $CurrentSchoolLessonFail = 0
+    $CurrentSchoolLessonQuarantine = 0
+    $CurrentSchoolMorningReviewWritten = $false
+    $CurrentSchoolRouteDriftDetected = $false
+    $CurrentSchoolOwnerReviewRequired = $false
+    $CurrentSchoolRouteStamp = "NONE"
+    $CurrentSchoolRouteStepId = "NONE"
+    $CurrentSchoolNoAcceptedRepoMutation = $false
+    $CurrentSchoolNoProtectedStateMutation = $false
+    $CurrentSchoolContinuesAfterFail = $false
+    $CurrentSchoolQuarantineSeparate = $false
     if ($null -ne $CurrentState) {
       if ($CurrentState.PSObject.Properties.Name -contains "self_growth_duty_count") {
         $CurrentSelfGrowthDutyCount = [int]$CurrentState.self_growth_duty_count
@@ -380,6 +411,97 @@ try {
       if ($CurrentState.PSObject.Properties.Name -contains "active_task_blocks_owner_task") {
         $CurrentActiveTaskBlocksOwnerTask = [bool]$CurrentState.active_task_blocks_owner_task
       }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_entry_enabled") {
+        $CurrentSchoolEntryEnabled = [bool]$CurrentState.school_entry_enabled
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "active_school_run_id") {
+        $CurrentSchoolRunId = [string]$CurrentState.active_school_run_id
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "active_curriculum_id") {
+        $CurrentSchoolCurriculumId = [string]$CurrentState.active_curriculum_id
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_lesson_total_count") {
+        $CurrentSchoolLessonTotal = [int]$CurrentState.school_lesson_total_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_lesson_pass_count") {
+        $CurrentSchoolLessonPass = [int]$CurrentState.school_lesson_pass_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_lesson_fail_count") {
+        $CurrentSchoolLessonFail = [int]$CurrentState.school_lesson_fail_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_lesson_quarantine_count") {
+        $CurrentSchoolLessonQuarantine = [int]$CurrentState.school_lesson_quarantine_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_morning_review_written") {
+        $CurrentSchoolMorningReviewWritten = [bool]$CurrentState.school_morning_review_written
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_route_drift_detected") {
+        $CurrentSchoolRouteDriftDetected = [bool]$CurrentState.school_route_drift_detected
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_owner_review_required") {
+        $CurrentSchoolOwnerReviewRequired = [bool]$CurrentState.school_owner_review_required
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "active_route_lock_stamp") {
+        $CurrentSchoolRouteStamp = [string]$CurrentState.active_route_lock_stamp
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "current_route_step_id") {
+        $CurrentSchoolRouteStepId = [string]$CurrentState.current_route_step_id
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_no_accepted_repo_mutation") {
+        $CurrentSchoolNoAcceptedRepoMutation = [bool]$CurrentState.school_no_accepted_repo_mutation
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_no_protected_state_mutation") {
+        $CurrentSchoolNoProtectedStateMutation = [bool]$CurrentState.school_no_protected_state_mutation
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "run_continues_after_failed_lesson") {
+        $CurrentSchoolContinuesAfterFail = [bool]$CurrentState.run_continues_after_failed_lesson
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "quarantine_handled_separately") {
+        $CurrentSchoolQuarantineSeparate = [bool]$CurrentState.quarantine_handled_separately
+      }
+    }
+    if ($CurrentSchoolEntryEnabled -and $CurrentSchoolRunId -ne "NONE") {
+      $SchoolRunExistsDetected = $true
+      $LastSchoolRunId = $CurrentSchoolRunId
+    }
+    if ($CurrentSchoolCurriculumId -ne "NONE") {
+      $LastSchoolCurriculumId = $CurrentSchoolCurriculumId
+    }
+    if ($CurrentSchoolRouteStepId -ne "NONE") {
+      $LastSchoolRouteStepId = $CurrentSchoolRouteStepId
+    }
+    if ($CurrentSchoolMorningReviewWritten) {
+      $SchoolMorningReviewDetected = $true
+    }
+    if ($CurrentSchoolRouteStamp -ne "NONE" -and -not [string]::IsNullOrWhiteSpace($CurrentSchoolRouteStamp)) {
+      $SchoolRouteStampDetected = $true
+    }
+    if ($CurrentSchoolNoAcceptedRepoMutation) {
+      $SchoolNoAcceptedMutationDetected = $true
+    }
+    if ($CurrentSchoolNoProtectedStateMutation) {
+      $SchoolNoProtectedMutationDetected = $true
+    }
+    if ($CurrentSchoolContinuesAfterFail) {
+      $SchoolContinuesAfterFailDetected = $true
+    }
+    if ($CurrentSchoolQuarantineSeparate) {
+      $SchoolQuarantineSeparateDetected = $true
+    }
+    if ($CurrentSchoolOwnerReviewRequired) {
+      $SchoolOwnerReviewRequiredDetected = $true
+    }
+    if ($CurrentSchoolLessonTotal -gt $SchoolLessonTotalMax) {
+      $SchoolLessonTotalMax = $CurrentSchoolLessonTotal
+    }
+    if ($CurrentSchoolLessonPass -gt $SchoolLessonPassMax) {
+      $SchoolLessonPassMax = $CurrentSchoolLessonPass
+    }
+    if ($CurrentSchoolLessonFail -gt $SchoolLessonFailMax) {
+      $SchoolLessonFailMax = $CurrentSchoolLessonFail
+    }
+    if ($CurrentSchoolLessonQuarantine -gt $SchoolLessonQuarantineMax) {
+      $SchoolLessonQuarantineMax = $CurrentSchoolLessonQuarantine
     }
     if ($CurrentOwnerTaskIntakeDecision -eq "ACCEPT_SAFE_OWNER_TASK") {
       $SafeOwnerTaskAcceptedDetected = $true
@@ -694,6 +816,25 @@ try {
       macro_cycle_id = $CurrentMacroCycleId
       last_macro_cycle_stage = $CurrentMacroCycleStage
       last_macro_decision = $CurrentMacroDecision
+      school_entry_enabled = $CurrentSchoolEntryEnabled
+      active_school_run_id = $CurrentSchoolRunId
+      active_curriculum_id = $CurrentSchoolCurriculumId
+      school_lesson_total_count = $CurrentSchoolLessonTotal
+      school_lesson_pass_count = $CurrentSchoolLessonPass
+      school_lesson_fail_count = $CurrentSchoolLessonFail
+      school_lesson_quarantine_count = $CurrentSchoolLessonQuarantine
+      school_morning_review_written = $CurrentSchoolMorningReviewWritten
+      school_route_drift_detected = $CurrentSchoolRouteDriftDetected
+      school_owner_review_required = $CurrentSchoolOwnerReviewRequired
+      active_route_lock_stamp = $CurrentSchoolRouteStamp
+      current_route_step_id = $CurrentSchoolRouteStepId
+      school_run_exists = $SchoolRunExistsDetected
+      school_morning_review_exists = $SchoolMorningReviewDetected
+      school_route_stamp_present = $SchoolRouteStampDetected
+      school_no_accepted_repo_mutation = $SchoolNoAcceptedMutationDetected
+      school_no_protected_state_mutation = $SchoolNoProtectedMutationDetected
+      school_run_continues_after_fail = $SchoolContinuesAfterFailDetected
+      school_quarantine_handled_separately = $SchoolQuarantineSeparateDetected
       self_growth_stagnation_detected = $SelfGrowthStagnationDetected
       stale_ended_session_detected = $StaleEndedSessionDetected
       blocker_queue_count = $BlockerQueueCount
@@ -777,6 +918,21 @@ try {
     self_growth_duty_count = $MaxSelfGrowthDutyCount
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
+    school_run_exists = $SchoolRunExistsDetected
+    school_morning_review_exists = $SchoolMorningReviewDetected
+    school_route_stamp_present = $SchoolRouteStampDetected
+    school_no_accepted_repo_mutation = $SchoolNoAcceptedMutationDetected
+    school_no_protected_state_mutation = $SchoolNoProtectedMutationDetected
+    school_run_continues_after_fail = $SchoolContinuesAfterFailDetected
+    school_quarantine_handled_separately = $SchoolQuarantineSeparateDetected
+    school_owner_review_required = $SchoolOwnerReviewRequiredDetected
+    active_school_run_id = $LastSchoolRunId
+    active_curriculum_id = $LastSchoolCurriculumId
+    current_route_step_id = $LastSchoolRouteStepId
+    school_lesson_total_count = $SchoolLessonTotalMax
+    school_lesson_pass_count = $SchoolLessonPassMax
+    school_lesson_fail_count = $SchoolLessonFailMax
+    school_lesson_quarantine_count = $SchoolLessonQuarantineMax
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
     teacher_inbox_count = $TeacherInboxCount
@@ -855,6 +1011,21 @@ try {
     self_growth_duty_count = $MaxSelfGrowthDutyCount
     last_self_growth_gap = $LastSelfGrowthGap
     last_self_growth_status = $LastSelfGrowthStatus
+    school_run_exists = $SchoolRunExistsDetected
+    school_morning_review_exists = $SchoolMorningReviewDetected
+    school_route_stamp_present = $SchoolRouteStampDetected
+    school_no_accepted_repo_mutation = $SchoolNoAcceptedMutationDetected
+    school_no_protected_state_mutation = $SchoolNoProtectedMutationDetected
+    school_run_continues_after_fail = $SchoolContinuesAfterFailDetected
+    school_quarantine_handled_separately = $SchoolQuarantineSeparateDetected
+    school_owner_review_required = $SchoolOwnerReviewRequiredDetected
+    active_school_run_id = $LastSchoolRunId
+    active_curriculum_id = $LastSchoolCurriculumId
+    current_route_step_id = $LastSchoolRouteStepId
+    school_lesson_total_count = $SchoolLessonTotalMax
+    school_lesson_pass_count = $SchoolLessonPassMax
+    school_lesson_fail_count = $SchoolLessonFailMax
+    school_lesson_quarantine_count = $SchoolLessonQuarantineMax
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
     safe_owner_task_accepted = $SafeOwnerTaskAcceptedDetected

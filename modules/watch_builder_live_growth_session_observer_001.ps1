@@ -71,6 +71,23 @@ function Read-Phase160ObserverJsonSafe {
   }
 }
 
+function Get-Phase161BObserverLearningDecisionRecords {
+  param([string]$RepoRoot)
+  $decisionRoot = Join-Path $RepoRoot "runtime_sessions/learning_mode_decisions"
+  if (-not (Test-Path -LiteralPath $decisionRoot)) {
+    return @()
+  }
+  $records = @()
+  $files = @(Get-ChildItem -LiteralPath $decisionRoot -File -Filter "learning_mode_decision.json" -Recurse -ErrorAction SilentlyContinue | Sort-Object LastWriteTimeUtc, Name)
+  foreach ($file in $files) {
+    $record = Read-Phase160ObserverJsonSafe -Path $file.FullName
+    if ($null -ne $record) {
+      $records += $record
+    }
+  }
+  return @($records)
+}
+
 function Get-Phase160ObserverJsonLineCount {
   param([string]$Path)
   if (-not (Test-Path -LiteralPath $Path)) {
@@ -277,6 +294,16 @@ try {
   $LastSchoolRunId = "NONE"
   $LastSchoolCurriculumId = "NONE"
   $LastSchoolRouteStepId = "NONE"
+  $LearningSchoolModeSelectedWithCurriculumDetected = $false
+  $LearningSelfModeSelectedWithoutCurriculumDetected = $false
+  $LearningAbsorptionSelectedAfterCompletedRunDetected = $false
+  $LearningReturnedToSelfAfterAbsorptionDetected = $false
+  $LearningNoAcceptedRepoMutationDetected = $false
+  $LearningNoProtectedStateMutationDetected = $false
+  $LastLearningMode = "NONE"
+  $LastLearningDecisionReason = "NONE"
+  $LastLearningAbsorptionId = "NONE"
+  $LastLearningRecommendedSelfGap = "NONE"
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -361,6 +388,14 @@ try {
     $CurrentSchoolNoProtectedStateMutation = $false
     $CurrentSchoolContinuesAfterFail = $false
     $CurrentSchoolQuarantineSeparate = $false
+    $CurrentLearningMode = "NONE"
+    $CurrentLearningDecisionReason = "NONE"
+    $CurrentLearningAbsorptionRequired = $false
+    $CurrentLearningLastAbsorptionId = "NONE"
+    $CurrentLearningRecommendedSelfGap = "NONE"
+    $CurrentLearningSelectedCurriculumSource = "NONE"
+    $CurrentLearningNoAcceptedRepoMutation = $false
+    $CurrentLearningNoProtectedStateMutation = $false
     if ($null -ne $CurrentState) {
       if ($CurrentState.PSObject.Properties.Name -contains "self_growth_duty_count") {
         $CurrentSelfGrowthDutyCount = [int]$CurrentState.self_growth_duty_count
@@ -459,6 +494,88 @@ try {
       if ($CurrentState.PSObject.Properties.Name -contains "quarantine_handled_separately") {
         $CurrentSchoolQuarantineSeparate = [bool]$CurrentState.quarantine_handled_separately
       }
+      if ($CurrentState.PSObject.Properties.Name -contains "learning_mode") {
+        $CurrentLearningMode = [string]$CurrentState.learning_mode
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "learning_mode_decision_reason") {
+        $CurrentLearningDecisionReason = [string]$CurrentState.learning_mode_decision_reason
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "absorption_required") {
+        $CurrentLearningAbsorptionRequired = [bool]$CurrentState.absorption_required
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_absorption_id") {
+        $CurrentLearningLastAbsorptionId = [string]$CurrentState.last_absorption_id
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "recommended_next_self_gap") {
+        $CurrentLearningRecommendedSelfGap = [string]$CurrentState.recommended_next_self_gap
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "selected_curriculum_source") {
+        $CurrentLearningSelectedCurriculumSource = [string]$CurrentState.selected_curriculum_source
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_no_accepted_repo_mutation") {
+        $CurrentLearningNoAcceptedRepoMutation = [bool]$CurrentState.school_no_accepted_repo_mutation
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "school_no_protected_state_mutation") {
+        $CurrentLearningNoProtectedStateMutation = [bool]$CurrentState.school_no_protected_state_mutation
+      }
+    }
+    $LearningDecisionRecords = Get-Phase161BObserverLearningDecisionRecords -RepoRoot $RepoRoot
+    foreach ($LearningDecision in $LearningDecisionRecords) {
+      $mode = [string]$LearningDecision.learning_mode
+      $decisionReason = [string]$LearningDecision.decision_reason
+      $activeCurriculum = [string]$LearningDecision.active_curriculum_id
+      $selectedSource = [string]$LearningDecision.selected_curriculum_source
+      if ($mode -eq "SCHOOL_MODE" -and $activeCurriculum -ne "NONE" -and $selectedSource -ne "NONE") {
+        $LearningSchoolModeSelectedWithCurriculumDetected = $true
+      }
+      if ($mode -eq "SELF_MODE" -and $activeCurriculum -eq "NONE" -and -not [bool]$LearningDecision.safe_idle_only) {
+        $LearningSelfModeSelectedWithoutCurriculumDetected = $true
+      }
+      if ($mode -eq "ABSORB_EXPERIENCE" -and [bool]$LearningDecision.absorption_required) {
+        $LearningAbsorptionSelectedAfterCompletedRunDetected = $true
+      }
+      if ($mode -eq "SELF_MODE" -and $decisionReason -match "ABSORPTION_DONE_RETURN_SELF_MODE" -and [string]$LearningDecision.last_absorption_id -ne "NONE") {
+        $LearningReturnedToSelfAfterAbsorptionDetected = $true
+      }
+      if ([bool]$LearningDecision.no_accepted_repo_mutation) {
+        $LearningNoAcceptedRepoMutationDetected = $true
+      }
+      if ([bool]$LearningDecision.no_protected_state_mutation) {
+        $LearningNoProtectedStateMutationDetected = $true
+      }
+      $LastLearningMode = $mode
+      $LastLearningDecisionReason = $decisionReason
+      if ([string]$LearningDecision.last_absorption_id -ne "NONE") {
+        $LastLearningAbsorptionId = [string]$LearningDecision.last_absorption_id
+      }
+      if ([string]$LearningDecision.recommended_next_self_gap -ne "NONE") {
+        $LastLearningRecommendedSelfGap = [string]$LearningDecision.recommended_next_self_gap
+      }
+    }
+    if ($CurrentLearningMode -eq "SCHOOL_MODE" -and $CurrentSchoolCurriculumId -ne "NONE") {
+      $LearningSchoolModeSelectedWithCurriculumDetected = $true
+    }
+    if ($CurrentLearningMode -eq "SELF_MODE" -and $CurrentSchoolCurriculumId -eq "NONE") {
+      $LearningSelfModeSelectedWithoutCurriculumDetected = $true
+    }
+    if ($CurrentLearningMode -eq "ABSORB_EXPERIENCE" -and $CurrentLearningAbsorptionRequired) {
+      $LearningAbsorptionSelectedAfterCompletedRunDetected = $true
+    }
+    if ($CurrentLearningMode -ne "NONE") {
+      $LastLearningMode = $CurrentLearningMode
+      $LastLearningDecisionReason = $CurrentLearningDecisionReason
+    }
+    if ($CurrentLearningLastAbsorptionId -ne "NONE") {
+      $LastLearningAbsorptionId = $CurrentLearningLastAbsorptionId
+    }
+    if ($CurrentLearningRecommendedSelfGap -ne "NONE") {
+      $LastLearningRecommendedSelfGap = $CurrentLearningRecommendedSelfGap
+    }
+    if ($CurrentLearningNoAcceptedRepoMutation) {
+      $LearningNoAcceptedRepoMutationDetected = $true
+    }
+    if ($CurrentLearningNoProtectedStateMutation) {
+      $LearningNoProtectedStateMutationDetected = $true
     }
     if ($CurrentSchoolEntryEnabled -and $CurrentSchoolRunId -ne "NONE") {
       $SchoolRunExistsDetected = $true
@@ -835,6 +952,16 @@ try {
       school_no_protected_state_mutation = $SchoolNoProtectedMutationDetected
       school_run_continues_after_fail = $SchoolContinuesAfterFailDetected
       school_quarantine_handled_separately = $SchoolQuarantineSeparateDetected
+      learning_mode = $LastLearningMode
+      learning_mode_decision_reason = $LastLearningDecisionReason
+      learning_school_mode_selected_when_curriculum_exists = $LearningSchoolModeSelectedWithCurriculumDetected
+      learning_self_mode_selected_when_no_curriculum_exists = $LearningSelfModeSelectedWithoutCurriculumDetected
+      learning_absorption_selected_after_completed_school_run = $LearningAbsorptionSelectedAfterCompletedRunDetected
+      learning_returned_to_self_mode_after_absorption = $LearningReturnedToSelfAfterAbsorptionDetected
+      learning_no_accepted_repo_mutation = $LearningNoAcceptedRepoMutationDetected
+      learning_no_protected_state_mutation = $LearningNoProtectedStateMutationDetected
+      learning_last_absorption_id = $LastLearningAbsorptionId
+      learning_recommended_next_self_gap = $LastLearningRecommendedSelfGap
       self_growth_stagnation_detected = $SelfGrowthStagnationDetected
       stale_ended_session_detected = $StaleEndedSessionDetected
       blocker_queue_count = $BlockerQueueCount
@@ -933,6 +1060,16 @@ try {
     school_lesson_pass_count = $SchoolLessonPassMax
     school_lesson_fail_count = $SchoolLessonFailMax
     school_lesson_quarantine_count = $SchoolLessonQuarantineMax
+    learning_mode = $LastLearningMode
+    learning_mode_decision_reason = $LastLearningDecisionReason
+    learning_school_mode_selected_when_curriculum_exists = $LearningSchoolModeSelectedWithCurriculumDetected
+    learning_self_mode_selected_when_no_curriculum_exists = $LearningSelfModeSelectedWithoutCurriculumDetected
+    learning_absorption_selected_after_completed_school_run = $LearningAbsorptionSelectedAfterCompletedRunDetected
+    learning_returned_to_self_mode_after_absorption = $LearningReturnedToSelfAfterAbsorptionDetected
+    learning_no_accepted_repo_mutation = $LearningNoAcceptedRepoMutationDetected
+    learning_no_protected_state_mutation = $LearningNoProtectedStateMutationDetected
+    learning_last_absorption_id = $LastLearningAbsorptionId
+    learning_recommended_next_self_gap = $LastLearningRecommendedSelfGap
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
     teacher_inbox_count = $TeacherInboxCount
@@ -1026,6 +1163,16 @@ try {
     school_lesson_pass_count = $SchoolLessonPassMax
     school_lesson_fail_count = $SchoolLessonFailMax
     school_lesson_quarantine_count = $SchoolLessonQuarantineMax
+    learning_mode = $LastLearningMode
+    learning_mode_decision_reason = $LastLearningDecisionReason
+    learning_school_mode_selected_when_curriculum_exists = $LearningSchoolModeSelectedWithCurriculumDetected
+    learning_self_mode_selected_when_no_curriculum_exists = $LearningSelfModeSelectedWithoutCurriculumDetected
+    learning_absorption_selected_after_completed_school_run = $LearningAbsorptionSelectedAfterCompletedRunDetected
+    learning_returned_to_self_mode_after_absorption = $LearningReturnedToSelfAfterAbsorptionDetected
+    learning_no_accepted_repo_mutation = $LearningNoAcceptedRepoMutationDetected
+    learning_no_protected_state_mutation = $LearningNoProtectedStateMutationDetected
+    learning_last_absorption_id = $LastLearningAbsorptionId
+    learning_recommended_next_self_gap = $LastLearningRecommendedSelfGap
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
     safe_owner_task_accepted = $SafeOwnerTaskAcceptedDetected

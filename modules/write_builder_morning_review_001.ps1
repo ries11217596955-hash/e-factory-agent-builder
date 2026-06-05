@@ -3,6 +3,10 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+$Phase161BMorningReviewSavedSchoolRunRoot = $SchoolRunRoot
+. (Join-Path $PSScriptRoot "cluster_builder_lesson_failures_001.ps1")
+$SchoolRunRoot = $Phase161BMorningReviewSavedSchoolRunRoot
+Remove-Variable -Name Phase161BMorningReviewSavedSchoolRunRoot -ErrorAction SilentlyContinue
 
 function Read-Phase161AMorningReviewJsonSafe {
   param([string]$Path)
@@ -71,8 +75,15 @@ function Write-Phase161AMorningReview {
   $passCount = @($results | Where-Object { [string]$_.status -eq "PASS" }).Count
   $failCount = @($results | Where-Object { [string]$_.status -eq "FAIL" }).Count
   $quarantineCount = @($results | Where-Object { [string]$_.status -eq "QUARANTINED" }).Count
-  $failureClusters = Get-Phase161AClusterRecords -Results $results -Status "FAIL" -ReasonField "failure_reason" -DefaultReason "unspecified_failure"
-  $quarantineClusters = Get-Phase161AClusterRecords -Results $results -Status "QUARANTINED" -ReasonField "quarantine_reason" -DefaultReason "unspecified_quarantine"
+  $clusterResult = Get-Phase161BLessonFailureClusters -SchoolRunRoot $schoolRunRootFull
+  $failureClusters = @($clusterResult.clusters | Where-Object { [string]$_.cluster_type -ne "safety_violation" })
+  $quarantineClusters = @($clusterResult.clusters | Where-Object { [string]$_.cluster_type -eq "safety_violation" })
+  if ($failureClusters.Count -lt 1) {
+    $failureClusters = Get-Phase161AClusterRecords -Results $results -Status "FAIL" -ReasonField "failure_reason" -DefaultReason "unspecified_failure"
+  }
+  if ($quarantineClusters.Count -lt 1) {
+    $quarantineClusters = Get-Phase161AClusterRecords -Results $results -Status "QUARANTINED" -ReasonField "quarantine_reason" -DefaultReason "unspecified_quarantine"
+  }
   $recommendations = @()
   if ($failCount -gt 0) {
     $recommendations += "Review failed lesson outputs and repair the curriculum or runner expectation before promotion."
@@ -99,6 +110,7 @@ function Write-Phase161AMorningReview {
     accepted_repo_mutated = $false
     protected_state_mutated = $false
     failure_clustering_skeleton_created = $true
+    failure_clustering_upgraded = [bool]$clusterResult.failure_clustering_upgraded
     created_at = (Get-Date).ToUniversalTime().ToString("o")
   }
   $reviewJsonPath = Join-Path $schoolRunRootFull "morning_review.json"

@@ -108,6 +108,63 @@ function Read-Phase160DaemonJsonSafe {
   }
 }
 
+function Get-Phase161BDaemonLearningModeSnapshot {
+  param([string]$RepoRoot, [string]$SessionRootFull)
+  $default = [pscustomobject][ordered]@{
+    learning_mode = "SELF_MODE"
+    previous_learning_mode = "NONE"
+    learning_mode_decision_reason = "PHASE161B_DECIDER_UNAVAILABLE_DEFAULT_SELF_MODE"
+    active_curriculum_id = "NONE"
+    active_school_run_id = "NONE"
+    absorption_required = $false
+    last_absorption_id = "NONE"
+    last_absorption_status = "NONE"
+    recommended_next_self_gap = "NONE"
+    selected_curriculum_source = "NONE"
+    owner_curriculum_available = $false
+    internal_curriculum_available = $false
+    generated_curriculum_available = $false
+    school_mode_allowed = $false
+    self_mode_allowed = $true
+    safe_idle_only = $false
+    no_accepted_repo_mutation = $true
+    no_protected_state_mutation = $true
+  }
+  try {
+    $scriptPath = Join-Path $RepoRoot "modules/decide_builder_learning_mode_001.ps1"
+    if (-not (Test-Path -LiteralPath $scriptPath)) {
+      return $default
+    }
+    $output = @(powershell -NoProfile -ExecutionPolicy Bypass -File $scriptPath -RepoRoot $RepoRoot -SessionRoot $SessionRootFull -EmitJson 2>&1 | ForEach-Object { [string]$_ })
+    if ($LASTEXITCODE -ne 0) {
+      return $default
+    }
+    $decision = ($output -join "`n") | ConvertFrom-Json
+    return [pscustomobject][ordered]@{
+      learning_mode = [string]$decision.learning_mode
+      previous_learning_mode = [string]$decision.previous_learning_mode
+      learning_mode_decision_reason = [string]$decision.decision_reason
+      active_curriculum_id = [string]$decision.active_curriculum_id
+      active_school_run_id = [string]$decision.active_school_run_id
+      absorption_required = [bool]$decision.absorption_required
+      last_absorption_id = [string]$decision.last_absorption_id
+      last_absorption_status = [string]$decision.last_absorption_status
+      recommended_next_self_gap = [string]$decision.recommended_next_self_gap
+      selected_curriculum_source = [string]$decision.selected_curriculum_source
+      owner_curriculum_available = [bool]$decision.owner_curriculum_available
+      internal_curriculum_available = [bool]$decision.internal_curriculum_available
+      generated_curriculum_available = [bool]$decision.generated_curriculum_available
+      school_mode_allowed = [bool]$decision.school_mode_allowed
+      self_mode_allowed = [bool]$decision.self_mode_allowed
+      safe_idle_only = [bool]$decision.safe_idle_only
+      no_accepted_repo_mutation = [bool]$decision.no_accepted_repo_mutation
+      no_protected_state_mutation = [bool]$decision.no_protected_state_mutation
+    }
+  } catch {
+    return $default
+  }
+}
+
 function Get-Phase160DaemonJsonFileCount {
   param([string]$Path, [string]$Pattern = "*.json")
   if (-not (Test-Path -LiteralPath $Path)) {
@@ -260,16 +317,31 @@ function Get-Phase160DaemonLiveTaskSnapshot {
   $runHead = if ($null -ne $runManifest -and $runManifest.PSObject.Properties.Name -contains "run_head") { [string]$runManifest.run_head } else { "NONE" }
   $headMatch = if ($runHead -eq "NONE" -or $currentHead -eq "UNKNOWN") { $false } else { $runHead -eq $currentHead }
   $schoolEntryState = Get-Phase161ASchoolEntryState -RepoRoot $RepoRoot -SessionRoot $SessionRootFull
+  $learningModeState = Get-Phase161BDaemonLearningModeSnapshot -RepoRoot $RepoRoot -SessionRootFull $SessionRootFull
   return [ordered]@{
     run_head = $runHead
     current_head = $currentHead
     head_match = $headMatch
+    learning_mode = [string]$learningModeState.learning_mode
+    previous_learning_mode = [string]$learningModeState.previous_learning_mode
+    learning_mode_decision_reason = [string]$learningModeState.learning_mode_decision_reason
+    absorption_required = [bool]$learningModeState.absorption_required
+    last_absorption_id = [string]$learningModeState.last_absorption_id
+    last_absorption_status = [string]$learningModeState.last_absorption_status
+    recommended_next_self_gap = [string]$learningModeState.recommended_next_self_gap
+    selected_curriculum_source = [string]$learningModeState.selected_curriculum_source
+    owner_curriculum_available = [bool]$learningModeState.owner_curriculum_available
+    internal_curriculum_available = [bool]$learningModeState.internal_curriculum_available
+    generated_curriculum_available = [bool]$learningModeState.generated_curriculum_available
+    school_mode_allowed = [bool]$learningModeState.school_mode_allowed
+    self_mode_allowed = [bool]$learningModeState.self_mode_allowed
+    safe_idle_only = [bool]$learningModeState.safe_idle_only
     active_route_lock_stamp = [string]$schoolEntryState.active_route_lock_stamp
     current_route_step_id = [string]$schoolEntryState.current_route_step_id
     current_route_step_title = [string]$schoolEntryState.current_route_step_title
     school_entry_enabled = [bool]$schoolEntryState.school_entry_enabled
-    active_school_run_id = [string]$schoolEntryState.active_school_run_id
-    active_curriculum_id = [string]$schoolEntryState.active_curriculum_id
+    active_school_run_id = if ([string]$learningModeState.active_school_run_id -ne "NONE") { [string]$learningModeState.active_school_run_id } else { [string]$schoolEntryState.active_school_run_id }
+    active_curriculum_id = if ([string]$learningModeState.active_curriculum_id -ne "NONE") { [string]$learningModeState.active_curriculum_id } else { [string]$schoolEntryState.active_curriculum_id }
     school_lesson_total_count = [int]$schoolEntryState.school_lesson_total_count
     school_lesson_pass_count = [int]$schoolEntryState.school_lesson_pass_count
     school_lesson_fail_count = [int]$schoolEntryState.school_lesson_fail_count
@@ -280,8 +352,8 @@ function Get-Phase160DaemonLiveTaskSnapshot {
     school_run_exists = [bool]$schoolEntryState.school_run_exists
     run_continues_after_failed_lesson = [bool]$schoolEntryState.run_continues_after_failed_lesson
     quarantine_handled_separately = [bool]$schoolEntryState.quarantine_handled_separately
-    school_no_accepted_repo_mutation = [bool]$schoolEntryState.no_accepted_repo_mutation
-    school_no_protected_state_mutation = [bool]$schoolEntryState.no_protected_state_mutation
+    school_no_accepted_repo_mutation = ([bool]$schoolEntryState.no_accepted_repo_mutation -and [bool]$learningModeState.no_accepted_repo_mutation)
+    school_no_protected_state_mutation = ([bool]$schoolEntryState.no_protected_state_mutation -and [bool]$learningModeState.no_protected_state_mutation)
     live_repo_guard = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status") { [string]$runtimeGuard.status } elseif ($null -ne $runtimeIdentity -and $runtimeIdentity.PSObject.Properties.Name -contains "live_repo_guard") { [string]$runtimeIdentity.live_repo_guard } else { "UNKNOWN" }
     runtime_guard_status = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "status") { [string]$runtimeGuard.status } else { "UNKNOWN" }
     guard_block_reason = if ($null -ne $runtimeGuard -and $runtimeGuard.PSObject.Properties.Name -contains "blocked_reasons") { (@($runtimeGuard.blocked_reasons | ForEach-Object { [string]$_ }) -join ",") } else { "NONE" }
@@ -958,6 +1030,20 @@ try {
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
+      learning_mode = [string]$LiveTaskSnapshot.learning_mode
+      previous_learning_mode = [string]$LiveTaskSnapshot.previous_learning_mode
+      learning_mode_decision_reason = [string]$LiveTaskSnapshot.learning_mode_decision_reason
+      absorption_required = [bool]$LiveTaskSnapshot.absorption_required
+      last_absorption_id = [string]$LiveTaskSnapshot.last_absorption_id
+      last_absorption_status = [string]$LiveTaskSnapshot.last_absorption_status
+      recommended_next_self_gap = [string]$LiveTaskSnapshot.recommended_next_self_gap
+      selected_curriculum_source = [string]$LiveTaskSnapshot.selected_curriculum_source
+      owner_curriculum_available = [bool]$LiveTaskSnapshot.owner_curriculum_available
+      internal_curriculum_available = [bool]$LiveTaskSnapshot.internal_curriculum_available
+      generated_curriculum_available = [bool]$LiveTaskSnapshot.generated_curriculum_available
+      school_mode_allowed = [bool]$LiveTaskSnapshot.school_mode_allowed
+      self_mode_allowed = [bool]$LiveTaskSnapshot.self_mode_allowed
+      safe_idle_only = [bool]$LiveTaskSnapshot.safe_idle_only
       active_route_lock_stamp = [string]$LiveTaskSnapshot.active_route_lock_stamp
       current_route_step_id = [string]$LiveTaskSnapshot.current_route_step_id
       current_route_step_title = [string]$LiveTaskSnapshot.current_route_step_title
@@ -1054,6 +1140,20 @@ try {
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
+      learning_mode = [string]$LiveTaskSnapshot.learning_mode
+      previous_learning_mode = [string]$LiveTaskSnapshot.previous_learning_mode
+      learning_mode_decision_reason = [string]$LiveTaskSnapshot.learning_mode_decision_reason
+      absorption_required = [bool]$LiveTaskSnapshot.absorption_required
+      last_absorption_id = [string]$LiveTaskSnapshot.last_absorption_id
+      last_absorption_status = [string]$LiveTaskSnapshot.last_absorption_status
+      recommended_next_self_gap = [string]$LiveTaskSnapshot.recommended_next_self_gap
+      selected_curriculum_source = [string]$LiveTaskSnapshot.selected_curriculum_source
+      owner_curriculum_available = [bool]$LiveTaskSnapshot.owner_curriculum_available
+      internal_curriculum_available = [bool]$LiveTaskSnapshot.internal_curriculum_available
+      generated_curriculum_available = [bool]$LiveTaskSnapshot.generated_curriculum_available
+      school_mode_allowed = [bool]$LiveTaskSnapshot.school_mode_allowed
+      self_mode_allowed = [bool]$LiveTaskSnapshot.self_mode_allowed
+      safe_idle_only = [bool]$LiveTaskSnapshot.safe_idle_only
       active_route_lock_stamp = [string]$LiveTaskSnapshot.active_route_lock_stamp
       current_route_step_id = [string]$LiveTaskSnapshot.current_route_step_id
       current_route_step_title = [string]$LiveTaskSnapshot.current_route_step_title
@@ -1323,6 +1423,20 @@ try {
       run_head = [string]$LiveTaskSnapshot.run_head
       current_head = [string]$LiveTaskSnapshot.current_head
       head_match = [bool]$LiveTaskSnapshot.head_match
+      learning_mode = [string]$LiveTaskSnapshot.learning_mode
+      previous_learning_mode = [string]$LiveTaskSnapshot.previous_learning_mode
+      learning_mode_decision_reason = [string]$LiveTaskSnapshot.learning_mode_decision_reason
+      absorption_required = [bool]$LiveTaskSnapshot.absorption_required
+      last_absorption_id = [string]$LiveTaskSnapshot.last_absorption_id
+      last_absorption_status = [string]$LiveTaskSnapshot.last_absorption_status
+      recommended_next_self_gap = [string]$LiveTaskSnapshot.recommended_next_self_gap
+      selected_curriculum_source = [string]$LiveTaskSnapshot.selected_curriculum_source
+      owner_curriculum_available = [bool]$LiveTaskSnapshot.owner_curriculum_available
+      internal_curriculum_available = [bool]$LiveTaskSnapshot.internal_curriculum_available
+      generated_curriculum_available = [bool]$LiveTaskSnapshot.generated_curriculum_available
+      school_mode_allowed = [bool]$LiveTaskSnapshot.school_mode_allowed
+      self_mode_allowed = [bool]$LiveTaskSnapshot.self_mode_allowed
+      safe_idle_only = [bool]$LiveTaskSnapshot.safe_idle_only
       active_route_lock_stamp = [string]$LiveTaskSnapshot.active_route_lock_stamp
       current_route_step_id = [string]$LiveTaskSnapshot.current_route_step_id
       current_route_step_title = [string]$LiveTaskSnapshot.current_route_step_title

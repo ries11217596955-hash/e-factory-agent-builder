@@ -19,6 +19,7 @@ $ErrorActionPreference = "Stop"
 
 . (Join-Path $PSScriptRoot "inspect_builder_owner_task_lifecycle_state_001.ps1")
 . (Join-Path $PSScriptRoot "inspect_builder_quality_decision_index_001.ps1")
+. (Join-Path $PSScriptRoot "inspect_builder_owner_inbox_router_state_001.ps1")
 $Phase161ADaemonSavedSessionRoot = $SessionRoot
 $Phase161ADaemonSavedRunId = $RunId
 . (Join-Path $PSScriptRoot "inspect_builder_school_entry_state_001.ps1")
@@ -318,6 +319,7 @@ function Get-Phase160DaemonLiveTaskSnapshot {
   $headMatch = if ($runHead -eq "NONE" -or $currentHead -eq "UNKNOWN") { $false } else { $runHead -eq $currentHead }
   $schoolEntryState = Get-Phase161ASchoolEntryState -RepoRoot $RepoRoot -SessionRoot $SessionRootFull
   $learningModeState = Get-Phase161BDaemonLearningModeSnapshot -RepoRoot $RepoRoot -SessionRootFull $SessionRootFull
+  $ownerInboxRouterState = Get-Phase161B1OwnerInboxRouterState -SessionRootFull $SessionRootFull
   return [ordered]@{
     run_head = $runHead
     current_head = $currentHead
@@ -408,6 +410,16 @@ function Get-Phase160DaemonLiveTaskSnapshot {
     active_task_blocks_owner_task = [bool]$ownerLifecycle.active_task_blocks_owner_task
     backlog_activation_ready = [bool]$ownerLifecycle.backlog_activation_ready
     owner_task_lost = [bool]$ownerLifecycle.owner_task_lost
+    owner_inbox_router_enabled = [bool]$ownerInboxRouterState.owner_inbox_router_enabled
+    last_owner_inbox_message_type = [string]$ownerInboxRouterState.last_owner_inbox_message_type
+    last_owner_inbox_route_decision = [string]$ownerInboxRouterState.last_owner_inbox_route_decision
+    last_owner_inbox_quarantine_reason = [string]$ownerInboxRouterState.last_owner_inbox_quarantine_reason
+    curriculum_pack_routed_count = [int]$ownerInboxRouterState.curriculum_pack_routed_count
+    owner_task_routed_count = [int]$ownerInboxRouterState.owner_task_routed_count
+    instruction_routed_count = [int]$ownerInboxRouterState.instruction_routed_count
+    control_message_routed_count = [int]$ownerInboxRouterState.control_message_routed_count
+    unknown_message_quarantine_count = [int]$ownerInboxRouterState.unknown_message_quarantine_count
+    last_instruction_message_id = [string]$ownerInboxRouterState.last_instruction_message_id
   }
 }
 
@@ -1105,6 +1117,16 @@ try {
       active_task_blocks_owner_task = [bool]$LiveTaskSnapshot.active_task_blocks_owner_task
       backlog_activation_ready = [bool]$LiveTaskSnapshot.backlog_activation_ready
       owner_task_lost = [bool]$LiveTaskSnapshot.owner_task_lost
+      owner_inbox_router_enabled = [bool]$LiveTaskSnapshot.owner_inbox_router_enabled
+      last_owner_inbox_message_type = [string]$LiveTaskSnapshot.last_owner_inbox_message_type
+      last_owner_inbox_route_decision = [string]$LiveTaskSnapshot.last_owner_inbox_route_decision
+      last_owner_inbox_quarantine_reason = [string]$LiveTaskSnapshot.last_owner_inbox_quarantine_reason
+      curriculum_pack_routed_count = [int]$LiveTaskSnapshot.curriculum_pack_routed_count
+      owner_task_routed_count = [int]$LiveTaskSnapshot.owner_task_routed_count
+      instruction_routed_count = [int]$LiveTaskSnapshot.instruction_routed_count
+      control_message_routed_count = [int]$LiveTaskSnapshot.control_message_routed_count
+      unknown_message_quarantine_count = [int]$LiveTaskSnapshot.unknown_message_quarantine_count
+      last_instruction_message_id = [string]$LiveTaskSnapshot.last_instruction_message_id
       last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
@@ -1215,6 +1237,16 @@ try {
       active_task_blocks_owner_task = [bool]$LiveTaskSnapshot.active_task_blocks_owner_task
       backlog_activation_ready = [bool]$LiveTaskSnapshot.backlog_activation_ready
       owner_task_lost = [bool]$LiveTaskSnapshot.owner_task_lost
+      owner_inbox_router_enabled = [bool]$LiveTaskSnapshot.owner_inbox_router_enabled
+      last_owner_inbox_message_type = [string]$LiveTaskSnapshot.last_owner_inbox_message_type
+      last_owner_inbox_route_decision = [string]$LiveTaskSnapshot.last_owner_inbox_route_decision
+      last_owner_inbox_quarantine_reason = [string]$LiveTaskSnapshot.last_owner_inbox_quarantine_reason
+      curriculum_pack_routed_count = [int]$LiveTaskSnapshot.curriculum_pack_routed_count
+      owner_task_routed_count = [int]$LiveTaskSnapshot.owner_task_routed_count
+      instruction_routed_count = [int]$LiveTaskSnapshot.instruction_routed_count
+      control_message_routed_count = [int]$LiveTaskSnapshot.control_message_routed_count
+      unknown_message_quarantine_count = [int]$LiveTaskSnapshot.unknown_message_quarantine_count
+      last_instruction_message_id = [string]$LiveTaskSnapshot.last_instruction_message_id
       last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
       accepted_state_mutated = $false
       accepted_memory_mutated = $false
@@ -1498,6 +1530,16 @@ try {
     active_task_blocks_owner_task = [bool]$LiveTaskSnapshot.active_task_blocks_owner_task
     backlog_activation_ready = [bool]$LiveTaskSnapshot.backlog_activation_ready
     owner_task_lost = [bool]$LiveTaskSnapshot.owner_task_lost
+    owner_inbox_router_enabled = [bool]$LiveTaskSnapshot.owner_inbox_router_enabled
+    last_owner_inbox_message_type = [string]$LiveTaskSnapshot.last_owner_inbox_message_type
+    last_owner_inbox_route_decision = [string]$LiveTaskSnapshot.last_owner_inbox_route_decision
+    last_owner_inbox_quarantine_reason = [string]$LiveTaskSnapshot.last_owner_inbox_quarantine_reason
+    curriculum_pack_routed_count = [int]$LiveTaskSnapshot.curriculum_pack_routed_count
+    owner_task_routed_count = [int]$LiveTaskSnapshot.owner_task_routed_count
+    instruction_routed_count = [int]$LiveTaskSnapshot.instruction_routed_count
+    control_message_routed_count = [int]$LiveTaskSnapshot.control_message_routed_count
+    unknown_message_quarantine_count = [int]$LiveTaskSnapshot.unknown_message_quarantine_count
+    last_instruction_message_id = [string]$LiveTaskSnapshot.last_instruction_message_id
     last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
@@ -1574,6 +1616,16 @@ try {
     active_task_blocks_owner_task = [bool]$LiveTaskSnapshot.active_task_blocks_owner_task
     backlog_activation_ready = [bool]$LiveTaskSnapshot.backlog_activation_ready
     owner_task_lost = [bool]$LiveTaskSnapshot.owner_task_lost
+    owner_inbox_router_enabled = [bool]$LiveTaskSnapshot.owner_inbox_router_enabled
+    last_owner_inbox_message_type = [string]$LiveTaskSnapshot.last_owner_inbox_message_type
+    last_owner_inbox_route_decision = [string]$LiveTaskSnapshot.last_owner_inbox_route_decision
+    last_owner_inbox_quarantine_reason = [string]$LiveTaskSnapshot.last_owner_inbox_quarantine_reason
+    curriculum_pack_routed_count = [int]$LiveTaskSnapshot.curriculum_pack_routed_count
+    owner_task_routed_count = [int]$LiveTaskSnapshot.owner_task_routed_count
+    instruction_routed_count = [int]$LiveTaskSnapshot.instruction_routed_count
+    control_message_routed_count = [int]$LiveTaskSnapshot.control_message_routed_count
+    unknown_message_quarantine_count = [int]$LiveTaskSnapshot.unknown_message_quarantine_count
+    last_instruction_message_id = [string]$LiveTaskSnapshot.last_instruction_message_id
     last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
   }
   Write-Phase160DaemonJsonFile -Path $HeartbeatPath -Object $FinalHeartbeat
@@ -1643,6 +1695,16 @@ try {
     active_task_blocks_owner_task = [bool]$LiveTaskSnapshot.active_task_blocks_owner_task
     backlog_activation_ready = [bool]$LiveTaskSnapshot.backlog_activation_ready
     owner_task_lost = [bool]$LiveTaskSnapshot.owner_task_lost
+    owner_inbox_router_enabled = [bool]$LiveTaskSnapshot.owner_inbox_router_enabled
+    last_owner_inbox_message_type = [string]$LiveTaskSnapshot.last_owner_inbox_message_type
+    last_owner_inbox_route_decision = [string]$LiveTaskSnapshot.last_owner_inbox_route_decision
+    last_owner_inbox_quarantine_reason = [string]$LiveTaskSnapshot.last_owner_inbox_quarantine_reason
+    curriculum_pack_routed_count = [int]$LiveTaskSnapshot.curriculum_pack_routed_count
+    owner_task_routed_count = [int]$LiveTaskSnapshot.owner_task_routed_count
+    instruction_routed_count = [int]$LiveTaskSnapshot.instruction_routed_count
+    control_message_routed_count = [int]$LiveTaskSnapshot.control_message_routed_count
+    unknown_message_quarantine_count = [int]$LiveTaskSnapshot.unknown_message_quarantine_count
+    last_instruction_message_id = [string]$LiveTaskSnapshot.last_instruction_message_id
     last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
     accepted_state_mutated = $false
     accepted_memory_mutated = $false
@@ -1742,6 +1804,16 @@ try {
     active_task_blocks_owner_task = [bool]$LiveTaskSnapshot.active_task_blocks_owner_task
     backlog_activation_ready = [bool]$LiveTaskSnapshot.backlog_activation_ready
     owner_task_lost = [bool]$LiveTaskSnapshot.owner_task_lost
+    owner_inbox_router_enabled = [bool]$LiveTaskSnapshot.owner_inbox_router_enabled
+    last_owner_inbox_message_type = [string]$LiveTaskSnapshot.last_owner_inbox_message_type
+    last_owner_inbox_route_decision = [string]$LiveTaskSnapshot.last_owner_inbox_route_decision
+    last_owner_inbox_quarantine_reason = [string]$LiveTaskSnapshot.last_owner_inbox_quarantine_reason
+    curriculum_pack_routed_count = [int]$LiveTaskSnapshot.curriculum_pack_routed_count
+    owner_task_routed_count = [int]$LiveTaskSnapshot.owner_task_routed_count
+    instruction_routed_count = [int]$LiveTaskSnapshot.instruction_routed_count
+    control_message_routed_count = [int]$LiveTaskSnapshot.control_message_routed_count
+    unknown_message_quarantine_count = [int]$LiveTaskSnapshot.unknown_message_quarantine_count
+    last_instruction_message_id = [string]$LiveTaskSnapshot.last_instruction_message_id
     last_task_influenced_gap_selection = $LastTaskInfluencedGapSelection
     heartbeat_written = (Test-Path -LiteralPath $HeartbeatPath)
     event_log_created = (Test-Path -LiteralPath $EventLogPath)

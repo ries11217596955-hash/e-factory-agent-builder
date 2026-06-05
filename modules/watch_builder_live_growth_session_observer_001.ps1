@@ -304,6 +304,14 @@ try {
   $LastLearningDecisionReason = "NONE"
   $LastLearningAbsorptionId = "NONE"
   $LastLearningRecommendedSelfGap = "NONE"
+  $OwnerInboxRouterDetected = $false
+  $OwnerInboxCurriculumRoutesToSchoolDetected = $false
+  $OwnerInboxCurriculumMissingGoalFalseQuarantineDetected = $false
+  $OwnerInboxLegacyOwnerTaskRoutesDetected = $false
+  $OwnerInboxUnsafeCurriculumQuarantinedDetected = $false
+  $OwnerInboxUnknownTypeQuarantinedDetected = $false
+  $OwnerInboxInstructionRoutedDetected = $false
+  $OwnerInboxControlRoutedDetected = $false
 
   Add-Phase160ObserverJsonLine -Path $ObserverLogPath -Object ([ordered]@{
     event_type = "observer_started"
@@ -396,6 +404,15 @@ try {
     $CurrentLearningSelectedCurriculumSource = "NONE"
     $CurrentLearningNoAcceptedRepoMutation = $false
     $CurrentLearningNoProtectedStateMutation = $false
+    $CurrentOwnerInboxRouterEnabled = $false
+    $CurrentOwnerInboxMessageType = "NONE"
+    $CurrentOwnerInboxRouteDecision = "NONE"
+    $CurrentOwnerInboxQuarantineReason = "NONE"
+    $CurrentCurriculumRoutedCount = 0
+    $CurrentOwnerTaskRoutedCount = 0
+    $CurrentInstructionRoutedCount = 0
+    $CurrentControlRoutedCount = 0
+    $CurrentUnknownQuarantineCount = 0
     if ($null -ne $CurrentState) {
       if ($CurrentState.PSObject.Properties.Name -contains "self_growth_duty_count") {
         $CurrentSelfGrowthDutyCount = [int]$CurrentState.self_growth_duty_count
@@ -511,6 +528,33 @@ try {
       }
       if ($CurrentState.PSObject.Properties.Name -contains "selected_curriculum_source") {
         $CurrentLearningSelectedCurriculumSource = [string]$CurrentState.selected_curriculum_source
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "owner_inbox_router_enabled") {
+        $CurrentOwnerInboxRouterEnabled = [bool]$CurrentState.owner_inbox_router_enabled
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_owner_inbox_message_type") {
+        $CurrentOwnerInboxMessageType = [string]$CurrentState.last_owner_inbox_message_type
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_owner_inbox_route_decision") {
+        $CurrentOwnerInboxRouteDecision = [string]$CurrentState.last_owner_inbox_route_decision
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "last_owner_inbox_quarantine_reason") {
+        $CurrentOwnerInboxQuarantineReason = [string]$CurrentState.last_owner_inbox_quarantine_reason
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "curriculum_pack_routed_count") {
+        $CurrentCurriculumRoutedCount = [int]$CurrentState.curriculum_pack_routed_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "owner_task_routed_count") {
+        $CurrentOwnerTaskRoutedCount = [int]$CurrentState.owner_task_routed_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "instruction_routed_count") {
+        $CurrentInstructionRoutedCount = [int]$CurrentState.instruction_routed_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "control_message_routed_count") {
+        $CurrentControlRoutedCount = [int]$CurrentState.control_message_routed_count
+      }
+      if ($CurrentState.PSObject.Properties.Name -contains "unknown_message_quarantine_count") {
+        $CurrentUnknownQuarantineCount = [int]$CurrentState.unknown_message_quarantine_count
       }
       if ($CurrentState.PSObject.Properties.Name -contains "school_no_accepted_repo_mutation") {
         $CurrentLearningNoAcceptedRepoMutation = [bool]$CurrentState.school_no_accepted_repo_mutation
@@ -631,6 +675,30 @@ try {
     }
     if ($CurrentOwnerTaskLostFieldPresent -and -not $CurrentOwnerTaskLost) {
       $OwnerTaskNotLostDetected = $true
+    }
+    if ($CurrentOwnerInboxRouterEnabled) {
+      $OwnerInboxRouterDetected = $true
+    }
+    if ($CurrentCurriculumRoutedCount -gt 0 -and $CurrentLearningMode -eq "SCHOOL_MODE" -and $CurrentSchoolCurriculumId -ne "NONE") {
+      $OwnerInboxCurriculumRoutesToSchoolDetected = $true
+    }
+    if ($CurrentOwnerInboxMessageType -eq "curriculum_pack" -and $CurrentOwnerInboxQuarantineReason -ne "missing_goal") {
+      $OwnerInboxCurriculumMissingGoalFalseQuarantineDetected = $true
+    }
+    if ($CurrentOwnerTaskRoutedCount -gt 0 -or $CurrentOwnerInboxRouteDecision -eq "ROUTE_OWNER_TASK") {
+      $OwnerInboxLegacyOwnerTaskRoutesDetected = $true
+    }
+    if ($CurrentOwnerInboxMessageType -eq "curriculum_pack" -and $CurrentOwnerInboxQuarantineReason -match "unsafe_accepted_repo_mutation_allowed|invalid_curriculum_safety_rules") {
+      $OwnerInboxUnsafeCurriculumQuarantinedDetected = $true
+    }
+    if ($CurrentUnknownQuarantineCount -gt 0 -or $CurrentOwnerInboxRouteDecision -eq "QUARANTINE_UNKNOWN_MESSAGE_TYPE") {
+      $OwnerInboxUnknownTypeQuarantinedDetected = $true
+    }
+    if ($CurrentInstructionRoutedCount -gt 0 -or $CurrentOwnerInboxRouteDecision -eq "ROUTE_INSTRUCTION") {
+      $OwnerInboxInstructionRoutedDetected = $true
+    }
+    if ($CurrentControlRoutedCount -gt 0 -or $CurrentOwnerInboxRouteDecision -match "ROUTE_CONTROL_STOP|ROUTE_CONTROL_PAUSE") {
+      $OwnerInboxControlRoutedDetected = $true
     }
     $SelfGrowthCompletedEventCount = Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern '"event_type":"self_growth_duty_completed"'
     $SelfGrowthStartedEventCount = Get-Phase160ObserverMatchingLineCount -Path $EventLogPath -Pattern '"event_type":"self_growth_duty_started"'
@@ -962,6 +1030,14 @@ try {
       learning_no_protected_state_mutation = $LearningNoProtectedStateMutationDetected
       learning_last_absorption_id = $LastLearningAbsorptionId
       learning_recommended_next_self_gap = $LastLearningRecommendedSelfGap
+      owner_inbox_router_enabled = $OwnerInboxRouterDetected
+      owner_inbox_curriculum_routes_to_school = $OwnerInboxCurriculumRoutesToSchoolDetected
+      owner_inbox_curriculum_not_missing_goal_quarantined = $OwnerInboxCurriculumMissingGoalFalseQuarantineDetected
+      owner_inbox_legacy_owner_task_routes = $OwnerInboxLegacyOwnerTaskRoutesDetected
+      owner_inbox_unsafe_curriculum_quarantined = $OwnerInboxUnsafeCurriculumQuarantinedDetected
+      owner_inbox_unknown_type_quarantined = $OwnerInboxUnknownTypeQuarantinedDetected
+      owner_inbox_instruction_routed = $OwnerInboxInstructionRoutedDetected
+      owner_inbox_control_routed = $OwnerInboxControlRoutedDetected
       self_growth_stagnation_detected = $SelfGrowthStagnationDetected
       stale_ended_session_detected = $StaleEndedSessionDetected
       blocker_queue_count = $BlockerQueueCount
@@ -1070,6 +1146,14 @@ try {
     learning_no_protected_state_mutation = $LearningNoProtectedStateMutationDetected
     learning_last_absorption_id = $LastLearningAbsorptionId
     learning_recommended_next_self_gap = $LastLearningRecommendedSelfGap
+    owner_inbox_router_enabled = $OwnerInboxRouterDetected
+    owner_inbox_curriculum_routes_to_school = $OwnerInboxCurriculumRoutesToSchoolDetected
+    owner_inbox_curriculum_not_missing_goal_quarantined = $OwnerInboxCurriculumMissingGoalFalseQuarantineDetected
+    owner_inbox_legacy_owner_task_routes = $OwnerInboxLegacyOwnerTaskRoutesDetected
+    owner_inbox_unsafe_curriculum_quarantined = $OwnerInboxUnsafeCurriculumQuarantinedDetected
+    owner_inbox_unknown_type_quarantined = $OwnerInboxUnknownTypeQuarantinedDetected
+    owner_inbox_instruction_routed = $OwnerInboxInstructionRoutedDetected
+    owner_inbox_control_routed = $OwnerInboxControlRoutedDetected
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
     teacher_inbox_count = $TeacherInboxCount
@@ -1173,6 +1257,14 @@ try {
     learning_no_protected_state_mutation = $LearningNoProtectedStateMutationDetected
     learning_last_absorption_id = $LastLearningAbsorptionId
     learning_recommended_next_self_gap = $LastLearningRecommendedSelfGap
+    owner_inbox_router_enabled = $OwnerInboxRouterDetected
+    owner_inbox_curriculum_routes_to_school = $OwnerInboxCurriculumRoutesToSchoolDetected
+    owner_inbox_curriculum_not_missing_goal_quarantined = $OwnerInboxCurriculumMissingGoalFalseQuarantineDetected
+    owner_inbox_legacy_owner_task_routes = $OwnerInboxLegacyOwnerTaskRoutesDetected
+    owner_inbox_unsafe_curriculum_quarantined = $OwnerInboxUnsafeCurriculumQuarantinedDetected
+    owner_inbox_unknown_type_quarantined = $OwnerInboxUnknownTypeQuarantinedDetected
+    owner_inbox_instruction_routed = $OwnerInboxInstructionRoutedDetected
+    owner_inbox_control_routed = $OwnerInboxControlRoutedDetected
     self_growth_stagnation_detected = $SelfGrowthStagnationDetected
     stale_ended_session_detected = $StaleEndedSessionDetected
     safe_owner_task_accepted = $SafeOwnerTaskAcceptedDetected

@@ -13,6 +13,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 foreach ($phase160JModule in @(
+  "route_builder_owner_inbox_message_001.ps1",
   "normalize_builder_owner_live_task_001.ps1",
   "classify_builder_owner_live_task_safety_001.ps1",
   "enqueue_builder_owner_task_backlog_001.ps1",
@@ -475,6 +476,8 @@ function Invoke-Phase160DutyLiveTaskIntake {
   foreach ($directory in @($teacherInbox, $teacherDigest, $teacherConsumed, $teacherQuarantine, $taskBacklog, $activeTaskDir, $planItemsRoot, $ownerTaskLifecycleRoot, $taskLifecycleRoot)) {
     New-Item -ItemType Directory -Force -Path $directory | Out-Null
   }
+
+  $routerResult = Invoke-Phase161B1OwnerInboxRouter -RepoRoot $RepoRoot -SessionRootFull $SessionRootFull -SessionRootRelative $SessionRootRelative -DutyId $DutyId -EventLogPath $EventLogPath
 
   $rawFiles = @(Get-ChildItem -LiteralPath $teacherInbox -File -Filter "*.json" -ErrorAction SilentlyContinue | Where-Object { $_.Name -ne "README.json" } | Sort-Object FullName)
   Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
@@ -980,6 +983,14 @@ function Invoke-Phase160DutyLiveTaskIntake {
     active_task_blocks_owner_task = [bool]$ownerLifecycle.active_task_blocks_owner_task
     backlog_activation_ready = [bool]$ownerLifecycle.backlog_activation_ready
     owner_task_lost = [bool]$ownerLifecycle.owner_task_lost
+    owner_inbox_router_enabled = [bool]$routerResult.owner_inbox_router_enabled
+    last_owner_inbox_message_type = [string]$routerResult.last_owner_inbox_message_type
+    last_owner_inbox_route_decision = [string]$routerResult.last_owner_inbox_route_decision
+    last_owner_inbox_quarantine_reason = [string]$routerResult.last_owner_inbox_quarantine_reason
+    curriculum_pack_routed_count = [int]$routerResult.curriculum_pack_routed_count
+    owner_task_routed_count = [int]$routerResult.owner_task_routed_count
+    instruction_routed_count = [int]$routerResult.instruction_routed_count
+    control_message_routed_count = [int]$routerResult.control_message_routed_count
   }
 }
 

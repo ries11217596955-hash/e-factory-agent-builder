@@ -1,0 +1,23 @@
+{
+  "phase": "PHASE161E_SELF_MAP_AUTO_REFRESH_AFTER_ACCEPTED_CHANGE_V1",
+  "validate_result": "PASS",
+  "accepted_subject_head": "a8f72a12ee931da0a8146da40259c38b3ea65438",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "a8f72a12ee931da0a8146da40259c38b3ea65438",
+  "head_after": "a8f72a12ee931da0a8146da40259c38b3ea65438",
+  "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
+  "memory_report_path": "reports/self_development/self_map_memory_report.md",
+  "active_wired_proven_count": 183,
+  "present_not_wired_count": 269,
+  "historical_reference_count": 204,
+  "superseded_count": 1,
+  "real_stub_count": 2,
+  "false_positive_stub_count": 68,
+  "gap_chain_count": 7,
+  "protected_state_mutated": false,
+  "runtime_outputs_staged": false,
+  "no_commit_performed": true,
+  "no_push_performed": true,
+  "no_branch_switch": true,
+  "created_at": "2026-06-05T20:57:01.6391922Z"
+}

@@ -1,0 +1,12 @@
+{
+  "policy_id": "PHASE161E_SELF_MAP_REFRESH_AFTER_ACCEPTED_CHANGE_POLICY_V1",
+  "policy_name": "Self-map refresh after accepted commit",
+  "required_after_accepted_commit": true,
+  "passive_stale_allowed": false,
+  "refresh_before_next_decision": true,
+  "protected_state_direct_mutation_allowed": false,
+  "derived_map_allowed": true,
+  "map_artifact_commit_pending_allowed": true,
+  "next_decision_requires_self_knowledge_ready": true,
+  "owner_approval_required_for_protected_state_promotion": true
+}

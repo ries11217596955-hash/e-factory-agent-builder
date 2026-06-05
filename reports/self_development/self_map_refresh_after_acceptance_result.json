@@ -1,0 +1,53 @@
+{
+  "refresh_id": "PHASE161E_REFRESH_20260605205700",
+  "accepted_subject_head": "a8f72a12ee931da0a8146da40259c38b3ea65438",
+  "accepted_phase": "PHASE161E_SELF_MAP_AUTO_REFRESH_AFTER_ACCEPTED_CHANGE",
+  "trigger_reason": "validator_acceptance_memory_refresh",
+  "generated_from_worktree_head": "a8f72a12ee931da0a8146da40259c38b3ea65438",
+  "map_artifact_head": null,
+  "map_artifact_commit_pending": true,
+  "map_refresh_status": "SELF_KNOWLEDGE_READY",
+  "self_knowledge_ready": true,
+  "map_is_ready_for_next_decision": true,
+  "active_route_lock": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
+  "active_organs_count": 183,
+  "present_not_wired_count": 269,
+  "historical_reference_count": 204,
+  "superseded_count": 1,
+  "real_stub_count": 2,
+  "false_positive_stub_count": 68,
+  "gap_chain_count": 7,
+  "recommended_next_learning_tasks": [
+    {
+      "gap_id": "GAP_PROTECTED_STATE_PROMOTION_BLOCKED",
+      "recommended_next_action": "Review derived SELF_MODEL_ACTIVE_MAP.json and approve a later protected-state update candidate if desired.",
+      "why_status": "Protected state files are source-of-truth but read-only in PHASE161C, so the active self-model must remain derived until owner approves promotion."
+    },
+    {
+      "gap_id": "GAP_SPLIT_SELF_MODEL_ORGANS",
+      "recommended_next_action": "Use PHASE161C derived map as synchronization layer.",
+      "why_status": "Self-model, self-knowledge, body registry, and capability shelf exist in separate places and were not one current body map."
+    },
+    {
+      "gap_id": "GAP_VALIDATOR_ONLY_EVIDENCE",
+      "recommended_next_action": "Use live_evidence_separation_index.json before promoting any artifact to active live-proven.",
+      "why_status": "Artifacts with validator/proof/report references must remain separated from live-runtime proven artifacts until current wiring and live evidence are present."
+    },
+    {
+      "gap_id": "GAP_ORPHANED_PRESENT_ARTIFACTS",
+      "recommended_next_action": "Inspect orphaned_artifact_inventory.json and historical_reference_inventory.json before any cleanup.",
+      "why_status": "PHASE161D now exposes disconnected and historical artifacts rather than suppressing them through broad proof/report matching."
+    },
+    {
+      "gap_id": "GAP_STUB_PLACEHOLDER_ARTIFACTS",
+      "recommended_next_action": "Use stub_false_positive_inventory.json before opening repair tasks.",
+      "why_status": "Stub detection must distinguish executable not-implemented behavior from documentation that merely discusses placeholder rules."
+    }
+  ],
+  "protected_state_mutated": false,
+  "runtime_outputs_staged": false,
+  "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
+  "memory_report_path": "reports/self_development/self_map_memory_report.md",
+  "policy_path": "reports/self_development/self_map_refresh_policy.json",
+  "created_at": "2026-06-05T20:57:00.7058177Z"
+}

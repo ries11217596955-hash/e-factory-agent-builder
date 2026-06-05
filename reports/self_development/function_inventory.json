@@ -169,6 +169,41 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "OutputRoot",
+        "AcceptedSubjectHead",
+        "AcceptedPhase",
+        "CommitMessageOrPhaseLabel",
+        "MapRefreshResultPath",
+        "ProofPath",
+        "root",
+        "outputFull",
+        "changedFiles",
+        "_",
+        "refreshFull",
+        "nextAllowed",
+        "nextReason",
+        "refresh",
+        "snapshot",
+        "snapshotPath"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $outputFull | Out-Null",
+        "ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $snapshotPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/build_builder_agent_body_map_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -1962,6 +1997,27 @@
         "runtime_writes",
         "accepted_repo_writes"
       ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "OutputRoot",
+        "root",
+        "resultPath",
+        "activePath",
+        "reportPath",
+        "result",
+        "active"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [],
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
@@ -3763,6 +3819,73 @@
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Write-BuilderJsonFile",
+        "Set-BuilderProperty",
+        "Get-BuilderGitValue"
+      ],
+      "param_names": [
+        "AcceptedSubjectHead",
+        "AcceptedPhase",
+        "TriggerReason",
+        "RepoRoot",
+        "OutputRoot",
+        "Path",
+        "Value",
+        "Depth",
+        "dir",
+        "Object",
+        "Name",
+        "Root",
+        "Arguments",
+        "root",
+        "outputFull",
+        "policy",
+        "builder",
+        "buildResult",
+        "generatedHead",
+        "worktreeStatus",
+        "mapArtifactCommitPending",
+        "activeRouteLock",
+        "routePath",
+        "route",
+        "hardeningPath",
+        "hardening",
+        "gapPath",
+        "gaps",
+        "historicalPath",
+        "historical",
+        "recommendedTasks",
+        "gap",
+        "protectedStatus",
+        "runtimeStatus",
+        "result",
+        "activeMapPath",
+        "activeMap",
+        "writer",
+        "snapshotBuilder"
+      ],
+      "exported_behavior_guess": "Write-BuilderJsonFile, Set-BuilderProperty, Get-BuilderGitValue",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Path $outputFull | Out-Null"
+      ],
+      "calls_detected": [
+        "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+        "modules/build_builder_agent_body_map_001.ps1",
+        "modules/write_builder_self_map_memory_report_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
         "accepted_repo_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."
@@ -8669,6 +8792,34 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-BuilderContract"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "OutputRoot",
+        "Condition",
+        "Message",
+        "root",
+        "policyPath",
+        "resultPath",
+        "activePath",
+        "reportPath",
+        "policy",
+        "result",
+        "active",
+        "reportText"
+      ],
+      "exported_behavior_guess": "Assert-BuilderContract",
+      "write_outputs_detected": [],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/validate_builder_curriculum_pack_schema_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -9119,6 +9270,67 @@
         "New-Item -ItemType Directory -Path $directory -Force | Out-Null",
         "ConvertTo-Json -Depth 100) -replace \"`r`n\", \"`n\"",
         "New-Item -ItemType Directory -Path $reportDirectory -Force | Out-Null"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/write_builder_self_map_memory_report_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Get-BuilderJson",
+        "Get-BuilderTopItems"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "OutputRoot",
+        "AcceptedSubjectHead",
+        "AcceptedPhase",
+        "RefreshResultPath",
+        "Path",
+        "Items",
+        "Count",
+        "root",
+        "outputFull",
+        "activeMapPath",
+        "bodyMapPath",
+        "gapPath",
+        "hardeningPath",
+        "liveIndexPath",
+        "stubPath",
+        "falseStubPath",
+        "historicalPath",
+        "supersededPath",
+        "reportPath",
+        "activeMap",
+        "bodyMap",
+        "gaps",
+        "hardening",
+        "liveIndex",
+        "stubInventory",
+        "falseStubInventory",
+        "historicalInventory",
+        "supersededInventory",
+        "activeOrgans",
+        "validatorOnly",
+        "_",
+        "presentNotWired",
+        "gapItems",
+        "nextMacro",
+        "nextWhy",
+        "lines",
+        "historicalCount",
+        "item",
+        "gap"
+      ],
+      "exported_behavior_guess": "Get-BuilderJson, Get-BuilderTopItems",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $outputFull | Out-Null",
+        "Set-Content -LiteralPath $reportPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
@@ -27100,6 +27312,79 @@
         "modules/inspect_builder_agent_body_map_freshness_001.ps1",
         "modules/inspect_builder_module_wiring_graph_001.ps1",
         "modules/update_builder_self_model_active_map_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-Phase161E",
+        "Write-Phase161EJson",
+        "Test-Phase161EParser"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "AcceptedSubjectHead",
+        "Condition",
+        "Message",
+        "Path",
+        "Value",
+        "Depth",
+        "dir",
+        "errors",
+        "_",
+        "root",
+        "requiredRoot",
+        "file",
+        "branchBefore",
+        "headBefore",
+        "parserFiles",
+        "refreshModule",
+        "refreshResult",
+        "contractModule",
+        "contract",
+        "policyPath",
+        "resultPath",
+        "activePath",
+        "reportPath",
+        "snapshotPath",
+        "liveIndexPath",
+        "gapPath",
+        "hardeningPath",
+        "path",
+        "policy",
+        "result",
+        "activeMap",
+        "snapshot",
+        "liveIndex",
+        "gaps",
+        "hardening",
+        "memoryText",
+        "protectedStatus",
+        "runtimeStatus",
+        "branchAfter"
+      ],
+      "exported_behavior_guess": "Assert-Phase161E, Write-Phase161EJson, Test-Phase161EParser",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "Set-Content -LiteralPath $phaseReportPath -Encoding UTF8",
+        "Set-Content -LiteralPath $routePath -Encoding UTF8",
+        "Set-Content -LiteralPath $deliveryPath -Encoding UTF8"
+      ],
+      "calls_detected": [
+        "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+        "modules/build_builder_agent_body_map_001.ps1",
+        "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+        "modules/write_builder_self_map_memory_report_001.ps1"
       ],
       "safety_sensitive_operations_detected": [
         "runtime_writes",

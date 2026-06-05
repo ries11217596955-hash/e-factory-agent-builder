@@ -789,6 +789,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+      "path": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/build_builder_agent_body_map_001.ps1",
       "path": "modules/build_builder_agent_body_map_001.ps1",
       "node_type": "module"
@@ -974,6 +979,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+      "path": "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_admitted_action_execution_engine.ps1",
       "path": "modules/invoke_admitted_action_execution_engine.ps1",
       "node_type": "module"
@@ -1096,6 +1106,11 @@
     {
       "id": "modules/invoke_builder_self_learning_loop_metrics_001.ps1",
       "path": "modules/invoke_builder_self_learning_loop_metrics_001.ps1",
+      "node_type": "module"
+    },
+    {
+      "id": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "path": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
       "node_type": "module"
     },
     {
@@ -1584,6 +1599,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+      "path": "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/validate_builder_curriculum_pack_schema_001.ps1",
       "path": "modules/validate_builder_curriculum_pack_schema_001.ps1",
       "node_type": "module"
@@ -1631,6 +1651,11 @@
     {
       "id": "modules/write_builder_self_describe_report.ps1",
       "path": "modules/write_builder_self_describe_report.ps1",
+      "node_type": "module"
+    },
+    {
+      "id": "modules/write_builder_self_map_memory_report_001.ps1",
+      "path": "modules/write_builder_self_map_memory_report_001.ps1",
       "node_type": "module"
     },
     {
@@ -5714,6 +5739,11 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "path": "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
       "path": "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
       "node_type": "report"
@@ -5726,6 +5756,11 @@
     {
       "id": "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
       "path": "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+      "path": "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
       "node_type": "report"
     },
     {
@@ -5791,6 +5826,11 @@
     {
       "id": "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
       "path": "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/self_map_refresh_policy.json",
+      "path": "reports/self_development/self_map_refresh_policy.json",
       "node_type": "report"
     },
     {
@@ -6701,6 +6741,11 @@
     {
       "id": "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
       "path": "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
+      "path": "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -9404,6 +9449,69 @@
       "edge_type": "references",
       "confidence": "high",
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "build_builder_accepted_change_memory_snapshot_001"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "modules/build_builder_agent_body_map_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "build_builder_agent_body_map_001"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "modules/write_builder_self_map_memory_report_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "write_builder_self_map_memory_report_001"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "route_locks/ACTIVE_ROUTE_LOCK.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "route_locks/ACTIVE_ROUTE_LOCK.json"
     },
     {
       "source": "modules/invoke_builder_self_pack_author_conveyor_001.ps1",
@@ -20821,69 +20929,6 @@
       "edge_type": "validates",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "scale_trial_promotion_gate_and_route_lock_refresh_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/self_build_backlog_contract_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "self_build_backlog_contract_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/self_build_program_v2.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "self_build_program_v2.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/self_build_program.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "self_build_program.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/self_development_decision_kernel_report.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "self_development_decision_kernel_report.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_knowledge/builder_self_model.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "builder_self_model.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_knowledge/capability_manifest.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "capability_manifest.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_knowledge/evidence_index.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "evidence_index.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_knowledge/module_inventory.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "module_inventory.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_knowledge/produced_agents_index.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "produced_agents_index.schema.json"
     }
   ]
 }

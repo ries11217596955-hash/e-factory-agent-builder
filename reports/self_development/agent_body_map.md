@@ -4,12 +4,12 @@ Status: `DERIVED_FROM_EXISTING`
 
 This PHASE161C map reuses existing protected state, self-knowledge, self-model, body registry, capability shelf, route locks, modules, validators, reports, proofs, docs, packs, and orchestrator files. It is a derived active-map candidate, not a replacement for protected source-of-truth state.
 
-Artifacts scanned: 1376
-Graph nodes: 1376
-Graph edges: 4129
-Function inventory entries: 580
+Artifacts scanned: 1385
+Graph nodes: 1385
+Graph edges: 4167
+Function inventory entries: 586
 Stub or placeholder entries: 2
-False-positive stub entries: 64
+False-positive stub entries: 68
 Orphan candidates: 250
 Historical reference entries: 204
 Superseded entries: 1

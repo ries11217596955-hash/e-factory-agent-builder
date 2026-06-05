@@ -8,11 +8,11 @@
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
-      "count": 79
+      "count": 82
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 63
+      "count": 67
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -44,7 +44,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 656
+      "count": 658
     }
   ],
   "live_or_current_wired_items": [
@@ -131,6 +131,18 @@
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "current_wiring_signals": [
         "modules/invoke_external_agent_build.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": []
+    },
+    {
+      "path": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": []
@@ -600,6 +612,17 @@
         "proofs/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_PROOF.json",
         "proofs/self_development/PHASE160G_FULL_RUNTIME_GUARD_BASELINE_ALLOWED_OUTPUTS_TRUTHFUL_SELF_PRODUCTION_GATE_PROOF.json"
       ]
+    },
+    {
+      "path": "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": []
     },
     {
       "path": "modules/invoke_admitted_action_execution_engine.ps1",
@@ -2221,6 +2244,17 @@
       "current_wiring_signals": [
         "validators/validate_repo_genesis.ps1",
         "validators/validate_self_build_execution_loop.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": []
+    },
+    {
+      "path": "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": []

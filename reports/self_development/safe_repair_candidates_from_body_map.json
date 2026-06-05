@@ -626,6 +626,14 @@
       "recommended_action": "Add live or proof JSON evidence before marking proven."
     },
     {
+      "path": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
+      "recommended_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
       "path": "modules/build_builder_self_knowledge.ps1",
       "current_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
@@ -754,12 +762,28 @@
       "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
+      "path": "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
+      "recommended_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
       "path": "modules/invoke_agent_spec_architect_handoff.ps1",
       "current_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
       "recommended_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
+      "path": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "evidence_strength": "REPORT_WEAK",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
       "path": "modules/invoke_external_agent_build.ps1",
@@ -771,30 +795,6 @@
     },
     {
       "path": "modules/invoke_generated_family_autonomous_conveyor.ps1",
-      "current_status": "ACTIVE_WIRED_UNPROVEN",
-      "evidence_type": "CURRENT_RUNNER_WIRED",
-      "evidence_strength": "CURRENT_WIRED_STRONG",
-      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
-      "recommended_action": "Add live or proof JSON evidence before marking proven."
-    },
-    {
-      "path": "modules/load_build_task.ps1",
-      "current_status": "ACTIVE_WIRED_UNPROVEN",
-      "evidence_type": "CURRENT_RUNNER_WIRED",
-      "evidence_strength": "CURRENT_WIRED_STRONG",
-      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
-      "recommended_action": "Add live or proof JSON evidence before marking proven."
-    },
-    {
-      "path": "modules/materialize_generated_self_build_program_from_family_contract.ps1",
-      "current_status": "ACTIVE_WIRED_UNPROVEN",
-      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "evidence_strength": "REPORT_WEAK",
-      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
-      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
-    },
-    {
-      "path": "modules/new_external_agent_package.ps1",
       "current_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",

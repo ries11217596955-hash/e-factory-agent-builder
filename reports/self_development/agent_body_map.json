@@ -4,7 +4,7 @@
   "source_of_truth_status": "DERIVED_ACTIVE_MAP_CANDIDATE",
   "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
   "why_status": "Derived from existing protected state, self-knowledge, self-model, body registry, capability shelf, route locks, modules, validators, reports, proofs, docs, packs, and orchestrator files. PHASE161D separates live evidence, validator proof, proof/report references, historical references, supersession, disconnected artifacts, and stub false positives.",
-  "generated_at": "2026-06-05T16:45:27.9275541Z",
+  "generated_at": "2026-06-05T20:56:59.7898923Z",
   "source_inputs": [
     "CAPABILITY_ROADMAP.json",
     "GENESIS_STATE.json",
@@ -16,7 +16,7 @@
     "living_learning_environment/body/",
     "capability_shelf/"
   ],
-  "artifact_count": 1376,
+  "artifact_count": 1385,
   "artifacts": [
     {
       "artifact_id": "CAPABILITY_ROADMAP_json",
@@ -48,7 +48,9 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_BUILD_BACKLOG_CONTRACT_REPORT.json",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -141,6 +143,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_production_factory_proof_v1.ps1",
         "validators/validate_production_package_blueprint_v1.ps1",
         "validators/validate_production_spec_contract_v1.ps1",
@@ -196,7 +199,9 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_BUILD_BACKLOG_CONTRACT_REPORT.json",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -301,6 +306,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_production_factory_proof_v1.ps1",
         "validators/validate_production_package_blueprint_v1.ps1",
         "validators/validate_production_spec_contract_v1.ps1",
@@ -350,7 +356,9 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_BUILD_BACKLOG_CONTRACT_REPORT.json",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -10190,6 +10198,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -10222,6 +10231,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -10259,6 +10269,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -10309,7 +10320,9 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -10401,6 +10414,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_production_factory_proof_v1.ps1",
         "validators/validate_production_package_blueprint_v1.ps1",
         "validators/validate_production_spec_contract_v1.ps1",
@@ -10457,7 +10471,9 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -10561,6 +10577,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_production_factory_proof_v1.ps1",
         "validators/validate_production_package_blueprint_v1.ps1",
         "validators/validate_production_spec_contract_v1.ps1",
@@ -10611,7 +10628,9 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -15318,6 +15337,62 @@
       "recommended_next_action": "Add live or proof JSON evidence before marking proven."
     },
     {
+      "artifact_id": "modules_build_builder_accepted_change_memory_snapshot_001_ps1",
+      "path": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": "PHASE161E",
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal without proof.",
+      "evidence_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "proofs": [],
+      "schemas": [],
+      "route_lock_references": [],
+      "last_known_phase": "PHASE161E",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
       "artifact_id": "modules_build_builder_agent_body_map_001_ps1",
       "path": "modules/build_builder_agent_body_map_001.ps1",
       "artifact_type": "module",
@@ -15398,7 +15473,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_V1.json",
@@ -15443,9 +15519,11 @@
         "modules/detect_builder_orphaned_artifacts_001.ps1",
         "modules/detect_builder_stub_placeholder_artifacts_001.ps1",
         "modules/inspect_builder_module_wiring_graph_001.ps1",
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
         "modules/update_builder_self_model_active_map_001.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -15456,6 +15534,7 @@
         "modules/detect_builder_orphaned_artifacts_001.ps1",
         "modules/detect_builder_stub_placeholder_artifacts_001.ps1",
         "modules/inspect_builder_module_wiring_graph_001.ps1",
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
         "modules/update_builder_self_model_active_map_001.ps1",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
@@ -15469,11 +15548,13 @@
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/stub_placeholder_inventory.json",
         "reports/self_development/unsafe_debt_backlog_from_body_map.json",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "callees": [
         ""
@@ -15490,7 +15571,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -15836,6 +15918,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -15869,6 +15952,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -15924,6 +16008,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -16713,6 +16798,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -16745,6 +16831,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -16792,6 +16879,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -17720,6 +17808,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -17753,6 +17842,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -17777,6 +17867,7 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/stub_false_positive_inventory.json",
@@ -17808,6 +17899,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -19281,6 +19373,57 @@
       "missing_link_reason": null,
       "placeholder_reason": null,
       "recommended_next_action": "Keep as live-proven active evidence input."
+    },
+    {
+      "artifact_id": "modules_inspect_builder_self_map_refresh_readiness_001_ps1",
+      "path": "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": null,
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal without proof.",
+      "evidence_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md"
+      ],
+      "proofs": [],
+      "schemas": [],
+      "route_lock_references": [],
+      "last_known_phase": null,
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Add live or proof JSON evidence before marking proven."
     },
     {
       "artifact_id": "modules_invoke_admitted_action_execution_engine_ps1",
@@ -22728,6 +22871,62 @@
       "missing_link_reason": null,
       "placeholder_reason": null,
       "recommended_next_action": "Keep as live-proven active evidence input."
+    },
+    {
+      "artifact_id": "modules_invoke_builder_self_map_refresh_after_acceptance_001_ps1",
+      "path": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": "PHASE161E",
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "evidence_strength": "REPORT_WEAK",
+      "evidence_basis": "Stub keyword found without executable not-implemented behavior.",
+      "evidence_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": true,
+      "callers": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "callees": [
+        "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+        "modules/build_builder_agent_body_map_001.ps1",
+        "modules/write_builder_self_map_memory_report_001.ps1"
+      ],
+      "validators": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "proofs": [],
+      "schemas": [],
+      "route_lock_references": [],
+      "last_known_phase": "PHASE161E",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": "False-positive stub wording detected; not treated as real stub.",
+      "recommended_next_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
       "artifact_id": "modules_invoke_builder_self_pack_author_conveyor_001_ps1",
@@ -31442,6 +31641,7 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "live_evidence_paths": [],
@@ -31461,6 +31661,7 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -31480,6 +31681,7 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
@@ -31499,6 +31701,7 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
@@ -31649,6 +31852,57 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "proofs": [],
+      "schemas": [],
+      "route_lock_references": [],
+      "last_known_phase": null,
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
+      "artifact_id": "modules_validate_builder_acceptance_self_map_refresh_contract_001_ps1",
+      "path": "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": null,
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal without proof.",
+      "evidence_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md"
       ],
       "proofs": [],
       "schemas": [],
@@ -32999,6 +33253,62 @@
       "recommended_next_action": "Keep as referenced artifact; connect to current wiring or classify historical before reuse."
     },
     {
+      "artifact_id": "modules_write_builder_self_map_memory_report_001_ps1",
+      "path": "modules/write_builder_self_map_memory_report_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": "PHASE161E",
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "evidence_strength": "REPORT_WEAK",
+      "evidence_basis": "Stub keyword found without executable not-implemented behavior.",
+      "evidence_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": true,
+      "callers": [
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "proofs": [],
+      "schemas": [],
+      "route_lock_references": [],
+      "last_known_phase": "PHASE161E",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": "False-positive stub wording detected; not treated as real stub.",
+      "recommended_next_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
       "artifact_id": "orchestrator_run_ps1",
       "path": "orchestrator/run.ps1",
       "artifact_type": "orchestrator",
@@ -33116,6 +33426,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_repo_genesis.ps1",
         "validators/validate_runbook_executor_agent_production_v1.ps1",
         "validators/validate_runbook_executor_agent_program_trial_v1.ps1"
@@ -33290,6 +33601,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_repo_genesis.ps1",
         "validators/validate_runbook_executor_agent_production_v1.ps1",
         "validators/validate_runbook_executor_agent_program_trial_v1.ps1"
@@ -44297,7 +44609,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -44390,7 +44703,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -44602,7 +44916,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -44695,7 +45010,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -44907,7 +45223,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -45003,7 +45320,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -45215,7 +45533,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -45311,7 +45630,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -45523,7 +45843,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -45616,7 +45937,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -45828,7 +46150,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -45921,7 +46244,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -73299,13 +73623,14 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/unsafe_debt_backlog_from_body_map.json",
         "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
       "live_evidence_paths": [],
@@ -73349,6 +73674,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_runbook_executor_agent_production_v1.ps1",
         "validators/validate_second_generated_program_family_live_admission_v1.ps1"
       ],
@@ -73376,13 +73702,14 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/unsafe_debt_backlog_from_body_map.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
+        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE114_BUILD_ADMITTED_ACTION_EXECUTION_ENGINE_V1.json",
@@ -73443,6 +73770,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_runbook_executor_agent_production_v1.ps1",
         "validators/validate_second_generated_program_family_live_admission_v1.ps1"
       ],
@@ -73464,13 +73792,14 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/unsafe_debt_backlog_from_body_map.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
+        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE114_BUILD_ADMITTED_ACTION_EXECUTION_ENGINE_V1.json",
@@ -88469,6 +88798,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -88501,6 +88831,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -88546,6 +88877,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -88586,9 +88918,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -88600,7 +88934,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -88614,9 +88949,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -88643,7 +88980,8 @@
         "modules/update_builder_self_model_active_map_001.ps1"
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -88654,9 +88992,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -92821,9 +93161,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -92835,7 +93177,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -92849,9 +93192,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -92871,7 +93216,8 @@
         ""
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -92882,9 +93228,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -92939,6 +93287,7 @@
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -92973,6 +93322,7 @@
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -93011,6 +93361,7 @@
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -93057,9 +93408,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -93072,7 +93425,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -93091,9 +93445,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -93285,7 +93641,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -93300,9 +93657,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -93429,6 +93788,7 @@
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -93463,6 +93823,7 @@
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -93501,6 +93862,7 @@
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -94523,9 +94885,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -94538,7 +94902,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -94557,9 +94922,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -94751,7 +95118,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -94766,9 +95134,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -94978,9 +95348,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -94992,7 +95364,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -95006,9 +95379,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95043,7 +95418,8 @@
         "modules/validate_production_external_agent_spec.ps1"
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -95054,9 +95430,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95179,9 +95557,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95193,7 +95573,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -95207,9 +95588,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95368,7 +95751,8 @@
         "modules/write_builder_morning_review_001.ps1"
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -95379,9 +95763,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95437,9 +95823,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95452,7 +95840,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -95471,9 +95860,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95665,7 +96056,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -95680,9 +96072,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95882,9 +96276,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95897,7 +96293,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -95916,9 +96313,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -95958,7 +96357,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -95973,9 +96373,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -105832,6 +106234,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -105864,6 +106267,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -105901,6 +106305,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -105950,6 +106355,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -105982,6 +106388,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106030,6 +106437,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106079,6 +106487,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106111,6 +106520,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106156,6 +106566,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106205,6 +106616,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106237,6 +106649,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106274,6 +106687,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106323,6 +106737,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106355,6 +106770,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106407,6 +106823,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106483,6 +106900,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106515,6 +106933,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106563,6 +106982,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106612,6 +107032,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106644,6 +107065,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106691,6 +107113,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106740,6 +107163,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106772,6 +107196,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106810,6 +107235,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106823,6 +107249,121 @@
         "route_change_requests/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_REQUEST.md"
       ],
       "last_known_phase": "PHASE161C",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": "False-positive stub wording detected; not treated as real stub.",
+      "recommended_next_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
+      "artifact_id": "reports_self_development_PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY_md",
+      "path": "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "artifact_type": "report",
+      "phase_hint": "PHASE161D",
+      "role_guess": "report",
+      "primary_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "evidence_strength": "REPORT_WEAK",
+      "evidence_basis": "Stub keyword found without executable not-implemented behavior.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "reports/self_development/agent_body_map_classifier_hardening_result.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/agent_body_map.md",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/historical_reference_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
+        "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/self_model_gap_chain.json",
+        "reports/self_development/stub_false_positive_inventory.json",
+        "reports/self_development/stub_placeholder_inventory.json",
+        "reports/self_development/superseded_artifact_inventory.json",
+        "reports/self_development/unsafe_debt_backlog_from_body_map.json",
+        "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+      ],
+      "report_reference_paths": [
+        "reports/self_development/agent_body_map_classifier_hardening_result.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/agent_body_map.md",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/historical_reference_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
+        "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/self_model_gap_chain.json",
+        "reports/self_development/stub_false_positive_inventory.json",
+        "reports/self_development/stub_placeholder_inventory.json",
+        "reports/self_development/superseded_artifact_inventory.json",
+        "reports/self_development/unsafe_debt_backlog_from_body_map.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [],
+      "superseded_by": null,
+      "stub_false_positive": true,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/agent_body_map_classifier_hardening_result.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/agent_body_map.md",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/historical_reference_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
+        "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/self_model_gap_chain.json",
+        "reports/self_development/stub_false_positive_inventory.json",
+        "reports/self_development/stub_placeholder_inventory.json",
+        "reports/self_development/superseded_artifact_inventory.json",
+        "reports/self_development/unsafe_debt_backlog_from_body_map.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md"
+      ],
+      "last_known_phase": "PHASE161D",
       "safe_to_modify": true,
       "owner_approval_required": false,
       "missing_link_reason": null,
@@ -106850,9 +107391,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106864,7 +107407,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -106878,9 +107422,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106900,7 +107446,8 @@
         "modules/build_builder_agent_body_map_001.ps1"
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -106911,9 +107458,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106957,9 +107506,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -106971,7 +107522,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -106985,9 +107537,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -107007,7 +107561,8 @@
         ""
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -107018,9 +107573,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -107064,9 +107621,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -107078,7 +107637,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -107092,9 +107652,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -107121,7 +107683,8 @@
         "modules/update_builder_self_model_active_map_001.ps1"
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -107132,9 +107695,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -107156,6 +107721,64 @@
       "missing_link_reason": null,
       "placeholder_reason": "Real stub/not-implemented signal detected.",
       "recommended_next_action": "Repair only under a bounded task with validator coverage."
+    },
+    {
+      "artifact_id": "reports_self_development_PHASE161E_EXECUTION_PLAN_md",
+      "path": "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+      "artifact_type": "report",
+      "phase_hint": "PHASE161E",
+      "role_guess": "report",
+      "primary_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has validator evidence but no current route/daemon/runner wiring.",
+      "evidence_type": "VALIDATOR_PROVEN",
+      "evidence_strength": "VALIDATOR_MEDIUM",
+      "evidence_basis": "Validator reference exists without current wiring.",
+      "evidence_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+        "modules/build_builder_agent_body_map_001.ps1",
+        "modules/inspect_builder_agent_body_map_freshness_001.ps1",
+        "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "modules/update_builder_self_model_active_map_001.ps1",
+        "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+        "modules/write_builder_self_map_memory_report_001.ps1"
+      ],
+      "validators": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "proofs": [],
+      "schemas": [],
+      "route_lock_references": [],
+      "last_known_phase": "PHASE161E",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as validator-proven only until current wiring or live proof exists."
     },
     {
       "artifact_id": "reports_self_development_quality_artifact_consistency_result_json",
@@ -107705,9 +108328,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -107720,7 +108345,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -107739,9 +108365,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -107784,7 +108412,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -107799,9 +108428,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -108305,6 +108936,57 @@
       "recommended_next_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
+      "artifact_id": "reports_self_development_self_map_refresh_policy_json",
+      "path": "reports/self_development/self_map_refresh_policy.json",
+      "artifact_type": "report",
+      "phase_hint": "PHASE161E",
+      "role_guess": "report",
+      "primary_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Artifact has validator evidence but no current route/daemon/runner wiring.",
+      "evidence_type": "VALIDATOR_PROVEN",
+      "evidence_strength": "VALIDATOR_MEDIUM",
+      "evidence_basis": "Validator reference exists without current wiring.",
+      "evidence_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "proofs": [],
+      "schemas": [],
+      "route_lock_references": [],
+      "last_known_phase": "PHASE161E",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as validator-proven only until current wiring or live proof exists."
+    },
+    {
       "artifact_id": "reports_self_development_SELF_MODEL_ACTIVE_MAP_json",
       "path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
       "artifact_type": "report",
@@ -108331,9 +109013,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -108347,7 +109031,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -108367,9 +109052,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -108539,7 +109226,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -108555,9 +109243,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -108627,9 +109317,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -108642,7 +109334,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -108661,9 +109354,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -108684,7 +109379,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -108699,9 +109395,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109513,9 +110211,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109527,7 +110227,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -109541,9 +110242,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109573,7 +110276,8 @@
         "modules/watch_builder_live_growth_session_observer_001.ps1"
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -109584,9 +110288,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109635,9 +110341,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109650,7 +110358,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -109669,9 +110378,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109692,7 +110403,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -109707,9 +110419,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109754,9 +110468,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109768,7 +110484,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -109782,9 +110499,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109804,7 +110523,8 @@
         ""
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -109815,9 +110535,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109866,9 +110588,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109881,7 +110605,8 @@
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -109900,9 +110625,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -109923,7 +110650,8 @@
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -109938,9 +110666,11 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -114174,6 +114904,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -114206,6 +114937,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -114243,6 +114975,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -114283,9 +115016,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -114297,7 +115032,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -114311,9 +115047,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -114333,7 +115071,8 @@
         ""
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -114344,9 +115083,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -114450,7 +115191,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_V1.json",
@@ -114514,7 +115256,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -114661,7 +115404,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_V1.json",
@@ -114725,7 +115469,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -116548,10 +117293,10 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1_REPORT.json",
-        "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
@@ -116668,6 +117413,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_production_factory_proof_v1.ps1",
         "validators/validate_production_package_blueprint_v1.ps1",
         "validators/validate_production_spec_contract_v1.ps1",
@@ -116734,10 +117480,10 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
-        "reports/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1_REPORT.json",
-        "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1_REPORT.json"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1.json",
@@ -116871,6 +117617,7 @@
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
         "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_production_factory_proof_v1.ps1",
         "validators/validate_production_package_blueprint_v1.ps1",
         "validators/validate_production_spec_contract_v1.ps1",
@@ -116927,10 +117674,10 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
-        "reports/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1_REPORT.json",
-        "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1_REPORT.json"
       ],
       "proofs": [
         "proofs/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_PROOF.json",
@@ -118416,7 +119163,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -118509,7 +119257,8 @@
         "validators/validate_phase161b_unified_learning_mode_loop_v1.ps1",
         "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -127912,6 +128661,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -127944,6 +128694,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -127989,6 +128740,7 @@
         "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -128029,9 +128781,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -128043,7 +128797,8 @@
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
@@ -128057,9 +128812,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -128086,7 +128843,8 @@
         "modules/update_builder_self_model_active_map_001.ps1"
       ],
       "validators": [
-        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1"
+        "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map_classifier_hardening_result.json",
@@ -128097,9 +128855,11 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161D_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
         "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
@@ -128116,6 +128876,62 @@
         "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md"
       ],
       "last_known_phase": "PHASE161D",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": "False-positive stub wording detected; not treated as real stub.",
+      "recommended_next_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
+      "artifact_id": "validators_validate_phase161e_self_map_auto_refresh_after_acceptance_v1_ps1",
+      "path": "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
+      "artifact_type": "validator",
+      "phase_hint": "PHASE161E",
+      "role_guess": "validator",
+      "primary_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "evidence_strength": "REPORT_WEAK",
+      "evidence_basis": "Stub keyword found without executable not-implemented behavior.",
+      "evidence_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "proof_evidence_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [],
+      "superseded_by": null,
+      "stub_false_positive": true,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+        "modules/build_builder_agent_body_map_001.ps1",
+        "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+        "modules/write_builder_self_map_memory_report_001.ps1"
+      ],
+      "validators": [
+        "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/self_map_refresh_policy.json"
+      ],
+      "proofs": [],
+      "schemas": [],
+      "route_lock_references": [],
+      "last_known_phase": "PHASE161E",
       "safe_to_modify": true,
       "owner_approval_required": false,
       "missing_link_reason": null,

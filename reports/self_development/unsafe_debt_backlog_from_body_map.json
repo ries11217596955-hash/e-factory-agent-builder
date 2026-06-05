@@ -1,404 +1,68 @@
 {
-  "phase": "PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_V1",
+  "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
   "debt": [
     {
       "path": "CAPABILITY_ROADMAP.json",
       "current_status": "RISK_LOCKED",
-      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161C.",
+      "evidence_type": "PROTECTED_RISK_LOCKED",
+      "evidence_strength": "RISK_LOCKED_STRONG",
+      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161D.",
       "owner_approval_required": true,
       "recommended_action": "Read only; create update candidate under reports/self_development if a state change is needed."
     },
     {
-      "path": "docs/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
       "path": "GENESIS_STATE.json",
       "current_status": "RISK_LOCKED",
-      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161C.",
+      "evidence_type": "PROTECTED_RISK_LOCKED",
+      "evidence_strength": "RISK_LOCKED_STRONG",
+      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161D.",
       "owner_approval_required": true,
       "recommended_action": "Read only; create update candidate under reports/self_development if a state change is needed."
     },
     {
       "path": "modules/build_builder_agent_body_map_001.ps1",
       "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/build_builder_self_knowledge.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/classify_builder_agent_body_artifact_001.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/detect_builder_stub_placeholder_artifacts_001.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/inspect_builder_agent_body_map_freshness_001.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/inspect_builder_candidate_quality_gate_001.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/inspect_builder_quality_decision_index_001.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/materialize_generated_self_build_program_from_family_contract.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/new_remediation_seed_self_build_program_package.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/normalize_builder_candidate_quality_artifacts_001.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/self_development/write_builder_self_pack_author_v1.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "modules/watch_builder_live_growth_session_observer_001.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
+      "evidence_type": "REAL_STUB_OR_PLACEHOLDER",
+      "evidence_strength": "DISCONNECTED_WEAK",
+      "why_status": "Executable or near-empty artifact has a real stub/not-implemented signal.",
       "owner_approval_required": false,
       "recommended_action": "Repair only under a bounded task with validator coverage."
     },
     {
       "path": "orchestrator/run.ps1",
       "current_status": "RISK_LOCKED",
-      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161C.",
+      "evidence_type": "PROTECTED_RISK_LOCKED",
+      "evidence_strength": "RISK_LOCKED_STRONG",
+      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161D.",
       "owner_approval_required": true,
       "recommended_action": "Read only; create update candidate under reports/self_development if a state change is needed."
-    },
-    {
-      "path": "packs/PHASE13_PRODUCTION_TRUTH_RESET_V2/payload/tasks/TASK_REAL_GENERATED_AGENT_RUNTIME_V2_001.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "packs/PHASE13_PRODUCTION_TRUTH_RESET_V2/payload/validators/validate_production_truth_reset_v2.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/payload/modules/new_remediation_seed_self_build_program_package.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "packs/PHASE62_SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1/payload/modules/materialize_generated_self_build_program_from_family_contract.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/VALIDATE.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
     },
     {
       "path": "packs/registry.json",
       "current_status": "RISK_LOCKED",
-      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161C.",
+      "evidence_type": "PROTECTED_RISK_LOCKED",
+      "evidence_strength": "RISK_LOCKED_STRONG",
+      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161D.",
       "owner_approval_required": true,
       "recommended_action": "Read only; create update candidate under reports/self_development if a state change is needed."
     },
     {
-      "path": "proofs/self_development/PHASE160H_REAL_PAYLOAD_GENERATION_QUALITY_GATE_REVISION_FEEDBACK_PROOF.json",
+      "path": "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
       "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "proofs/self_development/PHASE160H1_PAYLOAD_WRITER_DIRECTORY_CREATION_PROOF.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "proofs/self_development/PHASE160K_QUALITY_ARTIFACT_CONSISTENCY_PROOF.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/agent_body_map_update_report.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/agent_body_map.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/agent_body_map.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/function_inventory.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/module_wiring_graph.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/PHASE160H_REAL_PAYLOAD_GENERATION_QUALITY_GATE_REVISION_FEEDBACK_REPORT.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/PHASE160H1_PAYLOAD_WRITER_DIRECTORY_CREATION_REPORT.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_REPORT.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/quality_decision_index_result.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/quality_manifest_alignment_result.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/self_model_gap_chain.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/stub_placeholder_inventory.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "reports/self_development/unsafe_debt_backlog_from_body_map.json",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "route_change_requests/PHASE160H1_PAYLOAD_WRITER_DIRECTORY_CREATION_REQUEST.md",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
+      "evidence_type": "REAL_STUB_OR_PLACEHOLDER",
+      "evidence_strength": "DISCONNECTED_WEAK",
+      "why_status": "Executable or near-empty artifact has a real stub/not-implemented signal.",
       "owner_approval_required": false,
       "recommended_action": "Repair only under a bounded task with validator coverage."
     },
     {
       "path": "TASK_QUEUE.json",
       "current_status": "RISK_LOCKED",
-      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161C.",
+      "evidence_type": "PROTECTED_RISK_LOCKED",
+      "evidence_strength": "RISK_LOCKED_STRONG",
+      "why_status": "Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161D.",
       "owner_approval_required": true,
       "recommended_action": "Read only; create update candidate under reports/self_development if a state change is needed."
-    },
-    {
-      "path": "validators/validate_external_agent_spec.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_phase160j_owner_task_intake_and_backlog_lifecycle_v1.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_phase160k_quality_artifact_consistency_v1.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_phase161b1_unified_owner_inbox_router_v1.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_production_truth_reset_v2.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_repo_genesis.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_run_report_contract.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_state_alignment.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
-    },
-    {
-      "path": "validators/validate_task_queue_alignment.ps1",
-      "current_status": "STUB_OR_PLACEHOLDER",
-      "why_status": "TODO/FIXME/STUB/placeholder/not implemented marker detected.",
-      "owner_approval_required": false,
-      "recommended_action": "Repair only under a bounded task with validator coverage."
     }
   ]
 }

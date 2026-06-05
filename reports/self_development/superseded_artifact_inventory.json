@@ -1,0 +1,12 @@
+{
+  "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
+  "items": [
+    {
+      "path": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md",
+      "superseded_by": "route_locks/ACTIVE_ROUTE_LOCK.json",
+      "evidence_strength": "SUPERSEDED_STRONG",
+      "why_status": "Artifact is named by active route-lock supersession evidence and must not be treated as current active wiring.",
+      "recommended_action": "Keep as historical route evidence; do not execute or promote without owner-approved route change."
+    }
+  ]
+}

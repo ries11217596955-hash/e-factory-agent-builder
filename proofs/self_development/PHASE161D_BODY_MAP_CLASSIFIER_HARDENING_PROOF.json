@@ -1,0 +1,312 @@
+{
+  "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
+  "result": "PASS",
+  "pwd": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "c27dcf95253ae54a7492b54760b5988d078f023a",
+  "remote": "origin\thttps://github.com/ries11217596955-hash/e-factory-agent-builder.git (fetch)\r\norigin\thttps://github.com/ries11217596955-hash/e-factory-agent-builder.git (push)",
+  "status_before_validation": "M modules/build_builder_agent_body_map_001.ps1\r\n M reports/self_development/SELF_MODEL_ACTIVE_MAP.json\r\n M reports/self_development/agent_body_map.json\r\n M reports/self_development/agent_body_map.md\r\n M reports/self_development/agent_body_map_update_report.md\r\n M reports/self_development/function_inventory.json\r\n M reports/self_development/module_wiring_graph.json\r\n M reports/self_development/orphaned_artifact_inventory.json\r\n M reports/self_development/safe_repair_candidates_from_body_map.json\r\n M reports/self_development/self_model_gap_chain.json\r\n M reports/self_development/stub_placeholder_inventory.json\r\n M reports/self_development/unsafe_debt_backlog_from_body_map.json\r\n?? proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json\r\n?? reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md\r\n?? reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md\r\n?? reports/self_development/PHASE161D_EXECUTION_PLAN.md\r\n?? reports/self_development/agent_body_map_classifier_hardening_result.json\r\n?? reports/self_development/historical_reference_inventory.json\r\n?? reports/self_development/live_evidence_separation_index.json\r\n?? reports/self_development/stub_false_positive_inventory.json\r\n?? reports/self_development/superseded_artifact_inventory.json\r\n?? route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md\r\n?? validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+  "status_after_validation": "M modules/build_builder_agent_body_map_001.ps1\r\n M reports/self_development/SELF_MODEL_ACTIVE_MAP.json\r\n M reports/self_development/agent_body_map.json\r\n M reports/self_development/agent_body_map.md\r\n M reports/self_development/agent_body_map_update_report.md\r\n M reports/self_development/function_inventory.json\r\n M reports/self_development/module_wiring_graph.json\r\n M reports/self_development/orphaned_artifact_inventory.json\r\n M reports/self_development/safe_repair_candidates_from_body_map.json\r\n M reports/self_development/self_model_gap_chain.json\r\n M reports/self_development/stub_placeholder_inventory.json\r\n M reports/self_development/unsafe_debt_backlog_from_body_map.json\r\n?? proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json\r\n?? reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md\r\n?? reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md\r\n?? reports/self_development/PHASE161D_EXECUTION_PLAN.md\r\n?? reports/self_development/agent_body_map_classifier_hardening_result.json\r\n?? reports/self_development/historical_reference_inventory.json\r\n?? reports/self_development/live_evidence_separation_index.json\r\n?? reports/self_development/stub_false_positive_inventory.json\r\n?? reports/self_development/superseded_artifact_inventory.json\r\n?? route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md\r\n?? validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+  "parser_results": [
+    {
+      "path": "modules/build_builder_agent_body_map_001.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    },
+    {
+      "path": "modules/classify_builder_agent_body_artifact_001.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    },
+    {
+      "path": "modules/inspect_builder_module_wiring_graph_001.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    },
+    {
+      "path": "modules/detect_builder_stub_placeholder_artifacts_001.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    },
+    {
+      "path": "modules/detect_builder_orphaned_artifacts_001.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    },
+    {
+      "path": "modules/build_builder_self_model_gap_chain_001.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    },
+    {
+      "path": "modules/update_builder_self_model_active_map_001.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    },
+    {
+      "path": "modules/inspect_builder_agent_body_map_freshness_001.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    },
+    {
+      "path": "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+      "parser_status": "PASS",
+      "errors": []
+    }
+  ],
+  "builder_result": {
+    "result": "PASS",
+    "output_root": "reports/self_development",
+    "artifact_count": 1376,
+    "graph_node_count": 1376,
+    "graph_edge_count": 4129,
+    "function_inventory_count": 580,
+    "stub_placeholder_count": 2,
+    "orphaned_candidate_count": 250,
+    "false_positive_stub_count": 64,
+    "historical_reference_count": 204,
+    "superseded_count": 1,
+    "active_wired_proven_count": 183,
+    "present_not_wired_count": 269,
+    "protected_state_mutation_allowed": false,
+    "map_role": "DERIVED_FROM_EXISTING",
+    "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1"
+  },
+  "hardening_result": {
+    "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
+    "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
+    "total_artifacts": 1376,
+    "active_wired_proven_count": 183,
+    "active_wired_unproven_count": 62,
+    "present_not_wired_count": 269,
+    "superseded_count": 1,
+    "false_positive_stub_count": 64,
+    "real_stub_count": 2,
+    "evidence_type_counts": [
+      {
+        "evidence_type": "CURRENT_ROUTE_WIRED",
+        "count": 31
+      },
+      {
+        "evidence_type": "CURRENT_RUNNER_WIRED",
+        "count": 79
+      },
+      {
+        "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+        "count": 63
+      },
+      {
+        "evidence_type": "HISTORICAL_REFERENCE_ONLY",
+        "count": 204
+      },
+      {
+        "evidence_type": "LIVE_RUNTIME_PROVEN",
+        "count": 120
+      },
+      {
+        "evidence_type": "PROOF_JSON_PROVEN",
+        "count": 152
+      },
+      {
+        "evidence_type": "PROTECTED_RISK_LOCKED",
+        "count": 5
+      },
+      {
+        "evidence_type": "REAL_STUB_OR_PLACEHOLDER",
+        "count": 2
+      },
+      {
+        "evidence_type": "REPORT_REFERENCED",
+        "count": 63
+      },
+      {
+        "evidence_type": "SUPERSEDED_BY_ROUTE_LOCK",
+        "count": 1
+      },
+      {
+        "evidence_type": "VALIDATOR_PROVEN",
+        "count": 656
+      }
+    ],
+    "why_status": "PHASE161D hardened classifier reduced active/proven over-classification and separated evidence classes."
+  },
+  "checks": [
+    {
+      "name": "root_guard",
+      "pass": true,
+      "details": "missing="
+    },
+    {
+      "name": "plan_exists",
+      "pass": true,
+      "details": "PHASE161D execution plan exists."
+    },
+    {
+      "name": "parser_checks",
+      "pass": true,
+      "details": "parser_failures=0"
+    },
+    {
+      "name": "builder_runs",
+      "pass": true,
+      "details": "classifier=PHASE161D_STRICT_EVIDENCE_V1; artifacts=1376"
+    },
+    {
+      "name": "output_exists_reports_self_development_agent_body_map_json",
+      "pass": true,
+      "details": "reports/self_development/agent_body_map.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_agent_body_map_md",
+      "pass": true,
+      "details": "reports/self_development/agent_body_map.md exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_module_wiring_graph_json",
+      "pass": true,
+      "details": "reports/self_development/module_wiring_graph.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_function_inventory_json",
+      "pass": true,
+      "details": "reports/self_development/function_inventory.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_stub_placeholder_inventory_json",
+      "pass": true,
+      "details": "reports/self_development/stub_placeholder_inventory.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_orphaned_artifact_inventory_json",
+      "pass": true,
+      "details": "reports/self_development/orphaned_artifact_inventory.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_self_model_gap_chain_json",
+      "pass": true,
+      "details": "reports/self_development/self_model_gap_chain.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_SELF_MODEL_ACTIVE_MAP_json",
+      "pass": true,
+      "details": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_safe_repair_candidates_from_body_map_json",
+      "pass": true,
+      "details": "reports/self_development/safe_repair_candidates_from_body_map.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_unsafe_debt_backlog_from_body_map_json",
+      "pass": true,
+      "details": "reports/self_development/unsafe_debt_backlog_from_body_map.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_agent_body_map_classifier_hardening_result_json",
+      "pass": true,
+      "details": "reports/self_development/agent_body_map_classifier_hardening_result.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_live_evidence_separation_index_json",
+      "pass": true,
+      "details": "reports/self_development/live_evidence_separation_index.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_historical_reference_inventory_json",
+      "pass": true,
+      "details": "reports/self_development/historical_reference_inventory.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_superseded_artifact_inventory_json",
+      "pass": true,
+      "details": "reports/self_development/superseded_artifact_inventory.json exists."
+    },
+    {
+      "name": "output_exists_reports_self_development_stub_false_positive_inventory_json",
+      "pass": true,
+      "details": "reports/self_development/stub_false_positive_inventory.json exists."
+    },
+    {
+      "name": "classifier_version",
+      "pass": true,
+      "details": "Strict evidence classifier active."
+    },
+    {
+      "name": "active_proven_reduced",
+      "pass": true,
+      "details": "active_wired_proven=183"
+    },
+    {
+      "name": "present_not_wired_nonzero",
+      "pass": true,
+      "details": "present_not_wired=269"
+    },
+    {
+      "name": "orphan_inventory_nonzero",
+      "pass": true,
+      "details": "orphan_candidates=250"
+    },
+    {
+      "name": "supersession_propagated",
+      "pass": true,
+      "details": "superseded=1"
+    },
+    {
+      "name": "stub_false_positive_exposed",
+      "pass": true,
+      "details": "false_positive_stubs=64"
+    },
+    {
+      "name": "real_stub_count_reduced",
+      "pass": true,
+      "details": "real_stubs=2"
+    },
+    {
+      "name": "historical_inventory_present",
+      "pass": true,
+      "details": "historical=204"
+    },
+    {
+      "name": "live_evidence_index_present",
+      "pass": true,
+      "details": "Evidence type counts present."
+    },
+    {
+      "name": "evidence_fields_present",
+      "pass": true,
+      "details": "Every artifact has allowed evidence_type and evidence_strength."
+    },
+    {
+      "name": "active_proven_requires_current_or_live_evidence",
+      "pass": true,
+      "details": "Active proven items use live/current evidence types only."
+    },
+    {
+      "name": "protected_state_clean",
+      "pass": true,
+      "details": "mutated="
+    },
+    {
+      "name": "runtime_outputs_not_staged",
+      "pass": true,
+      "details": "runtime_status="
+    }
+  ],
+  "protected_hashes_before": {
+    "TASK_QUEUE.json": "27220D7E169EDA9E60341B4A7A2817D3515DE8C8BB11DFC7C841A941FC01C4EC",
+    "GENESIS_STATE.json": "2E42C007217F0B3ABAE6AB0817D1D6607175FBD3F30E3169884773EF17F6D20F",
+    "CAPABILITY_ROADMAP.json": "CAF5552F5630E8D9783213CDCDAEFBF55491181DD41CB778965720DA5BDCA1CA",
+    "packs/registry.json": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760",
+    "orchestrator/run.ps1": "51AA1CBEB0339B2DF0CBA84606E414D9DFA7395DED7179CC5248B3C4BC5CC91D"
+  },
+  "protected_hashes_after": {
+    "TASK_QUEUE.json": "27220D7E169EDA9E60341B4A7A2817D3515DE8C8BB11DFC7C841A941FC01C4EC",
+    "GENESIS_STATE.json": "2E42C007217F0B3ABAE6AB0817D1D6607175FBD3F30E3169884773EF17F6D20F",
+    "CAPABILITY_ROADMAP.json": "CAF5552F5630E8D9783213CDCDAEFBF55491181DD41CB778965720DA5BDCA1CA",
+    "packs/registry.json": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760",
+    "orchestrator/run.ps1": "51AA1CBEB0339B2DF0CBA84606E414D9DFA7395DED7179CC5248B3C4BC5CC91D"
+  },
+  "protected_state_mutated": false,
+  "runtime_outputs_staged": false,
+  "final_recommendation": "READY_FOR_OWNER_REVIEW"
+}

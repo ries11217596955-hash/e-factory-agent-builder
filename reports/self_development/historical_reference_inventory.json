@@ -1,0 +1,1661 @@
+{
+  "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
+  "items": [
+    {
+      "path": "contracts/operations/operation_runtime_report.schema.json",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "contracts/operations/smoke_install_trial_report.schema.json",
+      "phase_hint": "PHASE86",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "contracts/self_development/builder_self_pack_author_v1.schema.json",
+      "phase_hint": "PHASE108",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "contracts/self_development/continue_on_failure_runtime_v1.schema.json",
+      "phase_hint": "PHASE100",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "contracts/self_development/item_level_execution_ledger_v1.schema.json",
+      "phase_hint": "PHASE99",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "contracts/self_development/self_development_decision_kernel_report.schema.json",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/materials/create_quarantine_trial.ps1",
+      "phase_hint": "PHASE83",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/materials/import_manual_scout_pass.ps1",
+      "phase_hint": "PHASE80",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/materials/write_material_catalog_report.ps1",
+      "phase_hint": "PHASE79",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/operations/invoke_operation_runtime.ps1",
+      "phase_hint": "PHASE86",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/operations/register_operation_contracts.ps1",
+      "phase_hint": "PHASE85",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/operations/run_first_smoke_install_trial.ps1",
+      "phase_hint": "PHASE86",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/operations/write_operation_contract_report.ps1",
+      "phase_hint": "PHASE84",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/self_development/write_continue_on_failure_runtime_v1.ps1",
+      "phase_hint": "PHASE99",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/self_development/write_owner_order_to_gap_map_v1.ps1",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/self_development/write_quarantine_and_blocker_registry_v1.ps1",
+      "phase_hint": "PHASE100",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/self_development/write_self_build_program_generator_v2.ps1",
+      "phase_hint": "PHASE95",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "modules/self_development/write_self_development_decision_kernel_report.ps1",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE100_QUARANTINE_AND_BLOCKER_REGISTRY_V1/APPLY.ps1",
+      "phase_hint": "PHASE100",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE100_QUARANTINE_AND_BLOCKER_REGISTRY_V1/PACK.json",
+      "phase_hint": "PHASE100",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE100_QUARANTINE_AND_BLOCKER_REGISTRY_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE100",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/APPLY.ps1",
+      "phase_hint": "PHASE17",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/PACK.json",
+      "phase_hint": "PHASE17",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/payload/specs/operational_factory_proof/OPERATIONAL_FACTORY_PROOF_SPEC.json",
+      "phase_hint": "PHASE17",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/payload/validators/validate_operational_factory_proof_v2.ps1",
+      "phase_hint": "PHASE17",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/APPLY.ps1",
+      "phase_hint": "PHASE19",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/PACK.json",
+      "phase_hint": "PHASE19",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/payload/orchestrator/run.ps1",
+      "phase_hint": "PHASE19",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/payload/specs/mode_proof/RAW_IDEA_MODE_PROOF.json",
+      "phase_hint": "PHASE19",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/payload/tasks/TASK_IDEA_TO_AGENT_FACTORY_PROOF_V1_001.json",
+      "phase_hint": "PHASE19",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/payload/validators/validate_build_from_raw_idea_mode_v1.ps1",
+      "phase_hint": "PHASE19",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE20",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE20",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/payload/specs/factory_proof/RAW_IDEA_FACTORY_PROOF.json",
+      "phase_hint": "PHASE20",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/payload/validators/validate_idea_to_agent_factory_proof_v1.ps1",
+      "phase_hint": "PHASE20",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/APPLY.ps1",
+      "phase_hint": "PHASE21",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/PACK.json",
+      "phase_hint": "PHASE21",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/applied_agents/specialization_profiles/audit_agent_v1/overlay/examples/SAMPLE_REQUEST.json",
+      "phase_hint": "PHASE21",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/applied_agents/specialization_profiles/audit_agent_v1/overlay/modules/invoke_agent_operation.ps1",
+      "phase_hint": "PHASE21",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/modules/resolve_specialization_overlay.ps1",
+      "phase_hint": "PHASE21",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/tasks/TASK_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_001.json",
+      "phase_hint": "PHASE21",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/validators/validate_specialization_overlay_resolution_v1.ps1",
+      "phase_hint": "PHASE21",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/APPLY.ps1",
+      "phase_hint": "PHASE22",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/PACK.json",
+      "phase_hint": "PHASE22",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/payload/orchestrator/run.ps1",
+      "phase_hint": "PHASE22",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/payload/specs/specialized_mode_proof/RAW_IDEA_SPECIALIZED_MODE_PROOF.json",
+      "phase_hint": "PHASE22",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/payload/tasks/TASK_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1_001.json",
+      "phase_hint": "PHASE22",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/payload/validators/validate_build_from_raw_idea_specialized_mode_v1.ps1",
+      "phase_hint": "PHASE22",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE23",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE23",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/payload/specs/specialized_factory_proof/RAW_IDEA_SPECIALIZED_FACTORY_PROOF.json",
+      "phase_hint": "PHASE23",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/payload/validators/validate_idea_to_specialized_agent_factory_proof_v1.ps1",
+      "phase_hint": "PHASE23",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/APPLY.ps1",
+      "phase_hint": "PHASE24",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/PACK.json",
+      "phase_hint": "PHASE24",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/payload/applied_agents/specialization_profiles/SPECIALIZATION_PROFILE_REGISTRY.json",
+      "phase_hint": "PHASE24",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/payload/modules/resolve_specialization_overlay.ps1",
+      "phase_hint": "PHASE24",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/payload/tasks/TASK_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_001.json",
+      "phase_hint": "PHASE24",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/payload/validators/validate_specialization_profile_registry_v1.ps1",
+      "phase_hint": "PHASE24",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE26",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE26",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/payload/specs/multi_profile_proof/RAW_IDEA_AUDIT_MULTI_PROFILE_PROOF.json",
+      "phase_hint": "PHASE26",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/payload/specs/multi_profile_proof/RAW_IDEA_SPECIFICATION_MULTI_PROFILE_PROOF.json",
+      "phase_hint": "PHASE26",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/payload/validators/validate_multi_profile_specialized_factory_proof_v1.ps1",
+      "phase_hint": "PHASE26",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/APPLY.ps1",
+      "phase_hint": "PHASE28",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/PACK.json",
+      "phase_hint": "PHASE28",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/payload/orchestrator/run.ps1",
+      "phase_hint": "PHASE28",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/payload/specs/gap_mode_proof/RAW_IDEA_GAP_MODE_PROOF.json",
+      "phase_hint": "PHASE28",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/payload/tasks/TASK_MISSING_PROFILE_FACTORY_PROOF_V1_001.json",
+      "phase_hint": "PHASE28",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/payload/validators/validate_no_match_diagnostic_mode_v1.ps1",
+      "phase_hint": "PHASE28",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE29",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE29",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/payload/specs/missing_profile_factory_proof/RAW_IDEA_MISSING_PROFILE_FACTORY_PROOF.json",
+      "phase_hint": "PHASE29",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/payload/validators/validate_missing_profile_factory_proof_v1.ps1",
+      "phase_hint": "PHASE29",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/APPLY.ps1",
+      "phase_hint": "PHASE30",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/PACK.json",
+      "phase_hint": "PHASE30",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/payload/modules/new_specialization_profile_candidate_brief.ps1",
+      "phase_hint": "PHASE30",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/payload/tasks/TASK_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_001.json",
+      "phase_hint": "PHASE30",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/payload/validators/validate_gap_to_profile_candidate_brief_v1.ps1",
+      "phase_hint": "PHASE30",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE32",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE32",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/payload/validators/validate_gap_closure_specialized_factory_proof_v1.ps1",
+      "phase_hint": "PHASE32",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/APPLY.ps1",
+      "phase_hint": "PHASE36",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/PACK.json",
+      "phase_hint": "PHASE36",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/payload/applied_agents/agent_spec_architect/overlay/modules/build_agent_spec_architecture.ps1",
+      "phase_hint": "PHASE36",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/payload/specs/workflow_gap_proof/RAW_IDEA_WORKFLOW_EXECUTION_GAP_PROOF.json",
+      "phase_hint": "PHASE36",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/payload/tasks/TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001.json",
+      "phase_hint": "PHASE36",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/payload/validators/validate_workflow_execution_family_reachability_v1.ps1",
+      "phase_hint": "PHASE36",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE38",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE38",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/payload/validators/validate_runtime_gap_remediation_closure_proof_v1.ps1",
+      "phase_hint": "PHASE38",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/APPLY.ps1",
+      "phase_hint": "PHASE39",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/PACK.json",
+      "phase_hint": "PHASE39",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/payload/applied_agents/agent_spec_architect/overlay/modules/build_agent_spec_architecture.ps1",
+      "phase_hint": "PHASE39",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/payload/specs/monitoring_gap_proof/RAW_IDEA_MONITORING_GAP_PROOF.json",
+      "phase_hint": "PHASE39",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/payload/tasks/TASK_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_001.json",
+      "phase_hint": "PHASE39",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/payload/validators/validate_monitoring_gap_reachability_v1.ps1",
+      "phase_hint": "PHASE39",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/APPLY.ps1",
+      "phase_hint": "PHASE40",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/PACK.json",
+      "phase_hint": "PHASE40",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/payload/orchestrator/run.ps1",
+      "phase_hint": "PHASE40",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/payload/tasks/TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001.json",
+      "phase_hint": "PHASE40",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/payload/validators/validate_specialized_gap_auto_intake_runtime_v1.ps1",
+      "phase_hint": "PHASE40",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE41",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE41",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/payload/validators/validate_one_run_gap_remediation_packet_proof_v1.ps1",
+      "phase_hint": "PHASE41",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/APPLY.ps1",
+      "phase_hint": "PHASE43",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/PACK.json",
+      "phase_hint": "PHASE43",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/payload/orchestrator/run.ps1",
+      "phase_hint": "PHASE43",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/payload/tasks/TASK_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1_001.json",
+      "phase_hint": "PHASE43",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/payload/validators/validate_specialized_gap_auto_program_seed_runtime_v1.ps1",
+      "phase_hint": "PHASE43",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE44",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE44",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/payload/validators/validate_one_run_remediation_program_seed_proof_v1.ps1",
+      "phase_hint": "PHASE44",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE46",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE46",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/payload/tasks/TASK_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1_001.json",
+      "phase_hint": "PHASE46",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/payload/validators/validate_monitoring_gap_closure_specialized_proof_v1.ps1",
+      "phase_hint": "PHASE46",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1/APPLY.ps1",
+      "phase_hint": "PHASE47",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1/PACK.json",
+      "phase_hint": "PHASE47",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1/payload/validators/validate_remediation_program_seed_consumption_closure_proof_v1.ps1",
+      "phase_hint": "PHASE47",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/APPLY.ps1",
+      "phase_hint": "PHASE48",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/PACK.json",
+      "phase_hint": "PHASE48",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/payload/contracts/remediation_seed_self_build_program_blueprint.schema.json",
+      "phase_hint": "PHASE48",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/payload/modules/new_remediation_seed_program_blueprint.ps1",
+      "phase_hint": "PHASE48",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/payload/tasks/TASK_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1_001.json",
+      "phase_hint": "PHASE48",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/payload/validators/validate_remediation_seed_program_blueprint_contract_v1.ps1",
+      "phase_hint": "PHASE48",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/APPLY.ps1",
+      "phase_hint": "PHASE49",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/PACK.json",
+      "phase_hint": "PHASE49",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/payload/tasks/TASK_ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1_001.json",
+      "phase_hint": "PHASE49",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/payload/validators/validate_remediation_seed_program_materialization_v1.ps1",
+      "phase_hint": "PHASE49",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE79_MATERIAL_ACQUISITION_BOOTSTRAP_V1/APPLY.ps1",
+      "phase_hint": "PHASE79",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE79_MATERIAL_ACQUISITION_BOOTSTRAP_V1/PACK.json",
+      "phase_hint": "PHASE79",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE79_MATERIAL_ACQUISITION_BOOTSTRAP_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE79",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/APPLY.ps1",
+      "phase_hint": "PHASE8",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/PACK.json",
+      "phase_hint": "PHASE8",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/contracts/external_agent_spec.schema.json",
+      "phase_hint": "PHASE8",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/modules/validate_production_external_agent_spec.ps1",
+      "phase_hint": "PHASE8",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/specs/external_agent_spec_template/SPEC_TEMPLATE.json",
+      "phase_hint": "PHASE8",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/tasks/TASK_PRODUCTION_PACKAGE_BLUEPRINT_V1_001.json",
+      "phase_hint": "PHASE8",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/validators/validate_production_spec_contract_v1.ps1",
+      "phase_hint": "PHASE8",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE80_MANUAL_SCOUT_PASS_IMPORT_V1/APPLY.ps1",
+      "phase_hint": "PHASE80",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE80_MANUAL_SCOUT_PASS_IMPORT_V1/PACK.json",
+      "phase_hint": "PHASE80",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE80_MANUAL_SCOUT_PASS_IMPORT_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE80",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE81_MATERIAL_ADMISSION_POLICY_V1/APPLY.ps1",
+      "phase_hint": "PHASE81",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE81_MATERIAL_ADMISSION_POLICY_V1/PACK.json",
+      "phase_hint": "PHASE81",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE81_MATERIAL_ADMISSION_POLICY_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE81",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1/APPLY.ps1",
+      "phase_hint": "PHASE82",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1/PACK.json",
+      "phase_hint": "PHASE82",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE82",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1/APPLY.ps1",
+      "phase_hint": "PHASE83",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1/PACK.json",
+      "phase_hint": "PHASE83",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE83",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1/APPLY.ps1",
+      "phase_hint": "PHASE84",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1/PACK.json",
+      "phase_hint": "PHASE84",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE84",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1/APPLY.ps1",
+      "phase_hint": "PHASE85",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1/PACK.json",
+      "phase_hint": "PHASE85",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE85",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE86_OPERATION_RUNTIME_SKELETON_V1/APPLY.ps1",
+      "phase_hint": "PHASE86",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE86_OPERATION_RUNTIME_SKELETON_V1/PACK.json",
+      "phase_hint": "PHASE86",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE86_OPERATION_RUNTIME_SKELETON_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE86",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1/APPLY.ps1",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1/PACK.json",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE94_OWNER_ORDER_TO_GAP_MAP_V1/APPLY.ps1",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE94_OWNER_ORDER_TO_GAP_MAP_V1/PACK.json",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE94_OWNER_ORDER_TO_GAP_MAP_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2/APPLY.ps1",
+      "phase_hint": "PHASE95",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2/PACK.json",
+      "phase_hint": "PHASE95",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2/VALIDATE.ps1",
+      "phase_hint": "PHASE95",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE99_CONTINUE_ON_FAILURE_RUNTIME_V1/APPLY.ps1",
+      "phase_hint": "PHASE99",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE99_CONTINUE_ON_FAILURE_RUNTIME_V1/PACK.json",
+      "phase_hint": "PHASE99",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "packs/PHASE99_CONTINUE_ON_FAILURE_RUNTIME_V1/VALIDATE.ps1",
+      "phase_hint": "PHASE99",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
+      "phase_hint": "PHASE80",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
+      "phase_hint": "PHASE85",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
+      "phase_hint": "PHASE86",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1.json",
+      "phase_hint": "PHASE108",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1.json",
+      "phase_hint": "PHASE108",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1.json",
+      "phase_hint": "PHASE108",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
+      "phase_hint": "PHASE99",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/self_development/OWNER_ORDER_TO_GAP_MAP_V1.json",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
+      "phase_hint": "PHASE100",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/self_development/SELF_BUILD_PROGRAM_GENERATOR_V2.json",
+      "phase_hint": "PHASE95",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "proofs/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_V1.json",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/materials/FIRST_QUARANTINE_TRIAL_REPORT.json",
+      "phase_hint": "PHASE82",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/materials/MANUAL_SCOUT_PASS_001.md",
+      "phase_hint": "PHASE80",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/materials/MANUAL_SCOUT_PASS_IMPORT_REPORT.json",
+      "phase_hint": "PHASE81",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
+      "phase_hint": "PHASE79",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/materials/MATERIAL_POLICY_V1_REPORT.json",
+      "phase_hint": "PHASE82",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/operations/FIRST_SMOKE_INSTALL_TRIAL_REPORT.json",
+      "phase_hint": "PHASE86",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_REPORT.json",
+      "phase_hint": "PHASE85",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/operations/OPERATION_CONTRACT_SKELETON_REPORT.json",
+      "phase_hint": "PHASE84",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/operations/OPERATION_RUNTIME_SKELETON_REPORT.json",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1_REPORT.json",
+      "phase_hint": "PHASE108",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1_REPORT.json",
+      "phase_hint": "PHASE108",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1_REPORT.json",
+      "phase_hint": "PHASE108",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+      ],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1_REPORT.json",
+      "phase_hint": "PHASE99",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/self_development/OWNER_ORDER_TO_GAP_MAP_REPORT.json",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1_REPORT.json",
+      "phase_hint": "PHASE100",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/self_development/SELF_BUILD_PROGRAM_GENERATOR_V2_REPORT.json",
+      "phase_hint": "PHASE95",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
+      "phase_hint": "PHASE87",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "self_build_backlog/CAPABILITY_GAP_DETECTOR_V1.json",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "self_build_backlog/CAPABILITY_GAP_INDEX_V1.json",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "self_build_backlog/OWNER_ORDER_GAP_MAP_EXAMPLE_V1.json",
+      "phase_hint": "PHASE95",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    },
+    {
+      "path": "self_build_backlog/OWNER_ORDER_TO_GAP_MAP_V1.json",
+      "phase_hint": "PHASE94",
+      "evidence_strength": "HISTORICAL_WEAK",
+      "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "historical_reference_paths": [],
+      "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
+    }
+  ]
+}

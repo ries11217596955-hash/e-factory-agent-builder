@@ -1,0 +1,58 @@
+{
+  "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
+  "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
+  "total_artifacts": 1376,
+  "active_wired_proven_count": 183,
+  "active_wired_unproven_count": 62,
+  "present_not_wired_count": 269,
+  "superseded_count": 1,
+  "false_positive_stub_count": 64,
+  "real_stub_count": 2,
+  "evidence_type_counts": [
+    {
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "count": 31
+    },
+    {
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "count": 79
+    },
+    {
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "count": 63
+    },
+    {
+      "evidence_type": "HISTORICAL_REFERENCE_ONLY",
+      "count": 204
+    },
+    {
+      "evidence_type": "LIVE_RUNTIME_PROVEN",
+      "count": 120
+    },
+    {
+      "evidence_type": "PROOF_JSON_PROVEN",
+      "count": 152
+    },
+    {
+      "evidence_type": "PROTECTED_RISK_LOCKED",
+      "count": 5
+    },
+    {
+      "evidence_type": "REAL_STUB_OR_PLACEHOLDER",
+      "count": 2
+    },
+    {
+      "evidence_type": "REPORT_REFERENCED",
+      "count": 63
+    },
+    {
+      "evidence_type": "SUPERSEDED_BY_ROUTE_LOCK",
+      "count": 1
+    },
+    {
+      "evidence_type": "VALIDATOR_PROVEN",
+      "count": 656
+    }
+  ],
+  "why_status": "PHASE161D hardened classifier reduced active/proven over-classification and separated evidence classes."
+}

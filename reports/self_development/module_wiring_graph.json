@@ -1,5 +1,5 @@
 {
-  "phase": "PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_V1",
+  "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
   "graph_role": "MODULE_WIRING_GRAPH",
   "why_status": "Static graph derived from function/module name references, protected-state references, schema filename references, phase references, and discovered proof/report links.",
   "nodes": [
@@ -4819,6 +4819,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "path": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "node_type": "proof"
@@ -5119,6 +5124,11 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/agent_body_map_classifier_hardening_result.json",
+      "path": "reports/self_development/agent_body_map_classifier_hardening_result.json",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/agent_body_map_update_report.md",
       "path": "reports/self_development/agent_body_map_update_report.md",
       "node_type": "report"
@@ -5209,8 +5219,18 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/historical_reference_inventory.json",
+      "path": "reports/self_development/historical_reference_inventory.json",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/ITEM_LEVEL_EXECUTION_LEDGER_V1_REPORT.json",
       "path": "reports/self_development/ITEM_LEVEL_EXECUTION_LEDGER_V1_REPORT.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/live_evidence_separation_index.json",
+      "path": "reports/self_development/live_evidence_separation_index.json",
       "node_type": "report"
     },
     {
@@ -5654,6 +5674,16 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PHASE161C_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "path": "reports/self_development/PHASE161C_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
+      "path": "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
       "path": "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
       "node_type": "report"
@@ -5664,6 +5694,16 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+      "path": "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
+      "path": "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
       "path": "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
       "node_type": "report"
@@ -5671,6 +5711,21 @@
     {
       "id": "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
       "path": "reports/self_development/PHASE161C_EXISTING_MAP_DISCOVERY.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
+      "path": "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_CODEX_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
+      "path": "reports/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
+      "path": "reports/self_development/PHASE161D_EXECUTION_PLAN.md",
       "node_type": "report"
     },
     {
@@ -5789,8 +5844,18 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/stub_false_positive_inventory.json",
+      "path": "reports/self_development/stub_false_positive_inventory.json",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/stub_placeholder_inventory.json",
       "path": "reports/self_development/stub_placeholder_inventory.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/superseded_artifact_inventory.json",
+      "path": "reports/self_development/superseded_artifact_inventory.json",
       "node_type": "report"
     },
     {
@@ -5966,6 +6031,11 @@
     {
       "id": "route_change_requests/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_REQUEST.md",
       "path": "route_change_requests/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_REQUEST.md",
+      "node_type": "route_change_request"
+    },
+    {
+      "id": "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md",
+      "path": "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md",
       "node_type": "route_change_request"
     },
     {
@@ -6626,6 +6696,11 @@
     {
       "id": "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
       "path": "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
+      "path": "validators/validate_phase161d_body_map_classifier_hardening_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -18886,6 +18961,97 @@
       "evidence_snippet_or_pattern": "route_locks/ACTIVE_ROUTE_LOCK.json"
     },
     {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "modules/build_builder_agent_body_map_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "build_builder_agent_body_map_001"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "modules/build_builder_self_model_gap_chain_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "build_builder_self_model_gap_chain_001"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "modules/classify_builder_agent_body_artifact_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "classify_builder_agent_body_artifact_001"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "modules/detect_builder_orphaned_artifacts_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "detect_builder_orphaned_artifacts_001"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "modules/detect_builder_stub_placeholder_artifacts_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "detect_builder_stub_placeholder_artifacts_001"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "modules/inspect_builder_agent_body_map_freshness_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_agent_body_map_freshness_001"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "modules/inspect_builder_module_wiring_graph_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_module_wiring_graph_001"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "modules/update_builder_self_model_active_map_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "update_builder_self_model_active_map_001"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
       "source": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "target": "contracts/self_development/quarantine_and_blocker_registry_v1.schema.json",
       "edge_type": "validates",
@@ -20718,97 +20884,6 @@
       "edge_type": "validates",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "produced_agents_index.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_knowledge/self_describe_report.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "self_describe_report.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/SPECIALIZATION_GAP_REPORT_CONTRACT_V1.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "SPECIALIZATION_GAP_REPORT_CONTRACT_V1.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/task_queue.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "task_queue.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/validation_report.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "validation_report.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "schemas/builder_learning_absorption.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "builder_learning_absorption.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "schemas/builder_learning_mode_state.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "builder_learning_mode_state.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "schemas/builder_school_curriculum_pack.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "builder_school_curriculum_pack.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "schemas/builder_school_lesson.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "builder_school_lesson.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "schemas/builder_school_morning_review.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "builder_school_morning_review.schema.json"
-    },
-    {
-      "source": "reports/self_development/AUTO_NEXT_GAP_DECISION_V1_REPORT.json",
-      "target": "contracts/self_development/auto_next_gap_decision_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "auto_next_gap_decision_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/BATCH_ADMISSION_POLICY_V1_REPORT.json",
-      "target": "contracts/self_development/batch_admission_policy_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "batch_admission_policy_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/BATCH_PLANNER_V1_REPORT.json",
-      "target": "contracts/self_development/batch_plan_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "batch_plan_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/BATCH_PROOF_AGGREGATOR_V1_REPORT.json",
-      "target": "contracts/self_development/batch_proof_aggregator_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "batch_proof_aggregator_v1.schema.json"
     }
   ]
 }

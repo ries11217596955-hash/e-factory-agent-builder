@@ -106,6 +106,109 @@ function Get-BuilderSafetyOperations {
   return @($signals | Select-Object -Unique)
 }
 
+function Get-BuilderRouteLockContext {
+  param([string]$Root)
+  $activeRouteLockFile = $null
+  $activeRouteLockText = ''
+  $supersededPaths = @()
+  $archivedPaths = @()
+  $activeRouteLockJson = Join-Path $Root 'route_locks/ACTIVE_ROUTE_LOCK.json'
+  if (-not (Test-Path -LiteralPath $activeRouteLockJson)) {
+    return [pscustomobject]@{
+      active_route_lock_file = $activeRouteLockFile
+      active_route_lock_text = $activeRouteLockText
+      superseded_paths = @()
+      archived_paths = @()
+    }
+  }
+  try {
+    $routeJson = Get-Content -LiteralPath $activeRouteLockJson -Raw | ConvertFrom-Json
+    $activeRouteLockFile = $routeJson.active_route_lock_file
+    $supersededItems = @()
+    if ($routeJson.PSObject.Properties.Name -contains 'superseded_route_locks') {
+      $supersededItems = @($routeJson.superseded_route_locks)
+    }
+    foreach ($item in $supersededItems) {
+      if ($item.file) {
+        $supersededPaths += (($item.file -replace '\\','/'))
+        if ($item.file -notlike 'route_locks/*') {
+          $supersededPaths += (('route_locks/' + $item.file) -replace '\\','/')
+        }
+      }
+    }
+    $archivedItems = @()
+    if ($routeJson.PSObject.Properties.Name -contains 'archived_reference_locks') {
+      $archivedItems = @($routeJson.archived_reference_locks)
+    }
+    foreach ($item in $archivedItems) {
+      if ($item.file) {
+        $archivedPaths += (($item.file -replace '\\','/'))
+      }
+    }
+    if ($activeRouteLockFile) {
+      $activeRoutePath = Join-Path $Root $activeRouteLockFile
+      if (Test-Path -LiteralPath $activeRoutePath) {
+        $activeRouteLockText = Get-Content -LiteralPath $activeRoutePath -Raw
+        foreach ($match in [regex]::Matches($activeRouteLockText, '(?m)^-\s+(.+)$')) {
+          $value = $match.Groups[1].Value.Trim()
+          if ($value -match 'AGENT_BUILDER_NEXT_15_STEPS_LOCK') {
+            $supersededPaths += (($value -replace '\\','/'))
+            if ($value -notlike 'route_locks/*') {
+              $supersededPaths += (('route_locks/' + $value) -replace '\\','/')
+            }
+          }
+        }
+      }
+    }
+  } catch {
+    return [pscustomobject]@{
+      active_route_lock_file = $activeRouteLockFile
+      active_route_lock_text = $activeRouteLockText
+      superseded_paths = @($supersededPaths | Select-Object -Unique)
+      archived_paths = @($archivedPaths | Select-Object -Unique)
+    }
+  }
+  return [pscustomobject]@{
+    active_route_lock_file = $activeRouteLockFile
+    active_route_lock_text = $activeRouteLockText
+    superseded_paths = @($supersededPaths | Select-Object -Unique)
+    archived_paths = @($archivedPaths | Select-Object -Unique)
+  }
+}
+
+function Test-BuilderRealStubSignal {
+  param(
+    [string]$Text,
+    [string]$ArtifactType,
+    [int64]$Length
+  )
+  if ($Length -lt 32) { return $true }
+  if ([regex]::IsMatch($Text, 'throw\s+["'']?not implemented|NotImplementedException|TODO:\s*implement|FIXME:\s*implement', 'IgnoreCase')) { return $true }
+  if ([regex]::IsMatch($Text, '(?m)^\s*#?\s*(STUB|TODO|FIXME)\b', 'IgnoreCase') -and $ArtifactType -in @('module','validator','schema_or_contract')) { return $true }
+  if ($ArtifactType -eq 'validator' -and [regex]::IsMatch($Text, 'Write-Host\s+["''].*PASS', 'IgnoreCase') -and -not [regex]::IsMatch($Text, 'ParseFile|ConvertFrom-Json|Test-Path|Get-FileHash|throw|exit\s+1', 'IgnoreCase')) { return $true }
+  return $false
+}
+
+function Test-BuilderFalsePositiveStubSignal {
+  param(
+    [string]$Text,
+    [string]$ArtifactType,
+    [int64]$Length
+  )
+  if (-not [regex]::IsMatch($Text, '(TODO|FIXME|STUB|placeholder|not implemented)', 'IgnoreCase')) { return $false }
+  if (Test-BuilderRealStubSignal -Text $Text -ArtifactType $ArtifactType -Length $Length) { return $false }
+  if ($ArtifactType -in @('doc','report','proof') -or $Length -gt 512) { return $true }
+  return $true
+}
+
+function Get-BuilderPhaseNumber {
+  param([string]$PhaseHint, [string]$Path)
+  $combined = "$Path $PhaseHint"
+  $match = [regex]::Match($combined, 'PHASE([0-9]+)')
+  if (-not $match.Success) { return $null }
+  return [int]$match.Groups[1].Value
+}
+
 function Get-BuilderWriteOutputs {
   param([string]$Text)
   $outputs = New-Object System.Collections.Generic.List[string]
@@ -164,64 +267,155 @@ function New-BuilderArtifactClassification {
     [string[]]$Schemas,
     [string[]]$Callees,
     [string[]]$Callers,
+    [object]$RouteContext,
     [string]$ParserStatus = $null
   )
 
   $artifactType = Get-BuilderArtifactType -RelativePath $RelativePath
   $phaseHint = Get-BuilderPhaseHint -Text $Text -Path $RelativePath
+  $phaseNumber = Get-BuilderPhaseNumber -PhaseHint $phaseHint -Path $RelativePath
   $isProtected = $RelativePath -in @('CAPABILITY_ROADMAP.json','GENESIS_STATE.json','TASK_QUEUE.json','packs/registry.json','orchestrator/run.ps1')
   $hasStubSignal = [regex]::IsMatch($Text, '(TODO|FIXME|STUB|placeholder|not implemented)', 'IgnoreCase')
+  $realStubSignal = Test-BuilderRealStubSignal -Text $Text -ArtifactType $artifactType -Length $FileRecord.Length
+  $falsePositiveStubSignal = Test-BuilderFalsePositiveStubSignal -Text $Text -ArtifactType $artifactType -Length $FileRecord.Length
   $nearEmpty = ($FileRecord.Length -lt 32)
   $hasProof = $Proofs.Count -gt 0 -or $artifactType -eq 'proof'
   $hasValidator = $Validators.Count -gt 0 -or $artifactType -eq 'validator'
-  $hasWiring = $Callers.Count -gt 0 -or $Callees.Count -gt 0 -or $RouteRefs.Count -gt 0
+  $currentCodeCallers = @($Callers | Where-Object { $_ -like 'modules/*.ps1' -or $_ -like 'validators/*.ps1' -or $_ -like 'orchestrator/*.ps1' } | Select-Object -Unique)
+  $activeRouteFile = $RouteContext.active_route_lock_file
+  $currentRouteRefs = @($RouteRefs | Where-Object { $_ -eq 'route_locks/ACTIVE_ROUTE_LOCK.json' -or ($activeRouteFile -and $_ -eq $activeRouteFile) } | Select-Object -Unique)
+  $supersededPaths = @($RouteContext.superseded_paths)
+  $isSupersededByRouteLock = ($RelativePath -in $supersededPaths) -or (($supersededPaths | ForEach-Object { [System.IO.Path]::GetFileName($_) }) -contains [System.IO.Path]::GetFileName($RelativePath))
+  $isHistorical = ($phaseNumber -ne $null -and $phaseNumber -lt 160) -or ($RelativePath -like 'packs/PHASE*' -and -not ($RelativePath -match 'PHASE161'))
+  $liveProofs = @($Proofs | Where-Object { $_ -match '(LIVE|RUNTIME|DAEMON|SCHOOL|OWNER|SESSION)' } | Select-Object -Unique)
+  $proofJsonProofs = @($Proofs | Where-Object { $_ -like 'proofs/*.json' -or $_ -like 'proofs/*/*.json' } | Select-Object -Unique)
+  $reportReferences = @($Reports | Select-Object -Unique)
+  $historicalReferences = @($Proofs + $Reports + $RouteRefs | Where-Object { $_ -match 'PHASE([0-9]+)' -and ([int]([regex]::Match($_, 'PHASE([0-9]+)').Groups[1].Value)) -lt 160 } | Select-Object -Unique)
+  $currentWiringSignals = @($currentCodeCallers + $currentRouteRefs | Select-Object -Unique)
+  $isCurrentWired = $currentWiringSignals.Count -gt 0
+  $hasOnlyWeakReference = (-not $isCurrentWired) -and ($reportReferences.Count -gt 0 -or $historicalReferences.Count -gt 0)
 
   $primary = 'UNKNOWN_NEEDS_REVIEW'
   $why = 'Status is uncertain because no stronger wiring, proof, validator, or source-of-truth signal was detected.'
+  $evidenceType = 'UNKNOWN_NEEDS_REVIEW'
+  $evidenceStrength = 'UNKNOWN_WEAK'
+  $evidenceBasis = 'No current wiring, live proof, validator proof, route-lock supersession, or strong stub signal was detected.'
   $safeToModify = -not $isProtected
   $ownerApproval = $isProtected
   $next = 'Review manually and connect to validator or route evidence before relying on it.'
 
-  if ($ParserStatus -eq 'BROKEN_PARSE') {
+  if ($isSupersededByRouteLock) {
+    $primary = 'SUPERSEDED'
+    $why = 'Artifact is named by active route-lock supersession evidence and must not be treated as current active wiring.'
+    $evidenceType = 'SUPERSEDED_BY_ROUTE_LOCK'
+    $evidenceStrength = 'SUPERSEDED_STRONG'
+    $evidenceBasis = 'Matched route_locks/ACTIVE_ROUTE_LOCK.json superseded_route_locks or active route lock supersedes section.'
+    $next = 'Keep as historical route evidence; do not execute or promote without owner-approved route change.'
+  } elseif ($ParserStatus -eq 'BROKEN_PARSE') {
     $primary = 'BROKEN_PARSE'
     $why = 'PowerShell parser reported errors, so the artifact cannot be considered wired or proven.'
+    $evidenceType = 'UNKNOWN_NEEDS_REVIEW'
+    $evidenceStrength = 'UNKNOWN_WEAK'
+    $evidenceBasis = 'Parser failure blocks reliable evidence classification.'
     $next = 'Repair parse errors before classification upgrade.'
   } elseif ($isProtected) {
     $primary = 'RISK_LOCKED'
-    $why = 'Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161C.'
+    $why = 'Artifact is protected source-of-truth or protected execution surface and is read-only for PHASE161D.'
+    $evidenceType = 'PROTECTED_RISK_LOCKED'
+    $evidenceStrength = 'RISK_LOCKED_STRONG'
+    $evidenceBasis = 'Path is in protected source-of-truth set.'
     $next = 'Read only; create update candidate under reports/self_development if a state change is needed.'
   } elseif ($nearEmpty) {
     $primary = 'EMPTY_OR_NEAR_EMPTY'
     $why = 'File is too small to provide meaningful behavior or evidence.'
+    $evidenceType = 'REAL_STUB_OR_PLACEHOLDER'
+    $evidenceStrength = 'DISCONNECTED_WEAK'
+    $evidenceBasis = 'Near-empty file length.'
     $next = 'Inspect before use; do not delete without owner approval.'
-  } elseif ($hasStubSignal) {
+  } elseif ($realStubSignal) {
     $primary = 'STUB_OR_PLACEHOLDER'
-    $why = 'TODO/FIXME/STUB/placeholder/not implemented marker detected.'
+    $why = 'Executable or near-empty artifact has a real stub/not-implemented signal.'
+    $evidenceType = 'REAL_STUB_OR_PLACEHOLDER'
+    $evidenceStrength = 'DISCONNECTED_WEAK'
+    $evidenceBasis = 'Stub signal was found in executable context, validator pass-through context, or near-empty artifact.'
     $next = 'Repair only under a bounded task with validator coverage.'
+  } elseif ($falsePositiveStubSignal) {
+    $primary = $(if ($isCurrentWired) { 'ACTIVE_WIRED_UNPROVEN' } elseif ($hasValidator) { 'PRESENT_WIRED_TO_VALIDATOR_ONLY' } else { 'PRESENT_NOT_WIRED' })
+    $why = 'Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.'
+    $evidenceType = 'FALSE_POSITIVE_STUB_SIGNAL'
+    $evidenceStrength = 'REPORT_WEAK'
+    $evidenceBasis = 'Stub keyword found without executable not-implemented behavior.'
+    $next = 'Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed.'
+  } elseif ($isCurrentWired -and $liveProofs.Count -gt 0) {
+    $primary = 'ACTIVE_WIRED_PROVEN'
+    $why = 'Artifact has current route/daemon/runner wiring and live/runtime proof evidence.'
+    $evidenceType = 'LIVE_RUNTIME_PROVEN'
+    $evidenceStrength = 'LIVE_STRONG'
+    $evidenceBasis = 'Current wiring signal plus live/runtime proof path.'
+    $next = 'Keep as live-proven active evidence input.'
+  } elseif ($isCurrentWired -and $proofJsonProofs.Count -gt 0) {
+    $primary = 'ACTIVE_WIRED_PROVEN'
+    $why = 'Artifact has current route/daemon/runner wiring and direct proof JSON evidence.'
+    $evidenceType = $(if ($currentRouteRefs.Count -gt 0) { 'CURRENT_ROUTE_WIRED' } elseif ($RelativePath -match 'daemon') { 'CURRENT_DAEMON_WIRED' } else { 'CURRENT_RUNNER_WIRED' })
+    $evidenceStrength = 'CURRENT_WIRED_STRONG'
+    $evidenceBasis = 'Current code/route wiring signal plus proof JSON evidence.'
+    $next = 'Keep as current wired proven evidence input.'
+  } elseif ($isCurrentWired) {
+    $primary = 'ACTIVE_WIRED_UNPROVEN'
+    $why = 'Artifact has current route/daemon/runner wiring but lacks proof evidence.'
+    $evidenceType = $(if ($currentRouteRefs.Count -gt 0) { 'CURRENT_ROUTE_WIRED' } elseif ($RelativePath -match 'daemon') { 'CURRENT_DAEMON_WIRED' } else { 'CURRENT_RUNNER_WIRED' })
+    $evidenceStrength = 'CURRENT_WIRED_STRONG'
+    $evidenceBasis = 'Current code/route wiring signal without proof.'
+    $next = 'Add live or proof JSON evidence before marking proven.'
   } elseif ($artifactType -eq 'validator' -and -not $hasProof) {
     $primary = 'VALIDATOR_NO_PROOF'
     $why = 'Validator exists but no matching proof artifact was detected.'
+    $evidenceType = 'VALIDATOR_PROVEN'
+    $evidenceStrength = 'VALIDATOR_MEDIUM'
+    $evidenceBasis = 'Validator artifact exists but no proof path was found.'
     $next = 'Run validator and write proof before relying on it.'
+  } elseif ($hasValidator) {
+    $primary = 'PRESENT_WIRED_TO_VALIDATOR_ONLY'
+    $why = 'Artifact has validator evidence but no current route/daemon/runner wiring.'
+    $evidenceType = 'VALIDATOR_PROVEN'
+    $evidenceStrength = 'VALIDATOR_MEDIUM'
+    $evidenceBasis = 'Validator reference exists without current wiring.'
+    $next = 'Keep as validator-proven only until current wiring or live proof exists.'
   } elseif ($artifactType -eq 'proof' -and -not [regex]::IsMatch($Text, 'runtime_sessions|live|RUNTIME|LIVE', 'IgnoreCase')) {
     $primary = 'PROOF_NO_LIVE_EVIDENCE'
     $why = 'Proof exists, but no live or runtime evidence marker was detected.'
+    $evidenceType = 'PROOF_JSON_PROVEN'
+    $evidenceStrength = 'PROOF_MEDIUM'
+    $evidenceBasis = 'Proof JSON exists without live/runtime marker.'
     $next = 'Treat as validator proof unless live evidence is added.'
-  } elseif ($hasWiring -and $hasProof) {
-    $primary = 'ACTIVE_WIRED_PROVEN'
-    $why = 'Artifact has wiring/reference evidence and proof evidence.'
-    $next = 'Keep; use as active evidence input.'
-  } elseif ($hasWiring -and $hasValidator -and -not $hasProof) {
-    $primary = 'PRESENT_WIRED_TO_VALIDATOR_ONLY'
-    $why = 'Artifact has wiring and validator references but no matching proof path.'
-    $next = 'Run or add proof before promoting to active proven.'
-  } elseif (-not $hasWiring) {
+  } elseif ($hasProof -and $liveProofs.Count -eq 0) {
+    $primary = 'PROOF_NO_LIVE_EVIDENCE'
+    $why = 'Artifact has proof references but no current wiring or live/runtime proof.'
+    $evidenceType = 'PROOF_JSON_PROVEN'
+    $evidenceStrength = 'PROOF_MEDIUM'
+    $evidenceBasis = 'Proof path exists without current wiring.'
+    $next = 'Keep as proof-referenced only; add current wiring evidence before marking active.'
+  } elseif ($isHistorical) {
     $primary = 'PRESENT_NOT_WIRED'
-    $why = 'No caller, callee, route, validator, report, or proof reference was detected by PHASE161C scanning.'
-    $next = 'Keep as present artifact; connect or classify historically before reuse.'
+    $why = 'Artifact appears historical and has no current route/daemon/runner wiring.'
+    $evidenceType = 'HISTORICAL_REFERENCE_ONLY'
+    $evidenceStrength = 'HISTORICAL_WEAK'
+    $evidenceBasis = 'Old phase or historical pack payload without current wiring.'
+    $next = 'Keep as historical reference; do not treat as active without current route evidence.'
+  } elseif ($hasOnlyWeakReference) {
+    $primary = 'PRESENT_NOT_WIRED'
+    $why = 'Artifact has report or historical references only, not current route/daemon/runner wiring.'
+    $evidenceType = 'REPORT_REFERENCED'
+    $evidenceStrength = 'REPORT_WEAK'
+    $evidenceBasis = 'Report or historical reference exists without current wiring.'
+    $next = 'Keep as referenced artifact; connect to current wiring or classify historical before reuse.'
   } else {
-    $primary = 'ACTIVE_WIRED_UNPROVEN'
-    $why = 'Artifact has wiring/reference evidence but no proof evidence.'
-    $next = 'Add proof or validator evidence before marking proven.'
+    $primary = 'PRESENT_NOT_WIRED'
+    $why = 'No current route, daemon, runner, validator, proof, or strong report evidence was detected by PHASE161D scanning.'
+    $evidenceType = 'DISCONNECTED_NOT_WIRED'
+    $evidenceStrength = 'DISCONNECTED_WEAK'
+    $evidenceBasis = 'No current evidence signal.'
+    $next = 'Keep as present artifact; connect or classify historically before reuse.'
   }
 
   return [pscustomobject]@{
@@ -232,7 +426,18 @@ function New-BuilderArtifactClassification {
     role_guess = $artifactType
     primary_status = $primary
     why_status = $why
+    evidence_type = $evidenceType
+    evidence_strength = $evidenceStrength
+    evidence_basis = $evidenceBasis
     evidence_paths = @($Proofs + $Reports + $RouteRefs | Select-Object -Unique)
+    live_evidence_paths = @($liveProofs)
+    validator_evidence_paths = @($Validators | Select-Object -Unique)
+    proof_evidence_paths = @($Proofs | Select-Object -Unique)
+    report_reference_paths = @($Reports | Select-Object -Unique)
+    historical_reference_paths = @($historicalReferences)
+    current_wiring_signals = @($currentWiringSignals)
+    superseded_by = $(if ($isSupersededByRouteLock) { 'route_locks/ACTIVE_ROUTE_LOCK.json' } else { $null })
+    stub_false_positive = $falsePositiveStubSignal
     callers = @($Callers | Select-Object -Unique)
     callees = @($Callees | Select-Object -Unique)
     validators = @($Validators | Select-Object -Unique)
@@ -243,8 +448,8 @@ function New-BuilderArtifactClassification {
     last_known_phase = $phaseHint
     safe_to_modify = $safeToModify
     owner_approval_required = $ownerApproval
-    missing_link_reason = $(if ($primary -eq 'PRESENT_NOT_WIRED') { 'No references found in scanned modules, validators, reports, proofs, docs, route locks, packs, or orchestrator files.' } else { $null })
-    placeholder_reason = $(if ($primary -eq 'STUB_OR_PLACEHOLDER') { 'Placeholder marker detected in artifact text.' } else { $null })
+    missing_link_reason = $(if ($primary -eq 'PRESENT_NOT_WIRED') { $why } else { $null })
+    placeholder_reason = $(if ($primary -eq 'STUB_OR_PLACEHOLDER') { 'Real stub/not-implemented signal detected.' } elseif ($falsePositiveStubSignal) { 'False-positive stub wording detected; not treated as real stub.' } else { $null })
     recommended_next_action = $next
   }
 }
@@ -271,6 +476,7 @@ function Invoke-BuilderAgentBodyMap001 {
       $textByPath[$rel] = ''
     }
   }
+  $routeContext = Get-BuilderRouteLockContext -Root $root
 
   $modulePaths = @($textByPath.Keys | Where-Object { $_ -like 'modules/*.ps1' } | Sort-Object)
   $validatorPaths = @($textByPath.Keys | Where-Object { $_ -like 'validators/*.ps1' } | Sort-Object)
@@ -393,7 +599,7 @@ function Invoke-BuilderAgentBodyMap001 {
       ($text -match [regex]::Escape([System.IO.Path]::GetFileName($_))) -or ($schemaText -match [regex]::Escape($rel))
     } | Select-Object -Unique)
 
-    $item = New-BuilderArtifactClassification -FileRecord $file -RelativePath $rel -Text $text -ReferenceIndex @{} -Validators $validators -Reports $reports -Proofs $proofs -RouteRefs $routeRefs -Schemas $schemas -Callees @($calleeBySource[$rel]) -Callers @($callerByTarget[$rel]) -ParserStatus $parserStatus
+    $item = New-BuilderArtifactClassification -FileRecord $file -RelativePath $rel -Text $text -ReferenceIndex @{} -Validators $validators -Reports $reports -Proofs $proofs -RouteRefs $routeRefs -Schemas $schemas -Callees @($calleeBySource[$rel]) -Callers @($callerByTarget[$rel]) -RouteContext $routeContext -ParserStatus $parserStatus
     $artifactItems.Add($item)
   }
 
@@ -401,10 +607,21 @@ function Invoke-BuilderAgentBodyMap001 {
     [pscustomobject]@{
       path = $_.path
       artifact_type = $_.artifact_type
-      stub_signal = $(if ($_.primary_status -eq 'EMPTY_OR_NEAR_EMPTY') { 'low_size_file' } else { 'placeholder_marker' })
+      stub_signal = $(if ($_.primary_status -eq 'EMPTY_OR_NEAR_EMPTY') { 'low_size_file' } else { $_.evidence_type })
       severity = $(if ($_.primary_status -eq 'EMPTY_OR_NEAR_EMPTY') { 'medium' } else { 'high' })
       why_status = $_.why_status
       safe_repair_possible = $_.safe_to_modify
+      recommended_action = $_.recommended_next_action
+    }
+  })
+
+  $stubFalsePositiveItems = @($artifactItems | Where-Object { $_.stub_false_positive } | Select-Object -First 250 | ForEach-Object {
+    [pscustomobject]@{
+      path = $_.path
+      artifact_type = $_.artifact_type
+      false_positive_signal = $_.placeholder_reason
+      evidence_type = $_.evidence_type
+      why_status = $_.why_status
       recommended_action = $_.recommended_next_action
     }
   })
@@ -416,6 +633,45 @@ function Invoke-BuilderAgentBodyMap001 {
       possible_role = $_.role_guess
       safe_to_delete_now = $false
       recommended_action = 'Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use.'
+    }
+  })
+
+  $historicalReferenceItems = @($artifactItems | Where-Object { $_.evidence_type -eq 'HISTORICAL_REFERENCE_ONLY' } | Select-Object -First 500 | ForEach-Object {
+    [pscustomobject]@{
+      path = $_.path
+      phase_hint = $_.phase_hint
+      evidence_strength = $_.evidence_strength
+      why_status = $_.why_status
+      historical_reference_paths = $_.historical_reference_paths
+      recommended_action = $_.recommended_next_action
+    }
+  })
+
+  $supersededItems = @($artifactItems | Where-Object { $_.evidence_type -eq 'SUPERSEDED_BY_ROUTE_LOCK' -or $_.primary_status -eq 'SUPERSEDED' } | ForEach-Object {
+    [pscustomobject]@{
+      path = $_.path
+      superseded_by = $_.superseded_by
+      evidence_strength = $_.evidence_strength
+      why_status = $_.why_status
+      recommended_action = $_.recommended_next_action
+    }
+  })
+
+  $evidenceGroups = @($artifactItems | Group-Object evidence_type | Sort-Object Name | ForEach-Object {
+    [pscustomobject]@{
+      evidence_type = $_.Name
+      count = $_.Count
+    }
+  })
+  $liveEvidenceItems = @($artifactItems | Where-Object { $_.evidence_type -eq 'LIVE_RUNTIME_PROVEN' -or $_.evidence_type -like 'CURRENT_*' } | Select-Object -First 500 | ForEach-Object {
+    [pscustomobject]@{
+      path = $_.path
+      primary_status = $_.primary_status
+      evidence_type = $_.evidence_type
+      evidence_strength = $_.evidence_strength
+      current_wiring_signals = $_.current_wiring_signals
+      live_evidence_paths = $_.live_evidence_paths
+      proof_evidence_paths = $_.proof_evidence_paths
     }
   })
 
@@ -436,24 +692,31 @@ function Invoke-BuilderAgentBodyMap001 {
     },
     [pscustomobject]@{
       gap_id = 'GAP_VALIDATOR_ONLY_EVIDENCE'
-      why_status = 'Some artifacts have validator or report references but no live/runtime proof marker, so they cannot be called live-proven.'
-      blocking_dependency_chain = @('validator evidence', 'proof evidence', 'live runtime evidence')
-      recommended_next_action = 'Separate validator-proven from live-proven in future acceptance tasks.'
+      why_status = 'Artifacts with validator/proof/report references must remain separated from live-runtime proven artifacts until current wiring and live evidence are present.'
+      blocking_dependency_chain = @('validator evidence', 'proof evidence', 'current route/daemon/runner wiring', 'live runtime evidence')
+      recommended_next_action = 'Use live_evidence_separation_index.json before promoting any artifact to active live-proven.'
       safe_to_repair_now = $true
     },
     [pscustomobject]@{
       gap_id = 'GAP_ORPHANED_PRESENT_ARTIFACTS'
-      why_status = 'Static scan found present artifacts with no detected caller, route, validator, report, or proof reference.'
-      blocking_dependency_chain = @('reference discovery', 'historical classification', 'owner-approved repair or archival plan')
-      recommended_next_action = 'Classify orphans before any cleanup; do not delete in PHASE161C.'
+      why_status = 'PHASE161D now exposes disconnected and historical artifacts rather than suppressing them through broad proof/report matching.'
+      blocking_dependency_chain = @('strict current wiring detection', 'historical classification', 'disconnected inventory', 'owner-approved repair or archival plan')
+      recommended_next_action = 'Inspect orphaned_artifact_inventory.json and historical_reference_inventory.json before any cleanup.'
       safe_to_repair_now = $false
     },
     [pscustomobject]@{
       gap_id = 'GAP_STUB_PLACEHOLDER_ARTIFACTS'
-      why_status = 'Placeholder or near-empty artifacts exist and should not be mistaken for active organs.'
-      blocking_dependency_chain = @('stub detection', 'bounded repair task', 'validator proof')
-      recommended_next_action = 'Repair only when tied to a specific accepted route.'
+      why_status = 'Stub detection must distinguish executable not-implemented behavior from documentation that merely discusses placeholder rules.'
+      blocking_dependency_chain = @('real stub detection', 'false-positive stub inventory', 'bounded repair task', 'validator proof')
+      recommended_next_action = 'Use stub_false_positive_inventory.json before opening repair tasks.'
       safe_to_repair_now = $false
+    },
+    [pscustomobject]@{
+      gap_id = 'GAP_ROUTE_SUPERSESSION_PROPAGATION'
+      why_status = 'Route-lock supersession must be propagated into artifact status so old route locks are not reported as current active organs.'
+      blocking_dependency_chain = @('route_locks/ACTIVE_ROUTE_LOCK.json', 'active route lock supersedes section', 'superseded_artifact_inventory.json', 'body map primary_status')
+      recommended_next_action = 'Keep superseded artifacts as historical evidence unless owner approves route change or archive policy.'
+      safe_to_repair_now = $true
     },
     [pscustomobject]@{
       gap_id = 'GAP_SAFETY_SENSITIVE_OPERATIONS_REQUIRE_REVIEW'
@@ -468,6 +731,8 @@ function Invoke-BuilderAgentBodyMap001 {
     [pscustomobject]@{
       path = $_.path
       current_status = $_.primary_status
+      evidence_type = $_.evidence_type
+      evidence_strength = $_.evidence_strength
       why_status = $_.why_status
       recommended_action = $_.recommended_next_action
     }
@@ -477,6 +742,8 @@ function Invoke-BuilderAgentBodyMap001 {
     [pscustomobject]@{
       path = $_.path
       current_status = $_.primary_status
+      evidence_type = $_.evidence_type
+      evidence_strength = $_.evidence_strength
       why_status = $_.why_status
       owner_approval_required = $_.owner_approval_required
       recommended_action = $_.recommended_next_action
@@ -499,10 +766,11 @@ function Invoke-BuilderAgentBodyMap001 {
   $functionInventoryArray = @($functionInventory.ToArray())
 
   $map = [pscustomobject][ordered]@{
-    phase = 'PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_V1'
+    phase = 'PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1'
     map_role = 'DERIVED_FROM_EXISTING'
     source_of_truth_status = 'DERIVED_ACTIVE_MAP_CANDIDATE'
-    why_status = 'Derived from existing protected state, self-knowledge, self-model, body registry, capability shelf, route locks, modules, validators, reports, proofs, docs, packs, and orchestrator files. It is not a protected-state replacement.'
+    classifier_version = 'PHASE161D_STRICT_EVIDENCE_V1'
+    why_status = 'Derived from existing protected state, self-knowledge, self-model, body registry, capability shelf, route locks, modules, validators, reports, proofs, docs, packs, and orchestrator files. PHASE161D separates live evidence, validator proof, proof/report references, historical references, supersession, disconnected artifacts, and stub false positives.'
     generated_at = (Get-Date).ToUniversalTime().ToString('o')
     source_inputs = @(
       'CAPABILITY_ROADMAP.json',
@@ -520,7 +788,7 @@ function Invoke-BuilderAgentBodyMap001 {
   }
 
   $graph = [pscustomobject][ordered]@{
-    phase = 'PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_V1'
+    phase = 'PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1'
     graph_role = 'MODULE_WIRING_GRAPH'
     why_status = 'Static graph derived from function/module name references, protected-state references, schema filename references, phase references, and discovered proof/report links.'
     nodes = $nodeArray
@@ -528,10 +796,11 @@ function Invoke-BuilderAgentBodyMap001 {
   }
 
   $activeMap = [pscustomobject][ordered]@{
-    phase = 'PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_V1'
+    phase = 'PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1'
     map_role = 'DERIVED_FROM_EXISTING'
     source_of_truth_status = 'DERIVED_ACTIVE_MAP_CANDIDATE'
-    why_status = 'This file is the PHASE161C derived active map candidate. It reuses existing organs and avoids direct protected-state mutation.'
+    classifier_version = 'PHASE161D_STRICT_EVIDENCE_V1'
+    why_status = 'This file is the PHASE161D hardened derived active map candidate. It reuses existing organs, avoids direct protected-state mutation, and separates current/live evidence from validator/proof/report/historical references.'
     existing_organs_reused = @(
       'self_knowledge/BUILDER_SELF_MODEL.json',
       'self_model/BUILDER_SELF_MODEL.json',
@@ -546,6 +815,7 @@ function Invoke-BuilderAgentBodyMap001 {
     protected_state_mutation_allowed = $false
     accepted_repo_mutation_allowed_by_runtime = $false
     active_artifacts = @($artifactArray | Where-Object { $_.primary_status -like 'ACTIVE_*' } | Select-Object -First 200)
+    evidence_type_counts = $evidenceGroups
     important_gaps = $gapChain
   }
 
@@ -564,6 +834,29 @@ function Invoke-BuilderAgentBodyMap001 {
   Write-BuilderJsonFile -Path (Join-Path $outputFull 'SELF_MODEL_ACTIVE_MAP.json') -Value $activeMap
   Write-BuilderJsonFile -Path (Join-Path $outputFull 'safe_repair_candidates_from_body_map.json') -Value ([pscustomobject]@{ phase = $map.phase; candidates = @($safeRepair) })
   Write-BuilderJsonFile -Path (Join-Path $outputFull 'unsafe_debt_backlog_from_body_map.json') -Value ([pscustomobject]@{ phase = $map.phase; debt = @($unsafeDebt) })
+  Write-BuilderJsonFile -Path (Join-Path $outputFull 'live_evidence_separation_index.json') -Value ([pscustomobject]@{
+    phase = $map.phase
+    classifier_version = 'PHASE161D_STRICT_EVIDENCE_V1'
+    evidence_type_counts = $evidenceGroups
+    live_or_current_wired_items = $liveEvidenceItems
+    why_status = 'Separates live/current wiring from validator, proof JSON, report, historical, superseded, disconnected, and false-positive stub evidence.'
+  })
+  Write-BuilderJsonFile -Path (Join-Path $outputFull 'historical_reference_inventory.json') -Value ([pscustomobject]@{ phase = $map.phase; items = @($historicalReferenceItems) })
+  Write-BuilderJsonFile -Path (Join-Path $outputFull 'superseded_artifact_inventory.json') -Value ([pscustomobject]@{ phase = $map.phase; items = @($supersededItems) })
+  Write-BuilderJsonFile -Path (Join-Path $outputFull 'stub_false_positive_inventory.json') -Value ([pscustomobject]@{ phase = $map.phase; items = @($stubFalsePositiveItems) })
+  Write-BuilderJsonFile -Path (Join-Path $outputFull 'agent_body_map_classifier_hardening_result.json') -Value ([pscustomobject]@{
+    phase = $map.phase
+    classifier_version = 'PHASE161D_STRICT_EVIDENCE_V1'
+    total_artifacts = $artifactItems.Count
+    active_wired_proven_count = @($artifactItems | Where-Object { $_.primary_status -eq 'ACTIVE_WIRED_PROVEN' }).Count
+    active_wired_unproven_count = @($artifactItems | Where-Object { $_.primary_status -eq 'ACTIVE_WIRED_UNPROVEN' }).Count
+    present_not_wired_count = @($artifactItems | Where-Object { $_.primary_status -eq 'PRESENT_NOT_WIRED' }).Count
+    superseded_count = @($artifactItems | Where-Object { $_.primary_status -eq 'SUPERSEDED' }).Count
+    false_positive_stub_count = @($stubFalsePositiveItems).Count
+    real_stub_count = @($stubItems).Count
+    evidence_type_counts = $evidenceGroups
+    why_status = 'PHASE161D hardened classifier reduced active/proven over-classification and separated evidence classes.'
+  })
 
   $md = @(
     '# Agent Body Map',
@@ -577,7 +870,10 @@ function Invoke-BuilderAgentBodyMap001 {
     "Graph edges: $($edges.Count)",
     "Function inventory entries: $($functionInventory.Count)",
     "Stub or placeholder entries: $($stubItems.Count)",
+    "False-positive stub entries: $($stubFalsePositiveItems.Count)",
     "Orphan candidates: $($orphanItems.Count)",
+    "Historical reference entries: $($historicalReferenceItems.Count)",
+    "Superseded entries: $($supersededItems.Count)",
     '',
     '## Important Gaps',
     ''
@@ -607,7 +903,12 @@ function Invoke-BuilderAgentBodyMap001 {
     '- `self_model_gap_chain.json`',
     '- `SELF_MODEL_ACTIVE_MAP.json`',
     '- `safe_repair_candidates_from_body_map.json`',
-    '- `unsafe_debt_backlog_from_body_map.json`'
+    '- `unsafe_debt_backlog_from_body_map.json`',
+    '- `live_evidence_separation_index.json`',
+    '- `historical_reference_inventory.json`',
+    '- `superseded_artifact_inventory.json`',
+    '- `stub_false_positive_inventory.json`',
+    '- `agent_body_map_classifier_hardening_result.json`'
   )
   $updateReport | Set-Content -LiteralPath (Join-Path $outputFull 'agent_body_map_update_report.md') -Encoding UTF8
 
@@ -620,8 +921,14 @@ function Invoke-BuilderAgentBodyMap001 {
     function_inventory_count = $functionInventory.Count
     stub_placeholder_count = $stubItems.Count
     orphaned_candidate_count = $orphanItems.Count
+    false_positive_stub_count = $stubFalsePositiveItems.Count
+    historical_reference_count = $historicalReferenceItems.Count
+    superseded_count = $supersededItems.Count
+    active_wired_proven_count = @($artifactItems | Where-Object { $_.primary_status -eq 'ACTIVE_WIRED_PROVEN' }).Count
+    present_not_wired_count = @($artifactItems | Where-Object { $_.primary_status -eq 'PRESENT_NOT_WIRED' }).Count
     protected_state_mutation_allowed = $false
     map_role = 'DERIVED_FROM_EXISTING'
+    classifier_version = 'PHASE161D_STRICT_EVIDENCE_V1'
   }
 }
 

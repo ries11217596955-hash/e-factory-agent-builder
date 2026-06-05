@@ -1,4 +1,1755 @@
 {
-  "phase": "PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_V1",
-  "items": []
+  "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
+  "items": [
+    {
+      "path": "capability_shelf/README.md",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/checkpoint_publish.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/correction_inbox.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/life_loop_runner.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/material_governance.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/observation_only_result.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/observation_runner.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/pack_registry.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/restore_state.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/self_correction_result.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/usage_examples/self_learning_memory.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/checkpoint_publish.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/correction_inbox.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/life_loop_runner.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/material_governance.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/observation_only_result.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/observation_runner.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/pack_registry.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/restore_state.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/self_correction_result.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "capability_shelf/validators/self_learning_memory.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "capability_shelf",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/agent_package_blueprint.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/external_agent_package_manifest.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/failure_diagnostic.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/GAP_REMEDIATION_INTAKE_REPORT_CONTRACT_V1.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/GAP_REMEDIATION_PROGRAM_SEED_CONTRACT_V1.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/generated_agent_github_action_launch_surface.contract.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/generated_agent_request.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/generated_agent_result.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/generated_agent_validation_report.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/generated_self_build_program_execution_recipe.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/materials/material_policy.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/materials/material_quarantine_card.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/operational_generated_agent_validation_report.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/operations/operation_request.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/operations/operation_runtime_report.schema.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/operations/smoke_install_trial_report.schema.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/remediation_seed_self_build_program_blueprint.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_build_pack_registry.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_build_pack.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_development/builder_self_pack_author_v1.schema.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_development/continue_on_failure_runtime_v1.schema.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_development/item_level_execution_ledger_v1.schema.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_development/owner_order_to_gap_map_v1.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_development/self_build_program.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_development/self_development_decision_kernel_report.schema.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_knowledge/builder_self_model.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_knowledge/capability_manifest.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_knowledge/evidence_index.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_knowledge/module_inventory.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_knowledge/produced_agents_index.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/self_knowledge/self_describe_report.schema.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "contracts/SPECIALIZATION_GAP_REPORT_CONTRACT_V1.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "schema_or_contract",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/materials/create_quarantine_trial.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/materials/evaluate_material_policy.ps1",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/materials/import_manual_scout_pass.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/materials/write_material_catalog_report.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/operations/invoke_operation_runtime.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/operations/register_operation_contracts.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/operations/run_first_smoke_install_trial.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/operations/write_operation_contract_report.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/self_development/write_builder_self_pack_author_v1.ps1",
+      "why_orphaned": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/self_development/write_continue_on_failure_runtime_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/self_development/write_owner_order_to_gap_map_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/self_development/write_quarantine_and_blocker_registry_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/self_development/write_self_build_program_generator_v2.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/self_development/write_self_development_decision_kernel_report.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "modules/write_builder_self_describe_report.ps1",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "module",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE100_QUARANTINE_AND_BLOCKER_REGISTRY_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE100_QUARANTINE_AND_BLOCKER_REGISTRY_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE100_QUARANTINE_AND_BLOCKER_REGISTRY_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/payload/specs/operational_factory_proof/OPERATIONAL_FACTORY_PROOF_SPEC.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE17_OPERATIONAL_FACTORY_PROOF_V2/payload/validators/validate_operational_factory_proof_v2.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/payload/orchestrator/run.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/payload/specs/mode_proof/RAW_IDEA_MODE_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/payload/tasks/TASK_IDEA_TO_AGENT_FACTORY_PROOF_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE19_BUILD_FROM_RAW_IDEA_MODE_V1/payload/validators/validate_build_from_raw_idea_mode_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/payload/specs/factory_proof/RAW_IDEA_FACTORY_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE20_IDEA_TO_AGENT_FACTORY_PROOF_V1/payload/validators/validate_idea_to_agent_factory_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/applied_agents/specialization_profiles/audit_agent_v1/overlay/examples/SAMPLE_REQUEST.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/applied_agents/specialization_profiles/audit_agent_v1/overlay/modules/invoke_agent_operation.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/modules/resolve_specialization_overlay.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/tasks/TASK_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE21_SPECIALIZATION_OVERLAY_RESOLUTION_V1/payload/validators/validate_specialization_overlay_resolution_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/payload/orchestrator/run.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/payload/specs/specialized_mode_proof/RAW_IDEA_SPECIALIZED_MODE_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/payload/tasks/TASK_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE22_BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1/payload/validators/validate_build_from_raw_idea_specialized_mode_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/payload/specs/specialized_factory_proof/RAW_IDEA_SPECIALIZED_FACTORY_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE23_IDEA_TO_SPECIALIZED_AGENT_FACTORY_PROOF_V1/payload/validators/validate_idea_to_specialized_agent_factory_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/payload/applied_agents/specialization_profiles/SPECIALIZATION_PROFILE_REGISTRY.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/payload/modules/resolve_specialization_overlay.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/payload/tasks/TASK_SPECIFICATION_AGENT_SPECIALIZATION_PROFILE_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE24_SPECIALIZATION_PROFILE_REGISTRY_V1/payload/validators/validate_specialization_profile_registry_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/payload/specs/multi_profile_proof/RAW_IDEA_AUDIT_MULTI_PROFILE_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/payload/specs/multi_profile_proof/RAW_IDEA_SPECIFICATION_MULTI_PROFILE_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE26_MULTI_PROFILE_SPECIALIZED_FACTORY_PROOF_V1/payload/validators/validate_multi_profile_specialized_factory_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/payload/orchestrator/run.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/payload/specs/gap_mode_proof/RAW_IDEA_GAP_MODE_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/payload/tasks/TASK_MISSING_PROFILE_FACTORY_PROOF_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE28_NO_MATCH_DIAGNOSTIC_MODE_V1/payload/validators/validate_no_match_diagnostic_mode_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/payload/specs/missing_profile_factory_proof/RAW_IDEA_MISSING_PROFILE_FACTORY_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE29_MISSING_PROFILE_FACTORY_PROOF_V1/payload/validators/validate_missing_profile_factory_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/payload/modules/new_specialization_profile_candidate_brief.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/payload/tasks/TASK_DECISION_SUPPORT_AGENT_SPECIALIZATION_PROFILE_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE30_GAP_TO_PROFILE_CANDIDATE_BRIEF_V1/payload/validators/validate_gap_to_profile_candidate_brief_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE32_GAP_CLOSURE_SPECIALIZED_FACTORY_PROOF_V1/payload/validators/validate_gap_closure_specialized_factory_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/payload/applied_agents/agent_spec_architect/overlay/modules/build_agent_spec_architecture.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/payload/specs/workflow_gap_proof/RAW_IDEA_WORKFLOW_EXECUTION_GAP_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/payload/tasks/TASK_INTAKE_DRIVEN_WORKFLOW_EXECUTION_PROFILE_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE36_WORKFLOW_EXECUTION_FAMILY_REACHABILITY_V1/payload/validators/validate_workflow_execution_family_reachability_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE38_RUNTIME_GAP_REMEDIATION_CLOSURE_PROOF_V1/payload/validators/validate_runtime_gap_remediation_closure_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/payload/applied_agents/agent_spec_architect/overlay/modules/build_agent_spec_architecture.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/payload/specs/monitoring_gap_proof/RAW_IDEA_MONITORING_GAP_PROOF.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/payload/tasks/TASK_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE39_MONITORING_GAP_REACHABILITY_V1/payload/validators/validate_monitoring_gap_reachability_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/payload/orchestrator/run.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/payload/tasks/TASK_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE40_SPECIALIZED_GAP_AUTO_INTAKE_RUNTIME_V1/payload/validators/validate_specialized_gap_auto_intake_runtime_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE41_ONE_RUN_GAP_REMEDIATION_PACKET_PROOF_V1/payload/validators/validate_one_run_gap_remediation_packet_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/payload/orchestrator/run.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/payload/tasks/TASK_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE43_SPECIALIZED_GAP_AUTO_PROGRAM_SEED_RUNTIME_V1/payload/validators/validate_specialized_gap_auto_program_seed_runtime_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE44_ONE_RUN_REMEDIATION_PROGRAM_SEED_PROOF_V1/payload/validators/validate_one_run_remediation_program_seed_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/payload/tasks/TASK_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE46_MONITORING_GAP_CLOSURE_SPECIALIZED_PROOF_V1/payload/validators/validate_monitoring_gap_closure_specialized_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE47_REMEDIATION_PROGRAM_SEED_CONSUMPTION_CLOSURE_PROOF_V1/payload/validators/validate_remediation_program_seed_consumption_closure_proof_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/payload/contracts/remediation_seed_self_build_program_blueprint.schema.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/payload/modules/new_remediation_seed_program_blueprint.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/payload/tasks/TASK_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE48_REMEDIATION_SEED_PROGRAM_BLUEPRINT_CONTRACT_V1/payload/validators/validate_remediation_seed_program_blueprint_contract_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/payload/modules/new_remediation_seed_self_build_program_package.ps1",
+      "why_orphaned": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/payload/tasks/TASK_ONE_RUN_REMEDIATION_SEED_PROGRAM_SYNTHESIS_PROOF_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE49_REMEDIATION_SEED_PROGRAM_MATERIALIZATION_V1/payload/validators/validate_remediation_seed_program_materialization_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE79_MATERIAL_ACQUISITION_BOOTSTRAP_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE79_MATERIAL_ACQUISITION_BOOTSTRAP_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE79_MATERIAL_ACQUISITION_BOOTSTRAP_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/contracts/external_agent_spec.schema.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/modules/validate_production_external_agent_spec.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/specs/external_agent_spec_template/SPEC_TEMPLATE.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/tasks/TASK_PRODUCTION_PACKAGE_BLUEPRINT_V1_001.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE8_PRODUCTION_SPEC_CONTRACT_V1/payload/validators/validate_production_spec_contract_v1.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE80_MANUAL_SCOUT_PASS_IMPORT_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE80_MANUAL_SCOUT_PASS_IMPORT_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE80_MANUAL_SCOUT_PASS_IMPORT_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE81_MATERIAL_ADMISSION_POLICY_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE81_MATERIAL_ADMISSION_POLICY_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE81_MATERIAL_ADMISSION_POLICY_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE83_OPERATION_CONTRACT_SKELETON_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE85_FIRST_SMOKE_INSTALL_TRIAL_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE86_OPERATION_RUNTIME_SKELETON_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE86_OPERATION_RUNTIME_SKELETON_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE86_OPERATION_RUNTIME_SKELETON_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE94_OWNER_ORDER_TO_GAP_MAP_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE94_OWNER_ORDER_TO_GAP_MAP_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE94_OWNER_ORDER_TO_GAP_MAP_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE95_SELF_BUILD_PROGRAM_GENERATOR_V2/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE99_CONTINUE_ON_FAILURE_RUNTIME_V1/APPLY.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE99_CONTINUE_ON_FAILURE_RUNTIME_V1/PACK.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "packs/PHASE99_CONTINUE_ON_FAILURE_RUNTIME_V1/VALIDATE.ps1",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "pack",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/self_development/OWNER_ORDER_TO_GAP_MAP_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/self_development/SELF_BUILD_PROGRAM_GENERATOR_V2.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "proofs/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_V1.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/executable_generated_program_materialization/MONITORING_AGENT_V1_EXECUTABLE_PACKS.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generalized_generated_program_live_admission/MONITORING_AGENT_V1_GENERALIZED_ADMISSION_CONTRACT.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_family_autonomous_conveyor/GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_REPORT.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_family_autonomous_conveyor/GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1_REPORT.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_family_autonomous_conveyor/GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1_REPORT.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_family_autonomous_conveyor/GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1_REPORT.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_family_autonomous_conveyor/GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1_REPORT.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_program_admission_readiness/MONITORING_AGENT_V1_ADMISSION_READINESS.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_program_execution_recipes/MONITORING_AGENT_V1_EXECUTION_RECIPE_BUNDLE.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_program_live_admission/MONITORING_AGENT_V1_LIVE_ADMISSION.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/generated_remediation_family_consumption_preflight/GENERATED_REMEDIATION_FAMILY_CONSUMPTION_PREFLIGHT_V1.json",
+      "why_orphaned": "Artifact has report or historical references only, not current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/materials/FIRST_QUARANTINE_TRIAL_REPORT.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/materials/MANUAL_SCOUT_PASS_001.md",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/materials/MANUAL_SCOUT_PASS_IMPORT_REPORT.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
+      "path": "reports/materials/MATERIAL_POLICY_V1_REPORT.json",
+      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
+      "possible_role": "report",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    }
+  ]
 }

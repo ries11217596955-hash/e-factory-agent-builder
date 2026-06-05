@@ -18,3 +18,8 @@ Generated artifacts:
 - `SELF_MODEL_ACTIVE_MAP.json`
 - `safe_repair_candidates_from_body_map.json`
 - `unsafe_debt_backlog_from_body_map.json`
+- `live_evidence_separation_index.json`
+- `historical_reference_inventory.json`
+- `superseded_artifact_inventory.json`
+- `stub_false_positive_inventory.json`
+- `agent_body_map_classifier_hardening_result.json`

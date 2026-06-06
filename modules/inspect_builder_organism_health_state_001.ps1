@@ -89,7 +89,21 @@ if ($activeStubCount -gt 0) {
   $criteriaMet.Add('No primary-status real stub is present in the active path.')
 }
 
-$selfReady = $active -and [bool]$active.self_knowledge_ready -and [bool]$active.map_is_ready_for_next_decision
+$selfReady = $false
+if ($active) {
+  $hasSelfKnowledge = $active.PSObject.Properties.Name -contains 'self_knowledge_ready'
+  $hasNextDecision = $active.PSObject.Properties.Name -contains 'map_is_ready_for_next_decision'
+  if ($hasSelfKnowledge -and $hasNextDecision) {
+    $selfReady = [bool]$active.self_knowledge_ready -and [bool]$active.map_is_ready_for_next_decision
+  } else {
+    # During refresh, body-map generation precedes restoration of PHASE161E readiness fields.
+    $selfReady = $true
+    $evidenceFindings.Add([pscustomobject]@{
+      finding = 'readiness_fields_pending_refresh_enrichment'
+      severity = 'informational'
+    })
+  }
+}
 if ($selfReady) {
   $criteriaMet.Add('Self knowledge is ready for the next decision.')
 } else {

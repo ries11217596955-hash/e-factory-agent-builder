@@ -1,0 +1,45 @@
+{
+  "policy_id": "PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_POLICY_V1",
+  "policy_name": "Self-map next action selector and organism health",
+  "selector_version": "PHASE161J",
+  "priority_order": [
+    "CRITICAL_SAFETY_OR_PROTECTED_STATE_CONFLICT",
+    "ACTIVE_ROUTE_OR_CURRENT_DAEMON_BROKEN",
+    "FALSE_LIVE_OR_PROOF_CLAIM",
+    "REQUIRED_LIVE_PROOF_FOR_ACTIVE_ORGAN",
+    "REQUIRED_CONSUMER_COMPATIBILITY_FOR_ACTIVE_PATH",
+    "PRESENT_NOT_WIRED_BUT_ROUTE_RELEVANT",
+    "REAL_STUB_IN_ACTIVE_PATH",
+    "MAP_RECOMMENDATION_LOGIC_REPAIR",
+    "OWNER_APPROVAL_BACKLOG",
+    "OPTIONAL_HISTORICAL_CLEANUP"
+  ],
+  "blocked_recommendation_patterns": [
+    "review protected-state candidate",
+    "review derived SELF_MODEL_ACTIVE_MAP.json and approve a later protected-state update candidate",
+    "apply TASK_QUEUE candidate",
+    "admit packs registry candidate",
+    "change orchestrator for protected metadata"
+  ],
+  "completed_phase_markers": [
+    "PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE",
+    "PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_CONSUMER_COMPATIBILITY",
+    "PHASE161G2_APPLY_LIMITED_PROTECTED_SELF_MODEL_REFERENCES"
+  ],
+  "health_state_rules": {
+    "CRITICAL": "Protected conflict, route drift, active corruption, active-path parser failure, runtime staging, or false live claim.",
+    "BLOCKED": "Current route cannot proceed because a required organ or owner decision is missing.",
+    "DEGRADED": "Current route works but important required live or consumer proof is missing.",
+    "WATCH": "No active blocker exists, but route-relevant governance or evidence debt remains.",
+    "HEALTHY": "Critical and blocking findings are absent, active-path real stubs and false live claims are absent, route is coherent, self knowledge is ready, and remaining work is optional or historical."
+  },
+  "deletion_is_last_resort": true,
+  "route_relevance_required": true,
+  "active_path_weight": 30,
+  "safety_weight": 35,
+  "evidence_gap_weight": 20,
+  "owner_approval_weight": -15,
+  "live_proof_gap_weight": 25,
+  "historical_cleanup_weight": 5,
+  "default_next_action_when_healthy": "No required repair; optional improvement only."
+}

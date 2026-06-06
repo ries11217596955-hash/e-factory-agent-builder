@@ -1,0 +1,116 @@
+{
+  "recommendation_id": "PHASE161J_RECOMMENDATION_20260606052523",
+  "created_at": "2026-06-06T05:25:23.4107624Z",
+  "selector_version": "PHASE161J",
+  "organism_health_state": "DEGRADED",
+  "recommended_next_macro_step": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
+  "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
+  "priority_class": "REQUIRED_LIVE_PROOF_FOR_ACTIVE_ORGAN",
+  "why_this_step": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
+  "why_not_delete_first": "No safety-critical deletion need is proven; deletion is last resort and historical artifacts do not block the active route.",
+  "why_not_connect_everything_first": "Present-not-wired artifacts must be connected only when route-relevant; bulk wiring would create false active claims.",
+  "why_not_repair_all_stubs_first": "Only active-path proven stubs can outrank current route evidence work; bulk stub repair would include false positives and historical items.",
+  "completed_recommendations_detected": [
+    {
+      "phase": "PHASE161F",
+      "status": "COMPLETED",
+      "evidence": "reports/self_development/protected_state_update_candidates/PHASE161F_PROMOTION_MANIFEST.json"
+    },
+    {
+      "phase": "PHASE161G1",
+      "status": "COMPLETED",
+      "evidence": "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
+    },
+    {
+      "phase": "PHASE161G2",
+      "status": "COMPLETED_LIMITED_APPLY",
+      "evidence": "reports/self_development/protected_state_update_candidates/PHASE161G2_APPLY_RESULT.json"
+    }
+  ],
+  "blocked_old_recommendations": [
+    {
+      "recommendation": "Review derived SELF_MODEL_ACTIVE_MAP.json and approve a later protected-state update candidate if desired.",
+      "reason": "PHASE161F, PHASE161G1, and PHASE161G2 completed candidate creation, review, and the approved limited apply.",
+      "status": "STALE_COMPLETED_RECOMMENDATION"
+    }
+  ],
+  "candidate_actions_considered": [
+    {
+      "action_id": "PHASE161J_ROUTE_EXHAUSTION_LIVE_EVIDENCE_RECONCILIATION",
+      "macro_step": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
+      "recommended_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
+      "priority_class": "REQUIRED_LIVE_PROOF_FOR_ACTIVE_ORGAN",
+      "next_action_type": "OBSERVE",
+      "score": 82,
+      "route_relevant": true,
+      "owner_approval_required": false,
+      "reason": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition."
+    },
+    {
+      "action_id": "TASK_QUEUE_CONSUMER_COMPATIBILITY",
+      "macro_step": "Prove TASK_QUEUE consumer compatibility before any delayed queue metadata apply.",
+      "recommended_phase_id": "PHASE161K1_TASK_QUEUE_CONSUMER_COMPATIBILITY_PROOF",
+      "priority_class": "REQUIRED_CONSUMER_COMPATIBILITY_FOR_ACTIVE_PATH",
+      "next_action_type": "COMPATIBILITY_PROOF",
+      "score": 54,
+      "route_relevant": false,
+      "owner_approval_required": true,
+      "status": "DELAY",
+      "reason": "Queue behavior affects scheduling, but G1 explicitly delayed it and it is not the current route blocker."
+    },
+    {
+      "action_id": "PACK_REGISTRY_ADMISSION",
+      "macro_step": "Keep packs registry admission delayed until a real executable pack and admission proof exist.",
+      "recommended_phase_id": "UNSCHEDULED",
+      "priority_class": "OWNER_APPROVAL_BACKLOG",
+      "next_action_type": "COMPATIBILITY_PROOF",
+      "score": 24,
+      "route_relevant": false,
+      "owner_approval_required": true,
+      "status": "DELAY",
+      "reason": "Registry admission without a real pack would create false wiring."
+    },
+    {
+      "action_id": "ORCHESTRATOR_PROTECTED_METADATA_CHANGE",
+      "macro_step": "Do not change orchestrator flow for protected self-model metadata.",
+      "recommended_phase_id": "NONE",
+      "priority_class": "OWNER_APPROVAL_BACKLOG",
+      "next_action_type": "NO_REQUIRED_REPAIR",
+      "score": 0,
+      "route_relevant": false,
+      "owner_approval_required": true,
+      "status": "REJECT",
+      "reason": "G1 rejected an orchestrator change because protected metadata does not justify flow mutation."
+    },
+    {
+      "action_id": "BULK_HISTORICAL_CLEANUP",
+      "macro_step": "Optionally review historical artifacts after current route decisions are complete.",
+      "recommended_phase_id": "UNSCHEDULED_OPTIONAL_CLEANUP",
+      "priority_class": "OPTIONAL_HISTORICAL_CLEANUP",
+      "next_action_type": "CLEANUP",
+      "score": 5,
+      "route_relevant": false,
+      "owner_approval_required": true,
+      "reason": "Historical presence does not block current operation."
+    }
+  ],
+  "selected_action_score": 82,
+  "evidence_paths": [
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+    "reports/self_development/self_model_gap_chain.json",
+    "reports/self_development/live_evidence_separation_index.json",
+    "reports/self_development/accepted_change_memory_snapshot.json",
+    "reports/self_development/protected_state_update_candidates/PHASE161G2_APPLY_RESULT.json",
+    "reports/self_development/protected_state_update_candidates/PHASE161G1_DELAYED_OR_BLOCKED_SCOPE.json",
+    "route_locks/ACTIVE_ROUTE_LOCK.json",
+    "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+  ],
+  "owner_approval_required": false,
+  "expected_validator_needed": true,
+  "next_action_type": "OBSERVE",
+  "delayed_scope": {
+    "task_queue": "DELAY",
+    "packs_registry": "DELAY",
+    "orchestrator_run": "REJECT"
+  }
+}

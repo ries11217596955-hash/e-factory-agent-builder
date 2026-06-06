@@ -92,21 +92,25 @@ $gaps = Get-Content -LiteralPath $gapPath -Raw | ConvertFrom-Json
 $historicalPath = Join-Path $outputFull 'historical_reference_inventory.json'
 $historical = Get-Content -LiteralPath $historicalPath -Raw | ConvertFrom-Json
 
+$healthModule = Join-Path $PSScriptRoot 'inspect_builder_organism_health_state_001.ps1'
+$selectorModule = Join-Path $PSScriptRoot 'select_builder_self_map_next_action_001.ps1'
+if (-not (Test-Path -LiteralPath $healthModule)) {
+  throw 'PHASE161J organism health module missing.'
+}
+if (-not (Test-Path -LiteralPath $selectorModule)) {
+  throw 'PHASE161J next action selector module missing.'
+}
+$health = & $healthModule -RepoRoot $root -OutputRoot $OutputRoot
+$recommendation = & $selectorModule -RepoRoot $root -OutputRoot $OutputRoot
+
 $recommendedTasks = @()
-foreach ($gap in @($gaps.gaps | Select-Object -First 5)) {
-  $recommendedTasks += [pscustomobject]@{
-    gap_id = $gap.gap_id
-    recommended_next_action = $gap.recommended_next_action
-    why_status = $gap.why_status
-  }
-}
-if ($recommendedTasks.Count -eq 0) {
-  $recommendedTasks = @([pscustomobject]@{
-    gap_id = 'PHASE161E_REFRESH_READY'
-    recommended_next_action = 'Use refreshed self-map before selecting the next self-development repair.'
-    why_status = 'Self-knowledge refresh succeeded.'
-  })
-}
+$recommendedTasks = @([pscustomobject]@{
+  gap_id = $recommendation.recommendation_id
+  recommended_next_action = $recommendation.recommended_next_macro_step
+  why_status = $recommendation.why_this_step
+  recommended_next_phase_id = $recommendation.recommended_next_phase_id
+  next_action_type = $recommendation.next_action_type
+})
 
 $protectedStatus = @(git -C $root status --short -- TASK_QUEUE.json GENESIS_STATE.json CAPABILITY_ROADMAP.json packs/registry.json orchestrator/run.ps1 2>$null)
 $runtimeStatus = @(git -C $root status --short -- runtime_sessions 2>$null)
@@ -130,6 +134,11 @@ $result = [pscustomobject][ordered]@{
   real_stub_count = [int]$hardening.real_stub_count
   false_positive_stub_count = [int]$hardening.false_positive_stub_count
   gap_chain_count = @($gaps.gaps).Count
+  organism_health_state = $health.health_state
+  health_score = [int]$health.health_score
+  recommended_next_macro_step = $recommendation.recommended_next_macro_step
+  recommended_next_phase_id = $recommendation.recommended_next_phase_id
+  next_action_type = $recommendation.next_action_type
   recommended_next_learning_tasks = @($recommendedTasks)
   protected_state_mutated = ($protectedStatus.Count -gt 0)
   runtime_outputs_staged = ($runtimeStatus.Count -gt 0)
@@ -156,6 +165,15 @@ Set-BuilderProperty -Object $activeMap -Name 'memory_report_path' -Value 'report
 Set-BuilderProperty -Object $activeMap -Name 'refresh_result_path' -Value 'reports/self_development/self_map_refresh_after_acceptance_result.json'
 Set-BuilderProperty -Object $activeMap -Name 'next_decision_reason' -Value 'Self-map refresh succeeded after accepted change; next decision can use current strict map memory.'
 Set-BuilderProperty -Object $activeMap -Name 'recommended_next_learning_tasks' -Value @($recommendedTasks)
+Set-BuilderProperty -Object $activeMap -Name 'organism_health_state' -Value $health.health_state
+Set-BuilderProperty -Object $activeMap -Name 'health_score' -Value ([int]$health.health_score)
+Set-BuilderProperty -Object $activeMap -Name 'recommended_next_macro_step' -Value $recommendation.recommended_next_macro_step
+Set-BuilderProperty -Object $activeMap -Name 'recommended_next_phase_id' -Value $recommendation.recommended_next_phase_id
+Set-BuilderProperty -Object $activeMap -Name 'next_action_type' -Value $recommendation.next_action_type
+Set-BuilderProperty -Object $activeMap -Name 'selector_policy_id' -Value 'PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_POLICY_V1'
+Set-BuilderProperty -Object $activeMap -Name 'blocked_old_recommendations' -Value @($recommendation.blocked_old_recommendations)
+Set-BuilderProperty -Object $activeMap -Name 'candidate_actions_considered' -Value @($recommendation.candidate_actions_considered)
+Set-BuilderProperty -Object $activeMap -Name 'next_decision_reason' -Value $recommendation.why_this_step
 Write-BuilderJsonFile -Path $activeMapPath -Value $activeMap
 
 Write-BuilderJsonFile -Path (Join-Path $outputFull 'self_map_refresh_after_acceptance_result.json') -Value $result

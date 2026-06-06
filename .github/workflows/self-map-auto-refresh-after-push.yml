@@ -75,6 +75,8 @@ jobs:
             "reports/self_development/self_map_refresh_after_acceptance_result.json",
             "reports/self_development/self_map_memory_report.md",
             "reports/self_development/accepted_change_memory_snapshot.json",
+            "reports/self_development/self_map_next_action_recommendation.json",
+            "reports/self_development/organism_health_state.json",
             "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json"
           )
 

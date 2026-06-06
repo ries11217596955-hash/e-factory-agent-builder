@@ -1,0 +1,23 @@
+{
+  "phase": "PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_AND_ORGANISM_HEALTH_STATE",
+  "validate_result": "PASS",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "6a8d5f95456c534ab84a4012381759191dc5f4d4",
+  "head_after": "6a8d5f95456c534ab84a4012381759191dc5f4d4",
+  "health_state": "DEGRADED",
+  "health_score": 62,
+  "recommended_next_macro_step": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
+  "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
+  "priority_class": "REQUIRED_LIVE_PROOF_FOR_ACTIVE_ORGAN",
+  "selected_action_score": 82,
+  "stale_protected_review_blocked": true,
+  "task_queue_delayed": true,
+  "packs_registry_delayed": true,
+  "orchestrator_rejected_or_delayed": true,
+  "protected_state_mutated": false,
+  "runtime_outputs_staged": false,
+  "no_commit_performed": true,
+  "no_push_performed": true,
+  "no_branch_switch": true,
+  "created_at": "2026-06-06T05:25:24.2007369Z"
+}

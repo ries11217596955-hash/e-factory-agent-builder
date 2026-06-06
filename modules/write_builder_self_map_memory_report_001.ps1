@@ -36,6 +36,8 @@ $stubPath = Join-Path $outputFull 'stub_placeholder_inventory.json'
 $falseStubPath = Join-Path $outputFull 'stub_false_positive_inventory.json'
 $historicalPath = Join-Path $outputFull 'historical_reference_inventory.json'
 $supersededPath = Join-Path $outputFull 'superseded_artifact_inventory.json'
+$recommendationPath = Join-Path $outputFull 'self_map_next_action_recommendation.json'
+$healthPath = Join-Path $outputFull 'organism_health_state.json'
 $reportPath = Join-Path $outputFull 'self_map_memory_report.md'
 
 $activeMap = Get-BuilderJson -Path $activeMapPath
@@ -47,6 +49,8 @@ $stubInventory = Get-BuilderJson -Path $stubPath
 $falseStubInventory = Get-BuilderJson -Path $falseStubPath
 $historicalInventory = Get-BuilderJson -Path $historicalPath
 $supersededInventory = Get-BuilderJson -Path $supersededPath
+$recommendation = Get-BuilderJson -Path $recommendationPath
+$health = Get-BuilderJson -Path $healthPath
 
 $activeOrgans = Get-BuilderTopItems -Items $activeMap.active_artifacts -Count 15
 $validatorOnly = @()
@@ -60,8 +64,11 @@ if ($bodyMap -and $bodyMap.artifacts) {
 $gapItems = @()
 if ($gaps -and $gaps.gaps) { $gapItems = @($gaps.gaps) }
 $nextMacro = 'Refresh self-map after each accepted change before selecting the next learning or repair task.'
-$nextWhy = 'The accepted baseline can then choose work from current live evidence, present-not-wired gaps, and strict stub classifications instead of stale or over-optimistic memory.'
-if ($gapItems.Count -gt 0 -and $gapItems[0].recommended_next_action) {
+$nextWhy = 'The accepted baseline can then choose work from current evidence instead of stale memory.'
+if ($recommendation) {
+  $nextMacro = $recommendation.recommended_next_macro_step
+  $nextWhy = $recommendation.why_this_step
+} elseif ($gapItems.Count -gt 0 -and $gapItems[0].recommended_next_action) {
   $nextMacro = $gapItems[0].recommended_next_action
   $nextWhy = $gapItems[0].why_status
 }
@@ -77,6 +84,20 @@ $lines.Add(('Map refresh status: {0}' -f $activeMap.map_refresh_status))
 $lines.Add(('Self knowledge ready: {0}' -f $activeMap.self_knowledge_ready))
 $lines.Add(('Map ready for next decision: {0}' -f $activeMap.map_is_ready_for_next_decision))
 $lines.Add(('Active route: {0}' -f $activeMap.active_route_lock))
+$lines.Add('')
+$lines.Add('## Organism Health State')
+$lines.Add('')
+if ($health) {
+  $lines.Add(('{0} ({1}/100)' -f $health.health_state, $health.health_score))
+  $lines.Add('')
+  $lines.Add($health.why_health_state)
+  if ($health.health_state -eq 'HEALTHY') {
+    $lines.Add('')
+    $lines.Add('No required repair; optional improvement only.')
+  }
+} else {
+  $lines.Add('UNKNOWN')
+}
 $lines.Add('')
 $lines.Add('## Counts')
 $lines.Add('')
@@ -141,6 +162,29 @@ $lines.Add('')
 $lines.Add('Why this is recommended:')
 $lines.Add('')
 $lines.Add($nextWhy)
+if ($recommendation) {
+  $lines.Add('')
+  $lines.Add('## Why Not Other Common Actions')
+  $lines.Add('')
+  $lines.Add(('- Not delete first: {0}' -f $recommendation.why_not_delete_first))
+  $lines.Add(('- Not connect everything first: {0}' -f $recommendation.why_not_connect_everything_first))
+  $lines.Add(('- Not repair all stubs first: {0}' -f $recommendation.why_not_repair_all_stubs_first))
+  $lines.Add('')
+  $lines.Add('## Completed Recommendations Not Repeated')
+  $lines.Add('')
+  foreach ($item in @($recommendation.completed_recommendations_detected)) {
+    $lines.Add(('- {0}: {1}' -f $item.phase, $item.status))
+  }
+  foreach ($item in @($recommendation.blocked_old_recommendations)) {
+    $lines.Add(('- Blocked stale recommendation: {0}' -f $item.recommendation))
+  }
+  $lines.Add('')
+  $lines.Add('## Current Optional Improvements')
+  $lines.Add('')
+  if ($health) {
+    foreach ($item in @($health.optional_improvements)) { $lines.Add(('- {0}' -f $item)) }
+  }
+}
 
 $lines | Set-Content -LiteralPath $reportPath -Encoding UTF8
 

@@ -1,0 +1,72 @@
+{
+  "health_id": "PHASE161J_HEALTH_20260606052523",
+  "created_at": "2026-06-06T05:25:23.3198084Z",
+  "health_state": "DEGRADED",
+  "health_score": 62,
+  "critical_findings": [],
+  "active_route_findings": [
+    {
+      "finding": "active_route_coherent",
+      "path": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
+      "severity": "info"
+    },
+    {
+      "finding": "active_route_exhaustion_not_reconciled",
+      "severity": "watch",
+      "why": "The active PHASE161 route still names batch school foundation and requires exhaustion evidence before route change."
+    }
+  ],
+  "protected_state_findings": [
+    {
+      "finding": "limited_protected_references_applied",
+      "severity": "info",
+      "sections": [
+        "GENESIS_STATE.json.protected_self_model_memory",
+        "CAPABILITY_ROADMAP.json.phase161e_self_map_auto_refresh"
+      ]
+    }
+  ],
+  "evidence_findings": [
+    {
+      "finding": "live_evidence_boundary_preserved",
+      "severity": "info"
+    }
+  ],
+  "stub_findings": [
+    {
+      "finding": "real_stub_in_active_path",
+      "count": 2,
+      "severity": "degraded"
+    }
+  ],
+  "disconnected_findings": [
+    {
+      "finding": "present_not_wired_inventory",
+      "count": 274,
+      "severity": "optional_unless_route_relevant"
+    }
+  ],
+  "historical_findings": [
+    {
+      "finding": "historical_artifacts_do_not_imply_ill_health",
+      "severity": "informational"
+    }
+  ],
+  "healthy_criteria_met": [
+    "Current route lock resolves to an existing route file.",
+    "No broken parser is identified in the active route path.",
+    "No validator-only evidence promotion to live is reported.",
+    "Self knowledge is ready for the next decision.",
+    "Approved bounded protected references were applied without broad protected-state promotion."
+  ],
+  "healthy_criteria_failed": [
+    "Active-path real stubs remain.",
+    "Active route exhaustion has not been reconciled against accepted PHASE161 live evidence."
+  ],
+  "optional_improvements": [
+    "Review delayed TASK_QUEUE consumer compatibility only when queue integration becomes route-relevant.",
+    "Keep packs registry delayed until a real executable pack and admission proof exist.",
+    "Retain historical cleanup as optional unless it blocks the active route."
+  ],
+  "why_health_state": "The organism can operate, but an active-path implementation or self-knowledge readiness issue remains."
+}

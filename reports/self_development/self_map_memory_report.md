@@ -2,12 +2,18 @@
 
 I remember myself; here is my current report.
 
-Accepted subject head: 7729afa8b72a2307938689841398862ddd8ba58d
-Current baseline phase: GITHUB_PUSH_SELF_MAP_AUTO_REFRESH
+Accepted subject head: 6a8d5f95456c534ab84a4012381759191dc5f4d4
+Current baseline phase: PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR
 Map refresh status: SELF_KNOWLEDGE_READY
 Self knowledge ready: True
 Map ready for next decision: True
 Active route: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md
+
+## Organism Health State
+
+DEGRADED (62/100)
+
+The organism can operate, but an active-path implementation or self-knowledge readiness issue remains.
 
 ## Counts
 
@@ -105,8 +111,27 @@ Active route: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCH
 
 ## Recommended Next Macro-Step
 
-Review derived SELF_MODEL_ACTIVE_MAP.json and approve a later protected-state update candidate if desired.
+Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.
 
 Why this is recommended:
 
-Protected state files are source-of-truth but read-only in PHASE161C, so the active self-model must remain derived until owner approves promotion.
+The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.
+
+## Why Not Other Common Actions
+
+- Not delete first: No safety-critical deletion need is proven; deletion is last resort and historical artifacts do not block the active route.
+- Not connect everything first: Present-not-wired artifacts must be connected only when route-relevant; bulk wiring would create false active claims.
+- Not repair all stubs first: Only active-path proven stubs can outrank current route evidence work; bulk stub repair would include false positives and historical items.
+
+## Completed Recommendations Not Repeated
+
+- PHASE161F: COMPLETED
+- PHASE161G1: COMPLETED
+- PHASE161G2: COMPLETED_LIMITED_APPLY
+- Blocked stale recommendation: Review derived SELF_MODEL_ACTIVE_MAP.json and approve a later protected-state update candidate if desired.
+
+## Current Optional Improvements
+
+- Review delayed TASK_QUEUE consumer compatibility only when queue integration becomes route-relevant.
+- Keep packs registry delayed until a real executable pack and admission proof exist.
+- Retain historical cleanup as optional unless it blocks the active route.

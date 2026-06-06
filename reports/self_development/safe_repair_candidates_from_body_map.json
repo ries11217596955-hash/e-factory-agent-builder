@@ -626,14 +626,6 @@
       "recommended_action": "Add live or proof JSON evidence before marking proven."
     },
     {
-      "path": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
-      "current_status": "ACTIVE_WIRED_UNPROVEN",
-      "evidence_type": "CURRENT_RUNNER_WIRED",
-      "evidence_strength": "CURRENT_WIRED_STRONG",
-      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
-      "recommended_action": "Add live or proof JSON evidence before marking proven."
-    },
-    {
       "path": "modules/build_builder_self_knowledge.ps1",
       "current_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
@@ -795,6 +787,14 @@
     },
     {
       "path": "modules/invoke_generated_family_autonomous_conveyor.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
+      "recommended_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
+      "path": "modules/load_build_task.ps1",
       "current_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",

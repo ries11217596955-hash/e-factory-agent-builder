@@ -8,11 +8,11 @@
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
-      "count": 82
+      "count": 90
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 67
+      "count": 73
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -24,7 +24,7 @@
     },
     {
       "evidence_type": "PROOF_JSON_PROVEN",
-      "count": 152
+      "count": 154
     },
     {
       "evidence_type": "PROTECTED_RISK_LOCKED",
@@ -44,7 +44,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 658
+      "count": 690
     }
   ],
   "live_or_current_wired_items": [
@@ -137,7 +137,7 @@
     },
     {
       "path": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
-      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "current_wiring_signals": [
@@ -145,7 +145,24 @@
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "live_evidence_paths": [],
-      "proof_evidence_paths": []
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+      ]
+    },
+    {
+      "path": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+      ]
     },
     {
       "path": "modules/build_builder_self_model_gap_chain_001.ps1",
@@ -509,6 +526,33 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": []
+    },
+    {
+      "path": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+        "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+      ]
+    },
+    {
+      "path": "modules/inspect_builder_protected_state_consumers_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
+      ]
     },
     {
       "path": "modules/inspect_builder_quality_artifact_consistency_001.ps1",
@@ -2115,6 +2159,32 @@
       ]
     },
     {
+      "path": "modules/simulate_builder_limited_protected_self_model_metadata_apply_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
+      ]
+    },
+    {
+      "path": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+      ]
+    },
+    {
       "path": "modules/start_builder_live_growth_daemon_001.ps1",
       "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "LIVE_RUNTIME_PROVEN",
@@ -2275,6 +2345,32 @@
       "proof_evidence_paths": []
     },
     {
+      "path": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
+      ]
+    },
+    {
+      "path": "modules/validate_builder_protected_self_model_promotion_candidate_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+      ]
+    },
+    {
       "path": "modules/validate_external_agent_spec_template.ps1",
       "primary_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
@@ -2421,6 +2517,20 @@
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161A_SCHOOL_ENTRY_FOUNDATION_PROOF.json",
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json"
+      ]
+    },
+    {
+      "path": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+        "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
       ]
     },
     {
@@ -3002,7 +3112,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {
@@ -3050,7 +3163,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {
@@ -3098,7 +3214,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {
@@ -3146,7 +3265,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {
@@ -3194,7 +3316,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {
@@ -3242,7 +3367,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {
@@ -4532,7 +4660,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {
@@ -4558,7 +4689,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {
@@ -4736,7 +4870,10 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
-        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"
+        "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+        "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json"
       ]
     },
     {

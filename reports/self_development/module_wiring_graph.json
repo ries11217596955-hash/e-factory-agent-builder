@@ -799,6 +799,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "path": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/build_builder_self_knowledge.ps1",
       "path": "modules/build_builder_self_knowledge.ps1",
       "node_type": "module"
@@ -941,6 +946,16 @@
     {
       "id": "modules/inspect_builder_owner_task_lifecycle_state_001.ps1",
       "path": "modules/inspect_builder_owner_task_lifecycle_state_001.ps1",
+      "node_type": "module"
+    },
+    {
+      "id": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "path": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "node_type": "module"
+    },
+    {
+      "id": "modules/inspect_builder_protected_state_consumers_001.ps1",
+      "path": "modules/inspect_builder_protected_state_consumers_001.ps1",
       "node_type": "module"
     },
     {
@@ -1559,6 +1574,16 @@
       "node_type": "module"
     },
     {
+      "id": "modules/simulate_builder_limited_protected_self_model_metadata_apply_001.ps1",
+      "path": "modules/simulate_builder_limited_protected_self_model_metadata_apply_001.ps1",
+      "node_type": "module"
+    },
+    {
+      "id": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "path": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/start_builder_live_growth_daemon_001.ps1",
       "path": "modules/start_builder_live_growth_daemon_001.ps1",
       "node_type": "module"
@@ -1609,6 +1634,16 @@
       "node_type": "module"
     },
     {
+      "id": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "path": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "node_type": "module"
+    },
+    {
+      "id": "modules/validate_builder_protected_self_model_promotion_candidate_001.ps1",
+      "path": "modules/validate_builder_protected_self_model_promotion_candidate_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/validate_external_agent_spec_template.ps1",
       "path": "modules/validate_external_agent_spec_template.ps1",
       "node_type": "module"
@@ -1646,6 +1681,11 @@
     {
       "id": "modules/write_builder_morning_review_001.ps1",
       "path": "modules/write_builder_morning_review_001.ps1",
+      "node_type": "module"
+    },
+    {
+      "id": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "path": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
       "node_type": "module"
     },
     {
@@ -4849,6 +4889,21 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+      "path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+      "node_type": "proof"
+    },
+    {
+      "id": "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+      "path": "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+      "node_type": "proof"
+    },
+    {
+      "id": "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
+      "path": "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "node_type": "proof"
@@ -5146,6 +5201,11 @@
     {
       "id": "reports/second_generated_program_family_proof/REMEDIATION_INTAKE_AGENT_V1_SECOND_FAMILY.json",
       "path": "reports/second_generated_program_family_proof/REMEDIATION_INTAKE_AGENT_V1_SECOND_FAMILY.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/accepted_change_memory_snapshot.json",
+      "path": "reports/self_development/accepted_change_memory_snapshot.json",
       "node_type": "report"
     },
     {
@@ -5759,8 +5819,153 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PHASE161E_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "path": "reports/self_development/PHASE161E_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
       "path": "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+      "path": "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_REPORT.md",
+      "path": "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161F_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "path": "reports/self_development/PHASE161F_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
+      "path": "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
+      "path": "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
+      "path": "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161G1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "path": "reports/self_development/PHASE161G1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+      "path": "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_CODEX_DELIVERY.md",
+      "path": "reports/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_CODEX_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REPORT.md",
+      "path": "reports/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
+      "path": "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json",
+      "path": "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/orchestrator_run_update_candidate.md",
+      "path": "reports/self_development/protected_state_update_candidates/orchestrator_run_update_candidate.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/packs_registry_update_candidate.json",
+      "path": "reports/self_development/protected_state_update_candidates/packs_registry_update_candidate.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161F_DRY_RUN_APPLY_RESULT.json",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161F_DRY_RUN_APPLY_RESULT.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161F_PROMOTION_MANIFEST.json",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161F_PROMOTION_MANIFEST.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161F_PROTECTED_STATE_SYNC_PLAN.md",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161F_PROTECTED_STATE_SYNC_PLAN.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161F_RISK_REVIEW.json",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161F_RISK_REVIEW.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161F_ROLLBACK_PLAN.md",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161F_ROLLBACK_PLAN.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161G1_CAPABILITY_ROADMAP_COMPATIBILITY_REVIEW.md",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161G1_CAPABILITY_ROADMAP_COMPATIBILITY_REVIEW.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161G1_DELAYED_OR_BLOCKED_SCOPE.json",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161G1_DELAYED_OR_BLOCKED_SCOPE.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161G1_GENESIS_STATE_COMPATIBILITY_REVIEW.md",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161G1_GENESIS_STATE_COMPATIBILITY_REVIEW.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/PHASE161G1_SIMULATED_APPLY_RESULT.json",
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161G1_SIMULATED_APPLY_RESULT.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+      "path": "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
+      "path": "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
+      "path": "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
       "node_type": "report"
     },
     {
@@ -5826,6 +6031,16 @@
     {
       "id": "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
       "path": "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/self_map_memory_report.md",
+      "path": "reports/self_development/self_map_memory_report.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/self_map_refresh_after_acceptance_result.json",
+      "path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
       "node_type": "report"
     },
     {
@@ -6076,6 +6291,21 @@
     {
       "id": "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md",
       "path": "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md",
+      "node_type": "route_change_request"
+    },
+    {
+      "id": "route_change_requests/PHASE161E_SELF_MAP_AUTO_REFRESH_REQUEST.md",
+      "path": "route_change_requests/PHASE161E_SELF_MAP_AUTO_REFRESH_REQUEST.md",
+      "node_type": "route_change_request"
+    },
+    {
+      "id": "route_change_requests/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REQUEST.md",
+      "path": "route_change_requests/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REQUEST.md",
+      "node_type": "route_change_request"
+    },
+    {
+      "id": "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
+      "path": "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
       "node_type": "route_change_request"
     },
     {
@@ -6746,6 +6976,16 @@
     {
       "id": "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
       "path": "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
+      "path": "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
+      "path": "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -7694,6 +7934,62 @@
       "evidence_snippet_or_pattern": "route_locks/ACTIVE_ROUTE_LOCK.json"
     },
     {
+      "source": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "target": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_protected_self_model_sync_targets_001"
+    },
+    {
+      "source": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "target": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "write_builder_protected_self_model_promotion_risk_review_001"
+    },
+    {
+      "source": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "target": "route_locks/ACTIVE_ROUTE_LOCK.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "route_locks/ACTIVE_ROUTE_LOCK.json"
+    },
+    {
       "source": "modules/build_builder_self_knowledge.ps1",
       "target": "CAPABILITY_ROADMAP.json",
       "edge_type": "references",
@@ -8217,6 +8513,76 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "build_builder_agent_body_map_001"
+    },
+    {
+      "source": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "modules/inspect_builder_protected_state_consumers_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/inspect_builder_protected_state_consumers_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/inspect_builder_protected_state_consumers_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/inspect_builder_protected_state_consumers_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/inspect_builder_protected_state_consumers_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
       "source": "modules/inspect_builder_quality_artifact_consistency_001.ps1",
@@ -10571,6 +10937,55 @@
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
+      "source": "modules/simulate_builder_limited_protected_self_model_metadata_apply_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/simulate_builder_limited_protected_self_model_metadata_apply_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
       "source": "modules/start_builder_live_growth_daemon_001.ps1",
       "target": "modules/decide_builder_learning_mode_001.ps1",
       "edge_type": "calls",
@@ -10732,6 +11147,41 @@
       "evidence_snippet_or_pattern": "builder_school_lesson.schema.json"
     },
     {
+      "source": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
       "source": "modules/watch_builder_live_console_001.ps1",
       "target": "CAPABILITY_ROADMAP.json",
       "edge_type": "references",
@@ -10814,6 +11264,41 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "cluster_builder_lesson_failures_001"
+    },
+    {
+      "source": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
       "source": "orchestrator/run.ps1",
@@ -19160,6 +19645,76 @@
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
+      "source": "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
       "source": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "target": "contracts/self_development/quarantine_and_blocker_registry_v1.schema.json",
       "edge_type": "validates",
@@ -19321,6 +19876,13 @@
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
+      "source": "reports/self_development/accepted_change_memory_snapshot.json",
+      "target": "modules/build_builder_agent_body_map_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "build_builder_agent_body_map_001"
+    },
+    {
       "source": "reports/self_development/agent_body_map.json",
       "target": "modules/absorb_builder_school_experience_001.ps1",
       "edge_type": "calls",
@@ -19340,6 +19902,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "apply_external_agent_overlay"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/build_builder_accepted_change_memory_snapshot_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "build_builder_accepted_change_memory_snapshot_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -19602,6 +20171,13 @@
     },
     {
       "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_self_map_refresh_readiness_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
       "target": "modules/invoke_admitted_action_execution_engine.ps1",
       "edge_type": "calls",
       "confidence": "medium",
@@ -19774,6 +20350,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_self_learning_loop_metrics_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_self_map_refresh_after_acceptance_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -20456,6 +21039,13 @@
     },
     {
       "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "validate_builder_acceptance_self_map_refresh_contract_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
       "target": "modules/validate_builder_curriculum_pack_schema_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
@@ -20526,6 +21116,13 @@
     },
     {
       "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/write_builder_self_map_memory_report_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "write_builder_self_map_memory_report_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
       "target": "CAPABILITY_ROADMAP.json",
       "edge_type": "references",
       "confidence": "high",
@@ -20572,363 +21169,6 @@
       "edge_type": "validates",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "agent_package_blueprint.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/AGENT_PRODUCTION_CLOSED_LOOP_CONTRACT_V1.md",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "AGENT_PRODUCTION_CLOSED_LOOP_CONTRACT_V1.md"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/AGENT_PRODUCTION_CLOSED_LOOP_STATE_MACHINE_V1.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "AGENT_PRODUCTION_CLOSED_LOOP_STATE_MACHINE_V1.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/build_decision.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "build_decision.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/build_execution_result.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "build_execution_result.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/build_task.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "build_task.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/capability_roadmap.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "capability_roadmap.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/external_agent_package_manifest.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "external_agent_package_manifest.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/external_agent_spec.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "external_agent_spec.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/failure_diagnostic.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "failure_diagnostic.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/GAP_REMEDIATION_INTAKE_REPORT_CONTRACT_V1.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "GAP_REMEDIATION_INTAKE_REPORT_CONTRACT_V1.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/GAP_REMEDIATION_PROGRAM_SEED_CONTRACT_V1.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "GAP_REMEDIATION_PROGRAM_SEED_CONTRACT_V1.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/generated_agent_github_action_launch_surface.contract.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "generated_agent_github_action_launch_surface.contract.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/generated_agent_request.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "generated_agent_request.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/generated_agent_result.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "generated_agent_result.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/generated_agent_validation_report.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "generated_agent_validation_report.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/generated_self_build_program_execution_recipe.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "generated_self_build_program_execution_recipe.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/genesis_state.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "genesis_state.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/materials/manual_scout_pass.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "manual_scout_pass.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/materials/material_candidate.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "material_candidate.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/materials/material_catalog.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "material_catalog.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/materials/material_policy.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "material_policy.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/materials/material_quarantine_card.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "material_quarantine_card.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/materials/material_request.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "material_request.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/operational_generated_agent_validation_report.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "operational_generated_agent_validation_report.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/operations/operation_contract.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "operation_contract.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/operations/operation_registry.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "operation_registry.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/operations/operation_request.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "operation_request.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/operations/operation_runtime_report.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "operation_runtime_report.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/operations/self_build_delivery_conveyor_v1.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "self_build_delivery_conveyor_v1.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/operations/smoke_install_trial_report.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "smoke_install_trial_report.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/remediation_seed_self_build_program_blueprint.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "remediation_seed_self_build_program_blueprint.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/run_report.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "run_report.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_build_pack_registry.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "self_build_pack_registry.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_build_pack.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "self_build_pack.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/auto_next_gap_decision_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "auto_next_gap_decision_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/batch_admission_policy_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "batch_admission_policy_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/batch_plan_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "batch_plan_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/batch_proof_aggregator_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "batch_proof_aggregator_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/builder_self_pack_author_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "builder_self_pack_author_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/capability_gap_detector_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "capability_gap_detector_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/continue_on_failure_runtime_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "continue_on_failure_runtime_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/controlled_multi_cycle_self_build_run_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "controlled_multi_cycle_self_build_run_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/generated_program_admission.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "generated_program_admission.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/generated_self_build_execution.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "generated_self_build_execution.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/item_level_execution_ledger_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "item_level_execution_ledger_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/live_self_growth_macro_cycle.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "live_self_growth_macro_cycle.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/owner_order_to_gap_map_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "owner_order_to_gap_map_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/quarantine_and_blocker_registry_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "quarantine_and_blocker_registry_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/repair_loop_generator_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "repair_loop_generator_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/scale_trial_10_30_100_item_simulation_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "scale_trial_10_30_100_item_simulation_v1.schema.json"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "contracts/self_development/scale_trial_promotion_gate_and_route_lock_refresh_v1.schema.json",
-      "edge_type": "validates",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "scale_trial_promotion_gate_and_route_lock_refresh_v1.schema.json"
     }
   ]
 }

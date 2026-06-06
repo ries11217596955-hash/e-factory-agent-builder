@@ -23,7 +23,9 @@
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "historical_reference_paths": [
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
       ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
@@ -32,7 +34,10 @@
       "phase_hint": "PHASE100",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -40,7 +45,10 @@
       "phase_hint": "PHASE99",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -114,7 +122,9 @@
       "phase_hint": "PHASE99",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -122,7 +132,9 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -130,7 +142,9 @@
       "phase_hint": "PHASE100",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -138,7 +152,9 @@
       "phase_hint": "PHASE95",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -154,7 +170,9 @@
       "phase_hint": "PHASE100",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -162,7 +180,9 @@
       "phase_hint": "PHASE100",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -170,7 +190,9 @@
       "phase_hint": "PHASE100",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1072,7 +1094,9 @@
       "phase_hint": "PHASE8",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1080,7 +1104,9 @@
       "phase_hint": "PHASE8",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1088,7 +1114,9 @@
       "phase_hint": "PHASE8",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1096,7 +1124,9 @@
       "phase_hint": "PHASE8",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1104,7 +1134,9 @@
       "phase_hint": "PHASE8",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1112,7 +1144,9 @@
       "phase_hint": "PHASE8",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1120,7 +1154,9 @@
       "phase_hint": "PHASE8",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1320,7 +1356,9 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1328,7 +1366,9 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1336,7 +1376,9 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1344,7 +1386,9 @@
       "phase_hint": "PHASE95",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1352,7 +1396,9 @@
       "phase_hint": "PHASE95",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1360,7 +1406,9 @@
       "phase_hint": "PHASE95",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1368,7 +1416,9 @@
       "phase_hint": "PHASE99",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1376,7 +1426,9 @@
       "phase_hint": "PHASE99",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1384,7 +1436,9 @@
       "phase_hint": "PHASE99",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1417,7 +1471,9 @@
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "historical_reference_paths": [
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
       ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
@@ -1427,7 +1483,9 @@
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "historical_reference_paths": [
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
       ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
@@ -1437,7 +1495,9 @@
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "historical_reference_paths": [
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
       ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
@@ -1446,7 +1506,10 @@
       "phase_hint": "PHASE99",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1454,7 +1517,10 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1462,7 +1528,10 @@
       "phase_hint": "PHASE100",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1470,7 +1539,10 @@
       "phase_hint": "PHASE95",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1561,7 +1633,9 @@
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "historical_reference_paths": [
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
       ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
@@ -1571,7 +1645,9 @@
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "historical_reference_paths": [
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
       ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
@@ -1581,7 +1657,9 @@
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "historical_reference_paths": [
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt"
+        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
       ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
@@ -1590,7 +1668,9 @@
       "phase_hint": "PHASE99",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1598,7 +1678,9 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1606,7 +1688,9 @@
       "phase_hint": "PHASE100",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1614,7 +1698,9 @@
       "phase_hint": "PHASE95",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1630,7 +1716,10 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1638,7 +1727,10 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1646,7 +1738,9 @@
       "phase_hint": "PHASE95",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     },
     {
@@ -1654,7 +1748,10 @@
       "phase_hint": "PHASE94",
       "evidence_strength": "HISTORICAL_WEAK",
       "why_status": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "historical_reference_paths": [],
+      "historical_reference_paths": [
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/CAPABILITY_ROADMAP.simulated.json",
+        "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
+      ],
       "recommended_action": "Keep as historical reference; do not treat as active without current route evidence."
     }
   ]

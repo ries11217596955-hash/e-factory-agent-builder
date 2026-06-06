@@ -288,6 +288,66 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Write-BuilderJson",
+        "Set-BuilderProperty"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "SourceBaselineHead",
+        "SourcePhase",
+        "Path",
+        "Value",
+        "Depth",
+        "dir",
+        "Object",
+        "Name",
+        "root",
+        "candidateRelative",
+        "candidateRoot",
+        "sourcePaths",
+        "path",
+        "activeMap",
+        "refresh",
+        "inspector",
+        "inspection",
+        "targetByPath",
+        "target",
+        "promotionId",
+        "commonValidation",
+        "candidates",
+        "candidate",
+        "identity",
+        "document",
+        "orchestratorIdentity",
+        "orchestratorLines",
+        "manifest",
+        "syncPlan",
+        "rollbackPlan",
+        "riskWriter"
+      ],
+      "exported_behavior_guess": "Write-BuilderJson, Set-BuilderProperty",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Path $candidateRoot | Out-Null",
+        "Set-Content -LiteralPath (Join-Path $candidateRoot 'orchestrator_run_update_candidate.md') -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $candidateRoot 'PHASE161F_PROTECTED_STATE_SYNC_PLAN.md') -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $candidateRoot 'PHASE161F_ROLLBACK_PLAN.md') -Encoding UTF8"
+      ],
+      "calls_detected": [
+        "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+        "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/build_builder_self_knowledge.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -1544,6 +1604,87 @@
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "root",
+        "targets",
+        "items",
+        "target",
+        "full",
+        "item",
+        "hash",
+        "topKeys",
+        "parseStatus",
+        "json"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/inspect_builder_protected_state_consumers_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "OutputPath",
+        "root",
+        "targets",
+        "extensions",
+        "files",
+        "_",
+        "items",
+        "file",
+        "relative",
+        "text",
+        "target",
+        "matchedToken",
+        "token",
+        "lines",
+        "matchIndex",
+        "lineIndex",
+        "snippet",
+        "isExecutable",
+        "isHistorical",
+        "isReportReference",
+        "parsesJson",
+        "contextStart",
+        "contextEnd",
+        "contextText",
+        "writesTarget",
+        "strictSignal",
+        "accessPattern",
+        "strictRisk",
+        "extraSafe",
+        "riskReason",
+        "array",
+        "summary",
+        "targetItems",
+        "result",
+        "fullOutput",
+        "dir"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "Set-Content|Out-File|Copy-Item|Move-Item)'",
+        "New-Item -ItemType Directory -Path $dir | Out-Null }",
+        "ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $fullOutput -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
         "accepted_repo_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."
@@ -8483,6 +8624,117 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/simulate_builder_limited_protected_self_model_metadata_apply_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "ConvertTo-StableJson"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "CandidateRoot",
+        "Value",
+        "root",
+        "candidateFull",
+        "simulationDir",
+        "genesisPath",
+        "roadmapPath",
+        "genesisCandidatePath",
+        "roadmapCandidatePath",
+        "beforeHashes",
+        "errors",
+        "genesis",
+        "roadmap",
+        "genesisCandidate",
+        "roadmapCandidate",
+        "genesisBefore",
+        "roadmapBefore",
+        "genesisSim",
+        "roadmapSim",
+        "genesisSection",
+        "roadmapSection",
+        "genesisSimPath",
+        "roadmapSimPath",
+        "genesisParsePass",
+        "roadmapParsePass",
+        "_",
+        "genesisExistingUnchanged",
+        "property",
+        "roadmapExistingUnchanged",
+        "currentPhaseUnchanged",
+        "currentCapabilityUnchanged",
+        "evidenceBoundaryPass",
+        "roadmapStatusCautious",
+        "promotionStatusCautious",
+        "validatorOnlyNotPromoted",
+        "afterHashes",
+        "protectedModified",
+        "errorArray",
+        "result"
+      ],
+      "exported_behavior_guess": "ConvertTo-StableJson",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 100 -Compress)",
+        "New-Item -ItemType Directory -Path $simulationDir | Out-Null",
+        "ConvertTo-Json -Depth 100 | ConvertFrom-Json",
+        "ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $genesisSimPath -Encoding UTF8",
+        "ConvertTo-Json -Depth 100 | Set-Content -LiteralPath $roadmapSimPath -Encoding UTF8",
+        "ConvertTo-Json -Depth 20 | Set-Content -LiteralPath (Join-Path $candidateFull 'PHASE161G1_SIMULATED_APPLY_RESULT.json') -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "CandidateRoot",
+        "root",
+        "candidateFull",
+        "outputPath",
+        "jsonCandidates",
+        "protected",
+        "beforeHashes",
+        "path",
+        "parsedCount",
+        "validCount",
+        "errors",
+        "simulated",
+        "name",
+        "candidatePath",
+        "candidate",
+        "targetPath",
+        "target",
+        "clone",
+        "simulatedApplied",
+        "envelope",
+        "cloneJson",
+        "_",
+        "afterHashes",
+        "errorArray",
+        "simulatedArray",
+        "protectedChangeErrors",
+        "result"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 100 | ConvertFrom-Json",
+        "ConvertTo-Json -Depth 100",
+        "ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $outputPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/start_builder_live_growth_daemon_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -8865,6 +9117,86 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-Compatibility",
+        "Write-JsonFile"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "CandidateRoot",
+        "Condition",
+        "Message",
+        "Path",
+        "Value",
+        "root",
+        "candidateFull",
+        "matrix",
+        "simulation",
+        "genesisCandidate",
+        "roadmapCandidate",
+        "genesisCurrent",
+        "_",
+        "roadmapCurrent",
+        "genesisStrict",
+        "roadmapStrict",
+        "genesisDecision",
+        "roadmapDecision",
+        "delayed",
+        "recommendation"
+      ],
+      "exported_behavior_guess": "Assert-Compatibility, Write-JsonFile",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $candidateFull 'PHASE161G1_GENESIS_STATE_COMPATIBILITY_REVIEW.md') -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $candidateFull 'PHASE161G1_CAPABILITY_ROADMAP_COMPATIBILITY_REVIEW.md') -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "protected_state_write",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/validate_builder_protected_self_model_promotion_candidate_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-BuilderCandidate"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "CandidateRoot",
+        "Condition",
+        "Message",
+        "root",
+        "candidateFull",
+        "manifestPath",
+        "riskPath",
+        "dryRunPath",
+        "syncPlanPath",
+        "rollbackPath",
+        "orchestratorCandidatePath",
+        "path",
+        "manifest",
+        "risk",
+        "dryRun",
+        "orchestratorText",
+        "jsonCandidateNames",
+        "name",
+        "candidate",
+        "activeMap"
+      ],
+      "exported_behavior_guess": "Assert-BuilderCandidate",
+      "write_outputs_detected": [],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/validate_external_agent_spec_template.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -9206,6 +9538,34 @@
       "calls_detected": [
         "modules/cluster_builder_lesson_failures_001.ps1"
       ],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "CandidateRoot",
+        "root",
+        "candidateFull",
+        "candidateNames",
+        "parsed",
+        "name",
+        "path",
+        "review",
+        "_"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $candidateFull | Out-Null",
+        "ConvertTo-Json -Depth 20 | Set-Content -LiteralPath $path -Encoding UTF8"
+      ],
+      "calls_detected": [],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
@@ -27385,6 +27745,146 @@
         "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
         "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
         "modules/write_builder_self_map_memory_report_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-Phase161F",
+        "Test-Phase161FParser",
+        "Write-Phase161FJson"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "AcceptedHead",
+        "Condition",
+        "Message",
+        "Path",
+        "errors",
+        "_",
+        "Value",
+        "Depth",
+        "dir",
+        "root",
+        "protected",
+        "path",
+        "branchBefore",
+        "headBefore",
+        "hashesBefore",
+        "parserFiles",
+        "builder",
+        "manifest",
+        "simulator",
+        "dryRun",
+        "contractValidator",
+        "contract",
+        "candidateRoot",
+        "requiredCandidateFiles",
+        "name",
+        "hashesAfter",
+        "protectedGitStatus",
+        "runtimeStatus",
+        "branchAfter",
+        "headAfter",
+        "risk",
+        "activeMap",
+        "proofPath",
+        "reportPath",
+        "routePath",
+        "deliveryPath",
+        "proof"
+      ],
+      "exported_behavior_guess": "Assert-Phase161F, Test-Phase161FParser, Write-Phase161FJson",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "Set-Content -LiteralPath $reportPath -Encoding UTF8",
+        "Set-Content -LiteralPath $routePath -Encoding UTF8",
+        "Set-Content -LiteralPath $deliveryPath -Encoding UTF8"
+      ],
+      "calls_detected": [
+        "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+        "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
+        "modules/simulate_builder_protected_state_candidate_apply_001.ps1",
+        "modules/validate_builder_protected_self_model_promotion_candidate_001.ps1",
+        "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-Phase161G1",
+        "Test-Phase161G1Parser",
+        "Write-Phase161G1Json"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "AcceptedHead",
+        "Condition",
+        "Message",
+        "Path",
+        "errors",
+        "_",
+        "Value",
+        "dir",
+        "root",
+        "protected",
+        "path",
+        "branchBefore",
+        "headBefore",
+        "hashesBefore",
+        "candidateRoot",
+        "sourceCandidates",
+        "name",
+        "parserFiles",
+        "inspector",
+        "matrix",
+        "simulator",
+        "simulation",
+        "contractModule",
+        "contract",
+        "requiredOutputs",
+        "delayed",
+        "taskDecision",
+        "packDecision",
+        "orchestratorDecision",
+        "hashesAfter",
+        "protectedStatus",
+        "runtimeStatus",
+        "branchAfter",
+        "headAfter",
+        "proofPath",
+        "reportPath",
+        "routePath",
+        "deliveryPath",
+        "proof"
+      ],
+      "exported_behavior_guess": "Assert-Phase161G1, Test-Phase161G1Parser, Write-Phase161G1Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null }",
+        "ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "Set-Content -LiteralPath $reportPath -Encoding UTF8",
+        "Set-Content -LiteralPath $routePath -Encoding UTF8",
+        "Set-Content -LiteralPath $deliveryPath -Encoding UTF8"
+      ],
+      "calls_detected": [
+        "modules/inspect_builder_protected_state_consumers_001.ps1",
+        "modules/simulate_builder_limited_protected_self_model_metadata_apply_001.ps1",
+        "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1"
       ],
       "safety_sensitive_operations_detected": [
         "runtime_writes",

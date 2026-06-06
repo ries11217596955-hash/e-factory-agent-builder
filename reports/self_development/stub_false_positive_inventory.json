@@ -194,6 +194,22 @@
       "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
+      "path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+      "artifact_type": "proof",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
+      "path": "reports/self_development/accepted_change_memory_snapshot.json",
+      "artifact_type": "report",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
       "path": "reports/self_development/agent_body_map_classifier_hardening_result.json",
       "artifact_type": "report",
       "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
@@ -354,6 +370,22 @@
       "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
+      "path": "reports/self_development/PHASE161E_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "artifact_type": "report",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
+      "path": "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
+      "artifact_type": "report",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
       "path": "reports/self_development/quality_decision_index_result.json",
       "artifact_type": "report",
       "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
@@ -371,6 +403,22 @@
     },
     {
       "path": "reports/self_development/safe_repair_candidates_from_body_map.json",
+      "artifact_type": "report",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
+      "path": "reports/self_development/self_map_memory_report.md",
+      "artifact_type": "report",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
+      "path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
       "artifact_type": "report",
       "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",

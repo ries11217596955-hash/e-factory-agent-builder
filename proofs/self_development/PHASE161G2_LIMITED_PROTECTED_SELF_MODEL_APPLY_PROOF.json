@@ -1,0 +1,19 @@
+{
+  "phase": "PHASE161G2_APPLY_LIMITED_PROTECTED_SELF_MODEL_REFERENCES",
+  "validate_result": "PASS",
+  "head_before": "ee4417e46677997ab678b728b47cd732c679ae26",
+  "pre_apply_hashes_matched": true,
+  "genesis_state_reference_applied": true,
+  "capability_roadmap_reference_applied": true,
+  "task_queue_unchanged": true,
+  "packs_registry_unchanged": true,
+  "orchestrator_run_unchanged": true,
+  "current_phase_unchanged": true,
+  "active_task_id_unchanged": true,
+  "route_lock_unchanged": true,
+  "validator_only_promoted_to_live": false,
+  "runtime_outputs_staged": false,
+  "no_commit_performed": true,
+  "no_push_performed": true,
+  "no_branch_switch": true
+}

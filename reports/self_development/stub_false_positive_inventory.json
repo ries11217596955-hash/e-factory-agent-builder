@@ -202,8 +202,8 @@
       "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
-      "path": "reports/self_development/accepted_change_memory_snapshot.json",
-      "artifact_type": "report",
+      "path": "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
+      "artifact_type": "proof",
       "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
       "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
@@ -371,6 +371,22 @@
     },
     {
       "path": "reports/self_development/PHASE161E_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "artifact_type": "report",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
+      "path": "reports/self_development/PHASE161E1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "artifact_type": "report",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
+      "path": "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
       "artifact_type": "report",
       "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",

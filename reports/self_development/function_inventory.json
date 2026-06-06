@@ -142,6 +142,63 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/apply_builder_limited_protected_self_model_references_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Add-BuilderTopLevelJsonProperty",
+        "Test-BuilderExistingPropertiesUnchanged"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "CandidateRoot",
+        "Path",
+        "PropertyName",
+        "Value",
+        "raw",
+        "json",
+        "trimmed",
+        "withoutClose",
+        "valueJson",
+        "valueIndented",
+        "updated",
+        "Before",
+        "After",
+        "property",
+        "beforeJson",
+        "afterJson",
+        "root",
+        "candidateFull",
+        "snapshotFull",
+        "genesisPath",
+        "roadmapPath",
+        "genesisSnapshot",
+        "roadmapSnapshot",
+        "genesisBefore",
+        "roadmapBefore",
+        "genesisCandidate",
+        "roadmapCandidate",
+        "scope",
+        "genesisSection",
+        "roadmapSection",
+        "genesisAfter",
+        "roadmapAfter",
+        "result"
+      ],
+      "exported_behavior_guess": "Add-BuilderTopLevelJsonProperty, Test-BuilderExistingPropertiesUnchanged",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 40",
+        "Set-Content -LiteralPath $Path -Value $updated -Encoding UTF8 -NoNewline",
+        "ConvertTo-Json -Depth 100 -Compress",
+        "ConvertTo-Json -Depth 20 | Set-Content -LiteralPath (Join-Path $candidateFull 'PHASE161G2_APPLY_RESULT.json') -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/apply_external_agent_overlay.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -161,6 +218,43 @@
       "exported_behavior_guess": "Apply-ExternalAgentOverlay",
       "write_outputs_detected": [
         "New-Item -ItemType Directory -Force -Path $TargetDir | Out-Null"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/backup_builder_limited_protected_state_before_apply_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "CandidateRoot",
+        "root",
+        "candidateFull",
+        "snapshotRelative",
+        "snapshotFull",
+        "expected",
+        "hashRecords",
+        "path",
+        "full",
+        "actual",
+        "routeIndex",
+        "route",
+        "activeRoute",
+        "routeHashes",
+        "preHashes",
+        "manifest",
+        "_"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $snapshotFull | Out-Null",
+        "ConvertTo-Json -Depth 20 | Set-Content -LiteralPath (Join-Path $candidateFull 'PHASE161G2_PRE_APPLY_HASHES.json') -Encoding UTF8",
+        "ConvertTo-Json -Depth 20 | Set-Content -LiteralPath (Join-Path $candidateFull 'PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json') -Encoding"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
@@ -9161,6 +9255,41 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/validate_builder_limited_protected_state_after_apply_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-BuilderState"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "CandidateRoot",
+        "Condition",
+        "Message",
+        "root",
+        "candidateFull",
+        "snapshotFull",
+        "genesisBefore",
+        "roadmapBefore",
+        "genesis",
+        "roadmap",
+        "queue",
+        "property",
+        "blockedExpected",
+        "path",
+        "manifest",
+        "route"
+      ],
+      "exported_behavior_guess": "Assert-BuilderState",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 100 -Compress) -eq ($genesis.($property.Name) | ConvertTo-Json -Depth 100 -Compress)) \"GENESIS_STATE field chang",
+        "ConvertTo-Json -Depth 100 -Compress) -eq ($roadmap.($property.Name) | ConvertTo-Json -Depth 100 -Compress)) \"CAPABILITY_ROADMAP field"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/validate_builder_protected_self_model_promotion_candidate_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -9478,6 +9607,28 @@
         "ConvertTo-Json -Depth 100) -replace \"`r`n\", \"`n\"",
         "New-Item -ItemType Directory -Force -Path $resultsRoot | Out-Null",
         "ConvertTo-Json -Depth 30"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/write_builder_limited_protected_self_model_apply_report_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "root",
+        "candidateRoot",
+        "result",
+        "post"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "Set-Content -LiteralPath (Join-Path $root 'reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md') -Enco"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
@@ -27885,6 +28036,56 @@
         "modules/inspect_builder_protected_state_consumers_001.ps1",
         "modules/simulate_builder_limited_protected_self_model_metadata_apply_001.ps1",
         "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-G2",
+        "Test-G2Parser"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "ExpectedHead",
+        "Condition",
+        "Message",
+        "Path",
+        "errors",
+        "root",
+        "branchBefore",
+        "headBefore",
+        "file",
+        "candidateRoot",
+        "name",
+        "pre",
+        "stateValidator",
+        "state",
+        "postFiles",
+        "path",
+        "post",
+        "proofPath",
+        "_"
+      ],
+      "exported_behavior_guess": "Assert-G2, Test-G2Parser",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 20|Set-Content -LiteralPath (Join-Path $candidateRoot 'PHASE161G2_POST_APPLY_HASHES.json') -Encoding UTF8",
+        "ConvertTo-Json -Depth 20|Set-Content -LiteralPath $proofPath -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $root 'route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md') -Encodi",
+        "Set-Content -LiteralPath (Join-Path $root 'reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_CODEX_DELIVERY.md",
+        "Set-Content -LiteralPath (Join-Path $root 'reports/self_development/PHASE161G2_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md') -Encoding"
+      ],
+      "calls_detected": [
+        "modules/apply_builder_limited_protected_self_model_references_001.ps1",
+        "modules/backup_builder_limited_protected_state_before_apply_001.ps1",
+        "modules/validate_builder_limited_protected_state_after_apply_001.ps1",
+        "modules/write_builder_limited_protected_self_model_apply_report_001.ps1"
       ],
       "safety_sensitive_operations_detected": [
         "runtime_writes",

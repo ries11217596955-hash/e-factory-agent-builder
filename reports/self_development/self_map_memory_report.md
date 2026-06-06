@@ -2,21 +2,28 @@
 
 I remember myself; here is my current report.
 
-Accepted subject head: b4cb261c107defe625b30b74d4adbddd408d6acc
-Current baseline phase: PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_CONSUMER_COMPATIBILITY
+Accepted subject head: 0c4a454c6fd78507a94f0a30bf80f1265e24e1c6
+Current baseline phase: PHASE161G2_APPLY_LIMITED_PROTECTED_SELF_MODEL_REFERENCES
 Map refresh status: SELF_KNOWLEDGE_READY
 Self knowledge ready: True
 Map ready for next decision: True
 Active route: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md
 
+## Protected Memory References
+
+- `GENESIS_STATE.json.protected_self_model_memory` is present with `DERIVED_MAP_REFERENCE_ONLY`.
+- `CAPABILITY_ROADMAP.json.phase161e_self_map_auto_refresh` is present with `ACCEPTED_EVIDENCE_REFERENCE_CANDIDATE`.
+- Validator-only evidence was not promoted to live evidence.
+- Queue, pack registry, orchestrator flow, and route locks were not changed.
+
 ## Counts
 
-- Active wired proven: 192
-- Present not wired: 269
+- Active wired proven: 196
+- Present not wired: 272
 - Historical references: 204
 - Superseded: 1
 - Real stubs: 2
-- False-positive stubs: 74
+- False-positive stubs: 76
 - Gap chains: 7
 
 ## Top Live Or Current Active Organs
@@ -26,7 +33,9 @@ Active route: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCH
 - contracts/self_development/generated_self_build_execution.schema.json: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and direct proof JSON evidence.
 - modules/absorb_builder_school_experience_001.ps1: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and live/runtime proof evidence.
 - modules/admit_generated_self_build_program_to_live_execution.ps1: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and live/runtime proof evidence.
+- modules/apply_builder_limited_protected_self_model_references_001.ps1: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and direct proof JSON evidence.
 - modules/apply_external_agent_overlay.ps1: ACTIVE_WIRED_UNPROVEN; Artifact has current route/daemon/runner wiring but lacks proof evidence.
+- modules/backup_builder_limited_protected_state_before_apply_001.ps1: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and direct proof JSON evidence.
 - modules/build_builder_accepted_change_memory_snapshot_001.ps1: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and direct proof JSON evidence.
 - modules/build_builder_protected_self_model_promotion_candidate_001.ps1: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and direct proof JSON evidence.
 - modules/build_builder_self_knowledge.ps1: ACTIVE_WIRED_UNPROVEN; Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
@@ -34,8 +43,6 @@ Active route: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCH
 - modules/classify_builder_agent_body_artifact_001.ps1: ACTIVE_WIRED_UNPROVEN; Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
 - modules/classify_builder_owner_inbox_message_type_001.ps1: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and live/runtime proof evidence.
 - modules/classify_builder_owner_live_task_safety_001.ps1: ACTIVE_WIRED_UNPROVEN; Artifact has current route/daemon/runner wiring but lacks proof evidence.
-- modules/cluster_builder_lesson_failures_001.ps1: ACTIVE_WIRED_PROVEN; Artifact has current route/daemon/runner wiring and live/runtime proof evidence.
-- modules/complete_generated_self_build_program_executable_packs.ps1: ACTIVE_WIRED_UNPROVEN; Artifact has current route/daemon/runner wiring but lacks proof evidence.
 
 ## Validator-Only Organs
 

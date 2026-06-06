@@ -1,0 +1,22 @@
+{
+  "phase": "PHASE161E2_SELF_MAP_REFRESH_AFTER_G2",
+  "validate_result": "PASS",
+  "accepted_subject_head": "0c4a454c6fd78507a94f0a30bf80f1265e24e1c6",
+  "accepted_phase": "PHASE161G2_APPLY_LIMITED_PROTECTED_SELF_MODEL_REFERENCES",
+  "trigger_reason": "refresh_self_map_after_g2_limited_protected_apply",
+  "map_refresh_status": "SELF_KNOWLEDGE_READY",
+  "self_knowledge_ready": true,
+  "map_is_ready_for_next_decision": true,
+  "genesis_protected_self_model_memory_referenced": true,
+  "capability_roadmap_self_map_refresh_referenced": true,
+  "validator_only_promoted_to_live": false,
+  "active_wired_proven": 196,
+  "present_not_wired": 272,
+  "historical_reference_only": 204,
+  "superseded": 1,
+  "real_stubs": 2,
+  "false_positive_stubs": 76,
+  "gap_chain_count": 7,
+  "protected_state_further_modified_by_refresh": false,
+  "runtime_outputs_staged": false
+}

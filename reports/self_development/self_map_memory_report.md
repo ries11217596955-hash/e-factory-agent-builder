@@ -2,8 +2,8 @@
 
 I remember myself; here is my current report.
 
-Accepted subject head: 6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360
-Current baseline phase: PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT
+Accepted subject head: 7729afa8b72a2307938689841398862ddd8ba58d
+Current baseline phase: GITHUB_PUSH_SELF_MAP_AUTO_REFRESH
 Map refresh status: SELF_KNOWLEDGE_READY
 Self knowledge ready: True
 Map ready for next decision: True
@@ -11,12 +11,12 @@ Active route: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCH
 
 ## Counts
 
-- Active wired proven: 197
+- Active wired proven: 200
 - Present not wired: 274
 - Historical references: 204
 - Superseded: 1
 - Real stubs: 2
-- False-positive stubs: 79
+- False-positive stubs: 80
 - Gap chains: 7
 
 ## Top Live Or Current Active Organs

@@ -4,7 +4,7 @@ PHASE161C produced a derived active map under `reports/self_development`.
 
 Protected state was read but not modified.
 
-Runtime directory names observed: builder_life_loop, learning_absorption, learning_curricula, learning_mode_decisions, live_growth, live_growth_console, live_growth_self_growth, newborn_reflex, phase161b_probe_empty_curricula, school_runs
+Runtime directory names observed: builder_life_loop, live_growth, live_growth_console, live_growth_self_growth, newborn_reflex
 
 Generated artifacts:
 

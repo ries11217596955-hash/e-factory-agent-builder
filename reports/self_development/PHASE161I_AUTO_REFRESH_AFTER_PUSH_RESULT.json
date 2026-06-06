@@ -1,0 +1,27 @@
+{
+  "workflow_refresh_id": "PHASE161I_REFRESH_20260606045622",
+  "accepted_subject_head": "7729afa8b72a2307938689841398862ddd8ba58d",
+  "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
+  "trigger_reason": "github_push_auto_refresh",
+  "map_refresh_status": "SELF_KNOWLEDGE_READY",
+  "self_knowledge_ready": true,
+  "map_is_ready_for_next_decision": true,
+  "generated_from_worktree_head": "7729afa8b72a2307938689841398862ddd8ba58d",
+  "protected_state_mutated": false,
+  "runtime_outputs_staged": false,
+  "refreshed_files": [
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+    "reports/self_development/accepted_change_memory_snapshot.json",
+    "reports/self_development/agent_body_map.json",
+    "reports/self_development/agent_body_map.md",
+    "reports/self_development/agent_body_map_classifier_hardening_result.json",
+    "reports/self_development/agent_body_map_update_report.md",
+    "reports/self_development/function_inventory.json",
+    "reports/self_development/live_evidence_separation_index.json",
+    "reports/self_development/module_wiring_graph.json",
+    "reports/self_development/self_map_memory_report.md",
+    "reports/self_development/self_map_refresh_after_acceptance_result.json",
+    "reports/self_development/stub_false_positive_inventory.json"
+  ],
+  "created_at": "2026-06-06T04:56:22.3207115Z"
+}

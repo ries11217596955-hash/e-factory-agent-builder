@@ -1,21 +1,21 @@
 {
-  "refresh_id": "PHASE161E_REFRESH_20260606044012",
-  "accepted_subject_head": "6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360",
-  "accepted_phase": "PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT",
-  "trigger_reason": "acceptance_pipeline_after_phase161h_functional_commit",
-  "generated_from_worktree_head": "6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360",
+  "refresh_id": "PHASE161E_REFRESH_20260606045621",
+  "accepted_subject_head": "7729afa8b72a2307938689841398862ddd8ba58d",
+  "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
+  "trigger_reason": "github_push_auto_refresh",
+  "generated_from_worktree_head": "7729afa8b72a2307938689841398862ddd8ba58d",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
   "self_knowledge_ready": true,
   "map_is_ready_for_next_decision": true,
   "active_route_lock": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
-  "active_organs_count": 197,
+  "active_organs_count": 200,
   "present_not_wired_count": 274,
   "historical_reference_count": 204,
   "superseded_count": 1,
   "real_stub_count": 2,
-  "false_positive_stub_count": 79,
+  "false_positive_stub_count": 80,
   "gap_chain_count": 7,
   "recommended_next_learning_tasks": [
     {
@@ -49,5 +49,5 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "memory_report_path": "reports/self_development/self_map_memory_report.md",
   "policy_path": "reports/self_development/self_map_refresh_policy.json",
-  "created_at": "2026-06-06T04:40:12.7494047Z"
+  "created_at": "2026-06-06T04:56:21.6154712Z"
 }

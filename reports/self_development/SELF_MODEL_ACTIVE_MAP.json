@@ -575,7 +575,6 @@
       "evidence_paths": [
         "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -598,7 +597,6 @@
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md",
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
@@ -614,7 +612,6 @@
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -637,7 +634,6 @@
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -647,7 +643,6 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -664,7 +659,6 @@
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -687,7 +681,6 @@
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
@@ -794,7 +787,6 @@
       "evidence_paths": [
         "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -817,7 +809,6 @@
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md",
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
@@ -833,7 +824,6 @@
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -856,7 +846,6 @@
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -866,7 +855,6 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -883,7 +871,6 @@
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -906,7 +893,6 @@
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
@@ -965,8 +951,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
         "route_change_requests/PHASE161E_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_change_requests/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REQUEST.md",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md"
@@ -975,7 +961,8 @@
       "validator_evidence_paths": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
@@ -1007,8 +994,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json"
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
@@ -1035,7 +1022,8 @@
       "validators": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -1061,8 +1049,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json"
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
@@ -1122,8 +1110,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
         "route_change_requests/PHASE161E_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_change_requests/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REQUEST.md",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md"
@@ -1132,7 +1120,8 @@
       "validator_evidence_paths": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
@@ -1164,8 +1153,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json"
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
@@ -1190,7 +1179,8 @@
       "validators": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -1216,8 +1206,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json"
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
@@ -3258,13 +3248,29 @@
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "evidence_basis": "Current code/route wiring signal without proof.",
-      "evidence_paths": [],
+      "evidence_paths": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
       "proof_evidence_paths": [],
-      "report_reference_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
         "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
@@ -3274,6 +3280,13 @@
       "stub_false_positive": false,
       "callers": [
         "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
       "callees": [
@@ -3282,7 +3295,15 @@
       "validators": [
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
-      "reports": [],
+      "reports": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "proofs": [],
       "schemas": [],
       "route_lock_references": [],
@@ -5909,10 +5930,22 @@
       "evidence_paths": [
         "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json",
         "reports/self_development/acceptance_pipeline_self_map_refresh_policy.json",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161H_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161H_REFRESH_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md",
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -5924,10 +5957,22 @@
       ],
       "report_reference_paths": [
         "reports/self_development/acceptance_pipeline_self_map_refresh_policy.json",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161H_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
-        "reports/self_development/PHASE161H_EXECUTION_PLAN.md"
+        "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161H_REFRESH_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md",
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
@@ -5936,6 +5981,12 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
       "callees": [
@@ -5948,10 +5999,22 @@
       ],
       "reports": [
         "reports/self_development/acceptance_pipeline_self_map_refresh_policy.json",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161H_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
-        "reports/self_development/PHASE161H_EXECUTION_PLAN.md"
+        "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161H_REFRESH_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md",
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json"
@@ -6893,6 +6956,77 @@
         "route_change_requests/PHASE152_MAXIMAL_BODY_ORGAN_PACK_ALIGNMENT_REQUEST.md"
       ],
       "last_known_phase": "PHASE152",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
+    },
+    {
+      "artifact_id": "modules_invoke_builder_github_push_self_map_auto_refresh_001_ps1",
+      "path": "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": "PHASE161I",
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+      ],
+      "report_reference_paths": [
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "callees": [
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1"
+      ],
+      "validators": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md"
+      ],
+      "last_known_phase": "PHASE161I",
       "safe_to_modify": true,
       "owner_approval_required": false,
       "missing_link_reason": null,
@@ -9153,8 +9287,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
         "route_change_requests/PHASE161E_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_change_requests/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REQUEST.md",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md"
@@ -9163,7 +9297,8 @@
       "validator_evidence_paths": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
@@ -9195,18 +9330,20 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json"
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "superseded_by": null,
       "stub_false_positive": true,
       "callers": [
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -9228,7 +9365,8 @@
       "validators": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -9254,8 +9392,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json"
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
@@ -10277,7 +10415,6 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "live_evidence_paths": [],
@@ -10289,7 +10426,6 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -10311,7 +10447,6 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "self_knowledge/BUILDER_SELF_MODEL.json",
         "self_knowledge/MODULE_INVENTORY.json",
@@ -10332,7 +10467,6 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [],
@@ -11665,6 +11799,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -11686,7 +11821,6 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_REPORT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_EXECUTION_PLAN.md",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REQUEST.md",
         "route_change_requests/PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_REQUEST.md",
@@ -11729,7 +11863,8 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -11762,6 +11897,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -11782,8 +11918,7 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_EXECUTION_PLAN.md"
+        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1.json",
@@ -11858,12 +11993,14 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -11884,8 +12021,7 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_EXECUTION_PLAN.md"
+        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md"
       ],
       "proofs": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -12147,7 +12283,6 @@
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "live_evidence_paths": [],
@@ -12160,7 +12295,6 @@
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -12174,7 +12308,6 @@
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "self_knowledge/BUILDER_SELF_MODEL.json",
         "self_knowledge/MODULE_INVENTORY.json",
@@ -12191,7 +12324,6 @@
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [],
@@ -16789,13 +16921,27 @@
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "evidence_basis": "Current code/route wiring signal without proof.",
-      "evidence_paths": [],
+      "evidence_paths": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
       "proof_evidence_paths": [],
-      "report_reference_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
@@ -16803,6 +16949,12 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
       "callees": [
@@ -16811,7 +16963,14 @@
       "validators": [
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
-      "reports": [],
+      "reports": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "proofs": [],
       "schemas": [],
       "route_lock_references": [],
@@ -16859,12 +17018,16 @@
       "historical_reference_paths": [],
       "current_wiring_signals": [
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+        "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+        "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -16977,6 +17140,75 @@
       "missing_link_reason": null,
       "placeholder_reason": null,
       "recommended_next_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
+      "artifact_id": "modules_validate_builder_github_push_self_map_auto_refresh_workflow_001_ps1",
+      "path": "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": "PHASE161I",
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+      ],
+      "report_reference_paths": [
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "callees": [
+        "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+        "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1"
+      ],
+      "validators": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md"
+      ],
+      "last_known_phase": "PHASE161I",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
     },
     {
       "artifact_id": "modules_validate_builder_limited_protected_self_model_compatibility_001_ps1",
@@ -17129,7 +17361,6 @@
       "evidence_paths": [
         "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -17151,8 +17382,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
-        "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md",
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
@@ -17168,7 +17397,6 @@
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -17190,8 +17418,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
-        "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -17201,7 +17427,6 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -17217,7 +17442,6 @@
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -17239,8 +17463,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
-        "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
@@ -18297,13 +18519,27 @@
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "evidence_basis": "Current code/route wiring signal without proof.",
-      "evidence_paths": [],
+      "evidence_paths": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
       "proof_evidence_paths": [],
-      "report_reference_paths": [],
+      "report_reference_paths": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
@@ -18313,6 +18549,12 @@
       "stub_false_positive": false,
       "callers": [
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
       "callees": [
@@ -18321,7 +18563,14 @@
       "validators": [
         "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
       ],
-      "reports": [],
+      "reports": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
       "proofs": [],
       "schemas": [],
       "route_lock_references": [],
@@ -18331,6 +18580,74 @@
       "missing_link_reason": null,
       "placeholder_reason": null,
       "recommended_next_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
+      "artifact_id": "modules_write_builder_github_push_self_map_auto_refresh_delivery_001_ps1",
+      "path": "modules/write_builder_github_push_self_map_auto_refresh_delivery_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": "PHASE161I",
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+      ],
+      "report_reference_paths": [
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "reports": [
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md"
+      ],
+      "last_known_phase": "PHASE161I",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
     },
     {
       "artifact_id": "modules_write_builder_learning_absorption_report_001_ps1",
@@ -18534,7 +18851,6 @@
       "evidence_paths": [
         "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -18556,8 +18872,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
-        "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md",
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
@@ -18573,7 +18887,6 @@
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -18595,8 +18908,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
-        "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -18606,7 +18917,6 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -18622,7 +18932,6 @@
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -18644,8 +18953,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
-        "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
@@ -18943,8 +19250,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json",
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
         "route_change_requests/PHASE161E_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_change_requests/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REQUEST.md",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md"
@@ -18953,7 +19260,8 @@
       "validator_evidence_paths": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
@@ -18985,8 +19293,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json"
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
@@ -19012,7 +19320,8 @@
       "validators": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -19038,8 +19347,8 @@
         "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
         "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
-        "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json"
+        "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
@@ -21047,6 +21356,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21068,7 +21378,6 @@
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
         "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REQUEST.md",
         "route_change_requests/PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_REQUEST.md",
@@ -21112,7 +21421,8 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -21145,6 +21455,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21165,8 +21476,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1.json",
@@ -21254,12 +21564,14 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21280,8 +21592,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "proofs": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -21366,6 +21677,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21387,7 +21699,6 @@
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
         "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REQUEST.md",
         "route_change_requests/PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_REQUEST.md",
@@ -21431,7 +21742,8 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -21464,6 +21776,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21484,8 +21797,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1.json",
@@ -21573,12 +21885,14 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21599,8 +21913,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "proofs": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -21685,6 +21998,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21706,7 +22020,6 @@
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
         "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REQUEST.md",
         "route_change_requests/PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_REQUEST.md",
@@ -21750,7 +22063,8 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -21783,6 +22097,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21803,8 +22118,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1.json",
@@ -21893,12 +22207,14 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -21919,8 +22235,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "proofs": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -22005,6 +22320,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22026,7 +22342,6 @@
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
         "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REQUEST.md",
         "route_change_requests/PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_REQUEST.md",
@@ -22070,7 +22385,8 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -22103,6 +22419,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22123,8 +22440,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1.json",
@@ -22215,12 +22531,14 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22241,8 +22559,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "proofs": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -22327,6 +22644,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22348,7 +22666,6 @@
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
         "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REQUEST.md",
         "route_change_requests/PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_REQUEST.md",
@@ -22392,7 +22709,8 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -22425,6 +22743,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22445,8 +22764,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1.json",
@@ -22534,12 +22852,14 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22560,8 +22880,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "proofs": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -22646,6 +22965,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22667,7 +22987,6 @@
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
         "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REQUEST.md",
         "route_change_requests/PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_REQUEST.md",
@@ -22711,7 +23030,8 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -22744,6 +23064,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22764,8 +23085,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1.json",
@@ -22853,12 +23173,14 @@
         "validators/validate_phase160g_full_runtime_guard_baseline_allowed_outputs_truthful_self_production_gate_v1.ps1",
         "validators/validate_phase160h_real_payload_generation_quality_gate_revision_feedback_v1.ps1",
         "validators/validate_phase160h1_payload_writer_directory_creation_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/self_development/agent_body_map.json",
         "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
@@ -22879,8 +23201,7 @@
         "reports/self_development/PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1_REPORT.json",
         "reports/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1_REPORT.json",
         "reports/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1_REPORT.json",
-        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json"
+        "reports/self_development/PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1_REPORT.json"
       ],
       "proofs": [
         "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
@@ -22970,6 +23291,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -22986,7 +23308,6 @@
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
         "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md",
         "route_change_requests/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
@@ -23017,6 +23338,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -23063,7 +23385,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23101,6 +23424,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -23116,8 +23440,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23164,7 +23487,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -23175,6 +23499,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -23190,8 +23515,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23252,6 +23576,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -23308,6 +23633,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -23324,7 +23650,6 @@
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
         "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md",
         "route_change_requests/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
@@ -23355,6 +23680,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -23401,7 +23727,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23439,6 +23766,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -23454,8 +23782,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23502,7 +23829,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -23513,6 +23841,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -23528,8 +23857,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23590,6 +23918,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -23646,6 +23975,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -23662,7 +23992,6 @@
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
         "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md",
         "route_change_requests/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
@@ -23693,6 +24022,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -23739,7 +24069,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23777,6 +24108,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -23792,8 +24124,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23843,7 +24174,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -23854,6 +24186,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -23869,8 +24202,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23931,6 +24263,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -23987,6 +24320,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24003,7 +24337,6 @@
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
         "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md",
         "route_change_requests/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
@@ -24034,6 +24367,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -24080,7 +24414,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24118,6 +24453,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24133,8 +24469,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24184,7 +24519,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -24195,6 +24531,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24210,8 +24547,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24272,6 +24608,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -24328,6 +24665,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24344,7 +24682,6 @@
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
         "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md",
         "route_change_requests/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
@@ -24375,6 +24712,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -24421,7 +24759,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24459,6 +24798,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24474,8 +24814,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24522,7 +24861,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -24533,6 +24873,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24548,8 +24889,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24610,6 +24950,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -24666,6 +25007,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24682,7 +25024,6 @@
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
         "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md",
         "route_change_requests/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
@@ -24713,6 +25054,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -24759,7 +25101,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "proof_evidence_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24797,6 +25140,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24812,8 +25156,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24860,7 +25203,8 @@
         "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
         "validators/validate_phase161g1_limited_protected_self_model_consumer_compatibility_v1.ps1",
         "validators/validate_phase161g2_apply_limited_protected_self_model_references_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
@@ -24871,6 +25215,7 @@
         "reports/self_development/agent_body_map.json",
         "reports/self_development/agent_body_map.md",
         "reports/self_development/function_inventory.json",
+        "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/historical_reference_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
@@ -24886,8 +25231,7 @@
         "reports/self_development/PHASE160B_MACRO_SELF_GROWTH_IGNITION_REPORT.md",
         "reports/self_development/PHASE160C_LIVE_MACRO_RUN_BINDING_REPAIR_REPORT.md",
         "reports/self_development/PHASE160D_LIVE_TASK_INTAKE_QUEUE_DIGEST_PLAN_BINDING_REPORT.md",
-        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160F_FULL_SELF_INITIATED_GOAL_SELECTION_LIVE_CANDIDATE_PRODUCTION_REPORT.md"
+        "reports/self_development/PHASE160E_FULL_LONG_LIVED_RUNNER_CANDIDATE_WORKSPACE_PROMOTION_TASK_LIFECYCLE_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -24948,6 +25292,7 @@
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md",
         "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
+        "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
         "route_locks/ACTIVE_ROUTE_LOCK.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
@@ -25501,458 +25846,6 @@
       "missing_link_reason": null,
       "placeholder_reason": null,
       "recommended_next_action": "Keep as live-proven active evidence input."
-    },
-    {
-      "artifact_id": "packs_PHASE7_FIRST_PROVEN_EXTERNAL_AGENT_payload_validators_validate_first_proven_external_agent_ps1",
-      "path": "packs/PHASE7_FIRST_PROVEN_EXTERNAL_AGENT/payload/validators/validate_first_proven_external_agent.ps1",
-      "artifact_type": "pack",
-      "phase_hint": "PHASE7",
-      "role_guess": "pack",
-      "primary_status": "ACTIVE_WIRED_PROVEN",
-      "why_status": "Artifact has current route/daemon/runner wiring and live/runtime proof evidence.",
-      "evidence_type": "LIVE_RUNTIME_PROVEN",
-      "evidence_strength": "LIVE_STRONG",
-      "evidence_basis": "Current wiring signal plus live/runtime proof path.",
-      "evidence_paths": [
-        "proofs/FIRST_EXTERNAL_AGENT_PROOF_001.json",
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json",
-        "reports/external_agent_production/AGENT_PROGRAM_EXECUTOR_V1_REPORT.json",
-        "reports/external_agent_production/AGENT_PROGRAM_INPUT_FORMAT_V1_REPORT.json",
-        "reports/external_agent_production/GENERATED_AGENT_GIT_PACKAGING_GUARDRAIL.md",
-        "reports/external_agent_production/RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1_REPORT.json",
-        "reports/external_agent_production/RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1_REPORT.json",
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/orphaned_artifact_inventory.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md",
-        "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "live_evidence_paths": [
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json"
-      ],
-      "validator_evidence_paths": [
-        "validators/validate_agent_production_closed_loop_standard_v1.ps1",
-        "validators/validate_agent_program_executor_v1.ps1",
-        "validators/validate_agent_program_input_format_v1.ps1",
-        "validators/validate_evidence_packager_agent_closed_loop_trial_v1.ps1",
-        "validators/validate_external_agent_package_generator.ps1",
-        "validators/validate_first_proven_external_agent.ps1",
-        "validators/validate_runbook_executor_agent_github_action_acceptance_v1.ps1",
-        "validators/validate_runbook_executor_agent_github_action_launch_v1.ps1",
-        "validators/validate_runbook_executor_agent_production_v1.ps1",
-        "validators/validate_runbook_executor_agent_program_trial_v1.ps1"
-      ],
-      "proof_evidence_paths": [
-        "proofs/FIRST_EXTERNAL_AGENT_PROOF_001.json",
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json"
-      ],
-      "report_reference_paths": [
-        "reports/external_agent_production/AGENT_PROGRAM_EXECUTOR_V1_REPORT.json",
-        "reports/external_agent_production/AGENT_PROGRAM_INPUT_FORMAT_V1_REPORT.json",
-        "reports/external_agent_production/GENERATED_AGENT_GIT_PACKAGING_GUARDRAIL.md",
-        "reports/external_agent_production/RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1_REPORT.json",
-        "reports/external_agent_production/RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1_REPORT.json",
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/orphaned_artifact_inventory.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
-      ],
-      "historical_reference_paths": [
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md"
-      ],
-      "current_wiring_signals": [
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "superseded_by": null,
-      "stub_false_positive": false,
-      "callers": [
-        ""
-      ],
-      "callees": [
-        "modules/new_external_agent_package.ps1"
-      ],
-      "validators": [
-        "validators/validate_agent_production_closed_loop_standard_v1.ps1",
-        "validators/validate_agent_program_executor_v1.ps1",
-        "validators/validate_agent_program_input_format_v1.ps1",
-        "validators/validate_evidence_packager_agent_closed_loop_trial_v1.ps1",
-        "validators/validate_external_agent_package_generator.ps1",
-        "validators/validate_first_proven_external_agent.ps1",
-        "validators/validate_runbook_executor_agent_github_action_acceptance_v1.ps1",
-        "validators/validate_runbook_executor_agent_github_action_launch_v1.ps1",
-        "validators/validate_runbook_executor_agent_production_v1.ps1",
-        "validators/validate_runbook_executor_agent_program_trial_v1.ps1"
-      ],
-      "reports": [
-        "reports/external_agent_production/AGENT_PROGRAM_EXECUTOR_V1_REPORT.json",
-        "reports/external_agent_production/AGENT_PROGRAM_INPUT_FORMAT_V1_REPORT.json",
-        "reports/external_agent_production/GENERATED_AGENT_GIT_PACKAGING_GUARDRAIL.md",
-        "reports/external_agent_production/RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1_REPORT.json",
-        "reports/external_agent_production/RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1_REPORT.json",
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/orphaned_artifact_inventory.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
-      ],
-      "proofs": [
-        "proofs/FIRST_EXTERNAL_AGENT_PROOF_001.json",
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json"
-      ],
-      "schemas": [],
-      "route_lock_references": [
-        "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "last_known_phase": "PHASE7",
-      "safe_to_modify": true,
-      "owner_approval_required": false,
-      "missing_link_reason": null,
-      "placeholder_reason": null,
-      "recommended_next_action": "Keep as live-proven active evidence input."
-    },
-    {
-      "artifact_id": "packs_PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_APPLY_ps1",
-      "path": "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/APPLY.ps1",
-      "artifact_type": "pack",
-      "phase_hint": "PHASE78",
-      "role_guess": "pack",
-      "primary_status": "ACTIVE_WIRED_PROVEN",
-      "why_status": "Artifact has current route/daemon/runner wiring and live/runtime proof evidence.",
-      "evidence_type": "LIVE_RUNTIME_PROVEN",
-      "evidence_strength": "LIVE_STRONG",
-      "evidence_basis": "Current wiring signal plus live/runtime proof path.",
-      "evidence_paths": [
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json",
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md",
-        "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "live_evidence_paths": [
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json"
-      ],
-      "validator_evidence_paths": [],
-      "proof_evidence_paths": [
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json"
-      ],
-      "report_reference_paths": [
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
-      ],
-      "historical_reference_paths": [
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md"
-      ],
-      "current_wiring_signals": [
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "superseded_by": null,
-      "stub_false_positive": false,
-      "callers": [
-        ""
-      ],
-      "callees": [
-        "modules/build_builder_self_knowledge.ps1",
-        "modules/write_builder_self_describe_report.ps1"
-      ],
-      "validators": [],
-      "reports": [
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
-      ],
-      "proofs": [
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json"
-      ],
-      "schemas": [],
-      "route_lock_references": [
-        "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "last_known_phase": "PHASE78",
-      "safe_to_modify": true,
-      "owner_approval_required": false,
-      "missing_link_reason": null,
-      "placeholder_reason": null,
-      "recommended_next_action": "Keep as live-proven active evidence input."
-    },
-    {
-      "artifact_id": "packs_PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1_PACK_json",
-      "path": "packs/PHASE78_AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1/PACK.json",
-      "artifact_type": "pack",
-      "phase_hint": "PHASE78",
-      "role_guess": "pack",
-      "primary_status": "ACTIVE_WIRED_PROVEN",
-      "why_status": "Artifact has current route/daemon/runner wiring and live/runtime proof evidence.",
-      "evidence_type": "LIVE_RUNTIME_PROVEN",
-      "evidence_strength": "LIVE_STRONG",
-      "evidence_basis": "Current wiring signal plus live/runtime proof path.",
-      "evidence_paths": [
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json",
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md",
-        "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "live_evidence_paths": [
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json"
-      ],
-      "validator_evidence_paths": [],
-      "proof_evidence_paths": [
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json"
-      ],
-      "report_reference_paths": [
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
-      ],
-      "historical_reference_paths": [
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md"
-      ],
-      "current_wiring_signals": [
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "superseded_by": null,
-      "stub_false_positive": false,
-      "callers": [
-        ""
-      ],
-      "callees": [
-        ""
-      ],
-      "validators": [],
-      "reports": [
-        "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
-        "reports/phase78/PHASE78_RUNTIME_REPAIR_TASK_REPORT.md",
-        "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_COMPACT_DIGEST_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
-        "reports/self_knowledge/BUILDER_SELF_DESCRIBE_SUMMARY.md"
-      ],
-      "proofs": [
-        "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
-        "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
-        "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
-        "proofs/materials/MATERIAL_POLICY_V1.json",
-        "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
-        "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
-        "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
-        "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
-        "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json"
-      ],
-      "schemas": [],
-      "route_lock_references": [
-        "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "last_known_phase": "PHASE78",
-      "safe_to_modify": true,
-      "owner_approval_required": false,
-      "missing_link_reason": null,
-      "placeholder_reason": null,
-      "recommended_next_action": "Keep as live-proven active evidence input."
     }
   ],
   "evidence_type_counts": [
@@ -25962,11 +25855,11 @@
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
-      "count": 98
+      "count": 101
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 78
+      "count": 79
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -25998,7 +25891,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 713
+      "count": 720
     }
   ],
   "important_gaps": [
@@ -26089,8 +25982,8 @@
     }
   ],
   "self_map_refresh_policy_id": "PHASE161E_SELF_MAP_REFRESH_AFTER_ACCEPTED_CHANGE_POLICY_V1",
-  "accepted_subject_head": "6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360",
-  "generated_from_worktree_head": "6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360",
+  "accepted_subject_head": "7729afa8b72a2307938689841398862ddd8ba58d",
+  "generated_from_worktree_head": "7729afa8b72a2307938689841398862ddd8ba58d",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",

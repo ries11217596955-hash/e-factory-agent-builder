@@ -410,6 +410,14 @@
       "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
+      "path": "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+      "artifact_type": "report",
+      "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
       "path": "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
       "artifact_type": "report",
       "false_positive_signal": "False-positive stub wording detected; not treated as real stub.",

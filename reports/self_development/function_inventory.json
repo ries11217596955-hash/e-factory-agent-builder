@@ -3108,6 +3108,65 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-GitHubPushRefresh",
+        "Get-GitHubPushRefreshHash",
+        "Get-GitHubPushRefreshChangedPaths",
+        "Write-GitHubPushRefreshJson"
+      ],
+      "param_names": [
+        "AcceptedSubjectHead",
+        "AcceptedPhase",
+        "TriggerReason",
+        "RepoRoot",
+        "DryRun",
+        "Condition",
+        "Message",
+        "Root",
+        "Path",
+        "_",
+        "Value",
+        "dir",
+        "root",
+        "requiredRoot",
+        "path",
+        "head",
+        "protected",
+        "protectedStatusBefore",
+        "routeStatusBefore",
+        "runtimeStagedBefore",
+        "protectedHashes",
+        "routeHash",
+        "refreshModule",
+        "contractModule",
+        "refresh",
+        "contract",
+        "after",
+        "routeHashAfter",
+        "runtimeStagedAfter",
+        "resultRelative",
+        "changed",
+        "result"
+      ],
+      "exported_behavior_guess": "Assert-GitHubPushRefresh, Get-GitHubPushRefreshHash, Get-GitHubPushRefreshChangedPaths, Write-GitHubPushRefreshJson",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $Path -Encoding UTF8"
+      ],
+      "calls_detected": [
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/invoke_builder_internal_active_task_creation_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -9323,6 +9382,41 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-GitHubWorkflow"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "WorkflowPath",
+        "Condition",
+        "Message",
+        "root",
+        "full",
+        "text",
+        "Path",
+        "allowedMatch",
+        "Allowed",
+        "allowedPaths",
+        "_",
+        "forbidden",
+        "wrapperPath",
+        "wrapperText"
+      ],
+      "exported_behavior_guess": "Assert-GitHubWorkflow",
+      "write_outputs_detected": [],
+      "calls_detected": [
+        "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+        "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -9670,6 +9764,30 @@
       "write_outputs_detected": [
         "New-Item -ItemType Directory -Path $dir | Out-Null",
         "ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $full -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/write_builder_github_push_self_map_auto_refresh_delivery_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "Delivery",
+        "OutputPath",
+        "root",
+        "full",
+        "dir"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "Set-Content -LiteralPath $full -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
@@ -28289,6 +28407,70 @@
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
         "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
         "modules/write_builder_acceptance_pipeline_refresh_delivery_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-Phase161I",
+        "Test-Phase161IParser",
+        "Write-Phase161IJson"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "ExpectedHead",
+        "Condition",
+        "Message",
+        "Path",
+        "tokens",
+        "errors",
+        "_",
+        "Value",
+        "dir",
+        "root",
+        "identity",
+        "path",
+        "branchBefore",
+        "headBefore",
+        "parserFiles",
+        "workflowRelative",
+        "workflowValidation",
+        "policyPath",
+        "policy",
+        "protectedBefore",
+        "routeHashBefore",
+        "dryRun",
+        "after",
+        "routeHashAfter",
+        "protectedStatus",
+        "runtimeStaged",
+        "branchAfter",
+        "headAfter",
+        "proofRelative",
+        "reportRelative",
+        "requestRelative",
+        "deliveryRelative",
+        "proof"
+      ],
+      "exported_behavior_guess": "Assert-Phase161I, Test-Phase161IParser, Write-Phase161IJson",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $root $reportRelative) -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $root $requestRelative) -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $root $deliveryRelative) -Encoding UTF8"
+      ],
+      "calls_detected": [
+        "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+        "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
+        "modules/write_builder_github_push_self_map_auto_refresh_delivery_001.ps1"
       ],
       "safety_sensitive_operations_detected": [
         "runtime_writes",

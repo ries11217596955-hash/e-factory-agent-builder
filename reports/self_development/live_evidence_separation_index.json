@@ -8,11 +8,11 @@
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
-      "count": 98
+      "count": 101
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 78
+      "count": 79
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -44,7 +44,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 713
+      "count": 720
     }
   ],
   "live_or_current_wired_items": [
@@ -919,6 +919,20 @@
         "proofs/self_development/PHASE151_BUILDER_SELF_BUILD_PROGRAM_ADMISSION_GATE_V1.json",
         "proofs/self_development/PHASE152_BUILDER_EXECUTES_ADMITTED_SELF_BUILD_PROGRAM_IN_SANDBOX_V1.json",
         "proofs/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1.json"
+      ]
+    },
+    {
+      "path": "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
       ]
     },
     {
@@ -2395,6 +2409,8 @@
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "current_wiring_signals": [
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+        "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "live_evidence_paths": [],
@@ -2414,6 +2430,19 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": []
+    },
+    {
+      "path": "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+      ]
     },
     {
       "path": "modules/validate_builder_limited_protected_self_model_compatibility_001.ps1",
@@ -2567,6 +2596,19 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": []
+    },
+    {
+      "path": "modules/write_builder_github_push_self_map_auto_refresh_delivery_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+      ]
     },
     {
       "path": "modules/write_builder_learning_absorption_report_001.ps1",
@@ -4779,7 +4821,8 @@
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
         "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
-        "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json"
+        "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json",
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
       ]
     },
     {
@@ -4812,7 +4855,8 @@
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
         "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
-        "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json"
+        "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json",
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
       ]
     },
     {

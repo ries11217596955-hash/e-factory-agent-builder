@@ -1,21 +1,19 @@
 {
-  "accepted_subject_head": "6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360",
-  "accepted_phase": "PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT",
-  "commit_message_or_phase_label": "PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT",
+  "accepted_subject_head": "7729afa8b72a2307938689841398862ddd8ba58d",
+  "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
+  "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "docs/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT.md",
-    "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
-    "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
-    "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
-    "modules/write_builder_acceptance_pipeline_refresh_delivery_001.ps1",
-    "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json",
-    "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_CODEX_DELIVERY.md",
-    "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
-    "reports/self_development/PHASE161H_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
-    "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-    "reports/self_development/acceptance_pipeline_self_map_refresh_policy.json",
-    "route_change_requests/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REQUEST.md",
-    "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+    ".github/workflows/self-map-auto-refresh-after-push.yml",
+    "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+    "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
+    "modules/write_builder_github_push_self_map_auto_refresh_delivery_001.ps1",
+    "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
+    "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
+    "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+    "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
+    "reports/self_development/github_push_self_map_auto_refresh_policy.json",
+    "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
+    "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -23,5 +21,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-06T04:40:13.2631074Z"
+  "created_at": "2026-06-06T04:56:22.1623239Z"
 }

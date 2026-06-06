@@ -1,0 +1,24 @@
+{
+  "review_id": "PHASE161G1_DELAYED_OR_BLOCKED_SCOPE_V1",
+  "items": [
+    {
+      "target_file": "TASK_QUEUE.json",
+      "decision": "DELAY",
+      "reason": "Queue content affects scheduling and active-task behavior.",
+      "future_proof_required": "Separate queue-consumer, alias, backlog, and active_task_id preservation proof."
+    },
+    {
+      "target_file": "packs/registry.json",
+      "decision": "DELAY",
+      "reason": "No executable pack exists for this capability; registry admission would create false wiring.",
+      "future_proof_required": "Real pack artifact and pack admission compatibility proof."
+    },
+    {
+      "target_file": "orchestrator/run.ps1",
+      "decision": "REJECT",
+      "reason": "No orchestrator flow change is justified by the protected metadata candidate.",
+      "future_proof_required": "Separately scoped accepted-change hook, failure behavior, and orchestration regression proof."
+    }
+  ],
+  "owner_approval_required": true
+}

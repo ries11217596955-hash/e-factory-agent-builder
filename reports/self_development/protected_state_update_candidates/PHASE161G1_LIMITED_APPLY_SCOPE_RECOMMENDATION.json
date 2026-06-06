@@ -1,0 +1,54 @@
+{
+  "recommendation_id": "PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION_V1",
+  "source_candidate_manifest": "reports/self_development/protected_state_update_candidates/PHASE161F_PROMOTION_MANIFEST.json",
+  "recommended_future_phase": "PHASE161G2_APPLY_LIMITED_PROTECTED_SELF_MODEL_REFERENCES",
+  "apply_allowed_now": false,
+  "decisions": {
+    "genesis_state": "APPROVE_WITH_LIMITS",
+    "capability_roadmap": "APPROVE_WITH_LIMITS",
+    "task_queue": "DELAY",
+    "packs_registry": "DELAY",
+    "orchestrator_run": "REJECT"
+  },
+  "future_apply_scope": [
+    {
+      "target_file": "GENESIS_STATE.json",
+      "section": "protected_self_model_memory",
+      "allowed_only_if_decision": "APPROVE_WITH_LIMITS"
+    },
+    {
+      "target_file": "CAPABILITY_ROADMAP.json",
+      "section": "phase161e_self_map_auto_refresh",
+      "allowed_only_if_decision": "APPROVE_WITH_LIMITS"
+    }
+  ],
+  "delayed_scope": [
+    "TASK_QUEUE.json",
+    "packs/registry.json",
+    "orchestrator/run.ps1"
+  ],
+  "explicit_forbidden_changes": [
+    "current_phase",
+    "active_task_id",
+    "active route lock",
+    "pack registry admission",
+    "orchestrator flow",
+    "validator-only-to-live promotion",
+    "full body map copy into protected state"
+  ],
+  "required_pre_apply_hashes": {
+    "GENESIS_STATE.json": "2E42C007217F0B3ABAE6AB0817D1D6607175FBD3F30E3169884773EF17F6D20F",
+    "CAPABILITY_ROADMAP.json": "CAF5552F5630E8D9783213CDCDAEFBF55491181DD41CB778965720DA5BDCA1CA"
+  },
+  "required_post_apply_checks": [
+    "JSON parse",
+    "existing field equality",
+    "current_phase unchanged",
+    "existing roadmap entries unchanged",
+    "consumer regression checks",
+    "PHASE161E self-map refresh",
+    "protected diff review"
+  ],
+  "rollback_required": true,
+  "owner_approval_required": true
+}

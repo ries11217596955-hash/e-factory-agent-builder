@@ -1,0 +1,29 @@
+{
+  "phase": "PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_V1",
+  "validate_result": "PASS",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "04565dae6f458f4445b1e581c245917b66623ac2",
+  "head_after": "04565dae6f458f4445b1e581c245917b66623ac2",
+  "policy_id": "PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_POLICY_V1",
+  "dry_run_sequence": [
+    "VALIDATE_FUNCTIONAL_CHANGE",
+    "COMMIT_FUNCTIONAL_CHANGE",
+    "PUSH_AND_VERIFY_FUNCTIONAL_COMMIT",
+    "RUN_SELF_MAP_REFRESH_AGAINST_FUNCTIONAL_COMMIT",
+    "VALIDATE_SELF_KNOWLEDGE_READY",
+    "COMMIT_REFRESH_ARTIFACTS",
+    "PUSH_AND_VERIFY_REFRESH_COMMIT"
+  ],
+  "automatic_refresh_enforced": true,
+  "functional_then_refresh_commit_enforced": true,
+  "self_knowledge_ready_required": true,
+  "passive_stale_allowed": false,
+  "no_infinite_refresh_recursion": true,
+  "protected_state_mutated": false,
+  "route_lock_mutated": false,
+  "runtime_outputs_staged": false,
+  "no_commit_performed": true,
+  "no_push_performed": true,
+  "no_branch_switch": true,
+  "created_at": "2026-06-06T04:32:59.8094461Z"
+}

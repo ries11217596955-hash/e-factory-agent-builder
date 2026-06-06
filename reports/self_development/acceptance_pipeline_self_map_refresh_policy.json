@@ -1,0 +1,15 @@
+{
+  "policy_id": "PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_POLICY_V1",
+  "policy_name": "Acceptance pipeline self-map refresh enforcement",
+  "required_after_functional_accept_commit": true,
+  "passive_stale_allowed": false,
+  "refresh_commit_required": true,
+  "self_knowledge_ready_required": true,
+  "next_decision_requires_self_knowledge_ready": true,
+  "protected_state_direct_mutation_allowed": false,
+  "runtime_sessions_staged_allowed": false,
+  "accepted_change_is_complete_only_after_refresh": true,
+  "functional_commit_then_refresh_commit": true,
+  "refresh_commit_subject_is_functional_commit": true,
+  "no_infinite_refresh_recursion": true
+}

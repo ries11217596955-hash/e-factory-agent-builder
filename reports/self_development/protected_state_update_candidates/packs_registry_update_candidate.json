@@ -1,0 +1,25 @@
+{
+  "target_file": "packs/registry.json",
+  "current_file_hash_or_size": {
+    "sha256": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760",
+    "size_bytes": 54640
+  },
+  "source_self_map_head": "777326e87a797b9b90e6411aff7da0a4379455c4",
+  "proposed_update_type": "NO_CHANGE_RECOMMENDED",
+  "proposed_fields_or_sections": {
+    "recommendation": "Do not add PHASE161E/PHASE161F as a pack entry.",
+    "reason": "The accepted self-map refresh is implemented through modules, validators, and derived reports; no admitted executable pack was created."
+  },
+  "reason": "Adding a registry entry without a real pack would create false capability wiring.",
+  "risk_level": "LOW",
+  "owner_approval_required": true,
+  "direct_apply_allowed": false,
+  "rollback_note": "Restore exact pre-apply bytes identified by the recorded SHA-256 if a future approved apply fails validation.",
+  "validation_required": [
+    "Parse target JSON after proposed apply.",
+    "Run target-specific validators and downstream consumer compatibility checks.",
+    "Confirm protected target pre-apply SHA-256 matches candidate identity.",
+    "Run PHASE161E self-map refresh after approved apply.",
+    "Confirm no validator-only evidence is promoted to live evidence."
+  ]
+}

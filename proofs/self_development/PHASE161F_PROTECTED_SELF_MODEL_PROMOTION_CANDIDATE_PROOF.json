@@ -1,0 +1,38 @@
+{
+  "phase": "PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_V1",
+  "validate_result": "PASS",
+  "source_baseline_head": "777326e87a797b9b90e6411aff7da0a4379455c4",
+  "promotion_id": "PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_V1",
+  "candidate_status": "OWNER_REVIEW_REQUIRED",
+  "target_protected_files": [
+    "TASK_QUEUE.json",
+    "GENESIS_STATE.json",
+    "CAPABILITY_ROADMAP.json",
+    "packs/registry.json",
+    "orchestrator/run.ps1"
+  ],
+  "candidate_file_count": 10,
+  "proposed_changes_count": 3,
+  "dry_run_status": "PASS",
+  "protected_files_modified_directly": false,
+  "protected_hashes_before": {
+    "GENESIS_STATE.json": "2E42C007217F0B3ABAE6AB0817D1D6607175FBD3F30E3169884773EF17F6D20F",
+    "packs/registry.json": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760",
+    "orchestrator/run.ps1": "51AA1CBEB0339B2DF0CBA84606E414D9DFA7395DED7179CC5248B3C4BC5CC91D",
+    "TASK_QUEUE.json": "27220D7E169EDA9E60341B4A7A2817D3515DE8C8BB11DFC7C841A941FC01C4EC",
+    "CAPABILITY_ROADMAP.json": "CAF5552F5630E8D9783213CDCDAEFBF55491181DD41CB778965720DA5BDCA1CA"
+  },
+  "protected_hashes_after": {
+    "GENESIS_STATE.json": "2E42C007217F0B3ABAE6AB0817D1D6607175FBD3F30E3169884773EF17F6D20F",
+    "packs/registry.json": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760",
+    "orchestrator/run.ps1": "51AA1CBEB0339B2DF0CBA84606E414D9DFA7395DED7179CC5248B3C4BC5CC91D",
+    "TASK_QUEUE.json": "27220D7E169EDA9E60341B4A7A2817D3515DE8C8BB11DFC7C841A941FC01C4EC",
+    "CAPABILITY_ROADMAP.json": "CAF5552F5630E8D9783213CDCDAEFBF55491181DD41CB778965720DA5BDCA1CA"
+  },
+  "runtime_outputs_staged": false,
+  "no_commit_performed": true,
+  "no_push_performed": true,
+  "no_branch_switch": true,
+  "phase161e_self_knowledge_ready_preserved": true,
+  "created_at": "2026-06-06T03:02:18.3954727Z"
+}

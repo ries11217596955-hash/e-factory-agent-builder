@@ -1,0 +1,28 @@
+{
+  "promotion_id": "PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_V1",
+  "source_baseline_head": "777326e87a797b9b90e6411aff7da0a4379455c4",
+  "source_phase": "PHASE161E_SELF_MAP_AUTO_REFRESH_AFTER_ACCEPTED_CHANGE",
+  "source_self_model_active_map": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+  "source_memory_report": "reports/self_development/self_map_memory_report.md",
+  "source_refresh_result": "reports/self_development/self_map_refresh_after_acceptance_result.json",
+  "target_protected_files": [
+    "TASK_QUEUE.json",
+    "GENESIS_STATE.json",
+    "CAPABILITY_ROADMAP.json",
+    "packs/registry.json",
+    "orchestrator/run.ps1"
+  ],
+  "direct_mutation_performed": false,
+  "owner_approval_required": true,
+  "candidate_status": "OWNER_REVIEW_REQUIRED",
+  "proposed_sync_summary": "Propose bounded protected references to accepted PHASE161E self-map memory and an owner-review task. Do not alter current execution claims, pack admission, route, or orchestrator flow.",
+  "protected_state_mutation_allowed": false,
+  "candidate_files": [
+    "reports/self_development/protected_state_update_candidates/GENESIS_STATE_update_candidate.json",
+    "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
+    "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
+    "reports/self_development/protected_state_update_candidates/packs_registry_update_candidate.json",
+    "reports/self_development/protected_state_update_candidates/orchestrator_run_update_candidate.md"
+  ],
+  "created_at": "2026-06-06T03:02:17.8158099Z"
+}

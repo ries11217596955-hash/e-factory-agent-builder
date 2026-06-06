@@ -1,0 +1,46 @@
+{
+  "risk_id": "PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_RISK_REVIEW_V1",
+  "protected_files_read": [
+    "TASK_QUEUE.json",
+    "GENESIS_STATE.json",
+    "CAPABILITY_ROADMAP.json",
+    "packs/registry.json",
+    "orchestrator/run.ps1"
+  ],
+  "protected_files_modified_directly": false,
+  "proposed_changes_count": 3,
+  "high_risk_items": [
+    {
+      "item": "Directly changing current phase, active task, readiness claims, pack admissions, or orchestrator flow",
+      "disposition": "REJECTED_IN_PHASE161F",
+      "why": "These fields control execution and require owner approval plus target-specific compatibility validation."
+    }
+  ],
+  "medium_risk_items": [
+    {
+      "item": "Adding a new protected self-model metadata section",
+      "mitigation": "Use a namespaced bounded object and validate all existing consumers before apply."
+    },
+    {
+      "item": "Adding a queue review item",
+      "mitigation": "Do not change active_task_id; apply only after queue schema and alias compatibility validation."
+    }
+  ],
+  "low_risk_items": [
+    {
+      "item": "Keeping owner-review candidate files under reports/self_development/protected_state_update_candidates",
+      "mitigation": "Candidates are inert and do not affect runtime flow."
+    }
+  ],
+  "rejected_changes": [
+    "No direct orchestrator change.",
+    "No automatic pack registry entry.",
+    "No current_phase or current_capability overwrite.",
+    "No active_task_id overwrite.",
+    "No promotion of validator-only evidence to live evidence.",
+    "No bulk copy of agent_body_map.json into protected state."
+  ],
+  "safety_recommendation": "OWNER_REVIEW_REQUIRED. If approved later, apply one protected target at a time with exact pre-apply hashes, schema/consumer checks, rollback copies, and post-apply self-map refresh.",
+  "owner_approval_required": true,
+  "created_at": "2026-06-06T03:02:17.8413348Z"
+}

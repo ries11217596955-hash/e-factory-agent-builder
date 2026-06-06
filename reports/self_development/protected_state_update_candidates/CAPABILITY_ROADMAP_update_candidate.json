@@ -1,0 +1,30 @@
+{
+  "target_file": "CAPABILITY_ROADMAP.json",
+  "current_file_hash_or_size": {
+    "sha256": "CAF5552F5630E8D9783213CDCDAEFBF55491181DD41CB778965720DA5BDCA1CA",
+    "size_bytes": 31622
+  },
+  "source_self_map_head": "777326e87a797b9b90e6411aff7da0a4379455c4",
+  "proposed_update_type": "ADD_PHASE161E_CAPABILITY_EVIDENCE_REFERENCE",
+  "proposed_fields_or_sections": {
+    "phase161e_self_map_auto_refresh": {
+      "status": "ACCEPTED_EVIDENCE_REFERENCE_CANDIDATE",
+      "accepted_head": "777326e87a797b9b90e6411aff7da0a4379455c4",
+      "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+      "active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+      "protected_promotion_status": "OWNER_REVIEW_REQUIRED"
+    }
+  },
+  "reason": "The roadmap can reference the accepted self-map refresh capability without rewriting existing capability entries or claiming protected promotion is complete.",
+  "risk_level": "MEDIUM",
+  "owner_approval_required": true,
+  "direct_apply_allowed": false,
+  "rollback_note": "Restore exact pre-apply bytes identified by the recorded SHA-256 if a future approved apply fails validation.",
+  "validation_required": [
+    "Parse target JSON after proposed apply.",
+    "Run target-specific validators and downstream consumer compatibility checks.",
+    "Confirm protected target pre-apply SHA-256 matches candidate identity.",
+    "Run PHASE161E self-map refresh after approved apply.",
+    "Confirm no validator-only evidence is promoted to live evidence."
+  ]
+}

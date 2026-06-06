@@ -1,0 +1,35 @@
+{
+  "target_file": "GENESIS_STATE.json",
+  "current_file_hash_or_size": {
+    "sha256": "2E42C007217F0B3ABAE6AB0817D1D6607175FBD3F30E3169884773EF17F6D20F",
+    "size_bytes": 13892
+  },
+  "source_self_map_head": "777326e87a797b9b90e6411aff7da0a4379455c4",
+  "proposed_update_type": "ADD_NAMESPACED_SELF_MODEL_MEMORY_REFERENCE",
+  "proposed_fields_or_sections": {
+    "protected_self_model_memory": {
+      "promotion_id": "PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_V1",
+      "source_baseline_head": "777326e87a797b9b90e6411aff7da0a4379455c4",
+      "source_phase": "PHASE161E_SELF_MAP_AUTO_REFRESH_AFTER_ACCEPTED_CHANGE",
+      "map_refresh_status": "SELF_KNOWLEDGE_READY",
+      "self_knowledge_ready": true,
+      "map_is_ready_for_next_decision": true,
+      "active_route_lock": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
+      "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+      "memory_report_path": "reports/self_development/self_map_memory_report.md",
+      "evidence_boundary": "DERIVED_MAP_REFERENCE_ONLY"
+    }
+  },
+  "reason": "GENESIS_STATE is the closest protected memory surface, but the proposal is a bounded reference rather than copying the full derived map or changing readiness/product claims.",
+  "risk_level": "MEDIUM",
+  "owner_approval_required": true,
+  "direct_apply_allowed": false,
+  "rollback_note": "Restore exact pre-apply bytes identified by the recorded SHA-256 if a future approved apply fails validation.",
+  "validation_required": [
+    "Parse target JSON after proposed apply.",
+    "Run target-specific validators and downstream consumer compatibility checks.",
+    "Confirm protected target pre-apply SHA-256 matches candidate identity.",
+    "Run PHASE161E self-map refresh after approved apply.",
+    "Confirm no validator-only evidence is promoted to live evidence."
+  ]
+}

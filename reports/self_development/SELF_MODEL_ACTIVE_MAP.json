@@ -25028,5 +25028,9 @@
       "recommended_next_action": "Use stub_false_positive_inventory.json before opening repair tasks.",
       "why_status": "Stub detection must distinguish executable not-implemented behavior from documentation that merely discusses placeholder rules."
     }
-  ]
+  ],
+  "protected_state_promotion_candidate_id": "PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_V1",
+  "protected_state_promotion_candidate_status": "OWNER_REVIEW_REQUIRED",
+  "protected_state_direct_mutation_performed": false,
+  "protected_state_candidate_manifest_path": "reports/self_development/protected_state_update_candidates/PHASE161F_PROMOTION_MANIFEST.json"
 }

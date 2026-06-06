@@ -1,19 +1,9 @@
 {
-  "accepted_subject_head": "7729afa8b72a2307938689841398862ddd8ba58d",
+  "accepted_subject_head": "1f6f0506787ca3496fab78099e371cdbea88416a",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    ".github/workflows/self-map-auto-refresh-after-push.yml",
-    "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
-    "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
-    "modules/write_builder_github_push_self_map_auto_refresh_delivery_001.ps1",
-    "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
-    "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
-    "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
-    "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
-    "reports/self_development/github_push_self_map_auto_refresh_policy.json",
-    "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
-    "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
+    "modules/inspect_builder_organism_health_state_001.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -21,5 +11,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-06T04:56:22.1623239Z"
+  "created_at": "2026-06-06T05:53:49.8419647Z"
 }

@@ -746,6 +746,14 @@
       "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
+      "path": "modules/inspect_builder_organism_health_state_001.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "evidence_strength": "REPORT_WEAK",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
+    },
+    {
       "path": "modules/inspect_builder_owner_inbox_router_state_001.ps1",
       "current_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
@@ -792,14 +800,6 @@
       "evidence_strength": "REPORT_WEAK",
       "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
       "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
-    },
-    {
-      "path": "modules/invoke_external_agent_build.ps1",
-      "current_status": "ACTIVE_WIRED_UNPROVEN",
-      "evidence_type": "CURRENT_RUNNER_WIRED",
-      "evidence_strength": "CURRENT_WIRED_STRONG",
-      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
-      "recommended_action": "Add live or proof JSON evidence before marking proven."
     }
   ]
 }

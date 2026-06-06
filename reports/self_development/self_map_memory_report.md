@@ -2,8 +2,8 @@
 
 I remember myself; here is my current report.
 
-Accepted subject head: 6a8d5f95456c534ab84a4012381759191dc5f4d4
-Current baseline phase: PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR
+Accepted subject head: 1f6f0506787ca3496fab78099e371cdbea88416a
+Current baseline phase: GITHUB_PUSH_SELF_MAP_AUTO_REFRESH
 Map refresh status: SELF_KNOWLEDGE_READY
 Self knowledge ready: True
 Map ready for next decision: True
@@ -17,12 +17,12 @@ The organism can operate, but an active-path implementation or self-knowledge re
 
 ## Counts
 
-- Active wired proven: 200
+- Active wired proven: 201
 - Present not wired: 274
 - Historical references: 204
 - Superseded: 1
 - Real stubs: 2
-- False-positive stubs: 80
+- False-positive stubs: 89
 - Gap chains: 7
 
 ## Top Live Or Current Active Organs
@@ -94,10 +94,10 @@ The organism can operate, but an active-path implementation or self-knowledge re
 - modules/detect_builder_stub_placeholder_artifacts_001.ps1: Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
 - modules/inspect_builder_agent_body_map_freshness_001.ps1: Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
 - modules/inspect_builder_candidate_quality_gate_001.ps1: Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
+- modules/inspect_builder_organism_health_state_001.ps1: Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
 - modules/inspect_builder_quality_decision_index_001.ps1: Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
 - modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1: Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
 - modules/materialize_generated_self_build_program_from_family_contract.ps1: Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
-- modules/new_remediation_seed_self_build_program_package.ps1: Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.
 
 ## Top Gap Chains
 

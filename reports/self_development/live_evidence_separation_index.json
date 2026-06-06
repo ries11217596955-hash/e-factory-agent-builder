@@ -8,11 +8,11 @@
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
-      "count": 101
+      "count": 102
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 79
+      "count": 88
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -44,7 +44,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 720
+      "count": 724
     }
   ],
   "live_or_current_wired_items": [
@@ -2674,6 +2674,19 @@
       ]
     },
     {
+      "path": "modules/write_builder_next_action_selector_report_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
+      ]
+    },
+    {
       "path": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
       "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
@@ -4822,7 +4835,8 @@
         "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
         "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json",
-        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
       ]
     },
     {
@@ -4856,7 +4870,8 @@
         "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
         "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json",
-        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
+        "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
       ]
     },
     {

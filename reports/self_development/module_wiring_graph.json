@@ -959,6 +959,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/inspect_builder_organism_health_state_001.ps1",
+      "path": "modules/inspect_builder_organism_health_state_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/inspect_builder_owner_inbox_router_state_001.ps1",
       "path": "modules/inspect_builder_owner_inbox_router_state_001.ps1",
       "node_type": "module"
@@ -1489,6 +1494,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/select_builder_self_map_next_action_001.ps1",
+      "path": "modules/select_builder_self_map_next_action_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/select_next_capability.ps1",
       "path": "modules/select_next_capability.ps1",
       "node_type": "module"
@@ -1689,6 +1699,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/validate_builder_self_map_next_action_contract_001.ps1",
+      "path": "modules/validate_builder_self_map_next_action_contract_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/validate_external_agent_spec_template.ps1",
       "path": "modules/validate_external_agent_spec_template.ps1",
       "node_type": "module"
@@ -1741,6 +1756,11 @@
     {
       "id": "modules/write_builder_morning_review_001.ps1",
       "path": "modules/write_builder_morning_review_001.ps1",
+      "node_type": "module"
+    },
+    {
+      "id": "modules/write_builder_next_action_selector_report_001.ps1",
+      "path": "modules/write_builder_next_action_selector_report_001.ps1",
       "node_type": "module"
     },
     {
@@ -4989,6 +5009,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json",
+      "path": "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "node_type": "proof"
@@ -5421,6 +5446,11 @@
     {
       "id": "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
       "path": "reports/self_development/NEXT_PC_HANDOFF_PHASE160D_READY_2026_06_03.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/organism_health_state.json",
+      "path": "reports/self_development/organism_health_state.json",
       "node_type": "report"
     },
     {
@@ -6049,6 +6079,11 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
+      "path": "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
       "path": "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
       "node_type": "report"
@@ -6061,6 +6096,21 @@
     {
       "id": "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
       "path": "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
+      "path": "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
+      "path": "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
+      "path": "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
       "node_type": "report"
     },
     {
@@ -6251,6 +6301,16 @@
     {
       "id": "reports/self_development/self_map_memory_report.md",
       "path": "reports/self_development/self_map_memory_report.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/self_map_next_action_recommendation.json",
+      "path": "reports/self_development/self_map_next_action_recommendation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/self_map_next_action_selector_policy.json",
+      "path": "reports/self_development/self_map_next_action_selector_policy.json",
       "node_type": "report"
     },
     {
@@ -6546,6 +6606,11 @@
     {
       "id": "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
       "path": "route_change_requests/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REQUEST.md",
+      "node_type": "route_change_request"
+    },
+    {
+      "id": "route_change_requests/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_REQUEST.md",
+      "path": "route_change_requests/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_REQUEST.md",
       "node_type": "route_change_request"
     },
     {
@@ -7241,6 +7306,11 @@
     {
       "id": "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1",
       "path": "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
+      "path": "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -8826,6 +8896,48 @@
       "evidence_snippet_or_pattern": "build_builder_agent_body_map_001"
     },
     {
+      "source": "modules/inspect_builder_organism_health_state_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/inspect_builder_organism_health_state_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/inspect_builder_organism_health_state_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/inspect_builder_organism_health_state_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/inspect_builder_organism_health_state_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "modules/inspect_builder_organism_health_state_001.ps1",
+      "target": "route_locks/ACTIVE_ROUTE_LOCK.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "route_locks/ACTIVE_ROUTE_LOCK.json"
+    },
+    {
       "source": "modules/inspect_builder_protected_self_model_sync_targets_001.ps1",
       "target": "CAPABILITY_ROADMAP.json",
       "edge_type": "references",
@@ -10255,6 +10367,20 @@
     },
     {
       "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "modules/inspect_builder_organism_health_state_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_organism_health_state_001"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "target": "modules/select_builder_self_map_next_action_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "select_builder_self_map_next_action_001"
+    },
+    {
+      "source": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
       "target": "modules/write_builder_self_map_memory_report_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
@@ -10973,6 +11099,34 @@
       "edge_type": "references",
       "confidence": "high",
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "modules/select_builder_self_map_next_action_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/select_builder_self_map_next_action_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
+    },
+    {
+      "source": "modules/select_builder_self_map_next_action_001.ps1",
+      "target": "orchestrator/run.ps1",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "modules/select_builder_self_map_next_action_001.ps1",
+      "target": "route_locks/ACTIVE_ROUTE_LOCK.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "route_locks/ACTIVE_ROUTE_LOCK.json"
     },
     {
       "source": "modules/self_development/write_auto_next_gap_decision_v1.ps1",
@@ -20440,31 +20594,24 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
+      "target": "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "inspect_builder_acceptance_pipeline_self_map_refresh_policy_001"
+      "evidence_snippet_or_pattern": "invoke_builder_github_push_self_map_auto_refresh_001"
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+      "target": "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_acceptance_pipeline_with_self_map_refresh_001"
+      "evidence_snippet_or_pattern": "validate_builder_github_push_self_map_auto_refresh_workflow_001"
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
+      "target": "modules/write_builder_github_push_self_map_auto_refresh_delivery_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001"
-    },
-    {
-      "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/write_builder_acceptance_pipeline_refresh_delivery_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "write_builder_acceptance_pipeline_refresh_delivery_001"
+      "evidence_snippet_or_pattern": "write_builder_github_push_self_map_auto_refresh_delivery_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -20885,6 +21032,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_executes_admitted_self_build_program_in_sandbox_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_github_push_self_map_auto_refresh_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -21340,90 +21494,6 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "promote_builder_backlog_task_to_active_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/quarantine_builder_owner_inbox_message_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "quarantine_builder_owner_inbox_message_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/read_capability_roadmap.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "read_capability_roadmap"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/read_genesis_plan.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "read_genesis_plan"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/read_genesis_state.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "read_genesis_state"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/read_pack_registry.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "read_pack_registry"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/read_task_queue.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "read_task_queue"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/render_generated_self_build_pack_apply_from_recipe.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "render_generated_self_build_pack_apply_from_recipe"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/repair_builder_missing_quality_result_artifacts_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "repair_builder_missing_quality_result_artifacts_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/resolve_specialization_overlay.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "resolve_specialization_overlay"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/route_builder_owner_inbox_message_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "route_builder_owner_inbox_message_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/route_locks/write_route_v1_closure_and_v2_r2_activation_report.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "write_route_v1_closure_and_v2_r2_activation_report"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/run_builder_school_batch_session_local_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "run_builder_school_batch_session_local_001"
     }
   ]
 }

@@ -8,11 +8,11 @@
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
-      "count": 94
+      "count": 98
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 75
+      "count": 78
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -24,7 +24,7 @@
     },
     {
       "evidence_type": "PROOF_JSON_PROVEN",
-      "count": 156
+      "count": 158
     },
     {
       "evidence_type": "PROTECTED_RISK_LOCKED",
@@ -44,7 +44,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 704
+      "count": 713
     }
   ],
   "live_or_current_wired_items": [
@@ -134,6 +134,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ]
     },
@@ -158,6 +159,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ]
     },
@@ -174,6 +176,7 @@
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
       ]
     },
@@ -189,6 +192,7 @@
       "proof_evidence_paths": [
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
       ]
     },
@@ -437,6 +441,18 @@
         "proofs/self_development/PHASE161A_SCHOOL_ENTRY_FOUNDATION_PROOF.json",
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json"
       ]
+    },
+    {
+      "path": "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": []
     },
     {
       "path": "modules/inspect_builder_active_route_lock_001.ps1",
@@ -757,6 +773,19 @@
         "proofs/self_development/PHASE138B_REVIEW_AUTONOMOUS_MATERIAL_DECISION_STRESS_RESULTS_V1.json",
         "proofs/self_development/PHASE138C_SANDBOX_BRANCH_MERGE_DECISION_V1.json",
         "proofs/self_development/PHASE138D_OWNER_APPROVED_SANDBOX_BRANCH_MERGE_V1.json"
+      ]
+    },
+    {
+      "path": "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json"
       ]
     },
     {
@@ -2349,11 +2378,23 @@
       "proof_evidence_paths": []
     },
     {
+      "path": "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": []
+    },
+    {
       "path": "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
       "primary_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "current_wiring_signals": [
+        "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1"
       ],
       "live_evidence_paths": [],
@@ -2398,6 +2439,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ]
     },
@@ -2515,6 +2557,18 @@
       ]
     },
     {
+      "path": "modules/write_builder_acceptance_pipeline_refresh_delivery_001.ps1",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": []
+    },
+    {
       "path": "modules/write_builder_learning_absorption_report_001.ps1",
       "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "LIVE_RUNTIME_PROVEN",
@@ -2554,6 +2608,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ]
     },
@@ -3172,7 +3227,7 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
-        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json"
       ]
     },
     {
@@ -3223,7 +3278,7 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
-        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json"
       ]
     },
     {
@@ -3274,7 +3329,7 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
-        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json"
       ]
     },
     {
@@ -3325,7 +3380,7 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
-        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json"
       ]
     },
     {
@@ -3376,7 +3431,7 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
-        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json"
       ]
     },
     {
@@ -3427,7 +3482,7 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
-        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json"
       ]
     },
     {
@@ -4720,9 +4775,11 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
         "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
-        "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
+        "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
+        "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json"
       ]
     },
     {
@@ -4751,9 +4808,11 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
         "proofs/self_development/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_PROOF.json",
-        "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
+        "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
+        "proofs/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_PROOF.json"
       ]
     },
     {
@@ -4934,7 +4993,7 @@
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json",
         "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
-        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json"
       ]
     },
     {

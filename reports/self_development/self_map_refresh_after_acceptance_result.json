@@ -1,21 +1,21 @@
 {
-  "refresh_id": "PHASE161E_REFRESH_20260606041447",
-  "accepted_subject_head": "0c4a454c6fd78507a94f0a30bf80f1265e24e1c6",
-  "accepted_phase": "PHASE161G2_APPLY_LIMITED_PROTECTED_SELF_MODEL_REFERENCES",
-  "trigger_reason": "refresh_self_map_after_g2_limited_protected_apply",
-  "generated_from_worktree_head": "0c4a454c6fd78507a94f0a30bf80f1265e24e1c6",
+  "refresh_id": "PHASE161E_REFRESH_20260606044012",
+  "accepted_subject_head": "6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360",
+  "accepted_phase": "PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT",
+  "trigger_reason": "acceptance_pipeline_after_phase161h_functional_commit",
+  "generated_from_worktree_head": "6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
   "self_knowledge_ready": true,
   "map_is_ready_for_next_decision": true,
   "active_route_lock": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
-  "active_organs_count": 196,
-  "present_not_wired_count": 272,
+  "active_organs_count": 197,
+  "present_not_wired_count": 274,
   "historical_reference_count": 204,
   "superseded_count": 1,
   "real_stub_count": 2,
-  "false_positive_stub_count": 76,
+  "false_positive_stub_count": 79,
   "gap_chain_count": 7,
   "recommended_next_learning_tasks": [
     {
@@ -49,5 +49,5 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "memory_report_path": "reports/self_development/self_map_memory_report.md",
   "policy_path": "reports/self_development/self_map_refresh_policy.json",
-  "created_at": "2026-06-06T04:14:47.7634122Z"
+  "created_at": "2026-06-06T04:40:12.7494047Z"
 }

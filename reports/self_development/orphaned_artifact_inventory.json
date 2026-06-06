@@ -1626,6 +1626,13 @@
       "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
     },
     {
+      "path": "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
+      "why_orphaned": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "possible_role": "proof",
+      "safe_to_delete_now": false,
+      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
+    },
+    {
       "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "possible_role": "proof",
@@ -1739,13 +1746,6 @@
     },
     {
       "path": "reports/materials/MANUAL_SCOUT_PASS_IMPORT_REPORT.json",
-      "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
-      "possible_role": "report",
-      "safe_to_delete_now": false,
-      "recommended_action": "Do not delete in PHASE161C. Review historical purpose or wire to validator/proof before use."
-    },
-    {
-      "path": "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
       "why_orphaned": "Artifact appears historical and has no current route/daemon/runner wiring.",
       "possible_role": "report",
       "safe_to_delete_now": false,

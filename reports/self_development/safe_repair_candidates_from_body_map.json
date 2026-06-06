@@ -330,6 +330,14 @@
       "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
+      "path": "docs/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT.md",
+      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
+      "evidence_type": "VALIDATOR_PROVEN",
+      "evidence_strength": "VALIDATOR_MEDIUM",
+      "why_status": "Artifact has validator evidence but no current route/daemon/runner wiring.",
+      "recommended_action": "Keep as validator-proven only until current wiring or live proof exists."
+    },
+    {
       "path": "living_learning_environment/body/body_policy.json",
       "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
       "evidence_type": "VALIDATOR_PROVEN",
@@ -714,6 +722,14 @@
       "recommended_action": "Add live or proof JSON evidence before marking proven."
     },
     {
+      "path": "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_RUNNER_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
+      "recommended_action": "Add live or proof JSON evidence before marking proven."
+    },
+    {
       "path": "modules/inspect_builder_agent_body_map_freshness_001.ps1",
       "current_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
@@ -779,22 +795,6 @@
     },
     {
       "path": "modules/invoke_external_agent_build.ps1",
-      "current_status": "ACTIVE_WIRED_UNPROVEN",
-      "evidence_type": "CURRENT_RUNNER_WIRED",
-      "evidence_strength": "CURRENT_WIRED_STRONG",
-      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
-      "recommended_action": "Add live or proof JSON evidence before marking proven."
-    },
-    {
-      "path": "modules/invoke_generated_family_autonomous_conveyor.ps1",
-      "current_status": "ACTIVE_WIRED_UNPROVEN",
-      "evidence_type": "CURRENT_RUNNER_WIRED",
-      "evidence_strength": "CURRENT_WIRED_STRONG",
-      "why_status": "Artifact has current route/daemon/runner wiring but lacks proof evidence.",
-      "recommended_action": "Add live or proof JSON evidence before marking proven."
-    },
-    {
-      "path": "modules/load_build_task.ps1",
       "current_status": "ACTIVE_WIRED_UNPROVEN",
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "evidence_strength": "CURRENT_WIRED_STRONG",

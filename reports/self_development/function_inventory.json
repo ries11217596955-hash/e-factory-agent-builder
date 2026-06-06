@@ -1201,6 +1201,29 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "PolicyPath",
+        "root",
+        "full",
+        "policy",
+        "requiredTrue",
+        "violations",
+        "name"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/inspect_builder_active_route_lock_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -2469,6 +2492,71 @@
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-BuilderPipeline",
+        "Get-BuilderRelativeGitPaths",
+        "Test-BuilderPathAllowed",
+        "Assert-BuilderSubset",
+        "Invoke-BuilderGit"
+      ],
+      "param_names": [
+        "PhaseId",
+        "FunctionalCommitMessage",
+        "RefreshCommitMessage",
+        "AcceptedPhase",
+        "RepoRoot",
+        "AllowedFunctionalPaths",
+        "AllowedRefreshPaths",
+        "ValidatorCommand",
+        "DryRun",
+        "SkipPush",
+        "Condition",
+        "Message",
+        "Root",
+        "_",
+        "Path",
+        "Allowed",
+        "entry",
+        "normalized",
+        "Paths",
+        "Label",
+        "blocked",
+        "Arguments",
+        "LASTEXITCODE",
+        "root",
+        "requiredRoot",
+        "path",
+        "branch",
+        "headBefore",
+        "protected",
+        "protectedChanges",
+        "unapprovedProtected",
+        "runtimeStaged",
+        "functionalPaths",
+        "planned",
+        "stagedFunctional",
+        "functionalCommit",
+        "remoteFunctional",
+        "refreshModule",
+        "contractModule",
+        "contract"
+      ],
+      "exported_behavior_guess": "Assert-BuilderPipeline, Get-BuilderRelativeGitPaths, Test-BuilderPathAllowed, Assert-BuilderSubset, Invoke-BuilderGit",
+      "write_outputs_detected": [],
+      "calls_detected": [
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
+        "modules/write_builder_acceptance_pipeline_refresh_delivery_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
@@ -9138,6 +9226,30 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-Enforcement"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "PipelineDryRunResult",
+        "Condition",
+        "Message",
+        "root",
+        "policyInspector",
+        "policy"
+      ],
+      "exported_behavior_guess": "Assert-Enforcement",
+      "write_outputs_detected": [],
+      "calls_detected": [
+        "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/validate_builder_acceptance_self_map_refresh_contract_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -9537,6 +9649,30 @@
       ],
       "safety_sensitive_operations_detected": [
         "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/write_builder_acceptance_pipeline_refresh_delivery_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "RepoRoot",
+        "PipelineResult",
+        "OutputPath",
+        "root",
+        "full",
+        "dir"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $full -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."
@@ -28086,6 +28222,73 @@
         "modules/backup_builder_limited_protected_state_before_apply_001.ps1",
         "modules/validate_builder_limited_protected_state_after_apply_001.ps1",
         "modules/write_builder_limited_protected_self_model_apply_report_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Assert-Phase161H",
+        "Test-Phase161HParser",
+        "Write-Phase161HJson"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "ExpectedHead",
+        "Condition",
+        "Message",
+        "Path",
+        "tokens",
+        "errors",
+        "_",
+        "Value",
+        "dir",
+        "root",
+        "identity",
+        "path",
+        "branchBefore",
+        "headBefore",
+        "planPath",
+        "parserFiles",
+        "policyPath",
+        "policy",
+        "policyInspector",
+        "functionalAllowlist",
+        "refreshAllowlist",
+        "pipeline",
+        "enforcement",
+        "protectedStatus",
+        "routeStatus",
+        "runtimeStaged",
+        "branchAfter",
+        "headAfter",
+        "proofRelative",
+        "reportRelative",
+        "requestRelative",
+        "deliveryRelative",
+        "acceptRelative",
+        "proof"
+      ],
+      "exported_behavior_guess": "Assert-Phase161H, Test-Phase161HParser, Write-Phase161HJson",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 30 | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $root $reportRelative) -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $root $requestRelative) -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $root $deliveryRelative) -Encoding UTF8",
+        "Set-Content -LiteralPath (Join-Path $root $acceptRelative) -Encoding UTF8"
+      ],
+      "calls_detected": [
+        "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
+        "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/validate_builder_acceptance_pipeline_self_map_refresh_enforcement_001.ps1",
+        "modules/write_builder_acceptance_pipeline_refresh_delivery_001.ps1"
       ],
       "safety_sensitive_operations_detected": [
         "runtime_writes",

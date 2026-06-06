@@ -2,28 +2,21 @@
 
 I remember myself; here is my current report.
 
-Accepted subject head: 0c4a454c6fd78507a94f0a30bf80f1265e24e1c6
-Current baseline phase: PHASE161G2_APPLY_LIMITED_PROTECTED_SELF_MODEL_REFERENCES
+Accepted subject head: 6ff259d983a12f3c44ccf1a6e3cbe155e1a4d360
+Current baseline phase: PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT
 Map refresh status: SELF_KNOWLEDGE_READY
 Self knowledge ready: True
 Map ready for next decision: True
 Active route: route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md
 
-## Protected Memory References
-
-- `GENESIS_STATE.json.protected_self_model_memory` is present with `DERIVED_MAP_REFERENCE_ONLY`.
-- `CAPABILITY_ROADMAP.json.phase161e_self_map_auto_refresh` is present with `ACCEPTED_EVIDENCE_REFERENCE_CANDIDATE`.
-- Validator-only evidence was not promoted to live evidence.
-- Queue, pack registry, orchestrator flow, and route locks were not changed.
-
 ## Counts
 
-- Active wired proven: 196
-- Present not wired: 272
+- Active wired proven: 197
+- Present not wired: 274
 - Historical references: 204
 - Superseded: 1
 - Real stubs: 2
-- False-positive stubs: 76
+- False-positive stubs: 79
 - Gap chains: 7
 
 ## Top Live Or Current Active Organs

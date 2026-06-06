@@ -1,0 +1,144 @@
+name: Self Map Auto Refresh After Push
+
+on:
+  push:
+    branches:
+      - phase110-idempotent-autonomy-trial-runtime
+
+permissions:
+  contents: write
+
+concurrency:
+  group: self-map-auto-refresh-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh-self-map:
+    if: ${{ !contains(github.event.head_commit.message, '[self-map-refresh]') }}
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout pushed branch
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Configure workflow git author
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Refresh self-map for pushed commit
+        shell: pwsh
+        env:
+          ACCEPTED_SUBJECT_HEAD: ${{ github.sha }}
+        run: |
+          $Result = & ".\modules\invoke_builder_github_push_self_map_auto_refresh_001.ps1" `
+            -AcceptedSubjectHead $env:ACCEPTED_SUBJECT_HEAD `
+            -AcceptedPhase "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH" `
+            -TriggerReason "github_push_auto_refresh"
+
+          if ($Result.map_refresh_status -ne "SELF_KNOWLEDGE_READY") {
+            throw "MAP_REFRESH_STATUS=$($Result.map_refresh_status)"
+          }
+          if (-not [bool]$Result.self_knowledge_ready) {
+            throw "SELF_KNOWLEDGE_READY=False"
+          }
+          if (-not [bool]$Result.map_is_ready_for_next_decision) {
+            throw "MAP_READY_FOR_NEXT_DECISION=False"
+          }
+
+      - name: Validate and stage derived refresh artifacts only
+        shell: pwsh
+        run: |
+          $Allowed = @(
+            "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+            "reports/self_development/agent_body_map.json",
+            "reports/self_development/agent_body_map.md",
+            "reports/self_development/module_wiring_graph.json",
+            "reports/self_development/function_inventory.json",
+            "reports/self_development/stub_placeholder_inventory.json",
+            "reports/self_development/orphaned_artifact_inventory.json",
+            "reports/self_development/self_model_gap_chain.json",
+            "reports/self_development/live_evidence_separation_index.json",
+            "reports/self_development/historical_reference_inventory.json",
+            "reports/self_development/superseded_artifact_inventory.json",
+            "reports/self_development/stub_false_positive_inventory.json",
+            "reports/self_development/agent_body_map_classifier_hardening_result.json",
+            "reports/self_development/safe_repair_candidates_from_body_map.json",
+            "reports/self_development/unsafe_debt_backlog_from_body_map.json",
+            "reports/self_development/agent_body_map_update_report.md",
+            "reports/self_development/self_map_refresh_policy.json",
+            "reports/self_development/self_map_refresh_after_acceptance_result.json",
+            "reports/self_development/self_map_memory_report.md",
+            "reports/self_development/accepted_change_memory_snapshot.json",
+            "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json"
+          )
+
+          $Protected = @(
+            "TASK_QUEUE.json",
+            "GENESIS_STATE.json",
+            "CAPABILITY_ROADMAP.json",
+            "packs/registry.json",
+            "orchestrator/run.ps1"
+          )
+          if (@(git status --porcelain -- $Protected).Count -gt 0) {
+            throw "PROTECTED_STATE_MUTATED=True"
+          }
+          if (@(git status --porcelain -- route_locks).Count -gt 0) {
+            throw "ROUTE_LOCK_MUTATED=True"
+          }
+          if (@(git diff --cached --name-only -- runtime_sessions).Count -gt 0) {
+            throw "RUNTIME_OUTPUTS_STAGED=True"
+          }
+
+          $Changed = @(git status --porcelain | ForEach-Object {
+            if ($_.Length -ge 4) { $_.Substring(3).Trim() -replace "\\","/" }
+          } | Where-Object { $_ })
+          $Unexpected = @($Changed | Where-Object { $_ -notin $Allowed })
+          if ($Unexpected.Count -gt 0) {
+            throw "UNEXPECTED_REFRESH_PATHS=$($Unexpected -join ',')"
+          }
+
+          foreach ($Path in $Allowed) {
+            if (Test-Path -LiteralPath $Path) {
+              git add -- $Path
+              if ($LASTEXITCODE -ne 0) { throw "STAGE_FAILED=$Path" }
+            }
+          }
+
+          $Staged = @(git diff --cached --name-only | ForEach-Object { $_ -replace "\\","/" })
+          if ($Staged.Count -eq 0) {
+            throw "NO_REFRESH_ARTIFACTS_STAGED"
+          }
+          if (@($Staged | Where-Object { $_ -notin $Allowed }).Count -gt 0) {
+            throw "STAGED_PATH_OUTSIDE_REFRESH_ALLOWLIST"
+          }
+          if (@($Staged | Where-Object { $_ -in $Protected }).Count -gt 0) {
+            throw "PROTECTED_STATE_STAGED=True"
+          }
+          if (@($Staged | Where-Object { $_ -like "runtime_sessions/*" }).Count -gt 0) {
+            throw "RUNTIME_OUTPUTS_STAGED=True"
+          }
+
+      - name: Verify branch has not advanced
+        shell: pwsh
+        env:
+          ACCEPTED_SUBJECT_HEAD: ${{ github.sha }}
+        run: |
+          git fetch origin phase110-idempotent-autonomy-trial-runtime
+          $RemoteHead = (git rev-parse origin/phase110-idempotent-autonomy-trial-runtime).Trim()
+          if ($RemoteHead -ne $env:ACCEPTED_SUBJECT_HEAD) {
+            throw "REMOTE_ADVANCED_BEFORE_REFRESH_COMMIT=$RemoteHead"
+          }
+
+      - name: Commit and push refreshed self-map
+        shell: pwsh
+        run: |
+          git commit -m "Refresh self-map after push [self-map-refresh]"
+          if ($LASTEXITCODE -ne 0) { throw "REFRESH_COMMIT_FAILED" }
+          git push origin HEAD:phase110-idempotent-autonomy-trial-runtime
+          if ($LASTEXITCODE -ne 0) { throw "REFRESH_PUSH_FAILED" }

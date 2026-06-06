@@ -1,0 +1,15 @@
+{
+  "policy_id": "PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_POLICY_V1",
+  "policy_name": "GitHub push self-map auto refresh",
+  "trigger": "push",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "automatic_refresh_required": true,
+  "passive_stale_allowed": false,
+  "self_knowledge_ready_required": true,
+  "refresh_commit_required": true,
+  "recursion_prevention_marker": "[self-map-refresh]",
+  "protected_state_direct_mutation_allowed": false,
+  "runtime_sessions_staged_allowed": false,
+  "github_token_push_expected_no_recursive_workflow": true,
+  "pat_required": false
+}

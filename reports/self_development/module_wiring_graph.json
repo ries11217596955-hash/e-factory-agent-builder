@@ -6134,6 +6134,11 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
+      "path": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
       "path": "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
       "node_type": "report"
@@ -20628,10 +20633,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_builder_live_self_growth_duty_step_001.ps1",
+      "target": "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_live_self_growth_duty_step_001"
+      "evidence_snippet_or_pattern": "invoke_builder_autonomous_atom_bridge_sandbox_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

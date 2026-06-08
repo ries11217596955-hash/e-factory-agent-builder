@@ -1,6 +1,6 @@
 {
-  "health_id": "PHASE161J_HEALTH_20260608150254",
-  "created_at": "2026-06-08T15:02:54.0860200Z",
+  "health_id": "PHASE161J_HEALTH_20260608151929",
+  "created_at": "2026-06-08T15:19:29.3289046Z",
   "health_state": "DEGRADED",
   "health_score": 62,
   "critical_findings": [],
@@ -46,7 +46,7 @@
   "disconnected_findings": [
     {
       "finding": "present_not_wired_inventory",
-      "count": 274,
+      "count": 275,
       "severity": "optional_unless_route_relevant"
     }
   ],

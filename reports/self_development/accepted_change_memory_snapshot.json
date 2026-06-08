@@ -1,9 +1,9 @@
 {
-  "accepted_subject_head": "1c1b7eb11698bbc0602b8d5ab547771c261f1a39",
+  "accepted_subject_head": "c19365766601ab7a8fbb90fa6ba5587fd3bba5c9",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1"
+    "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -11,5 +11,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-08T15:02:55.1161898Z"
+  "created_at": "2026-06-08T15:19:30.4543514Z"
 }

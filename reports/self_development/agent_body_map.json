@@ -4,7 +4,7 @@
   "source_of_truth_status": "DERIVED_ACTIVE_MAP_CANDIDATE",
   "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
   "why_status": "Derived from existing protected state, self-knowledge, self-model, body registry, capability shelf, route locks, modules, validators, reports, proofs, docs, packs, and orchestrator files. PHASE161D separates live evidence, validator proof, proof/report references, historical references, supersession, disconnected artifacts, and stub false positives.",
-  "generated_at": "2026-06-08T11:05:32.1464414Z",
+  "generated_at": "2026-06-08T11:38:03.5940453Z",
   "source_inputs": [
     "CAPABILITY_ROADMAP.json",
     "GENESIS_STATE.json",
@@ -16,7 +16,7 @@
     "living_learning_environment/body/",
     "capability_shelf/"
   ],
-  "artifact_count": 1500,
+  "artifact_count": 1501,
   "artifacts": [
     {
       "artifact_id": "CAPABILITY_ROADMAP_json",
@@ -17583,7 +17583,6 @@
       "evidence_strength": "CURRENT_WIRED_STRONG",
       "evidence_basis": "Current code/route wiring signal without proof.",
       "evidence_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -17599,7 +17598,6 @@
       ],
       "proof_evidence_paths": [],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -17618,7 +17616,6 @@
       "stub_false_positive": false,
       "callers": [
         "modules/invoke_builder_live_self_growth_duty_step_001.ps1",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -17637,7 +17634,6 @@
         "validators/validate_phase160j1_state_exposure_field_alias_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -102153,7 +102149,6 @@
         ""
       ],
       "callees": [
-        "modules/classify_builder_owner_live_task_safety_001.ps1",
         "modules/invoke_builder_live_self_growth_duty_step_001.ps1"
       ],
       "validators": [
@@ -104176,10 +104171,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md",
         "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -104215,10 +104210,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json"
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [],
@@ -104457,10 +104452,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
-        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json"
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -121826,6 +121821,76 @@
       "missing_link_reason": null,
       "placeholder_reason": null,
       "recommended_next_action": "Keep as validator-proven only until current wiring or live proof exists."
+    },
+    {
+      "artifact_id": "reports_self_development_PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT_md",
+      "path": "reports/self_development/PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT.md",
+      "artifact_type": "report",
+      "phase_hint": "PHASE161K",
+      "role_guess": "report",
+      "primary_status": "PROOF_NO_LIVE_EVIDENCE",
+      "why_status": "Artifact has proof references but no current wiring or live/runtime proof.",
+      "evidence_type": "PROOF_JSON_PROVEN",
+      "evidence_strength": "PROOF_MEDIUM",
+      "evidence_basis": "Proof path exists without current wiring.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
+        "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT.md",
+        "reports/self_development/self_map_next_action_recommendation.json",
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "route_change_requests/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_REQUEST.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
+      ],
+      "report_reference_paths": [
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
+        "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT.md",
+        "reports/self_development/self_map_next_action_recommendation.json",
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [],
+      "reports": [
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
+        "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT.md",
+        "reports/self_development/self_map_next_action_recommendation.json",
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_change_requests/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_REQUEST.md"
+      ],
+      "last_known_phase": "PHASE161K",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as proof-referenced only; add current wiring evidence before marking active."
     },
     {
       "artifact_id": "reports_self_development_protected_state_update_candidates_CAPABILITY_ROADMAP_update_candidate_json",

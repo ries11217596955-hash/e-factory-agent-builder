@@ -1,9 +1,9 @@
 {
-  "accepted_subject_head": "a972c9984f5f1997d806d6f191a4f795ac6f8670",
+  "accepted_subject_head": "cc6fc97dedf3c05dd12a4f0707f72be5392d2075",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/invoke_builder_live_self_growth_duty_step_001.ps1"
+    "reports/self_development/PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT.md"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -11,5 +11,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-08T11:05:34.0272250Z"
+  "created_at": "2026-06-08T11:38:05.4290032Z"
 }

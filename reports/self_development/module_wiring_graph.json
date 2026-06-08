@@ -6144,6 +6144,16 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_HANDOFF_20260608_224213.md",
+      "path": "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_HANDOFF_20260608_224213.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_LAST_100_EVENTS_20260608_224213.jsonl",
+      "path": "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_LAST_100_EVENTS_20260608_224213.jsonl",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
       "path": "reports/self_development/protected_state_update_candidates/CAPABILITY_ROADMAP_update_candidate.json",
       "node_type": "report"

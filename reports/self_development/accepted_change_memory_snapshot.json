@@ -1,9 +1,10 @@
 {
-  "accepted_subject_head": "86057b43ca779cd3c357db9f7ecd96ce512760aa",
+  "accepted_subject_head": "730d44f04d031b7f5fe70c999d08e3a078c6bdee",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_10MIN_STABILITY_ACCEPTANCE_REPORT.md"
+    "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_HANDOFF_20260608_224213.md",
+    "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_LAST_100_EVENTS_20260608_224213.jsonl"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -11,5 +12,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-08T15:59:14.9229283Z"
+  "created_at": "2026-06-08T18:45:17.5573571Z"
 }

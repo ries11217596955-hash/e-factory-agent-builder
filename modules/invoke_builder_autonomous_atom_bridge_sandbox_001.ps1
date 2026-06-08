@@ -113,17 +113,17 @@ function Invoke-BuilderAutonomousAtomBridgeSandbox001 {
     throw "BRIDGE_SANDBOX_REPO_ALREADY_EXISTS=$SandboxRepo"
   }
 
-  git clone --local --no-hardlinks $RepoRootFull $SandboxRepo | Out-Null
+  git clone --quiet --local --no-hardlinks $RepoRootFull $SandboxRepo 2>$null | Out-Null
   if ($LASTEXITCODE -ne 0) {
     throw "BRIDGE_SANDBOX_CLONE_FAILED"
   }
 
-  git -C $SandboxRepo checkout $Branch | Out-Null
+  git -C $SandboxRepo checkout --quiet $Branch 2>$null | Out-Null
   if ($LASTEXITCODE -ne 0) {
     throw "BRIDGE_SANDBOX_CHECKOUT_FAILED"
   }
 
-  git -C $SandboxRepo reset --hard $LegacyHead | Out-Null
+  git -C $SandboxRepo reset --quiet --hard $LegacyHead 2>$null | Out-Null
   if ($LASTEXITCODE -ne 0) {
     throw "BRIDGE_SANDBOX_RESET_FAILED=$LegacyHead"
   }
@@ -279,4 +279,5 @@ Invoke-BuilderAutonomousAtomBridgeSandbox001 `
   -LegacyHead $LegacyHead `
   -BridgeRunId $BridgeRunId `
   -AllowBridgeModuleWorktreeChange:$AllowBridgeModuleWorktreeChange
+
 

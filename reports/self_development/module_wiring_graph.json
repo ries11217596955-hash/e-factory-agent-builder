@@ -6079,6 +6079,11 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "path": "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
       "path": "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
       "node_type": "report"
@@ -6096,6 +6101,11 @@
     {
       "id": "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
       "path": "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+      "path": "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
       "node_type": "report"
     },
     {
@@ -20594,24 +20604,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_builder_github_push_self_map_auto_refresh_001.ps1",
+      "target": "modules/inspect_builder_organism_health_state_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_github_push_self_map_auto_refresh_001"
-    },
-    {
-      "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "validate_builder_github_push_self_map_auto_refresh_workflow_001"
-    },
-    {
-      "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/write_builder_github_push_self_map_auto_refresh_delivery_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "write_builder_github_push_self_map_auto_refresh_delivery_001"
+      "evidence_snippet_or_pattern": "inspect_builder_organism_health_state_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -20864,6 +20860,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "inspect_builder_module_wiring_graph_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/inspect_builder_organism_health_state_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_organism_health_state_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -21494,6 +21497,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "promote_builder_backlog_task_to_active_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/quarantine_builder_owner_inbox_message_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "quarantine_builder_owner_inbox_message_001"
     }
   ]
 }

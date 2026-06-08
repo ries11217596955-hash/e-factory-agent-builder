@@ -1545,7 +1545,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json",
@@ -1582,7 +1581,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json"
@@ -1643,7 +1641,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json"
@@ -2455,7 +2452,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json",
@@ -2491,7 +2487,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json"
@@ -2543,7 +2538,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json"
@@ -3567,7 +3561,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json",
@@ -3604,7 +3597,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json"
@@ -3665,7 +3657,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json"
@@ -4284,6 +4275,7 @@
       "evidence_paths": [
         "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json",
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -4306,9 +4298,8 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_next_action_recommendation.json",
-        "reports/self_development/self_map_next_action_selector_policy.json",
         "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md",
         "route_change_requests/PHASE161G1_LIMITED_PROTECTED_SELF_MODEL_COMPATIBILITY_REQUEST.md",
         "route_change_requests/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REQUEST.md"
@@ -4324,6 +4315,7 @@
         "proofs/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_PROOF.json"
       ],
       "report_reference_paths": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -4346,9 +4338,8 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
-        "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_next_action_recommendation.json",
-        "reports/self_development/self_map_next_action_selector_policy.json"
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
@@ -4359,6 +4350,14 @@
       "stub_false_positive": true,
       "callers": [
         "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json",
         "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
       ],
       "callees": [
@@ -4370,6 +4369,7 @@
         "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
       ],
       "reports": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -4392,9 +4392,8 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G2_ROLLBACK_SNAPSHOT_MANIFEST.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/CAPABILITY_ROADMAP.json",
         "reports/self_development/protected_state_update_candidates/rollback_snapshots/PHASE161G2/GENESIS_STATE.json",
-        "reports/self_development/self_map_memory_report.md",
-        "reports/self_development/self_map_next_action_recommendation.json",
-        "reports/self_development/self_map_next_action_selector_policy.json"
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/self_map_memory_report.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
@@ -4606,6 +4605,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -4620,7 +4620,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
         "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md",
         "route_change_requests/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -4643,6 +4642,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -4656,8 +4656,7 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
-        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json"
       ],
       "historical_reference_paths": [
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
@@ -4697,6 +4696,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -4710,8 +4710,7 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
-        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
@@ -7138,12 +7137,12 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -7161,12 +7160,12 @@
         "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -7184,7 +7183,6 @@
       "stub_false_positive": false,
       "callers": [
         "modules/validate_builder_github_push_self_map_auto_refresh_workflow_001.ps1",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -7201,12 +7199,12 @@
         "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -10505,7 +10503,6 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "live_evidence_paths": [],
@@ -10517,7 +10514,6 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -10565,7 +10561,6 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "self_knowledge/BUILDER_SELF_MODEL.json",
         "self_knowledge/MODULE_INVENTORY.json",
@@ -10589,7 +10584,6 @@
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [],
@@ -13047,7 +13041,6 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/self_map_memory_report.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/stub_false_positive_inventory.json"
       ],
@@ -13063,7 +13056,6 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/self_map_memory_report.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/stub_false_positive_inventory.json"
       ],
@@ -13086,7 +13078,6 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/self_map_memory_report.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/stub_false_positive_inventory.json",
         "self_knowledge/BUILDER_SELF_MODEL.json",
@@ -13107,7 +13098,6 @@
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_INDEX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/self_map_memory_report.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/stub_false_positive_inventory.json"
       ],
@@ -15476,6 +15466,11 @@
       "stub_false_positive": true,
       "callers": [
         "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json",
         "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
       ],
       "callees": [
@@ -16335,6 +16330,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -16349,7 +16345,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
         "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md",
         "route_change_requests/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -16372,6 +16367,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -16385,8 +16381,7 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
-        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json"
       ],
       "historical_reference_paths": [
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
@@ -16424,6 +16419,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -16437,8 +16433,7 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
-        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
@@ -17515,12 +17510,12 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -17538,12 +17533,12 @@
         "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -17559,7 +17554,6 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -17576,12 +17570,12 @@
         "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -17921,6 +17915,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -17935,7 +17930,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
         "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md",
         "route_change_requests/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -17958,6 +17952,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -17971,8 +17966,7 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
-        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json"
       ],
       "historical_reference_paths": [
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
@@ -18010,6 +18004,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -18023,8 +18018,7 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
-        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
@@ -18127,6 +18121,11 @@
       "superseded_by": null,
       "stub_false_positive": true,
       "callers": [
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json",
         "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
       ],
       "callees": [
@@ -19158,12 +19157,12 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -19181,12 +19180,12 @@
         "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -19202,7 +19201,6 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -19218,12 +19216,12 @@
         "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/github_push_self_map_auto_refresh_policy.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
@@ -19696,14 +19694,20 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
         "reports/self_development/organism_health_state.json",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
-        "reports/self_development/self_map_memory_report.md",
         "reports/self_development/self_map_next_action_recommendation.json",
         "reports/self_development/self_map_next_action_selector_policy.json",
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json",
         "route_change_requests/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -19714,14 +19718,20 @@
         "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
       ],
       "report_reference_paths": [
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
         "reports/self_development/organism_health_state.json",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
-        "reports/self_development/self_map_memory_report.md",
         "reports/self_development/self_map_next_action_recommendation.json",
         "reports/self_development/self_map_next_action_selector_policy.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [
@@ -19730,6 +19740,11 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
       ],
       "callees": [
@@ -19739,14 +19754,20 @@
         "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
       ],
       "reports": [
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
         "reports/self_development/organism_health_state.json",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
-        "reports/self_development/self_map_memory_report.md",
         "reports/self_development/self_map_next_action_recommendation.json",
         "reports/self_development/self_map_next_action_selector_policy.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+        "reports/self_development/self_map_refresh_after_acceptance_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "reports/self_development/stub_false_positive_inventory.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
@@ -19785,6 +19806,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -19799,7 +19821,6 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
         "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md",
         "route_change_requests/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -19822,6 +19843,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -19835,8 +19857,7 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
-        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json"
       ],
       "historical_reference_paths": [
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json"
@@ -19876,6 +19897,7 @@
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_CODEX_DELIVERY.md",
         "reports/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_REPORT.md",
         "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161J_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
         "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
@@ -19889,8 +19911,7 @@
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_LIMITED_APPLY_SCOPE_RECOMMENDATION.json",
         "reports/self_development/protected_state_update_candidates/phase161g1_simulation/GENESIS_STATE.simulated.json",
-        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/protected_state_update_candidates/TASK_QUEUE_update_candidate.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
@@ -25739,7 +25760,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 724
+      "count": 726
     }
   ],
   "important_gaps": [
@@ -25904,8 +25925,8 @@
   ],
   "next_decision_reason": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
   "self_map_refresh_policy_id": "PHASE161E_SELF_MAP_REFRESH_AFTER_ACCEPTED_CHANGE_POLICY_V1",
-  "accepted_subject_head": "1f6f0506787ca3496fab78099e371cdbea88416a",
-  "generated_from_worktree_head": "1f6f0506787ca3496fab78099e371cdbea88416a",
+  "accepted_subject_head": "c4134d371b63ac39535602af3e60c0dcfc54e8bc",
+  "generated_from_worktree_head": "c4134d371b63ac39535602af3e60c0dcfc54e8bc",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
@@ -25916,7 +25937,7 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "recommended_next_learning_tasks": [
     {
-      "gap_id": "PHASE161J_RECOMMENDATION_20260606055349",
+      "gap_id": "PHASE161J_RECOMMENDATION_20260608065708",
       "recommended_next_action": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
       "why_status": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
       "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",

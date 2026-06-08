@@ -1,9 +1,9 @@
 {
-  "refresh_id": "PHASE161E_REFRESH_20260606055349",
-  "accepted_subject_head": "1f6f0506787ca3496fab78099e371cdbea88416a",
+  "refresh_id": "PHASE161E_REFRESH_20260608065708",
+  "accepted_subject_head": "c4134d371b63ac39535602af3e60c0dcfc54e8bc",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "trigger_reason": "github_push_auto_refresh",
-  "generated_from_worktree_head": "1f6f0506787ca3496fab78099e371cdbea88416a",
+  "generated_from_worktree_head": "c4134d371b63ac39535602af3e60c0dcfc54e8bc",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
@@ -24,7 +24,7 @@
   "next_action_type": "OBSERVE",
   "recommended_next_learning_tasks": [
     {
-      "gap_id": "PHASE161J_RECOMMENDATION_20260606055349",
+      "gap_id": "PHASE161J_RECOMMENDATION_20260608065708",
       "recommended_next_action": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
       "why_status": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
       "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
@@ -36,5 +36,5 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "memory_report_path": "reports/self_development/self_map_memory_report.md",
   "policy_path": "reports/self_development/self_map_refresh_policy.json",
-  "created_at": "2026-06-06T05:53:49.2430706Z"
+  "created_at": "2026-06-08T06:57:08.7114510Z"
 }

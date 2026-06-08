@@ -1,9 +1,10 @@
 {
-  "accepted_subject_head": "1f6f0506787ca3496fab78099e371cdbea88416a",
+  "accepted_subject_head": "c4134d371b63ac39535602af3e60c0dcfc54e8bc",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/inspect_builder_organism_health_state_001.ps1"
+    "reports/self_development/PHASE161I_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+    "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -11,5 +12,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-06T05:53:49.8419647Z"
+  "created_at": "2026-06-08T06:57:09.2739768Z"
 }

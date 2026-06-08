@@ -1103,6 +1103,9 @@ try {
   $PreviousDutyArtifact = if ($DutyIndex -gt 1) { "$DutyRootRelative/$PreviousDutyId/macro_cycle_artifact.json" } else { "NONE" }
   $PreviousDutyArtifactFull = if ($DutyIndex -gt 1) { Resolve-Phase160DutyPath -RepoRoot $RepoRoot -Path $PreviousDutyArtifact } else { $null }
   $InputArtifact = if ($DutyIndex -gt 1 -and (Test-Path -LiteralPath $PreviousDutyArtifactFull)) { $PreviousDutyArtifact } else { "SESSION_START" }
+  $PreviousMacroArtifact = if ($DutyIndex -gt 1 -and $null -ne $PreviousDutyArtifactFull -and (Test-Path -LiteralPath $PreviousDutyArtifactFull)) { Read-Phase160DutyJsonSafe -Path $PreviousDutyArtifactFull } else { $null }
+  $PreviousSelectedGap = if ($null -ne $PreviousMacroArtifact) { Get-Phase160DutyStringProperty -Object $PreviousMacroArtifact -Name "selected_gap" -Default "NONE" } else { "NONE" }
+  $PreviousCycleStage = if ($null -ne $PreviousMacroArtifact) { Get-Phase160DutyStringProperty -Object $PreviousMacroArtifact -Name "cycle_stage" -Default "NONE" } else { "NONE" }
   $OutputArtifact = "$DutyDirRelative/macro_cycle_artifact.json"
   $NoveltyReason = if ($EnableMacroCycle) { Get-Phase160DutyMacroNoveltyReason -Stage $CycleStage } else { "Bounded micro duty advances the deterministic session-local curriculum." }
   $ProgressClaim = if ($EnableMacroCycle) { Get-Phase160DutyMacroProgressClaim -Stage $CycleStage } else { "Session-local duty completed without accepted-state mutation." }
@@ -1284,6 +1287,13 @@ try {
     "no active_task selected"
   }
 
+  $TaskSpecificArtifactExpected = ($EnableMacroCycle -and $CycleStage -eq "SELF_CHANGE_CANDIDATE_GENERATE" -and $ActiveTaskId -ne "NONE" -and $ActiveTaskDesiredGap -eq "PHASE161K_ROUTE_EVIDENCE_RECONCILIATION_GAP" -and ($PreviousSelectedGap -eq "MACRO_PHASE161K_ROUTE_EVIDENCE_RECONCILIATION_GAP" -or $ActiveTaskOwnerGoal -match "PHASE161K|route evidence reconciliation"))
+  $TaskSpecificArtifactKind = if ($TaskSpecificArtifactExpected) { "PHASE161K_SESSION_LOCAL_RECONCILIATION_DRAFT" } else { "NONE" }
+  $TaskSpecificArtifactFileName = if ($TaskSpecificArtifactExpected) { "PHASE161K_session_local_reconciliation_draft.json" } else { "NONE" }
+  $TaskSpecificArtifactRelativePath = if ($TaskSpecificArtifactExpected) { "$DutyDirRelative/$TaskSpecificArtifactFileName" } else { "NONE" }
+  $TaskSpecificArtifactFullPath = if ($TaskSpecificArtifactExpected) { Join-Path $DutyDirFull $TaskSpecificArtifactFileName } else { $null }
+  $TaskSpecificArtifactCreated = $false
+  $CandidateType = if ($TaskSpecificArtifactExpected) { "task_specific_session_local_reconciliation_candidate" } else { "sandbox_only_self_growth_action" }
   $Candidate = [ordered]@{
     status = "CANDIDATE"
     duty_id = $DutyId
@@ -1301,7 +1311,7 @@ try {
     previous_duty_id = $PreviousDutyId
     input_artifact = $InputArtifact
     output_artifact = $OutputArtifact
-    candidate_type = "sandbox_only_self_growth_action"
+    candidate_type = $CandidateType
     proposed_action = if ($EnableMacroCycle) {
       switch ($CycleStage) {
         "SELF_OBSERVE_MAP_REFRESH" { "refresh the session macro self-map from heartbeat/current_state/event evidence" }
@@ -1372,6 +1382,75 @@ try {
     external_agents_created = $false
     validated_at = (Get-Date).ToUniversalTime().ToString("o")
   }
+
+  if ($ValidationPassed -and $TaskSpecificArtifactExpected -and $TaskSpecificArtifactKind -eq "PHASE161K_SESSION_LOCAL_RECONCILIATION_DRAFT") {
+    $Phase161KDraft = [ordered]@{
+      status = "DRAFT"
+      artifact_id = "PHASE161K_SESSION_LOCAL_RECONCILIATION_DRAFT"
+      duty_id = $DutyId
+      cycle_id = if ($EnableMacroCycle) { $MacroCycleId } else { "NONE" }
+      cycle_stage = $CycleStage
+      selected_gap = $Gap
+      previous_selected_gap = $PreviousSelectedGap
+      previous_cycle_stage = $PreviousCycleStage
+      active_task_id = $ActiveTaskId
+      active_plan_item_id = $ActivePlanItemId
+      owner_goal = $ActiveTaskOwnerGoal
+      desired_next_gap = $ActiveTaskDesiredGap
+      teacher_digest_path = $ActiveTaskDigestPath
+      route_reconciliation_decision = "OWNER_REVIEW_REQUIRED"
+      route_exhaustion_status = "NOT_CLAIMED_BY_DRAFT"
+      draft_purpose = "Create a session-local PHASE161K route/evidence reconciliation draft without accepted state, memory, self-model, protected state, repo mutation, promotion, or school sidecar."
+      evidence_scope = [ordered]@{
+        previous_macro_artifact = $PreviousDutyArtifact
+        input_artifact = $InputArtifact
+        output_artifact = $TaskSpecificArtifactRelativePath
+        live_repo_guard_required = $true
+        accepted_mutation_allowed = $false
+      }
+      reconciliation_sections = [ordered]@{
+        route_lock_status = "OWNER_REVIEW_REQUIRED"
+        live_evidence_status = "OWNER_REVIEW_REQUIRED"
+        validator_only_evidence_status = "OWNER_REVIEW_REQUIRED"
+        historical_reference_status = "OWNER_REVIEW_REQUIRED"
+        next_required_validator = "PHASE161K_EXTERNAL_FREEZE_OR_OWNER_REVIEW_VALIDATOR"
+      }
+      safety = [ordered]@{
+        runtime_session_only = $true
+        accepted_state_mutated = $false
+        accepted_memory_mutated = $false
+        accepted_self_model_mutated = $false
+        repo_commit_allowed = $false
+        promotion_allowed = $false
+        school_sidecar_used = $false
+      }
+      created_at = (Get-Date).ToUniversalTime().ToString("o")
+    }
+    Write-Phase160DutyJsonFile -Path $TaskSpecificArtifactFullPath -Object $Phase161KDraft
+    $TaskSpecificArtifactCreated = $true
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "phase161k_session_local_reconciliation_draft_written"
+      source = "builder_self_growth_duty"
+      duty_id = $DutyId
+      active_task_id = $ActiveTaskId
+      active_plan_item_id = $ActivePlanItemId
+      artifact_path = $TaskSpecificArtifactRelativePath
+      previous_selected_gap = $PreviousSelectedGap
+      selected_gap = $Gap
+      accepted_state_mutated = $false
+      accepted_memory_mutated = $false
+      accepted_self_model_mutated = $false
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+  }
+  $Candidate["task_specific_artifact_expected"] = $TaskSpecificArtifactExpected
+  $Candidate["task_specific_artifact_kind"] = $TaskSpecificArtifactKind
+  $Candidate["task_specific_artifact_path"] = $TaskSpecificArtifactRelativePath
+  $Candidate["task_specific_artifact_created"] = $TaskSpecificArtifactCreated
+  $ValidationResult["task_specific_artifact_expected"] = $TaskSpecificArtifactExpected
+  $ValidationResult["task_specific_artifact_kind"] = $TaskSpecificArtifactKind
+  $ValidationResult["task_specific_artifact_path"] = $TaskSpecificArtifactRelativePath
+  $ValidationResult["task_specific_artifact_created"] = $TaskSpecificArtifactCreated
 
   if (-not $ValidationPassed) {
     Write-Phase160DutyJsonFile -Path (Join-Path $BlockerQueuePath ("blocker_{0}.json" -f $DutyId)) -Object ([ordered]@{
@@ -1679,4 +1758,5 @@ try {
     Pop-Location
   }
 }
+
 

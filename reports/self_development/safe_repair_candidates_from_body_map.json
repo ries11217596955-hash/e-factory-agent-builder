@@ -794,12 +794,12 @@
       "recommended_action": "Add live or proof JSON evidence before marking proven."
     },
     {
-      "path": "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
-      "current_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
-      "evidence_type": "VALIDATOR_PROVEN",
-      "evidence_strength": "VALIDATOR_MEDIUM",
-      "why_status": "Artifact has validator evidence but no current route/daemon/runner wiring.",
-      "recommended_action": "Keep as validator-proven only until current wiring or live proof exists."
+      "path": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
+      "current_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "evidence_strength": "REPORT_WEAK",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "recommended_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     }
   ]
 }

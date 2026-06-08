@@ -4,7 +4,7 @@
   "source_of_truth_status": "DERIVED_ACTIVE_MAP_CANDIDATE",
   "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
   "why_status": "Derived from existing protected state, self-knowledge, self-model, body registry, capability shelf, route locks, modules, validators, reports, proofs, docs, packs, and orchestrator files. PHASE161D separates live evidence, validator proof, proof/report references, historical references, supersession, disconnected artifacts, and stub false positives.",
-  "generated_at": "2026-06-08T12:23:47.1458788Z",
+  "generated_at": "2026-06-08T13:02:06.3807044Z",
   "source_inputs": [
     "CAPABILITY_ROADMAP.json",
     "GENESIS_STATE.json",
@@ -21953,15 +21953,16 @@
       "artifact_type": "module",
       "phase_hint": "PHASE154",
       "role_guess": "module",
-      "primary_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
-      "why_status": "Artifact has validator evidence but no current route/daemon/runner wiring.",
-      "evidence_type": "VALIDATOR_PROVEN",
-      "evidence_strength": "VALIDATOR_MEDIUM",
-      "evidence_basis": "Validator reference exists without current wiring.",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and live/runtime proof evidence.",
+      "evidence_type": "LIVE_RUNTIME_PROVEN",
+      "evidence_strength": "LIVE_STRONG",
+      "evidence_basis": "Current wiring signal plus live/runtime proof path.",
       "evidence_paths": [
         "proofs/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1.json",
         "proofs/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1.json",
         "proofs/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1.json",
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -21970,6 +21971,7 @@
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE153_SELF_GROWTH_DUTY_RUNTIME_IGNITION_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE154_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_ALIGNMENT_REQUEST.md",
@@ -21994,6 +21996,7 @@
         "proofs/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1.json"
       ],
       "report_reference_paths": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -22002,6 +22005,7 @@
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [
@@ -22015,11 +22019,20 @@
         "route_change_requests/PHASE154_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE155_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_ALIGNMENT_REQUEST.md"
       ],
-      "current_wiring_signals": [],
+      "current_wiring_signals": [
+        "modules/invoke_builder_live_self_growth_duty_step_001.ps1"
+      ],
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        ""
+        "modules/invoke_builder_live_self_growth_duty_step_001.ps1",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "callees": [
         "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1"
@@ -22035,6 +22048,7 @@
         "validators/validate_phase160_live_growth_session_daemon_bootstrap_v1.ps1"
       ],
       "reports": [
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -22043,6 +22057,7 @@
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
@@ -22061,7 +22076,7 @@
       "owner_approval_required": false,
       "missing_link_reason": null,
       "placeholder_reason": null,
-      "recommended_next_action": "Keep as validator-proven only until current wiring or live proof exists."
+      "recommended_next_action": "Keep as live-proven active evidence input."
     },
     {
       "artifact_id": "modules_invoke_builder_autonomous_multi_session_learning_trial_001_ps1",
@@ -23728,6 +23743,7 @@
         "modules/classify_builder_owner_live_task_safety_001.ps1",
         "modules/enqueue_builder_owner_task_backlog_001.ps1",
         "modules/inspect_builder_owner_task_lifecycle_state_001.ps1",
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
         "modules/normalize_builder_owner_live_task_001.ps1",
         "modules/promote_builder_backlog_task_to_active_001.ps1",
         "modules/route_builder_owner_inbox_message_001.ps1",
@@ -25421,7 +25437,6 @@
         "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/stub_false_positive_inventory.json",
@@ -102175,7 +102190,7 @@
       "artifact_id": "reports_self_development_accepted_change_memory_snapshot_json",
       "path": "reports/self_development/accepted_change_memory_snapshot.json",
       "artifact_type": "report",
-      "phase_hint": "PHASE161K",
+      "phase_hint": "PHASE161E",
       "role_guess": "report",
       "primary_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
       "why_status": "Artifact has validator evidence but no current route/daemon/runner wiring.",
@@ -102183,44 +102198,80 @@
       "evidence_strength": "VALIDATOR_MEDIUM",
       "evidence_basis": "Validator reference exists without current wiring.",
       "evidence_paths": [
-        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json",
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/organism_health_state.json",
+        "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161E_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_REPORT.md",
+        "reports/self_development/PHASE161E1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
+        "reports/self_development/PHASE161E2_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REPORT.md",
+        "reports/self_development/PHASE161F_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161G1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161G2_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
+        "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
+        "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
-        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
-        "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
-        "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
-        "reports/self_development/PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT.md",
-        "reports/self_development/self_map_next_action_recommendation.json",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "route_change_requests/PHASE161E_SELF_MAP_AUTO_REFRESH_REQUEST.md",
+        "route_change_requests/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REQUEST.md",
+        "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md",
         "route_change_requests/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_REQUEST.md"
       ],
       "live_evidence_paths": [],
       "validator_evidence_paths": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1",
+        "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
       ],
       "report_reference_paths": [
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/organism_health_state.json",
+        "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161E_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_REPORT.md",
+        "reports/self_development/PHASE161E1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
+        "reports/self_development/PHASE161E2_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REPORT.md",
+        "reports/self_development/PHASE161F_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
-        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
-        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
-        "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
-        "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
-        "reports/self_development/PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT.md",
-        "reports/self_development/self_map_next_action_recommendation.json",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+        "reports/self_development/PHASE161G1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161G2_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
+        "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
+        "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [],
@@ -102230,35 +102281,56 @@
         ""
       ],
       "callees": [
-        ""
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1"
       ],
       "validators": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
-        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1"
+        "validators/validate_phase161f_protected_self_model_promotion_candidate_v1.ps1",
+        "validators/validate_phase161h_acceptance_pipeline_self_map_refresh_enforcement_v1.ps1",
+        "validators/validate_phase161i_github_push_self_map_auto_refresh_workflow_v1.ps1",
+        "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
       ],
       "reports": [
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/organism_health_state.json",
+        "reports/self_development/orphaned_artifact_inventory.json",
+        "reports/self_development/PHASE161E_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_REPORT.md",
+        "reports/self_development/PHASE161E1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_CODEX_DELIVERY.md",
+        "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
+        "reports/self_development/PHASE161E2_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REPORT.md",
+        "reports/self_development/PHASE161F_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
-        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
-        "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
-        "reports/self_development/PHASE161J_NEXT_ACTION_SELECTOR_REPORT.md",
-        "reports/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_CODEX_DELIVERY.md",
-        "reports/self_development/PHASE161K_OWNER_TASK_MACRO_LOOP_ACCEPTANCE_REPORT.md",
-        "reports/self_development/self_map_next_action_recommendation.json",
-        "reports/self_development/self_map_refresh_after_acceptance_result.json",
-        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+        "reports/self_development/PHASE161G1_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
+        "reports/self_development/PHASE161G1_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161G2_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161G2_LIMITED_PROTECTED_SELF_MODEL_APPLY_REPORT.md",
+        "reports/self_development/PHASE161H_ACCEPTANCE_PIPELINE_SELF_MAP_REFRESH_ENFORCEMENT_REPORT.md",
+        "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
+        "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+        "proofs/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_PROOF.json",
+        "proofs/self_development/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_PROOF.json",
+        "proofs/self_development/PHASE161F_PROTECTED_SELF_MODEL_PROMOTION_CANDIDATE_PROOF.json"
       ],
       "schemas": [],
       "route_lock_references": [
+        "route_change_requests/PHASE161E_SELF_MAP_AUTO_REFRESH_REQUEST.md",
+        "route_change_requests/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REQUEST.md",
+        "route_change_requests/PHASE161E2_SELF_MAP_REFRESH_AFTER_G2_REQUEST.md",
         "route_change_requests/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_REQUEST.md"
       ],
-      "last_known_phase": "PHASE161K",
+      "last_known_phase": "PHASE161E",
       "safe_to_modify": true,
       "owner_approval_required": false,
       "missing_link_reason": null,
@@ -102669,6 +102741,7 @@
         "modules/invoke_autonomous_loop_controller.ps1",
         "modules/invoke_autonomous_material_decision_stress_lab_001.ps1",
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
         "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
         "modules/invoke_builder_behavior_adaptation_scale_trial_001.ps1",
         "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1",
@@ -104231,10 +104304,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md",
         "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -104270,10 +104343,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/safe_repair_candidates_from_body_map.json"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [],
@@ -104337,6 +104410,7 @@
         "modules/invoke_autonomous_loop_controller.ps1",
         "modules/invoke_autonomous_material_decision_stress_lab_001.ps1",
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
         "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
         "modules/invoke_builder_behavior_adaptation_scale_trial_001.ps1",
         "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1",
@@ -104512,10 +104586,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/safe_repair_candidates_from_body_map.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -105183,6 +105257,7 @@
         "modules/invoke_autonomous_loop_controller.ps1",
         "modules/invoke_autonomous_material_decision_stress_lab_001.ps1",
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
         "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
         "modules/invoke_builder_behavior_adaptation_scale_trial_001.ps1",
         "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1",
@@ -105495,6 +105570,7 @@
         "modules/invoke_autonomous_loop_controller.ps1",
         "modules/invoke_autonomous_material_decision_stress_lab_001.ps1",
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
         "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
         "modules/invoke_builder_behavior_adaptation_scale_trial_001.ps1",
         "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1",
@@ -121139,10 +121215,10 @@
       "phase_hint": "PHASE161I",
       "role_guess": "report",
       "primary_status": "PRESENT_WIRED_TO_VALIDATOR_ONLY",
-      "why_status": "Artifact has validator evidence but no current route/daemon/runner wiring.",
-      "evidence_type": "VALIDATOR_PROVEN",
-      "evidence_strength": "VALIDATOR_MEDIUM",
-      "evidence_basis": "Validator reference exists without current wiring.",
+      "why_status": "Text contains stub/placeholder wording, but PHASE161D classified it as explanatory text rather than a real stub.",
+      "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
+      "evidence_strength": "REPORT_WEAK",
+      "evidence_basis": "Stub keyword found without executable not-implemented behavior.",
       "evidence_paths": [
         "proofs/self_development/PHASE161I_GITHUB_PUSH_SELF_MAP_AUTO_REFRESH_PROOF.json",
         "reports/self_development/agent_body_map.json",
@@ -121185,7 +121261,7 @@
       "historical_reference_paths": [],
       "current_wiring_signals": [],
       "superseded_by": null,
-      "stub_false_positive": false,
+      "stub_false_positive": true,
       "callers": [
         ""
       ],
@@ -121221,8 +121297,8 @@
       "safe_to_modify": true,
       "owner_approval_required": false,
       "missing_link_reason": null,
-      "placeholder_reason": null,
-      "recommended_next_action": "Keep as validator-proven only until current wiring or live proof exists."
+      "placeholder_reason": "False-positive stub wording detected; not treated as real stub.",
+      "recommended_next_action": "Do not repair as stub; improve classifier evidence or connect real wiring/proof if needed."
     },
     {
       "artifact_id": "reports_self_development_PHASE161I_EXECUTION_PLAN_md",
@@ -121895,7 +121971,6 @@
       "evidence_basis": "Proof path exists without current wiring.",
       "evidence_paths": [
         "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
@@ -121913,7 +121988,6 @@
         "proofs/self_development/PHASE161J_SELF_MAP_NEXT_ACTION_SELECTOR_PROOF.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
@@ -121936,7 +122010,6 @@
       ],
       "validators": [],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161J_ACCEPT_BASELINE_COMMIT_PUSH_DELIVERY.md",
@@ -125943,10 +126016,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md",
         "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -125981,10 +126054,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/safe_repair_candidates_from_body_map.json"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [],
@@ -126015,7 +126088,7 @@
         "modules/inspect_builder_quality_decision_index_001.ps1",
         "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
         "modules/invoke_agent_spec_architect_handoff.ps1",
-        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1"
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1"
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",
@@ -126044,10 +126117,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/safe_repair_candidates_from_body_map.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -127551,6 +127624,7 @@
         "modules/invoke_autonomous_loop_controller.ps1",
         "modules/invoke_autonomous_material_decision_stress_lab_001.ps1",
         "modules/invoke_builder_acceptance_pipeline_with_self_map_refresh_001.ps1",
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
         "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
         "modules/invoke_builder_behavior_adaptation_scale_trial_001.ps1",
         "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1",
@@ -128704,6 +128778,7 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
@@ -128711,7 +128786,6 @@
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
         "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_development/stub_placeholder_inventory.json",
         "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -128741,14 +128815,14 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_development/stub_placeholder_inventory.json"
+        "reports/self_development/stub_false_positive_inventory.json"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [],
@@ -128798,14 +128872,14 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/self_model_gap_chain.json",
-        "reports/self_development/stub_false_positive_inventory.json",
-        "reports/self_development/stub_placeholder_inventory.json"
+        "reports/self_development/stub_false_positive_inventory.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_PROOF.json"

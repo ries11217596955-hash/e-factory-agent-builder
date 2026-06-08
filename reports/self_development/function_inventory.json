@@ -3531,6 +3531,7 @@
         "New-Item -ItemType Directory -Force -Path $Directory | Out-Null",
         "New-Item -ItemType Directory -Force -Path $taskPlanDir | Out-Null",
         "New-Item -ItemType Directory -Force -Path $DutyDirFull | Out-Null",
+        "Set-Content -LiteralPath $AutonomousBridgeProcessLogPath -Encoding UTF8",
         "ConvertTo-Json -Depth 100 -Compress))",
         "ConvertTo-Json -Depth 20"
       ],
@@ -3538,6 +3539,7 @@
         "modules/classify_builder_owner_live_task_safety_001.ps1",
         "modules/enqueue_builder_owner_task_backlog_001.ps1",
         "modules/inspect_builder_owner_task_lifecycle_state_001.ps1",
+        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
         "modules/normalize_builder_owner_live_task_001.ps1",
         "modules/promote_builder_backlog_task_to_active_001.ps1",
         "modules/route_builder_owner_inbox_message_001.ps1",

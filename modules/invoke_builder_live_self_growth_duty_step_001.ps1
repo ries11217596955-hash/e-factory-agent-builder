@@ -798,7 +798,8 @@ function Invoke-Phase160DutyLiveTaskIntake {
           teacher_digest_path = $candidate.digest_relative_path
           created_at = (Get-Date).ToUniversalTime().ToString("o")
         }
-        $itemPath = Join-Path $taskPlanDir ("{0}.json" -f $itemId)
+        $itemFileName = "plan_item_{0:d3}.json" -f ($i + 1)
+        $itemPath = Join-Path $taskPlanDir $itemFileName
         Write-Phase160DutyJsonFile -Path $itemPath -Object $itemRecord
         $planItemRecords += [pscustomobject][ordered]@{
           item = $itemRecord
@@ -1678,3 +1679,4 @@ try {
     Pop-Location
   }
 }
+

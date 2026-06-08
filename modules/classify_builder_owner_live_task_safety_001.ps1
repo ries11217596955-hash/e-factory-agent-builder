@@ -56,84 +56,35 @@ function Get-Phase160JClassifierFlag {
   return $false
 }
 
-function Test-Phase160JUnknownUnsafeField {
-  param([object]$Object)
-  if ($null -eq $Object) {
-    return $false
-  }
-  if ($Object -is [System.Array]) {
-    foreach ($entry in @($Object)) {
-      if (Test-Phase160JUnknownUnsafeField -Object $entry) {
-        return $true
-      }
-    }
-    return $false
-  }
-  if ($Object -is [string]) {
-    return $false
-  }
-  if ($Object -is [System.Collections.IDictionary]) {
-    foreach ($key in $Object.Keys) {
-      $name = ([string]$key).ToLowerInvariant()
-      $value = $Object[$key]
-      if (@("command", "commands", "cmd", "shell_command", "powershell_command", "bash_command", "accepted_repo_command", "repo_command", "live_repo_shell", "exec", "execute", "script_to_run") -contains $name) {
-        return $true
-      }
-      if ($name -eq "code_execution_requested" -and (ConvertTo-Phase160JClassifierBoolean -Value $value -Default $false)) {
-        return $true
-      }
-      if (($name -match "shell|command|exec|script") -and -not (@("safety_rules") -contains $name)) {
-        return $true
-      }
-      if ($null -ne $value -and -not ($value -is [string]) -and -not ($value -is [int]) -and -not ($value -is [bool])) {
-        if (Test-Phase160JUnknownUnsafeField -Object $value) {
-          return $true
-        }
-      }
-    }
-    return $false
-  }
-  $knownSafe = @(
-    "event_type",
-    "task_id",
-    "id",
-    "source",
-    "priority",
-    "owner_goal",
-    "program_goal",
-    "curriculum_goal",
-    "goal",
-    "title",
-    "name",
-    "desired_next_gap",
-    "next_gap",
-    "target_gap",
-    "expected_outputs",
-    "safety_rules",
-    "plan_items",
-    "plan_steps",
-    "lessons",
-    "program",
-    "curriculum",
-    "created_at",
-    "success_signals",
-    "can_parallelize",
-    "runtime_session_only",
-    "owner_promotion_required",
-    "owner_approval_required",
-    "repo_commit_allowed",
-    "repo_push_allowed",
-    "branch_switch_allowed",
-    "live_repo_file_mutation_allowed",
-    "protected_state_mutation_allowed",
-    "accepted_repo_mutation_allowed",
-    "accepted_state_mutation_allowed",
-    "accepted_memory_mutation_allowed",
-    "accepted_self_model_mutation_allowed",
-    "accepted_code_mutation_allowed",
-    "accepted_repo_file_mutation_allowed",
-    "code_execution_requested"
+function Test-Phase160JClassifierSimpleValue {
+  param([object]$Value)
+  return (
+    $null -eq $Value -or
+    $Value -is [string] -or
+    $Value -is [char] -or
+    $Value -is [bool] -or
+    $Value -is [byte] -or
+    $Value -is [int] -or
+    $Value -is [long] -or
+    $Value -is [double] -or
+    $Value -is [decimal] -or
+    $Value -is [datetime]
   )
+}
+
+function Test-Phase160JUnknownUnsafeField {
+  param(
+    [object]$Object,
+    [int]$Depth = 0
+  )
+
+  if ($Depth -gt 12) {
+    return $false
+  }
+  if (Test-Phase160JClassifierSimpleValue -Value $Object) {
+    return $false
+  }
+
   $dangerousNames = @(
     "command",
     "commands",
@@ -148,23 +99,84 @@ function Test-Phase160JUnknownUnsafeField {
     "execute",
     "script_to_run"
   )
-  foreach ($property in $Object.PSObject.Properties) {
-    $name = ([string]$property.Name).ToLowerInvariant()
-    if ($dangerousNames -contains $name) {
-      return $true
-    }
-    if ($name -eq "code_execution_requested" -and (ConvertTo-Phase160JClassifierBoolean -Value $property.Value -Default $false)) {
-      return $true
-    }
-    if (($name -match "shell|command|exec|script") -and -not ($knownSafe -contains $name)) {
-      return $true
-    }
-    if ($null -ne $property.Value -and -not ($property.Value -is [string]) -and -not ($property.Value -is [int]) -and -not ($property.Value -is [bool])) {
-      if (Test-Phase160JUnknownUnsafeField -Object $property.Value) {
+  $knownSafe = @(
+    "event_type",
+    "task_id",
+    "source",
+    "priority",
+    "owner_goal",
+    "goal",
+    "desired_next_gap",
+    "next_gap",
+    "target_gap",
+    "expected_outputs",
+    "safety_rules",
+    "plan_items",
+    "plan_steps",
+    "lessons",
+    "success_signals",
+    "created_at",
+    "accepted_state_mutation_allowed",
+    "accepted_memory_mutation_allowed",
+    "accepted_self_model_mutation_allowed",
+    "accepted_code_mutation_allowed",
+    "accepted_repo_file_mutation_allowed",
+    "code_execution_requested"
+  )
+
+  if ($Object -is [System.Array]) {
+    foreach ($entry in @($Object)) {
+      if (Test-Phase160JUnknownUnsafeField -Object $entry -Depth ($Depth + 1)) {
         return $true
       }
     }
+    return $false
   }
+
+  if ($Object -is [System.Collections.IDictionary]) {
+    foreach ($key in $Object.Keys) {
+      $name = ([string]$key).ToLowerInvariant()
+      $value = $Object[$key]
+      if ($dangerousNames -contains $name) {
+        return $true
+      }
+      if ($name -eq "code_execution_requested" -and (ConvertTo-Phase160JClassifierBoolean -Value $value -Default $false)) {
+        return $true
+      }
+      if (($name -match "shell|command|exec|script") -and -not ($knownSafe -contains $name)) {
+        return $true
+      }
+      if (-not (Test-Phase160JClassifierSimpleValue -Value $value)) {
+        if (Test-Phase160JUnknownUnsafeField -Object $value -Depth ($Depth + 1)) {
+          return $true
+        }
+      }
+    }
+    return $false
+  }
+
+  if ($Object -is [pscustomobject]) {
+    foreach ($property in $Object.PSObject.Properties) {
+      $name = ([string]$property.Name).ToLowerInvariant()
+      $value = $property.Value
+      if ($dangerousNames -contains $name) {
+        return $true
+      }
+      if ($name -eq "code_execution_requested" -and (ConvertTo-Phase160JClassifierBoolean -Value $value -Default $false)) {
+        return $true
+      }
+      if (($name -match "shell|command|exec|script") -and -not ($knownSafe -contains $name)) {
+        return $true
+      }
+      if (-not (Test-Phase160JClassifierSimpleValue -Value $value)) {
+        if (Test-Phase160JUnknownUnsafeField -Object $value -Depth ($Depth + 1)) {
+          return $true
+        }
+      }
+    }
+    return $false
+  }
+
   return $false
 }
 
@@ -300,3 +312,4 @@ function Invoke-Phase160JOwnerTaskSafetyClassification {
     blocked_by_status = if ([string]::IsNullOrWhiteSpace($ExistingActiveStatus)) { "ACTIVE" } else { $ExistingActiveStatus }
   }
 }
+

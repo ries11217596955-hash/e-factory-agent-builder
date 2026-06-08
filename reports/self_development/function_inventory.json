@@ -2623,6 +2623,74 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Write-BridgeJsonFile",
+        "Get-BridgeTrackedDirty",
+        "Invoke-BuilderAutonomousAtomBridgeSandbox001"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "SessionRoot",
+        "RunId",
+        "LegacyHead",
+        "BridgeRunId",
+        "AllowBridgeModuleWorktreeChange",
+        "Path",
+        "Object",
+        "Depth",
+        "dir",
+        "AllowedNonRuntimeStatusPatterns",
+        "status",
+        "blocking",
+        "line",
+        "allowed",
+        "pattern",
+        "RepoRootFull",
+        "SessionRootFull",
+        "SandboxRepo",
+        "RunLog",
+        "BridgeResultPath",
+        "AtomSummaryPath",
+        "Branch",
+        "Head",
+        "Remote",
+        "AllowedDirtyPatterns",
+        "MainTrackedDirtyBefore",
+        "LASTEXITCODE",
+        "OverlayFiles",
+        "rel",
+        "src",
+        "dst",
+        "ModuleInSandbox",
+        "runtimeOutput",
+        "_",
+        "runtimeExit",
+        "failure",
+        "SandboxResult",
+        "SandboxProof",
+        "SandboxTrialRoot"
+      ],
+      "exported_behavior_guess": "Write-BridgeJsonFile, Get-BridgeTrackedDirty, Invoke-BuilderAutonomousAtomBridgeSandbox001",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $SessionRootFull | Out-Null",
+        "New-Item -ItemType Directory -Force -Path (Split-Path $dst -Parent) | Out-Null",
+        "Set-Content -LiteralPath $RunLog -Encoding UTF8"
+      ],
+      "calls_detected": [
+        "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],

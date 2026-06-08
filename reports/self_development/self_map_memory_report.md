@@ -2,7 +2,7 @@
 
 I remember myself; here is my current report.
 
-Accepted subject head: cc6fc97dedf3c05dd12a4f0707f72be5392d2075
+Accepted subject head: 2cd201fa4c4379480da46521965b2dbf14af8d16
 Current baseline phase: GITHUB_PUSH_SELF_MAP_AUTO_REFRESH
 Map refresh status: SELF_KNOWLEDGE_READY
 Self knowledge ready: True
@@ -22,7 +22,7 @@ The organism can operate, but an active-path implementation or self-knowledge re
 - Historical references: 204
 - Superseded: 1
 - Real stubs: 2
-- False-positive stubs: 89
+- False-positive stubs: 88
 - Gap chains: 7
 
 ## Top Live Or Current Active Organs

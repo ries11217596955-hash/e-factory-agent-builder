@@ -1049,6 +1049,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
+      "path": "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
       "path": "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
       "node_type": "module"
@@ -9448,6 +9453,13 @@
       "edge_type": "references",
       "confidence": "high",
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
+    },
+    {
+      "source": "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
+      "target": "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_bounded_self_growth_duty_loop_trial_001"
     },
     {
       "source": "modules/invoke_builder_autonomous_multi_session_learning_trial_001.ps1",
@@ -20606,13 +20618,6 @@
       "edge_type": "references",
       "confidence": "high",
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
-    },
-    {
-      "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_builder_live_self_growth_duty_step_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_live_self_growth_duty_step_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

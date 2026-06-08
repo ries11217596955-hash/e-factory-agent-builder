@@ -1,12 +1,12 @@
 {
   "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
   "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
-  "total_artifacts": 1501,
+  "total_artifacts": 1502,
   "active_wired_proven_count": 201,
   "active_wired_unproven_count": 73,
   "present_not_wired_count": 274,
   "superseded_count": 1,
-  "false_positive_stub_count": 89,
+  "false_positive_stub_count": 88,
   "real_stub_count": 2,
   "evidence_type_counts": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 88
+      "count": 87
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -51,7 +51,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 726
+      "count": 728
     }
   ],
   "why_status": "PHASE161D hardened classifier reduced active/proven over-classification and separated evidence classes."

@@ -12,7 +12,7 @@
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 87
+      "count": 88
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -44,7 +44,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 727
+      "count": 726
     }
   ],
   "live_or_current_wired_items": [

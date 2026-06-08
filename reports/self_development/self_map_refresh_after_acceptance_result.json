@@ -1,9 +1,9 @@
 {
-  "refresh_id": "PHASE161E_REFRESH_20260608102047",
-  "accepted_subject_head": "ad05923bbeec1e4deef4cfacfa984f84d8bd7edb",
+  "refresh_id": "PHASE161E_REFRESH_20260608110533",
+  "accepted_subject_head": "a972c9984f5f1997d806d6f191a4f795ac6f8670",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "trigger_reason": "github_push_auto_refresh",
-  "generated_from_worktree_head": "ad05923bbeec1e4deef4cfacfa984f84d8bd7edb",
+  "generated_from_worktree_head": "a972c9984f5f1997d806d6f191a4f795ac6f8670",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
@@ -15,7 +15,7 @@
   "historical_reference_count": 204,
   "superseded_count": 1,
   "real_stub_count": 2,
-  "false_positive_stub_count": 88,
+  "false_positive_stub_count": 89,
   "gap_chain_count": 7,
   "organism_health_state": "DEGRADED",
   "health_score": 62,
@@ -24,7 +24,7 @@
   "next_action_type": "OBSERVE",
   "recommended_next_learning_tasks": [
     {
-      "gap_id": "PHASE161J_RECOMMENDATION_20260608102047",
+      "gap_id": "PHASE161J_RECOMMENDATION_20260608110533",
       "recommended_next_action": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
       "why_status": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
       "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
@@ -36,5 +36,5 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "memory_report_path": "reports/self_development/self_map_memory_report.md",
   "policy_path": "reports/self_development/self_map_refresh_policy.json",
-  "created_at": "2026-06-08T10:20:47.8647911Z"
+  "created_at": "2026-06-08T11:05:33.4479265Z"
 }

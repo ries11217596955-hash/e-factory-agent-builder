@@ -1075,6 +1075,14 @@ try {
   $ActiveTaskOwnerGoal = if ($null -ne $ActiveTask) { Get-Phase160DutyStringProperty -Object $ActiveTask -Name "owner_goal" -Default "NONE" } else { "NONE" }
   $ActiveTaskDesiredGap = if ($null -ne $ActiveTask) { Get-Phase160DutyStringProperty -Object $ActiveTask -Name "desired_next_gap" -Default "NONE" } else { "NONE" }
   $ActiveTaskDigestPath = if ($null -ne $ActiveTask) { Get-Phase160DutyStringProperty -Object $ActiveTask -Name "teacher_digest_path" -Default "NONE" } else { "NONE" }
+  $AutonomousBridgeEligible = $false
+  $AutonomousBridgeAttempted = $false
+  $AutonomousBridgeStatus = "NOT_RUN"
+  $AutonomousBridgeResultPath = "NONE"
+  $AutonomousBridgeAtomSummaryPath = "NONE"
+  $AutonomousBridgeAtomSummaryStatus = "NONE"
+  $AutonomousBridgeSkillCandidateCount = 0
+  $AutonomousBridgeAcceptedAtomClaimed = $false
   $TaskInfluencedGapSelection = $false
   if ([string]::IsNullOrWhiteSpace($MacroCycleId)) {
     $MacroCycleId = "PHASE160B_MACRO_SELF_GROWTH_IGNITION_CYCLE_001"
@@ -1099,6 +1107,91 @@ try {
       occurred_at = (Get-Date).ToUniversalTime().ToString("o")
     })
   }
+
+  $AutonomousBridgeEligible = (
+    $null -eq $ActiveTask -and
+    $null -eq $ActivePlanItem -and
+    [int]$LiveTaskCounts.teacher_inbox_count -eq 0 -and
+    [int]$LiveTaskCounts.task_backlog_count -eq 0 -and
+    [int]$LiveTaskIntake.detected_count -eq 0
+  )
+
+  if ($AutonomousBridgeEligible) {
+    $AutonomousBridgeAttempted = $true
+    $AutonomousBridgeScriptPath = Resolve-Phase160DutyPath -RepoRoot $RepoRoot -Path "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1"
+
+    if (-not (Test-Path -LiteralPath $AutonomousBridgeScriptPath)) {
+      throw "PHASE160_DUTY_AUTONOMOUS_ATOM_BRIDGE_SCRIPT_MISSING=modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1"
+    }
+
+    $AutonomousBridgeRunId = "AUTONOMOUS_ATOM_BRIDGE_{0}_{1}" -f $DutyId, (Get-Date -Format "yyyyMMdd_HHmmss")
+    $AutonomousBridgeSessionRoot = "$DutyDirRelative/autonomous_atom_bridge"
+    $AutonomousBridgeSessionRootFull = Resolve-Phase160DutyPath -RepoRoot $RepoRoot -Path $AutonomousBridgeSessionRoot
+    $AutonomousBridgeProcessLogPath = Join-Path $DutyDirFull "autonomous_atom_bridge_process_output.txt"
+
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "autonomous_atom_bridge_started"
+      source = "builder_self_growth_duty"
+      duty_id = $DutyId
+      run_id = $AutonomousBridgeRunId
+      bridge_session_root = $AutonomousBridgeSessionRoot
+      owner_work_absent = $true
+      accepted_state_mutated = $false
+      accepted_memory_mutated = $false
+      accepted_self_model_mutated = $false
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+
+    $AutonomousBridgeOutput = @(pwsh -NoProfile -ExecutionPolicy Bypass -File $AutonomousBridgeScriptPath -RepoRoot $RepoRoot -SessionRoot $AutonomousBridgeSessionRoot -RunId $AutonomousBridgeRunId 2>&1 | ForEach-Object { [string]$_ })
+    $AutonomousBridgeOutput | Set-Content -LiteralPath $AutonomousBridgeProcessLogPath -Encoding UTF8
+
+    if ($LASTEXITCODE -ne 0) {
+      throw "PHASE160_DUTY_AUTONOMOUS_ATOM_BRIDGE_FAILED exit=$LASTEXITCODE log=$AutonomousBridgeProcessLogPath"
+    }
+
+    $AutonomousBridgeResultPathFull = Join-Path $AutonomousBridgeSessionRootFull "bridge_result.json"
+    $AutonomousBridgeAtomSummaryPathFull = Join-Path $AutonomousBridgeSessionRootFull "atom_candidate_summary.json"
+
+    if (-not (Test-Path -LiteralPath $AutonomousBridgeResultPathFull)) {
+      throw "PHASE160_DUTY_AUTONOMOUS_ATOM_BRIDGE_RESULT_MISSING=$AutonomousBridgeResultPathFull"
+    }
+    if (-not (Test-Path -LiteralPath $AutonomousBridgeAtomSummaryPathFull)) {
+      throw "PHASE160_DUTY_AUTONOMOUS_ATOM_SUMMARY_MISSING=$AutonomousBridgeAtomSummaryPathFull"
+    }
+
+    $AutonomousBridgeResult = Read-Phase160DutyJsonSafe -Path $AutonomousBridgeResultPathFull
+    $AutonomousBridgeAtomSummary = Read-Phase160DutyJsonSafe -Path $AutonomousBridgeAtomSummaryPathFull
+
+    $AutonomousBridgeStatus = Get-Phase160DutyStringProperty -Object $AutonomousBridgeResult -Name "status" -Default "UNKNOWN"
+    $AutonomousBridgeResultPath = ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $AutonomousBridgeResultPathFull
+    $AutonomousBridgeAtomSummaryPath = ConvertTo-Phase160DutyRelativePath -RepoRoot $RepoRoot -FullPath $AutonomousBridgeAtomSummaryPathFull
+    $AutonomousBridgeAtomSummaryStatus = Get-Phase160DutyStringProperty -Object $AutonomousBridgeAtomSummary -Name "status" -Default "UNKNOWN"
+
+    if ($AutonomousBridgeResult.PSObject.Properties.Name -contains "skill_candidate_count") {
+      $AutonomousBridgeSkillCandidateCount = [int]$AutonomousBridgeResult.skill_candidate_count
+    }
+    if ($AutonomousBridgeResult.PSObject.Properties.Name -contains "accepted_atom_claimed") {
+      $AutonomousBridgeAcceptedAtomClaimed = [bool]$AutonomousBridgeResult.accepted_atom_claimed
+    }
+
+    Add-Phase160DutyJsonLine -Path $EventLogPath -Object ([ordered]@{
+      event_type = "autonomous_atom_bridge_completed"
+      source = "builder_self_growth_duty"
+      duty_id = $DutyId
+      run_id = $AutonomousBridgeRunId
+      status = $AutonomousBridgeStatus
+      bridge_result_path = $AutonomousBridgeResultPath
+      atom_candidate_summary_path = $AutonomousBridgeAtomSummaryPath
+      atom_summary_status = $AutonomousBridgeAtomSummaryStatus
+      skill_candidate_count = $AutonomousBridgeSkillCandidateCount
+      accepted_atom_claimed = $AutonomousBridgeAcceptedAtomClaimed
+      accepted_state_mutated = $false
+      accepted_memory_mutated = $false
+      accepted_self_model_mutated = $false
+      occurred_at = (Get-Date).ToUniversalTime().ToString("o")
+    })
+  }
+
   $PreviousDutyId = if ($DutyIndex -gt 1) { "duty_{0:d4}" -f ($DutyIndex - 1) } else { "NONE" }
   $PreviousDutyArtifact = if ($DutyIndex -gt 1) { "$DutyRootRelative/$PreviousDutyId/macro_cycle_artifact.json" } else { "NONE" }
   $PreviousDutyArtifactFull = if ($DutyIndex -gt 1) { Resolve-Phase160DutyPath -RepoRoot $RepoRoot -Path $PreviousDutyArtifact } else { $null }
@@ -1685,6 +1778,14 @@ try {
     teacher_consumed_count = [int]$LiveTaskCounts.teacher_consumed_count
     teacher_quarantine_count = [int]$LiveTaskCounts.teacher_quarantine_count
     task_backlog_count = [int]$LiveTaskCounts.task_backlog_count
+    autonomous_bridge_eligible = $AutonomousBridgeEligible
+    autonomous_growth_attempted = $AutonomousBridgeAttempted
+    autonomous_bridge_status = $AutonomousBridgeStatus
+    autonomous_bridge_result_path = $AutonomousBridgeResultPath
+    autonomous_atom_summary_path = $AutonomousBridgeAtomSummaryPath
+    autonomous_atom_summary_status = $AutonomousBridgeAtomSummaryStatus
+    autonomous_skill_candidate_count = $AutonomousBridgeSkillCandidateCount
+    accepted_atom_claimed = $AutonomousBridgeAcceptedAtomClaimed
     last_consumed_task = [string]$LiveTaskCounts.last_consumed_task
     live_task_intake_detected_count = [int]$LiveTaskIntake.detected_count
     live_task_intake_deduplicated_count = [int]$LiveTaskIntake.deduplicated_count
@@ -1735,6 +1836,14 @@ try {
     consumed_owner_task = $ConsumedOwnerTask
     task_influenced_gap_selection = $TaskInfluencedGapSelection
     backlog_count = [int]$LiveTaskCounts.task_backlog_count
+    autonomous_bridge_eligible = $AutonomousBridgeEligible
+    autonomous_growth_attempted = $AutonomousBridgeAttempted
+    autonomous_bridge_status = $AutonomousBridgeStatus
+    autonomous_bridge_result_path = $AutonomousBridgeResultPath
+    autonomous_atom_summary_path = $AutonomousBridgeAtomSummaryPath
+    autonomous_atom_summary_status = $AutonomousBridgeAtomSummaryStatus
+    autonomous_skill_candidate_count = $AutonomousBridgeSkillCandidateCount
+    accepted_atom_claimed = $AutonomousBridgeAcceptedAtomClaimed
     consumed_count = [int]$LiveTaskCounts.teacher_consumed_count
     quarantine_count = [int]$LiveTaskCounts.teacher_quarantine_count
     last_consumed_task = [string]$LiveTaskCounts.last_consumed_task

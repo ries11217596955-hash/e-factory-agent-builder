@@ -4,7 +4,7 @@
   "source_of_truth_status": "DERIVED_ACTIVE_MAP_CANDIDATE",
   "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
   "why_status": "Derived from existing protected state, self-knowledge, self-model, body registry, capability shelf, route locks, modules, validators, reports, proofs, docs, packs, and orchestrator files. PHASE161D separates live evidence, validator proof, proof/report references, historical references, supersession, disconnected artifacts, and stub false positives.",
-  "generated_at": "2026-06-08T13:02:06.3807044Z",
+  "generated_at": "2026-06-08T15:02:52.8747320Z",
   "source_inputs": [
     "CAPABILITY_ROADMAP.json",
     "GENESIS_STATE.json",
@@ -21962,7 +21962,6 @@
         "proofs/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1.json",
         "proofs/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1.json",
         "proofs/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -21971,7 +21970,6 @@
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE153_SELF_GROWTH_DUTY_RUNTIME_IGNITION_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE154_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_ALIGNMENT_REQUEST.md",
@@ -21996,7 +21994,6 @@
         "proofs/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -22005,7 +22002,6 @@
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [
@@ -22026,12 +22022,10 @@
       "stub_false_positive": false,
       "callers": [
         "modules/invoke_builder_live_self_growth_duty_step_001.ps1",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "callees": [
@@ -22048,7 +22042,6 @@
         "validators/validate_phase160_live_growth_session_daemon_bootstrap_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -22057,7 +22050,6 @@
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
@@ -23553,6 +23545,7 @@
         "proofs/self_development/PHASE161B_UNIFIED_LEARNING_MODE_LOOP_PROOF.json",
         "proofs/self_development/PHASE161B1_UNIFIED_OWNER_INBOX_ROUTER_PROOF.json",
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -23576,7 +23569,6 @@
         "reports/self_development/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_REPORT.md",
         "reports/self_development/PHASE160J_OWNER_TASK_INTAKE_AND_BACKLOG_LIFECYCLE_REPORT.md",
         "reports/self_development/PHASE160J1_STATE_EXPOSURE_FIELD_ALIAS_REPORT.md",
-        "reports/self_development/PHASE160K_QUALITY_ARTIFACT_CONSISTENCY_REPORT.md",
         "route_change_requests/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_ALIGNMENT_REQUEST.md",
         "route_change_requests/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REQUEST.md",
@@ -23659,6 +23651,7 @@
       ],
       "report_reference_paths": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -23681,8 +23674,7 @@
         "reports/self_development/PHASE160H1_PAYLOAD_WRITER_DIRECTORY_CREATION_REPORT.md",
         "reports/self_development/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_REPORT.md",
         "reports/self_development/PHASE160J_OWNER_TASK_INTAKE_AND_BACKLOG_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160J1_STATE_EXPOSURE_FIELD_ALIAS_REPORT.md",
-        "reports/self_development/PHASE160K_QUALITY_ARTIFACT_CONSISTENCY_REPORT.md"
+        "reports/self_development/PHASE160J1_STATE_EXPOSURE_FIELD_ALIAS_REPORT.md"
       ],
       "historical_reference_paths": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -23713,6 +23705,7 @@
         "modules/inspect_builder_long_run_batch_readiness_001.ps1",
         "modules/inspect_builder_runtime_identity_001.ps1",
         "modules/start_builder_live_growth_daemon_001.ps1",
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -23775,6 +23768,7 @@
       ],
       "reports": [
         "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -23797,8 +23791,7 @@
         "reports/self_development/PHASE160H1_PAYLOAD_WRITER_DIRECTORY_CREATION_REPORT.md",
         "reports/self_development/PHASE160I_LONG_RUN_LIFECYCLE_AUDIT_REPORT.md",
         "reports/self_development/PHASE160J_OWNER_TASK_INTAKE_AND_BACKLOG_LIFECYCLE_REPORT.md",
-        "reports/self_development/PHASE160J1_STATE_EXPOSURE_FIELD_ALIAS_REPORT.md",
-        "reports/self_development/PHASE160K_QUALITY_ARTIFACT_CONSISTENCY_REPORT.md"
+        "reports/self_development/PHASE160J1_STATE_EXPOSURE_FIELD_ALIAS_REPORT.md"
       ],
       "proofs": [
         "proofs/self_development/PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1.json",
@@ -25437,6 +25430,7 @@
         "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
+        "reports/self_development/safe_repair_candidates_from_body_map.json",
         "reports/self_development/self_map_memory_report.md",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "reports/self_development/stub_false_positive_inventory.json",
@@ -102281,7 +102275,7 @@
         ""
       ],
       "callees": [
-        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1"
+        "modules/invoke_builder_live_self_growth_duty_step_001.ps1"
       ],
       "validators": [
         "validators/validate_phase161e_self_map_auto_refresh_after_acceptance_v1.ps1",
@@ -126088,7 +126082,7 @@
         "modules/inspect_builder_quality_decision_index_001.ps1",
         "modules/inspect_builder_self_map_refresh_readiness_001.ps1",
         "modules/invoke_agent_spec_architect_handoff.ps1",
-        "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1"
+        "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1"
       ],
       "validators": [
         "validators/validate_phase161c_agent_body_map_reuse_and_self_model_sync_v1.ps1",

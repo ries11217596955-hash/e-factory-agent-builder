@@ -6134,6 +6134,11 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_10MIN_STABILITY_ACCEPTANCE_REPORT.md",
+      "path": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_10MIN_STABILITY_ACCEPTANCE_REPORT.md",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
       "path": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
       "node_type": "report"
@@ -20632,13 +20637,6 @@
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
-      "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_autonomous_atom_bridge_sandbox_001"
-    },
-    {
       "source": "reports/self_development/agent_body_map.json",
       "target": "modules/absorb_builder_school_experience_001.ps1",
       "edge_type": "calls",
@@ -21519,6 +21517,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "write_operation_contract_report"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/prepare_builder_overnight_learning_run_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "prepare_builder_overnight_learning_run_001"
     }
   ]
 }

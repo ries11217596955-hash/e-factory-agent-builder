@@ -6206,7 +6206,6 @@
         "proofs/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1.json",
         "proofs/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1.json",
         "proofs/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1.json",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -6239,7 +6238,6 @@
         "proofs/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1.json"
       ],
       "report_reference_paths": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -6268,7 +6266,6 @@
       "stub_false_positive": false,
       "callers": [
         "modules/invoke_builder_live_self_growth_duty_step_001.ps1",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -6289,7 +6286,6 @@
         "validators/validate_phase160_live_growth_session_daemon_bootstrap_v1.ps1"
       ],
       "reports": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -25511,7 +25507,7 @@
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 87
+      "count": 88
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -25535,7 +25531,7 @@
     },
     {
       "evidence_type": "REPORT_REFERENCED",
-      "count": 64
+      "count": 65
     },
     {
       "evidence_type": "SUPERSEDED_BY_ROUTE_LOCK",
@@ -25543,7 +25539,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 727
+      "count": 726
     }
   ],
   "important_gaps": [
@@ -25708,8 +25704,8 @@
   ],
   "next_decision_reason": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
   "self_map_refresh_policy_id": "PHASE161E_SELF_MAP_REFRESH_AFTER_ACCEPTED_CHANGE_POLICY_V1",
-  "accepted_subject_head": "c19365766601ab7a8fbb90fa6ba5587fd3bba5c9",
-  "generated_from_worktree_head": "c19365766601ab7a8fbb90fa6ba5587fd3bba5c9",
+  "accepted_subject_head": "86057b43ca779cd3c357db9f7ecd96ce512760aa",
+  "generated_from_worktree_head": "86057b43ca779cd3c357db9f7ecd96ce512760aa",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
@@ -25720,7 +25716,7 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "recommended_next_learning_tasks": [
     {
-      "gap_id": "PHASE161J_RECOMMENDATION_20260608151929",
+      "gap_id": "PHASE161J_RECOMMENDATION_20260608155914",
       "recommended_next_action": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
       "why_status": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
       "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",

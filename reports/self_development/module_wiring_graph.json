@@ -20603,13 +20603,6 @@
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
-      "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/inspect_builder_organism_health_state_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "inspect_builder_organism_health_state_001"
-    },
-    {
       "source": "reports/self_development/agent_body_map.json",
       "target": "modules/absorb_builder_school_experience_001.ps1",
       "edge_type": "calls",
@@ -21504,6 +21497,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "quarantine_builder_owner_inbox_message_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/read_capability_roadmap.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "read_capability_roadmap"
     }
   ]
 }

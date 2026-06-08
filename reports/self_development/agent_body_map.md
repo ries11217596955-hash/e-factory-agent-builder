@@ -6,10 +6,10 @@ This PHASE161C map reuses existing protected state, self-knowledge, self-model, 
 
 Artifacts scanned: 1500
 Graph nodes: 1500
-Graph edges: 4756
+Graph edges: 4755
 Function inventory entries: 615
 Stub or placeholder entries: 2
-False-positive stub entries: 89
+False-positive stub entries: 88
 Orphan candidates: 250
 Historical reference entries: 204
 Superseded entries: 1

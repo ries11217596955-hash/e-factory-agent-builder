@@ -1,0 +1,8 @@
+{
+  "schema": "PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_VALIDATION_V1",
+  "status": "PASS",
+  "phase163_closed": true,
+  "selected_next_locked_step": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
+  "accepted_core_mutation_executed": false,
+  "next_machine_action": "BUILD_PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_PACK"
+}

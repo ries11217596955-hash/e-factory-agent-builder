@@ -1,0 +1,15 @@
+{
+  "proof_id": "PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_V1",
+  "status": "PASS_PENDING_COMMIT",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "0b9504b",
+  "phase163t_proof_path": "proofs/self_development/PHASE163T_CONTROLLER_CONSUME_VISIBILITY_PROOF_V1.json",
+  "output_root": "reports/self_development/phase164_route_selection/PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_20260609_214718",
+  "result_path": "reports\\self_development\\phase164_route_selection\\PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_20260609_214718\\selected_next_locked_route_step_result.json",
+  "validation_path": "reports\\self_development\\phase164_route_selection\\PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_20260609_214718\\selected_next_locked_route_step_validation.json",
+  "selected_next_locked_step": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
+  "following_locked_step": "PHASE161L_AGENTS_MD_AUTO_SYNC_FROM_SELF_MAP",
+  "accepted_core_mutation_executed": false,
+  "next_machine_action": "BUILD_PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_PACK",
+  "created_at": "2026-06-09T17:47:19.5370068Z"
+}

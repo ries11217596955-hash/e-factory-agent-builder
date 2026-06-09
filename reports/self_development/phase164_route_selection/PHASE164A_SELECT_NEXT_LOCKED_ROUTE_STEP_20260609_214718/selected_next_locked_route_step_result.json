@@ -1,0 +1,14 @@
+{
+  "schema": "PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_RESULT_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T17:47:19.3254362Z",
+  "head_before": "0b9504b",
+  "phase163_closed": true,
+  "foundation_atom_batch_accepted": true,
+  "accepted_atoms_visible_to_next_cycle": true,
+  "selected_next_locked_step": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
+  "following_locked_step": "PHASE161L_AGENTS_MD_AUTO_SYNC_FROM_SELF_MAP",
+  "reason": "PHASE163 foundation atom batch is closed; route discipline requires returning to unresolved route/evidence reconciliation before AGENTS.md autosync and later autonomy expansion.",
+  "accepted_core_mutation_executed": false,
+  "next_machine_action": "BUILD_PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_PACK"
+}

@@ -1,0 +1,15 @@
+{
+  "upstream_ok": true,
+  "ops_counts_valid": true,
+  "operation_ids_unique": true,
+  "atom_ids_aligned": true,
+  "targets_allowed": true,
+  "no_write_modes": true,
+  "final_write_denied_everywhere": true,
+  "write_plan_valid": true,
+  "rollback_plan_valid": true,
+  "post_mutation_validation_binding_valid": true,
+  "fingerprint_targets_present": true,
+  "pre_after_fingerprints_match": true,
+  "accepted_core_safe": true
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_DEEP_VALIDATION_FOR_ATOM_BATCH_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T20:29:43.0575877+04:00",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163M_DEEP_VALIDATED_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202942",
+  "checks": {
+    "status_pass": true,
+    "deep_validated_true": true,
+    "upstream_ok": true,
+    "ops_counts_valid": true,
+    "operation_ids_unique": true,
+    "atom_ids_aligned": true,
+    "targets_allowed": true,
+    "no_write_modes": true,
+    "final_write_denied_everywhere": true,
+    "write_plan_valid": true,
+    "rollback_plan_valid": true,
+    "post_binding_valid": true,
+    "fingerprints_present": true,
+    "fingerprints_match": true,
+    "accepted_core_safe": true,
+    "final_accept_ready_false": true,
+    "decision_blocked": true,
+    "next_action_feed_controller": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "next_machine_action": "FEED_VALIDATED_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_BACK_INTO_CONTROLLER"
+}

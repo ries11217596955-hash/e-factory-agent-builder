@@ -1,0 +1,62 @@
+{
+  "schema": "PHASE162_ATOM_CANDIDATE_FROZEN_EVIDENCE_V1",
+  "status": "FROZEN",
+  "created_at": "2026-06-09T09:16:14.1940598+04:00",
+  "repo_head": "cfb53b1",
+  "source_events_file": "reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605\\local_bridge_event.jsonl",
+  "selected_event_type": "autonomous_atom_bridge_completed",
+  "selected_duty_id": "PHASE162_LOCAL_DUTY_20260609_091605",
+  "selected_run_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605",
+  "selected_status": "PASS",
+  "selected_atom_summary_status": "SANDBOX_ATOM_CANDIDATE_NOT_ACCEPTED",
+  "selected_skill_candidate_count": 3,
+  "selected_accepted_atom_claimed": false,
+  "atom_candidate_summary_path": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\runtime_sessions\\phase162_local_atom_source\\PHASE162_LOCAL_ATOM_SOURCE_20260609_091605\\atom_candidate_summary.json",
+  "atom_candidate_summary_present_on_this_pc": true,
+  "candidate_summary_snapshot": {
+    "status": "SANDBOX_ATOM_CANDIDATE_NOT_ACCEPTED",
+    "bridge_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605",
+    "source_runtime": "PHASE154_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL",
+    "skill_candidate_count": 3,
+    "skill_candidates": [
+      {
+        "cycle_id": "cycle_003",
+        "skill_id": "SUBTRACTION_BASIC_SKILL_CANDIDATE_V1",
+        "selected_goal": "learn_subtraction_basic_v1",
+        "validation_status": "PASS",
+        "sandbox_path": "living_learning_environment/self_growth_cycles/PHASE162_LOCAL_ATOM_BRIDGE_20260609_091605/cycle_003/skill_candidate.json"
+      },
+      {
+        "cycle_id": "cycle_004",
+        "skill_id": "ADDITION_CONSISTENCY_SKILL_CANDIDATE_V1",
+        "selected_goal": "learn_addition_consistency_v1",
+        "validation_status": "PASS",
+        "sandbox_path": "living_learning_environment/self_growth_cycles/PHASE162_LOCAL_ATOM_BRIDGE_20260609_091605/cycle_004/skill_candidate.json"
+      },
+      {
+        "cycle_id": "cycle_005",
+        "skill_id": "ARITHMETIC_ERROR_DETECTION_SKILL_CANDIDATE_V1",
+        "selected_goal": "learn_arithmetic_error_detection_v1",
+        "validation_status": "PASS",
+        "sandbox_path": "living_learning_environment/self_growth_cycles/PHASE162_LOCAL_ATOM_BRIDGE_20260609_091605/cycle_005/skill_candidate.json"
+      }
+    ],
+    "runtime_stop_safe": true,
+    "stop_reason": "PHASE154_CYCLE_LIMIT_REACHED",
+    "final_next_growth_goal": "STOP_CURRICULUM_ROUND_COMPLETE",
+    "memory_proof": "candidate_only_sandbox_outputs",
+    "use_proof": "skill_validation_result_PASS_inside_sandbox",
+    "behavior_delta": "not_accepted_not_promoted",
+    "accepted_memory_mutated": false,
+    "accepted_state_mutated": false,
+    "accepted_self_model_mutated": false,
+    "accepted_atom_claimed": false,
+    "next_required_step": "connect_live_daemon_autonomous_growth_hook_after_module_regression",
+    "created_at": "2026-06-09T05:16:13.8703803Z"
+  },
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "accepted_core_mutation_allowed": false,
+  "safety_boundary": "session_local_freeze_only"
+}

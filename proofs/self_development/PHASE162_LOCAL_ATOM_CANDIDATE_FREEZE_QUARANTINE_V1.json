@@ -1,0 +1,21 @@
+{
+  "schema": "PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:16:14.6308860+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "cfb53b1",
+  "local_bridge_session_root": "runtime_sessions/phase162_local_atom_source/PHASE162_LOCAL_ATOM_SOURCE_20260609_091605",
+  "local_bridge_status": "PASS",
+  "atom_candidate_summary_path": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\runtime_sessions\\phase162_local_atom_source\\PHASE162_LOCAL_ATOM_SOURCE_20260609_091605\\atom_candidate_summary.json",
+  "atom_candidate_summary_present_on_this_pc": true,
+  "skill_candidate_count": 3,
+  "freeze_output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "admission_decision": "QUARANTINE",
+  "accept_ready": false,
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "validator_status": "PASS",
+  "next_action": "BUILD_ACCEPT_READINESS_GATE_BUT_KEEP_ACCEPT_DISABLED"
+}

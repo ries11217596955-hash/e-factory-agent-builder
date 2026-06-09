@@ -1,0 +1,21 @@
+{
+  "schema": "PHASE162_ATOM_CANDIDATE_ADMISSION_DECISION_V1",
+  "status": "PASS",
+  "admission_decision": "QUARANTINE",
+  "created_at": "2026-06-09T09:16:14.2820556+04:00",
+  "frozen_evidence_path": "reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605\\frozen_atom_candidate_evidence.json",
+  "reasons": [
+    "phase162_first_prototype_is_quarantine_only",
+    "accepted_core_mutation_disallowed",
+    "source_event_declares_sandbox_atom_candidate_not_accepted",
+    "source_event_declares_accepted_atom_false"
+  ],
+  "usefulness_validated": false,
+  "safety_validated_for_accept": false,
+  "accept_ready": false,
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "KEEP_QUARANTINED_UNTIL_FULL_CANDIDATE_ARTIFACT_AND_ACCEPTANCE_VALIDATOR_EXIST"
+}

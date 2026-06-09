@@ -1,15 +1,14 @@
 {
-  "accepted_subject_head": "a6c87d9e0ad94b2edc6f52779f0418e74aa49734",
+  "accepted_subject_head": "0069151cc26b6a8fe163946b9f62e50ded11d80a",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
-    "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/accept_safety_contract_dry_run_activation_request.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/controller_with_next_cycle_trial_result.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/controller_with_next_cycle_trial_validation.json",
-    "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1"
+    "modules/invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1",
+    "proofs/self_development/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_validation.json",
+    "validators/validate_phase162_accept_safety_contract_dry_run_activation_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -17,5 +16,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T06:04:24.0808300Z"
+  "created_at": "2026-06-09T06:08:55.8764221Z"
 }

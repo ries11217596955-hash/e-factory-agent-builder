@@ -5372,6 +5372,73 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json",
+        "Get-PathFingerprint",
+        "Test-UnderRoot"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "ControllerRoot",
+        "SafetyRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "item",
+        "Root",
+        "fullPath",
+        "fullRoot",
+        "RepoRootFull",
+        "stamp",
+        "OutputRootFull",
+        "controller",
+        "controllerValidation",
+        "request",
+        "safety",
+        "contract",
+        "safetyValidation",
+        "inputReady",
+        "protected",
+        "_",
+        "beforeFingerprints",
+        "rel",
+        "full",
+        "dryRunWriteRoot",
+        "allowedProbePath",
+        "rollbackProbePath",
+        "allowedWritePermitted",
+        "protectedDenials",
+        "allowed",
+        "probePayload",
+        "rollbackPayload",
+        "rollbackCreated",
+        "rollbackDeleted",
+        "afterFingerprints",
+        "protectedUnchanged",
+        "before",
+        "after"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json, Get-PathFingerprint, Test-UnderRoot",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 70 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "New-Item -ItemType Directory -Force -Path $dryRunWriteRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "remove_item",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -5482,7 +5549,9 @@
         "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
         "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_REPORT.md\") -Encoding UTF8"
       ],
-      "calls_detected": [],
+      "calls_detected": [
+        "modules/invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1"
+      ],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
@@ -29336,6 +29405,34 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "validators/validate_phase162_accept_safety_contract_dry_run_activation_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "result",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 70 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "validators/validate_phase162_accept_safety_contract_scaffold_v1.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -29538,7 +29635,9 @@
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 60 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
-      "calls_detected": [],
+      "calls_detected": [
+        "modules/invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1"
+      ],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],

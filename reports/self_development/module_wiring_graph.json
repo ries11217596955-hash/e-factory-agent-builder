@@ -1259,6 +1259,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1",
+      "path": "modules/invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
       "path": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
       "node_type": "module"
@@ -5089,6 +5094,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_V1.json",
+      "path": "proofs/self_development/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
       "path": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
       "node_type": "proof"
@@ -6336,6 +6346,21 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7741,6 +7766,11 @@
     {
       "id": "validators/validate_phase162_accept_readiness_gate_with_blocker_inputs_v1.ps1",
       "path": "validators/validate_phase162_accept_readiness_gate_with_blocker_inputs_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_accept_safety_contract_dry_run_activation_v1.ps1",
+      "path": "validators/validate_phase162_accept_safety_contract_dry_run_activation_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -11217,6 +11247,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_phase162_next_cycle_improvement_trial_sandbox_001"
+    },
+    {
+      "source": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
+      "target": "modules/invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_phase162_accept_safety_contract_dry_run_activation_001"
     },
     {
       "source": "modules/invoke_review_autonomous_material_decision_stress_results_001.ps1",
@@ -21461,10 +21498,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1",
+      "target": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_phase162_next_cycle_improvement_trial_sandbox_001"
+      "evidence_snippet_or_pattern": "invoke_phase162_controller_consume_next_cycle_trial_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -21962,13 +21999,6 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_observation_driven_self_correction_trial_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_observation_only_live_runner_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_observation_only_live_runner_001"
     }
   ]
 }

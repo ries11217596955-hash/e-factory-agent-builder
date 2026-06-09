@@ -1,0 +1,10 @@
+[
+  {
+    "schema": "PHASE162_DRY_RUN_SELF_MODEL_VIEW_RECORD_V1",
+    "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+    "source_freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+    "operation": "append_candidate_self_model_note",
+    "target": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+    "dry_run_only": true
+  }
+]

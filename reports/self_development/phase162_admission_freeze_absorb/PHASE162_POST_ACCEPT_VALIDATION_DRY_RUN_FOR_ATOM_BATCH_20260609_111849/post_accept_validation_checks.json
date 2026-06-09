@@ -1,0 +1,10 @@
+{
+  "input_ready": true,
+  "memory_schema_valid": true,
+  "self_model_schema_valid": true,
+  "registry_consistency_valid": true,
+  "next_cycle_visibility_valid": true,
+  "blocked_atoms_preserved_with_reasons": true,
+  "overlay_file_count": 5,
+  "dry_run_only": true
+}

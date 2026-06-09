@@ -1,0 +1,9 @@
+[
+  {
+    "schema": "PHASE162_DRY_RUN_NEXT_CYCLE_VISIBILITY_RECORD_V1",
+    "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+    "visible_to_next_cycle": true,
+    "allowed_next_cycle_use": "sandbox_or_post_accept_validation_only",
+    "final_accept_claimed": false
+  }
+]

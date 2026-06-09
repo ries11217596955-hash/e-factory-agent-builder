@@ -1,0 +1,3 @@
+{"ts":"2026-06-09T11:18:49.5519306+04:00","type":"POST_ACCEPT_VALIDATION_DRY_RUN_STARTED","data":{"input_ready":true,"staged_atom_count":1,"blocked_atom_count":0,"accepted_core_write_allowed":false}}
+{"ts":"2026-06-09T11:18:49.5955467+04:00","type":"POST_ACCEPT_VALIDATION_CHECKS_BUILT","data":{"input_ready":true,"memory_schema_valid":true,"self_model_schema_valid":true,"registry_consistency_valid":true,"next_cycle_visibility_valid":true,"blocked_atoms_preserved_with_reasons":true,"overlay_file_count":5,"dry_run_only":true}}
+{"ts":"2026-06-09T11:18:49.6020355+04:00","type":"POST_ACCEPT_VALIDATION_DRY_RUN_COMPLETED","data":{"post_accept_validation_dry_run_passed":true,"protected_targets_unchanged":true,"accepted_core_mutation":false}}

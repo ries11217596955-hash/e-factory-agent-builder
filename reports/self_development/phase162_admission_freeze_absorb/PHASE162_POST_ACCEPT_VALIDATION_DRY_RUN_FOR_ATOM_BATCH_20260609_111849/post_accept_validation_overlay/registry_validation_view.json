@@ -1,0 +1,10 @@
+[
+  {
+    "schema": "PHASE162_DRY_RUN_REGISTRY_VIEW_RECORD_V1",
+    "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+    "operation": "no_registry_write_until_final_accept",
+    "target": "packs/registry.json",
+    "dry_run_only": true,
+    "final_registry_write_allowed": false
+  }
+]

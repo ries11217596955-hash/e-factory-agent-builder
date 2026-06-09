@@ -1,0 +1,18 @@
+{
+  "proof_id": "PHASE163S_DIRECT_ACCEPTED_ATOMS_VISIBILITY_PROOF_V2",
+  "status": "PASS_PENDING_COMMIT",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "2eacb6f",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163S_DIRECT_ACCEPTED_ATOMS_VISIBILITY_PROOF_20260609_214057",
+  "result_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163S_DIRECT_ACCEPTED_ATOMS_VISIBILITY_PROOF_20260609_214057\\accepted_atoms_visible_to_next_cycle_result.json",
+  "validation_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163S_DIRECT_ACCEPTED_ATOMS_VISIBILITY_PROOF_20260609_214057\\accepted_atoms_visible_to_next_cycle_validation.json",
+  "snapshot_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163S_DIRECT_ACCEPTED_ATOMS_VISIBILITY_PROOF_20260609_214057\\next_cycle_visibility_snapshot.json",
+  "accepted_atom_visible_to_next_cycle": true,
+  "visible_atom_count": 73,
+  "expected_atom_count": 73,
+  "protected_targets_unchanged": true,
+  "validation_status": "PASS",
+  "accepted_core_mutation_executed": false,
+  "next_machine_action": "FEED_ACCEPTED_ATOMS_VISIBILITY_PROOF_BACK_INTO_CONTROLLER",
+  "created_at": "2026-06-09T17:40:57.8394721Z"
+}

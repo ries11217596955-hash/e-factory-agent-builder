@@ -1,0 +1,22 @@
+{
+  "proof_id": "PHASE163T_CONTROLLER_CONSUME_VISIBILITY_PROOF_V1",
+  "status": "PASS_PENDING_COMMIT",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "6728717",
+  "visibility_proof_path": "proofs/self_development/PHASE163S_DIRECT_ACCEPTED_ATOMS_VISIBILITY_PROOF_V2.json",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163T_CONTROLLER_CONSUME_VISIBILITY_PROOF_20260609_214243",
+  "result_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163T_CONTROLLER_CONSUME_VISIBILITY_PROOF_20260609_214243\\controller_consume_accepted_atoms_visibility_proof_result.json",
+  "validation_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163T_CONTROLLER_CONSUME_VISIBILITY_PROOF_20260609_214243\\controller_consume_accepted_atoms_visibility_proof_validation.json",
+  "controller_visibility_closure_executed": true,
+  "phase163_closed": true,
+  "foundation_atom_batch_accepted": true,
+  "accepted_atoms_visible_to_next_cycle": true,
+  "visible_atom_count": 73,
+  "expected_atom_count": 73,
+  "accepted_core_rewrite_executed": false,
+  "repeated_mutation_execution": false,
+  "accepted_core_mutation_executed": false,
+  "next_machine_action": "SELECT_NEXT_LOCKED_ROUTE_STEP",
+  "validation_status": "PASS",
+  "created_at": "2026-06-09T17:42:43.7095632Z"
+}

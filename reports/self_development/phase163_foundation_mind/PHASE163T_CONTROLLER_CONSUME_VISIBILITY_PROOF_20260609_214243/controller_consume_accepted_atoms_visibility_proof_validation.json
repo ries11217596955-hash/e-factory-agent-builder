@@ -1,0 +1,14 @@
+{
+  "schema": "PHASE163T_CONTROLLER_CONSUME_ACCEPTED_ATOMS_VISIBILITY_PROOF_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T17:42:43.6273309Z",
+  "controller_visibility_closure_executed": true,
+  "phase163_closed": true,
+  "accepted_atoms_visible_to_next_cycle": true,
+  "visible_atom_count": 73,
+  "expected_atom_count": 73,
+  "accepted_core_rewrite_executed": false,
+  "repeated_mutation_execution": false,
+  "accepted_core_mutation_executed": false,
+  "next_machine_action": "SELECT_NEXT_LOCKED_ROUTE_STEP"
+}

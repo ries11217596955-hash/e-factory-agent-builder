@@ -1689,6 +1689,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/update_phase162_usefulness_blockers_with_executed_use_001.ps1",
+      "path": "modules/update_phase162_usefulness_blockers_with_executed_use_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/update_task_queue.ps1",
       "path": "modules/update_task_queue.ps1",
       "node_type": "module"
@@ -5074,6 +5079,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
+      "path": "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "node_type": "proof"
@@ -6329,6 +6339,31 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/safety_validation_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/safety_validation_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_safety_blockers_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_safety_blockers_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_safety_blockers_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_safety_blockers_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_validation_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_validation_result.json",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_HANDOFF_20260608_224213.md",
       "path": "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_HANDOFF_20260608_224213.md",
       "node_type": "report"
@@ -7561,6 +7596,11 @@
     {
       "id": "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
       "path": "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1",
+      "path": "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21201,10 +21241,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/test_phase162_accept_readiness_gate_with_blocker_inputs_001.ps1",
+      "target": "modules/test_phase162_atom_executed_use_proof_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "test_phase162_accept_readiness_gate_with_blocker_inputs_001"
+      "evidence_snippet_or_pattern": "test_phase162_atom_executed_use_proof_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

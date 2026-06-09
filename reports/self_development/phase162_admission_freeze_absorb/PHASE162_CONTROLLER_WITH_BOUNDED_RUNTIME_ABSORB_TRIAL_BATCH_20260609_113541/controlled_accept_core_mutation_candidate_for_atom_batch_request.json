@@ -1,0 +1,20 @@
+{
+  "schema": "PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_REQUEST_V1",
+  "status": "READY_TO_BUILD",
+  "created_at": "2026-06-09T11:35:41.0318612+04:00",
+  "reason": "Runtime absorb proof passed. Prepare exact accepted-core mutation candidate, but do not write accepted core yet.",
+  "required_trial": {
+    "mode": "CANDIDATE_ONLY_NO_ACCEPTED_CORE_WRITES",
+    "objective": "build exact accepted-memory/self-model/registry mutation set for atom batch with pre-accept fingerprints, atomic write plan, rollback plan, and post-mutation validation binding",
+    "expected_machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+    "expected_next_if_pass": "AUTHORIZE_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN",
+    "forbidden": [
+      "mutate_accepted_memory",
+      "mutate_accepted_self_model",
+      "mutate_pack_registry",
+      "claim_final_accept",
+      "claim_real_absorb_complete"
+    ]
+  },
+  "next_module_to_build": "invoke_phase162_controlled_accept_core_mutation_candidate_for_atom_batch_001.ps1"
+}

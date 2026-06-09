@@ -1,0 +1,25 @@
+{
+  "schema": "PHASE162_POLICY_GATE_DECISION_EXPLANATION_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:14:26.0810652+04:00",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POLICY_GATE_DECISION_EXPLANATION_20260609_101425",
+  "checks": {
+    "status_pass": true,
+    "decision_code_present": true,
+    "summary_present": true,
+    "bounded_trial_allowed": true,
+    "final_accept_denied": true,
+    "accept_ready_false": true,
+    "next_action_bounded_trial": true,
+    "reasons_present": true,
+    "reason_objects_present": true,
+    "next_repair_action_present": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "decision_code": "ALLOW_BOUNDED_ABSORB_TRIAL_DENY_FINAL_ACCEPT",
+  "next_machine_action": "RUN_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX"
+}

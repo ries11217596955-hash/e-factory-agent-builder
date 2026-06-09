@@ -5496,7 +5496,9 @@
         "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
         "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_REPORT.md\") -Encoding UTF8"
       ],
-      "calls_detected": [],
+      "calls_detected": [
+        "modules/invoke_phase162_controlled_accept_candidate_dry_run_for_atom_batch_001.ps1"
+      ],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
@@ -5655,6 +5657,49 @@
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
         "remove_item",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/invoke_phase162_controlled_accept_candidate_dry_run_for_atom_batch_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json"
+      ],
+      "param_names": [
+        "BatchRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "stamp",
+        "envelope",
+        "envelopeValidation",
+        "records",
+        "eligible",
+        "_",
+        "blocked",
+        "inputReady",
+        "deltaRecords",
+        "index",
+        "atom",
+        "blockedRecords",
+        "rollbackPlan",
+        "acceptCommitPlan",
+        "result"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 100 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."
@@ -29761,7 +29806,9 @@
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 100 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
-      "calls_detected": [],
+      "calls_detected": [
+        "modules/invoke_phase162_controlled_accept_candidate_dry_run_for_atom_batch_001.ps1"
+      ],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
@@ -29947,6 +29994,39 @@
       "exported_behavior_guess": "Read-Json",
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 90 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_controlled_accept_candidate_dry_run_for_atom_batch_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "result",
+        "deltas",
+        "blocked",
+        "rollback",
+        "commitPlan",
+        "deltasWithReasons",
+        "_",
+        "checks",
+        "failed",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 100 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [

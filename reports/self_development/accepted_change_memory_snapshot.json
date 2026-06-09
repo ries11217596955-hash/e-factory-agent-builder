@@ -1,15 +1,16 @@
 {
-  "accepted_subject_head": "b1340f888b9df12ed3e8640d729c2fc1a630d6dc",
+  "accepted_subject_head": "265bf66569a323bc51505903888188cec902d0e0",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/invoke_phase162_atom_batch_admission_envelope_001.ps1",
-    "proofs/self_development/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope_validation.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/controlled_accept_candidate_dry_run_for_atom_batch_request.json",
-    "validators/validate_phase162_atom_batch_admission_envelope_v1.ps1"
+    "modules/invoke_phase162_controlled_accept_candidate_dry_run_for_atom_batch_001.ps1",
+    "proofs/self_development/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_atom_deltas.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_commit_plan.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_dry_run_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_rollback_plan.json",
+    "validators/validate_phase162_controlled_accept_candidate_dry_run_for_atom_batch_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -17,5 +18,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T06:41:39.0814124Z"
+  "created_at": "2026-06-09T06:47:21.9276007Z"
 }

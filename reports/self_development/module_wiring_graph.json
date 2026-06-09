@@ -1264,6 +1264,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/invoke_phase162_autonomous_accept_policy_gate_001.ps1",
+      "path": "modules/invoke_phase162_autonomous_accept_policy_gate_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
       "path": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
       "node_type": "module"
@@ -5119,6 +5124,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_V1.json",
+      "path": "proofs/self_development/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
       "path": "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
       "node_type": "proof"
@@ -6381,6 +6391,26 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008/autonomous_accept_policy_gate_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008/autonomous_accept_policy_gate_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008/autonomous_accept_policy_gate_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008/autonomous_accept_policy_gate_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008/bounded_live_daemon_absorb_trial_request.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008/bounded_live_daemon_absorb_trial_request.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7796,6 +7826,11 @@
     {
       "id": "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
       "path": "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_autonomous_accept_policy_gate_v1.ps1",
+      "path": "validators/validate_phase162_autonomous_accept_policy_gate_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21498,10 +21533,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
+      "target": "modules/invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_phase162_controller_consume_next_cycle_trial_001"
+      "evidence_snippet_or_pattern": "invoke_phase162_accept_safety_contract_dry_run_activation_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

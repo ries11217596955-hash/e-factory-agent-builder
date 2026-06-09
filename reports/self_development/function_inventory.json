@@ -5439,6 +5439,48 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/invoke_phase162_autonomous_accept_policy_gate_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json"
+      ],
+      "param_names": [
+        "ControllerRoot",
+        "DryRunRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "stamp",
+        "controller",
+        "controllerValidation",
+        "dryRun",
+        "dryRunValidation",
+        "inputReady",
+        "policyChecks",
+        "missingForAccept",
+        "policyGrantedForControlledAbsorbTrial",
+        "policyGrantedForFinalAccept",
+        "result",
+        "request",
+        "_"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 80 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -29576,6 +29618,35 @@
       "exported_behavior_guess": "Read-Json",
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 20 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_autonomous_accept_policy_gate_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "result",
+        "request",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 80 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [

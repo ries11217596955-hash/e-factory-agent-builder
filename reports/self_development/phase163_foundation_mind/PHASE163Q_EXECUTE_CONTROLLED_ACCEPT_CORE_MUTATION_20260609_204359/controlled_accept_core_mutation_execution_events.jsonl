@@ -1,0 +1,2 @@
+{"ts":"2026-06-09T20:43:59.8663952+04:00","type":"CONTROLLED_ACCEPT_EXECUTION_STARTED","data":{"staged_atom_count":73,"authorization_scope":"ONE_SHOT_ACCEPTED_CORE_WRITE_WITH_ATOMIC_PLAN_AND_ROLLBACK","accepted_core_write_allowed":true}}
+{"ts":"2026-06-09T20:43:59.9542421+04:00","type":"CONTROLLED_ACCEPT_EXECUTION_ROLLED_BACK","data":{"failure":"Method invocation failed because [System.Management.Automation.PSObject] does not contain a method named 'op_Addition'.","rollback_executed":true}}

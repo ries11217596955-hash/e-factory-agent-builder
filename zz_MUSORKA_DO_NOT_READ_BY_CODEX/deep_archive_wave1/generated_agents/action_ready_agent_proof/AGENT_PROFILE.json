@@ -1,0 +1,11 @@
+﻿{
+    "agent_id":  "action_ready_agent_proof",
+    "display_name":  "Action Ready Agent Proof",
+    "mission":  "Prove that generated external agents now include a GitHub Actions launch delivery artifact while preserving operational RUN validation.",
+    "package_profile":  "operational_action_ready",
+    "capabilities":  [
+                         "produce operational agent package",
+                         "include GitHub Actions launch delivery artifact",
+                         "preserve validator and RUN proof"
+                     ]
+}

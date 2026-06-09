@@ -1,0 +1,46 @@
+﻿{
+    "status":  "PASS",
+    "agent_id":  "action_ready_agent_proof",
+    "package_root":  "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\generated_agents\\action_ready_agent_proof",
+    "manifest":  {
+                     "agent_id":  "action_ready_agent_proof",
+                     "package_root":  "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\generated_agents\\action_ready_agent_proof",
+                     "runtime_entrypoint":  "orchestrator/run.ps1",
+                     "validator_entrypoint":  "validators/validate_package.ps1",
+                     "github_action_launch_delivery_artifact":  "deployment/github_actions/run-generated-agent.workflow.yml",
+                     "created_files":  [
+                                           "README.md",
+                                           "AGENTS.md",
+                                           "AGENT_MISSION.md",
+                                           "AGENT_PROFILE.json",
+                                           "contracts/request.schema.json",
+                                           "contracts/result.schema.json",
+                                           "modules/invoke_agent_operation.ps1",
+                                           "orchestrator/run.ps1",
+                                           "validators/validate_package.ps1",
+                                           "examples/SAMPLE_REQUEST.json",
+                                           "deployment/github_actions/run-generated-agent.workflow.yml"
+                                       ],
+                     "created_directories":  [
+                                                 "contracts",
+                                                 "modules",
+                                                 "validators",
+                                                 "orchestrator",
+                                                 "examples",
+                                                 "deployment",
+                                                 "deployment/github_actions"
+                                             ]
+                 },
+    "overlay":  {
+                    "status":  "NOT_APPLIED",
+                    "applied_file_count":  0,
+                    "overlay_root":  ""
+                },
+    "validation":  {
+                       "status":  "PASS",
+                       "package_root":  "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\generated_agents\\action_ready_agent_proof",
+                       "output_result_path":  "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\runs\\SELF_BUILD_GITHUB_ACTION_EXECUTION_SURFACE_V1_PHASE53_CONTINUE_001__PACK_1\\PHASE53_ACTION_READY_GENERATED_AGENT_PROOF_V1\\target_build\\operational_validation\\OPERATIONAL_RESULT.json",
+                       "request_id":  "sample_request_001",
+                       "agent_id":  "action_ready_agent_proof"
+                   }
+}

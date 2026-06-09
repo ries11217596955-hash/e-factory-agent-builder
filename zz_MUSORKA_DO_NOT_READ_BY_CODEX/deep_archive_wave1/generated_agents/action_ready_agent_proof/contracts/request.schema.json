@@ -1,0 +1,20 @@
+﻿{
+    "$schema":  "https://json-schema.org/draft/2020-12/schema",
+    "title":  "Generated Agent Request",
+    "type":  "object",
+    "required":  [
+                     "request_id",
+                     "payload"
+                 ],
+    "properties":  {
+                       "request_id":  {
+                                          "type":  "string"
+                                      },
+                       "payload":  {
+                                       "type":  "object"
+                                   },
+                       "metadata":  {
+                                        "type":  "object"
+                                    }
+                   }
+}

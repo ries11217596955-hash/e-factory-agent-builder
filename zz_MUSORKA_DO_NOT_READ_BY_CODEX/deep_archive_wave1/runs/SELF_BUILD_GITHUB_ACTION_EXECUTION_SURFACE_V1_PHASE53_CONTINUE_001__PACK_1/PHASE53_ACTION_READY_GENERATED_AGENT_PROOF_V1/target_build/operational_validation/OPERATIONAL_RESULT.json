@@ -1,0 +1,19 @@
+﻿{
+    "status":  "PASS",
+    "request_id":  "sample_request_001",
+    "agent_id":  "action_ready_agent_proof",
+    "result":  {
+                   "operation":  "baseline_request_processing",
+                   "mission":  "Prove that generated external agents now include a GitHub Actions launch delivery artifact while preserving operational RUN validation.",
+                   "payload_key_count":  2,
+                   "payload_keys":  [
+                                        "topic",
+                                        "priority"
+                                    ]
+               },
+    "diagnostics":  {
+                        "package_profile":  "operational_action_ready",
+                        "capability_count":  3,
+                        "github_action_launch_surface":  "delivery_artifact_present"
+                    }
+}

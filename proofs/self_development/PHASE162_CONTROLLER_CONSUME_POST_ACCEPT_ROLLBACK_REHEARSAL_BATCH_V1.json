@@ -1,0 +1,21 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_BATCH_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T11:12:19.3676895+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "035fe39",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_POST_ACCEPT_ROLLBACK_REHEARSAL_BATCH_20260609_111219",
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "BUILD_POST_ACCEPT_VALIDATION_DRY_RUN_FOR_ATOM_BATCH",
+  "staged_atom_count": 1,
+  "blocking_for_final_accept": [
+    "post_accept_validation_not_run",
+    "real_runtime_autonomous_absorb_not_proven",
+    "accepted_core_write_not_authorized_in_controller_consume_step"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "BUILD_POST_ACCEPT_VALIDATION_DRY_RUN_FOR_ATOM_BATCH"
+}

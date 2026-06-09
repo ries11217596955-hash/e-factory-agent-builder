@@ -1259,6 +1259,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
+      "path": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_review_autonomous_material_decision_stress_results_001.ps1",
       "path": "modules/invoke_review_autonomous_material_decision_stress_results_001.ps1",
       "node_type": "module"
@@ -5094,6 +5099,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
+      "path": "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
       "path": "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
       "node_type": "proof"
@@ -6326,6 +6336,26 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/autonomous_admission_cycle_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/autonomous_admission_cycle_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/autonomous_admission_cycle_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/autonomous_admission_cycle_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/next_cycle_improvement_trial_request.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/next_cycle_improvement_trial_request.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7666,6 +7696,11 @@
     {
       "id": "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
       "path": "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_autonomous_admission_cycle_controller_v1.ps1",
+      "path": "validators/validate_phase162_autonomous_admission_cycle_controller_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21339,10 +21374,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/test_phase162_accept_gate_with_partial_usefulness_001.ps1",
+      "target": "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "test_phase162_accept_gate_with_partial_usefulness_001"
+      "evidence_snippet_or_pattern": "create_phase162_accept_safety_contract_scaffold_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -21448,6 +21483,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "complete_generated_self_build_program_executable_packs"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "create_phase162_accept_safety_contract_scaffold_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -21847,13 +21889,6 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_reading_and_capability_reuse_session_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_reuse_based_micro_organ_trial_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_reuse_based_micro_organ_trial_001"
     }
   ]
 }

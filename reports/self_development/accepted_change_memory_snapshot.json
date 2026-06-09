@@ -1,16 +1,15 @@
 {
-  "accepted_subject_head": "97cf7c5687f992b13784d330b0c2d6b22c7215f3",
+  "accepted_subject_head": "773406faddf8600181d264cd17b4e7afa288f5c9",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
-    "proofs/self_development/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_dry_run.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_result.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_scaffold.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_validation.json",
-    "validators/validate_phase162_accept_safety_contract_scaffold_v1.ps1"
+    "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
+    "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/autonomous_admission_cycle_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/autonomous_admission_cycle_validation.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/next_cycle_improvement_trial_request.json",
+    "validators/validate_phase162_autonomous_admission_cycle_controller_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -18,5 +17,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T05:56:13.7495731Z"
+  "created_at": "2026-06-09T05:59:42.6611089Z"
 }

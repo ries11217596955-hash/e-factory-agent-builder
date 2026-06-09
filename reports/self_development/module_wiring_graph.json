@@ -1264,6 +1264,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
+      "path": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1",
       "path": "modules/invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1",
       "node_type": "module"
@@ -5109,6 +5114,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
+      "path": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
       "path": "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
       "node_type": "proof"
@@ -6366,6 +6376,26 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_REPORT.md",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/accept_safety_contract_dry_run_activation_request.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/accept_safety_contract_dry_run_activation_request.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/controller_with_next_cycle_trial_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/controller_with_next_cycle_trial_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/controller_with_next_cycle_trial_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/controller_with_next_cycle_trial_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7741,6 +7771,11 @@
     {
       "id": "validators/validate_phase162_autonomous_admission_cycle_controller_v1.ps1",
       "path": "validators/validate_phase162_autonomous_admission_cycle_controller_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
+      "path": "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21426,10 +21461,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
+      "target": "modules/invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_phase162_autonomous_admission_cycle_controller_001"
+      "evidence_snippet_or_pattern": "invoke_phase162_next_cycle_improvement_trial_sandbox_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

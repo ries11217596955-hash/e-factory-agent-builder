@@ -1,0 +1,23 @@
+{
+  "accepted_subject_head": "8e3a9eaf7191951660f34cf2a9b39277fbd1d110",
+  "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
+  "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
+  "changed_files_since_previous_baseline": [
+    "modules/invoke_phase162_post_accept_rollback_rehearsal_for_atom_batch_001.ps1",
+    "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/overlay_apply_state.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/post_accept_rollback_rehearsal_events.jsonl",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/post_accept_rollback_rehearsal_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/post_accept_rollback_rehearsal_validation.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/rollback_rehearsal_result.json",
+    "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1"
+  ],
+  "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
+  "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+  "memory_report_path": "reports/self_development/self_map_memory_report.md",
+  "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+  "next_decision_allowed": true,
+  "next_decision_reason": "Self knowledge is ready for the next decision.",
+  "created_at": "2026-06-09T07:12:01.8750879Z"
+}

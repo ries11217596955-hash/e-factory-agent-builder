@@ -1,0 +1,31 @@
+{
+  "schema": "PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:54:52.0375213+04:00",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451",
+  "checks": {
+    "result_status_pass": true,
+    "contract_status_pass": true,
+    "dry_run_status_pass": true,
+    "contract_mode_dry_run": true,
+    "safety_contracts_present_true": true,
+    "safety_for_accept_false": true,
+    "usefulness_partial_true": true,
+    "accept_ready_false": true,
+    "expected_accept_blocked": true,
+    "owner_review_required": true,
+    "owner_review_not_granted": true,
+    "rollback_scaffold_present": true,
+    "rollback_not_tested": true,
+    "owner_blocker_present": true,
+    "rollback_blocker_present": true,
+    "next_cycle_blocker_present": true,
+    "accepted_core_write_not_attempted": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "expected_gate_decision": "ACCEPT_BLOCKED"
+}

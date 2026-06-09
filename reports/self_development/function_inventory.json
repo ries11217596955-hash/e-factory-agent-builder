@@ -5474,7 +5474,9 @@
         "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
         "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_REPORT.md\") -Encoding UTF8"
       ],
-      "calls_detected": [],
+      "calls_detected": [
+        "modules/invoke_phase162_bounded_live_daemon_absorb_trial_sandbox_001.ps1"
+      ],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
@@ -5535,6 +5537,60 @@
         "modules/invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1"
       ],
       "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/invoke_phase162_bounded_live_daemon_absorb_trial_sandbox_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json",
+        "Add-Event"
+      ],
+      "param_names": [
+        "ExplanationRoot",
+        "PolicyRoot",
+        "FreezeRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "Type",
+        "Data",
+        "event",
+        "stamp",
+        "explanation",
+        "explanationValidation",
+        "policy",
+        "policyValidation",
+        "freeze",
+        "freezeValidation",
+        "inputReady",
+        "eventsPath",
+        "baseline",
+        "sandboxOverlay",
+        "afterScore",
+        "after",
+        "scoreDelta",
+        "trialPassed",
+        "denialReasons",
+        "result",
+        "_"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json, Add-Event",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 90 | Set-Content -Path $Path -Encoding UTF8",
+        "ConvertTo-Json -Depth 40 -Compress) | Add-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "remove_item",
         "accepted_repo_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."
@@ -29689,7 +29745,9 @@
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 80 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
-      "calls_detected": [],
+      "calls_detected": [
+        "modules/invoke_phase162_bounded_live_daemon_absorb_trial_sandbox_001.ps1"
+      ],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
@@ -29717,6 +29775,39 @@
       "exported_behavior_guess": "Read-Json",
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 40 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_bounded_live_daemon_absorb_trial_sandbox_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "result",
+        "overlay",
+        "baseline",
+        "after",
+        "eventsPath",
+        "eventCount",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 90 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [

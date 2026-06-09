@@ -1,14 +1,18 @@
 {
-  "accepted_subject_head": "34b892d5031e66991e5d85a43dcb75975981d646",
+  "accepted_subject_head": "1c5fd01f31e862ef72247601cd65c0e1ed765788",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/invoke_phase162_policy_gate_decision_explanation_001.ps1",
-    "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POLICY_GATE_DECISION_EXPLANATION_20260609_101425/PHASE162_POLICY_GATE_DECISION_EXPLANATION_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POLICY_GATE_DECISION_EXPLANATION_20260609_101425/policy_gate_decision_explanation.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POLICY_GATE_DECISION_EXPLANATION_20260609_101425/policy_gate_decision_explanation_validation.json",
-    "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1"
+    "modules/invoke_phase162_bounded_live_daemon_absorb_trial_sandbox_001.ps1",
+    "proofs/self_development/PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/after_absorb_cycle_measurement.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/baseline_cycle_measurement.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/bounded_absorb_trial_events.jsonl",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/bounded_absorb_trial_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/bounded_absorb_trial_validation.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/sandbox_absorb_overlay.json",
+    "validators/validate_phase162_bounded_live_daemon_absorb_trial_sandbox_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -16,5 +20,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T06:16:04.4172676Z"
+  "created_at": "2026-06-09T06:19:04.7982517Z"
 }

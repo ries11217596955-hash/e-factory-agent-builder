@@ -1,12 +1,12 @@
 {
-  "workflow_refresh_id": "PHASE161I_REFRESH_20260609061604",
-  "accepted_subject_head": "34b892d5031e66991e5d85a43dcb75975981d646",
+  "workflow_refresh_id": "PHASE161I_REFRESH_20260609061904",
+  "accepted_subject_head": "1c5fd01f31e862ef72247601cd65c0e1ed765788",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "trigger_reason": "github_push_auto_refresh",
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
   "self_knowledge_ready": true,
   "map_is_ready_for_next_decision": true,
-  "generated_from_worktree_head": "34b892d5031e66991e5d85a43dcb75975981d646",
+  "generated_from_worktree_head": "1c5fd01f31e862ef72247601cd65c0e1ed765788",
   "protected_state_mutated": false,
   "runtime_outputs_staged": false,
   "refreshed_files": [
@@ -24,5 +24,5 @@
     "reports/self_development/self_map_refresh_after_acceptance_result.json",
     "reports/self_development/stub_false_positive_inventory.json"
   ],
-  "created_at": "2026-06-09T06:16:04.5493964Z"
+  "created_at": "2026-06-09T06:19:04.9319947Z"
 }

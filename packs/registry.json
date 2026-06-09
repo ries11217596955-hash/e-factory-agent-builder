@@ -1081,5 +1081,21 @@
       "phase": "PHASE93",
       "status": "READY"
     }
+  ],
+  "phase162_accepted_atom_references": [
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+      "accepted_at": "2026-06-09T13:54:50.8039030+04:00",
+      "operation_id": "registry_record_atom_1",
+      "payload": {
+        "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_DRY_RUN_BATCH_20260609_134327",
+      "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_20260609_114043",
+      "accepted_core_write": true
+    }
   ]
 }

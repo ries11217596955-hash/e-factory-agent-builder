@@ -1,0 +1,20 @@
+{
+  "proof_id": "PHASE163K_CONTROLLER_CONSUME_BOUNDED_RUNTIME_ABSORB_TRIAL_V1",
+  "status": "PASS_PENDING_COMMIT",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "9293cb2",
+  "runtime_root": "reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163K_CONTROLLER_CONSUME_BOUNDED_RUNTIME_ABSORB_TRIAL_20260609_202205",
+  "result_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163K_CONTROLLER_CONSUME_BOUNDED_RUNTIME_ABSORB_TRIAL_20260609_202205\\controller_consume_bounded_runtime_absorb_trial_batch_result.json",
+  "validation_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163K_CONTROLLER_CONSUME_BOUNDED_RUNTIME_ABSORB_TRIAL_20260609_202205\\controller_consume_bounded_runtime_absorb_trial_batch_validation.json",
+  "request_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163K_CONTROLLER_CONSUME_BOUNDED_RUNTIME_ABSORB_TRIAL_20260609_202205\\controlled_accept_core_mutation_candidate_for_atom_batch_request.json",
+  "staged_atom_count": 73,
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "PREPARE_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH",
+  "measured_strength_delta": 6,
+  "validation_status": "PASS",
+  "accepted_core_mutation_executed": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "created_at": "2026-06-09T16:22:06.6443827Z"
+}

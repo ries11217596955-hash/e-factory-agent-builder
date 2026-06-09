@@ -1,0 +1,19 @@
+{
+  "proof_id": "PHASE163R_CONTROLLER_CONSUME_ACCEPT_CORE_MUTATION_EXECUTION_PROOF_V1",
+  "status": "PASS_PENDING_COMMIT",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "8d5e4b0",
+  "execution_proof_path": "proofs/self_development/PHASE163Q_RERUN_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_V2.json",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163R_CONTROLLER_CONSUME_ACCEPT_CORE_MUTATION_EXECUTION_PROOF_20260609_210924",
+  "result_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163R_CONTROLLER_CONSUME_ACCEPT_CORE_MUTATION_EXECUTION_PROOF_20260609_210924\\controller_consume_controlled_accept_core_mutation_execution_proof_result.json",
+  "validation_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163R_CONTROLLER_CONSUME_ACCEPT_CORE_MUTATION_EXECUTION_PROOF_20260609_210924\\controller_consume_controlled_accept_core_mutation_execution_proof_validation.json",
+  "controller_finalization_executed": false,
+  "accepted_atom_claimed": false,
+  "accepted_core_rewrite_executed": false,
+  "repeated_mutation_execution": false,
+  "machine_decision": "CONTROLLED_ACCEPT_CORE_MUTATION_FINALIZATION_REJECTED_PENDING_REPAIR",
+  "next_machine_action": "REPAIR_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_PROOF",
+  "validation_status": "FAIL",
+  "accepted_core_mutation_executed": false,
+  "created_at": "2026-06-09T17:09:25.3307484Z"
+}

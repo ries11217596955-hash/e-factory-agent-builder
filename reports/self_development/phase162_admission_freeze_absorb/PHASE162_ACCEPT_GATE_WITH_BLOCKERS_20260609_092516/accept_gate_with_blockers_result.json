@@ -1,0 +1,33 @@
+{
+  "schema": "PHASE162_ACCEPT_READINESS_GATE_WITH_BLOCKER_INPUTS_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:25:16.9705641+04:00",
+  "freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "blockers_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_USEFULNESS_SAFETY_BLOCKERS_20260609_092146",
+  "consumed_freeze_validation": "PASS",
+  "consumed_blockers_validation": "PASS",
+  "usefulness_validated": false,
+  "safety_validated_for_accept": false,
+  "accept_ready": false,
+  "gate_decision": "ACCEPT_BLOCKED",
+  "blocking_reasons": [
+    "usefulness_not_validated",
+    "safety_not_validated_for_accept",
+    "accept_ready_false",
+    "no_executed_use_proof_against_live_builder_task",
+    "no_next_cycle_improvement_proof",
+    "no_behavior_delta_measurement",
+    "no_owner_visible_value_proof",
+    "accept_target_not_defined",
+    "accepted_memory_write_contract_missing",
+    "accepted_self_model_write_contract_missing",
+    "rollback_plan_missing",
+    "owner_review_gate_missing",
+    "source_decision_is_quarantine_not_accept"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "BUILD_EXECUTED_USE_PROOF_AND_ACCEPT_SAFETY_CONTRACTS"
+}

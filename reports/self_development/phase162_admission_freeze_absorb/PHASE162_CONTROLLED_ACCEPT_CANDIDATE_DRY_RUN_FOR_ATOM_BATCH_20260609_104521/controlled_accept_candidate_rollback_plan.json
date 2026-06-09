@@ -1,0 +1,18 @@
+{
+  "schema": "PHASE162_CONTROLLED_ACCEPT_CANDIDATE_ROLLBACK_PLAN_V1",
+  "status": "PASS",
+  "rollback_mode": "DRY_RUN_ONLY",
+  "rollback_tested": false,
+  "rollback_actions": [
+    "delete_this_output_root",
+    "discard_staged_delta_files",
+    "no_accepted_core_restore_needed_because_no_core_write_happened"
+  ],
+  "future_final_accept_requires": [
+    "pre_accept_snapshot",
+    "post_accept_validation",
+    "git_revert_plan",
+    "accepted_memory_restore_plan",
+    "accepted_self_model_restore_plan"
+  ]
+}

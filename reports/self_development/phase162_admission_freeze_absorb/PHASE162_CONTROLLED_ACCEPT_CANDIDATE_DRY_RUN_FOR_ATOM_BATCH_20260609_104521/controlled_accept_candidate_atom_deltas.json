@@ -1,0 +1,78 @@
+{
+  "schema": "PHASE162_CONTROLLED_ACCEPT_CANDIDATE_ATOM_DELTA_DRY_RUN_V1",
+  "delta_index": 1,
+  "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "source_freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "source_batch_index": 1,
+  "planned_accept_state": "STAGED_DRY_RUN_ONLY",
+  "planned_accepted_memory_delta": {
+    "operation": "append_candidate_memory_record",
+    "target": "reports/self_development/accepted_change_memory_snapshot.json",
+    "dry_run_only": true,
+    "payload": {
+      "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+      "admission_state": "CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_READY",
+      "source_freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+      "reason": "eligible atom from batch envelope"
+    }
+  },
+  "planned_self_model_delta": {
+    "operation": "append_candidate_self_model_note",
+    "target": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+    "dry_run_only": true,
+    "payload": {
+      "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+      "capability_hint": "sandbox_absorb_rehearsal_passed",
+      "source_freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605"
+    }
+  },
+  "planned_registry_delta": {
+    "operation": "no_registry_write_until_final_accept",
+    "target": "packs/registry.json",
+    "dry_run_only": true,
+    "payload": null
+  },
+  "accept_decision": "STAGE_ONLY_DENY_FINAL_ACCEPT",
+  "final_accept_allowed": false,
+  "reason_codes": [
+    {
+      "code": "controlled_accept_candidate_not_built",
+      "category": "final_accept_blocker",
+      "meaning": "This condition still blocks final accept.",
+      "repair_action": "resolve this blocker before final absorb"
+    },
+    {
+      "code": "accepted_memory_delta_not_staged",
+      "category": "final_accept_blocker",
+      "meaning": "This condition still blocks final accept.",
+      "repair_action": "resolve this blocker before final absorb"
+    },
+    {
+      "code": "accepted_self_model_delta_not_staged",
+      "category": "final_accept_blocker",
+      "meaning": "This condition still blocks final accept.",
+      "repair_action": "resolve this blocker before final absorb"
+    },
+    {
+      "code": "accept_commit_plan_not_validated",
+      "category": "final_accept_blocker",
+      "meaning": "This condition still blocks final accept.",
+      "repair_action": "resolve this blocker before final absorb"
+    },
+    {
+      "code": "post_accept_rollback_not_rehearsed",
+      "category": "final_accept_blocker",
+      "meaning": "This condition still blocks final accept.",
+      "repair_action": "resolve this blocker before final absorb"
+    },
+    {
+      "code": "real_runtime_autonomous_absorb_not_proven",
+      "category": "final_accept_blocker",
+      "meaning": "This condition still blocks final accept.",
+      "repair_action": "resolve this blocker before final absorb"
+    }
+  ],
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

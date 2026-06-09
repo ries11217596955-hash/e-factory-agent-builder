@@ -1,0 +1,21 @@
+{
+  "schema": "PHASE162_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_FOR_ATOM_BATCH_REQUEST_V1",
+  "status": "READY_TO_BUILD",
+  "created_at": "2026-06-09T11:30:32.3852883+04:00",
+  "reason": "All dry-run barriers passed. Prove bounded real-runtime autonomous absorb behavior for batch without accepted-core mutation.",
+  "required_trial": {
+    "mode": "BOUNDED_RUNTIME_TRIAL_NO_ACCEPTED_CORE_WRITES",
+    "objective": "run a bounded Builder-like runtime cycle that sees staged atom batch, performs autonomous absorb decision in sandbox/runtime overlay, and proves next-cycle visibility/strength",
+    "expected_machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+    "expected_next_if_pass": "PREPARE_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE",
+    "forbidden": [
+      "mutate_accepted_memory",
+      "mutate_accepted_self_model",
+      "mutate_pack_registry",
+      "claim_final_accept",
+      "claim_real_absorb_complete",
+      "run_unbounded_daemon"
+    ]
+  },
+  "next_module_to_build": "invoke_phase162_bounded_real_runtime_autonomous_absorb_trial_for_atom_batch_001.ps1"
+}

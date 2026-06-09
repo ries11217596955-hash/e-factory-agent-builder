@@ -1,0 +1,25 @@
+{
+  "schema": "PHASE162_SANDBOX_ABSORB_OVERLAY_V1",
+  "status": "PASS",
+  "mode": "SANDBOX_ABSORB_REHEARSAL_NOT_ACCEPTED_CORE",
+  "source_freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "source_policy_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008",
+  "source_explanation_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_POLICY_GATE_DECISION_EXPLANATION_20260609_101425",
+  "atom_summary_status": "SANDBOX_ATOM_CANDIDATE_NOT_ACCEPTED",
+  "selected_duty_id": "PHASE162_LOCAL_DUTY_20260609_091605",
+  "selected_run_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605",
+  "skill_candidate_count": 3,
+  "absorbed_into": "sandbox_overlay_only",
+  "final_accept_claimed": false,
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "available_to_next_cycle": [
+    "sandbox_absorbed_atom_reference",
+    "policy_decision_explanation",
+    "reason_codes",
+    "next_repair_action",
+    "next_machine_action"
+  ]
+}

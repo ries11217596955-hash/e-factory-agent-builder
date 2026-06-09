@@ -1,0 +1,31 @@
+{
+  "schema": "PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_RESULT_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:17:25.8961637+04:00",
+  "mode": "BOUNDED_SANDBOX_ONLY",
+  "explanation_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_POLICY_GATE_DECISION_EXPLANATION_20260609_101425",
+  "policy_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_20260609_101008",
+  "freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "events_path": "reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725\\bounded_absorb_trial_events.jsonl",
+  "sandbox_absorb_trial_passed": true,
+  "sandbox_absorb_overlay_created": true,
+  "next_cycle_stronger_after_sandbox_absorb": true,
+  "denial_explanation_available": true,
+  "measured_strength_before": 0,
+  "measured_strength_after": 6,
+  "measured_strength_delta": 6,
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "FEED_BOUNDED_ABSORB_TRIAL_BACK_INTO_CONTROLLER",
+  "final_accept_denied": true,
+  "why_final_accept_denied": [
+    "bounded_sandbox_rehearsal_only",
+    "final_accept_not_permitted_by_policy_gate",
+    "live_daemon_autonomous_absorb_not_proven_in_real_runtime",
+    "accepted_core_mutation_forbidden_in_this_trial"
+  ],
+  "final_accept_ready": false,
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

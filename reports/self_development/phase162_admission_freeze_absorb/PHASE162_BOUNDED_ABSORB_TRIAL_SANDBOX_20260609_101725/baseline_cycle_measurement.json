@@ -1,0 +1,11 @@
+{
+  "schema": "PHASE162_BOUNDED_ABSORB_TRIAL_BASELINE_CYCLE_V1",
+  "status": "PASS",
+  "cycle_index": 1,
+  "mode": "BASELINE_WITHOUT_SANDBOX_ABSORB_OVERLAY",
+  "atom_available": false,
+  "sandbox_absorb_overlay_available": false,
+  "can_select_absorbed_atom_next_action": false,
+  "can_explain_absorb_denial": false,
+  "cycle_strength_score": 0
+}

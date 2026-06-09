@@ -1,0 +1,13 @@
+{
+  "schema": "PHASE162_BOUNDED_ABSORB_TRIAL_AFTER_CYCLE_V1",
+  "status": "PASS",
+  "cycle_index": 2,
+  "mode": "NEXT_CYCLE_WITH_SANDBOX_ABSORB_OVERLAY",
+  "atom_available": true,
+  "sandbox_absorb_overlay_available": true,
+  "can_select_absorbed_atom_next_action": true,
+  "can_explain_absorb_denial": true,
+  "selected_next_cycle_action": "USE_SANDBOX_ABSORBED_ATOM_FOR_NEXT_REPAIR_OR_ACCEPT_DECISION",
+  "denial_explanation_available": true,
+  "cycle_strength_score": 6
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:02:46.4820965+04:00",
+  "loop_target": "builder_lives_creates_atom_absorbs_safe_atom_next_cycle_stronger",
+  "controller_mode": "AUTONOMOUS_DRY_RUN_NO_ACCEPTED_CORE_WRITES",
+  "previous_cycle_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808",
+  "next_cycle_trial_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_20260609_100029",
+  "safety_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451",
+  "preconditions": {
+    "atom_generated": true,
+    "freeze_evidence_proven": true,
+    "partial_usefulness_proven": true,
+    "usefulness_validated_for_accept": false,
+    "safety_contracts_present": true,
+    "safety_validated_for_accept": false,
+    "owner_review_granted": false,
+    "rollback_tested": false,
+    "next_cycle_improvement_proven_partial": true,
+    "next_cycle_improvement_proven_for_accept": false,
+    "live_task_success_delta_proven": false,
+    "live_daemon_autonomous_absorb_proven": false
+  },
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "ACTIVATE_AND_TEST_ACCEPT_SAFETY_CONTRACTS_IN_DRY_RUN",
+  "blocking_reasons": [
+    "usefulness_validated_for_accept",
+    "safety_validated_for_accept",
+    "owner_review_granted",
+    "rollback_tested",
+    "next_cycle_improvement_proven_for_accept",
+    "live_task_success_delta_proven",
+    "live_daemon_autonomous_absorb_proven"
+  ],
+  "consumed_next_cycle_trial": {
+    "validation_status": "PASS",
+    "trial_passed": true,
+    "score_before": 0,
+    "score_after": 4,
+    "score_delta": 4,
+    "proven_partial": true,
+    "proven_for_accept": false
+  },
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

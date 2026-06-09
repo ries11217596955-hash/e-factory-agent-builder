@@ -1,0 +1,29 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:02:46.6478068+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "c292a51",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246",
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "ACTIVATE_AND_TEST_ACCEPT_SAFETY_CONTRACTS_IN_DRY_RUN",
+  "preconditions": {
+    "atom_generated": true,
+    "freeze_evidence_proven": true,
+    "partial_usefulness_proven": true,
+    "usefulness_validated_for_accept": false,
+    "safety_contracts_present": true,
+    "safety_validated_for_accept": false,
+    "owner_review_granted": false,
+    "rollback_tested": false,
+    "next_cycle_improvement_proven_partial": true,
+    "next_cycle_improvement_proven_for_accept": false,
+    "live_task_success_delta_proven": false,
+    "live_daemon_autonomous_absorb_proven": false
+  },
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "BUILD_ACCEPT_SAFETY_CONTRACT_DRY_RUN_ACTIVATION"
+}

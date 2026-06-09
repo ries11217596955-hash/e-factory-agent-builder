@@ -1,0 +1,19 @@
+{
+  "schema": "PHASE162_ACCEPT_SAFETY_CONTRACT_DRY_RUN_ACTIVATION_REQUEST_V1",
+  "status": "READY_TO_BUILD",
+  "created_at": "2026-06-09T10:02:46.4822282+04:00",
+  "reason": "Next-cycle sandbox improvement is partial-proven. Controller must now test safety contracts in dry-run before any accept.",
+  "required_trial": {
+    "mode": "DRY_RUN_ONLY_NO_ACCEPTED_CORE_WRITES",
+    "objective": "prove accept write contracts can validate target paths, rollback, owner gate, and forbidden writes",
+    "expected_machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+    "forbidden": [
+      "mutate_accepted_memory",
+      "mutate_accepted_self_model",
+      "mutate_pack_registry",
+      "claim_absorb_complete",
+      "claim_accept_ready"
+    ]
+  },
+  "next_module_to_build": "invoke_phase162_accept_safety_contract_dry_run_activation_001.ps1"
+}

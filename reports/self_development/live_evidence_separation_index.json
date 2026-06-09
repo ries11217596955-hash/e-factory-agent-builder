@@ -4,19 +4,15 @@
   "evidence_type_counts": [
     {
       "evidence_type": "CURRENT_ROUTE_WIRED",
-      "count": 31
+      "count": 32
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
       "count": 102
     },
     {
-      "evidence_type": "DISCONNECTED_NOT_WIRED",
-      "count": 1
-    },
-    {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 88
+      "count": 87
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -40,7 +36,7 @@
     },
     {
       "evidence_type": "REPORT_REFERENCED",
-      "count": 65
+      "count": 66
     },
     {
       "evidence_type": "SUPERSEDED_BY_ROUTE_LOCK",
@@ -48,7 +44,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 726
+      "count": 728
     }
   ],
   "live_or_current_wired_items": [
@@ -4295,6 +4291,17 @@
       "proof_evidence_paths": [
         "proofs/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_PROOF.json"
       ]
+    },
+    {
+      "path": "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+      "primary_status": "ACTIVE_WIRED_UNPROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": []
     },
     {
       "path": "reports/route_locks/ROUTE_V1_CLOSURE_AND_V2_R2_ACTIVATION_REPORT.json",

@@ -1,10 +1,10 @@
 {
-  "accepted_subject_head": "730d44f04d031b7f5fe70c999d08e3a078c6bdee",
+  "accepted_subject_head": "8398abcb953eb17e58a8d6795152c8db30323045",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_HANDOFF_20260608_224213.md",
-    "reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_LAST_100_EVENTS_20260608_224213.jsonl"
+    "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+    "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -12,5 +12,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-08T18:45:17.5573571Z"
+  "created_at": "2026-06-09T04:57:25.9779881Z"
 }

@@ -5284,8 +5284,18 @@
       "node_type": "report"
     },
     {
+      "id": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "path": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "node_type": "report"
+    },
+    {
       "id": "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
       "path": "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+      "path": "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
       "node_type": "report"
     },
     {
@@ -20647,6 +20657,342 @@
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/absorb_builder_school_experience_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "absorb_builder_school_experience_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/admit_generated_self_build_program_to_live_execution.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "admit_generated_self_build_program_to_live_execution"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/apply_builder_limited_protected_self_model_references_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "apply_builder_limited_protected_self_model_references_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/build_builder_agent_body_map_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "build_builder_agent_body_map_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "build_builder_protected_self_model_promotion_candidate_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/classify_builder_owner_inbox_message_type_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "classify_builder_owner_inbox_message_type_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/classify_builder_owner_live_task_safety_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "classify_builder_owner_live_task_safety_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/cluster_builder_lesson_failures_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "cluster_builder_lesson_failures_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/complete_generated_self_build_program_executable_packs.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "complete_generated_self_build_program_executable_packs"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/decide_builder_learning_mode_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "decide_builder_learning_mode_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/enqueue_builder_owner_task_backlog_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "enqueue_builder_owner_task_backlog_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/finalize_builder_promotion_bundle_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "finalize_builder_promotion_bundle_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/ingest_builder_curriculum_pack_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "ingest_builder_curriculum_pack_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_active_task_backlog_lifecycle_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_active_task_backlog_lifecycle_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_candidate_quality_gate_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_candidate_quality_gate_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_live_task_intake_lifecycle_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_live_task_intake_lifecycle_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_long_run_batch_readiness_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_long_run_batch_readiness_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_organism_health_state_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_organism_health_state_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_owner_inbox_router_state_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_owner_inbox_router_state_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_owner_task_lifecycle_state_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_owner_task_lifecycle_state_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_quality_artifact_consistency_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_quality_artifact_consistency_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_quality_decision_index_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_quality_decision_index_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_runtime_identity_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_runtime_identity_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_school_entry_state_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_school_entry_state_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/inspect_builder_self_growth_evidence_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "inspect_builder_self_growth_evidence_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_admitted_action_execution_engine.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_admitted_action_execution_engine"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_autonomous_material_decision_stress_lab_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_autonomous_material_decision_stress_lab_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_builder_autonomous_atom_bridge_sandbox_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_autonomous_atom_bridge_sandbox_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_builder_bounded_self_growth_duty_loop_trial_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_bounded_self_growth_duty_loop_trial_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_builder_candidate_revision_request_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_candidate_revision_request_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_builder_self_build_program_admission_gate_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_self_build_program_admission_gate_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_builder_self_growth_runtime_admission_review_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_self_growth_runtime_admission_review_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_decision_action_admission_bridge.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_decision_action_admission_bridge"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/invoke_material_quarantine_evaluation_runtime_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_material_quarantine_evaluation_runtime_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/materials/create_quarantine_trial.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "create_quarantine_trial"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/quarantine_builder_owner_inbox_message_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "quarantine_builder_owner_inbox_message_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/self_development/evaluate_generated_program_admission.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "evaluate_generated_program_admission"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/self_development/write_batch_admission_policy_v1.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "write_batch_admission_policy_v1"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/self_development/write_quarantine_and_blocker_registry_v1.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "write_quarantine_and_blocker_registry_v1"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/self_development/write_scale_trial_promotion_gate_and_route_lock_refresh_v1.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "write_scale_trial_promotion_gate_and_route_lock_refresh_v1"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/test_generated_self_build_program_admission_readiness.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "test_generated_self_build_program_admission_readiness"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/validate_builder_protected_self_model_promotion_candidate_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "validate_builder_protected_self_model_promotion_candidate_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "modules/write_builder_protected_self_model_promotion_risk_review_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "write_builder_protected_self_model_promotion_risk_review_001"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "contracts/materials/material_quarantine_card.schema.json",
+      "edge_type": "validates",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "material_quarantine_card.schema.json"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "contracts/self_development/batch_admission_policy_v1.schema.json",
+      "edge_type": "validates",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "batch_admission_policy_v1.schema.json"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "contracts/self_development/generated_program_admission.schema.json",
+      "edge_type": "validates",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "generated_program_admission.schema.json"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "contracts/self_development/quarantine_and_blocker_registry_v1.schema.json",
+      "edge_type": "validates",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "quarantine_and_blocker_registry_v1.schema.json"
+    },
+    {
+      "source": "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
+      "target": "contracts/self_development/scale_trial_promotion_gate_and_route_lock_refresh_v1.schema.json",
+      "edge_type": "validates",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "scale_trial_promotion_gate_and_route_lock_refresh_v1.schema.json"
+    },
+    {
       "source": "reports/self_development/agent_body_map.json",
       "target": "modules/absorb_builder_school_experience_001.ps1",
       "edge_type": "calls",
@@ -21198,342 +21544,6 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_self_pack_author_conveyor_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_pack_author_scale_trial_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_pack_author_scale_trial_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_selected_gap_self_build_trial_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_selected_gap_self_build_trial_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_selected_gap_trial_review_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_selected_gap_trial_review_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_uses_self_built_gap_skills_for_self_build_spec_trial_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_uses_self_built_gap_skills_for_self_build_spec_trial_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_controller_aware_self_model_update.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_controller_aware_self_model_update"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_decision_action_admission_bridge.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_decision_action_admission_bridge"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_decision_to_action_engine.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_decision_to_action_engine"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_external_agent_build.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_external_agent_build"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_generated_family_autonomous_conveyor.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_generated_family_autonomous_conveyor"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_manual_material_scout_pass_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_manual_material_scout_pass_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_material_acquisition_bootstrap.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_material_acquisition_bootstrap"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_material_governance_series_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_material_governance_series_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_material_quarantine_evaluation_runtime_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_material_quarantine_evaluation_runtime_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_operation_contract_aware_self_model_advance.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_operation_contract_aware_self_model_advance"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_operation_trial_aware_self_model_advance.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_operation_trial_aware_self_model_advance"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_review_autonomous_material_decision_stress_results_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_review_autonomous_material_decision_stress_results_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_sandbox_branch_merge_decision_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_sandbox_branch_merge_decision_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_self_build_operation_capability_selector.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_self_build_operation_capability_selector"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_self_build_operation_contract.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_self_build_operation_contract"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_self_build_operation_readiness_gate.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_self_build_operation_readiness_gate"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_self_model_aware_decision_loop.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_self_model_aware_decision_loop"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_self_model_first_runtime_entrypoint.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_self_model_first_runtime_entrypoint"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_self_model_update_engine.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_self_model_update_engine"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_self_need_detection_engine.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_self_need_detection_engine"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_trial_aware_self_model_advance.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_trial_aware_self_model_advance"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/load_build_task.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "load_build_task"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/materialize_generated_self_build_program_from_family_contract.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "materialize_generated_self_build_program_from_family_contract"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/materials/create_quarantine_trial.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "create_quarantine_trial"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/materials/evaluate_material_policy.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "evaluate_material_policy"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/materials/import_manual_scout_pass.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "import_manual_scout_pass"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/materials/write_material_catalog_report.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "write_material_catalog_report"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/new_external_agent_package.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "new_external_agent_package"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/new_gap_remediation_intake_report.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "new_gap_remediation_intake_report"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/new_gap_remediation_program_seed.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "new_gap_remediation_program_seed"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/new_generated_self_build_program_execution_recipe_bundle.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "new_generated_self_build_program_execution_recipe_bundle"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/new_remediation_seed_program_blueprint.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "new_remediation_seed_program_blueprint"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/new_remediation_seed_self_build_program_package.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "new_remediation_seed_self_build_program_package"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/new_specialization_gap_report.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "new_specialization_gap_report"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/new_specialization_profile_candidate_brief.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "new_specialization_profile_candidate_brief"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/normalize_builder_candidate_quality_artifacts_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "normalize_builder_candidate_quality_artifacts_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/normalize_builder_lesson_batch_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "normalize_builder_lesson_batch_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/normalize_builder_owner_inbox_message_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "normalize_builder_owner_inbox_message_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/normalize_builder_owner_live_task_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "normalize_builder_owner_live_task_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/operations/invoke_operation_runtime.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_operation_runtime"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/operations/register_operation_contracts.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "register_operation_contracts"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/operations/run_first_smoke_install_trial.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "run_first_smoke_install_trial"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/operations/write_operation_contract_report.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "write_operation_contract_report"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/prepare_builder_overnight_learning_run_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "prepare_builder_overnight_learning_run_001"
     }
   ]
 }

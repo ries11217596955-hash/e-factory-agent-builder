@@ -1,0 +1,29 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_VALIDATED_CONTROLLED_ACCEPT_CANDIDATE_BATCH_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T20:32:00.1828898+04:00",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163N_CONTROLLER_CONSUME_VALIDATED_CONTROLLED_ACCEPT_CANDIDATE_20260609_203159",
+  "checks": {
+    "status_pass": true,
+    "decision_blocked": true,
+    "next_action_authorize_dry_run": true,
+    "deep_validation_passed": true,
+    "candidate_deep_validated": true,
+    "candidate_prepared": true,
+    "no_write_modes": true,
+    "final_write_denied_everywhere": true,
+    "rollback_plan_valid": true,
+    "post_binding_valid": true,
+    "accepted_core_safe": true,
+    "request_authorized_dry_run_only": true,
+    "request_scope_dry_run_only": true,
+    "request_module_named": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "AUTHORIZE_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_FOR_ATOM_BATCH"
+}

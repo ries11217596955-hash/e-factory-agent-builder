@@ -5439,6 +5439,70 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/invoke_phase162_atom_batch_admission_envelope_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json",
+        "New-Reason"
+      ],
+      "param_names": [
+        "ControllerRoot",
+        "PolicyRoot",
+        "ExplanationRoot",
+        "FreezeRoots",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "Code",
+        "Category",
+        "Meaning",
+        "Repair",
+        "stamp",
+        "controller",
+        "controllerValidation",
+        "policy",
+        "policyValidation",
+        "explanation",
+        "explanationValidation",
+        "upstreamOk",
+        "batchRecords",
+        "index",
+        "freezeRoot",
+        "freeze",
+        "freezeValidation",
+        "atomIdSeed",
+        "_",
+        "atomId",
+        "atomFreezeOk",
+        "eligible",
+        "reasons",
+        "r",
+        "record",
+        "batchSize",
+        "eligibleCount",
+        "blockedCount",
+        "batchDecision",
+        "nextMachineAction",
+        "envelope",
+        "request"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json, New-Reason",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 100 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/invoke_phase162_autonomous_accept_policy_gate_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -29664,6 +29728,38 @@
       "exported_behavior_guess": "script_or_inline_behavior",
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 20 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_atom_batch_admission_envelope_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "envelope",
+        "request",
+        "records",
+        "eligible",
+        "_",
+        "recordsWithReasons",
+        "checks",
+        "failed",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 100 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [

@@ -1,15 +1,15 @@
 {
-  "accepted_subject_head": "af9456b3d962ac078bb927e4d40a37ac17a5b838",
+  "accepted_subject_head": "b1340f888b9df12ed3e8640d729c2fc1a630d6dc",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/invoke_phase162_controller_consume_bounded_absorb_trial_001.ps1",
-    "proofs/self_development/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controlled_accept_candidate_dry_run_request.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controller_with_bounded_absorb_trial_result.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controller_with_bounded_absorb_trial_validation.json",
-    "validators/validate_phase162_controller_consume_bounded_absorb_trial_v1.ps1"
+    "modules/invoke_phase162_atom_batch_admission_envelope_001.ps1",
+    "proofs/self_development/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope_validation.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/controlled_accept_candidate_dry_run_for_atom_batch_request.json",
+    "validators/validate_phase162_atom_batch_admission_envelope_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -17,5 +17,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T06:38:26.4404685Z"
+  "created_at": "2026-06-09T06:41:39.0814124Z"
 }

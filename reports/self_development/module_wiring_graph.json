@@ -1264,6 +1264,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/invoke_phase162_atom_batch_admission_envelope_001.ps1",
+      "path": "modules/invoke_phase162_atom_batch_admission_envelope_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_phase162_autonomous_accept_policy_gate_001.ps1",
       "path": "modules/invoke_phase162_autonomous_accept_policy_gate_001.ps1",
       "node_type": "module"
@@ -5124,6 +5129,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_V1.json",
+      "path": "proofs/self_development/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
       "path": "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
       "node_type": "proof"
@@ -6401,6 +6411,26 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/controlled_accept_candidate_dry_run_for_atom_batch_request.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/controlled_accept_candidate_dry_run_for_atom_batch_request.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7911,6 +7941,11 @@
     {
       "id": "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
       "path": "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_atom_batch_admission_envelope_v1.ps1",
+      "path": "validators/validate_phase162_atom_batch_admission_envelope_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21655,10 +21690,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_phase162_bounded_live_daemon_absorb_trial_sandbox_001.ps1",
+      "target": "modules/invoke_phase162_controller_consume_bounded_absorb_trial_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_phase162_bounded_live_daemon_absorb_trial_sandbox_001"
+      "evidence_snippet_or_pattern": "invoke_phase162_controller_consume_bounded_absorb_trial_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

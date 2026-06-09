@@ -1,16 +1,14 @@
 {
-  "accepted_subject_head": "3a53bbd2498b0b5f11c6acafe95bfe488bbba60a",
+  "accepted_subject_head": "54cf526874324091240bc5f5c9485b4423efd5ab",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/update_phase162_usefulness_blockers_with_executed_use_001.ps1",
-    "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/safety_validation_result.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_safety_blockers_result.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_safety_blockers_validation.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512/usefulness_validation_result.json",
-    "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
+    "modules/test_phase162_accept_gate_with_partial_usefulness_001.ps1",
+    "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_validation.json",
+    "validators/validate_phase162_accept_gate_with_partial_usefulness_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -18,5 +16,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T05:46:42.2931312Z"
+  "created_at": "2026-06-09T05:51:30.4837491Z"
 }

@@ -1659,6 +1659,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/test_phase162_accept_gate_with_partial_usefulness_001.ps1",
+      "path": "modules/test_phase162_accept_gate_with_partial_usefulness_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/test_phase162_accept_readiness_gate_with_blocker_inputs_001.ps1",
       "path": "modules/test_phase162_accept_readiness_gate_with_blocker_inputs_001.ps1",
       "node_type": "module"
@@ -5054,6 +5059,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_V1.json",
+      "path": "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
       "path": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
       "node_type": "proof"
@@ -6216,6 +6226,21 @@
     {
       "id": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
       "path": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7571,6 +7596,11 @@
     {
       "id": "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
       "path": "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_accept_gate_with_partial_usefulness_v1.ps1",
+      "path": "validators/validate_phase162_accept_gate_with_partial_usefulness_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21241,10 +21271,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/test_phase162_atom_executed_use_proof_001.ps1",
+      "target": "modules/update_phase162_usefulness_blockers_with_executed_use_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "test_phase162_atom_executed_use_proof_001"
+      "evidence_snippet_or_pattern": "update_phase162_usefulness_blockers_with_executed_use_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

@@ -1,0 +1,15 @@
+{
+  "proof_id": "PHASE163Q_REPAIR_ARRAY_APPEND_IN_EXECUTION_ORGAN_V1",
+  "status": "PASS_PENDING_COMMIT",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "eaeb83a",
+  "repaired_module": "modules/invoke_phase162_execute_controlled_accept_core_mutation_for_atom_batch_001.ps1",
+  "defect": "PSObject op_Addition when appending accepted atom records",
+  "repair": "force array materialization before addition in Append-Phase162Record",
+  "before_sha256": "03265698FB0ECF6A21C953C244AF144D355D0C14C63933D7D0D64E52D1B6A439",
+  "after_sha256": "9236CD3325F4BDA435BE9D705B28C5A72FABB0111B6763AF8788BF8564CD414B",
+  "parse_check_passed": true,
+  "accepted_core_mutation_executed": false,
+  "accepted_core_changed_during_repair": false,
+  "created_at": "2026-06-09T17:04:16.1928439Z"
+}

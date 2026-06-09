@@ -91,16 +91,16 @@ function Append-Phase162Record {
     $arr = @($root)
     $existing = @($arr | Where-Object { [string]$_.atom_id -eq $AtomId })
     if ($existing.Count -gt 0) { throw "DUPLICATE_ATOM_IN_ARRAY_ROOT=$AtomId PATH=$Path" }
-    $arr = @($arr + $Record)
+    $arr = @(@($arr) + @($Record))
     Write-Json -Path $Path -Object $arr
     return
   }
 
-  $records = Get-ArrayProp -Obj $root -Name $ArrayProperty
+  $records = @(Get-ArrayProp -Obj $root -Name $ArrayProperty)
   $existing = @($records | Where-Object { [string]$_.atom_id -eq $AtomId })
   if ($existing.Count -gt 0) { throw "DUPLICATE_ATOM_IN_PROPERTY=$AtomId PROPERTY=$ArrayProperty PATH=$Path" }
 
-  $records = @($records + $Record)
+  $records = @(@($records) + @($Record))
   Set-Prop -Obj $root -Name $ArrayProperty -Value ([object[]]$records)
   Write-Json -Path $Path -Object $root
 }
@@ -113,7 +113,7 @@ function Count-AtomInProperty {
     return @($root | Where-Object { [string]$_.atom_id -eq $AtomId }).Count
   }
 
-  $records = Get-ArrayProp -Obj $root -Name $ArrayProperty
+  $records = @(Get-ArrayProp -Obj $root -Name $ArrayProperty)
   return @($records | Where-Object { [string]$_.atom_id -eq $AtomId }).Count
 }
 
@@ -412,3 +412,4 @@ If validation failed, snapshots were restored. If status is PASS, the mutation i
   final_accept_ready = [bool]$result.final_accept_ready
   next_machine_action = [string]$result.next_machine_action
 }
+

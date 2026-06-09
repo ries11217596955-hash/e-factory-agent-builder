@@ -4,7 +4,7 @@
   "source_of_truth_status": "DERIVED_ACTIVE_MAP_CANDIDATE",
   "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
   "why_status": "Derived from existing protected state, self-knowledge, self-model, body registry, capability shelf, route locks, modules, validators, reports, proofs, docs, packs, and orchestrator files. PHASE161D separates live evidence, validator proof, proof/report references, historical references, supersession, disconnected artifacts, and stub false positives.",
-  "generated_at": "2026-06-09T05:01:03.4486301Z",
+  "generated_at": "2026-06-09T05:17:46.4010419Z",
   "source_inputs": [
     "CAPABILITY_ROADMAP.json",
     "GENESIS_STATE.json",
@@ -16,7 +16,7 @@
     "living_learning_environment/body/",
     "capability_shelf/"
   ],
-  "artifact_count": 1515,
+  "artifact_count": 1521,
   "artifacts": [
     {
       "artifact_id": "CAPABILITY_ROADMAP_json",
@@ -19060,15 +19060,22 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -19078,18 +19085,25 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -19099,7 +19113,13 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "callees": [
         ""
@@ -19112,16 +19132,23 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [
@@ -22260,6 +22287,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE153_SELF_GROWTH_DUTY_RUNTIME_IGNITION_ALIGNMENT_REQUEST.md",
@@ -22292,6 +22320,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -22341,6 +22370,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -22655,6 +22685,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE153_SELF_GROWTH_DUTY_RUNTIME_IGNITION_ALIGNMENT_REQUEST.md",
@@ -22687,6 +22718,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -22741,6 +22773,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -48765,6 +48798,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE150_SELF_BUILD_IGNITION_ALIGNMENT_REQUEST.md",
@@ -48839,6 +48873,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -48924,6 +48959,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49013,6 +49049,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE150_SELF_BUILD_IGNITION_ALIGNMENT_REQUEST.md",
@@ -49087,6 +49124,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49171,6 +49209,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49256,6 +49295,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE150_SELF_BUILD_IGNITION_ALIGNMENT_REQUEST.md",
@@ -49330,6 +49370,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49414,6 +49455,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49499,6 +49541,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE150_SELF_BUILD_IGNITION_ALIGNMENT_REQUEST.md",
@@ -49573,6 +49616,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49657,6 +49701,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49742,6 +49787,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE150_SELF_BUILD_IGNITION_ALIGNMENT_REQUEST.md",
@@ -49816,6 +49862,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49900,6 +49947,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -49985,6 +50033,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE150_SELF_BUILD_IGNITION_ALIGNMENT_REQUEST.md",
@@ -50059,6 +50108,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -50145,6 +50195,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -93933,6 +93984,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE153_SELF_GROWTH_DUTY_RUNTIME_IGNITION_ALIGNMENT_REQUEST.md",
@@ -93965,6 +94017,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -94006,6 +94059,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -98325,15 +98379,22 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -98343,18 +98404,25 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -98377,16 +98445,131 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "last_known_phase": "PHASE162",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
+    },
+    {
+      "artifact_id": "proofs_self_development_PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1_json",
+      "path": "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+      "artifact_type": "proof",
+      "phase_hint": "PHASE162",
+      "role_guess": "proof",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "report_reference_paths": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "reports": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [
@@ -102238,7 +102421,6 @@
         "proofs/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1.json",
         "proofs/self_development/PHASE156_BUILDER_SELF_SELECTED_GAP_SELF_BUILD_TRIAL_V1.json",
         "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -102271,7 +102453,6 @@
       ],
       "report_reference_paths": [
         "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -102355,7 +102536,6 @@
       ],
       "reports": [
         "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -102497,15 +102677,22 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -102515,18 +102702,25 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -102549,16 +102743,23 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [
@@ -103087,9 +103288,11 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
@@ -103099,6 +103302,11 @@
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/self_map_next_action_recommendation.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
@@ -103111,12 +103319,14 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
@@ -103126,6 +103336,11 @@
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/self_map_next_action_recommendation.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -103139,7 +103354,7 @@
         ""
       ],
       "callees": [
-        ""
+        "modules/freeze_builder_atom_candidate_admission_001.ps1"
       ],
       "validators": [
         "validators/validate_phase160l_route_lock_supersession_v1.ps1",
@@ -103151,6 +103366,7 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/PHASE161E_EXECUTION_PLAN.md",
@@ -103160,11 +103376,17 @@
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/self_map_next_action_recommendation.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [
@@ -103553,6 +103775,7 @@
         "modules/execute_build_task.ps1",
         "modules/execute_self_build_pack.ps1",
         "modules/finalize_builder_promotion_bundle_001.ps1",
+        "modules/freeze_builder_atom_candidate_admission_001.ps1",
         "modules/ingest_builder_curriculum_pack_001.ps1",
         "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
         "modules/inspect_builder_active_route_lock_001.ps1",
@@ -105156,10 +105379,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md",
         "route_change_requests/PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_REQUEST.md"
       ],
       "live_evidence_paths": [],
@@ -105195,10 +105418,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/safe_repair_candidates_from_body_map.json"
       ],
       "historical_reference_paths": [],
       "current_wiring_signals": [],
@@ -105234,6 +105457,7 @@
         "modules/execute_build_task.ps1",
         "modules/execute_self_build_pack.ps1",
         "modules/finalize_builder_promotion_bundle_001.ps1",
+        "modules/freeze_builder_atom_candidate_admission_001.ps1",
         "modules/ingest_builder_curriculum_pack_001.ps1",
         "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
         "modules/inspect_builder_active_route_lock_001.ps1",
@@ -105438,10 +105662,10 @@
         "reports/self_development/PHASE161E1_SELF_MAP_REFRESH_AFTER_G1_REPORT.md",
         "reports/self_development/PHASE161F_EXECUTION_PLAN.md",
         "reports/self_development/PHASE161H_EXECUTION_PLAN.md",
+        "reports/self_development/PHASE161I_AUTO_REFRESH_AFTER_PUSH_RESULT.json",
         "reports/self_development/PHASE161I_EXECUTION_PLAN.md",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "reports/self_development/safe_repair_candidates_from_body_map.json",
-        "reports/self_development/self_map_memory_report.md"
+        "reports/self_development/safe_repair_candidates_from_body_map.json"
       ],
       "proofs": [
         "proofs/self_development/PHASE161C_AGENT_BODY_MAP_REUSE_AND_SELF_MODEL_SYNC_PROOF.json",
@@ -106084,6 +106308,7 @@
         "modules/execute_build_task.ps1",
         "modules/execute_self_build_pack.ps1",
         "modules/finalize_builder_promotion_bundle_001.ps1",
+        "modules/freeze_builder_atom_candidate_admission_001.ps1",
         "modules/ingest_builder_curriculum_pack_001.ps1",
         "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
         "modules/inspect_builder_active_route_lock_001.ps1",
@@ -106394,6 +106619,7 @@
         "modules/execute_build_task.ps1",
         "modules/execute_self_build_pack.ps1",
         "modules/finalize_builder_promotion_bundle_001.ps1",
+        "modules/freeze_builder_atom_candidate_admission_001.ps1",
         "modules/ingest_builder_curriculum_pack_001.ps1",
         "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
         "modules/inspect_builder_active_route_lock_001.ps1",
@@ -113833,6 +114059,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE153_SELF_GROWTH_DUTY_RUNTIME_IGNITION_ALIGNMENT_REQUEST.md",
@@ -113865,6 +114092,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -113906,6 +114134,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -123104,15 +123333,22 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -123122,18 +123358,25 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -123156,16 +123399,23 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [
@@ -123191,15 +123441,22 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -123209,18 +123466,25 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -123243,16 +123507,23 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [
@@ -123278,15 +123549,22 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -123296,18 +123574,25 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -123330,16 +123615,23 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [
@@ -123365,15 +123657,22 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -123383,18 +123682,25 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -123417,16 +123723,563 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "last_known_phase": "PHASE162",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
+    },
+    {
+      "artifact_id": "reports_self_development_phase162_admission_freeze_absorb_PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605_admission_decision_json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+      "artifact_type": "report",
+      "phase_hint": "PHASE162",
+      "role_guess": "report",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "report_reference_paths": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "reports": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "last_known_phase": "PHASE162",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
+    },
+    {
+      "artifact_id": "reports_self_development_phase162_admission_freeze_absorb_PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605_frozen_atom_candidate_evidence_json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+      "artifact_type": "report",
+      "phase_hint": "PHASE162",
+      "role_guess": "report",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "report_reference_paths": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "reports": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "last_known_phase": "PHASE162",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
+    },
+    {
+      "artifact_id": "reports_self_development_phase162_admission_freeze_absorb_PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605_local_bridge_event_jsonl",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+      "artifact_type": "report",
+      "phase_hint": "PHASE162",
+      "role_guess": "report",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "report_reference_paths": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "reports": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "last_known_phase": "PHASE162",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
+    },
+    {
+      "artifact_id": "reports_self_development_phase162_admission_freeze_absorb_PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605_PHASE162_ATOM_FREEZE_QUARANTINE_REPORT_md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+      "artifact_type": "report",
+      "phase_hint": "PHASE162",
+      "role_guess": "report",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "report_reference_paths": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "reports": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "last_known_phase": "PHASE162",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as current wired proven evidence input."
+    },
+    {
+      "artifact_id": "reports_self_development_phase162_admission_freeze_absorb_PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605_validation_result_json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+      "artifact_type": "report",
+      "phase_hint": "PHASE162",
+      "role_guess": "report",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and direct proof JSON evidence.",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "validator_evidence_paths": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ],
+      "report_reference_paths": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        ""
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+      ],
+      "reports": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [
@@ -129340,6 +130193,7 @@
         "modules/execute_build_task.ps1",
         "modules/execute_self_build_pack.ps1",
         "modules/finalize_builder_promotion_bundle_001.ps1",
+        "modules/freeze_builder_atom_candidate_admission_001.ps1",
         "modules/ingest_builder_curriculum_pack_001.ps1",
         "modules/inspect_builder_acceptance_pipeline_self_map_refresh_policy_001.ps1",
         "modules/inspect_builder_active_route_lock_001.ps1",
@@ -131979,6 +132833,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE153_SELF_GROWTH_DUTY_RUNTIME_IGNITION_ALIGNMENT_REQUEST.md",
@@ -132011,6 +132866,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -132052,6 +132908,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -143106,6 +143963,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE150_SELF_BUILD_IGNITION_ALIGNMENT_REQUEST.md",
@@ -143180,6 +144038,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -143266,6 +144125,7 @@
         "reports/self_development/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_REPORT.json",
         "reports/self_development/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_REPORT.json",
         "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -147576,6 +148436,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_change_requests/PHASE153_SELF_GROWTH_DUTY_RUNTIME_IGNITION_ALIGNMENT_REQUEST.md",
@@ -147608,6 +148469,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -147649,6 +148511,7 @@
         "reports/self_development/PHASE153_BUILDER_VALIDATES_SANDBOX_SELF_BUILD_RESULT_AND_LEARNS_V1_REPORT.json",
         "reports/self_development/PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1_REPORT.json",
         "reports/self_development/PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1_REPORT.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
         "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
@@ -151973,15 +152836,22 @@
       "evidence_basis": "Current code/route wiring signal plus proof JSON evidence.",
       "evidence_paths": [
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
       ],
@@ -151991,18 +152861,25 @@
         "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
       ],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "report_reference_paths": [
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "historical_reference_paths": [],
@@ -152025,16 +152902,23 @@
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
         "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "proofs": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ],
       "schemas": [],
       "route_lock_references": [

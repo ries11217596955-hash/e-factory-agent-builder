@@ -1,15 +1,14 @@
 {
-  "accepted_subject_head": "a498e6fa0f8541269b1100d07b2f8fa40d6dde32",
+  "accepted_subject_head": "b99c37be7cb6f13927f32ae8261724a511f5e099",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/freeze_builder_atom_candidate_admission_001.ps1",
-    "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
-    "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1"
+    "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -17,5 +16,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T05:01:05.3869907Z"
+  "created_at": "2026-06-09T05:17:48.3476737Z"
 }

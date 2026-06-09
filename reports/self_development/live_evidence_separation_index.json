@@ -4,7 +4,7 @@
   "evidence_type_counts": [
     {
       "evidence_type": "CURRENT_ROUTE_WIRED",
-      "count": 40
+      "count": 46
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
@@ -433,7 +433,8 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {
@@ -4237,7 +4238,22 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
+      "path": "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {
@@ -4328,7 +4344,8 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {
@@ -4354,7 +4371,8 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {
@@ -4604,7 +4622,8 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {
@@ -4617,7 +4636,8 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {
@@ -4630,7 +4650,8 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {
@@ -4643,7 +4664,78 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {
@@ -5458,7 +5550,8 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
-        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
       ]
     },
     {

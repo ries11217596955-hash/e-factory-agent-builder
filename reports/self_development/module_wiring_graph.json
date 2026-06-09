@@ -5029,6 +5029,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+      "path": "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "node_type": "proof"
@@ -6181,6 +6186,31 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/admission_decision.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/frozen_atom_candidate_evidence.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/local_bridge_event.jsonl",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605/validation_result.json",
       "node_type": "report"
     },
     {
@@ -21035,6 +21065,13 @@
       "evidence_snippet_or_pattern": "scale_trial_promotion_gate_and_route_lock_refresh_v1.schema.json"
     },
     {
+      "source": "reports/self_development/accepted_change_memory_snapshot.json",
+      "target": "modules/freeze_builder_atom_candidate_admission_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "freeze_builder_atom_candidate_admission_001"
+    },
+    {
       "source": "reports/self_development/agent_body_map.json",
       "target": "modules/absorb_builder_school_experience_001.ps1",
       "edge_type": "calls",
@@ -21215,6 +21252,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "finalize_builder_promotion_bundle_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/freeze_builder_atom_candidate_admission_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "freeze_builder_atom_candidate_admission_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -21565,20 +21609,6 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_self_growth_runtime_admission_review_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_learning_loop_metrics_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_learning_loop_metrics_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_map_refresh_after_acceptance_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_map_refresh_after_acceptance_001"
     }
   ]
 }

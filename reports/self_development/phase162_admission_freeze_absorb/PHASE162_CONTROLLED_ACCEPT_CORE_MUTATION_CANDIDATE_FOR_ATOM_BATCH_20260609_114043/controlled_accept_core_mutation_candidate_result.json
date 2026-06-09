@@ -1,0 +1,67 @@
+{
+  "schema": "PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_RESULT_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T11:40:43.9157331+04:00",
+  "controller_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLER_WITH_BOUNDED_RUNTIME_ABSORB_TRIAL_BATCH_20260609_113834",
+  "runtime_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_FOR_ATOM_BATCH_20260609_113327",
+  "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521",
+  "batch_size": 1,
+  "staged_atom_count": 1,
+  "blocked_atom_count": 0,
+  "controlled_accept_core_mutation_candidate_prepared": true,
+  "pre_accept_fingerprints_frozen": true,
+  "atomic_write_plan_prepared": true,
+  "rollback_plan_prepared": true,
+  "post_mutation_validation_binding_prepared": true,
+  "mutation_set_prepared": true,
+  "memory_operation_count": 1,
+  "self_model_operation_count": 1,
+  "registry_operation_count": 1,
+  "protected_targets_unchanged": true,
+  "final_accept_ready": false,
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "VALIDATE_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH",
+  "why_final_accept_denied": [
+    "controlled_accept_core_mutation_candidate_not_validated_yet",
+    "future_write_authorization_not_issued",
+    "accepted_core_write_not_authorized_in_candidate_step"
+  ],
+  "before_fingerprints": {
+    "reports/self_development/accepted_change_memory_snapshot.json": {
+      "exists": true,
+      "length": 2125,
+      "sha256": "3E4ECB42EC75AB1D1850A70A076AB1BA2FCF8C77AD485AF40A32705F47FDE4B5"
+    },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json": {
+      "exists": true,
+      "length": 1752283,
+      "sha256": "C627639B8A39F6B57C5253ECA74948BE2C17DE16AE775300E8DFAA8EC0661368"
+    },
+    "packs/registry.json": {
+      "exists": true,
+      "length": 54640,
+      "sha256": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760"
+    }
+  },
+  "after_fingerprints": {
+    "reports/self_development/accepted_change_memory_snapshot.json": {
+      "exists": true,
+      "length": 2125,
+      "sha256": "3E4ECB42EC75AB1D1850A70A076AB1BA2FCF8C77AD485AF40A32705F47FDE4B5"
+    },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json": {
+      "exists": true,
+      "length": 1752283,
+      "sha256": "C627639B8A39F6B57C5253ECA74948BE2C17DE16AE775300E8DFAA8EC0661368"
+    },
+    "packs/registry.json": {
+      "exists": true,
+      "length": 54640,
+      "sha256": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760"
+    }
+  },
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

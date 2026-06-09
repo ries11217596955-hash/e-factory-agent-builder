@@ -1,0 +1,46 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_VALIDATED_CONTROLLED_ACCEPT_CANDIDATE_BATCH_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T11:47:22.5127860+04:00",
+  "loop_target": "builder_lives_creates_atom_or_batch_absorbs_safe_atoms_next_cycle_stronger",
+  "controller_mode": "AUTONOMOUS_CONTROLLER_NO_ACCEPTED_CORE_WRITES",
+  "validated_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_VALIDATED_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_20260609_114457",
+  "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_20260609_114043",
+  "preconditions": {
+    "deep_validation_passed": true,
+    "candidate_deep_validated": true,
+    "candidate_prepared": true,
+    "ops_counts_valid": true,
+    "no_write_modes": true,
+    "final_write_denied_everywhere": true,
+    "write_plan_valid": true,
+    "rollback_plan_valid": true,
+    "post_mutation_validation_binding_valid": true,
+    "accepted_core_safe": true,
+    "protected_targets_unchanged": true,
+    "controlled_accept_dry_run_executed": false
+  },
+  "batch_size": 1,
+  "staged_atom_count": 1,
+  "blocked_atom_count": 0,
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "AUTHORIZE_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_FOR_ATOM_BATCH",
+  "decision_summary": "Validated controlled accept candidate is ready. Controller authorizes dry-run only; accepted-core write remains forbidden.",
+  "blocking_for_final_accept": [
+    "controlled_accept_core_mutation_dry_run_not_executed",
+    "future_real_write_authorization_not_issued",
+    "accepted_core_write_not_authorized_in_controller_consume_step"
+  ],
+  "consumed_candidate": {
+    "memory_operation_count": 1,
+    "self_model_operation_count": 1,
+    "registry_operation_count": 1,
+    "atomic_write_plan_prepared": true,
+    "rollback_plan_prepared": true,
+    "post_mutation_validation_binding_prepared": true
+  },
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

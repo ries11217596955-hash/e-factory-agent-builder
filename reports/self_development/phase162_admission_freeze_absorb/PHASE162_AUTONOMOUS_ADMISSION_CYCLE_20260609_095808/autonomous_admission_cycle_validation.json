@@ -1,0 +1,25 @@
+{
+  "schema": "PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:58:08.2360805+04:00",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808",
+  "checks": {
+    "cycle_status_pass": true,
+    "controller_mode_dry_run": true,
+    "atom_generated_true": true,
+    "freeze_evidence_true": true,
+    "partial_usefulness_true": true,
+    "safety_contracts_present_true": true,
+    "next_cycle_improvement_false": true,
+    "decision_blocked_now": true,
+    "next_action_is_trial": true,
+    "trial_request_ready": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "RUN_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX"
+}

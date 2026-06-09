@@ -1,0 +1,21 @@
+{
+  "schema": "PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_REQUEST_V1",
+  "status": "READY_TO_BUILD_TRIAL",
+  "created_at": "2026-06-09T09:58:08.1692841+04:00",
+  "reason": "Admission cycle needs proof that accepting or using the atom makes the next Builder cycle stronger.",
+  "required_trial": {
+    "mode": "SANDBOX_ONLY",
+    "before_measurement": "builder_cycle_without_absorbed_atom",
+    "candidate_application": "apply_atom_in_sandbox_only",
+    "after_measurement": "builder_cycle_with_atom_available_in_sandbox",
+    "success_rule": "after_cycle_has_measurable_improvement_without_accepted_core_mutation",
+    "forbidden": [
+      "mutate_accepted_memory",
+      "mutate_accepted_self_model",
+      "claim_absorb_complete",
+      "run_unbounded_live_daemon"
+    ]
+  },
+  "expected_result_if_trial_missing": "ACCEPT_BLOCKED",
+  "next_module_to_build": "invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1"
+}

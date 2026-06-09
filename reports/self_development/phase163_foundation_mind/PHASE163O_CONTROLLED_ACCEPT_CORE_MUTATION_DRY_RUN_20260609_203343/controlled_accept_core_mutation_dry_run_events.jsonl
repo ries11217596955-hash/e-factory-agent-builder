@@ -1,0 +1,4 @@
+{"ts":"2026-06-09T20:33:44.1162478+04:00","type":"CONTROLLED_ACCEPT_DRY_RUN_STARTED","data":{"input_ready":true,"staged_atom_count":73,"accepted_core_write_allowed":false}}
+{"ts":"2026-06-09T20:33:44.1935774+04:00","type":"CONTROLLED_ACCEPT_MUTATION_APPLIED_TO_TEMP_COPIES","data":{"memory_operation_count":73,"self_model_operation_count":73,"registry_operation_count":73,"accepted_core_write":false}}
+{"ts":"2026-06-09T20:33:44.2122247+04:00","type":"BOUND_POST_MUTATION_VALIDATION_DRY_RUN_COMPLETED","data":{"status":"PASS","post_mutation_validation_passed":true,"accepted_core_write":false}}
+{"ts":"2026-06-09T20:33:44.2244054+04:00","type":"CONTROLLED_ACCEPT_DRY_RUN_ROLLBACK_COMPLETED","data":{"rollback_restored_temp_state":true,"accepted_core_write":false}}

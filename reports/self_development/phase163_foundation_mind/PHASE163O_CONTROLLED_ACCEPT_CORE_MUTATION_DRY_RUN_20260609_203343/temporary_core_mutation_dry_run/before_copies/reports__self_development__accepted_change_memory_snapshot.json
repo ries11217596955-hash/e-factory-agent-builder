@@ -1,0 +1,49 @@
+{
+  "accepted_subject_head": "8e3a9eaf7191951660f34cf2a9b39277fbd1d110",
+  "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
+  "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
+  "changed_files_since_previous_baseline": [
+    "modules/invoke_phase162_post_accept_rollback_rehearsal_for_atom_batch_001.ps1",
+    "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/overlay_apply_state.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/post_accept_rollback_rehearsal_events.jsonl",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/post_accept_rollback_rehearsal_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/post_accept_rollback_rehearsal_validation.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_20260609_111016/rollback_rehearsal_result.json",
+    "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1"
+  ],
+  "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
+  "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+  "memory_report_path": "reports/self_development/self_map_memory_report.md",
+  "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
+  "next_decision_allowed": true,
+  "next_decision_reason": "Self knowledge is ready for the next decision.",
+  "created_at": "2026-06-09T07:12:01.8750879Z",
+  "phase162_accepted_atom_memory_records": [
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_MEMORY_RECORD_V1",
+      "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+      "accepted_at": "2026-06-09T13:54:50.5453500+04:00",
+      "operation_id": "memory_append_atom_1",
+      "source_freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+      "payload": {
+        "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+        "accepted_state": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "source_freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+        "runtime_absorb_trial_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_FOR_ATOM_BATCH_20260609_113327",
+        "measured_strength_delta": 6,
+        "evidence": [
+          "freeze_evidence",
+          "policy_gate",
+          "rollback_rehearsal",
+          "post_accept_validation_dry_run",
+          "bounded_runtime_autonomous_absorb_trial"
+        ]
+      },
+      "execution_authorization_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_DRY_RUN_BATCH_20260609_134327",
+      "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_20260609_114043",
+      "accepted_core_write": true
+    }
+  ]
+}

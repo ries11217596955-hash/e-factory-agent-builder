@@ -1,0 +1,10 @@
+{
+  "schema": "PHASE162_RUNTIME_BASELINE_CYCLE_V1",
+  "cycle_index": 1,
+  "mode": "BEFORE_RUNTIME_ABSORB_OVERLAY",
+  "atom_batch_seen": true,
+  "runtime_overlay_available": false,
+  "autonomous_absorb_decision_available": false,
+  "next_cycle_visibility_from_runtime_overlay": false,
+  "cycle_strength_score": 1
+}

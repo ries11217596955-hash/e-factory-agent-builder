@@ -1,0 +1,11 @@
+{
+  "schema": "PHASE162_RUNTIME_AFTER_ABSORB_CYCLE_V1",
+  "cycle_index": 2,
+  "mode": "AFTER_RUNTIME_ABSORB_OVERLAY",
+  "atom_batch_seen": true,
+  "runtime_overlay_available": true,
+  "autonomous_absorb_decision_available": true,
+  "next_cycle_visibility_from_runtime_overlay": true,
+  "selected_next_cycle_action": "USE_RUNTIME_OVERLAY_ATOM_BATCH_FOR_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_PREP",
+  "cycle_strength_score": 7
+}

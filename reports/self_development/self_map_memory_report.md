@@ -2,7 +2,7 @@
 
 I remember myself; here is my current report.
 
-Accepted subject head: f678266ab3ae2865e4853c8451e4c0c019c36c7c
+Accepted subject head: 784b885542b7c15415330c36f87efd7263128ad8
 Current baseline phase: GITHUB_PUSH_SELF_MAP_AUTO_REFRESH
 Map refresh status: SELF_KNOWLEDGE_READY
 Self knowledge ready: True
@@ -17,12 +17,12 @@ The organism can operate, but an active-path implementation or self-knowledge re
 
 ## Counts
 
-- Active wired proven: 224
+- Active wired proven: 232
 - Present not wired: 277
 - Historical references: 204
 - Superseded: 1
 - Real stubs: 2
-- False-positive stubs: 88
+- False-positive stubs: 89
 - Gap chains: 7
 
 ## Top Live Or Current Active Organs

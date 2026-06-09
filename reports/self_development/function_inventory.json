@@ -9497,6 +9497,44 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/test_phase162_atom_usefulness_safety_blockers_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json"
+      ],
+      "param_names": [
+        "FreezeRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "stamp",
+        "freeze",
+        "decision",
+        "validation",
+        "usefulnessBlockers",
+        "safetyBlockers",
+        "usefulness",
+        "safety",
+        "combined",
+        "_"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_USEFULNESS_SAFETY_BLOCKERS_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/update_builder_self_model_active_map_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -28920,6 +28958,36 @@
       "write_outputs_detected": [
         "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
         "ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "usefulness",
+        "safety",
+        "combined",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 20 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [

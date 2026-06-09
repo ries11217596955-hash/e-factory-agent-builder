@@ -1,0 +1,35 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_BATCH_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T20:07:24.9538937+04:00",
+  "loop_target": "builder_lives_creates_atom_or_batch_absorbs_safe_atoms_next_cycle_stronger",
+  "controller_mode": "AUTONOMOUS_CONTROLLER_NO_ACCEPTED_CORE_WRITES",
+  "rollback_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163F_POST_ACCEPT_ROLLBACK_REHEARSAL_20260609_200357",
+  "preconditions": {
+    "rollback_validation_passed": true,
+    "rollback_rehearsal_passed": true,
+    "overlay_apply_passed": true,
+    "overlay_file_count_before_rollback": 4,
+    "overlay_removed_after_rollback": true,
+    "protected_targets_unchanged": true,
+    "staged_atom_count_positive": true,
+    "accepted_core_not_mutated": true,
+    "post_accept_validation_run": false,
+    "real_runtime_autonomous_absorb_proven": false
+  },
+  "batch_size": 73,
+  "staged_atom_count": 73,
+  "blocked_atom_count": 0,
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "BUILD_POST_ACCEPT_VALIDATION_DRY_RUN_FOR_ATOM_BATCH",
+  "decision_summary": "Rollback rehearsal passed. Final accept remains blocked until post-accept validation dry-run and real-runtime autonomous absorb proof exist.",
+  "blocking_for_final_accept": [
+    "post_accept_validation_not_run",
+    "real_runtime_autonomous_absorb_not_proven",
+    "accepted_core_write_not_authorized_in_controller_consume_step"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

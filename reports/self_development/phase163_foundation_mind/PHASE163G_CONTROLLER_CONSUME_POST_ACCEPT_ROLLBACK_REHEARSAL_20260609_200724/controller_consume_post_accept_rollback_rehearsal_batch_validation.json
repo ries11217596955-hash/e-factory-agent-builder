@@ -1,0 +1,26 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_BATCH_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T20:07:25.0163638+04:00",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163G_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_20260609_200724",
+  "checks": {
+    "status_pass": true,
+    "decision_blocked": true,
+    "next_action_post_accept_validation": true,
+    "rollback_passed_true": true,
+    "overlay_apply_passed_true": true,
+    "overlay_count_at_least_four": true,
+    "protected_targets_unchanged_true": true,
+    "accepted_core_not_mutated_true": true,
+    "staged_atom_count_positive": true,
+    "request_ready": true,
+    "request_module_named": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "BUILD_POST_ACCEPT_VALIDATION_DRY_RUN_FOR_ATOM_BATCH"
+}

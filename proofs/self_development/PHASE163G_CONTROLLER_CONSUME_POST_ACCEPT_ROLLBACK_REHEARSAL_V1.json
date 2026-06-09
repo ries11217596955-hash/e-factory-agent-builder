@@ -1,0 +1,14 @@
+{
+  "proof_id": "PHASE163G_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_V1",
+  "status": "PASS_PENDING_COMMIT",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163G_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_20260609_200724",
+  "result_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163G_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_20260609_200724\\controller_consume_post_accept_rollback_rehearsal_batch_result.json",
+  "validation_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163G_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_20260609_200724\\controller_consume_post_accept_rollback_rehearsal_batch_validation.json",
+  "request_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163G_CONTROLLER_CONSUME_POST_ACCEPT_ROLLBACK_REHEARSAL_20260609_200724\\post_accept_validation_dry_run_for_atom_batch_request.json",
+  "staged_atom_count": 73,
+  "rollback_rehearsal_passed": true,
+  "protected_targets_unchanged": true,
+  "next_machine_action": "BUILD_POST_ACCEPT_VALIDATION_DRY_RUN_FOR_ATOM_BATCH",
+  "accepted_core_mutation_executed": false,
+  "created_at": "2026-06-09T16:07:25.4925240Z"
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:45:12.6835867+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "9fe4eb3",
+  "previous_blockers_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_USEFULNESS_SAFETY_BLOCKERS_20260609_092146",
+  "executed_use_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_EXECUTED_USE_PROOF_20260609_094148",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_USEFULNESS_SAFETY_BLOCKERS_EXECUTED_USE_20260609_094512",
+  "usefulness_validated_partial": true,
+  "usefulness_validated_for_accept": false,
+  "safety_validated_for_accept": false,
+  "accept_ready": false,
+  "expected_gate_decision": "ACCEPT_BLOCKED",
+  "blocking_reasons": [
+    "no_next_cycle_improvement_proof",
+    "no_behavior_delta_measurement",
+    "partial_executed_use_proof_exists_but_not_live_builder_task_success_delta",
+    "owner_visible_admission_review_card_exists",
+    "accept_target_not_defined",
+    "accepted_memory_write_contract_missing",
+    "accepted_self_model_write_contract_missing",
+    "rollback_plan_missing",
+    "owner_review_gate_missing",
+    "source_decision_is_quarantine_not_accept"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "UPGRADE_ACCEPT_GATE_TO_REPORT_PARTIAL_USEFULNESS"
+}

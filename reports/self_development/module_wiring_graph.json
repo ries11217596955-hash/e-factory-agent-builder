@@ -1659,6 +1659,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/test_phase162_atom_accept_readiness_gate_001.ps1",
+      "path": "modules/test_phase162_atom_accept_readiness_gate_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/update_builder_self_model_active_map_001.ps1",
       "path": "modules/update_builder_self_model_active_map_001.ps1",
       "node_type": "module"
@@ -5024,6 +5029,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+      "path": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
       "path": "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
       "node_type": "proof"
@@ -6166,6 +6176,21 @@
     {
       "id": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
       "path": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/PHASE162_ACCEPT_READINESS_GATE_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/PHASE162_ACCEPT_READINESS_GATE_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7421,6 +7446,11 @@
     {
       "id": "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
       "path": "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
+      "path": "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21065,13 +21095,6 @@
       "evidence_snippet_or_pattern": "scale_trial_promotion_gate_and_route_lock_refresh_v1.schema.json"
     },
     {
-      "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/freeze_builder_atom_candidate_admission_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "freeze_builder_atom_candidate_admission_001"
-    },
-    {
       "source": "reports/self_development/agent_body_map.json",
       "target": "modules/absorb_builder_school_experience_001.ps1",
       "edge_type": "calls",
@@ -21609,6 +21632,13 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_self_growth_runtime_admission_review_001"
+    },
+    {
+      "source": "reports/self_development/agent_body_map.json",
+      "target": "modules/invoke_builder_self_learning_loop_metrics_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "invoke_builder_self_learning_loop_metrics_001"
     }
   ]
 }

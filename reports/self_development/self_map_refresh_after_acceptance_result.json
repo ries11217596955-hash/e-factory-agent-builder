@@ -1,21 +1,21 @@
 {
-  "refresh_id": "PHASE161E_REFRESH_20260609051747",
-  "accepted_subject_head": "b99c37be7cb6f13927f32ae8261724a511f5e099",
+  "refresh_id": "PHASE161E_REFRESH_20260609052042",
+  "accepted_subject_head": "f678266ab3ae2865e4853c8451e4c0c019c36c7c",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "trigger_reason": "github_push_auto_refresh",
-  "generated_from_worktree_head": "b99c37be7cb6f13927f32ae8261724a511f5e099",
+  "generated_from_worktree_head": "f678266ab3ae2865e4853c8451e4c0c019c36c7c",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
   "self_knowledge_ready": true,
   "map_is_ready_for_next_decision": true,
   "active_route_lock": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md",
-  "active_organs_count": 218,
+  "active_organs_count": 224,
   "present_not_wired_count": 277,
   "historical_reference_count": 204,
   "superseded_count": 1,
   "real_stub_count": 2,
-  "false_positive_stub_count": 89,
+  "false_positive_stub_count": 88,
   "gap_chain_count": 7,
   "organism_health_state": "DEGRADED",
   "health_score": 62,
@@ -24,7 +24,7 @@
   "next_action_type": "OBSERVE",
   "recommended_next_learning_tasks": [
     {
-      "gap_id": "PHASE161J_RECOMMENDATION_20260609051747",
+      "gap_id": "PHASE161J_RECOMMENDATION_20260609052042",
       "recommended_next_action": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
       "why_status": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
       "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
@@ -36,5 +36,5 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "memory_report_path": "reports/self_development/self_map_memory_report.md",
   "policy_path": "reports/self_development/self_map_refresh_policy.json",
-  "created_at": "2026-06-09T05:17:47.7405856Z"
+  "created_at": "2026-06-09T05:20:42.5124046Z"
 }

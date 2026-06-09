@@ -1,0 +1,32 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:36:40.3417243+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "8bec160",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640",
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "BUILD_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN",
+  "preconditions": {
+    "autonomous_policy_gate_ok": true,
+    "bounded_absorb_trial_passed": true,
+    "next_cycle_stronger_after_sandbox_absorb": true,
+    "denial_explanation_available": true,
+    "measured_strength_delta_positive": true,
+    "accepted_core_not_mutated": true,
+    "final_accept_ready": false
+  },
+  "blocking_for_final_accept": [
+    "controlled_accept_candidate_not_built",
+    "accepted_memory_delta_not_staged",
+    "accepted_self_model_delta_not_staged",
+    "accept_commit_plan_not_validated",
+    "post_accept_rollback_not_rehearsed",
+    "real_runtime_autonomous_absorb_not_proven"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "BUILD_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN"
+}

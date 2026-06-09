@@ -1,0 +1,25 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:36:40.2473728+04:00",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640",
+  "checks": {
+    "status_pass": true,
+    "machine_decision_blocked": true,
+    "next_action_accept_candidate": true,
+    "bounded_absorb_passed_true": true,
+    "next_cycle_stronger_true": true,
+    "denial_explanation_true": true,
+    "measured_delta_positive": true,
+    "accepted_core_not_mutated_true": true,
+    "request_ready": true,
+    "request_module_named": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "BUILD_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN"
+}

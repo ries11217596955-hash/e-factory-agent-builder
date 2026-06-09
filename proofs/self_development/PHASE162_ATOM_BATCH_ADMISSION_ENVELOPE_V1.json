@@ -1,0 +1,20 @@
+{
+  "schema": "PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:40:05.7221100+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "7e28a63",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005",
+  "batch_policy_mode": "PER_ATOM_DECISION_NO_BATCH_BLIND_ACCEPT",
+  "single_atom_normalized_as_batch": true,
+  "batch_size": 1,
+  "eligible_atom_count": 1,
+  "blocked_atom_count": 0,
+  "batch_decision": "ALL_ATOMS_READY_FOR_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN",
+  "next_machine_action": "BUILD_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH",
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "BUILD_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH"
+}

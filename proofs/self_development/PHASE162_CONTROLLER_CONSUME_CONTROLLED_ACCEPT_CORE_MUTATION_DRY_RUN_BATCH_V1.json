@@ -1,0 +1,22 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_BATCH_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T13:43:27.2365675+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "3356392",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_DRY_RUN_BATCH_20260609_134327",
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_FOR_ATOM_BATCH",
+  "execution_authorization_status": "AUTHORIZED_ONE_SHOT_CONTROLLED_ACCEPT_CORE_MUTATION",
+  "staged_atom_count": 1,
+  "blocking_for_final_accept": [
+    "real_controlled_accept_core_mutation_not_executed_yet",
+    "post_real_mutation_validation_not_run_yet",
+    "final_accept_proof_not_emitted_yet"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_FOR_ATOM_BATCH"
+}

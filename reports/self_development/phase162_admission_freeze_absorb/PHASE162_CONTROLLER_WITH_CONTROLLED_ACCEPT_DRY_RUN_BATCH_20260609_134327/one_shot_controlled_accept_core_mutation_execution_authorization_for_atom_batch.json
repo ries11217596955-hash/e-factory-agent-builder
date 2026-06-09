@@ -1,0 +1,26 @@
+{
+  "schema": "PHASE162_ONE_SHOT_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_AUTHORIZATION_FOR_ATOM_BATCH_V1",
+  "status": "AUTHORIZED",
+  "created_at": "2026-06-09T13:43:27.1958519+04:00",
+  "authorization_scope": "ONE_SHOT_ACCEPTED_CORE_WRITE_WITH_ATOMIC_PLAN_AND_ROLLBACK",
+  "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_20260609_114043",
+  "dry_run_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_FOR_ATOM_BATCH_20260609_125933",
+  "staged_atom_count": 1,
+  "required_inputs": {
+    "mutation_set": "controlled_accept_core_mutation_set.json",
+    "atomic_write_plan": "atomic_accept_write_plan.json",
+    "rollback_plan": "controlled_accept_core_mutation_rollback_plan.json",
+    "post_mutation_validation_binding": "post_mutation_validation_binding.json",
+    "pre_accept_fingerprints": "pre_accept_fingerprints.json"
+  },
+  "constraints": [
+    "execute_once_only",
+    "write_only_declared_targets",
+    "snapshot_before_write",
+    "apply_all_operations_or_rollback",
+    "run_bound_post_mutation_validation",
+    "emit_accept_or_rollback_proof",
+    "do_not_claim_final_accept_if_validation_fails"
+  ],
+  "next_module_to_build": "invoke_phase162_execute_controlled_accept_core_mutation_for_atom_batch_001.ps1"
+}

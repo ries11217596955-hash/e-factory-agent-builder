@@ -25763,6 +25763,1174 @@
       "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_20260609_114043",
       "visible_to_next_cycle": true,
       "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.absolute_path.v1::concept.absolute_path.v1",
+      "accepted_at": "2026-06-09T21:07:28.5249675+04:00",
+      "operation_id": "self_model_append_atom_1",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.absolute_path.v1::concept.absolute_path.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.absorbed_atom.v1::concept.absorbed_atom.v1",
+      "accepted_at": "2026-06-09T21:07:28.583557+04:00",
+      "operation_id": "self_model_append_atom_2",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.absorbed_atom.v1::concept.absorbed_atom.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.accepted_atom.v1::concept.accepted_atom.v1",
+      "accepted_at": "2026-06-09T21:07:28.6554759+04:00",
+      "operation_id": "self_model_append_atom_3",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.accepted_atom.v1::concept.accepted_atom.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.accepted_core.v1::concept.accepted_core.v1",
+      "accepted_at": "2026-06-09T21:07:28.7191971+04:00",
+      "operation_id": "self_model_append_atom_4",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.accepted_core.v1::concept.accepted_core.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.artifact.v1::concept.artifact.v1",
+      "accepted_at": "2026-06-09T21:07:28.7949278+04:00",
+      "operation_id": "self_model_append_atom_5",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.artifact.v1::concept.artifact.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.atom_candidate.v1::concept.atom_candidate.v1",
+      "accepted_at": "2026-06-09T21:07:28.902362+04:00",
+      "operation_id": "self_model_append_atom_6",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.atom_candidate.v1::concept.atom_candidate.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.backlog.v1::concept.backlog.v1",
+      "accepted_at": "2026-06-09T21:07:28.9648326+04:00",
+      "operation_id": "self_model_append_atom_7",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.backlog.v1::concept.backlog.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.branch.v1::concept.branch.v1",
+      "accepted_at": "2026-06-09T21:07:29.038614+04:00",
+      "operation_id": "self_model_append_atom_8",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.branch.v1::concept.branch.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.command.v1::concept.command.v1",
+      "accepted_at": "2026-06-09T21:07:29.1063877+04:00",
+      "operation_id": "self_model_append_atom_9",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.command.v1::concept.command.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.commit.v1::concept.commit.v1",
+      "accepted_at": "2026-06-09T21:07:29.1799755+04:00",
+      "operation_id": "self_model_append_atom_10",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.commit.v1::concept.commit.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.daemon.v1::concept.daemon.v1",
+      "accepted_at": "2026-06-09T21:07:29.280361+04:00",
+      "operation_id": "self_model_append_atom_11",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.daemon.v1::concept.daemon.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.docx.v1::concept.docx.v1",
+      "accepted_at": "2026-06-09T21:07:29.3363983+04:00",
+      "operation_id": "self_model_append_atom_12",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.docx.v1::concept.docx.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.document_content.v1::concept.document_content.v1",
+      "accepted_at": "2026-06-09T21:07:29.3973255+04:00",
+      "operation_id": "self_model_append_atom_13",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.document_content.v1::concept.document_content.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.extension.v1::concept.extension.v1",
+      "accepted_at": "2026-06-09T21:07:29.4570525+04:00",
+      "operation_id": "self_model_append_atom_14",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.extension.v1::concept.extension.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.file.v1::concept.file.v1",
+      "accepted_at": "2026-06-09T21:07:29.5209607+04:00",
+      "operation_id": "self_model_append_atom_15",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.file.v1::concept.file.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.folder.v1::concept.folder.v1",
+      "accepted_at": "2026-06-09T21:07:29.5989229+04:00",
+      "operation_id": "self_model_append_atom_16",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.folder.v1::concept.folder.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.json.v1::concept.json.v1",
+      "accepted_at": "2026-06-09T21:07:29.6575782+04:00",
+      "operation_id": "self_model_append_atom_17",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.json.v1::concept.json.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.quarantine.v1::concept.quarantine.v1",
+      "accepted_at": "2026-06-09T21:07:29.713449+04:00",
+      "operation_id": "self_model_append_atom_18",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.quarantine.v1::concept.quarantine.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.log.v1::concept.log.v1",
+      "accepted_at": "2026-06-09T21:07:29.7640492+04:00",
+      "operation_id": "self_model_append_atom_19",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.log.v1::concept.log.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.markdown.v1::concept.markdown.v1",
+      "accepted_at": "2026-06-09T21:07:29.8229992+04:00",
+      "operation_id": "self_model_append_atom_20",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.markdown.v1::concept.markdown.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.module.v1::concept.module.v1",
+      "accepted_at": "2026-06-09T21:07:29.9049413+04:00",
+      "operation_id": "self_model_append_atom_21",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.module.v1::concept.module.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.next_machine_action.v1::concept.next_machine_action.v1",
+      "accepted_at": "2026-06-09T21:07:29.9653877+04:00",
+      "operation_id": "self_model_append_atom_22",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.next_machine_action.v1::concept.next_machine_action.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.nested_folder.v1::concept.nested_folder.v1",
+      "accepted_at": "2026-06-09T21:07:30.0261541+04:00",
+      "operation_id": "self_model_append_atom_23",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.nested_folder.v1::concept.nested_folder.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.owner_hint.v1::concept.owner_hint.v1",
+      "accepted_at": "2026-06-09T21:07:30.090688+04:00",
+      "operation_id": "self_model_append_atom_24",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.owner_hint.v1::concept.owner_hint.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.owner_task.v1::concept.owner_task.v1",
+      "accepted_at": "2026-06-09T21:07:30.1789861+04:00",
+      "operation_id": "self_model_append_atom_25",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.owner_task.v1::concept.owner_task.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.paragraph.v1::concept.paragraph.v1",
+      "accepted_at": "2026-06-09T21:07:30.2372993+04:00",
+      "operation_id": "self_model_append_atom_26",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.paragraph.v1::concept.paragraph.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.path.v1::concept.path.v1",
+      "accepted_at": "2026-06-09T21:07:30.2956628+04:00",
+      "operation_id": "self_model_append_atom_27",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.path.v1::concept.path.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.proof.v1::concept.proof.v1",
+      "accepted_at": "2026-06-09T21:07:30.3512593+04:00",
+      "operation_id": "self_model_append_atom_28",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.proof.v1::concept.proof.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.pull.v1::concept.pull.v1",
+      "accepted_at": "2026-06-09T21:07:30.4067893+04:00",
+      "operation_id": "self_model_append_atom_29",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.pull.v1::concept.pull.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.push.v1::concept.push.v1",
+      "accepted_at": "2026-06-09T21:07:30.4777284+04:00",
+      "operation_id": "self_model_append_atom_30",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.push.v1::concept.push.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.relative_path.v1::concept.relative_path.v1",
+      "accepted_at": "2026-06-09T21:07:30.55832+04:00",
+      "operation_id": "self_model_append_atom_31",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.relative_path.v1::concept.relative_path.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.remote.v1::concept.remote.v1",
+      "accepted_at": "2026-06-09T21:07:30.6320387+04:00",
+      "operation_id": "self_model_append_atom_32",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.remote.v1::concept.remote.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.report.v1::concept.report.v1",
+      "accepted_at": "2026-06-09T21:07:30.6972615+04:00",
+      "operation_id": "self_model_append_atom_33",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.report.v1::concept.report.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.repository.v1::concept.repository.v1",
+      "accepted_at": "2026-06-09T21:07:30.7651482+04:00",
+      "operation_id": "self_model_append_atom_34",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.repository.v1::concept.repository.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.rollback.v1::concept.rollback.v1",
+      "accepted_at": "2026-06-09T21:07:30.8504042+04:00",
+      "operation_id": "self_model_append_atom_35",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.rollback.v1::concept.rollback.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.route_lock.v1::concept.route_lock.v1",
+      "accepted_at": "2026-06-09T21:07:30.9138512+04:00",
+      "operation_id": "self_model_append_atom_36",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.route_lock.v1::concept.route_lock.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.runner.v1::concept.runner.v1",
+      "accepted_at": "2026-06-09T21:07:30.9700747+04:00",
+      "operation_id": "self_model_append_atom_37",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.runner.v1::concept.runner.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.sandbox.v1::concept.sandbox.v1",
+      "accepted_at": "2026-06-09T21:07:31.0333721+04:00",
+      "operation_id": "self_model_append_atom_38",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.sandbox.v1::concept.sandbox.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.script.v1::concept.script.v1",
+      "accepted_at": "2026-06-09T21:07:31.1252288+04:00",
+      "operation_id": "self_model_append_atom_39",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.script.v1::concept.script.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.sentence.v1::concept.sentence.v1",
+      "accepted_at": "2026-06-09T21:07:31.1874756+04:00",
+      "operation_id": "self_model_append_atom_40",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.sentence.v1::concept.sentence.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.startup_visibility.v1::concept.startup_visibility.v1",
+      "accepted_at": "2026-06-09T21:07:31.2432734+04:00",
+      "operation_id": "self_model_append_atom_41",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.startup_visibility.v1::concept.startup_visibility.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.text.v1::concept.text.v1",
+      "accepted_at": "2026-06-09T21:07:31.2989778+04:00",
+      "operation_id": "self_model_append_atom_42",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.text.v1::concept.text.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.terminal_output.v1::concept.terminal_output.v1",
+      "accepted_at": "2026-06-09T21:07:31.3651515+04:00",
+      "operation_id": "self_model_append_atom_43",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.terminal_output.v1::concept.terminal_output.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.validator_output.v1::concept.validator_output.v1",
+      "accepted_at": "2026-06-09T21:07:31.4731196+04:00",
+      "operation_id": "self_model_append_atom_44",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.validator_output.v1::concept.validator_output.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.validator.v1::concept.validator.v1",
+      "accepted_at": "2026-06-09T21:07:31.5436915+04:00",
+      "operation_id": "self_model_append_atom_45",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.validator.v1::concept.validator.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.worktree_dirty.v1::concept.worktree_dirty.v1",
+      "accepted_at": "2026-06-09T21:07:31.6322349+04:00",
+      "operation_id": "self_model_append_atom_46",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.worktree_dirty.v1::concept.worktree_dirty.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_docx_document.v1::procedure.create_docx_document.v1",
+      "accepted_at": "2026-06-09T21:07:31.7012637+04:00",
+      "operation_id": "self_model_append_atom_47",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_docx_document.v1::procedure.create_docx_document.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_folder.v1::procedure.create_folder.v1",
+      "accepted_at": "2026-06-09T21:07:31.7627717+04:00",
+      "operation_id": "self_model_append_atom_48",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_folder.v1::procedure.create_folder.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_json_document.v1::procedure.create_json_document.v1",
+      "accepted_at": "2026-06-09T21:07:31.8323886+04:00",
+      "operation_id": "self_model_append_atom_49",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_json_document.v1::procedure.create_json_document.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_markdown_document.v1::procedure.create_markdown_document.v1",
+      "accepted_at": "2026-06-09T21:07:31.8907259+04:00",
+      "operation_id": "self_model_append_atom_50",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_markdown_document.v1::procedure.create_markdown_document.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_nested_folder.v1::procedure.create_nested_folder.v1",
+      "accepted_at": "2026-06-09T21:07:31.9998952+04:00",
+      "operation_id": "self_model_append_atom_51",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_nested_folder.v1::procedure.create_nested_folder.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.git_status_check.v1::procedure.git_status_check.v1",
+      "accepted_at": "2026-06-09T21:07:32.0669801+04:00",
+      "operation_id": "self_model_append_atom_52",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.git_status_check.v1::procedure.git_status_check.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.push_and_verify.v1::procedure.push_and_verify.v1",
+      "accepted_at": "2026-06-09T21:07:32.1432823+04:00",
+      "operation_id": "self_model_append_atom_53",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.push_and_verify.v1::procedure.push_and_verify.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.run_bounded_script.v1::procedure.run_bounded_script.v1",
+      "accepted_at": "2026-06-09T21:07:32.2200899+04:00",
+      "operation_id": "self_model_append_atom_54",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.run_bounded_script.v1::procedure.run_bounded_script.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.stop_on_fail.v1::procedure.stop_on_fail.v1",
+      "accepted_at": "2026-06-09T21:07:32.2823098+04:00",
+      "operation_id": "self_model_append_atom_55",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.stop_on_fail.v1::procedure.stop_on_fail.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.validate_claim.v1::procedure.validate_claim.v1",
+      "accepted_at": "2026-06-09T21:07:32.3375262+04:00",
+      "operation_id": "self_model_append_atom_56",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.validate_claim.v1::procedure.validate_claim.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.write_text_file.v1::procedure.write_text_file.v1",
+      "accepted_at": "2026-06-09T21:07:32.4251251+04:00",
+      "operation_id": "self_model_append_atom_57",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.write_text_file.v1::procedure.write_text_file.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.behavior_delta.v1::proof.behavior_delta.v1",
+      "accepted_at": "2026-06-09T21:07:32.4865709+04:00",
+      "operation_id": "self_model_append_atom_58",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.behavior_delta.v1::proof.behavior_delta.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.docx_contains_text.v1::proof.docx_contains_text.v1",
+      "accepted_at": "2026-06-09T21:07:32.54439+04:00",
+      "operation_id": "self_model_append_atom_59",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.docx_contains_text.v1::proof.docx_contains_text.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.file_exists.v1::proof.file_exists.v1",
+      "accepted_at": "2026-06-09T21:07:32.612301+04:00",
+      "operation_id": "self_model_append_atom_60",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.file_exists.v1::proof.file_exists.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.folder_exists.v1::proof.folder_exists.v1",
+      "accepted_at": "2026-06-09T21:07:32.668344+04:00",
+      "operation_id": "self_model_append_atom_61",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.folder_exists.v1::proof.folder_exists.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.json_parses.v1::proof.json_parses.v1",
+      "accepted_at": "2026-06-09T21:07:32.7651863+04:00",
+      "operation_id": "self_model_append_atom_62",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.json_parses.v1::proof.json_parses.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.memory_proof.v1::proof.memory_proof.v1",
+      "accepted_at": "2026-06-09T21:07:32.8382717+04:00",
+      "operation_id": "self_model_append_atom_63",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.memory_proof.v1::proof.memory_proof.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.path_exists.v1::proof.path_exists.v1",
+      "accepted_at": "2026-06-09T21:07:32.9153704+04:00",
+      "operation_id": "self_model_append_atom_64",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.path_exists.v1::proof.path_exists.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.use_proof.v1::proof.use_proof.v1",
+      "accepted_at": "2026-06-09T21:07:32.9787756+04:00",
+      "operation_id": "self_model_append_atom_65",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.use_proof.v1::proof.use_proof.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.expected_output_not_actual_proof.v1::rule.expected_output_not_actual_proof.v1",
+      "accepted_at": "2026-06-09T21:07:33.0569696+04:00",
+      "operation_id": "self_model_append_atom_66",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.expected_output_not_actual_proof.v1::rule.expected_output_not_actual_proof.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.file_exists_not_content_valid.v1::rule.file_exists_not_content_valid.v1",
+      "accepted_at": "2026-06-09T21:07:33.1135405+04:00",
+      "operation_id": "self_model_append_atom_67",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.file_exists_not_content_valid.v1::rule.file_exists_not_content_valid.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.gap_statement_not_action.v1::rule.gap_statement_not_action.v1",
+      "accepted_at": "2026-06-09T21:07:33.1773299+04:00",
+      "operation_id": "self_model_append_atom_68",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.gap_statement_not_action.v1::rule.gap_statement_not_action.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.hint_not_task.v1::rule.hint_not_task.v1",
+      "accepted_at": "2026-06-09T21:07:33.2708966+04:00",
+      "operation_id": "self_model_append_atom_69",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.hint_not_task.v1::rule.hint_not_task.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.no_branch_switch_without_intent.v1::rule.no_branch_switch_without_intent.v1",
+      "accepted_at": "2026-06-09T21:07:33.3336613+04:00",
+      "operation_id": "self_model_append_atom_70",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.no_branch_switch_without_intent.v1::rule.no_branch_switch_without_intent.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.old_chat_not_proof.v1::rule.old_chat_not_proof.v1",
+      "accepted_at": "2026-06-09T21:07:33.4239143+04:00",
+      "operation_id": "self_model_append_atom_71",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.old_chat_not_proof.v1::rule.old_chat_not_proof.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.report_is_not_proof.v1::rule.report_is_not_proof.v1",
+      "accepted_at": "2026-06-09T21:07:33.4907811+04:00",
+      "operation_id": "self_model_append_atom_72",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.report_is_not_proof.v1::rule.report_is_not_proof.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.route_lock_no_silent_change.v1::rule.route_lock_no_silent_change.v1",
+      "accepted_at": "2026-06-09T21:07:33.5752601+04:00",
+      "operation_id": "self_model_append_atom_73",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.route_lock_no_silent_change.v1::rule.route_lock_no_silent_change.v1",
+        "capability_delta": "admission_can_prepare_controlled_accept_for_batch_atom",
+        "visible_to_next_cycle": true,
+        "runtime_absorb_trial_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163J_BOUNDED_REAL_RUNTIME_AUTONOMOUS_ABSORB_TRIAL_20260609_201412"
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "visible_to_next_cycle": true,
+      "accepted_core_write": true
     }
   ]
 }

@@ -1,0 +1,57 @@
+{
+  "schema": "PHASE162_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_FOR_ATOM_BATCH_RESULT_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T21:07:37.7316207+04:00",
+  "controller_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+  "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+  "batch_size": 73,
+  "staged_atom_count": 73,
+  "controlled_accept_core_mutation_executed": true,
+  "post_real_mutation_validation_passed": true,
+  "rollback_executed": false,
+  "rollback_required": false,
+  "failure_message": "",
+  "event_count": 3,
+  "before_fingerprints": {
+    "reports/self_development/accepted_change_memory_snapshot.json": {
+      "exists": true,
+      "length": 4133,
+      "sha256": "C260D1DE9D03043250B6050F8AA93DD4EB62DCDCF2C3D787DEFE433DD5F76388"
+    },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json": {
+      "exists": true,
+      "length": 1728006,
+      "sha256": "FA6D8DD42BEF85D560271A400A8DFD7212FFBF8632658C7D313CF0DDE1FE0F9C"
+    },
+    "packs/registry.json": {
+      "exists": true,
+      "length": 55827,
+      "sha256": "34EC063A8393E4715E537F386D8185E56D521060230DAB20652501B38F57ABEF"
+    }
+  },
+  "after_fingerprints": {
+    "reports/self_development/accepted_change_memory_snapshot.json": {
+      "exists": true,
+      "length": 148378,
+      "sha256": "DBBF442389BF1B8813337283BA7D9CBB40449ACA50AEC86E8AE567EDC5E6572A"
+    },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json": {
+      "exists": true,
+      "length": 1849801,
+      "sha256": "4FC43373935AE7CFF1456ECB41AB647EFE4704374A2351AF9683BD3283A4042D"
+    },
+    "packs/registry.json": {
+      "exists": true,
+      "length": 131638,
+      "sha256": "AC6B4E26948296BDCA0E6EB421260F6203027B114868530114C202C03F0B5CC8"
+    }
+  },
+  "accepted_core_write_executed": true,
+  "accepted_atom_claimed": false,
+  "accepted_memory_mutated": true,
+  "accepted_self_model_mutated": true,
+  "registry_mutated": true,
+  "final_accept_ready": true,
+  "machine_decision": "CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTED_PENDING_CONTROLLER_FINALIZATION",
+  "next_machine_action": "FEED_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_BACK_INTO_CONTROLLER"
+}

@@ -1086,7 +1086,7 @@
     {
       "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
       "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
-      "accepted_at": "2026-06-09T13:54:50.8039030+04:00",
+      "accepted_at": "2026-06-09T13:54:50.803903+04:00",
       "operation_id": "registry_record_atom_1",
       "payload": {
         "atom_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605::PHASE162_LOCAL_DUTY_20260609_091605::PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
@@ -1095,6 +1095,1028 @@
       },
       "execution_authorization_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_DRY_RUN_BATCH_20260609_134327",
       "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH_20260609_114043",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.absolute_path.v1::concept.absolute_path.v1",
+      "accepted_at": "2026-06-09T21:07:33.639084+04:00",
+      "operation_id": "registry_record_atom_1",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.absolute_path.v1::concept.absolute_path.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.absorbed_atom.v1::concept.absorbed_atom.v1",
+      "accepted_at": "2026-06-09T21:07:33.6603048+04:00",
+      "operation_id": "registry_record_atom_2",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.absorbed_atom.v1::concept.absorbed_atom.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.accepted_atom.v1::concept.accepted_atom.v1",
+      "accepted_at": "2026-06-09T21:07:33.6683517+04:00",
+      "operation_id": "registry_record_atom_3",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.accepted_atom.v1::concept.accepted_atom.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.accepted_core.v1::concept.accepted_core.v1",
+      "accepted_at": "2026-06-09T21:07:33.7069836+04:00",
+      "operation_id": "registry_record_atom_4",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.accepted_core.v1::concept.accepted_core.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.artifact.v1::concept.artifact.v1",
+      "accepted_at": "2026-06-09T21:07:33.7158291+04:00",
+      "operation_id": "registry_record_atom_5",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.artifact.v1::concept.artifact.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.atom_candidate.v1::concept.atom_candidate.v1",
+      "accepted_at": "2026-06-09T21:07:33.7253711+04:00",
+      "operation_id": "registry_record_atom_6",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.atom_candidate.v1::concept.atom_candidate.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.backlog.v1::concept.backlog.v1",
+      "accepted_at": "2026-06-09T21:07:33.7327353+04:00",
+      "operation_id": "registry_record_atom_7",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.backlog.v1::concept.backlog.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.branch.v1::concept.branch.v1",
+      "accepted_at": "2026-06-09T21:07:33.7399686+04:00",
+      "operation_id": "registry_record_atom_8",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.branch.v1::concept.branch.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.command.v1::concept.command.v1",
+      "accepted_at": "2026-06-09T21:07:33.7487961+04:00",
+      "operation_id": "registry_record_atom_9",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.command.v1::concept.command.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.commit.v1::concept.commit.v1",
+      "accepted_at": "2026-06-09T21:07:33.7560097+04:00",
+      "operation_id": "registry_record_atom_10",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.commit.v1::concept.commit.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.daemon.v1::concept.daemon.v1",
+      "accepted_at": "2026-06-09T21:07:33.7666884+04:00",
+      "operation_id": "registry_record_atom_11",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.daemon.v1::concept.daemon.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.docx.v1::concept.docx.v1",
+      "accepted_at": "2026-06-09T21:07:33.7740416+04:00",
+      "operation_id": "registry_record_atom_12",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.docx.v1::concept.docx.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.document_content.v1::concept.document_content.v1",
+      "accepted_at": "2026-06-09T21:07:33.7814027+04:00",
+      "operation_id": "registry_record_atom_13",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.document_content.v1::concept.document_content.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.extension.v1::concept.extension.v1",
+      "accepted_at": "2026-06-09T21:07:33.7908395+04:00",
+      "operation_id": "registry_record_atom_14",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.extension.v1::concept.extension.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.file.v1::concept.file.v1",
+      "accepted_at": "2026-06-09T21:07:33.7979427+04:00",
+      "operation_id": "registry_record_atom_15",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.file.v1::concept.file.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.folder.v1::concept.folder.v1",
+      "accepted_at": "2026-06-09T21:07:33.805406+04:00",
+      "operation_id": "registry_record_atom_16",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.folder.v1::concept.folder.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.json.v1::concept.json.v1",
+      "accepted_at": "2026-06-09T21:07:33.8139083+04:00",
+      "operation_id": "registry_record_atom_17",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.json.v1::concept.json.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.quarantine.v1::concept.quarantine.v1",
+      "accepted_at": "2026-06-09T21:07:33.8252641+04:00",
+      "operation_id": "registry_record_atom_18",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.quarantine.v1::concept.quarantine.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.log.v1::concept.log.v1",
+      "accepted_at": "2026-06-09T21:07:33.8326505+04:00",
+      "operation_id": "registry_record_atom_19",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.log.v1::concept.log.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.markdown.v1::concept.markdown.v1",
+      "accepted_at": "2026-06-09T21:07:33.842988+04:00",
+      "operation_id": "registry_record_atom_20",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.markdown.v1::concept.markdown.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.module.v1::concept.module.v1",
+      "accepted_at": "2026-06-09T21:07:33.8507758+04:00",
+      "operation_id": "registry_record_atom_21",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.module.v1::concept.module.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.next_machine_action.v1::concept.next_machine_action.v1",
+      "accepted_at": "2026-06-09T21:07:33.8599252+04:00",
+      "operation_id": "registry_record_atom_22",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.next_machine_action.v1::concept.next_machine_action.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.nested_folder.v1::concept.nested_folder.v1",
+      "accepted_at": "2026-06-09T21:07:33.8689827+04:00",
+      "operation_id": "registry_record_atom_23",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.nested_folder.v1::concept.nested_folder.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.owner_hint.v1::concept.owner_hint.v1",
+      "accepted_at": "2026-06-09T21:07:33.8789858+04:00",
+      "operation_id": "registry_record_atom_24",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.owner_hint.v1::concept.owner_hint.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.owner_task.v1::concept.owner_task.v1",
+      "accepted_at": "2026-06-09T21:07:33.8871546+04:00",
+      "operation_id": "registry_record_atom_25",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.owner_task.v1::concept.owner_task.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.paragraph.v1::concept.paragraph.v1",
+      "accepted_at": "2026-06-09T21:07:33.8980959+04:00",
+      "operation_id": "registry_record_atom_26",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.paragraph.v1::concept.paragraph.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.path.v1::concept.path.v1",
+      "accepted_at": "2026-06-09T21:07:33.9058601+04:00",
+      "operation_id": "registry_record_atom_27",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.path.v1::concept.path.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.proof.v1::concept.proof.v1",
+      "accepted_at": "2026-06-09T21:07:33.9180086+04:00",
+      "operation_id": "registry_record_atom_28",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.proof.v1::concept.proof.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.pull.v1::concept.pull.v1",
+      "accepted_at": "2026-06-09T21:07:33.9262468+04:00",
+      "operation_id": "registry_record_atom_29",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.pull.v1::concept.pull.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.push.v1::concept.push.v1",
+      "accepted_at": "2026-06-09T21:07:33.9359267+04:00",
+      "operation_id": "registry_record_atom_30",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.push.v1::concept.push.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.relative_path.v1::concept.relative_path.v1",
+      "accepted_at": "2026-06-09T21:07:33.9438785+04:00",
+      "operation_id": "registry_record_atom_31",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.relative_path.v1::concept.relative_path.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.remote.v1::concept.remote.v1",
+      "accepted_at": "2026-06-09T21:07:33.9541709+04:00",
+      "operation_id": "registry_record_atom_32",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.remote.v1::concept.remote.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.report.v1::concept.report.v1",
+      "accepted_at": "2026-06-09T21:07:33.9618866+04:00",
+      "operation_id": "registry_record_atom_33",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.report.v1::concept.report.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.repository.v1::concept.repository.v1",
+      "accepted_at": "2026-06-09T21:07:33.9705443+04:00",
+      "operation_id": "registry_record_atom_34",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.repository.v1::concept.repository.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.rollback.v1::concept.rollback.v1",
+      "accepted_at": "2026-06-09T21:07:33.9780708+04:00",
+      "operation_id": "registry_record_atom_35",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.rollback.v1::concept.rollback.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.route_lock.v1::concept.route_lock.v1",
+      "accepted_at": "2026-06-09T21:07:33.9868253+04:00",
+      "operation_id": "registry_record_atom_36",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.route_lock.v1::concept.route_lock.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.runner.v1::concept.runner.v1",
+      "accepted_at": "2026-06-09T21:07:33.9971707+04:00",
+      "operation_id": "registry_record_atom_37",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.runner.v1::concept.runner.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.sandbox.v1::concept.sandbox.v1",
+      "accepted_at": "2026-06-09T21:07:34.0088896+04:00",
+      "operation_id": "registry_record_atom_38",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.sandbox.v1::concept.sandbox.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.script.v1::concept.script.v1",
+      "accepted_at": "2026-06-09T21:07:34.0180682+04:00",
+      "operation_id": "registry_record_atom_39",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.script.v1::concept.script.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.sentence.v1::concept.sentence.v1",
+      "accepted_at": "2026-06-09T21:07:34.0529889+04:00",
+      "operation_id": "registry_record_atom_40",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.sentence.v1::concept.sentence.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.startup_visibility.v1::concept.startup_visibility.v1",
+      "accepted_at": "2026-06-09T21:07:34.0611398+04:00",
+      "operation_id": "registry_record_atom_41",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.startup_visibility.v1::concept.startup_visibility.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.text.v1::concept.text.v1",
+      "accepted_at": "2026-06-09T21:07:34.071747+04:00",
+      "operation_id": "registry_record_atom_42",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.text.v1::concept.text.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.terminal_output.v1::concept.terminal_output.v1",
+      "accepted_at": "2026-06-09T21:07:34.0802576+04:00",
+      "operation_id": "registry_record_atom_43",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.terminal_output.v1::concept.terminal_output.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.validator_output.v1::concept.validator_output.v1",
+      "accepted_at": "2026-06-09T21:07:34.0905263+04:00",
+      "operation_id": "registry_record_atom_44",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.validator_output.v1::concept.validator_output.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.validator.v1::concept.validator.v1",
+      "accepted_at": "2026-06-09T21:07:34.0990064+04:00",
+      "operation_id": "registry_record_atom_45",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.validator.v1::concept.validator.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.worktree_dirty.v1::concept.worktree_dirty.v1",
+      "accepted_at": "2026-06-09T21:07:34.1090883+04:00",
+      "operation_id": "registry_record_atom_46",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::concept.worktree_dirty.v1::concept.worktree_dirty.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_docx_document.v1::procedure.create_docx_document.v1",
+      "accepted_at": "2026-06-09T21:07:34.1175089+04:00",
+      "operation_id": "registry_record_atom_47",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_docx_document.v1::procedure.create_docx_document.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_folder.v1::procedure.create_folder.v1",
+      "accepted_at": "2026-06-09T21:07:34.1278993+04:00",
+      "operation_id": "registry_record_atom_48",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_folder.v1::procedure.create_folder.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_json_document.v1::procedure.create_json_document.v1",
+      "accepted_at": "2026-06-09T21:07:34.1364803+04:00",
+      "operation_id": "registry_record_atom_49",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_json_document.v1::procedure.create_json_document.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_markdown_document.v1::procedure.create_markdown_document.v1",
+      "accepted_at": "2026-06-09T21:07:34.1460922+04:00",
+      "operation_id": "registry_record_atom_50",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_markdown_document.v1::procedure.create_markdown_document.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_nested_folder.v1::procedure.create_nested_folder.v1",
+      "accepted_at": "2026-06-09T21:07:34.1574305+04:00",
+      "operation_id": "registry_record_atom_51",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.create_nested_folder.v1::procedure.create_nested_folder.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.git_status_check.v1::procedure.git_status_check.v1",
+      "accepted_at": "2026-06-09T21:07:34.1658761+04:00",
+      "operation_id": "registry_record_atom_52",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.git_status_check.v1::procedure.git_status_check.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.push_and_verify.v1::procedure.push_and_verify.v1",
+      "accepted_at": "2026-06-09T21:07:34.1766135+04:00",
+      "operation_id": "registry_record_atom_53",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.push_and_verify.v1::procedure.push_and_verify.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.run_bounded_script.v1::procedure.run_bounded_script.v1",
+      "accepted_at": "2026-06-09T21:07:34.1851598+04:00",
+      "operation_id": "registry_record_atom_54",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.run_bounded_script.v1::procedure.run_bounded_script.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.stop_on_fail.v1::procedure.stop_on_fail.v1",
+      "accepted_at": "2026-06-09T21:07:34.1957842+04:00",
+      "operation_id": "registry_record_atom_55",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.stop_on_fail.v1::procedure.stop_on_fail.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.validate_claim.v1::procedure.validate_claim.v1",
+      "accepted_at": "2026-06-09T21:07:34.2066562+04:00",
+      "operation_id": "registry_record_atom_56",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.validate_claim.v1::procedure.validate_claim.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.write_text_file.v1::procedure.write_text_file.v1",
+      "accepted_at": "2026-06-09T21:07:34.2195791+04:00",
+      "operation_id": "registry_record_atom_57",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::procedure.write_text_file.v1::procedure.write_text_file.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.behavior_delta.v1::proof.behavior_delta.v1",
+      "accepted_at": "2026-06-09T21:07:34.2282789+04:00",
+      "operation_id": "registry_record_atom_58",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.behavior_delta.v1::proof.behavior_delta.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.docx_contains_text.v1::proof.docx_contains_text.v1",
+      "accepted_at": "2026-06-09T21:07:34.2387744+04:00",
+      "operation_id": "registry_record_atom_59",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.docx_contains_text.v1::proof.docx_contains_text.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.file_exists.v1::proof.file_exists.v1",
+      "accepted_at": "2026-06-09T21:07:34.2476382+04:00",
+      "operation_id": "registry_record_atom_60",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.file_exists.v1::proof.file_exists.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.folder_exists.v1::proof.folder_exists.v1",
+      "accepted_at": "2026-06-09T21:07:34.2604499+04:00",
+      "operation_id": "registry_record_atom_61",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.folder_exists.v1::proof.folder_exists.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.json_parses.v1::proof.json_parses.v1",
+      "accepted_at": "2026-06-09T21:07:34.2696013+04:00",
+      "operation_id": "registry_record_atom_62",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.json_parses.v1::proof.json_parses.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.memory_proof.v1::proof.memory_proof.v1",
+      "accepted_at": "2026-06-09T21:07:34.2800852+04:00",
+      "operation_id": "registry_record_atom_63",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.memory_proof.v1::proof.memory_proof.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.path_exists.v1::proof.path_exists.v1",
+      "accepted_at": "2026-06-09T21:07:34.2891865+04:00",
+      "operation_id": "registry_record_atom_64",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.path_exists.v1::proof.path_exists.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.use_proof.v1::proof.use_proof.v1",
+      "accepted_at": "2026-06-09T21:07:34.3339015+04:00",
+      "operation_id": "registry_record_atom_65",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::proof.use_proof.v1::proof.use_proof.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.expected_output_not_actual_proof.v1::rule.expected_output_not_actual_proof.v1",
+      "accepted_at": "2026-06-09T21:07:34.3428297+04:00",
+      "operation_id": "registry_record_atom_66",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.expected_output_not_actual_proof.v1::rule.expected_output_not_actual_proof.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.file_exists_not_content_valid.v1::rule.file_exists_not_content_valid.v1",
+      "accepted_at": "2026-06-09T21:07:34.35338+04:00",
+      "operation_id": "registry_record_atom_67",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.file_exists_not_content_valid.v1::rule.file_exists_not_content_valid.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.gap_statement_not_action.v1::rule.gap_statement_not_action.v1",
+      "accepted_at": "2026-06-09T21:07:34.3628181+04:00",
+      "operation_id": "registry_record_atom_68",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.gap_statement_not_action.v1::rule.gap_statement_not_action.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.hint_not_task.v1::rule.hint_not_task.v1",
+      "accepted_at": "2026-06-09T21:07:34.3746014+04:00",
+      "operation_id": "registry_record_atom_69",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.hint_not_task.v1::rule.hint_not_task.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.no_branch_switch_without_intent.v1::rule.no_branch_switch_without_intent.v1",
+      "accepted_at": "2026-06-09T21:07:34.3836398+04:00",
+      "operation_id": "registry_record_atom_70",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.no_branch_switch_without_intent.v1::rule.no_branch_switch_without_intent.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.old_chat_not_proof.v1::rule.old_chat_not_proof.v1",
+      "accepted_at": "2026-06-09T21:07:34.3947677+04:00",
+      "operation_id": "registry_record_atom_71",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.old_chat_not_proof.v1::rule.old_chat_not_proof.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.report_is_not_proof.v1::rule.report_is_not_proof.v1",
+      "accepted_at": "2026-06-09T21:07:34.4066303+04:00",
+      "operation_id": "registry_record_atom_72",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.report_is_not_proof.v1::rule.report_is_not_proof.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
+      "accepted_core_write": true
+    },
+    {
+      "schema": "PHASE162_ACCEPTED_ATOM_REGISTRY_REFERENCE_V1",
+      "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.route_lock_no_silent_change.v1::rule.route_lock_no_silent_change.v1",
+      "accepted_at": "2026-06-09T21:07:34.4157582+04:00",
+      "operation_id": "registry_record_atom_73",
+      "payload": {
+        "atom_id": "PHASE163_OWNER_SEEDED_FOUNDATION_BATCH_V1::rule.route_lock_no_silent_change.v1::rule.route_lock_no_silent_change.v1",
+        "admission_status": "CONTROLLED_ACCEPT_PENDING_EXECUTION",
+        "final_write_allowed_now": false
+      },
+      "execution_authorization_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163P_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_20260609_203606",
+      "candidate_root": "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
       "accepted_core_write": true
     }
   ]

@@ -1,0 +1,17 @@
+{
+  "schema": "PHASE162_ATOM_ACCEPT_READINESS_GATE_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:18:50.0199313+04:00",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849",
+  "gate_decision": "ACCEPT_BLOCKED",
+  "checks": {
+    "status_pass": true,
+    "decision_is_blocked_or_ready": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true,
+    "blocked_has_reasons": true
+  },
+  "failed_checks": []
+}

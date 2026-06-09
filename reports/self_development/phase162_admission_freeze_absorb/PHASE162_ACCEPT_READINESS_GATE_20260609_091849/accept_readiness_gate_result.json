@@ -1,0 +1,31 @@
+{
+  "schema": "PHASE162_ATOM_ACCEPT_READINESS_GATE_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:18:49.9228866+04:00",
+  "freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "gate_decision": "ACCEPT_BLOCKED",
+  "blocking_reasons": [
+    "usefulness_not_validated",
+    "safety_not_validated_for_accept",
+    "accept_ready_false"
+  ],
+  "checks": {
+    "frozen_evidence_exists": true,
+    "freeze_status_frozen": true,
+    "prior_validation_pass": true,
+    "source_artifact_present": true,
+    "candidate_has_skill_candidates": true,
+    "prior_decision_is_not_accept": true,
+    "prior_decision_quarantine": true,
+    "usefulness_validated": false,
+    "safety_validated_for_accept": false,
+    "accept_ready_claimed": false,
+    "accepted_core_mutation_absent": true,
+    "source_not_already_accepted": true
+  },
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "BUILD_USEFULNESS_AND_SAFETY_VALIDATORS_BEFORE_ACCEPT"
+}

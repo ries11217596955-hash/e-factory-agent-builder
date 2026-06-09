@@ -1,0 +1,22 @@
+{
+  "schema": "PHASE162_ATOM_EXECUTED_USE_CARD_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:41:49.0535703+04:00",
+  "use_task": "NORMALIZE_FROZEN_ATOM_CANDIDATE_FOR_ADMISSION_REVIEW",
+  "freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "atom_candidate_summary_path": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\runtime_sessions\\phase162_local_atom_source\\PHASE162_LOCAL_ATOM_SOURCE_20260609_091605\\atom_candidate_summary.json",
+  "atom_candidate_summary_present_on_this_pc": true,
+  "selected_duty_id": "PHASE162_LOCAL_DUTY_20260609_091605",
+  "selected_run_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605",
+  "selected_atom_summary_status": "SANDBOX_ATOM_CANDIDATE_NOT_ACCEPTED",
+  "selected_skill_candidate_count": 3,
+  "selected_skill": {
+    "skill_id": "SUBTRACTION_BASIC_SKILL_CANDIDATE_V1",
+    "selected_goal": "learn_subtraction_basic_v1",
+    "validation_status": "PASS",
+    "sandbox_path": "living_learning_environment/self_growth_cycles/PHASE162_LOCAL_ATOM_BRIDGE_20260609_091605/cycle_003/skill_candidate.json"
+  },
+  "executed_action": "frozen_candidate_read_and_normalized_into_owner_visible_admission_review_card",
+  "owner_visible_value": "candidate_is_now_reviewable_as_structured_atom_use_card",
+  "limitation": "does_not_prove_next_cycle_improvement_or_accept_safety"
+}

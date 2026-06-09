@@ -1,0 +1,24 @@
+{
+  "schema": "PHASE162_ATOM_EXECUTED_USE_PROOF_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:41:49.1303653+04:00",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148",
+  "checks": {
+    "result_status_pass": true,
+    "use_card_status_pass": true,
+    "executed_use_passed": true,
+    "partial_usefulness_true": true,
+    "usefulness_for_accept_false": true,
+    "safety_for_accept_false": true,
+    "accept_ready_false": true,
+    "expected_gate_accept_blocked": true,
+    "selected_skill_count_positive": true,
+    "owner_visible_value_present": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "expected_gate_decision": "ACCEPT_BLOCKED"
+}

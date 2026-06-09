@@ -1,0 +1,20 @@
+{
+  "schema": "PHASE162_ATOM_EXECUTED_USE_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:41:49.2529902+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "9345777",
+  "freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148",
+  "executed_use_proof_passed": true,
+  "usefulness_validated_partial": true,
+  "usefulness_validated_for_accept": false,
+  "safety_validated_for_accept": false,
+  "accept_ready": false,
+  "expected_gate_decision": "ACCEPT_BLOCKED",
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "UPGRADE_USEFULNESS_BLOCKERS_TO_CONSUME_EXECUTED_USE_PROOF"
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "PHASE162_ATOM_EXECUTED_USE_PROOF_RESULT_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:41:49.0550254+04:00",
+  "freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "use_card_path": "reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_EXECUTED_USE_PROOF_20260609_094148\\executed_use_card.json",
+  "executed_use_proof_passed": true,
+  "usefulness_validated_partial": true,
+  "usefulness_validated_for_accept": false,
+  "safety_validated_for_accept": false,
+  "accept_ready": false,
+  "expected_gate_decision": "ACCEPT_BLOCKED",
+  "blockers_remaining": [
+    "no_next_cycle_improvement_proof",
+    "no_behavior_delta_measurement",
+    "no_live_builder_task_success_delta",
+    "accept_target_not_defined",
+    "accepted_memory_write_contract_missing",
+    "accepted_self_model_write_contract_missing",
+    "rollback_plan_missing",
+    "owner_review_gate_missing"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_action": "UPGRADE_USEFULNESS_BLOCKERS_TO_CONSUME_EXECUTED_USE_PROOF_BUT_KEEP_ACCEPT_BLOCKED"
+}

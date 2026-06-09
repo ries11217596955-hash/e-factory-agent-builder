@@ -1,0 +1,22 @@
+{
+  "schema": "PHASE162_ATOM_CANDIDATE_FROZEN_EVIDENCE_V1",
+  "status": "FROZEN",
+  "created_at": "2026-06-09T08:58:29.6712653+04:00",
+  "repo_head": "8398abc",
+  "source_events_file": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\PLAIN_LIFE_STOP_AND_PC_TRANSFER_LAST_100_EVENTS_20260608_224213.jsonl",
+  "selected_event_type": "autonomous_atom_bridge_completed",
+  "selected_duty_id": "duty_0066",
+  "selected_run_id": "AUTONOMOUS_ATOM_BRIDGE_duty_0066_20260608_224142",
+  "selected_status": "PASS",
+  "selected_atom_summary_status": "SANDBOX_ATOM_CANDIDATE_NOT_ACCEPTED",
+  "selected_skill_candidate_count": 3,
+  "selected_accepted_atom_claimed": false,
+  "atom_candidate_summary_path": "runtime_sessions/live_growth/PLAIN_LIFE_20260608_212804/self_growth/duty_0066/autonomous_atom_bridge/atom_candidate_summary.json",
+  "atom_candidate_summary_present_on_this_pc": false,
+  "candidate_summary_snapshot": null,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "accepted_core_mutation_allowed": false,
+  "safety_boundary": "session_local_freeze_only"
+}

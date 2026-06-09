@@ -1,0 +1,15 @@
+{
+  "schema": "PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T08:58:30.0119807+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "8398abc",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829",
+  "admission_decision": "QUARANTINE",
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "validator": "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1",
+  "module": "modules/freeze_builder_atom_candidate_admission_001.ps1"
+}

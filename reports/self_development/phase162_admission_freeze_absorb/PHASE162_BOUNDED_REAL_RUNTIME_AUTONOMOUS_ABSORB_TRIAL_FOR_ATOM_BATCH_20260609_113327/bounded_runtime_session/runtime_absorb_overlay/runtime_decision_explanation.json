@@ -1,0 +1,15 @@
+{
+  "schema": "PHASE162_RUNTIME_AUTONOMOUS_ABSORB_DECISION_V1",
+  "decision_code": "ALLOW_RUNTIME_OVERLAY_ABSORB_DENY_FINAL_ACCEPT",
+  "decision_summary": "Bounded runtime may absorb the atom batch into runtime overlay only. Final accept remains denied.",
+  "allow_runtime_overlay_absorb": true,
+  "allow_final_accept": false,
+  "reason_codes": [
+    "all_dry_run_barriers_passed",
+    "post_accept_validation_dry_run_passed",
+    "rollback_rehearsal_passed",
+    "batch_has_staged_atom_delta",
+    "accepted_core_write_forbidden_in_bounded_runtime_trial"
+  ],
+  "next_runtime_action": "CREATE_RUNTIME_ABSORB_OVERLAY_FOR_BATCH"
+}

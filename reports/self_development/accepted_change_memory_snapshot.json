@@ -1,15 +1,17 @@
 {
-  "accepted_subject_head": "773406faddf8600181d264cd17b4e7afa288f5c9",
+  "accepted_subject_head": "45a33aa0b4f7b7bf65500f71343cc79e9d29c26e",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/invoke_phase162_autonomous_admission_cycle_controller_001.ps1",
-    "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/autonomous_admission_cycle_result.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/autonomous_admission_cycle_validation.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808/next_cycle_improvement_trial_request.json",
-    "validators/validate_phase162_autonomous_admission_cycle_controller_v1.ps1"
+    "modules/invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1",
+    "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_20260609_100029/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_20260609_100029/after_cycle_measurement.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_20260609_100029/before_cycle_measurement.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_20260609_100029/next_cycle_improvement_trial_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_20260609_100029/next_cycle_improvement_trial_validation.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_20260609_100029/sandbox_atom_overlay.json",
+    "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -17,5 +19,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T05:59:42.6611089Z"
+  "created_at": "2026-06-09T06:02:17.3775860Z"
 }

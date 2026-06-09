@@ -5422,6 +5422,51 @@
         "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
         "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_REPORT.md\") -Encoding UTF8"
       ],
+      "calls_detected": [
+        "modules/invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1"
+      ],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/invoke_phase162_next_cycle_improvement_trial_sandbox_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json"
+      ],
+      "param_names": [
+        "CycleRoot",
+        "FreezeRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "stamp",
+        "cycle",
+        "cycleValidation",
+        "trialRequest",
+        "freeze",
+        "freezeValidation",
+        "inputReady",
+        "before",
+        "atomOverlay",
+        "afterScore",
+        "after",
+        "scoreDelta",
+        "trialPassed",
+        "result"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 50 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_REPORT.md\") -Encoding UTF8"
+      ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
@@ -29405,6 +29450,37 @@
       "exported_behavior_guess": "Read-Json",
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 40 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "before",
+        "overlay",
+        "after",
+        "result",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 50 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [

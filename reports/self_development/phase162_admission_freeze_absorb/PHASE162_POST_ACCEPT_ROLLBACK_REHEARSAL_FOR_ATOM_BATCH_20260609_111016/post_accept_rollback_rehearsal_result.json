@@ -1,0 +1,28 @@
+{
+  "schema": "PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_RESULT_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T11:10:16.7902646+04:00",
+  "controller_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210",
+  "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521",
+  "batch_size": 1,
+  "staged_atom_count": 1,
+  "blocked_atom_count": 0,
+  "rollback_rehearsal_passed": true,
+  "overlay_apply_passed": true,
+  "overlay_file_count_before_rollback": 4,
+  "overlay_removed_after_rollback": true,
+  "protected_targets_unchanged": true,
+  "blocked_atoms_preserved_with_reasons": true,
+  "final_accept_ready": false,
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "FEED_POST_ACCEPT_ROLLBACK_REHEARSAL_BACK_INTO_CONTROLLER",
+  "why_final_accept_denied": [
+    "post_accept_validation_not_run",
+    "real_runtime_autonomous_absorb_not_proven",
+    "accepted_core_write_not_authorized_in_rollback_rehearsal_step"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

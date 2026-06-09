@@ -1,0 +1,1376 @@
+[
+  {
+    "atom_id": "concept.file.v1",
+    "atom_type": "concept",
+    "group": "filesystem",
+    "meaning": "A file is a named stored item that can contain data or content.",
+    "used_when": [
+      "file",
+      "save file",
+      "write file"
+    ],
+    "not_enough_for": [
+      "content validation",
+      "git tracking"
+    ],
+    "next_layer_questions": [
+      "Do I need to create it?",
+      "Do I need to validate content?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.folder.v1",
+    "atom_type": "concept",
+    "group": "filesystem",
+    "meaning": "A folder or directory is a container for files and other folders.",
+    "used_when": [
+      "folder",
+      "directory",
+      "inside folder"
+    ],
+    "not_enough_for": [
+      "actual creation",
+      "permissions"
+    ],
+    "next_layer_questions": [
+      "Do I need create_directory?",
+      "How do I prove it exists?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.path.v1",
+    "atom_type": "concept",
+    "group": "filesystem",
+    "meaning": "A path identifies a file or folder location.",
+    "used_when": [
+      "path",
+      "file path",
+      "folder path"
+    ],
+    "not_enough_for": [
+      "existence",
+      "permission",
+      "content"
+    ],
+    "next_layer_questions": [
+      "Is it relative or absolute?",
+      "Does parent exist?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.relative_path.v1",
+    "atom_type": "concept",
+    "group": "filesystem",
+    "meaning": "A relative path is interpreted from the current working directory or repo root.",
+    "used_when": [
+      "relative path",
+      "repo path"
+    ],
+    "not_enough_for": [
+      "machine absolute location"
+    ],
+    "next_layer_questions": [
+      "What is repo root?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.absolute_path.v1",
+    "atom_type": "concept",
+    "group": "filesystem",
+    "meaning": "An absolute path names a full machine location.",
+    "used_when": [
+      "absolute path",
+      "full path"
+    ],
+    "not_enough_for": [
+      "portability"
+    ],
+    "next_layer_questions": [
+      "Is this machine-specific?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.extension.v1",
+    "atom_type": "concept",
+    "group": "filesystem",
+    "meaning": "A file extension usually signals expected format or handling.",
+    "used_when": [
+      "extension",
+      ".md",
+      ".json",
+      ".docx"
+    ],
+    "not_enough_for": [
+      "content correctness"
+    ],
+    "next_layer_questions": [
+      "Does extension match real content?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.nested_folder.v1",
+    "atom_type": "concept",
+    "group": "filesystem",
+    "meaning": "A nested folder is a folder located inside another folder.",
+    "used_when": [
+      "folder inside folder",
+      "subfolder"
+    ],
+    "not_enough_for": [
+      "creating parents"
+    ],
+    "next_layer_questions": [
+      "Should creation be recursive?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.create_folder.v1",
+    "atom_type": "procedure",
+    "group": "filesystem",
+    "meaning": "To create a folder, ensure parent is safe, create directory, validate existence.",
+    "used_when": [
+      "create folder",
+      "mkdir"
+    ],
+    "not_enough_for": [
+      "content writing"
+    ],
+    "next_layer_questions": [
+      "Which path is final proof target?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.create_nested_folder.v1",
+    "atom_type": "procedure",
+    "group": "filesystem",
+    "meaning": "To create a nested folder, create or verify parent segments, then validate final path.",
+    "used_when": [
+      "nested folder",
+      "folder inside folder"
+    ],
+    "not_enough_for": [
+      "file content"
+    ],
+    "next_layer_questions": [
+      "Do parents exist?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "proof.folder_exists.v1",
+    "atom_type": "proof",
+    "group": "filesystem",
+    "meaning": "Folder existence proof requires a fresh check of the exact directory path.",
+    "used_when": [
+      "folder exists",
+      "directory exists"
+    ],
+    "not_enough_for": [
+      "file inside"
+    ],
+    "next_layer_questions": [
+      "Do I need child proof?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "proof.file_exists.v1",
+    "atom_type": "proof",
+    "group": "filesystem",
+    "meaning": "File existence proof shows a file exists but does not prove its content is correct.",
+    "used_when": [
+      "file exists",
+      "artifact exists"
+    ],
+    "not_enough_for": [
+      "content correctness"
+    ],
+    "next_layer_questions": [
+      "Do I need content proof?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "proof.path_exists.v1",
+    "atom_type": "proof",
+    "group": "filesystem",
+    "meaning": "Path existence proof checks whether the exact filesystem path exists.",
+    "used_when": [
+      "path exists",
+      "Test-Path"
+    ],
+    "not_enough_for": [
+      "semantic correctness"
+    ],
+    "next_layer_questions": [
+      "Is it a file or folder?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.text.v1",
+    "atom_type": "concept",
+    "group": "document",
+    "meaning": "Text is human-readable character content.",
+    "used_when": [
+      "text",
+      "string",
+      "content"
+    ],
+    "not_enough_for": [
+      "document format"
+    ],
+    "next_layer_questions": [
+      "Where should text be written?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.sentence.v1",
+    "atom_type": "concept",
+    "group": "document",
+    "meaning": "A sentence is a unit of text expressing a complete thought.",
+    "used_when": [
+      "sentence",
+      "two sentences"
+    ],
+    "not_enough_for": [
+      "grammar quality"
+    ],
+    "next_layer_questions": [
+      "How many sentences are required?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.paragraph.v1",
+    "atom_type": "concept",
+    "group": "document",
+    "meaning": "A paragraph is a block of related sentences in a document.",
+    "used_when": [
+      "paragraph"
+    ],
+    "not_enough_for": [
+      "document creation"
+    ],
+    "next_layer_questions": [
+      "Is one paragraph enough?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.markdown.v1",
+    "atom_type": "concept",
+    "group": "document",
+    "meaning": "Markdown is a plain text document format using lightweight markup.",
+    "used_when": [
+      "markdown",
+      ".md"
+    ],
+    "not_enough_for": [
+      "binary document"
+    ],
+    "next_layer_questions": [
+      "Should headings be used?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.json.v1",
+    "atom_type": "concept",
+    "group": "document",
+    "meaning": "JSON is a structured text format for objects, arrays and primitive values.",
+    "used_when": [
+      "json",
+      ".json"
+    ],
+    "not_enough_for": [
+      "schema correctness"
+    ],
+    "next_layer_questions": [
+      "Can it parse?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.docx.v1",
+    "atom_type": "concept",
+    "group": "document",
+    "meaning": "A DOCX file is a Word-compatible document package, not plain text.",
+    "used_when": [
+      "docx",
+      "Word document"
+    ],
+    "not_enough_for": [
+      "actual creation",
+      "content validation"
+    ],
+    "next_layer_questions": [
+      "Do I have docx organ?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.document_content.v1",
+    "atom_type": "concept",
+    "group": "document",
+    "meaning": "Document content is the actual text or data inside the file, not the file name.",
+    "used_when": [
+      "document content",
+      "text inside file"
+    ],
+    "not_enough_for": [
+      "file existence"
+    ],
+    "next_layer_questions": [
+      "How do I extract content?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.write_text_file.v1",
+    "atom_type": "procedure",
+    "group": "document",
+    "meaning": "To write a text file, create parent if allowed, write content, then read back or validate.",
+    "used_when": [
+      "write text file",
+      "save text"
+    ],
+    "not_enough_for": [
+      "binary formats"
+    ],
+    "next_layer_questions": [
+      "What encoding is safe?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.create_markdown_document.v1",
+    "atom_type": "procedure",
+    "group": "document",
+    "meaning": "To create Markdown, write plain text with .md extension and validate by reading it back.",
+    "used_when": [
+      "create markdown",
+      "write md"
+    ],
+    "not_enough_for": [
+      "docx creation"
+    ],
+    "next_layer_questions": [
+      "What exact text is required?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.create_json_document.v1",
+    "atom_type": "procedure",
+    "group": "document",
+    "meaning": "To create JSON, serialize data, write it, parse it back and validate required fields.",
+    "used_when": [
+      "create json",
+      "write json"
+    ],
+    "not_enough_for": [
+      "business correctness"
+    ],
+    "next_layer_questions": [
+      "Which keys are required?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.create_docx_document.v1",
+    "atom_type": "procedure",
+    "group": "document",
+    "meaning": "To create DOCX, use a document-capable organ, write requested text, save and validate extracted content.",
+    "used_when": [
+      "create docx",
+      "Word document"
+    ],
+    "not_enough_for": [
+      "tool choice",
+      "layout fidelity"
+    ],
+    "next_layer_questions": [
+      "Do I have create_docx organ?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "proof.docx_contains_text.v1",
+    "atom_type": "proof",
+    "group": "document",
+    "meaning": "DOCX content proof requires extracting or reading document text, not only checking file existence.",
+    "used_when": [
+      "docx contains text"
+    ],
+    "not_enough_for": [
+      "layout proof"
+    ],
+    "next_layer_questions": [
+      "Which exact sentences must be found?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "proof.json_parses.v1",
+    "atom_type": "proof",
+    "group": "document",
+    "meaning": "JSON proof requires successfully parsing the file and checking structure when needed.",
+    "used_when": [
+      "json parse",
+      "valid json"
+    ],
+    "not_enough_for": [
+      "semantic correctness"
+    ],
+    "next_layer_questions": [
+      "Which fields are required?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.artifact.v1",
+    "atom_type": "concept",
+    "group": "proof",
+    "meaning": "An artifact is a produced file or output that can be inspected or delivered.",
+    "used_when": [
+      "artifact",
+      "output file"
+    ],
+    "not_enough_for": [
+      "success itself"
+    ],
+    "next_layer_questions": [
+      "What validates it?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.report.v1",
+    "atom_type": "concept",
+    "group": "proof",
+    "meaning": "A report explains what happened but is not proof by itself.",
+    "used_when": [
+      "report",
+      "summary"
+    ],
+    "not_enough_for": [
+      "fresh evidence"
+    ],
+    "next_layer_questions": [
+      "What evidence supports it?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.proof.v1",
+    "atom_type": "concept",
+    "group": "proof",
+    "meaning": "Proof is fresh evidence that a result exists, changed, ran, passed or synced.",
+    "used_when": [
+      "proof",
+      "evidence"
+    ],
+    "not_enough_for": [
+      "meaning",
+      "business value"
+    ],
+    "next_layer_questions": [
+      "Is proof fresh?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.log.v1",
+    "atom_type": "concept",
+    "group": "proof",
+    "meaning": "A log records execution events and can support proof if fresh and relevant.",
+    "used_when": [
+      "log",
+      "run log"
+    ],
+    "not_enough_for": [
+      "final correctness"
+    ],
+    "next_layer_questions": [
+      "Does it show final state?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.terminal_output.v1",
+    "atom_type": "concept",
+    "group": "proof",
+    "meaning": "Terminal output is direct evidence from a command or script run.",
+    "used_when": [
+      "terminal output"
+    ],
+    "not_enough_for": [
+      "future truth"
+    ],
+    "next_layer_questions": [
+      "Does it show exit status?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.validator_output.v1",
+    "atom_type": "concept",
+    "group": "proof",
+    "meaning": "Validator output proves only the condition that validator actually checks.",
+    "used_when": [
+      "validator output"
+    ],
+    "not_enough_for": [
+      "unstated requirements"
+    ],
+    "next_layer_questions": [
+      "What did it check?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "rule.report_is_not_proof.v1",
+    "atom_type": "rule",
+    "group": "proof",
+    "meaning": "A report is not proof unless backed by fresh evidence.",
+    "used_when": [
+      "report proof"
+    ],
+    "not_enough_for": [
+      "actual execution"
+    ],
+    "next_layer_questions": [
+      "Where is terminal, validator, commit or artifact evidence?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "rule.expected_output_not_actual_proof.v1",
+    "atom_type": "rule",
+    "group": "proof",
+    "meaning": "Expected output in a plan is not proof that output was produced.",
+    "used_when": [
+      "expected output"
+    ],
+    "not_enough_for": [
+      "actual result"
+    ],
+    "next_layer_questions": [
+      "Where is actual generated evidence?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "rule.file_exists_not_content_valid.v1",
+    "atom_type": "rule",
+    "group": "proof",
+    "meaning": "A file existing does not prove that its content is correct.",
+    "used_when": [
+      "file exists"
+    ],
+    "not_enough_for": [
+      "content correctness"
+    ],
+    "next_layer_questions": [
+      "Do I need to read content?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "rule.old_chat_not_proof.v1",
+    "atom_type": "rule",
+    "group": "proof",
+    "meaning": "Chat memory and old conversation text are recovery artifacts, not execution proof.",
+    "used_when": [
+      "old chat",
+      "memory says"
+    ],
+    "not_enough_for": [
+      "fresh proof"
+    ],
+    "next_layer_questions": [
+      "What current evidence exists?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.validate_claim.v1",
+    "atom_type": "procedure",
+    "group": "proof",
+    "meaning": "To validate a claim, identify required evidence, run the narrowest check, compare result to claim.",
+    "used_when": [
+      "validate",
+      "prove"
+    ],
+    "not_enough_for": [
+      "business decision"
+    ],
+    "next_layer_questions": [
+      "What exact claim?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.repository.v1",
+    "atom_type": "concept",
+    "group": "git",
+    "meaning": "A repository is the project body containing files, history, branches and configuration.",
+    "used_when": [
+      "repo",
+      "repository"
+    ],
+    "not_enough_for": [
+      "remote state"
+    ],
+    "next_layer_questions": [
+      "Am I in correct repo?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.branch.v1",
+    "atom_type": "concept",
+    "group": "git",
+    "meaning": "A branch is a line of development with its own current commit.",
+    "used_when": [
+      "branch"
+    ],
+    "not_enough_for": [
+      "remote sync"
+    ],
+    "next_layer_questions": [
+      "Is current branch expected?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.commit.v1",
+    "atom_type": "concept",
+    "group": "git",
+    "meaning": "A commit records a snapshot of tracked changes.",
+    "used_when": [
+      "commit"
+    ],
+    "not_enough_for": [
+      "remote push"
+    ],
+    "next_layer_questions": [
+      "What changed?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.push.v1",
+    "atom_type": "concept",
+    "group": "git",
+    "meaning": "A push sends local commits to the remote repository.",
+    "used_when": [
+      "push",
+      "git push"
+    ],
+    "not_enough_for": [
+      "CI pass"
+    ],
+    "next_layer_questions": [
+      "Does remote match local?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.pull.v1",
+    "atom_type": "concept",
+    "group": "git",
+    "meaning": "A pull brings remote changes into the local branch.",
+    "used_when": [
+      "pull",
+      "git pull"
+    ],
+    "not_enough_for": [
+      "conflict safety"
+    ],
+    "next_layer_questions": [
+      "Is ff-only safe?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.remote.v1",
+    "atom_type": "concept",
+    "group": "git",
+    "meaning": "A remote is an external repository location such as origin.",
+    "used_when": [
+      "remote",
+      "origin"
+    ],
+    "not_enough_for": [
+      "local state"
+    ],
+    "next_layer_questions": [
+      "Does local HEAD match remote?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.worktree_dirty.v1",
+    "atom_type": "concept",
+    "group": "git",
+    "meaning": "A dirty worktree has uncommitted tracked or untracked changes.",
+    "used_when": [
+      "dirty",
+      "git status"
+    ],
+    "not_enough_for": [
+      "whether changes are useful"
+    ],
+    "next_layer_questions": [
+      "Should I commit, clean or stop?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.git_status_check.v1",
+    "atom_type": "procedure",
+    "group": "git",
+    "meaning": "Before and after important repo work, run git status to detect dirty state.",
+    "used_when": [
+      "git status"
+    ],
+    "not_enough_for": [
+      "semantic validation"
+    ],
+    "next_layer_questions": [
+      "Is status clean?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.push_and_verify.v1",
+    "atom_type": "procedure",
+    "group": "git",
+    "meaning": "To sync, push, fetch, then verify local HEAD equals remote HEAD.",
+    "used_when": [
+      "push verify",
+      "sync"
+    ],
+    "not_enough_for": [
+      "CI pass"
+    ],
+    "next_layer_questions": [
+      "Does FINAL_HEAD equal FINAL_REMOTE?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "rule.no_branch_switch_without_intent.v1",
+    "atom_type": "rule",
+    "group": "git",
+    "meaning": "Branch switching should not happen silently during proof or mutation packs.",
+    "used_when": [
+      "branch switch"
+    ],
+    "not_enough_for": [
+      "normal current branch"
+    ],
+    "next_layer_questions": [
+      "Is branch exactly expected?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.owner_task.v1",
+    "atom_type": "concept",
+    "group": "route",
+    "meaning": "An owner task is an explicit request for result, artifact, change, proof or decision.",
+    "used_when": [
+      "owner task"
+    ],
+    "not_enough_for": [
+      "hint"
+    ],
+    "next_layer_questions": [
+      "What exact output is required?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.owner_hint.v1",
+    "atom_type": "concept",
+    "group": "route",
+    "meaning": "An owner hint is a soft signal that may influence context but is not automatically executed.",
+    "used_when": [
+      "hint",
+      "maybe"
+    ],
+    "not_enough_for": [
+      "task"
+    ],
+    "next_layer_questions": [
+      "Should it be promoted?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.route_lock.v1",
+    "atom_type": "concept",
+    "group": "route",
+    "meaning": "A route lock is the current agreed execution route and must not be silently changed.",
+    "used_when": [
+      "route lock"
+    ],
+    "not_enough_for": [
+      "success proof"
+    ],
+    "next_layer_questions": [
+      "Which route lock is active?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.next_machine_action.v1",
+    "atom_type": "concept",
+    "group": "route",
+    "meaning": "A next machine action is a controller-selected transition target, not free will.",
+    "used_when": [
+      "next action"
+    ],
+    "not_enough_for": [
+      "actual execution"
+    ],
+    "next_layer_questions": [
+      "Which organ consumes it?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.backlog.v1",
+    "atom_type": "concept",
+    "group": "route",
+    "meaning": "A backlog holds valid future work that is not current active route.",
+    "used_when": [
+      "backlog",
+      "parked"
+    ],
+    "not_enough_for": [
+      "active task"
+    ],
+    "next_layer_questions": [
+      "When promote it?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "rule.hint_not_task.v1",
+    "atom_type": "rule",
+    "group": "route",
+    "meaning": "A hint must not be executed as a task unless promoted by owner or controller.",
+    "used_when": [
+      "hint"
+    ],
+    "not_enough_for": [
+      "explicit task"
+    ],
+    "next_layer_questions": [
+      "Is this task or hint?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "rule.route_lock_no_silent_change.v1",
+    "atom_type": "rule",
+    "group": "route",
+    "meaning": "New ideas go into current locked step or route change request, not silent route drift.",
+    "used_when": [
+      "route lock",
+      "new idea"
+    ],
+    "not_enough_for": [
+      "approved route change"
+    ],
+    "next_layer_questions": [
+      "Is this within route?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "rule.gap_statement_not_action.v1",
+    "atom_type": "rule",
+    "group": "route",
+    "meaning": "Saying what is missing is not a substitute for action, validation or proof.",
+    "used_when": [
+      "gap",
+      "missing"
+    ],
+    "not_enough_for": [
+      "diagnosis only"
+    ],
+    "next_layer_questions": [
+      "What action closes it?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.command.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "A command is an executable instruction run in shell or tool environment.",
+    "used_when": [
+      "command",
+      "PowerShell"
+    ],
+    "not_enough_for": [
+      "safe effect"
+    ],
+    "next_layer_questions": [
+      "Is it bounded?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.script.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "A script is a reusable sequence of commands or logic.",
+    "used_when": [
+      "script",
+      "ps1"
+    ],
+    "not_enough_for": [
+      "proof of result"
+    ],
+    "next_layer_questions": [
+      "Does it stop on failure?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.module.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "A module is a repo-contained capability unit intended for reuse.",
+    "used_when": [
+      "module",
+      "organ"
+    ],
+    "not_enough_for": [
+      "accepted behavior"
+    ],
+    "next_layer_questions": [
+      "Is it wired and validated?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.validator.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "A validator checks a defined condition and returns pass or fail evidence.",
+    "used_when": [
+      "validator"
+    ],
+    "not_enough_for": [
+      "all requirements"
+    ],
+    "next_layer_questions": [
+      "What condition is validated?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.runner.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "A runner executes a bounded workflow or session.",
+    "used_when": [
+      "runner"
+    ],
+    "not_enough_for": [
+      "success guarantee"
+    ],
+    "next_layer_questions": [
+      "What outputs prove run?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.daemon.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "A daemon is a long-running process requiring stop, observer, timeout and cleanup rules.",
+    "used_when": [
+      "daemon",
+      "live loop"
+    ],
+    "not_enough_for": [
+      "one-shot proof"
+    ],
+    "next_layer_questions": [
+      "What stops it safely?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.sandbox.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "A sandbox is an isolated place to test changes before accepting them.",
+    "used_when": [
+      "sandbox"
+    ],
+    "not_enough_for": [
+      "production acceptance"
+    ],
+    "next_layer_questions": [
+      "What can safely mutate?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.quarantine.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "Quarantine stores unsafe or unaccepted items away from trusted execution or memory.",
+    "used_when": [
+      "quarantine"
+    ],
+    "not_enough_for": [
+      "final deletion"
+    ],
+    "next_layer_questions": [
+      "What review is needed?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.rollback.v1",
+    "atom_type": "concept",
+    "group": "execution",
+    "meaning": "Rollback restores a prior safe state after failed or unsafe mutation.",
+    "used_when": [
+      "rollback",
+      "undo"
+    ],
+    "not_enough_for": [
+      "proof correctness"
+    ],
+    "next_layer_questions": [
+      "What baseline is restored?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.stop_on_fail.v1",
+    "atom_type": "procedure",
+    "group": "execution",
+    "meaning": "If a required check fails, stop and report failing stage instead of continuing to fake PASS.",
+    "used_when": [
+      "stop on fail"
+    ],
+    "not_enough_for": [
+      "automatic repair"
+    ],
+    "next_layer_questions": [
+      "Which stage failed?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "procedure.run_bounded_script.v1",
+    "atom_type": "procedure",
+    "group": "execution",
+    "meaning": "To run safely, use bounded commands, stop on failure, print proof lines and avoid hidden background work.",
+    "used_when": [
+      "bounded script"
+    ],
+    "not_enough_for": [
+      "semantic success"
+    ],
+    "next_layer_questions": [
+      "Are stop conditions explicit?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.atom_candidate.v1",
+    "atom_type": "concept",
+    "group": "atom_memory",
+    "meaning": "An atom candidate is a proposed minimal knowledge, procedure, rule or proof unit not yet accepted.",
+    "used_when": [
+      "atom candidate"
+    ],
+    "not_enough_for": [
+      "accepted memory"
+    ],
+    "next_layer_questions": [
+      "What proof is required?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.accepted_atom.v1",
+    "atom_type": "concept",
+    "group": "atom_memory",
+    "meaning": "An accepted atom has passed required checks and can be used as known memory.",
+    "used_when": [
+      "accepted atom"
+    ],
+    "not_enough_for": [
+      "startup visibility"
+    ],
+    "next_layer_questions": [
+      "Is it visible next cycle?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.absorbed_atom.v1",
+    "atom_type": "concept",
+    "group": "atom_memory",
+    "meaning": "An absorbed atom is written into durable memory or indexes so next cycle can use it.",
+    "used_when": [
+      "absorbed atom"
+    ],
+    "not_enough_for": [
+      "code rewrite"
+    ],
+    "next_layer_questions": [
+      "Where is it indexed?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.startup_visibility.v1",
+    "atom_type": "concept",
+    "group": "atom_memory",
+    "meaning": "Startup visibility means a later run can see accepted memory without chat context.",
+    "used_when": [
+      "startup visibility"
+    ],
+    "not_enough_for": [
+      "use proof"
+    ],
+    "next_layer_questions": [
+      "Can fresh startup read it?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "concept.accepted_core.v1",
+    "atom_type": "concept",
+    "group": "atom_memory",
+    "meaning": "Accepted core is trusted durable Builder memory or state, not temporary runtime output.",
+    "used_when": [
+      "accepted core"
+    ],
+    "not_enough_for": [
+      "all reports"
+    ],
+    "next_layer_questions": [
+      "What writes are controlled?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "proof.memory_proof.v1",
+    "atom_type": "proof",
+    "group": "atom_memory",
+    "meaning": "Memory proof shows the agent retrieves accepted knowledge instead of starting from zero.",
+    "used_when": [
+      "memory proof"
+    ],
+    "not_enough_for": [
+      "correct use alone"
+    ],
+    "next_layer_questions": [
+      "Does it skip zero question?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "proof.use_proof.v1",
+    "atom_type": "proof",
+    "group": "atom_memory",
+    "meaning": "Use proof shows the agent applies accepted knowledge correctly in a relevant case.",
+    "used_when": [
+      "use proof"
+    ],
+    "not_enough_for": [
+      "persistence"
+    ],
+    "next_layer_questions": [
+      "Did behavior change?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  {
+    "atom_id": "proof.behavior_delta.v1",
+    "atom_type": "proof",
+    "group": "atom_memory",
+    "meaning": "Behavior delta proof shows the next response starts from a stronger layer than before.",
+    "used_when": [
+      "behavior delta"
+    ],
+    "not_enough_for": [
+      "file existence"
+    ],
+    "next_layer_questions": [
+      "What changed in decomposition?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  }
+]

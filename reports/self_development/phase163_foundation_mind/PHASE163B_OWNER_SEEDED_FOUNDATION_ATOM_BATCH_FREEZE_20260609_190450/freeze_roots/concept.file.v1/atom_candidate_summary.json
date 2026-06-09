@@ -1,0 +1,30 @@
+{
+  "schema": "PHASE163_FOUNDATION_ATOM_CANDIDATE_SUMMARY_V1",
+  "atom": {
+    "atom_id": "concept.file.v1",
+    "atom_type": "concept",
+    "group": "filesystem",
+    "meaning": "A file is a named stored item that can contain data or content.",
+    "used_when": [
+      "file",
+      "save file",
+      "write file"
+    ],
+    "not_enough_for": [
+      "content validation",
+      "git tracking"
+    ],
+    "next_layer_questions": [
+      "Do I need to create it?",
+      "Do I need to validate content?"
+    ],
+    "source": "owner_seeded_builder_native_foundation",
+    "external_reference_materials_imported": false,
+    "acceptance_status": "candidate_frozen_not_accepted"
+  },
+  "created_at": "2026-06-09T15:04:52.2892051Z",
+  "status": "OWNER_SEEDED_FOUNDATION_ATOM_CANDIDATE_NOT_ACCEPTED",
+  "accepted_atom_claimed": false,
+  "accepted_core_mutation_allowed": false,
+  "required_next_stage": "PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE"
+}

@@ -1,0 +1,12 @@
+{
+  "schema": "PHASE163_FOUNDATION_ATOM_FREEZE_VALIDATION_V1",
+  "status": "PASS",
+  "atom_id": "concept.relative_path.v1",
+  "frozen_status": "FROZEN",
+  "selected_skill_candidate_count": 1,
+  "atom_candidate_summary_present_on_this_pc": true,
+  "accepted_core_mutation_executed": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "accepted_state_mutated": false
+}

@@ -1,0 +1,22 @@
+{
+  "proof_id": "PHASE163C_FOUNDATION_BATCH_ADMISSION_ENVELOPE_V1",
+  "status": "PASS_PENDING_COMMIT",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head_before": "3ee7762",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163C_FOUNDATION_BATCH_ADMISSION_ENVELOPE_20260609_193617",
+  "envelope_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163C_FOUNDATION_BATCH_ADMISSION_ENVELOPE_20260609_193617\\atom_batch_admission_envelope.json",
+  "validation_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163C_FOUNDATION_BATCH_ADMISSION_ENVELOPE_20260609_193617\\atom_batch_admission_envelope_validation.json",
+  "request_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163C_FOUNDATION_BATCH_ADMISSION_ENVELOPE_20260609_193617\\controlled_accept_candidate_dry_run_for_atom_batch_request.json",
+  "batch_size": 73,
+  "eligible_atom_count": 73,
+  "blocked_atom_count": 0,
+  "batch_decision": "ALL_ATOMS_READY_FOR_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN",
+  "next_machine_action": "BUILD_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH",
+  "validation_status": "PASS",
+  "accepted_core_mutation_executed": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false,
+  "protected_state_mutated": false,
+  "next_action": "BUILD_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_FOUNDATION_ATOM_BATCH",
+  "created_at": "2026-06-09T15:36:21.6870250Z"
+}

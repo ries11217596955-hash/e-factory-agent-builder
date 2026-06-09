@@ -1,0 +1,26 @@
+{
+  "schema": "PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T19:36:19.9545521+04:00",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163C_FOUNDATION_BATCH_ADMISSION_ENVELOPE_20260609_193617",
+  "checks": {
+    "status_pass": true,
+    "batch_policy_per_atom": true,
+    "batch_size_positive": true,
+    "records_match_batch_size": true,
+    "eligible_count_matches": true,
+    "records_have_reasons": true,
+    "final_accept_false": true,
+    "next_action_batch": true,
+    "request_ready": true,
+    "request_module_named": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "batch_size": 73,
+  "eligible_atom_count": 73,
+  "next_machine_action": "BUILD_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH"
+}

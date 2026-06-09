@@ -1,0 +1,46 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T11:02:10.1981403+04:00",
+  "loop_target": "builder_lives_creates_atom_or_batch_absorbs_safe_atoms_next_cycle_stronger",
+  "controller_mode": "AUTONOMOUS_CONTROLLER_NO_ACCEPTED_CORE_WRITES",
+  "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521",
+  "preconditions": {
+    "candidate_validation_passed": true,
+    "candidate_batch_aware": true,
+    "staged_atom_count_positive": true,
+    "per_atom_deltas_match": true,
+    "commit_plan_staged": true,
+    "rollback_plan_staged": true,
+    "rollback_rehearsed": false,
+    "post_accept_validation_run": false,
+    "real_runtime_autonomous_absorb_proven": false,
+    "accepted_core_not_mutated": true
+  },
+  "batch_size": 1,
+  "staged_atom_count": 1,
+  "blocked_atom_count": 0,
+  "machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action": "REHEARSE_POST_ACCEPT_ROLLBACK_FOR_ATOM_BATCH",
+  "decision_summary": "Controlled accept candidate is valid as dry-run, batch-aware, and staged per atom. Final accept remains blocked until rollback rehearsal and post-accept validation are proven.",
+  "blocking_for_final_accept": [
+    "post_accept_rollback_not_rehearsed",
+    "post_accept_validation_not_run",
+    "real_runtime_autonomous_absorb_not_proven",
+    "accepted_core_write_not_authorized_in_controller_consume_step"
+  ],
+  "consumed_candidate": {
+    "validation_status": "PASS",
+    "batch_aware": true,
+    "batch_size": 1,
+    "staged_atom_count": 1,
+    "blocked_atom_count": 0,
+    "final_accept_ready": false,
+    "commit_mode": "DRY_RUN_ONLY_NO_COMMIT_TO_ACCEPTED_CORE",
+    "rollback_mode": "DRY_RUN_ONLY"
+  },
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

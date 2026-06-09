@@ -1294,6 +1294,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/invoke_phase162_controller_consume_controlled_accept_candidate_batch_001.ps1",
+      "path": "modules/invoke_phase162_controller_consume_controlled_accept_candidate_batch_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
       "path": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
       "node_type": "module"
@@ -5179,6 +5184,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_V1.json",
+      "path": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
       "path": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
       "node_type": "proof"
@@ -6591,6 +6601,26 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_REPORT.md",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/controller_consume_controlled_accept_candidate_batch_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/controller_consume_controlled_accept_candidate_batch_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/controller_consume_controlled_accept_candidate_batch_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/controller_consume_controlled_accept_candidate_batch_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/post_accept_rollback_rehearsal_for_atom_batch_request.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/post_accept_rollback_rehearsal_for_atom_batch_request.json",
       "node_type": "report"
     },
     {
@@ -8031,6 +8061,11 @@
     {
       "id": "validators/validate_phase162_controller_consume_bounded_absorb_trial_v1.ps1",
       "path": "validators/validate_phase162_controller_consume_bounded_absorb_trial_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_controller_consume_controlled_accept_candidate_batch_v1.ps1",
+      "path": "validators/validate_phase162_controller_consume_controlled_accept_candidate_batch_v1.ps1",
       "node_type": "validator"
     },
     {

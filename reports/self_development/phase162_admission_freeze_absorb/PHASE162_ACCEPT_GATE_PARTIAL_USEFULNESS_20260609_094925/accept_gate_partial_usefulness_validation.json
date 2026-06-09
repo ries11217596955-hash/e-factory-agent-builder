@@ -1,0 +1,24 @@
+{
+  "schema": "PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:49:25.2746796+04:00",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925",
+  "gate_decision": "ACCEPT_BLOCKED",
+  "checks": {
+    "status_pass": true,
+    "gate_decision_valid": true,
+    "gate_is_blocked_now": true,
+    "partial_usefulness_true": true,
+    "usefulness_for_accept_false": true,
+    "safety_for_accept_false": true,
+    "accept_ready_false": true,
+    "blockers_exist": true,
+    "consumed_freeze_pass": true,
+    "consumed_partial_blockers_pass": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": []
+}

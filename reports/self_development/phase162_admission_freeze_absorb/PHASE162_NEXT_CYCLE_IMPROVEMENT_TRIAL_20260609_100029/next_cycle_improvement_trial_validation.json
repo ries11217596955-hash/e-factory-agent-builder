@@ -1,0 +1,27 @@
+{
+  "schema": "PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:00:29.8656399+04:00",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_20260609_100029",
+  "checks": {
+    "result_status_pass": true,
+    "before_status_pass": true,
+    "overlay_status_pass": true,
+    "after_status_pass": true,
+    "before_score_zero": true,
+    "after_score_positive": true,
+    "score_delta_positive": true,
+    "trial_passed_true": true,
+    "partial_next_cycle_true": true,
+    "next_cycle_for_accept_false": true,
+    "expected_decision_blocked": true,
+    "overlay_sandbox_only": true,
+    "next_cycle_can_select_action": true,
+    "no_accepted_atom_claim": true,
+    "accepted_state_mutated_false": true,
+    "accepted_memory_mutated_false": true,
+    "accepted_self_model_mutated_false": true
+  },
+  "failed_checks": [],
+  "expected_machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE"
+}

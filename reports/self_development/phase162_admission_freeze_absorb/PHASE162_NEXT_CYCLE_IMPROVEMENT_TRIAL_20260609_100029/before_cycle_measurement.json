@@ -1,0 +1,11 @@
+{
+  "schema": "PHASE162_NEXT_CYCLE_BEFORE_MEASUREMENT_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:00:29.7797206+04:00",
+  "mode": "SANDBOX_BASELINE_WITHOUT_ATOM_OVERLAY",
+  "available_atom_overlay_count": 0,
+  "next_cycle_can_reference_atom": false,
+  "next_cycle_can_reuse_admission_card": false,
+  "next_cycle_can_select_atom_specific_action": false,
+  "measured_capability_score": 0
+}

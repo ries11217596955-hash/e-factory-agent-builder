@@ -1,0 +1,29 @@
+{
+  "schema": "PHASE162_SANDBOX_ATOM_OVERLAY_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:00:29.7797396+04:00",
+  "source_freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "source_cycle_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_AUTONOMOUS_ADMISSION_CYCLE_20260609_095808",
+  "overlay_mode": "SANDBOX_ONLY_NOT_ACCEPTED_CORE",
+  "atom_summary_status": "SANDBOX_ATOM_CANDIDATE_NOT_ACCEPTED",
+  "selected_duty_id": "PHASE162_LOCAL_DUTY_20260609_091605",
+  "selected_run_id": "PHASE162_LOCAL_ATOM_SOURCE_20260609_091605",
+  "skill_candidate_count": 3,
+  "makes_available_to_next_cycle": [
+    "frozen_atom_reference",
+    "owner_visible_admission_review_card",
+    "partial_usefulness_signal",
+    "machine_next_action_context"
+  ],
+  "forbidden": [
+    "mutate_accepted_memory",
+    "mutate_accepted_self_model",
+    "mutate_pack_registry",
+    "claim_absorb_complete",
+    "claim_accept_ready"
+  ],
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

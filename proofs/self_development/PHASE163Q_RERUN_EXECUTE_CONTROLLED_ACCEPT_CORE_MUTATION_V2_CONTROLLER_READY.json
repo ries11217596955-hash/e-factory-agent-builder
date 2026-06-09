@@ -1,0 +1,23 @@
+{
+  "proof_id": "PHASE163Q_RERUN_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_V2_CONTROLLER_READY",
+  "status": "PASS",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "8d5e4b0",
+  "original_proof_path": "proofs/self_development/PHASE163Q_RERUN_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_V2.json",
+  "output_root": "reports/self_development/phase163_foundation_mind/PHASE163Q_RERUN_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_20260609_210727",
+  "result_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163Q_RERUN_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_20260609_210727\\execute_controlled_accept_core_mutation_result.json",
+  "validation_path": "reports\\self_development\\phase163_foundation_mind\\PHASE163Q_RERUN_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_20260609_210727\\execute_controlled_accept_core_mutation_validation.json",
+  "staged_atom_count": 73,
+  "controlled_accept_core_mutation_executed": true,
+  "accepted_core_write_executed": true,
+  "post_real_mutation_validation_passed": true,
+  "accepted_memory_mutated": true,
+  "accepted_self_model_mutated": true,
+  "registry_mutated": true,
+  "rollback_executed": false,
+  "final_accept_ready": true,
+  "next_action": "FEED_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_BACK_INTO_CONTROLLER",
+  "next_machine_action": "FEED_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_BACK_INTO_CONTROLLER",
+  "accepted_atom_claimed": false,
+  "created_at": "2026-06-09T17:11:25.3286985Z"
+}

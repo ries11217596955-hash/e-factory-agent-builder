@@ -1,0 +1,141 @@
+{
+  "schema": "PHASE162_ACCEPT_SAFETY_CONTRACT_DRY_RUN_ACTIVATION_RESULT_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:07:17.7768358+04:00",
+  "controller_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLER_WITH_NEXT_CYCLE_TRIAL_20260609_100246",
+  "safety_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717",
+  "contract_mode": "DRY_RUN_ONLY_NO_ACCEPTED_CORE_WRITES",
+  "accept_safety_contract_dry_run_activated": true,
+  "safety_validated_for_accept": true,
+  "rollback_tested": true,
+  "protected_paths_unchanged": true,
+  "protected_writes_denied": true,
+  "allowed_write_probe_created": true,
+  "owner_review_granted": false,
+  "accept_ready": false,
+  "expected_machine_decision": "ACCEPT_BLOCKED_AUTONOMOUS_CYCLE",
+  "next_machine_action_after_controller_consumes_this": "REQUEST_OWNER_REVIEW_FOR_CONTROLLED_ACCEPT",
+  "protected_denials": [
+    {
+      "path": "GENESIS_STATE.json",
+      "write_permitted_by_dry_run_contract": false,
+      "expected": "DENY",
+      "pass": true
+    },
+    {
+      "path": "CAPABILITY_ROADMAP.json",
+      "write_permitted_by_dry_run_contract": false,
+      "expected": "DENY",
+      "pass": true
+    },
+    {
+      "path": "TASK_QUEUE.json",
+      "write_permitted_by_dry_run_contract": false,
+      "expected": "DENY",
+      "pass": true
+    },
+    {
+      "path": "packs/registry.json",
+      "write_permitted_by_dry_run_contract": false,
+      "expected": "DENY",
+      "pass": true
+    },
+    {
+      "path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+      "write_permitted_by_dry_run_contract": false,
+      "expected": "DENY",
+      "pass": true
+    },
+    {
+      "path": "reports/self_development/accepted_change_memory_snapshot.json",
+      "write_permitted_by_dry_run_contract": false,
+      "expected": "DENY",
+      "pass": true
+    },
+    {
+      "path": "reports/self_development/agent_body_map.json",
+      "write_permitted_by_dry_run_contract": false,
+      "expected": "DENY",
+      "pass": true
+    }
+  ],
+  "before_fingerprints": {
+    "GENESIS_STATE.json": {
+      "exists": true,
+      "length": 14627,
+      "sha256": "66DD4205D90C22DE5EB45A23C4B142AC27D7FB005DF4AD530A817B9E345D3681"
+    },
+    "CAPABILITY_ROADMAP.json": {
+      "exists": true,
+      "length": 32017,
+      "sha256": "14A2C9CC8F59827AEAB6AEF8C7E65872F867E1E4170DCDE997ED9109E6360E34"
+    },
+    "TASK_QUEUE.json": {
+      "exists": true,
+      "length": 60764,
+      "sha256": "27220D7E169EDA9E60341B4A7A2817D3515DE8C8BB11DFC7C841A941FC01C4EC"
+    },
+    "packs/registry.json": {
+      "exists": true,
+      "length": 54640,
+      "sha256": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760"
+    },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json": {
+      "exists": true,
+      "length": 1597376,
+      "sha256": "DEB78C20F0FAC846042F77A0028F80B21A30DE146ABE882EB6CA32E802012C84"
+    },
+    "reports/self_development/accepted_change_memory_snapshot.json": {
+      "exists": true,
+      "length": 1718,
+      "sha256": "80B1F858D9412EB5BC4A80304384C816E307FC97CC8D602342AFE18CBDCCAE63"
+    },
+    "reports/self_development/agent_body_map.json": {
+      "exists": true,
+      "length": 11037998,
+      "sha256": "A48D57085F159263429B279D4AA264FF1F1F9AB9C7524732394C4F6AA9B2180C"
+    }
+  },
+  "after_fingerprints": {
+    "GENESIS_STATE.json": {
+      "exists": true,
+      "length": 14627,
+      "sha256": "66DD4205D90C22DE5EB45A23C4B142AC27D7FB005DF4AD530A817B9E345D3681"
+    },
+    "CAPABILITY_ROADMAP.json": {
+      "exists": true,
+      "length": 32017,
+      "sha256": "14A2C9CC8F59827AEAB6AEF8C7E65872F867E1E4170DCDE997ED9109E6360E34"
+    },
+    "TASK_QUEUE.json": {
+      "exists": true,
+      "length": 60764,
+      "sha256": "27220D7E169EDA9E60341B4A7A2817D3515DE8C8BB11DFC7C841A941FC01C4EC"
+    },
+    "packs/registry.json": {
+      "exists": true,
+      "length": 54640,
+      "sha256": "C3BBD8313FA46CA80298154964DC82431DB60525C485207C40D8059F8F88F760"
+    },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json": {
+      "exists": true,
+      "length": 1597376,
+      "sha256": "DEB78C20F0FAC846042F77A0028F80B21A30DE146ABE882EB6CA32E802012C84"
+    },
+    "reports/self_development/accepted_change_memory_snapshot.json": {
+      "exists": true,
+      "length": 1718,
+      "sha256": "80B1F858D9412EB5BC4A80304384C816E307FC97CC8D602342AFE18CBDCCAE63"
+    },
+    "reports/self_development/agent_body_map.json": {
+      "exists": true,
+      "length": 11037998,
+      "sha256": "A48D57085F159263429B279D4AA264FF1F1F9AB9C7524732394C4F6AA9B2180C"
+    }
+  },
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

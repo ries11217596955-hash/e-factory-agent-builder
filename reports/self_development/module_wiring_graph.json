@@ -1669,6 +1669,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/test_phase162_atom_executed_use_proof_001.ps1",
+      "path": "modules/test_phase162_atom_executed_use_proof_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/test_phase162_atom_usefulness_safety_blockers_001.ps1",
       "path": "modules/test_phase162_atom_usefulness_safety_blockers_001.ps1",
       "node_type": "module"
@@ -5054,6 +5059,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_ATOM_EXECUTED_USE_PROOF_V1.json",
+      "path": "proofs/self_development/PHASE162_ATOM_EXECUTED_USE_PROOF_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
       "path": "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
       "node_type": "proof"
@@ -6246,6 +6256,26 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_card.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_card.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_proof_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_proof_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_proof_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_proof_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/PHASE162_EXECUTED_USE_PROOF_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/PHASE162_EXECUTED_USE_PROOF_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7521,6 +7551,11 @@
     {
       "id": "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1",
       "path": "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_atom_executed_use_proof_v1.ps1",
+      "path": "validators/validate_phase162_atom_executed_use_proof_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21166,10 +21201,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/test_phase162_atom_usefulness_safety_blockers_001.ps1",
+      "target": "modules/test_phase162_accept_readiness_gate_with_blocker_inputs_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "test_phase162_atom_usefulness_safety_blockers_001"
+      "evidence_snippet_or_pattern": "test_phase162_accept_readiness_gate_with_blocker_inputs_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

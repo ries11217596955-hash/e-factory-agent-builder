@@ -9542,6 +9542,50 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/test_phase162_atom_executed_use_proof_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json"
+      ],
+      "param_names": [
+        "FreezeRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "stamp",
+        "freeze",
+        "decision",
+        "validation",
+        "candidateSummary",
+        "skillCandidates",
+        "firstSkill",
+        "sourceOk",
+        "selectedSkillId",
+        "selectedGoal",
+        "selectedValidation",
+        "selectedPath",
+        "useCard",
+        "blockersRemaining",
+        "result",
+        "_"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_EXECUTED_USE_PROOF_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/test_phase162_atom_usefulness_safety_blockers_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -29029,6 +29073,35 @@
       "write_outputs_detected": [
         "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
         "ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_atom_executed_use_proof_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "card",
+        "result",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 20 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [

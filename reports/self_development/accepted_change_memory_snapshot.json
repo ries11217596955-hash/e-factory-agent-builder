@@ -1,14 +1,15 @@
 {
-  "accepted_subject_head": "3ed4efbfc8233db2a2305fb6fa0137029d46d73f",
+  "accepted_subject_head": "9cbc8afb1204ae9f79595c9b585acd6b36e905b1",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/test_phase162_accept_readiness_gate_with_blocker_inputs_001.ps1",
-    "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_result.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_validation.json",
-    "validators/validate_phase162_accept_readiness_gate_with_blocker_inputs_v1.ps1"
+    "modules/test_phase162_atom_executed_use_proof_001.ps1",
+    "proofs/self_development/PHASE162_ATOM_EXECUTED_USE_PROOF_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/PHASE162_EXECUTED_USE_PROOF_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_card.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_proof_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_EXECUTED_USE_PROOF_20260609_094148/executed_use_proof_validation.json",
+    "validators/validate_phase162_atom_executed_use_proof_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -16,5 +17,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T05:27:02.1881421Z"
+  "created_at": "2026-06-09T05:43:19.3434442Z"
 }

@@ -19,7 +19,7 @@ function Write-Json {
   if ($dir -and -not (Test-Path -LiteralPath $dir)) {
     New-Item -ItemType Directory -Force -Path $dir | Out-Null
   }
-  $Object | ConvertTo-Json -Depth 100 | Set-Content -Path $Path -Encoding UTF8
+  ConvertTo-Json -InputObject $Object -Depth 100 | Set-Content -Path $Path -Encoding UTF8
 }
 
 if ([string]::IsNullOrWhiteSpace($OutputRoot)) {
@@ -231,3 +231,4 @@ $($result.why_final_accept_denied | ForEach-Object { "- $_" } | Out-String)
   accepted_memory_mutated = $false
   accepted_self_model_mutated = $false
 }
+

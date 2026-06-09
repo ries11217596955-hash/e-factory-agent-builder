@@ -1,10 +1,10 @@
 {
   "schema": "PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_PROOF_V1",
-  "status": "",
-  "created_at": "2026-06-09T10:45:21.7463919+04:00",
+  "status": "PASS",
+  "created_at": "2026-06-09T10:47:28.0509629+04:00",
   "branch": "phase110-idempotent-autonomy-trial-runtime",
-  "head": "a2bc1a2",
-  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521",
+  "head": "265bf66",
+  "output_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521",
   "batch_aware": true,
   "batch_size": 1,
   "staged_atom_count": 1,
@@ -16,5 +16,6 @@
   "accepted_state_mutated": false,
   "accepted_memory_mutated": false,
   "accepted_self_model_mutated": false,
+  "repair_note": "Repaired missing empty blocked atoms artifact and regenerated validation-backed proof.",
   "next_action": "VALIDATE_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH"
 }

@@ -1,0 +1,20 @@
+{
+  "schema": "PHASE162_ATOM_USEFULNESS_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T09:21:46.6823662+04:00",
+  "freeze_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase162_admission_freeze_absorb\\PHASE162_LOCAL_ATOM_FREEZE_QUARANTINE_20260609_091605",
+  "usefulness_validated": false,
+  "decision": "USEFULNESS_BLOCKED",
+  "blocking_reasons": [
+    "no_executed_use_proof_against_live_builder_task",
+    "no_next_cycle_improvement_proof",
+    "no_behavior_delta_measurement",
+    "no_owner_visible_value_proof"
+  ],
+  "candidate_has_skill_candidates": true,
+  "source_artifact_present": true,
+  "accepted_atom_claimed": false,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

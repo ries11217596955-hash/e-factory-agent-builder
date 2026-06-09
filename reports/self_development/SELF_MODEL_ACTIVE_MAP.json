@@ -2147,6 +2147,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -2198,6 +2199,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -2220,6 +2222,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -2285,6 +2288,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -2334,6 +2338,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -3435,6 +3440,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -3486,6 +3492,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -3508,6 +3515,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -3574,6 +3582,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -3623,6 +3632,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -12019,6 +12029,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -12070,6 +12081,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -12092,6 +12104,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -12162,6 +12175,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -12211,6 +12225,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -12255,6 +12270,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -12306,6 +12322,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -12328,6 +12345,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -12393,6 +12411,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -12442,6 +12461,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -12486,6 +12506,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -12537,6 +12558,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -12559,6 +12581,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -12624,6 +12647,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -12673,6 +12697,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -12717,6 +12742,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -12768,6 +12794,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -12790,6 +12817,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -12855,6 +12883,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -12904,6 +12933,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -12948,6 +12978,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -12999,6 +13030,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -13021,6 +13053,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -13091,6 +13124,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -13140,6 +13174,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -13184,6 +13219,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -13235,6 +13271,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -13257,6 +13294,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -13296,7 +13334,6 @@
       "stub_false_positive": false,
       "callers": [
         "modules/invoke_phase162_atom_batch_admission_envelope_001.ps1",
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -13328,6 +13365,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -13377,6 +13415,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -13421,6 +13460,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -13472,6 +13512,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -13494,6 +13535,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -13559,6 +13601,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -13608,6 +13651,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -13652,6 +13696,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -13703,6 +13748,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -13725,6 +13771,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -13761,10 +13808,15 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        ""
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
       ],
       "callees": [
-        ""
+        "modules/invoke_phase162_post_accept_rollback_rehearsal_for_atom_batch_001.ps1"
       ],
       "validators": [
         "validators/validate_phase160l_route_lock_supersession_v1.ps1",
@@ -13786,6 +13838,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -13835,6 +13888,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -13879,6 +13933,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -13930,6 +13985,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -13952,6 +14008,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -14017,6 +14074,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -14066,6 +14124,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -14110,6 +14169,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -14161,6 +14221,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -14183,6 +14244,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -14251,6 +14313,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -14300,6 +14363,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -14344,6 +14408,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -14395,6 +14460,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -14417,6 +14483,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -14482,6 +14549,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -14531,6 +14599,243 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
+        "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
+      ],
+      "schemas": [],
+      "route_lock_references": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "last_known_phase": "PHASE162",
+      "safe_to_modify": true,
+      "owner_approval_required": false,
+      "missing_link_reason": null,
+      "placeholder_reason": null,
+      "recommended_next_action": "Keep as live-proven active evidence input."
+    },
+    {
+      "artifact_id": "modules_invoke_phase162_post_accept_rollback_rehearsal_for_atom_batch_001_ps1",
+      "path": "modules/invoke_phase162_post_accept_rollback_rehearsal_for_atom_batch_001.ps1",
+      "artifact_type": "module",
+      "phase_hint": "PHASE162",
+      "role_guess": "module",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "why_status": "Artifact has current route/daemon/runner wiring and live/runtime proof evidence.",
+      "evidence_type": "LIVE_RUNTIME_PROVEN",
+      "evidence_strength": "LIVE_STRONG",
+      "evidence_basis": "Current wiring signal plus live/runtime proof path.",
+      "evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_EXECUTED_USE_PROOF_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_V1.json",
+        "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
+        "proofs/self_development/PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
+        "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
+        "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/PHASE162_ACCEPT_READINESS_GATE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_dry_run.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_scaffold.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope.json",
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [
+        "proofs/self_development/PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_V1.json"
+      ],
+      "validator_evidence_paths": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_accept_gate_with_partial_usefulness_v1.ps1",
+        "validators/validate_phase162_accept_readiness_gate_with_blocker_inputs_v1.ps1",
+        "validators/validate_phase162_accept_safety_contract_dry_run_activation_v1.ps1",
+        "validators/validate_phase162_accept_safety_contract_scaffold_v1.ps1",
+        "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
+        "validators/validate_phase162_atom_batch_admission_envelope_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1",
+        "validators/validate_phase162_atom_executed_use_proof_v1.ps1",
+        "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
+        "validators/validate_phase162_autonomous_accept_policy_gate_v1.ps1",
+        "validators/validate_phase162_autonomous_admission_cycle_controller_v1.ps1",
+        "validators/validate_phase162_bounded_live_daemon_absorb_trial_sandbox_v1.ps1",
+        "validators/validate_phase162_controlled_accept_candidate_dry_run_for_atom_batch_v1.ps1",
+        "validators/validate_phase162_controller_consume_bounded_absorb_trial_v1.ps1",
+        "validators/validate_phase162_controller_consume_controlled_accept_candidate_batch_v1.ps1",
+        "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
+        "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
+        "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
+        "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_EXECUTED_USE_PROOF_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_V1.json",
+        "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
+        "proofs/self_development/PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
+        "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
+        "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
+      ],
+      "report_reference_paths": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/PHASE162_ACCEPT_READINESS_GATE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_dry_run.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_scaffold.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope.json"
+      ],
+      "historical_reference_paths": [],
+      "current_wiring_signals": [
+        "modules/invoke_phase162_controller_consume_controlled_accept_candidate_batch_001.ps1",
+        "validators/validate_phase162_controller_consume_controlled_accept_candidate_batch_v1.ps1",
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "superseded_by": null,
+      "stub_false_positive": false,
+      "callers": [
+        "modules/invoke_phase162_controller_consume_controlled_accept_candidate_batch_001.ps1",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_CONTROLLED_ACCEPT_CANDIDATE_BATCH_20260609_110210/post_accept_rollback_rehearsal_for_atom_batch_request.json",
+        "validators/validate_phase162_controller_consume_controlled_accept_candidate_batch_v1.ps1"
+      ],
+      "callees": [
+        ""
+      ],
+      "validators": [
+        "validators/validate_phase160l_route_lock_supersession_v1.ps1",
+        "validators/validate_phase162_accept_gate_with_partial_usefulness_v1.ps1",
+        "validators/validate_phase162_accept_readiness_gate_with_blocker_inputs_v1.ps1",
+        "validators/validate_phase162_accept_safety_contract_dry_run_activation_v1.ps1",
+        "validators/validate_phase162_accept_safety_contract_scaffold_v1.ps1",
+        "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
+        "validators/validate_phase162_atom_batch_admission_envelope_v1.ps1",
+        "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1",
+        "validators/validate_phase162_atom_executed_use_proof_v1.ps1",
+        "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
+        "validators/validate_phase162_autonomous_accept_policy_gate_v1.ps1",
+        "validators/validate_phase162_autonomous_admission_cycle_controller_v1.ps1",
+        "validators/validate_phase162_bounded_live_daemon_absorb_trial_sandbox_v1.ps1",
+        "validators/validate_phase162_controlled_accept_candidate_dry_run_for_atom_batch_v1.ps1",
+        "validators/validate_phase162_controller_consume_bounded_absorb_trial_v1.ps1",
+        "validators/validate_phase162_controller_consume_controlled_accept_candidate_batch_v1.ps1",
+        "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
+        "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
+        "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
+        "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
+      ],
+      "reports": [
+        "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/PHASE162_ACCEPT_READINESS_GATE_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_dry_run.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_scaffold.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_result.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/accept_safety_contract_dry_run_activation_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_20260609_100717/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_REPORT.md",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope_validation.json",
+        "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/atom_batch_admission_envelope.json"
+      ],
+      "proofs": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_EXECUTED_USE_PROOF_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_V1.json",
+        "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
+        "proofs/self_development/PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
+        "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -20366,6 +20671,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -20417,6 +20723,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -20439,6 +20746,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -20504,6 +20812,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -20553,6 +20862,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -20597,6 +20907,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -20648,6 +20959,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -20670,6 +20982,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -20735,6 +21048,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -20784,6 +21098,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -20828,6 +21143,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -20879,6 +21195,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -20901,6 +21218,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -20966,6 +21284,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -21015,6 +21334,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -21059,6 +21379,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -21110,6 +21431,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -21132,6 +21454,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -21197,6 +21520,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -21246,6 +21570,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -21290,6 +21615,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -21341,6 +21667,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -21363,6 +21690,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -21428,6 +21756,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -21477,6 +21806,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -21691,6 +22021,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json",
         "reports/planning/ROUTE_CHANGE_REQUEST_PHASE162_ADMISSION_FREEZE_ABSORB_20260609_085301.md",
         "reports/self_development/accepted_change_memory_snapshot.json",
@@ -21742,6 +22073,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "proof_evidence_paths": [
@@ -21764,6 +22096,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "report_reference_paths": [
@@ -21829,6 +22162,7 @@
         "validators/validate_phase162_controller_consume_next_cycle_trial_v1.ps1",
         "validators/validate_phase162_next_cycle_improvement_trial_sandbox_v1.ps1",
         "validators/validate_phase162_policy_gate_decision_explanation_v1.ps1",
+        "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
         "validators/validate_phase162_usefulness_blockers_with_executed_use_v1.ps1"
       ],
       "reports": [
@@ -21878,6 +22212,7 @@
         "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
         "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_V1.json",
         "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
       ],
       "schemas": [],
@@ -25183,200 +25518,6 @@
       "missing_link_reason": null,
       "placeholder_reason": null,
       "recommended_next_action": "Keep as live-proven active evidence input."
-    },
-    {
-      "artifact_id": "packs_PHASE10_GENERATED_AGENT_VALIDATION_HARNESS_V1_payload_contracts_generated_agent_validation_report_schema_json",
-      "path": "packs/PHASE10_GENERATED_AGENT_VALIDATION_HARNESS_V1/payload/contracts/generated_agent_validation_report.schema.json",
-      "artifact_type": "pack",
-      "phase_hint": "PHASE10",
-      "role_guess": "pack",
-      "primary_status": "ACTIVE_WIRED_PROVEN",
-      "why_status": "Artifact has current route/daemon/runner wiring and live/runtime proof evidence.",
-      "evidence_type": "LIVE_RUNTIME_PROVEN",
-      "evidence_strength": "LIVE_STRONG",
-      "evidence_basis": "Current wiring signal plus live/runtime proof path.",
-      "evidence_paths": [
-        "proofs/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_PROOF.json",
-        "proofs/self_development/AUTO_NEXT_GAP_DECISION_V1.json",
-        "proofs/self_development/BATCH_PROOF_AGGREGATOR_V1.json",
-        "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
-        "proofs/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1.json",
-        "proofs/self_development/BUILDER_SELF_PACK_AUTHOR_V1.json",
-        "proofs/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1.json",
-        "proofs/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1.json",
-        "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
-        "proofs/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1.json",
-        "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
-        "proofs/self_development/REPAIR_LOOP_GENERATOR_V1.json",
-        "proofs/self_development/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json",
-        "proofs/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1.json",
-        "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
-        "reports/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_REPORT.json",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/AUTO_NEXT_GAP_DECISION_V1_REPORT.json",
-        "reports/self_development/BATCH_PROOF_AGGREGATOR_V1_REPORT.json",
-        "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
-        "reports/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1_REPORT.json",
-        "reports/self_development/BUILDER_SELF_PACK_AUTHOR_V1_REPORT.json",
-        "reports/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1_REPORT.json",
-        "reports/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1_REPORT.json",
-        "reports/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1_REPORT.json",
-        "reports/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1_REPORT.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/orphaned_artifact_inventory.json",
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
-        "reports/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1_REPORT.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json",
-        "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
-        "route_locks/ACTIVE_ROUTE_LOCK.json",
-        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
-      ],
-      "live_evidence_paths": [
-        "proofs/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1.json",
-        "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json"
-      ],
-      "validator_evidence_paths": [
-        "validators/validate_generated_agent_validation_harness_v1.ps1"
-      ],
-      "proof_evidence_paths": [
-        "proofs/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_PROOF.json",
-        "proofs/self_development/AUTO_NEXT_GAP_DECISION_V1.json",
-        "proofs/self_development/BATCH_PROOF_AGGREGATOR_V1.json",
-        "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
-        "proofs/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1.json",
-        "proofs/self_development/BUILDER_SELF_PACK_AUTHOR_V1.json",
-        "proofs/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1.json",
-        "proofs/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1.json",
-        "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
-        "proofs/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1.json",
-        "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
-        "proofs/self_development/REPAIR_LOOP_GENERATOR_V1.json",
-        "proofs/self_development/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json",
-        "proofs/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1.json"
-      ],
-      "report_reference_paths": [
-        "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
-        "reports/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_REPORT.json",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/AUTO_NEXT_GAP_DECISION_V1_REPORT.json",
-        "reports/self_development/BATCH_PROOF_AGGREGATOR_V1_REPORT.json",
-        "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
-        "reports/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1_REPORT.json",
-        "reports/self_development/BUILDER_SELF_PACK_AUTHOR_V1_REPORT.json",
-        "reports/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1_REPORT.json",
-        "reports/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1_REPORT.json",
-        "reports/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1_REPORT.json",
-        "reports/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1_REPORT.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/orphaned_artifact_inventory.json",
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
-        "reports/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1_REPORT.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json"
-      ],
-      "historical_reference_paths": [
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1.json",
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
-        "reports/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1_REPORT.json"
-      ],
-      "current_wiring_signals": [
-        "route_locks/ACTIVE_ROUTE_LOCK.json"
-      ],
-      "superseded_by": null,
-      "stub_false_positive": false,
-      "callers": [
-        ""
-      ],
-      "callees": [
-        ""
-      ],
-      "validators": [
-        "validators/validate_generated_agent_validation_harness_v1.ps1"
-      ],
-      "reports": [
-        "reports/planning/ADMISSION_FREEZE_ABSORB_EXISTING_ORGANS_SCOUT_20260609_085301.md",
-        "reports/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_REPORT.json",
-        "reports/self_development/agent_body_map.json",
-        "reports/self_development/AUTO_NEXT_GAP_DECISION_V1_REPORT.json",
-        "reports/self_development/BATCH_PROOF_AGGREGATOR_V1_REPORT.json",
-        "reports/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1_REPORT.json",
-        "reports/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1_REPORT.json",
-        "reports/self_development/BUILDER_SELF_PACK_AUTHOR_V1_REPORT.json",
-        "reports/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1_REPORT.json",
-        "reports/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1_REPORT.json",
-        "reports/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1_REPORT.json",
-        "reports/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1_REPORT.json",
-        "reports/self_development/function_inventory.json",
-        "reports/self_development/historical_reference_inventory.json",
-        "reports/self_development/live_evidence_separation_index.json",
-        "reports/self_development/module_wiring_graph.json",
-        "reports/self_development/orphaned_artifact_inventory.json",
-        "reports/self_development/PHASE109_SANDBOX_RUNTIME_LOG.txt",
-        "reports/self_development/PHASE110_FINALIZE_IDEMPOTENT_AUTONOMY_TRIAL_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1_REPORT.json",
-        "reports/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1_REPORT.json",
-        "reports/self_development/PHASE160L_ROUTE_LOCK_SUPERSESSION_REPORT.md",
-        "reports/self_development/PHASE161C_AGENT_BODY_MAP_REVIEW_PACKET_FOR_CHAT.md",
-        "reports/self_development/protected_state_update_candidates/PHASE161G1_CONSUMER_COMPATIBILITY_MATRIX.json"
-      ],
-      "proofs": [
-        "proofs/route_locks/ROUTE_V2_R2_TO_V3_SELF_PACK_AUTHOR_PROOF.json",
-        "proofs/self_development/AUTO_NEXT_GAP_DECISION_V1.json",
-        "proofs/self_development/BATCH_PROOF_AGGREGATOR_V1.json",
-        "proofs/self_development/BUILDER_EXECUTES_OWN_GENERATED_NEXT_PACK_V1.json",
-        "proofs/self_development/BUILDER_GENERATED_PACK_ADMISSION_V1.json",
-        "proofs/self_development/BUILDER_SELF_PACK_AUTHOR_V1.json",
-        "proofs/self_development/CANDIDATE_ADMISSION_GUARD_REPAIR_V1.json",
-        "proofs/self_development/CANDIDATE_RUNTIME_SIGNATURE_REPAIR_V1.json",
-        "proofs/self_development/CONTINUE_ON_FAILURE_RUNTIME_V1.json",
-        "proofs/self_development/CONTROLLED_MULTI_CYCLE_SELF_BUILD_RUN_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_20_CYCLE_BATCH_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1.json",
-        "proofs/self_development/PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1.json",
-        "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
-        "proofs/self_development/REPAIR_LOOP_GENERATOR_V1.json",
-        "proofs/self_development/SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1.json",
-        "proofs/self_development/SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1.json"
-      ],
-      "schemas": [],
-      "route_lock_references": [
-        "route_change_requests/PHASE160L_ROUTE_LOCK_SUPERSESSION_REQUEST.md",
-        "route_locks/ACTIVE_ROUTE_LOCK.json",
-        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md"
-      ],
-      "last_known_phase": "PHASE10",
-      "safe_to_modify": true,
-      "owner_approval_required": false,
-      "missing_link_reason": null,
-      "placeholder_reason": null,
-      "recommended_next_action": "Keep as live-proven active evidence input."
     }
   ],
   "evidence_type_counts": [
@@ -25390,7 +25531,7 @@
     },
     {
       "evidence_type": "FALSE_POSITIVE_STUB_SIGNAL",
-      "count": 88
+      "count": 87
     },
     {
       "evidence_type": "HISTORICAL_REFERENCE_ONLY",
@@ -25398,7 +25539,7 @@
     },
     {
       "evidence_type": "LIVE_RUNTIME_PROVEN",
-      "count": 268
+      "count": 277
     },
     {
       "evidence_type": "PROOF_JSON_PROVEN",
@@ -25422,7 +25563,7 @@
     },
     {
       "evidence_type": "VALIDATOR_PROVEN",
-      "count": 726
+      "count": 727
     }
   ],
   "important_gaps": [
@@ -25587,8 +25728,8 @@
   ],
   "next_decision_reason": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
   "self_map_refresh_policy_id": "PHASE161E_SELF_MAP_REFRESH_AFTER_ACCEPTED_CHANGE_POLICY_V1",
-  "accepted_subject_head": "fd825ca5cbc7694b01c14cdac791b9904ccb1ca8",
-  "generated_from_worktree_head": "fd825ca5cbc7694b01c14cdac791b9904ccb1ca8",
+  "accepted_subject_head": "8e3a9eaf7191951660f34cf2a9b39277fbd1d110",
+  "generated_from_worktree_head": "8e3a9eaf7191951660f34cf2a9b39277fbd1d110",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
@@ -25599,7 +25740,7 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "recommended_next_learning_tasks": [
     {
-      "gap_id": "PHASE161J_RECOMMENDATION_20260609070342",
+      "gap_id": "PHASE161J_RECOMMENDATION_20260609071201",
       "recommended_next_action": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
       "why_status": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
       "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",

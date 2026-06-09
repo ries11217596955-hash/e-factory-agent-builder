@@ -5788,7 +5788,9 @@
         "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
         "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CANDIDATE_BATCH_REPORT.md\") -Encoding UTF8"
       ],
-      "calls_detected": [],
+      "calls_detected": [
+        "modules/invoke_phase162_post_accept_rollback_rehearsal_for_atom_batch_001.ps1"
+      ],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
@@ -5934,6 +5936,73 @@
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "modules/invoke_phase162_post_accept_rollback_rehearsal_for_atom_batch_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json",
+        "Get-PathFingerprint",
+        "Add-Event"
+      ],
+      "param_names": [
+        "ControllerRoot",
+        "CandidateRoot",
+        "RepoRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "item",
+        "Type",
+        "Data",
+        "event",
+        "stamp",
+        "controller",
+        "controllerValidation",
+        "candidate",
+        "candidateValidation",
+        "deltas",
+        "blocked",
+        "inputReady",
+        "protectedTargets",
+        "before",
+        "rel",
+        "eventsPath",
+        "OverlayRoot",
+        "overlayMemory",
+        "overlaySelfModel",
+        "overlayRegistry",
+        "d",
+        "overlayFilesBeforeRollback",
+        "_",
+        "overlayApplyState",
+        "overlayRemoved",
+        "after",
+        "protectedUnchanged",
+        "b",
+        "a",
+        "rollbackPassed",
+        "rollbackResult",
+        "result"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json, Get-PathFingerprint, Add-Event",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -InputObject $Object -Depth 100 | Set-Content -Path $Path -Encoding UTF8",
+        "ConvertTo-Json -InputObject $event -Depth 60 -Compress | Add-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "New-Item -ItemType Directory -Force -Path $OverlayRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_FOR_ATOM_BATCH_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "remove_item",
         "accepted_repo_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."
@@ -30133,7 +30202,9 @@
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 100 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
-      "calls_detected": [],
+      "calls_detected": [
+        "modules/invoke_phase162_post_accept_rollback_rehearsal_for_atom_batch_001.ps1"
+      ],
       "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
@@ -30224,6 +30295,38 @@
       "exported_behavior_guess": "Read-Json",
       "write_outputs_detected": [
         "ConvertTo-Json -Depth 80 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_post_accept_rollback_rehearsal_for_atom_batch_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "result",
+        "overlay",
+        "rollback",
+        "eventsPath",
+        "eventCount",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 100 | Set-Content -Path $validationPath -Encoding UTF8"
       ],
       "calls_detected": [],
       "safety_sensitive_operations_detected": [

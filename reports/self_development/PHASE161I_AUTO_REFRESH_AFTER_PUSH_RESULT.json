@@ -1,12 +1,12 @@
 {
-  "workflow_refresh_id": "PHASE161I_REFRESH_20260609070343",
-  "accepted_subject_head": "fd825ca5cbc7694b01c14cdac791b9904ccb1ca8",
+  "workflow_refresh_id": "PHASE161I_REFRESH_20260609071202",
+  "accepted_subject_head": "8e3a9eaf7191951660f34cf2a9b39277fbd1d110",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "trigger_reason": "github_push_auto_refresh",
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
   "self_knowledge_ready": true,
   "map_is_ready_for_next_decision": true,
-  "generated_from_worktree_head": "fd825ca5cbc7694b01c14cdac791b9904ccb1ca8",
+  "generated_from_worktree_head": "8e3a9eaf7191951660f34cf2a9b39277fbd1d110",
   "protected_state_mutated": false,
   "runtime_outputs_staged": false,
   "refreshed_files": [
@@ -21,7 +21,8 @@
     "reports/self_development/organism_health_state.json",
     "reports/self_development/self_map_memory_report.md",
     "reports/self_development/self_map_next_action_recommendation.json",
-    "reports/self_development/self_map_refresh_after_acceptance_result.json"
+    "reports/self_development/self_map_refresh_after_acceptance_result.json",
+    "reports/self_development/stub_false_positive_inventory.json"
   ],
-  "created_at": "2026-06-09T07:03:43.0754157Z"
+  "created_at": "2026-06-09T07:12:02.0106610Z"
 }

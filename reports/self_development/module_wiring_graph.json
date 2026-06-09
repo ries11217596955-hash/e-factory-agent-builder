@@ -854,6 +854,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
+      "path": "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/decide_builder_learning_mode_001.ps1",
       "path": "modules/decide_builder_learning_mode_001.ps1",
       "node_type": "module"
@@ -5064,6 +5069,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_V1.json",
+      "path": "proofs/self_development/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
       "path": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
       "node_type": "proof"
@@ -6271,6 +6281,31 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/PHASE162_ACCEPT_READINESS_GATE_REPORT.md",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/PHASE162_ACCEPT_READINESS_GATE_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_dry_run.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_dry_run.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_scaffold.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_scaffold.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7609,6 +7644,11 @@
       "node_type": "validator"
     },
     {
+      "id": "validators/validate_phase162_accept_safety_contract_scaffold_v1.ps1",
+      "path": "validators/validate_phase162_accept_safety_contract_scaffold_v1.ps1",
+      "node_type": "validator"
+    },
+    {
       "id": "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
       "path": "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
       "node_type": "validator"
@@ -8773,6 +8813,34 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "render_generated_self_build_pack_apply_from_recipe"
+    },
+    {
+      "source": "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
+      "target": "CAPABILITY_ROADMAP.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "CAPABILITY_ROADMAP.json"
+    },
+    {
+      "source": "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
+      "target": "GENESIS_STATE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "GENESIS_STATE.json"
+    },
+    {
+      "source": "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
+      "target": "TASK_QUEUE.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "TASK_QUEUE.json"
+    },
+    {
+      "source": "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
+      "target": "packs/registry.json",
+      "edge_type": "references",
+      "confidence": "high",
+      "evidence_snippet_or_pattern": "packs/registry.json"
     },
     {
       "source": "modules/decide_builder_learning_mode_001.ps1",
@@ -21271,10 +21339,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/update_phase162_usefulness_blockers_with_executed_use_001.ps1",
+      "target": "modules/test_phase162_accept_gate_with_partial_usefulness_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "update_phase162_usefulness_blockers_with_executed_use_001"
+      "evidence_snippet_or_pattern": "test_phase162_accept_gate_with_partial_usefulness_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",
@@ -21786,34 +21854,6 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_reuse_based_micro_organ_trial_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_runs_generic_self_written_spec_execution_bridge_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_runs_generic_self_written_spec_execution_bridge_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_build_program_admission_gate_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_build_program_admission_gate_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_growth_duty_runtime_ignition_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_growth_duty_runtime_ignition_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_growth_runtime_admission_review_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_growth_runtime_admission_review_001"
     }
   ]
 }

@@ -1,14 +1,16 @@
 {
-  "accepted_subject_head": "54cf526874324091240bc5f5c9485b4423efd5ab",
+  "accepted_subject_head": "97cf7c5687f992b13784d330b0c2d6b22c7215f3",
   "accepted_phase": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "commit_message_or_phase_label": "GITHUB_PUSH_SELF_MAP_AUTO_REFRESH",
   "changed_files_since_previous_baseline": [
-    "modules/test_phase162_accept_gate_with_partial_usefulness_001.ps1",
-    "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_V1.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_REPORT.md",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_result.json",
-    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_PARTIAL_USEFULNESS_20260609_094925/accept_gate_partial_usefulness_validation.json",
-    "validators/validate_phase162_accept_gate_with_partial_usefulness_v1.ps1"
+    "modules/create_phase162_accept_safety_contract_scaffold_001.ps1",
+    "proofs/self_development/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_V1.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_REPORT.md",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_dry_run.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_result.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_scaffold.json",
+    "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_SAFETY_CONTRACTS_20260609_095451/accept_safety_contract_validation.json",
+    "validators/validate_phase162_accept_safety_contract_scaffold_v1.ps1"
   ],
   "map_refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "self_model_active_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -16,5 +18,5 @@
   "proof_path": "proofs/self_development/PHASE161E_SELF_MAP_AUTO_REFRESH_PROOF.json",
   "next_decision_allowed": true,
   "next_decision_reason": "Self knowledge is ready for the next decision.",
-  "created_at": "2026-06-09T05:51:30.4837491Z"
+  "created_at": "2026-06-09T05:56:13.7495731Z"
 }

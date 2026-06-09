@@ -9458,6 +9458,51 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/test_phase162_accept_readiness_gate_with_blocker_inputs_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json"
+      ],
+      "param_names": [
+        "FreezeRoot",
+        "BlockersRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "stamp",
+        "freeze",
+        "freezeDecision",
+        "freezeValidation",
+        "usefulness",
+        "safety",
+        "blockers",
+        "blockersValidation",
+        "blocking",
+        "r",
+        "noAcceptedMutation",
+        "gateDecision",
+        "result",
+        "resultPath",
+        "reportPath",
+        "_"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path $reportPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/test_phase162_atom_accept_readiness_gate_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -28900,6 +28945,32 @@
       ],
       "safety_sensitive_operations_detected": [
         "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_accept_readiness_gate_with_blocker_inputs_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [],
+      "param_names": [
+        "OutputRoot",
+        "resultPath",
+        "result",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "script_or_inline_behavior",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 20 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."

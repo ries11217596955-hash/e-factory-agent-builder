@@ -4,7 +4,7 @@
   "evidence_type_counts": [
     {
       "evidence_type": "CURRENT_ROUTE_WIRED",
-      "count": 60
+      "count": 66
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",
@@ -433,6 +433,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -2387,6 +2388,23 @@
       "proof_evidence_paths": []
     },
     {
+      "path": "modules/test_phase162_accept_readiness_gate_with_blocker_inputs_001.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
       "path": "modules/test_phase162_atom_accept_readiness_gate_001.ps1",
       "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "CURRENT_ROUTE_WIRED",
@@ -2396,6 +2414,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -2412,6 +2431,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4263,6 +4283,23 @@
       ]
     },
     {
+      "path": "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
       "path": "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
       "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "CURRENT_ROUTE_WIRED",
@@ -4272,6 +4309,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4288,6 +4326,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4304,6 +4343,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4320,6 +4360,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4414,6 +4455,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4443,6 +4485,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4687,6 +4730,57 @@
       ]
     },
     {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_result.json",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/accept_gate_with_blockers_validation.json",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_20260609_092516/PHASE162_ACCEPT_GATE_WITH_BLOCKERS_REPORT.md",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ACCEPT_READINESS_GATE_20260609_091849/accept_readiness_gate_result.json",
       "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "CURRENT_ROUTE_WIRED",
@@ -4696,6 +4790,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4712,6 +4807,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4728,6 +4824,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4744,6 +4841,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4760,6 +4858,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4776,6 +4875,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4792,6 +4892,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4808,6 +4909,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4824,6 +4926,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4840,6 +4943,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4856,6 +4960,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4872,6 +4977,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4888,6 +4994,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4904,6 +5011,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4920,6 +5028,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4936,6 +5045,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -4952,6 +5062,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -5761,6 +5872,23 @@
       ]
     },
     {
+      "path": "validators/validate_phase162_accept_readiness_gate_with_blocker_inputs_v1.ps1",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "CURRENT_ROUTE_WIRED",
+      "evidence_strength": "CURRENT_WIRED_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json"
+      ]
+    },
+    {
       "path": "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
       "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "CURRENT_ROUTE_WIRED",
@@ -5770,6 +5898,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -5786,6 +5915,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
@@ -5802,6 +5932,7 @@
       ],
       "live_evidence_paths": [],
       "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
         "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
         "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
         "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",

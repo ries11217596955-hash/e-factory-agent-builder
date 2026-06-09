@@ -1,8 +1,8 @@
 {
   "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
   "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
-  "total_artifacts": 1535,
-  "active_wired_proven_count": 232,
+  "total_artifacts": 1541,
+  "active_wired_proven_count": 238,
   "active_wired_unproven_count": 73,
   "present_not_wired_count": 277,
   "superseded_count": 1,
@@ -11,7 +11,7 @@
   "evidence_type_counts": [
     {
       "evidence_type": "CURRENT_ROUTE_WIRED",
-      "count": 60
+      "count": 66
     },
     {
       "evidence_type": "CURRENT_RUNNER_WIRED",

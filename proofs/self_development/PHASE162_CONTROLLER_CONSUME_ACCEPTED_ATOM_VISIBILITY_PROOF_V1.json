@@ -1,0 +1,17 @@
+{
+  "schema": "PHASE162_CONTROLLER_CONSUME_ACCEPTED_ATOM_VISIBILITY_PROOF_PROOF_V1",
+  "status": "PASS",
+  "created_at": "2026-06-09T15:26:36.1367034+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "9e26244",
+  "output_root": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_CONSUMED_ACCEPTED_ATOM_VISIBILITY_PROOF_20260609_152635",
+  "controller_visibility_closure_executed": true,
+  "phase162_closed": true,
+  "accepted_atom_visible_to_next_cycle": true,
+  "visible_atom_count": 1,
+  "accepted_core_rewrite_executed": false,
+  "repeated_mutation_execution": false,
+  "machine_decision": "PHASE162_ACCEPTED_ATOM_ABSORB_PIPELINE_CLOSED",
+  "next_machine_action": "SELECT_NEXT_LOCKED_ROUTE_STEP",
+  "next_action": "SELECT_NEXT_LOCKED_ROUTE_STEP"
+}

@@ -1279,6 +1279,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/invoke_phase162_controller_consume_bounded_absorb_trial_001.ps1",
+      "path": "modules/invoke_phase162_controller_consume_bounded_absorb_trial_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
       "path": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
       "node_type": "module"
@@ -5149,6 +5154,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_V1.json",
+      "path": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
       "path": "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
       "node_type": "proof"
@@ -6486,6 +6496,26 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/sandbox_absorb_overlay.json",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_BOUNDED_ABSORB_TRIAL_SANDBOX_20260609_101725/sandbox_absorb_overlay.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controlled_accept_candidate_dry_run_request.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controlled_accept_candidate_dry_run_request.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controller_with_bounded_absorb_trial_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controller_with_bounded_absorb_trial_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controller_with_bounded_absorb_trial_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/controller_with_bounded_absorb_trial_validation.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLER_WITH_BOUNDED_ABSORB_TRIAL_20260609_103640/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_REPORT.md",
       "node_type": "report"
     },
     {
@@ -7911,6 +7941,11 @@
     {
       "id": "validators/validate_phase162_bounded_live_daemon_absorb_trial_sandbox_v1.ps1",
       "path": "validators/validate_phase162_bounded_live_daemon_absorb_trial_sandbox_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_controller_consume_bounded_absorb_trial_v1.ps1",
+      "path": "validators/validate_phase162_controller_consume_bounded_absorb_trial_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -21620,10 +21655,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_phase162_policy_gate_decision_explanation_001.ps1",
+      "target": "modules/invoke_phase162_bounded_live_daemon_absorb_trial_sandbox_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_phase162_policy_gate_decision_explanation_001"
+      "evidence_snippet_or_pattern": "invoke_phase162_bounded_live_daemon_absorb_trial_sandbox_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

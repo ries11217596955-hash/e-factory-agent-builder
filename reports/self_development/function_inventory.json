@@ -5596,6 +5596,49 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/invoke_phase162_controller_consume_bounded_absorb_trial_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json",
+        "Write-Json"
+      ],
+      "param_names": [
+        "PolicyRoot",
+        "AbsorbTrialRoot",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "stamp",
+        "policy",
+        "policyValidation",
+        "trial",
+        "trialValidation",
+        "boundedAbsorbPassed",
+        "policyOk",
+        "acceptedCoreSafe",
+        "preconditions",
+        "blockingForFinalAccept",
+        "nextMachineAction",
+        "result",
+        "request",
+        "_"
+      ],
+      "exported_behavior_guess": "Read-Json, Write-Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 90 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_REPORT.md\") -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/invoke_phase162_controller_consume_next_cycle_trial_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -29798,6 +29841,35 @@
         "after",
         "eventsPath",
         "eventCount",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "validation",
+        "validationPath"
+      ],
+      "exported_behavior_guess": "Read-Json",
+      "write_outputs_detected": [
+        "ConvertTo-Json -Depth 90 | Set-Content -Path $validationPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_controller_consume_bounded_absorb_trial_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "result",
+        "request",
         "checks",
         "failed",
         "_",

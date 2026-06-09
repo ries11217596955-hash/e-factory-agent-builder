@@ -909,6 +909,11 @@
       "node_type": "module"
     },
     {
+      "id": "modules/freeze_builder_atom_candidate_admission_001.ps1",
+      "path": "modules/freeze_builder_atom_candidate_admission_001.ps1",
+      "node_type": "module"
+    },
+    {
       "id": "modules/ingest_builder_curriculum_pack_001.ps1",
       "path": "modules/ingest_builder_curriculum_pack_001.ps1",
       "node_type": "module"
@@ -5019,6 +5024,11 @@
       "node_type": "proof"
     },
     {
+      "id": "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+      "path": "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+      "node_type": "proof"
+    },
+    {
       "id": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "path": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "node_type": "proof"
@@ -6151,6 +6161,26 @@
     {
       "id": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
       "path": "reports/self_development/PHASE161L_UNIFIED_LIFE_CYCLE_DAEMON_TRIAL_ACCEPTANCE_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/admission_decision.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/frozen_atom_candidate_evidence.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/PHASE162_ATOM_FREEZE_QUARANTINE_REPORT.md",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_FREEZE_QUARANTINE_20260609_085829/validation_result.json",
       "node_type": "report"
     },
     {
@@ -7361,6 +7391,11 @@
     {
       "id": "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
       "path": "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
+      "node_type": "validator"
+    },
+    {
+      "id": "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1",
+      "path": "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1",
       "node_type": "validator"
     },
     {
@@ -20496,6 +20531,13 @@
       "evidence_snippet_or_pattern": "orchestrator/run.ps1"
     },
     {
+      "source": "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+      "target": "modules/freeze_builder_atom_candidate_admission_001.ps1",
+      "edge_type": "calls",
+      "confidence": "medium",
+      "evidence_snippet_or_pattern": "freeze_builder_atom_candidate_admission_001"
+    },
+    {
       "source": "proofs/self_development/QUARANTINE_AND_BLOCKER_REGISTRY_V1.json",
       "target": "contracts/self_development/quarantine_and_blocker_registry_v1.schema.json",
       "edge_type": "validates",
@@ -21537,13 +21579,6 @@
       "edge_type": "calls",
       "confidence": "medium",
       "evidence_snippet_or_pattern": "invoke_builder_self_map_refresh_after_acceptance_001"
-    },
-    {
-      "source": "reports/self_development/agent_body_map.json",
-      "target": "modules/invoke_builder_self_pack_author_conveyor_001.ps1",
-      "edge_type": "calls",
-      "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_builder_self_pack_author_conveyor_001"
     }
   ]
 }

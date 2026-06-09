@@ -1147,6 +1147,51 @@
       "why_status": "Parser passed; behavior classification is based on static scan signals."
     },
     {
+      "path": "modules/freeze_builder_atom_candidate_admission_001.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Write-Phase162Json"
+      ],
+      "param_names": [
+        "RepoRoot",
+        "EventsFile",
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "_",
+        "stamp",
+        "lines",
+        "events",
+        "line",
+        "bridgeEvents",
+        "selected",
+        "artifactPath",
+        "artifactFullPath",
+        "artifactPresent",
+        "candidateSummary",
+        "freezePath",
+        "decisionPath",
+        "reportPath",
+        "reasons",
+        "frozen",
+        "decision"
+      ],
+      "exported_behavior_guess": "Write-Phase162Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8",
+        "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
+        "Set-Content -Path $reportPath -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
       "path": "modules/ingest_builder_curriculum_pack_001.ps1",
       "parser_status": "PASS",
       "parser_errors": [],
@@ -28778,6 +28823,41 @@
       ],
       "safety_sensitive_operations_detected": [
         "runtime_writes",
+        "accepted_repo_writes"
+      ],
+      "why_status": "Parser passed; behavior classification is based on static scan signals."
+    },
+    {
+      "path": "validators/validate_phase162_atom_candidate_freeze_quarantine_v1.ps1",
+      "parser_status": "PASS",
+      "parser_errors": [],
+      "functions_found": [
+        "Read-Phase162Json",
+        "Write-Phase162Json"
+      ],
+      "param_names": [
+        "OutputRoot",
+        "Path",
+        "Object",
+        "dir",
+        "freezePath",
+        "decisionPath",
+        "validationPath",
+        "freeze",
+        "decision",
+        "checks",
+        "failed",
+        "_",
+        "status",
+        "result"
+      ],
+      "exported_behavior_guess": "Read-Phase162Json, Write-Phase162Json",
+      "write_outputs_detected": [
+        "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
+        "ConvertTo-Json -Depth 20 | Set-Content -Path $Path -Encoding UTF8"
+      ],
+      "calls_detected": [],
+      "safety_sensitive_operations_detected": [
         "accepted_repo_writes"
       ],
       "why_status": "Parser passed; behavior classification is based on static scan signals."

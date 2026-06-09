@@ -1,0 +1,15 @@
+{
+  "schema": "PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_OVERLAY_APPLY_STATE_V1",
+  "status": "PASS",
+  "overlay_root": "reports\\self_development\\phase163_foundation_mind\\PHASE163F_POST_ACCEPT_ROLLBACK_REHEARSAL_20260609_200357\\temporary_accept_overlay",
+  "staged_atom_count": 73,
+  "blocked_atom_count": 0,
+  "overlay_file_count": 4,
+  "overlay_files_created": [
+    "accepted_memory_overlay.json",
+    "blocked_atoms_preserved.json",
+    "registry_overlay.json",
+    "self_model_overlay.json"
+  ],
+  "accepted_core_mutation": false
+}

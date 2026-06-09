@@ -1,0 +1,48 @@
+{
+  "schema": "PHASE162_POST_ACCEPT_ROLLBACK_REHEARSAL_RESULT_V1",
+  "status": "PASS",
+  "rollback_rehearsal_passed": true,
+  "overlay_files_before_rollback": [
+    "accepted_memory_overlay.json",
+    "blocked_atoms_preserved.json",
+    "registry_overlay.json",
+    "self_model_overlay.json"
+  ],
+  "overlay_removed_after_rollback": true,
+  "protected_targets_unchanged": true,
+  "before_fingerprints": {
+    "reports/self_development/accepted_change_memory_snapshot.json": {
+      "exists": true,
+      "length": 4133,
+      "sha256": "C260D1DE9D03043250B6050F8AA93DD4EB62DCDCF2C3D787DEFE433DD5F76388"
+    },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json": {
+      "exists": true,
+      "length": 1728006,
+      "sha256": "FA6D8DD42BEF85D560271A400A8DFD7212FFBF8632658C7D313CF0DDE1FE0F9C"
+    },
+    "packs/registry.json": {
+      "exists": true,
+      "length": 55827,
+      "sha256": "34EC063A8393E4715E537F386D8185E56D521060230DAB20652501B38F57ABEF"
+    }
+  },
+  "after_fingerprints": {
+    "reports/self_development/accepted_change_memory_snapshot.json": {
+      "exists": true,
+      "length": 4133,
+      "sha256": "C260D1DE9D03043250B6050F8AA93DD4EB62DCDCF2C3D787DEFE433DD5F76388"
+    },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json": {
+      "exists": true,
+      "length": 1728006,
+      "sha256": "FA6D8DD42BEF85D560271A400A8DFD7212FFBF8632658C7D313CF0DDE1FE0F9C"
+    },
+    "packs/registry.json": {
+      "exists": true,
+      "length": 55827,
+      "sha256": "34EC063A8393E4715E537F386D8185E56D521060230DAB20652501B38F57ABEF"
+    }
+  },
+  "accepted_core_mutation": false
+}

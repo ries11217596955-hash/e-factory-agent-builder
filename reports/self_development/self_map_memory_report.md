@@ -2,7 +2,7 @@
 
 I remember myself; here is my current report.
 
-Accepted subject head: 265bf66569a323bc51505903888188cec902d0e0
+Accepted subject head: 10fcef8415bbd1ed41258e544b72250298f745cf
 Current baseline phase: GITHUB_PUSH_SELF_MAP_AUTO_REFRESH
 Map refresh status: SELF_KNOWLEDGE_READY
 Self knowledge ready: True
@@ -17,11 +17,11 @@ The organism can operate, but an active-path implementation or self-knowledge re
 
 ## Counts
 
-- Active wired proven: 341
+- Active wired proven: 342
 - Present not wired: 277
 - Historical references: 204
 - Superseded: 1
-- Real stubs: 2
+- Real stubs: 3
 - False-positive stubs: 89
 - Gap chains: 7
 
@@ -85,6 +85,7 @@ The organism can operate, but an active-path implementation or self-knowledge re
 
 - modules/build_builder_agent_body_map_001.ps1: REAL_STUB_OR_PLACEHOLDER Executable or near-empty artifact has a real stub/not-implemented signal.
 - reports/self_development/PHASE161D_EXECUTION_PLAN.md: REAL_STUB_OR_PLACEHOLDER Executable or near-empty artifact has a real stub/not-implemented signal.
+- reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_blocked_atoms.json: low_size_file File is too small to provide meaningful behavior or evidence.
 
 ## False-Positive Stubs
 

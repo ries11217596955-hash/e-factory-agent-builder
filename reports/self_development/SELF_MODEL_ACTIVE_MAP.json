@@ -12346,7 +12346,6 @@
       "superseded_by": null,
       "stub_false_positive": false,
       "callers": [
-        "reports/self_development/accepted_change_memory_snapshot.json",
         "reports/self_development/agent_body_map.json",
         "reports/self_development/function_inventory.json",
         "reports/self_development/live_evidence_separation_index.json",
@@ -13259,7 +13258,13 @@
       "stub_false_positive": false,
       "callers": [
         "modules/invoke_phase162_atom_batch_admission_envelope_001.ps1",
+        "reports/self_development/accepted_change_memory_snapshot.json",
+        "reports/self_development/agent_body_map.json",
+        "reports/self_development/function_inventory.json",
+        "reports/self_development/live_evidence_separation_index.json",
+        "reports/self_development/module_wiring_graph.json",
         "reports/self_development/phase162_admission_freeze_absorb/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_20260609_104005/controlled_accept_candidate_dry_run_for_atom_batch_request.json",
+        "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
         "validators/validate_phase162_atom_batch_admission_envelope_v1.ps1"
       ],
       "callees": [
@@ -25270,7 +25275,7 @@
     },
     {
       "evidence_type": "LIVE_RUNTIME_PROVEN",
-      "count": 260
+      "count": 261
     },
     {
       "evidence_type": "PROOF_JSON_PROVEN",
@@ -25282,7 +25287,7 @@
     },
     {
       "evidence_type": "REAL_STUB_OR_PLACEHOLDER",
-      "count": 2
+      "count": 3
     },
     {
       "evidence_type": "REPORT_REFERENCED",
@@ -25459,8 +25464,8 @@
   ],
   "next_decision_reason": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
   "self_map_refresh_policy_id": "PHASE161E_SELF_MAP_REFRESH_AFTER_ACCEPTED_CHANGE_POLICY_V1",
-  "accepted_subject_head": "265bf66569a323bc51505903888188cec902d0e0",
-  "generated_from_worktree_head": "265bf66569a323bc51505903888188cec902d0e0",
+  "accepted_subject_head": "10fcef8415bbd1ed41258e544b72250298f745cf",
+  "generated_from_worktree_head": "10fcef8415bbd1ed41258e544b72250298f745cf",
   "map_artifact_head": null,
   "map_artifact_commit_pending": true,
   "map_refresh_status": "SELF_KNOWLEDGE_READY",
@@ -25471,7 +25476,7 @@
   "refresh_result_path": "reports/self_development/self_map_refresh_after_acceptance_result.json",
   "recommended_next_learning_tasks": [
     {
-      "gap_id": "PHASE161J_RECOMMENDATION_20260609064721",
+      "gap_id": "PHASE161J_RECOMMENDATION_20260609070006",
       "recommended_next_action": "Reconcile accepted PHASE161 school/live evidence against the active route exhaustion rule and produce the next owner route-decision candidate.",
       "why_status": "The active route remains PHASE161 batch school prep and explicitly requires live smoke/exhaustion evidence before route transition.",
       "recommended_next_phase_id": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",

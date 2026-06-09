@@ -20,7 +20,7 @@
     },
     {
       "evidence_type": "LIVE_RUNTIME_PROVEN",
-      "count": 260
+      "count": 261
     },
     {
       "evidence_type": "PROOF_JSON_PROVEN",
@@ -32,7 +32,7 @@
     },
     {
       "evidence_type": "REAL_STUB_OR_PLACEHOLDER",
-      "count": 2
+      "count": 3
     },
     {
       "evidence_type": "REPORT_REFERENCED",
@@ -7224,6 +7224,39 @@
     },
     {
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_dry_run_result.json",
+      "primary_status": "ACTIVE_WIRED_PROVEN",
+      "evidence_type": "LIVE_RUNTIME_PROVEN",
+      "evidence_strength": "LIVE_STRONG",
+      "current_wiring_signals": [
+        "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_PHASE161_BATCH_SCHOOL_PREP.md"
+      ],
+      "live_evidence_paths": [
+        "proofs/self_development/PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_V1.json"
+      ],
+      "proof_evidence_paths": [
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_BLOCKER_INPUTS_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_GATE_WITH_PARTIAL_USEFULNESS_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_SAFETY_CONTRACT_SCAFFOLD_V1.json",
+        "proofs/self_development/PHASE162_ACCEPT_SAFETY_DRY_RUN_ACTIVATION_V1.json",
+        "proofs/self_development/PHASE162_ATOM_ACCEPT_READINESS_GATE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_BATCH_ADMISSION_ENVELOPE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_ATOM_EXECUTED_USE_PROOF_V1.json",
+        "proofs/self_development/PHASE162_ATOM_USEFULNESS_SAFETY_BLOCKERS_V1.json",
+        "proofs/self_development/PHASE162_AUTONOMOUS_ACCEPT_POLICY_GATE_V1.json",
+        "proofs/self_development/PHASE162_AUTONOMOUS_ADMISSION_CYCLE_CONTROLLER_V1.json",
+        "proofs/self_development/PHASE162_BOUNDED_LIVE_DAEMON_ABSORB_TRIAL_SANDBOX_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_BOUNDED_ABSORB_TRIAL_V1.json",
+        "proofs/self_development/PHASE162_CONTROLLER_CONSUME_NEXT_CYCLE_TRIAL_V1.json",
+        "proofs/self_development/PHASE162_LOCAL_ATOM_CANDIDATE_FREEZE_QUARANTINE_V1.json",
+        "proofs/self_development/PHASE162_NEXT_CYCLE_IMPROVEMENT_TRIAL_SANDBOX_V1.json",
+        "proofs/self_development/PHASE162_POLICY_GATE_DECISION_EXPLANATION_V1.json",
+        "proofs/self_development/PHASE162_USEFULNESS_BLOCKERS_WITH_EXECUTED_USE_V1.json"
+      ]
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_dry_run_validation.json",
       "primary_status": "ACTIVE_WIRED_PROVEN",
       "evidence_type": "LIVE_RUNTIME_PROVEN",
       "evidence_strength": "LIVE_STRONG",

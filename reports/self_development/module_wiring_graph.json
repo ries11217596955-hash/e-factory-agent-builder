@@ -6544,6 +6544,11 @@
       "node_type": "report"
     },
     {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_blocked_atoms.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_blocked_atoms.json",
+      "node_type": "report"
+    },
+    {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_commit_plan.json",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_commit_plan.json",
       "node_type": "report"
@@ -6551,6 +6556,11 @@
     {
       "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_dry_run_result.json",
       "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_dry_run_result.json",
+      "node_type": "report"
+    },
+    {
+      "id": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_dry_run_validation.json",
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_dry_run_validation.json",
       "node_type": "report"
     },
     {
@@ -21744,10 +21754,10 @@
     },
     {
       "source": "reports/self_development/accepted_change_memory_snapshot.json",
-      "target": "modules/invoke_phase162_atom_batch_admission_envelope_001.ps1",
+      "target": "modules/invoke_phase162_controlled_accept_candidate_dry_run_for_atom_batch_001.ps1",
       "edge_type": "calls",
       "confidence": "medium",
-      "evidence_snippet_or_pattern": "invoke_phase162_atom_batch_admission_envelope_001"
+      "evidence_snippet_or_pattern": "invoke_phase162_controlled_accept_candidate_dry_run_for_atom_batch_001"
     },
     {
       "source": "reports/self_development/agent_body_map.json",

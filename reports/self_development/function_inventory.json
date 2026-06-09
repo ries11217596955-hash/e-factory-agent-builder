@@ -5694,7 +5694,7 @@
       "exported_behavior_guess": "Read-Json, Write-Json",
       "write_outputs_detected": [
         "New-Item -ItemType Directory -Force -Path $dir | Out-Null",
-        "ConvertTo-Json -Depth 100 | Set-Content -Path $Path -Encoding UTF8",
+        "ConvertTo-Json -InputObject $Object -Depth 100 | Set-Content -Path $Path -Encoding UTF8",
         "New-Item -ItemType Directory -Force -Path $OutputRoot | Out-Null",
         "Set-Content -Path (Join-Path $OutputRoot \"PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_REPORT.md\") -Encoding UTF8"
       ],

@@ -18,6 +18,15 @@
       "why_status": "Executable or near-empty artifact has a real stub/not-implemented signal.",
       "safe_repair_possible": true,
       "recommended_action": "Repair only under a bounded task with validator coverage."
+    },
+    {
+      "path": "reports/self_development/phase162_admission_freeze_absorb/PHASE162_CONTROLLED_ACCEPT_CANDIDATE_DRY_RUN_FOR_ATOM_BATCH_20260609_104521/controlled_accept_candidate_blocked_atoms.json",
+      "artifact_type": "report",
+      "stub_signal": "low_size_file",
+      "severity": "medium",
+      "why_status": "File is too small to provide meaningful behavior or evidence.",
+      "safe_repair_possible": true,
+      "recommended_action": "Inspect before use; do not delete without owner approval."
     }
   ]
 }

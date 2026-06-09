@@ -1,13 +1,13 @@
 {
   "phase": "PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1",
   "classifier_version": "PHASE161D_STRICT_EVIDENCE_V1",
-  "total_artifacts": 1644,
-  "active_wired_proven_count": 341,
+  "total_artifacts": 1646,
+  "active_wired_proven_count": 342,
   "active_wired_unproven_count": 73,
   "present_not_wired_count": 277,
   "superseded_count": 1,
   "false_positive_stub_count": 89,
-  "real_stub_count": 2,
+  "real_stub_count": 3,
   "evidence_type_counts": [
     {
       "evidence_type": "CURRENT_ROUTE_WIRED",
@@ -27,7 +27,7 @@
     },
     {
       "evidence_type": "LIVE_RUNTIME_PROVEN",
-      "count": 260
+      "count": 261
     },
     {
       "evidence_type": "PROOF_JSON_PROVEN",
@@ -39,7 +39,7 @@
     },
     {
       "evidence_type": "REAL_STUB_OR_PLACEHOLDER",
-      "count": 2
+      "count": 3
     },
     {
       "evidence_type": "REPORT_REFERENCED",

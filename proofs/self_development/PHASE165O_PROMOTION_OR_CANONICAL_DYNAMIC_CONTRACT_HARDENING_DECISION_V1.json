@@ -1,0 +1,23 @@
+{
+  "phase": "PHASE165O_PROMOTION_OR_CANONICAL_DYNAMIC_CONTRACT_HARDENING_DECISION",
+  "created_utc": "2026-06-10T12:32:42.2658804Z",
+  "mode": "DECISION_ONLY_NO_PROTECTED_MUTATION",
+  "status": "PASS",
+  "validation_passed": true,
+  "decision_path": "self_build_programs/promotion_decisions/PHASE165O_PROMOTION_OR_HARDENING_DECISION_V1.json",
+  "decision": "HARDEN_CANONICAL_DYNAMIC_CONTRACT_FIRST",
+  "promotion_ready": false,
+  "hardening_required": true,
+  "promote_now": false,
+  "canonical_trial_passed": true,
+  "legacy_fixed_self_build_program_001_count": 0,
+  "hardening_signal_count": 8,
+  "registry_has_promoted_organ": false,
+  "protected_state_mutated": false,
+  "route_lock_mutated": false,
+  "task_queue_mutated": false,
+  "orchestrator_run": false,
+  "external_fetch_or_install": false,
+  "codex_used": false,
+  "next_required_action": "PHASE165O_HARDEN_CANONICAL_DYNAMIC_CONTRACT_FOR_REUSABLE_ORGAN"
+}

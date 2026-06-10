@@ -23,10 +23,23 @@ function Write-JsonFile($Path, $Object) {
   $Object | ConvertTo-Json -Depth 50 | Set-Content -Path $Path -Encoding UTF8
 }
 
+
+# PHASE164O_OWNER_MATERIAL_PROGRAM_CONTEXT_V1
+function Get-ObjectPropertyValue {
+  param([object]$Object, [string]$Name)
+  if ($null -eq $Object) { return $null }
+  $Prop = $Object.PSObject.Properties | Where-Object { $_.Name -ieq $Name } | Select-Object -First 1
+  if ($null -eq $Prop) { return $null }
+  return $Prop.Value
+}
 Write-Output "SELF_BUILD_PROGRAM_GENERATOR_START"
 
 $decisionReport = Read-Json $DecisionReportPath
 $decisionProof = Read-Json $DecisionProofPath
+
+$ownerMaterialInput = Get-ObjectPropertyValue -Object $decisionReport -Name "owner_material_input"
+$ownerMaterialAvailable = $false
+if ($null -ne $ownerMaterialInput) { $ownerMaterialAvailable = [bool](Get-ObjectPropertyValue -Object $ownerMaterialInput -Name "available") }
 
 if ($decisionReport.status -ne "PASS") {
   throw "SOURCE_DECISION_REPORT_STATUS_NOT_PASS=$($decisionReport.status)"
@@ -50,6 +63,8 @@ $program = [ordered]@{
   generated_by_phase = "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1"
   source_decision_report = $DecisionReportPath
   source_decision_proof = $DecisionProofPath
+    owner_material_input = $ownerMaterialInput
+    owner_material_available = $ownerMaterialAvailable
   target_next_step = "PHASE89_GENERATED_PROGRAM_ADMISSION_V1"
   active_line = "AGENT_BUILDER / SELF_BUILD"
   purpose = "Create an admission-ready candidate program that will be evaluated in PHASE89 before any execution is allowed."
@@ -122,6 +137,7 @@ $report = [ordered]@{
   generated_program_status = "GENERATED_CANDIDATE"
   source_decision_status = $decisionReport.status
   source_decision_next_step = $decisionProof.next_allowed_step
+    owner_material_input_available = $ownerMaterialAvailable
   next_recommended_step = "PHASE89_GENERATED_PROGRAM_ADMISSION_V1"
   admission_required = $true
   execution_performed = $false
@@ -142,6 +158,7 @@ $proof = [ordered]@{
   generated_program_path = $ProgramOutputPath
   generated_program_status = "GENERATED_CANDIDATE"
   admission_performed = $false
+    owner_material_input_available = $ownerMaterialAvailable
   execution_performed = $false
   next_allowed_step = "PHASE89_GENERATED_PROGRAM_ADMISSION_V1"
   queue_returned_to_none = $true
@@ -156,3 +173,4 @@ Write-Output "SELF_BUILD_PROGRAM_WRITTEN=$ProgramOutputPath"
 Write-Output "SELF_BUILD_PROGRAM_GENERATOR_REPORT_WRITTEN=$ReportOutputPath"
 Write-Output "SELF_BUILD_PROGRAM_GENERATOR_PROOF_WRITTEN=$ProofOutputPath"
 Write-Output "SELF_BUILD_PROGRAM_GENERATOR_COMPLETE"
+

@@ -1,7 +1,8 @@
 [CmdletBinding()]
 param(
   [string]$OutputReportPath = "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
-  [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
+  [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path,
+  [string]$OwnerMaterialInputPath = "self_build_batch/owner_material_inputs/ACTIVE_OWNER_MATERIAL_INPUT.json"
 )
 
 $ErrorActionPreference = "Stop"
@@ -88,6 +89,11 @@ function Write-JsonFile {
   $json = ($Object | ConvertTo-Json -Depth 100) -replace "`r`n", "`n"
   if (-not $json.EndsWith("`n")) {
     $json += "`n"
+  }
+    # PHASE164O_WRITE_JSON_CREATES_PARENT_DIR
+  $dir = Split-Path -Parent $fullPath
+  if ($dir -and -not (Test-Path -LiteralPath $dir)) {
+    New-Item -ItemType Directory -Force -Path $dir | Out-Null
   }
   [System.IO.File]::WriteAllText($fullPath, $json, [System.Text.UTF8Encoding]::new($false))
 }
@@ -214,6 +220,47 @@ function Count-TrustedMaterials {
   return $count
 }
 
+
+# PHASE164O_OWNER_MATERIAL_INPUT_V1
+function Read-OwnerMaterialInput {
+  param([string]$Path)
+
+  $result = [ordered]@{
+    available = $false
+    path = $Path
+    read_status = "NOT_FOUND"
+    status = ""
+    source_kind = ""
+    source_candidate_id = ""
+    source_candidate_path = ""
+    source_request_path = ""
+    target_real_process = ""
+    not_a_parallel_conveyor = $true
+  }
+
+  $fullPath = Join-RepoPath $Path
+  if (-not (Test-Path -LiteralPath $fullPath)) {
+    return [pscustomobject]$result
+  }
+
+  try {
+    $json = Get-Content -LiteralPath $fullPath -Raw | ConvertFrom-Json
+    $result.available = $true
+    $result.read_status = "READ"
+    $result.status = "$(Get-PropertyValue -Object $json -Name "status")"
+    $result.source_kind = "$(Get-PropertyValue -Object $json -Name "source_kind")"
+    $result.source_candidate_id = "$(Get-PropertyValue -Object $json -Name "source_candidate_id")"
+    $result.source_candidate_path = "$(Get-PropertyValue -Object $json -Name "source_candidate_path")"
+    $result.source_request_path = "$(Get-PropertyValue -Object $json -Name "source_request_path")"
+    $result.target_real_process = "$(Get-PropertyValue -Object $json -Name "target_real_process")"
+    return [pscustomobject]$result
+  } catch {
+    $result.available = $false
+    $result.read_status = "READ_ERROR"
+    $result.error = $_.Exception.Message
+    return [pscustomobject]$result
+  }
+}
 Write-Host "SELF_DEVELOPMENT_DECISION_KERNEL_START"
 
 foreach ($required in $RequiredCoreEvidence) {
@@ -229,6 +276,8 @@ $optionalObjects = @{}
 foreach ($optional in $OptionalEvidence) {
   $optionalObjects[$optional.path] = Read-Evidence -Path $optional.path -Kind $optional.kind -Required $false
 }
+
+$ownerMaterialInput = Read-OwnerMaterialInput -Path $OwnerMaterialInputPath
 
 $capabilities = Get-ArrayProperty -Object $roadmap -Names @("capabilities")
 $tasks = Get-ArrayProperty -Object $queue -Names @("tasks")
@@ -296,9 +345,13 @@ $report = [ordered]@{
   queue_state_before = $queueStateBefore
   evidence_inputs_read = @($script:EvidenceInputsRead)
   missing_optional_evidence = @($script:MissingOptionalEvidence)
+    owner_material_input = $ownerMaterialInput
   capability_summary = $capabilitySummary
   proven_foundation_summary = $provenFoundationSummary
   current_gap = [ordered]@{
+      owner_material_considered = [bool]$ownerMaterialInput.available
+      owner_material_source_candidate_id = "$($ownerMaterialInput.source_candidate_id)"
+      owner_material_source_request_path = "$($ownerMaterialInput.source_request_path)"
     gap_id = "SELF_BUILD_PROGRAM_GENERATOR_MISSING"
     description = "Builder can now classify materials, quarantine safe candidates, define operation contracts, smoke a sandbox install, and create operation dry-run plans, but it does not yet synthesize a self-build program from a decision."
     gap_type = "SELF_DEVELOPMENT_PROGRAM_GENERATION"
@@ -334,3 +387,5 @@ Write-Host "SELF_DEVELOPMENT_DECISION_REPORT_WRITTEN=$OutputReportPath"
 Write-Host "SELF_DEVELOPMENT_DECISION_KERNEL_COMPLETE"
 
 return [pscustomobject]$report
+
+

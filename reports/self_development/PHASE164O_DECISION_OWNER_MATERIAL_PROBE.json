@@ -1,0 +1,351 @@
+{
+    "status":  "PASS",
+    "generated_at":  "2026-06-10T07:52:36.6126370Z",
+    "active_line":  "AGENT_BUILDER / SELF_BUILD",
+    "current_phase":  "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+    "last_proven_phase":  "PHASE86_OPERATION_RUNTIME_SKELETON_V1",
+    "last_proven_commit_expected":  "89a7b5b",
+    "queue_state_before":  {
+                               "active_task_id":  "NONE",
+                               "phase87_task_status":  "COMPLETED"
+                           },
+    "evidence_inputs_read":  [
+                                 {
+                                     "path":  "CAPABILITY_ROADMAP.json",
+                                     "required":  true,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "14A2C9CC8F59827AEAB6AEF8C7E65872F867E1E4170DCDE997ED9109E6360E34",
+                                     "byte_length":  32017,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "GENESIS_STATE.json",
+                                     "required":  true,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "66DD4205D90C22DE5EB45A23C4B142AC27D7FB005DF4AD530A817B9E345D3681",
+                                     "byte_length":  14627,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "TASK_QUEUE.json",
+                                     "required":  true,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "C6374BFC6C8CD6A850612E01E776823BCA30A00724646E9E5E53FD6C63356067",
+                                     "byte_length":  81818,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "packs/registry.json",
+                                     "required":  true,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "670A8F645F2BFEB77A197985E00906E39A9EB38F50575D0F5A658B892F461C2B",
+                                     "byte_length":  131942,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "orchestrator/run.ps1",
+                                     "required":  true,
+                                     "kind":  "text",
+                                     "read_status":  "READ",
+                                     "sha256":  "51AA1CBEB0339B2DF0CBA84606E414D9DFA7395DED7179CC5248B3C4BC5CC91D",
+                                     "byte_length":  69281,
+                                     "parsed_json":  false
+                                 },
+                                 {
+                                     "path":  "self_knowledge/BUILDER_SELF_MODEL.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "872FDD586324C85B569ADDB29F4400593BC672EC1F54980F587017782E024F29",
+                                     "byte_length":  187380,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "self_knowledge/CAPABILITY_MANIFEST.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "E5C9D5A78B2C095A26BAC29CAE31AA7544B6FA5AA5900707EF038DDD63F4EDF7",
+                                     "byte_length":  37254,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "self_knowledge/ROADMAP_STATE.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "FA6682F244B28565010EDE68957E17F43F649B43B5A4E29C4BB13185560087B8",
+                                     "byte_length":  3856,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "proofs/self_knowledge/AGENT_BUILDER_SELF_KNOWLEDGE_SYSTEM_FULL_CONTRACT_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "5F5A481CB0A9852C1434209F1B8C5FC96FC962E335D6B569A38ED1F69E494472",
+                                     "byte_length":  1314,
+                                     "parsed_json":  true,
+                                     "reported_status":  "LOCAL PASS"
+                                 },
+                                 {
+                                     "path":  "proofs/materials/MATERIAL_ACQUISITION_BOOTSTRAP_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "6906327CE2266EA4B94917B2EDABA8207FE75660E5E56D21024B5D7738948314",
+                                     "byte_length":  1223,
+                                     "parsed_json":  true,
+                                     "reported_status":  "PASS"
+                                 },
+                                 {
+                                     "path":  "proofs/materials/MANUAL_SCOUT_PASS_IMPORT_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "B902F97480A60B1DC82EF09594B0E1B8DAE5F92862339C7F384FE77C07DCA8A3",
+                                     "byte_length":  1265,
+                                     "parsed_json":  true,
+                                     "reported_status":  "PASS"
+                                 },
+                                 {
+                                     "path":  "proofs/materials/MATERIAL_POLICY_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "F45F1687CFD5885AA393F76655D674F624883FF8F8F4ED8951EE53B1C4FF220D",
+                                     "byte_length":  1898,
+                                     "parsed_json":  true,
+                                     "reported_status":  "PASS"
+                                 },
+                                 {
+                                     "path":  "proofs/materials/FIRST_QUARANTINE_TRIAL_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "B0DE21B363585A84551BF5444A05118A7D850FDB0416E1DCB7498B46D6A1852E",
+                                     "byte_length":  2772,
+                                     "parsed_json":  true,
+                                     "reported_status":  "PASS"
+                                 },
+                                 {
+                                     "path":  "proofs/operations/OPERATION_CONTRACT_SKELETON_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "B2A7FEE1049CCFC7BE77C5AB1E90AA8C73E2CA40FA2BDAD04359B9098C68C31F",
+                                     "byte_length":  2073,
+                                     "parsed_json":  true,
+                                     "reported_status":  "PASS"
+                                 },
+                                 {
+                                     "path":  "proofs/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "C220EFD398C016265CCDD457E7561D43F9F3E627B6C7D70BFD0FC8A0AB62709C",
+                                     "byte_length":  2337,
+                                     "parsed_json":  true,
+                                     "reported_status":  "PASS"
+                                 },
+                                 {
+                                     "path":  "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "F24420A65844CFFC5B39973DF2AD99A6B1AF6BD37CBB95A6B0C2AE5ED043ABD0",
+                                     "byte_length":  2647,
+                                     "parsed_json":  true,
+                                     "reported_status":  "PASS"
+                                 },
+                                 {
+                                     "path":  "proofs/operations/OPERATION_RUNTIME_SKELETON_V1.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "316C9249DF547C2D60911284F768D6903A797AD1CEE167A92892A196C16011F6",
+                                     "byte_length":  2707,
+                                     "parsed_json":  true,
+                                     "reported_status":  "PASS"
+                                 },
+                                 {
+                                     "path":  "materials/MATERIAL_CATALOG.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "2B9755E9527AD4930B8F60D7371833DCD6A78478479483F05E47AB96E0D246E6",
+                                     "byte_length":  7234,
+                                     "parsed_json":  true,
+                                     "reported_status":  "GOVERNED_IMPORTED"
+                                 },
+                                 {
+                                     "path":  "materials/MATERIAL_POLICY.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "BD27CB13C8F91E77231610DFB70AF2CCACA1F5C18B9B44CA68537492DCC40929",
+                                     "byte_length":  8585,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "materials/quarantine/QUARANTINE_BATCH_001.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "AEF875A089D45362BEDE6563102A4D67922739399EBC1FEF7C1CE33754B903E6",
+                                     "byte_length":  2071,
+                                     "parsed_json":  true
+                                 },
+                                 {
+                                     "path":  "operations/registry.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "37D6FAA8AF41932882B6603EB0332CE9C58F80A0E2602AA62A662129662951D2",
+                                     "byte_length":  2156,
+                                     "parsed_json":  true,
+                                     "reported_status":  "CONTRACTS_REGISTERED"
+                                 },
+                                 {
+                                     "path":  "operations/contracts/validate_json_schema_with_ajv.contract.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "865766E9C5CB73EA47664386EE18FFF4D43F7BBCE70AA335B9B2AD35113A3944",
+                                     "byte_length":  3609,
+                                     "parsed_json":  true,
+                                     "reported_status":  "CONTRACT_READY"
+                                 },
+                                 {
+                                     "path":  "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "715FF91BF5589C13D4B2271EA22409456DD37F2542B43562267F06684648B2E6",
+                                     "byte_length":  3726,
+                                     "parsed_json":  true,
+                                     "reported_status":  "CONTRACT_READY"
+                                 },
+                                 {
+                                     "path":  "operations/runtime/requests/FIRST_OPERATION_RUNTIME_DRY_RUN_REQUEST.json",
+                                     "required":  false,
+                                     "kind":  "json",
+                                     "read_status":  "READ",
+                                     "sha256":  "3198D49D9713F8DC7EF0C226558848866DCC6A57DB5E0EB49D6F21FE0EBF1EBB",
+                                     "byte_length":  1422,
+                                     "parsed_json":  true
+                                 }
+                             ],
+    "missing_optional_evidence":  [
+                                      {
+                                          "path":  "reports/self_knowledge/BUILDER_SELF_DESCRIBE_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/materials/MATERIAL_ACQUISITION_BOOTSTRAP_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/materials/MANUAL_SCOUT_PASS_IMPORT_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/materials/MATERIAL_POLICY_V1_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/materials/FIRST_QUARANTINE_TRIAL_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/operations/OPERATION_CONTRACT_SKELETON_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/operations/FIRST_WRAPPER_OPERATION_CONTRACTS_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/operations/FIRST_SMOKE_INSTALL_TRIAL_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/operations/OPERATION_RUNTIME_SKELETON_REPORT.json",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      },
+                                      {
+                                          "path":  "reports/planning/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V1.md",
+                                          "classification":  "MISSING_OPTIONAL_EVIDENCE"
+                                      }
+                                  ],
+    "owner_material_input":  {
+                                 "available":  true,
+                                 "path":  "self_build_batch/owner_material_inputs/ACTIVE_OWNER_MATERIAL_INPUT.json",
+                                 "read_status":  "READ",
+                                 "status":  "READY",
+                                 "source_kind":  "OWNER_CANDIDATE_SELF_GROWTH_REQUEST",
+                                 "source_candidate_id":  "OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+                                 "source_candidate_path":  "owner_orders/candidate_inbox/OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001.candidate.json",
+                                 "source_request_path":  "self_build_batch/owner_candidate_self_growth_adapter/PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001/OWNER_CANDIDATE_SELF_GROWTH_REQUEST.json",
+                                 "target_real_process":  "PHASE87_DECISION_KERNEL_TO_PHASE88_SELF_BUILD_PROGRAM_GENERATOR",
+                                 "not_a_parallel_conveyor":  true
+                             },
+    "capability_summary":  {
+                               "roadmap_capability_count":  96,
+                               "roadmap_completed_count":  95,
+                               "roadmap_active_count":  0,
+                               "genesis_completed_count":  94,
+                               "queue_task_count":  120,
+                               "pack_registry_count":  115,
+                               "queue_active_task_id":  "NONE",
+                               "genesis_current_phase":  "PHASE_87",
+                               "genesis_current_capability":  "self_development_decision_kernel_v1"
+                           },
+    "proven_foundation_summary":  {
+                                      "phase86_proof_status":  "PASS",
+                                      "phase86_next_allowed_step":  "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+                                      "operation_runtime_report_status":  "",
+                                      "material_catalog_entry_count":  4,
+                                      "material_trusted_count":  0,
+                                      "material_policy_decision_count":  0,
+                                      "quarantine_selected_count":  2,
+                                      "operation_registry_status":  "CONTRACTS_REGISTERED",
+                                      "operation_count":  2,
+                                      "trusted_operation_count":  0,
+                                      "route_lock_report_available":  false,
+                                      "self_knowledge_model_available":  true
+                                  },
+    "current_gap":  {
+                        "owner_material_considered":  true,
+                        "owner_material_source_candidate_id":  "OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+                        "owner_material_source_request_path":  "self_build_batch/owner_candidate_self_growth_adapter/PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001/OWNER_CANDIDATE_SELF_GROWTH_REQUEST.json",
+                        "gap_id":  "SELF_BUILD_PROGRAM_GENERATOR_MISSING",
+                        "description":  "Builder can now classify materials, quarantine safe candidates, define operation contracts, smoke a sandbox install, and create operation dry-run plans, but it does not yet synthesize a self-build program from a decision.",
+                        "gap_type":  "SELF_DEVELOPMENT_PROGRAM_GENERATION"
+                    },
+    "recommended_next_step":  "Create the first self-build program generator so a decision report can be transformed into a bounded self-build program plan without executing generated programs.",
+    "recommended_next_step_id":  "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
+    "decision_reason":  "PHASE79 through PHASE86 established material governance and operation runtime gates. The next internal bottleneck is converting evidence-backed decisions into self-build program generation while preserving queue, proof, and cut-list discipline.",
+    "risks":  [
+                  "Decision output depends on repo evidence freshness and does not independently prove remote state.",
+                  "Optional evidence can be missing and is classified, but missing optional context can reduce decision richness.",
+                  "PHASE87 does not generate PHASE88 artifacts or execute any generated self-build program.",
+                  "Future PHASE88 must preserve the same no-install, no-external-agent, and proof-first boundaries."
+              ],
+    "cut_list":  [
+                     "Do not create PHASE88 yet.",
+                     "Do not generate self-build programs yet.",
+                     "Do not admit a generated program.",
+                     "Do not execute operation runtime.",
+                     "Do not install tools.",
+                     "Do not fetch external sources.",
+                     "Do not mark materials TRUSTED.",
+                     "Do not produce external agents.",
+                     "Do not change route lock.",
+                     "Do not commit."
+                 ]
+}

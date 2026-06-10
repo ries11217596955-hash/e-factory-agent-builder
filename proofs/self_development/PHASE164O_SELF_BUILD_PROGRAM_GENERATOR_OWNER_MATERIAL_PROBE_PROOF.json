@@ -1,0 +1,18 @@
+﻿{
+    "status":  "PASS",
+    "phase":  "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
+    "task_id":  "TASK_SELF_BUILD_PROGRAM_GENERATOR_V1_001",
+    "runtime_mode":  "SELF_BUILD",
+    "generated_at":  "2026-06-10T07:52:38.1620430Z",
+    "generated_program_created":  true,
+    "generated_program_path":  "self_build_programs/generated/PHASE164O_SELF_BUILD_PROGRAM_OWNER_MATERIAL_PROBE.json",
+    "generated_program_status":  "GENERATED_CANDIDATE",
+    "admission_performed":  false,
+    "owner_material_input_available":  true,
+    "execution_performed":  false,
+    "next_allowed_step":  "PHASE89_GENERATED_PROGRAM_ADMISSION_V1",
+    "queue_returned_to_none":  true,
+    "no_external_agent_production":  true,
+    "no_external_install":  true,
+    "no_external_fetch":  true
+}

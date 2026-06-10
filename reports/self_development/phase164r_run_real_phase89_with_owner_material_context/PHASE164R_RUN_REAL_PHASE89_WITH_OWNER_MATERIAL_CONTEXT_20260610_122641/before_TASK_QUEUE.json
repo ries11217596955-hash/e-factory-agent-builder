@@ -1,4 +1,4 @@
-{
+﻿{
     "queue_version":  "0.3",
     "active_task_id":  "NONE",
     "tasks":  [
@@ -227,10 +227,7 @@
                       "phase":  "PHASE89",
                       "gate":  "GENERATED_PROGRAM_ADMISSION_V1",
                       "pack_id":  "PHASE89_GENERATED_PROGRAM_ADMISSION_V1",
-                      "completed_at":  "2026-06-10T08:26:44.0780555Z",
-                      "state":  "RUNNING",
-                      "phase164r_run_id":  "PHASE164R_REAL_PHASE89_OWNER_CONTEXT_20260610_122641",
-                      "phase164r_owner_material_context":  true
+                      "completed_at":  "2026-05-29T12:27:50.6717888Z"
                   },
                   {
                       "task_id":  "TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001",

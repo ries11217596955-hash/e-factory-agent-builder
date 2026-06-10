@@ -1,0 +1,25 @@
+{
+  "schema": "PHASE164H_EXISTING_BUILDER_QUEUE_ENTRYPOINT_DISCOVERY_MANIFEST_V1",
+  "created_at": "2026-06-10T06:52:59.1003893Z",
+  "repo": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "pre_head": "db69808",
+  "pre_remote": "db69808",
+  "queue_task_id": "PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+  "queue_task_found": true,
+  "queue_task_status": "queued",
+  "queue_task_container": "tasks",
+  "scan_roots": [
+    "orchestrator",
+    "tools",
+    "packs"
+  ],
+  "scan_file_count": 486,
+  "entrypoint_candidate_count": 25,
+  "discovery_decision": "ENTRYPOINT_CANDIDATES_FOUND_SELECT_NEXT_RUN",
+  "task_queue_mutation": false,
+  "accepted_core_mutation": false,
+  "route_lock_mutation": false,
+  "codex_execution": false,
+  "archive_scan_performed": false
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "PHASE164H_EXISTING_BUILDER_QUEUE_ENTRYPOINT_DISCOVERY_VALIDATION_V1",
+  "status": "PASS",
+  "phase164g_status": "PASS",
+  "queue_task_found": true,
+  "queue_task_status": "queued",
+  "queue_task_container": "tasks",
+  "scan_file_count": 486,
+  "entrypoint_candidate_count": 25,
+  "discovery_decision": "ENTRYPOINT_CANDIDATES_FOUND_SELECT_NEXT_RUN",
+  "task_queue_mutation": false,
+  "accepted_core_mutation": false,
+  "route_lock_mutation": false,
+  "codex_execution": false,
+  "archive_scan_performed": false
+}

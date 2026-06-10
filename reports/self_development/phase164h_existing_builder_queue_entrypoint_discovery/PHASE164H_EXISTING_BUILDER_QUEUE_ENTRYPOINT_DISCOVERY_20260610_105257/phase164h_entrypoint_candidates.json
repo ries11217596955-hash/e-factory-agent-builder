@@ -1,0 +1,421 @@
+[
+  {
+    "path": ".\\AGENTS.md",
+    "score": 30,
+    "match_count": 1,
+    "sample_lines": [
+      "L28: - `AGENT_BUILDER_SELF_DEVELOPMENT`",
+      "L32: ### AGENT_BUILDER_SELF_DEVELOPMENT",
+      "L36: Use only when the bottleneck is internal Builder capability, queue handling, state handling, pack execution, proof generation, validator integration, or honest failure reporting.",
+      "L66: - `TASK_QUEUE.json`",
+      "L68: - `orchestrator/run.ps1`",
+      "L80: - orchestrator owns flow only;",
+      "L98: 5. update state and queue only after evidence;",
+      "L165: - `TASK_QUEUE.json`",
+      "L167: - `orchestrator/run.ps1`",
+      "L193: - state, roadmap, and queue contradict each other;",
+      "L227: - no deleting proof/state/queue/runtime/generated assets by filename guess;",
+      "L243: - TASK_QUEUE.json"
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE64_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L1: param([string]$RepoRoot,[string]$RunId,[switch]$InvokedByOrchestrator)",
+      "L5: function Invoke-NativeGitCommand {",
+      "L35: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L41: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L45: \".\\TASK_QUEUE.json\",",
+      "L52: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L57: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE64_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_CONTRACT_V1\\payload\\validators\\validate_generated_family_autonomous_conveyor_contract_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L24: $queue = Get-Content \".\\TASK_QUEUE.json\" -Raw | ConvertFrom-Json",
+      "L25: if ([string]$queue.active_task_id -ne $phase64TaskId) { throw \"PHASE64 validator requires TASK_QUEUE active_task_id=$phase64TaskId before finalization.\" }",
+      "L28: $result = Invoke-GeneratedFamilyAutonomousConveyor -RepoRoot $RepoRoot -RunId $RunId -MaxPacks 3 -ReportPath $reportPath -ProofPath $proofPath -DryRun $true -ExcludedTaskIds @($phase64TaskId)",
+      "L41: $taskQueue = Get-Content \".\\TASK_QUEUE.json\" -Raw | ConvertFrom-Json",
+      "L43: $task = @($taskQueue.tasks | Where-Object { $_.task_id -eq $phase64TaskId })[0]",
+      "L47: $taskQueue.active_task_id = \"NONE\"",
+      "L54: $taskQueue | ConvertTo-Json -Depth 100 | Set-Content \".\\TASK_QUEUE.json\" -Encoding UTF8"
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE65_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L64: Invoke-NativeGitCommand -Label \"ADD_OPTIONAL_MODULE\" -Arguments @(\"add\", $Path)",
+      "L68: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L75: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L79: \".\\TASK_QUEUE.json\",",
+      "L93: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L98: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE65_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1\\payload\\validators\\validate_generated_family_autonomous_conveyor_live_trial_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L105: $Conclusion = \"The generated-family autonomous conveyor executed one active generated-family trial pack through the live path and returned the Builder queue to NONE.\"",
+      "L123: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L125: if ([string]$Queue.active_task_id -ne $ParentTaskId) {",
+      "L126: throw \"PHASE65 validator requires TASK_QUEUE active_task_id=$ParentTaskId before live trial staging.\"",
+      "L134: $ParentTask = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $ParentTaskId -Label \"PHASE65 task\"",
+      "L136: $GeneratedTask = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $GeneratedTaskId -Label \"Generated trial task\"",
+      "L140: if ([string]$GeneratedCapability.status -ne \"QUEUED\") { throw \"Generated trial capability must be QUEUED before runtime.\" }",
+      "L141: if ([string]$GeneratedTask.status -ne \"QUEUED\") { throw \"Generated trial task must be QUEUED before runtime.\" }",
+      "L146: $Queue.active_task_id = $GeneratedTaskId",
+      "L151: Write-JsonFile -Path \".\\TASK_QUEUE.json\" -Value $Queue",
+      "L156: $null = Invoke-GeneratedFamilyAutonomousConveyor `",
+      "L190: $FinalQueue = Read-JsonFile \".\\TASK_QUEUE.json\""
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE66_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L40: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L47: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L51: \".\\TASK_QUEUE.json\",",
+      "L64: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L69: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE66_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1\\payload\\validators\\validate_generated_family_autonomous_conveyor_failure_recovery_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L107: $Conclusion = \"The conveyor detected a controlled generated-pack failure, did not fake PASS, preserved failure evidence, and returned the Builder queue to NONE.\"",
+      "L125: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L127: if ([string]$Queue.active_task_id -ne $ParentTaskId) {",
+      "L128: throw \"PHASE66 validator requires TASK_QUEUE active_task_id=$ParentTaskId before failure recovery staging.\"",
+      "L136: $ParentTask = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $ParentTaskId -Label \"PHASE66 task\"",
+      "L138: $GeneratedTask = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $GeneratedTaskId -Label \"Generated failure trial task\"",
+      "L142: if ([string]$GeneratedCapability.status -ne \"QUEUED\") { throw \"Generated failure trial capability must be QUEUED before runtime.\" }",
+      "L143: if ([string]$GeneratedTask.status -ne \"QUEUED\") { throw \"Generated failure trial task must be QUEUED before runtime.\" }",
+      "L148: $Queue.active_task_id = $GeneratedTaskId",
+      "L154: Write-JsonFile -Path \".\\TASK_QUEUE.json\" -Value $Queue",
+      "L159: $null = Invoke-GeneratedFamilyAutonomousConveyor `",
+      "L207: $FinalQueue = Read-JsonFile \".\\TASK_QUEUE.json\""
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE67_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L66: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L83: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L88: \".\\TASK_QUEUE.json\",",
+      "L98: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L103: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE67_EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1\\payload\\validators\\validate_remediation_intake_operator_agent_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L179: \"run.ps1\",",
+      "L190: $RunScriptPath = Join-Path $AgentRoot \"run.ps1\"",
+      "L195: Assert-PowerShellParse -Path $RunScriptPath -Label \"remediation intake operator run.ps1\"",
+      "L240: throw \"run.ps1 did not print REMEDIATION_INTAKE_OPERATOR_STATUS=PASS.\"",
+      "L255: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L257: if ([string]$Queue.active_task_id -ne $TaskId) {",
+      "L258: throw \"PHASE67 validator requires TASK_QUEUE active_task_id=$TaskId before runtime.\"",
+      "L264: $Task = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE67 task\"",
+      "L270: $Queue.active_task_id = \"NONE\"",
+      "L282: \"$AgentPath/run.ps1\",",
+      "L292: \"run.ps1 PowerShell parser check passed\",",
+      "L293: \"run.ps1 produced OUTPUT_EXAMPLE_RUNTIME.json\","
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE68_AGENT_GITHUB_ACTION_LAUNCH_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L40: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L66: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L70: \".\\TASK_QUEUE.json\",",
+      "L79: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L84: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE68_AGENT_GITHUB_ACTION_LAUNCH_V1\\payload\\validators\\validate_agent_github_action_launch_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L118: Assert-RequiredPath -Path (Join-Path $AgentRoot \"run.ps1\") -Label \"agent run.ps1\"",
+      "L137: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L141: if ([string]$Queue.active_task_id -ne $TaskId) { throw \"TASK_QUEUE active_task_id must be $TaskId before runtime.\" }",
+      "L144: $Task = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE68 task\"",
+      "L183: \"TASK_QUEUE active_task_id returned to NONE\"",
+      "L193: $Queue.active_task_id = \"NONE\"",
+      "L200: Write-JsonFile -Path \".\\TASK_QUEUE.json\" -Value $Queue",
+      "L205: $FinalQueue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L207: $FinalTask = Get-SingleByProperty -Items @($FinalQueue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE68 task after runtime\"",
+      "L210: if ([string]$FinalQueue.active_task_id -ne \"NONE\") { throw \"TASK_QUEUE active_task_id must be NONE after runtime.\" }"
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE69_AGENT_CATALOG_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L68: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L85: Assert-RequiredPath -Path (Join-Path $AgentRoot \"run.ps1\") -Label \"remediation intake operator agent run.ps1\"",
+      "L100: run_script = \"generated_agents/remediation_intake_operator_agent_v1/run.ps1\"",
+      "L168: generated_agents/remediation_intake_operator_agent_v1/run.ps1",
+      "L176: pwsh -NoProfile -ExecutionPolicy Bypass -File generated_agents/remediation_intake_operator_agent_v1/run.ps1 -InputPath generated_agents/remediation_intake_operator_agent_v1/INPUT_EXAMPLE.json -OutputPath generated_agents/remediation_intake_operator_agent_v1/OUTPUT_EXAMPLE_RUNTIME.json",
+      "L227: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L231: \".\\TASK_QUEUE.json\",",
+      "L241: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L246: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE69_AGENT_CATALOG_V1\\payload\\validators\\validate_agent_catalog_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L140: $AgentRunScript = \"generated_agents/remediation_intake_operator_agent_v1/run.ps1\"",
+      "L160: Assert-RequiredPath -Path (Join-Path $RepoRoot $AgentRunScript) -Label \"registered agent run.ps1\"",
+      "L209: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L213: Assert-Equals -Actual $Queue.active_task_id -Expected $TaskId -Label \"TASK_QUEUE active_task_id before runtime\"",
+      "L216: $Task = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE69 task\"",
+      "L252: \"registered agent folder and run.ps1 exist\",",
+      "L256: \"TASK_QUEUE active_task_id returned to NONE\"",
+      "L273: $Queue.active_task_id = \"NONE\"",
+      "L280: Write-JsonFile -Path \".\\TASK_QUEUE.json\" -Value $Queue",
+      "L285: $FinalQueue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L287: $FinalTask = Get-SingleByProperty -Items @($FinalQueue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE69 task after runtime\"",
+      "L290: Assert-Equals -Actual $FinalQueue.active_task_id -Expected \"NONE\" -Label \"TASK_QUEUE active_task_id after runtime\""
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE63_SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1\\payload\\validators\\validate_second_generated_program_family_live_admission_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L96: [object]$Queue,",
+      "L113: if (@($Queue.tasks | Where-Object { $_.task_id -eq $GeneratedTaskId }).Count -gt 0) {",
+      "L114: throw \"Generated remediation task is already in live queue before PHASE63 admission: $GeneratedTaskId\"",
+      "L127: $QueuePath = Join-Path $RepoRoot \"TASK_QUEUE.json\"",
+      "L131: $Queue = Read-JsonFile $QueuePath",
+      "L141: -Items @($Queue.tasks) `",
+      "L155: $Queue.active_task_id = $Phase57TaskId",
+      "L160: Write-JsonFile -Path $QueuePath -Value $Queue",
+      "L172: Set-Content (Join-Path $RepoRoot \"TASK_QUEUE.json\") $Snapshot.queue -Encoding UTF8",
+      "L186: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L195: -Items @($Queue.tasks) `",
+      "L202: if ($Queue.active_task_id -ne $ExpectedActiveTaskId) {"
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE7_FIRST_PROVEN_EXTERNAL_AGENT\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: if (-not $InvokedByOrchestrator) {",
+      "L11: throw \"Pack must be invoked by orchestrator.\"",
+      "L33: git add \".\\TASK_QUEUE.json\""
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE70_AGENT_PROGRAM_INPUT_FORMAT_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L68: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L83: Assert-RequiredPath -Path (Join-Path $RepoRoot \"generated_agents\\remediation_intake_operator_agent_v1\\run.ps1\") -Label \"remediation intake operator agent run.ps1\"",
+      "L218: generated_agents/remediation_intake_operator_agent_v1/run.ps1",
+      "L330: \"generated_agents/<agent_id>/run.ps1\"",
+      "L402: \"generated_agents/remediation_intake_operator_agent_v1/run.ps1\"",
+      "L406: \"run.ps1 passes PowerShell parser check\",",
+      "L417: run_script = \"generated_agents/remediation_intake_operator_agent_v1/run.ps1\"",
+      "L454: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L458: \".\\TASK_QUEUE.json\",",
+      "L467: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE70_AGENT_PROGRAM_INPUT_FORMAT_V1\\payload\\validators\\validate_agent_program_input_format_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L210: Assert-RequiredPath -Path (Join-Path $RepoRoot \"generated_agents/remediation_intake_operator_agent_v1/run.ps1\") -Label \"existing remediation intake operator run.ps1\"",
+      "L262: \"orchestrator/run.ps1\"",
+      "L263: ) -Label \"existing agent, catalog, workflows, and orchestrator\"",
+      "L267: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L271: Assert-Equals -Actual $Queue.active_task_id -Expected $TaskId -Label \"TASK_QUEUE active_task_id before runtime\"",
+      "L274: $Task = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE70 task\"",
+      "L310: \"existing agent, catalog, workflows, and orchestrator remained unchanged\",",
+      "L312: \"TASK_QUEUE active_task_id returned to NONE\"",
+      "L333: $Queue.active_task_id = \"NONE\"",
+      "L340: Write-JsonFile -Path \".\\TASK_QUEUE.json\" -Value $Queue",
+      "L345: $FinalQueue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L347: $FinalTask = Get-SingleByProperty -Items @($FinalQueue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE70 task after runtime\""
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE71_AGENT_PROGRAM_EXECUTOR_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L88: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L237: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L241: \".\\TASK_QUEUE.json\",",
+      "L250: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L255: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE71_AGENT_PROGRAM_EXECUTOR_V1\\payload\\validators\\validate_agent_program_executor_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L257: \"orchestrator/run.ps1\"",
+      "L258: ) -Label \"existing agent, catalog, program inputs, workflows, and orchestrator\"",
+      "L262: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L266: Assert-Equals -Actual $Queue.active_task_id -Expected $TaskId -Label \"TASK_QUEUE active_task_id before runtime\"",
+      "L269: $Task = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE71 task\"",
+      "L307: \"TASK_QUEUE active_task_id returned to NONE\"",
+      "L324: $Queue.active_task_id = \"NONE\"",
+      "L331: Write-JsonFile -Path \".\\TASK_QUEUE.json\" -Value $Queue",
+      "L336: $FinalQueue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L338: $FinalTask = Get-SingleByProperty -Items @($FinalQueue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE71 task after runtime\"",
+      "L341: Assert-Equals -Actual $FinalQueue.active_task_id -Expected \"NONE\" -Label \"TASK_QUEUE active_task_id after runtime\""
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE72_RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L88: if (-not $InvokedByOrchestrator) { throw \"Pack must be invoked by orchestrator.\" }",
+      "L238: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L242: \".\\TASK_QUEUE.json\",",
+      "L252: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L257: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE72_RUNBOOK_EXECUTOR_AGENT_PROGRAM_TRIAL_V1\\payload\\validators\\validate_runbook_executor_agent_program_trial_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L256: \"orchestrator/run.ps1\"",
+      "L257: ) -Label \"existing first agent, agent catalog, workflows, and orchestrator\"",
+      "L268: $Queue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L272: Assert-Equals -Actual $Queue.active_task_id -Expected $TaskId -Label \"TASK_QUEUE active_task_id before runtime\"",
+      "L275: $Task = Get-SingleByProperty -Items @($Queue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE72 task\"",
+      "L313: \"TASK_QUEUE active_task_id returned to NONE\"",
+      "L330: $Queue.active_task_id = \"NONE\"",
+      "L337: Write-JsonFile -Path \".\\TASK_QUEUE.json\" -Value $Queue",
+      "L342: $FinalQueue = Read-JsonFile \".\\TASK_QUEUE.json\"",
+      "L344: $FinalTask = Get-SingleByProperty -Items @($FinalQueue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE72 task after runtime\"",
+      "L347: Assert-Equals -Actual $FinalQueue.active_task_id -Expected \"NONE\" -Label \"TASK_QUEUE active_task_id after runtime\""
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE73_RUNBOOK_EXECUTOR_AGENT_PRODUCTION_V1\\payload\\validators\\validate_runbook_executor_agent_production_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L193: \"TASK_QUEUE.json\",",
+      "L195: \"orchestrator/run.ps1\"",
+      "L214: $RunScriptPath = Join-Path $AgentRoot \"run.ps1\"",
+      "L266: \"run.ps1\",",
+      "L295: Assert-PowerShellParserPass -Path $RunScriptPath -Label \"generated agent run.ps1\"",
+      "L341: \"orchestrator/run.ps1\"",
+      "L346: $QueuePath = Join-Path $ResolvedRoot \"TASK_QUEUE.json\"",
+      "L350: $Queue = Read-JsonFile -Path $QueuePath -Label \"TASK_QUEUE.json\"",
+      "L354: Assert-Equals -Actual $Queue.active_task_id -Expected $TaskId -Label \"TASK_QUEUE active_task_id before finalization\"",
+      "L358: $Task = Get-SingleByProperty -Items @($Queue.tasks) -Property \"task_id\" -Value $TaskId -Label \"TASK_QUEUE tasks\"",
+      "L383: local_run_command = \"pwsh -NoProfile -ExecutionPolicy Bypass -File generated_agents/runbook_executor_agent_v1/run.ps1 -InputPath generated_agents/runbook_executor_agent_v1/INPUT_EXAMPLE.json -OutputPath generated_agents/runbook_executor_agent_v1/OUTPUT_EXAMPLE_RUNTIME.json\"",
+      "L391: \"run.ps1 parser check passed\","
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE74_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_LAUNCH_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L10: function Invoke-NativeGitCommand {",
+      "L40: if (-not $InvokedByOrchestrator) {",
+      "L41: throw \"Pack must be invoked by orchestrator.\"",
+      "L71: Invoke-NativeGitCommand -Label \"ADD\" -Arguments @(",
+      "L75: \".\\TASK_QUEUE.json\",",
+      "L87: Invoke-NativeGitCommand -Label \"COMMIT\" -Arguments @(",
+      "L93: Invoke-NativeGitCommand -Label \"PUSH\" -Arguments @("
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE74_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_LAUNCH_V1\\payload\\validators\\validate_runbook_executor_agent_github_action_launch_v1.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L89: Assert-RequiredPath \"generated_agents/runbook_executor_agent_v1/run.ps1\" \"run script\"",
+      "L110: $queue = Read-JsonFile \"TASK_QUEUE.json\"",
+      "L119: if ([string]$queue.active_task_id -ne $TaskId) {",
+      "L120: throw \"TASK_QUEUE active_task_id must be $TaskId before runtime.\"",
+      "L124: $task = Get-OneByProperty -Items @($queue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE74 task\"",
+      "L172: pwsh -NoProfile -ExecutionPolicy Bypass -File generated_agents/runbook_executor_agent_v1/run.ps1 -InputPath generated_agents/runbook_executor_agent_v1/INPUT_EXAMPLE.json -OutputPath generated_agents/runbook_executor_agent_v1/OUTPUT_EXAMPLE_RUNTIME.json",
+      "L223: \"TASK_QUEUE active_task_id returned to NONE\"",
+      "L234: $queue.active_task_id = \"NONE\"",
+      "L245: Write-JsonFile -Path \"TASK_QUEUE.json\" -Value $queue",
+      "L250: $finalQueue = Read-JsonFile \"TASK_QUEUE.json\"",
+      "L253: $finalTask = Get-OneByProperty -Items @($finalQueue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE74 task after runtime\"",
+      "L258: if ([string]$finalQueue.active_task_id -ne \"NONE\") { throw \"TASK_QUEUE active_task_id must be NONE after runtime.\" }"
+    ]
+  },
+  {
+    "path": ".\\packs\\PHASE75_RUNBOOK_EXECUTOR_AGENT_GITHUB_ACTION_ACCEPTANCE_V1\\APPLY.ps1",
+    "score": 27,
+    "match_count": 1,
+    "sample_lines": [
+      "L4: [switch]$InvokedByOrchestrator",
+      "L69: function Invoke-NativeGitCommand {",
+      "L99: function Invoke-Gh {",
+      "L164: if (-not $InvokedByOrchestrator) {",
+      "L165: throw \"Pack must be invoked by orchestrator.\"",
+      "L207: Invoke-Gh -Label \"WORKFLOW_RUN\" -Arguments @(",
+      "L224: $runsJson = Invoke-Gh -Label \"RUN_LIST\" -Arguments @(",
+      "L273: Invoke-Gh -Label \"RUN_DOWNLOAD\" -Arguments @(",
+      "L323: $queue = Read-JsonFile \"TASK_QUEUE.json\"",
+      "L327: $task = Get-OneByProperty -Items @($queue.tasks) -PropertyName \"task_id\" -ExpectedValue $TaskId -Label \"PHASE75 task\"",
+      "L436: $queue.active_task_id = \"NONE\"",
+      "L451: Write-JsonFile -Path \"TASK_QUEUE.json\" -Value $queue"
+    ]
+  }
+]

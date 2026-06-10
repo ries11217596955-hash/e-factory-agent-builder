@@ -40,6 +40,15 @@ function Set-Prop {
   }
 }
 
+function Get-TaskIdValue {
+  param([object]$Task)
+  $TaskIdValue = Get-Prop -Object $Task -Name "task_id"
+  if ([string]::IsNullOrWhiteSpace([string]$TaskIdValue)) {
+    $TaskIdValue = Get-Prop -Object $Task -Name "id"
+  }
+  return [string]$TaskIdValue
+}
+
 Set-Location -LiteralPath $RepoRoot
 
 Write-Host "PHASE164K_ADAPTER_APPLY_START"
@@ -47,11 +56,19 @@ Write-Host "RUN_ID=$RunId"
 
 $Queue = Get-Content -LiteralPath "TASK_QUEUE.json" -Raw | ConvertFrom-Json
 
-if ([string]$Queue.active_task_id -ne $TaskId) {
-  throw "ACTIVE_TASK_ID_NOT_PHASE164G_TASK=$($Queue.active_task_id)"
+$ActiveTaskId = [string](Get-Prop -Object $Queue -Name "active_task_id")
+if ($ActiveTaskId -ne $TaskId) {
+  throw "ACTIVE_TASK_ID_NOT_PHASE164G_TASK=$ActiveTaskId"
 }
 
-$Task = @($Queue.tasks) | Where-Object { [string]$_.task_id -eq $TaskId -or [string]$_.id -eq $TaskId } | Select-Object -First 1
+$Task = $null
+foreach ($Item in @($Queue.tasks)) {
+  if ((Get-TaskIdValue -Task $Item) -eq $TaskId) {
+    $Task = $Item
+    break
+  }
+}
+
 if ($null -eq $Task) { throw "PHASE164G_TASK_NOT_FOUND" }
 
 $CandidatePath = [string](Get-Prop -Object $Task -Name "source_candidate_path")
@@ -98,7 +115,7 @@ $Report = [ordered]@{
   accepted_core_mutation = $false
   route_lock_mutation = $false
   codex_execution = $false
-  next_allowed_step = "PHASE164L_RUN_EXISTING_ORCHESTRATOR_ON_OWNER_CANDIDATE_ADAPTER_OUTPUT"
+  next_allowed_step = "PHASE164M_CONSUME_SELF_GROWTH_REQUEST_WITH_EXISTING_BUILDER_ORGANS"
 }
 
 $Proof = [ordered]@{
@@ -118,7 +135,7 @@ $Proof = [ordered]@{
   accepted_core_mutation = $false
   route_lock_mutation = $false
   codex_execution = $false
-  next_allowed_step = "PHASE164L_RUN_EXISTING_ORCHESTRATOR_ON_OWNER_CANDIDATE_ADAPTER_OUTPUT"
+  next_allowed_step = "PHASE164M_CONSUME_SELF_GROWTH_REQUEST_WITH_EXISTING_BUILDER_ORGANS"
 }
 
 Write-JsonFile -Path $RequestPath -Object $SelfGrowthRequest -Depth 100
@@ -131,7 +148,7 @@ Set-Prop -Object $Task -Name "completed_at" -Value ((Get-Date).ToUniversalTime()
 Set-Prop -Object $Task -Name "proof_path" -Value $ProofPath
 Set-Prop -Object $Task -Name "self_growth_request_path" -Value $RequestPath
 
-$Queue.active_task_id = "NONE"
+Set-Prop -Object $Queue -Name "active_task_id" -Value "NONE"
 Write-JsonFile -Path "TASK_QUEUE.json" -Object $Queue -Depth 100
 
 & "packs/$PackId/VALIDATE.ps1" -RepoRoot $RepoRoot -Stage "Completed"

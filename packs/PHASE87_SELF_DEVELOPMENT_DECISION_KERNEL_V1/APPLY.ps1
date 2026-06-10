@@ -236,3 +236,15 @@ Write-Host "TASK_QUEUE_RETURNED_TO_NONE"
 & (Join-RepoPath "packs/$PackId/VALIDATE.ps1") -RepoRoot $RepoRoot -Stage "Completed"
 
 Write-Host "PHASE87_APPLY_COMPLETE"
+
+# PHASE165E_DYNAMIC_GAP_SELECTION_PATCH_START
+try {
+  $__phase165eSelector = "self_build_batch/decision_kernel/SELECT_DYNAMIC_SELF_BUILD_NEXT_GAP_V1.ps1"
+  $__phase165eOutput = "self_build_batch/decision_kernel/PHASE165E_DYNAMIC_GAP_DECISION_V1.json"
+  if (Test-Path $__phase165eSelector) {
+    & powershell -NoProfile -ExecutionPolicy Bypass -File $__phase165eSelector -OutputPath $__phase165eOutput | Out-Null
+  }
+} catch {
+  Write-Warning ("PHASE165E dynamic gap selection patch failed: " + $_.Exception.Message)
+}
+# PHASE165E_DYNAMIC_GAP_SELECTION_PATCH_END

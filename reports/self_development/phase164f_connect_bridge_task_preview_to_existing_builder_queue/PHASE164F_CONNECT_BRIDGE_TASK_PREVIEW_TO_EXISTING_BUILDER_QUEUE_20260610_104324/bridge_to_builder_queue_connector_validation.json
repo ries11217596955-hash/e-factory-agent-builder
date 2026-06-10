@@ -1,0 +1,15 @@
+{
+  "schema": "BRIDGE_TO_BUILDER_QUEUE_CONNECTOR_VALIDATION_V1",
+  "status": "PASS",
+  "dry_run": true,
+  "phase164e_status": "PASS",
+  "task_queue_parse_ok": true,
+  "task_queue_shape": "OBJECT_WITH_TASKS",
+  "ready_bridge_task_count": 0,
+  "would_enqueue_count": 0,
+  "connector_decision": "NO_READY_TASKS_TO_ENQUEUE",
+  "task_queue_mutation": false,
+  "accepted_core_mutation": false,
+  "route_lock_mutation": false,
+  "codex_execution": false
+}

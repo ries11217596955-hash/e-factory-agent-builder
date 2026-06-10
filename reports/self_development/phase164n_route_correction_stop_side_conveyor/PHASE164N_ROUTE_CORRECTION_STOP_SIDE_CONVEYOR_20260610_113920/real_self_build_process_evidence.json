@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "real_self_build_path_detected": true,
+  "real_self_build_path": [
+    "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+    "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
+    "PHASE89_GENERATED_PROGRAM_ADMISSION_V1",
+    "PHASE90_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1"
+  ],
+  "owner_material_input_supported": false,
+  "phase88_hardcoded_program_001": true,
+  "side_branch_classification": {
+    "phase164k": "SIDEBRANCH_REFERENCE",
+    "phase164l": "SIDEBRANCH_RUNTIME_PROOF",
+    "phase164m": "NOT_PRESENT",
+    "phase164n_admission_gate": "CANCELLED_BEFORE_BUILD"
+  },
+  "decision": "STOP_SIDE_CONVEYOR_AND_BUILD_OWNER_MATERIAL_INPUT_FOR_REAL_SELF_BUILD_DECISION_KERNEL"
+}

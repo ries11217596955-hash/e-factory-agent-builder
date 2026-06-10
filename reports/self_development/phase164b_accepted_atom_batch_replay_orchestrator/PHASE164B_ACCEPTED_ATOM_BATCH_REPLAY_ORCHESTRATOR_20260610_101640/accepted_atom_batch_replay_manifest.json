@@ -1,0 +1,107 @@
+﻿{
+    "schema":  "ACCEPTED_ATOM_BATCH_REPLAY_MANIFEST_V1",
+    "created_at":  "2026-06-10T06:16:43.2891083Z",
+    "mode":  "DRY_RUN_NO_MUTATION",
+    "repo_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder",
+    "required_files":  [
+                           "README.md",
+                           "AGENTS.md",
+                           "AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2_R2.md",
+                           "CAPABILITY_ROADMAP.json",
+                           "GENESIS_STATE.json",
+                           "TASK_QUEUE.json",
+                           "packs/registry.json",
+                           "orchestrator/run.ps1",
+                           "proofs/self_development/PHASE163T_CONTROLLER_CONSUME_VISIBILITY_PROOF_V1.json",
+                           "proofs/self_development/PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_V1.json",
+                           "proofs/self_development/PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_V2.json"
+                       ],
+    "missing_required_files":  [
+
+                               ],
+    "source_hashes":  [
+                          {
+                              "path":  "README.md",
+                              "sha256":  "9C98DF748D21D96E842807D98725E78AED8FDB515A101C67725096F09DFBE44C",
+                              "bytes":  2296
+                          },
+                          {
+                              "path":  "AGENTS.md",
+                              "sha256":  "B4F95D8B7205B0C043D7835971E61031B9F80E36E01123DDABAC42C9A57611A7",
+                              "bytes":  7611
+                          },
+                          {
+                              "path":  "AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2_R2.md",
+                              "sha256":  "1C48DB780618A260A48980E64C673FC79AFE03382580AF6C514286B361C8B982",
+                              "bytes":  2452
+                          },
+                          {
+                              "path":  "CAPABILITY_ROADMAP.json",
+                              "sha256":  "14A2C9CC8F59827AEAB6AEF8C7E65872F867E1E4170DCDE997ED9109E6360E34",
+                              "bytes":  32017
+                          },
+                          {
+                              "path":  "GENESIS_STATE.json",
+                              "sha256":  "66DD4205D90C22DE5EB45A23C4B142AC27D7FB005DF4AD530A817B9E345D3681",
+                              "bytes":  14627
+                          },
+                          {
+                              "path":  "TASK_QUEUE.json",
+                              "sha256":  "27220D7E169EDA9E60341B4A7A2817D3515DE8C8BB11DFC7C841A941FC01C4EC",
+                              "bytes":  60764
+                          },
+                          {
+                              "path":  "packs/registry.json",
+                              "sha256":  "AC6B4E26948296BDCA0E6EB421260F6203027B114868530114C202C03F0B5CC8",
+                              "bytes":  131638
+                          },
+                          {
+                              "path":  "orchestrator/run.ps1",
+                              "sha256":  "51AA1CBEB0339B2DF0CBA84606E414D9DFA7395DED7179CC5248B3C4BC5CC91D",
+                              "bytes":  69281
+                          },
+                          {
+                              "path":  "proofs/self_development/PHASE163T_CONTROLLER_CONSUME_VISIBILITY_PROOF_V1.json",
+                              "sha256":  "9303C833F23268402310D1247A3AFEB1FD0A37AB4C0D3D20CD8BFB62A22D1932",
+                              "bytes":  1349
+                          },
+                          {
+                              "path":  "proofs/self_development/PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_V1.json",
+                              "sha256":  "0972D7B762E9538F29BC4A5E86973D037237AB706D644393BB251E7A97E81C61",
+                              "bytes":  1161
+                          },
+                          {
+                              "path":  "proofs/self_development/PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_V2.json",
+                              "sha256":  "D2CEA51ACD7B3674AEAB7CD931A8DA765DD3791792AB2D02C7BCFEAE8E9FD563",
+                              "bytes":  1108
+                          }
+                      ],
+    "replay_atoms":  [
+                         {
+                             "atom_id":  "PHASE163T_VISIBILITY_CONSUME_PROOF",
+                             "source_path":  "proofs/self_development/PHASE163T_CONTROLLER_CONSUME_VISIBILITY_PROOF_V1.json",
+                             "replay_check":  "proof_exists_and_hashable",
+                             "source_exists":  true,
+                             "mutation_mode":  "none"
+                         },
+                         {
+                             "atom_id":  "PHASE164A_NEXT_LOCKED_ROUTE_SELECTION",
+                             "source_path":  "proofs/self_development/PHASE164A_SELECT_NEXT_LOCKED_ROUTE_STEP_V1.json",
+                             "replay_check":  "proof_exists_and_hashable",
+                             "source_exists":  true,
+                             "mutation_mode":  "none"
+                         },
+                         {
+                             "atom_id":  "PHASE161K_ROUTE_EVIDENCE_RECONCILIATION_V2_PASS",
+                             "source_path":  "proofs/self_development/PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_V2.json",
+                             "replay_check":  "status_PASS",
+                             "source_exists":  true,
+                             "status":  "PASS",
+                             "mutation_mode":  "none"
+                         }
+                     ],
+    "phase161k_current_status":  "PASS",
+    "accepted_core_mutation":  false,
+    "route_lock_mutation":  false,
+    "codex_execution":  false
+}

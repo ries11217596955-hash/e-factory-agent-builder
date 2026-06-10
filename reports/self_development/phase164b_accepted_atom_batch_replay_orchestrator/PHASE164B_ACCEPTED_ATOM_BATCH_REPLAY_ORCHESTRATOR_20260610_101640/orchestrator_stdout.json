@@ -1,0 +1,6 @@
+{
+    "status":  "PASS",
+    "manifest_path":  "reports\\self_development\\phase164b_accepted_atom_batch_replay_orchestrator\\PHASE164B_ACCEPTED_ATOM_BATCH_REPLAY_ORCHESTRATOR_20260610_101640\\accepted_atom_batch_replay_manifest.json",
+    "validation_path":  "reports\\self_development\\phase164b_accepted_atom_batch_replay_orchestrator\\PHASE164B_ACCEPTED_ATOM_BATCH_REPLAY_ORCHESTRATOR_20260610_101640\\accepted_atom_batch_replay_validation.json",
+    "report_path":  "reports\\self_development\\phase164b_accepted_atom_batch_replay_orchestrator\\PHASE164B_ACCEPTED_ATOM_BATCH_REPLAY_ORCHESTRATOR_20260610_101640\\ACCEPTED_ATOM_BATCH_REPLAY_ORCHESTRATOR_REPORT.md"
+}

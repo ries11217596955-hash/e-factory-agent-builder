@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "ACCEPTED_ATOM_BATCH_REPLAY_VALIDATION_V1",
+    "status":  "PASS",
+    "dry_run":  true,
+    "missing_required_count":  0,
+    "phase161k_status":  "PASS",
+    "replay_atom_count":  3,
+    "accepted_core_mutation":  false,
+    "route_lock_mutation":  false,
+    "codex_execution":  false
+}

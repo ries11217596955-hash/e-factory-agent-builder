@@ -1,0 +1,129 @@
+{
+  "phase": "PHASE165A_SELF_BUILD_LOOP_REUSABILITY_AUDIT",
+  "repair_reason": "Previous proof repairs failed because PowerShell automatic variable $Matches was overwritten by regex -match operations.",
+  "created_utc": "2026-06-10T09:38:30.0952970Z",
+  "repo": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "e99abad",
+  "mode": "READ_ONLY_AUDIT_PROOF_REPAIR_V3",
+  "report_path": "reports/self_development/PHASE165A_SELF_BUILD_LOOP_REUSABILITY_AUDIT_V1.md",
+  "proof_path": "proofs/self_development/PHASE165A_SELF_BUILD_LOOP_REUSABILITY_AUDIT_V1.json",
+  "report_exists": true,
+  "protected_state_mutated": false,
+  "route_lock_mutated": false,
+  "codex_used": false,
+  "external_fetch_or_install": false,
+  "audited_paths": [
+    "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md",
+    "tasks/TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001.json",
+    "tasks/TASK_SELF_BUILD_PROGRAM_GENERATOR_V1_001.json",
+    "tasks/TASK_GENERATED_PROGRAM_ADMISSION_V1_001.json",
+    "tasks/TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001.json"
+  ],
+  "patterns": [
+    "SELF_BUILD_PROGRAM_001",
+    "ACTIVE_OWNER_MATERIAL_INPUT.json",
+    "TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001",
+    "TASK_SELF_BUILD_PROGRAM_GENERATOR_V1_001",
+    "TASK_GENERATED_PROGRAM_ADMISSION_V1_001",
+    "TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001",
+    "owner_material",
+    "next_step",
+    "recommended_next_step",
+    "proofs/self_development",
+    "reports/self_development",
+    "execution_performed",
+    "completed_loop"
+  ],
+  "finding_summary": {
+    "fixed_program_id_SELF_BUILD_PROGRAM_001": true,
+    "fixed_bootstrap_task_ids": true,
+    "owner_material_mentions_found": true,
+    "next_step_mentions_found": false,
+    "execution_completion_mentions_found": false
+  },
+  "matches": [
+    {
+      "path": "route_locks\\AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md",
+      "line_number": 7,
+      "line": "Previous completed proof: proofs/self_development/PHASE164T_RUN_REAL_PHASE90_WITH_OWNER_MATERIAL_CONTEXT_V1.json"
+    },
+    {
+      "path": "route_locks\\AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md",
+      "line_number": 44,
+      "line": "2. PHASE165B_GENERALIZE_OWNER_MATERIAL_INPUT_SELECTION"
+    },
+    {
+      "path": "route_locks\\AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md",
+      "line_number": 48,
+      "line": "Allow new self-build program ids instead of fixed SELF_BUILD_PROGRAM_001 only."
+    },
+    {
+      "path": "route_locks\\AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md",
+      "line_number": 51,
+      "line": "Define required lineage fields: owner_material -> decision -> program -> admission -> execution -> absorption."
+    },
+    {
+      "path": "route_locks\\AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md",
+      "line_number": 77,
+      "line": "13. PHASE165M_RUN_FIRST_DYNAMIC_OWNER_MATERIAL_SELF_BUILD_DRY_RUN"
+    },
+    {
+      "path": "route_locks\\AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md",
+      "line_number": 80,
+      "line": "14. PHASE165N_RUN_FIRST_DYNAMIC_OWNER_MATERIAL_SELF_BUILD_CANONICAL_TRIAL"
+    },
+    {
+      "path": "tasks\\TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001.json",
+      "line_number": 2,
+      "line": "\"task_id\": \"TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001\","
+    },
+    {
+      "path": "tasks\\TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001.json",
+      "line_number": 4,
+      "line": "\"path\": \"tasks/TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001.json\","
+    },
+    {
+      "path": "tasks\\TASK_SELF_BUILD_PROGRAM_GENERATOR_V1_001.json",
+      "line_number": 2,
+      "line": "\"task_id\": \"TASK_SELF_BUILD_PROGRAM_GENERATOR_V1_001\","
+    },
+    {
+      "path": "tasks\\TASK_SELF_BUILD_PROGRAM_GENERATOR_V1_001.json",
+      "line_number": 8,
+      "line": "\"purpose\": \"Generate SELF_BUILD_PROGRAM_001 as a candidate program requiring admission before execution.\","
+    },
+    {
+      "path": "tasks\\TASK_GENERATED_PROGRAM_ADMISSION_V1_001.json",
+      "line_number": 2,
+      "line": "\"task_id\": \"TASK_GENERATED_PROGRAM_ADMISSION_V1_001\","
+    },
+    {
+      "path": "tasks\\TASK_GENERATED_PROGRAM_ADMISSION_V1_001.json",
+      "line_number": 10,
+      "line": "\"path\": \"tasks/TASK_GENERATED_PROGRAM_ADMISSION_V1_001.json\","
+    },
+    {
+      "path": "tasks\\TASK_GENERATED_PROGRAM_ADMISSION_V1_001.json",
+      "line_number": 12,
+      "line": "\"purpose\": \"Evaluate SELF_BUILD_PROGRAM_001 for admission before controlled PHASE90 execution.\","
+    },
+    {
+      "path": "tasks\\TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001.json",
+      "line_number": 2,
+      "line": "\"task_id\": \"TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001\","
+    },
+    {
+      "path": "tasks\\TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001.json",
+      "line_number": 10,
+      "line": "\"path\": \"tasks/TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001.json\","
+    },
+    {
+      "path": "tasks\\TASK_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1_001.json",
+      "line_number": 12,
+      "line": "\"purpose\": \"Execute admitted SELF_BUILD_PROGRAM_001 in controlled self-build runtime without external agents, installs, fetches, or route lock changes.\","
+    }
+  ],
+  "conclusion": "PHASE87-PHASE90 owner-material contour is proven but still contains bootstrap hardcoded assumptions. Next route work should generalize material selection, program identity, lineage contract, and absorption decision gate.",
+  "next_locked_step_after_audit": "PHASE165B_GENERALIZE_OWNER_MATERIAL_INPUT_SELECTION"
+}

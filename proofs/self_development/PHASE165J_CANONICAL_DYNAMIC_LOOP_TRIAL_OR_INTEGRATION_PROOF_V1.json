@@ -1,0 +1,48 @@
+﻿{
+    "phase":  "PHASE165J_CANONICAL_DYNAMIC_LOOP_TRIAL_OR_INTEGRATION_PROOF",
+    "created_utc":  "2026-06-10T11:32:16.3446957Z",
+    "mode":  "INTEGRATION_PROOF_NO_CANONICAL_RERUN",
+    "status":  "PASS",
+    "validation_passed":  true,
+    "errors":  [
+
+               ],
+    "canonical_trial_selected":  false,
+    "integration_proof_selected":  true,
+    "canonical_trial_not_run_reason":  "Canonical task descriptors still mention SELF_BUILD_PROGRAM_001, so PHASE165J selects integration proof instead of mutating/running canonical queue.",
+    "canonical_task_descriptors_still_fixed":  true,
+    "program_id":  "SELF_BUILD_PROGRAM_OWNER_MATERIAL_INPUT_BOOTSTRAP_001_V1_001",
+    "lineage_id":  "LINEAGE_SELF_BUILD_PROGRAM_OWNER_MATERIAL_INPUT_BOOTSTRAP_001_V1_001",
+    "required_path":  "PHASE87-\u003ePHASE88-\u003ePHASE89-\u003ePHASE90",
+    "phase165i_harness_status":  "PASS",
+    "phase165i_validation_passed":  true,
+    "decision_evidence_ready":  true,
+    "program_status":  "GENERATED_CANDIDATE",
+    "admission_status":  "PASS",
+    "execution_status":  "PASS",
+    "execution_performed":  true,
+    "completed_loop":  true,
+    "controlled_runtime":  true,
+    "queue_returned_to_none":  true,
+    "lineage_preserved":  true,
+    "patch_markers":  {
+                          "phase87_dynamic_decision_patch":  true,
+                          "phase88_dynamic_generation_patch":  true,
+                          "phase89_dynamic_admission_patch":  true,
+                          "phase90_dynamic_execution_patch":  true
+                      },
+    "task_descriptor_scope":  {
+                                  "decision_task_exists":  true,
+                                  "program_task_exists":  true,
+                                  "admission_task_mentions_fixed_program":  true,
+                                  "execution_task_mentions_fixed_program":  true
+                              },
+    "canonical_state_mutated":  false,
+    "route_lock_mutated":  false,
+    "program_executed_again":  false,
+    "external_agent_production":  false,
+    "external_fetch_or_install":  false,
+    "codex_used":  false,
+    "conclusion":  "PHASE165J proves the dynamic PHASE87-\u003ePHASE88-\u003ePHASE89-\u003ePHASE90 loop is integrated through patched canonical packs and validated by PHASE165I harness. Canonical rerun is deferred because task descriptors still carry fixed bootstrap assumptions.",
+    "next_locked_step_after_build":  "PHASE165K_ABSORPTION_DECISION_GATE"
+}

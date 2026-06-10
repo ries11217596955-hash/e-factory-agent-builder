@@ -129,8 +129,14 @@ foreach ($marker in @("CAPABILITY_ROADMAP.json", "GENESIS_STATE.json", "TASK_QUE
   }
 }
 
-$__phase165nDynamicProgramPath = "self_build_programs/generated/SELF_BUILD_PROGRAM_OWNER_MATERIAL_INPUT_BOOTSTRAP_001_V1_001.json"
-$program = Read-JsonRequired $__phase165nDynamicProgramPath
+$__phase165oIdentityDir = "self_build_programs/identity"
+$__phase165oIdentityFile = Get-ChildItem -Path $__phase165oIdentityDir -Filter "*.json" | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
+if ($null -eq $__phase165oIdentityFile) { throw "No runtime identity json found" }
+$__phase165oIdentity = Read-JsonRequired $__phase165oIdentityFile.FullName
+$__phase165oProgramId = [string]$__phase165oIdentity.program_id
+if ([string]::IsNullOrWhiteSpace($__phase165oProgramId)) { throw "Resolved runtime program_id is empty" }
+$__phase165oProgramPath = "self_build_programs/generated/$__phase165oProgramId.json"
+$program = Read-JsonRequired $__phase165oProgramPath
 if ("$(Get-PropertyValue -Object $program -Name "status")" -ne "GENERATED_CANDIDATE") {
   throw "PROGRAM_STATUS_NOT_GENERATED_CANDIDATE"
 }
@@ -181,4 +187,6 @@ try {
   Write-Warning ("PHASE165G dynamic generated program admission failed: " + $_.Exception.Message)
 }
 # PHASE165G_DYNAMIC_GENERATED_PROGRAM_ADMISSION_PATCH_END
+
+
 

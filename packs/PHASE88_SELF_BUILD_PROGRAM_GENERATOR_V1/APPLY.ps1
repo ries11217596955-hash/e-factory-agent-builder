@@ -30,3 +30,14 @@ $Genesis | ConvertTo-Json -Depth 50 | Set-Content $GenesisPath -Encoding UTF8
 
 Write-Output "TASK_QUEUE_RETURNED_TO_NONE"
 Write-Output "PHASE88_APPLY_COMPLETE"
+
+# PHASE165F_DYNAMIC_SELF_BUILD_PROGRAM_GENERATION_PATCH_START
+try {
+  $__phase165fGenerator = "self_build_programs/generator/GENERATE_DYNAMIC_SELF_BUILD_PROGRAM_V1.ps1"
+  if (Test-Path $__phase165fGenerator) {
+    & powershell -NoProfile -ExecutionPolicy Bypass -File $__phase165fGenerator | Out-Null
+  }
+} catch {
+  Write-Warning ("PHASE165F dynamic self-build program generation failed: " + $_.Exception.Message)
+}
+# PHASE165F_DYNAMIC_SELF_BUILD_PROGRAM_GENERATION_PATCH_END

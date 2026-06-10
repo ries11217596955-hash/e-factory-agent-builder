@@ -129,7 +129,8 @@ foreach ($marker in @("CAPABILITY_ROADMAP.json", "GENESIS_STATE.json", "TASK_QUE
   }
 }
 
-$program = Read-JsonRequired "self_build_programs/generated/SELF_BUILD_PROGRAM_001.json"
+$__phase165nDynamicProgramPath = "self_build_programs/generated/SELF_BUILD_PROGRAM_OWNER_MATERIAL_INPUT_BOOTSTRAP_001_V1_001.json"
+$program = Read-JsonRequired $__phase165nDynamicProgramPath
 if ("$(Get-PropertyValue -Object $program -Name "status")" -ne "GENERATED_CANDIDATE") {
   throw "PROGRAM_STATUS_NOT_GENERATED_CANDIDATE"
 }
@@ -180,3 +181,4 @@ try {
   Write-Warning ("PHASE165G dynamic generated program admission failed: " + $_.Exception.Message)
 }
 # PHASE165G_DYNAMIC_GENERATED_PROGRAM_ADMISSION_PATCH_END
+

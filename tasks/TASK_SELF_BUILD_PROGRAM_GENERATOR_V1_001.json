@@ -5,12 +5,18 @@
   "status": "PENDING",
   "active_line": "AGENT_BUILDER / SELF_BUILD",
   "created_at": "2026-05-29T11:38:52.8203272Z",
-  "purpose": "Generate SELF_BUILD_PROGRAM_001 as a candidate program requiring admission before execution.",
+  "purpose": "Generate the current dynamic self-build program candidate from owner-material selection, identity, and lineage.",
   "cut_list": [
     "No admission",
     "No execution",
     "No installs",
     "No external fetch",
     "No external agents"
-  ]
+  ],
+  "dynamic_contract": {
+    "program_id_source": "self_build_programs/identity/SELF_BUILD_PROGRAM_IDENTITY_EXAMPLE_V1.json",
+    "owner_material_source": "self_build_batch/owner_material_inputs/selected/SELECTED_OWNER_MATERIAL_INPUT.json",
+    "lineage_source": "self_build_programs/lineage/SELF_BUILD_CAUSE_LINEAGE_EXAMPLE_V1.json",
+    "fixed_bootstrap_program_disallowed": true
+  }
 }

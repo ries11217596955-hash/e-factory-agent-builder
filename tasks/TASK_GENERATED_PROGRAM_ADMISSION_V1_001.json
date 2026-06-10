@@ -9,12 +9,17 @@
   "gate": "GENERATED_PROGRAM_ADMISSION_V1",
   "path": "tasks/TASK_GENERATED_PROGRAM_ADMISSION_V1_001.json",
   "created_at": "2026-05-29T00:00:00Z",
-  "purpose": "Evaluate SELF_BUILD_PROGRAM_001 for admission before controlled PHASE90 execution.",
+  "purpose": "Evaluate the current dynamic generated self-build program for admission before controlled PHASE90 execution.",
   "cut_list": [
     "No generated program execution",
     "No installs",
     "No external fetch",
     "No external agents",
     "No PHASE78-PHASE88 pack edits"
-  ]
+  ],
+  "dynamic_contract": {
+    "program_id_source": "generated dynamic self-build program",
+    "dynamic_program_path": "self_build_programs/generated/SELF_BUILD_PROGRAM_OWNER_MATERIAL_INPUT_BOOTSTRAP_001_V1_001.json",
+    "fixed_bootstrap_program_disallowed": true
+  }
 }

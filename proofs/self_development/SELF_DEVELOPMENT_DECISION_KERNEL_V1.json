@@ -1,25 +1,25 @@
 {
-  "proof_id": "SELF_DEVELOPMENT_DECISION_KERNEL_V1",
-  "status": "PASS",
-  "phase": "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
-  "capability_id": "self_development_decision_kernel_v1",
-  "task_id": "TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001",
-  "pack_id": "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
-  "runtime_mode": "SELF_BUILD",
-  "generated_at": "2026-05-29T11:32:50.0848871Z",
-  "report_path": "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
-  "proof_path": "proofs/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_V1.json",
-  "decision_kernel_created": true,
-  "recommended_next_step_id": "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
-  "next_allowed_step": "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
-  "no_external_agent_production": true,
-  "no_external_install": true,
-  "no_trusted_material_changes": true,
-  "no_operation_execution": true,
-  "queue_returned_to_none": true,
-  "evidence_files": [
-    "contracts/self_development/self_development_decision_kernel_report.schema.json",
-    "modules/self_development/write_self_development_decision_kernel_report.ps1",
-    "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json"
-  ]
+    "proof_id":  "SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+    "status":  "PASS",
+    "phase":  "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+    "capability_id":  "self_development_decision_kernel_v1",
+    "task_id":  "TASK_SELF_DEVELOPMENT_DECISION_KERNEL_V1_001",
+    "pack_id":  "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+    "runtime_mode":  "SELF_BUILD",
+    "generated_at":  "2026-06-10T08:14:39.2277593Z",
+    "report_path":  "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
+    "proof_path":  "proofs/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_V1.json",
+    "decision_kernel_created":  true,
+    "recommended_next_step_id":  "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
+    "next_allowed_step":  "PHASE88_SELF_BUILD_PROGRAM_GENERATOR_V1",
+    "no_external_agent_production":  true,
+    "no_external_install":  true,
+    "no_trusted_material_changes":  true,
+    "no_operation_execution":  true,
+    "queue_returned_to_none":  true,
+    "evidence_files":  [
+                           "contracts/self_development/self_development_decision_kernel_report.schema.json",
+                           "modules/self_development/write_self_development_decision_kernel_report.ps1",
+                           "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json"
+                       ]
 }

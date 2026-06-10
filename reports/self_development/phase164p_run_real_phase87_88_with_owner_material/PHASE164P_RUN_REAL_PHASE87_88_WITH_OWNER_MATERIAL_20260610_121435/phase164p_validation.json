@@ -1,0 +1,22 @@
+{
+  "schema": "PHASE164P_REAL_PHASE87_88_OWNER_MATERIAL_VALIDATION_V1",
+  "status": "PASS",
+  "run_id_phase87": "PHASE164P_REAL_PHASE87_OWNER_MATERIAL_20260610_121435",
+  "run_id_phase88": "PHASE164P_REAL_PHASE88_OWNER_MATERIAL_20260610_121435",
+  "phase87_orchestrator_exit": 0,
+  "phase88_orchestrator_exit": 0,
+  "existing_orchestrator_used": true,
+  "phase87_canonical_report_path": "reports/self_development/SELF_DEVELOPMENT_DECISION_KERNEL_REPORT.json",
+  "phase87_owner_material_available": true,
+  "phase88_canonical_program_path": "self_build_programs/generated/SELF_BUILD_PROGRAM_001.json",
+  "phase88_owner_material_available": true,
+  "phase88_next_allowed_step": "PHASE89_GENERATED_PROGRAM_ADMISSION_V1",
+  "canonical_phase87_report_mutation": true,
+  "canonical_self_build_program_001_mutation": true,
+  "task_queue_mutation": true,
+  "side_conveyor_continued": false,
+  "phase89_not_run": true,
+  "phase90_not_run": true,
+  "route_lock_mutation": false,
+  "codex_execution": false
+}

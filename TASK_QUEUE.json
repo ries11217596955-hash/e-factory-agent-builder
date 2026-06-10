@@ -238,7 +238,10 @@
                       "capability_id":  "self_development_decision_kernel_v1",
                       "phase":  "PHASE_87",
                       "gate":  "SELF_DEVELOPMENT_DECISION_KERNEL_V1",
-                      "pack_id":  "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1"
+                      "pack_id":  "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+                      "state":  "RUNNING",
+                      "phase164p_run_id":  "PHASE164P_REAL_PHASE87_OWNER_MATERIAL_20260610_121435",
+                      "phase164p_owner_material_input":  true
                   },
                   {
                       "task_id":  "TASK_OPERATION_RUNTIME_SKELETON_V1_001",
@@ -1039,7 +1042,10 @@
                                        "No external fetch",
                                        "No external agents"
                                    ],
-                      "completed_at":  "2026-05-29T11:49:55.3888845Z"
+                      "state":  "RUNNING",
+                      "phase164p_run_id":  "PHASE164P_REAL_PHASE88_OWNER_MATERIAL_20260610_121435",
+                      "phase164p_owner_material_input":  true,
+                      "completed_at":  "2026-06-10T08:14:42.5534474Z"
                   },
                   {
                       "task_id":  "TASK_SELF_BUILD_BACKLOG_CONTRACT_V1_001",
@@ -1141,9 +1147,9 @@
                       "codex_execution_allowed":  false,
                       "created_at":  "2026-06-10T06:47:07.2665659Z",
                       "phase_source":  "PHASE164G_REAL_CANDIDATE_QUEUE_TEST",
-                      "started_at":  "2026-06-10T07:22:42.0968030Z",
+                      "started_at":  "2026-06-10T07:22:42.096803Z",
                       "phase164l_run_id":  "PHASE164L_RUN_EXISTING_ORCHESTRATOR_20260610_112242",
-                      "completed_at":  "2026-06-10T07:22:44.0649870Z",
+                      "completed_at":  "2026-06-10T07:22:44.064987Z",
                       "proof_path":  "proofs/self_development/PHASE164K_OWNER_CANDIDATE_SELF_GROWTH_ADAPTER_V1.json",
                       "self_growth_request_path":  "self_build_batch/owner_candidate_self_growth_adapter/PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001/OWNER_CANDIDATE_SELF_GROWTH_REQUEST.json"
                   }

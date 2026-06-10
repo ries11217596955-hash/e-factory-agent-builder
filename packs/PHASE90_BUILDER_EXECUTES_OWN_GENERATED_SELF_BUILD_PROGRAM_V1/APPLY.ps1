@@ -179,3 +179,14 @@ Update-GenesisState
 Write-Host "TASK_QUEUE_RETURNED_TO_NONE"
 & (Join-RepoPath "packs/$PackId/VALIDATE.ps1") -RepoRoot $RepoRoot -Stage "Completed"
 Write-Host "PHASE90_APPLY_COMPLETE"
+
+# PHASE165H_DYNAMIC_SELF_BUILD_PROGRAM_EXECUTION_PATCH_START
+try {
+  $__phase165hExecution = "self_build_programs/executions/EXECUTE_DYNAMIC_SELF_BUILD_PROGRAM_V1.ps1"
+  if (Test-Path $__phase165hExecution) {
+    & powershell -NoProfile -ExecutionPolicy Bypass -File $__phase165hExecution | Out-Null
+  }
+} catch {
+  Write-Warning ("PHASE165H dynamic self-build program execution failed: " + $_.Exception.Message)
+}
+# PHASE165H_DYNAMIC_SELF_BUILD_PROGRAM_EXECUTION_PATCH_END

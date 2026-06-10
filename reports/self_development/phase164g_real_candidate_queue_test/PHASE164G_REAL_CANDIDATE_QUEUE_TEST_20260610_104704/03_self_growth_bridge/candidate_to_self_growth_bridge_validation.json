@@ -1,0 +1,14 @@
+﻿{
+    "schema":  "CANDIDATE_TO_SELF_GROWTH_BRIDGE_VALIDATION_V1",
+    "status":  "PASS",
+    "dry_run":  true,
+    "missing_required_count":  0,
+    "phase164d_status":  "PASS",
+    "candidate_file_count":  1,
+    "ready_bridge_task_count":  1,
+    "invalid_candidate_count":  0,
+    "task_queue_mutation":  false,
+    "accepted_core_mutation":  false,
+    "route_lock_mutation":  false,
+    "codex_execution":  false
+}

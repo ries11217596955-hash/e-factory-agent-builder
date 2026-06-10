@@ -1,0 +1,21 @@
+{
+  "schema": "PHASE164G_REAL_CANDIDATE_QUEUE_TEST_MANIFEST_V1",
+  "created_at": "2026-06-10T06:47:07.3096913Z",
+  "repo": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "pre_head": "5a9523c",
+  "pre_remote": "5a9523c",
+  "candidate_path": "owner_orders/candidate_inbox/OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001.candidate.json",
+  "queue_task_id": "PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+  "intake_validation_path": "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\01_inbox_intake\\owner_candidate_inbox_intake_validation.json",
+  "gate_validation_path": "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\02_quarantine_sandbox_gate\\candidate_quarantine_sandbox_gate_validation.json",
+  "bridge_validation_path": "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\03_self_growth_bridge\\candidate_to_self_growth_bridge_validation.json",
+  "bridge_tasks_path": "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\03_self_growth_bridge\\candidate_to_self_growth_bridge_tasks_preview.json",
+  "validation_path": "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\phase164g_real_candidate_queue_test_validation.json",
+  "task_queue_backup_path": "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\TASK_QUEUE.before_phase164g.json",
+  "mode": "REAL_CANDIDATE_TO_EXISTING_BUILDER_QUEUE",
+  "task_queue_mutation": true,
+  "accepted_core_mutation": false,
+  "route_lock_mutation": false,
+  "codex_execution": false
+}

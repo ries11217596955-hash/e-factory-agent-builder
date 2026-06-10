@@ -1,0 +1,31 @@
+﻿{
+    "schema":  "CANDIDATE_QUARANTINE_SANDBOX_GATE_MANIFEST_V1",
+    "created_at":  "2026-06-10T06:47:06.3795698Z",
+    "mode":  "DRY_RUN_NO_PROMOTION_NO_SANDBOX_EXECUTION",
+    "inbox_dir":  "owner_orders/candidate_inbox",
+    "quarantine_dir":  "owner_orders/candidate_quarantine",
+    "sandbox_dir":  "runtime_sessions/candidate_sandbox",
+    "required_files_missing":  [
+
+                               ],
+    "candidate_file_count":  1,
+    "quarantine_ready_count":  1,
+    "invalid_candidate_count":  0,
+    "candidate_gate_checks":  [
+                                  {
+                                      "candidate_id":  "OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+                                      "source_path":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\owner_orders\\candidate_inbox\\OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001.candidate.json",
+                                      "quarantine_status":  "QUARANTINE_READY",
+                                      "sandbox_status":  "NOT_RUN",
+                                      "promotion_allowed":  false,
+                                      "risk_notes":  "Low risk. No external code. No dependency install. No direct mutation of accepted core. Candidate must be processed by existing Builder self-growth organs only.",
+                                      "read_error":  null,
+                                      "mutation_mode":  "none"
+                                  }
+                              ],
+    "phase164c_status":  "PASS",
+    "accepted_core_mutation":  false,
+    "route_lock_mutation":  false,
+    "codex_execution":  false,
+    "promotion_performed":  false
+}

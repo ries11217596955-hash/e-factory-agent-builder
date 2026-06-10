@@ -1,0 +1,6 @@
+{
+    "status":  "PASS",
+    "manifest_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\01_inbox_intake\\owner_candidate_inbox_intake_manifest.json",
+    "validation_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\01_inbox_intake\\owner_candidate_inbox_intake_validation.json",
+    "report_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\01_inbox_intake\\OWNER_CANDIDATE_INBOX_INTAKE_REPORT.md"
+}

@@ -1,0 +1,6 @@
+{
+    "status":  "PASS",
+    "manifest_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\02_quarantine_sandbox_gate\\candidate_quarantine_sandbox_gate_manifest.json",
+    "validation_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\02_quarantine_sandbox_gate\\candidate_quarantine_sandbox_gate_validation.json",
+    "report_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\02_quarantine_sandbox_gate\\CANDIDATE_QUARANTINE_SANDBOX_GATE_REPORT.md"
+}

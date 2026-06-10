@@ -1,0 +1,19 @@
+{
+  "schema": "PHASE164G_REAL_CANDIDATE_QUEUE_TEST_VALIDATION_V1",
+  "status": "PASS",
+  "candidate_created": true,
+  "candidate_id": "OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+  "intake_status": "PASS",
+  "quarantine_gate_status": "PASS",
+  "bridge_status": "PASS",
+  "ready_bridge_task_count": 1,
+  "task_queue_shape": "OBJECT_WITH_tasks",
+  "task_queue_mutation": true,
+  "duplicate_task": false,
+  "queued_task_found": true,
+  "task_queue_backup_path": "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\TASK_QUEUE.before_phase164g.json",
+  "accepted_core_mutation": false,
+  "route_lock_mutation": false,
+  "codex_execution": false,
+  "atom_accepted": false
+}

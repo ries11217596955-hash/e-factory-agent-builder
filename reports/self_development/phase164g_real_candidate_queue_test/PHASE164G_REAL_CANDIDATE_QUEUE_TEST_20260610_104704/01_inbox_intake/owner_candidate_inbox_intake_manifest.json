@@ -1,0 +1,29 @@
+﻿{
+    "schema":  "OWNER_CANDIDATE_INBOX_INTAKE_MANIFEST_V1",
+    "created_at":  "2026-06-10T06:47:05.5769888Z",
+    "mode":  "DRY_RUN_NO_PROMOTION",
+    "inbox_dir":  "owner_orders/candidate_inbox",
+    "required_files_missing":  [
+
+                               ],
+    "candidate_file_count":  1,
+    "ready_candidate_count":  1,
+    "invalid_candidate_count":  0,
+    "candidate_checks":  [
+                             {
+                                 "path":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\owner_orders\\candidate_inbox\\OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001.candidate.json",
+                                 "name":  "OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001.candidate.json",
+                                 "status":  "READY_FOR_QUARANTINE_REVIEW",
+                                 "missing_fields":  [
+
+                                                    ],
+                                 "read_error":  null,
+                                 "mutation_mode":  "none"
+                             }
+                         ],
+    "phase164b_status":  "PASS",
+    "accepted_core_mutation":  false,
+    "route_lock_mutation":  false,
+    "codex_execution":  false,
+    "promotion_performed":  false
+}

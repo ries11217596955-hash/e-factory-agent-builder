@@ -1,0 +1,7 @@
+{
+    "status":  "PASS",
+    "manifest_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\03_self_growth_bridge\\candidate_to_self_growth_bridge_manifest.json",
+    "validation_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\03_self_growth_bridge\\candidate_to_self_growth_bridge_validation.json",
+    "bridge_tasks_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\03_self_growth_bridge\\candidate_to_self_growth_bridge_tasks_preview.json",
+    "report_path":  "reports\\self_development\\phase164g_real_candidate_queue_test\\PHASE164G_REAL_CANDIDATE_QUEUE_TEST_20260610_104704\\03_self_growth_bridge\\CANDIDATE_TO_SELF_GROWTH_BRIDGE_REPORT.md"
+}

@@ -1118,6 +1118,29 @@
       "autonomous_eligible": true,
       "codex_used": false,
       "next_allowed_step": "PHASE116_BUILDER_AUTONOMOUS_CHAIN_SMOKE_V1"
+    },
+    {
+      "id": "PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+      "task_id": "PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+      "type": "OWNER_CANDIDATE_SELF_GROWTH_INTAKE",
+      "task_type": "OWNER_CANDIDATE_SELF_GROWTH_INTAKE",
+      "title": "Self-growth intake from owner candidate: Codex archive boundary smoke checker",
+      "status": "queued",
+      "state": "queued",
+      "priority": "normal",
+      "source": "owner_candidate_inbox",
+      "source_candidate_id": "OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+      "source_candidate_path": "owner_orders/candidate_inbox/OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001.candidate.json",
+      "bridge_task_id": "SELF_GROWTH_FROM_OWNER_CANDIDATE_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+      "target_loop": "EXISTING_BUILDER_SELF_GROWTH_LOOP",
+      "requested_action": "Use existing Builder self-growth organs to adapt candidate into atom candidate, sandbox validate, prove, then accept or reject.",
+      "required_next_gate": "BUILDER_SANDBOX_VALIDATE_PROOF_THEN_ACCEPT_OR_REJECT",
+      "atom_acceptance_allowed": false,
+      "accepted_core_mutation_allowed": false,
+      "route_lock_mutation_allowed": false,
+      "codex_execution_allowed": false,
+      "created_at": "2026-06-10T06:47:07.2665659Z",
+      "phase_source": "PHASE164G_REAL_CANDIDATE_QUEUE_TEST"
     }
   ]
 }

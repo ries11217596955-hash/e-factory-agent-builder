@@ -1,0 +1,12 @@
+﻿{
+    "bridge_task_id":  "SELF_GROWTH_FROM_OWNER_CANDIDATE_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+    "source_candidate_id":  "OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+    "source_candidate_path":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\owner_orders\\candidate_inbox\\OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001.candidate.json",
+    "target_loop":  "EXISTING_BUILDER_SELF_GROWTH_LOOP",
+    "requested_action":  "ADAPT_OWNER_CANDIDATE_AS_ATOM_CANDIDATE_USING_EXISTING_BUILDER_ORGANS",
+    "status":  "READY_FOR_EXISTING_BUILDER_SELF_GROWTH_INTAKE",
+    "atom_acceptance_allowed":  false,
+    "required_next_gate":  "BUILDER_SANDBOX_VALIDATE_PROOF_THEN_ACCEPT_OR_REJECT",
+    "created_at":  "2026-06-10T06:47:07.1403551Z",
+    "mutation_mode":  "none"
+}

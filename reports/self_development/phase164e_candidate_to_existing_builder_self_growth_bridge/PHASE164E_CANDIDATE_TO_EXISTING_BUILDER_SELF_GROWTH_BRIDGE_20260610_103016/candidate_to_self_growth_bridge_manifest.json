@@ -1,0 +1,18 @@
+﻿{
+    "schema":  "CANDIDATE_TO_SELF_GROWTH_BRIDGE_MANIFEST_V1",
+    "created_at":  "2026-06-10T06:30:18.6237294Z",
+    "mode":  "DRY_RUN_NO_TASK_QUEUE_MUTATION",
+    "inbox_dir":  "owner_orders/candidate_inbox",
+    "bridge_outbox_dir":  "owner_orders/candidate_self_growth_bridge_outbox",
+    "required_files_missing":  [
+
+                               ],
+    "phase164d_status":  "PASS",
+    "candidate_file_count":  0,
+    "ready_bridge_task_count":  0,
+    "invalid_candidate_count":  0,
+    "task_queue_mutation":  false,
+    "accepted_core_mutation":  false,
+    "route_lock_mutation":  false,
+    "codex_execution":  false
+}

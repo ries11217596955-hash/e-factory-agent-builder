@@ -1,0 +1,14 @@
+{
+  "schema": "PHASE161K_VALIDATION_V1",
+  "status": "FAIL",
+  "missing_required_count": 0,
+  "route_mentions_phase161k": false,
+  "phase164a_selects_phase161k": true,
+  "phase163_closure_evidence_present": true,
+  "codex_read_boundary_present": true,
+  "musorka_present": true,
+  "archive_override_present": true,
+  "archive_context_map_present": true,
+  "accepted_core_mutation": false,
+  "route_lock_mutation": false
+}

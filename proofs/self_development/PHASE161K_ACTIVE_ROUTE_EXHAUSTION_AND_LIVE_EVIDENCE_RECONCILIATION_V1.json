@@ -1,0 +1,20 @@
+{
+  "schema": "PHASE161K_PROOF_V1",
+  "phase": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
+  "status": "FAIL",
+  "created_at": "2026-06-10T04:53:58.1272677Z",
+  "report_dir": "reports/self_development/phase161k_route_evidence_reconciliation/PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_20260610_085357",
+  "result_path": "reports\\self_development\\phase161k_route_evidence_reconciliation\\PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_20260610_085357\\phase161k_reconciliation_result.json",
+  "validation_path": "reports\\self_development\\phase161k_route_evidence_reconciliation\\PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_20260610_085357\\phase161k_reconciliation_validation.json",
+  "report_path": "reports\\self_development\\phase161k_route_evidence_reconciliation\\PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION_20260610_085357\\PHASE161K_ROUTE_EVIDENCE_RECONCILIATION_REPORT.md",
+  "pre_head": "c10c26b",
+  "pre_remote": "c10c26b",
+  "route_mentions_phase161k": false,
+  "phase164a_selects_phase161k": true,
+  "phase163_closure_evidence_present": true,
+  "codex_read_boundary_present": true,
+  "musorka_present": true,
+  "accepted_core_mutation": false,
+  "route_lock_mutation": false,
+  "next_recommended_action": "PHASE164B_BUILD_ACCEPTED_ATOM_BATCH_REPLAY_ORCHESTRATOR_V1_AFTER_OWNER_APPROVAL"
+}

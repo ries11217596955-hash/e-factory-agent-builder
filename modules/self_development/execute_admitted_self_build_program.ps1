@@ -126,6 +126,35 @@ if ("$(Get-PropertyValue -Object $admissionProof -Name "next_allowed_step")" -ne
   throw "PHASE89_PROOF_NEXT_STEP_MISMATCH"
 }
 
+
+# PHASE164S_OWNER_MATERIAL_EXECUTION_CONTEXT_V1
+$ownerMaterialInput = Get-PropertyValue -Object $program -Name "owner_material_input"
+$ownerMaterialAvailable = [bool](Get-PropertyValue -Object $program -Name "owner_material_available")
+$admissionOwnerMaterialAvailable = [bool](Get-PropertyValue -Object $admission -Name "owner_material_available")
+
+if (-not $ownerMaterialAvailable -and $admissionOwnerMaterialAvailable) {
+  $ownerMaterialAvailable = $true
+}
+
+$ownerMaterialSourceCandidateId = ""
+$ownerMaterialSourceCandidatePath = ""
+$ownerMaterialSourceRequestPath = ""
+
+if ($null -ne $ownerMaterialInput) {
+  $ownerMaterialSourceCandidateId = "$(Get-PropertyValue -Object $ownerMaterialInput -Name "source_candidate_id")"
+  $ownerMaterialSourceCandidatePath = "$(Get-PropertyValue -Object $ownerMaterialInput -Name "source_candidate_path")"
+  $ownerMaterialSourceRequestPath = "$(Get-PropertyValue -Object $ownerMaterialInput -Name "source_request_path")"
+}
+
+if ([string]::IsNullOrWhiteSpace($ownerMaterialSourceCandidateId)) {
+  $ownerMaterialSourceCandidateId = "$(Get-PropertyValue -Object $admission -Name "owner_material_source_candidate_id")"
+}
+if ([string]::IsNullOrWhiteSpace($ownerMaterialSourceCandidatePath)) {
+  $ownerMaterialSourceCandidatePath = "$(Get-PropertyValue -Object $admission -Name "owner_material_source_candidate_path")"
+}
+if ([string]::IsNullOrWhiteSpace($ownerMaterialSourceRequestPath)) {
+  $ownerMaterialSourceRequestPath = "$(Get-PropertyValue -Object $admission -Name "owner_material_source_request_path")"
+}
 $generatedAt = Get-UtcStamp
 $execution = [ordered]@{
   execution_id = $ExecutionId
@@ -136,6 +165,11 @@ $execution = [ordered]@{
   source_admission_path = $AdmissionPath
   source_admission_report_path = $AdmissionReportPath
   source_admission_proof_path = $AdmissionProofPath
+  owner_material_input = $ownerMaterialInput
+  owner_material_available = $ownerMaterialAvailable
+  owner_material_source_candidate_id = $ownerMaterialSourceCandidateId
+  owner_material_source_candidate_path = $ownerMaterialSourceCandidatePath
+  owner_material_source_request_path = $ownerMaterialSourceRequestPath
   executed_by_phase = $Phase
   admitted_before_execution = $true
   admission_decision = $AdmissionDecision
@@ -157,6 +191,10 @@ $report = [ordered]@{
   program_id = $ProgramId
   execution_path = $ExecutionPath
   admission_verified = $true
+  owner_material_available = $ownerMaterialAvailable
+  owner_material_source_candidate_id = $ownerMaterialSourceCandidateId
+  owner_material_source_candidate_path = $ownerMaterialSourceCandidatePath
+  owner_material_source_request_path = $ownerMaterialSourceRequestPath
   execution_performed = $true
   completed_loop = $true
   capability_created = $CapabilityCreated
@@ -190,6 +228,10 @@ $proof = [ordered]@{
   generated_at = $generatedAt
   program_id = $ProgramId
   admission_verified = $true
+  owner_material_available = $ownerMaterialAvailable
+  owner_material_source_candidate_id = $ownerMaterialSourceCandidateId
+  owner_material_source_candidate_path = $ownerMaterialSourceCandidatePath
+  owner_material_source_request_path = $ownerMaterialSourceRequestPath
   execution_performed = $true
   completed_loop = $true
   capability_created = $CapabilityCreated
@@ -229,3 +271,4 @@ Write-Host "GENERATED_SELF_BUILD_EXECUTION_PROOF_WRITTEN=$ProofPath"
 Write-Host "GENERATED_SELF_BUILD_EXECUTION_COMPLETE"
 
 return [pscustomobject]$report
+

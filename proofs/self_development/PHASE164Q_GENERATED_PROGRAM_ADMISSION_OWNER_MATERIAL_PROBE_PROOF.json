@@ -1,0 +1,30 @@
+{
+    "queue_returned_to_none":  true,
+    "status":  "PASS",
+    "phase":  "PHASE89_GENERATED_PROGRAM_ADMISSION_V1",
+    "task_id":  "TASK_GENERATED_PROGRAM_ADMISSION_V1_001",
+    "pack_id":  "PHASE89_GENERATED_PROGRAM_ADMISSION_V1",
+    "runtime_mode":  "SELF_BUILD",
+    "generated_at":  "2026-06-10T08:24:55.0435946Z",
+    "admission_path":  "self_build_programs/admission/PHASE164Q_SELF_BUILD_PROGRAM_001_OWNER_MATERIAL_ADMISSION_PROBE.json",
+    "report_path":  "reports/self_development/PHASE164Q_GENERATED_PROGRAM_ADMISSION_OWNER_MATERIAL_PROBE_REPORT.json",
+    "proof_path":  "proofs/self_development/PHASE164Q_GENERATED_PROGRAM_ADMISSION_OWNER_MATERIAL_PROBE_PROOF.json",
+    "admission_decision":  "ADMIT_CANDIDATE_FOR_CONTROLLED_EXECUTION",
+    "admission_performed":  true,
+    "execution_performed":  false,
+    "owner_material_available":  true,
+    "owner_material_source_candidate_id":  "OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+    "owner_material_source_candidate_path":  "owner_orders/candidate_inbox/OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001.candidate.json",
+    "owner_material_source_request_path":  "self_build_batch/owner_candidate_self_growth_adapter/PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001/OWNER_CANDIDATE_SELF_GROWTH_REQUEST.json",
+    "next_allowed_step":  "PHASE90_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1",
+    "no_external_agent_production":  true,
+    "no_external_install":  true,
+    "no_external_fetch":  true,
+    "evidence_files":  [
+                           "self_build_programs/generated/SELF_BUILD_PROGRAM_001.json",
+                           "reports/self_development/SELF_BUILD_PROGRAM_GENERATOR_REPORT.json",
+                           "proofs/self_development/SELF_BUILD_PROGRAM_GENERATOR_V1.json",
+                           "self_build_programs/admission/PHASE164Q_SELF_BUILD_PROGRAM_001_OWNER_MATERIAL_ADMISSION_PROBE.json",
+                           "reports/self_development/PHASE164Q_GENERATED_PROGRAM_ADMISSION_OWNER_MATERIAL_PROBE_REPORT.json"
+                       ]
+}

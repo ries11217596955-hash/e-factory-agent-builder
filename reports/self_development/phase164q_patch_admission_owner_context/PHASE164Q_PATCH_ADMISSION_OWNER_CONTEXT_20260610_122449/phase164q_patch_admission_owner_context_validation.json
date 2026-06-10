@@ -1,0 +1,19 @@
+{
+  "schema": "PHASE164Q_PATCH_ADMISSION_OWNER_CONTEXT_VALIDATION_V1",
+  "status": "PASS",
+  "module_path": "modules/self_development/evaluate_generated_program_admission.ps1",
+  "duplicate_keys_repaired": true,
+  "probe_admission_path": "self_build_programs/admission/PHASE164Q_SELF_BUILD_PROGRAM_001_OWNER_MATERIAL_ADMISSION_PROBE.json",
+  "probe_report_path": "reports/self_development/PHASE164Q_GENERATED_PROGRAM_ADMISSION_OWNER_MATERIAL_PROBE_REPORT.json",
+  "probe_proof_path": "proofs/self_development/PHASE164Q_GENERATED_PROGRAM_ADMISSION_OWNER_MATERIAL_PROBE_PROOF.json",
+  "admission_owner_material_available": true,
+  "report_owner_material_available": true,
+  "proof_owner_material_available": true,
+  "execution_performed": false,
+  "next_allowed_step": "PHASE90_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1",
+  "canonical_phase89_not_run": true,
+  "phase90_not_run": true,
+  "task_queue_mutation": false,
+  "route_lock_mutation": false,
+  "codex_execution": false
+}

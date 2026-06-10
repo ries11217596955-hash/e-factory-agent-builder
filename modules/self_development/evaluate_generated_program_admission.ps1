@@ -118,6 +118,18 @@ if ([bool](Get-PropertyValue -Object $generatorProof -Name "execution_performed"
   throw "PHASE88_PROOF_EXECUTION_PERFORMED_TRUE"
 }
 
+# PHASE164Q_OWNER_MATERIAL_ADMISSION_CONTEXT_V1
+$ownerMaterialInput = Get-PropertyValue -Object $program -Name "owner_material_input"
+$ownerMaterialAvailable = [bool](Get-PropertyValue -Object $program -Name "owner_material_available")
+$ownerMaterialSourceCandidateId = ""
+$ownerMaterialSourceCandidatePath = ""
+$ownerMaterialSourceRequestPath = ""
+if ($null -ne $ownerMaterialInput) {
+  $ownerMaterialSourceCandidateId = "$(Get-PropertyValue -Object $ownerMaterialInput -Name "source_candidate_id")"
+  $ownerMaterialSourceCandidatePath = "$(Get-PropertyValue -Object $ownerMaterialInput -Name "source_candidate_path")"
+  $ownerMaterialSourceRequestPath = "$(Get-PropertyValue -Object $ownerMaterialInput -Name "source_request_path")"
+}
+
 $generatedAt = Get-UtcStamp
 $admission = [ordered]@{
   status = "PASS"
@@ -126,6 +138,11 @@ $admission = [ordered]@{
   source_program_path = $ProgramPath
   source_generator_report_path = $GeneratorReportPath
   source_generator_proof_path = $GeneratorProofPath
+    owner_material_input = $ownerMaterialInput
+    owner_material_available = $ownerMaterialAvailable
+    owner_material_source_candidate_id = $ownerMaterialSourceCandidateId
+    owner_material_source_candidate_path = $ownerMaterialSourceCandidatePath
+    owner_material_source_request_path = $ownerMaterialSourceRequestPath
   admission_decision = $AdmissionDecision
   admission_performed = $true
   execution_performed = $false
@@ -161,6 +178,10 @@ $report = [ordered]@{
   program_status_before_admission = "$(Get-PropertyValue -Object $program -Name "status")"
   program_admission_required = [bool](Get-PropertyValue -Object $program -Name "admission_required")
   program_execution_allowed_before_admission = [bool](Get-PropertyValue -Object $program -Name "execution_allowed")
+  owner_material_available = $ownerMaterialAvailable
+  owner_material_source_candidate_id = $ownerMaterialSourceCandidateId
+  owner_material_source_candidate_path = $ownerMaterialSourceCandidatePath
+  owner_material_source_request_path = $ownerMaterialSourceRequestPath
   phase88_report_path = $GeneratorReportPath
   phase88_report_status = "$(Get-PropertyValue -Object $generatorReport -Name "status")"
   phase88_proof_path = $GeneratorProofPath
@@ -192,6 +213,10 @@ $proof = [ordered]@{
   admission_decision = $AdmissionDecision
   admission_performed = $true
   execution_performed = $false
+  owner_material_available = $ownerMaterialAvailable
+  owner_material_source_candidate_id = $ownerMaterialSourceCandidateId
+  owner_material_source_candidate_path = $ownerMaterialSourceCandidatePath
+  owner_material_source_request_path = $ownerMaterialSourceRequestPath
   next_allowed_step = $NextAllowedStep
   no_external_agent_production = $true
   no_external_install = $true
@@ -217,4 +242,5 @@ Write-Host "GENERATED_PROGRAM_ADMISSION_PROOF_WRITTEN=$ProofPath"
 Write-Host "GENERATED_PROGRAM_ADMISSION_COMPLETE"
 
 return [pscustomobject]$report
+
 

@@ -169,3 +169,14 @@ Update-GenesisState
 Write-Host "TASK_QUEUE_RETURNED_TO_NONE"
 & (Join-RepoPath "packs/$PackId/VALIDATE.ps1") -RepoRoot $RepoRoot -Stage "Completed"
 Write-Host "PHASE89_APPLY_COMPLETE"
+
+# PHASE165G_DYNAMIC_GENERATED_PROGRAM_ADMISSION_PATCH_START
+try {
+  $__phase165gAdmission = "self_build_programs/admission/ADMIT_DYNAMIC_SELF_BUILD_PROGRAM_V1.ps1"
+  if (Test-Path $__phase165gAdmission) {
+    & powershell -NoProfile -ExecutionPolicy Bypass -File $__phase165gAdmission | Out-Null
+  }
+} catch {
+  Write-Warning ("PHASE165G dynamic generated program admission failed: " + $_.Exception.Message)
+}
+# PHASE165G_DYNAMIC_GENERATED_PROGRAM_ADMISSION_PATCH_END

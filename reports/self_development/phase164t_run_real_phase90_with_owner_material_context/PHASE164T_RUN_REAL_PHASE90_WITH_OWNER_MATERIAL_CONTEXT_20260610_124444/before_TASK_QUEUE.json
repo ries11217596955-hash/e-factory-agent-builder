@@ -215,10 +215,7 @@
                       "phase":  "PHASE90",
                       "gate":  "BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1",
                       "pack_id":  "PHASE90_BUILDER_EXECUTES_OWN_GENERATED_SELF_BUILD_PROGRAM_V1",
-                      "completed_at":  "2026-06-10T08:44:46.2917502Z",
-                      "state":  "RUNNING",
-                      "phase164t_run_id":  "PHASE164T_REAL_PHASE90_OWNER_CONTEXT_20260610_124444",
-                      "phase164t_owner_material_context":  true
+                      "completed_at":  "2026-05-29T12:45:07.1572981Z"
                   },
                   {
                       "task_id":  "TASK_GENERATED_PROGRAM_ADMISSION_V1_001",

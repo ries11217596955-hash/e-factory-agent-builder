@@ -1,0 +1,15 @@
+{
+  "schema": "PHASE164K_OWNER_CANDIDATE_SELF_GROWTH_ADAPTER_REGISTRATION_VALIDATION_V1",
+  "status": "PASS",
+  "pack_id": "PHASE164K_OWNER_CANDIDATE_SELF_GROWTH_ADAPTER_V1",
+  "task_id": "PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+  "apply_parse_error_count": 0,
+  "validate_parse_error_count": 0,
+  "registry_binding_created": true,
+  "task_queue_mutation": false,
+  "adapter_executed": false,
+  "atom_accepted": false,
+  "accepted_core_mutation": false,
+  "route_lock_mutation": false,
+  "codex_execution": false
+}

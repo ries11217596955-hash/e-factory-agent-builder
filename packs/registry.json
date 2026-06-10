@@ -1080,6 +1080,12 @@
       "validate_script": "packs/PHASE93_CAPABILITY_GAP_DETECTOR_V1/VALIDATE.ps1",
       "phase": "PHASE93",
       "status": "READY"
+    },
+    {
+      "pack_id": "PHASE164K_OWNER_CANDIDATE_SELF_GROWTH_ADAPTER_V1",
+      "task_id": "PHASE164G_SELF_GROWTH_FROM_OWNER_CANDIDATE_CODEX_ARCHIVE_BOUNDARY_CHECKER_001",
+      "shell": "PowerShell",
+      "entry_script": "packs/PHASE164K_OWNER_CANDIDATE_SELF_GROWTH_ADAPTER_V1/APPLY.ps1"
     }
   ],
   "phase162_accepted_atom_references": [

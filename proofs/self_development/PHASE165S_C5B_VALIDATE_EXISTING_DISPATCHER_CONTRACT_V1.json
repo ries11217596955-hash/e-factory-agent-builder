@@ -1,0 +1,21 @@
+{
+  "phase": "PHASE165S_C5B_VALIDATE_EXISTING_DISPATCHER_CONTRACT_REUSE_NOT_REBUILD",
+  "status": "PASS_EXISTING_DISPATCHER_CONTRACT_VALIDATED",
+  "corrected_at": "2026-06-11T16:59:58.9699107+04:00",
+  "dispatcher_file": "modules/decide_builder_learning_mode_001.ps1",
+  "classifier_file": "modules/classify_builder_owner_inbox_message_type_001.ps1",
+  "previous_failed_harness_reason": "Dispatcher requires -EmitJson; classifier is function interface; normal mode is SELF_MODE.",
+  "no_school_learning_mode": "SELF_MODE",
+  "no_school_decision_reason": "NO_CURRICULUM_AND_NO_PENDING_ABSORPTION",
+  "no_school_returns_self_mode": true,
+  "curriculum_learning_mode": "SCHOOL_MODE",
+  "curriculum_decision_reason": "VALID_CURRICULUM_AVAILABLE_SELECT_SCHOOL_MODE",
+  "curriculum_input_routes_school": true,
+  "classifier_route_decision": "ROUTE_CURRICULUM_PACK",
+  "classifier_route_target": "SCHOOL_MODE",
+  "classifier_curriculum_routes_school_mode": true,
+  "protected_state_dirty_check": [],
+  "route_decision": "REUSE_EXISTING_DISPATCHER_NOT_REBUILD",
+  "next_required_action": "PHASE165S_C5B_ACCEPTANCE_COMMIT",
+  "run_root": "reports/self_development/phase165s_c5b_existing_dispatcher_contract"
+}

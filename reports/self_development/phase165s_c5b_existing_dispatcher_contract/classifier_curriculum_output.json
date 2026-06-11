@@ -1,0 +1,8 @@
+{
+  "message_type": "curriculum_pack",
+  "route_decision": "ROUTE_CURRICULUM_PACK",
+  "route_target": "SCHOOL_MODE",
+  "accepted_by_router": true,
+  "quarantine_required": false,
+  "quarantine_reason": "NONE"
+}

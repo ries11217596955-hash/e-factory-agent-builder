@@ -1,3 +1,66 @@
+<!-- CODEX_CONTEXT_BUDGET_START -->
+
+# Codex Context Budget / Read Policy
+
+Codex must optimize context before reading the repository.
+
+## Read first
+
+- AGENTS.md
+- README.md
+- route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md
+- CAPABILITY_ROADMAP.json
+- GENESIS_STATE.json
+- TASK_QUEUE.json
+- packs/registry.json
+- orchestrator/run.ps1
+
+## Do not read by default
+
+Do not recursively read or summarize these zones unless the active route, Owner, or exact validator asks for a specific path:
+
+- reports/**
+- proofs/**
+- self_build_programs/**/canonical_trials/**
+- self_build_programs/**/dry_runs/**
+- self_build_programs/**/promotions/**
+- self_build_programs/**/before*
+- self_build_programs/**/after*
+- zz_MUSORKA_DO_NOT_READ_BY_CODEX/**
+- runtime_sessions/**
+
+Reason: these areas contain heavy evidence, snapshots, historical reports, before/after copies, and transfer artifacts. They are evidence archives, not default orientation material.
+
+## Heavy known files
+
+Avoid loading these files unless explicitly needed:
+
+- reports/self_development/agent_body_map.json
+- reports/self_development/PLAIN_LIFE_STOP_AND_PC_TRANSFER_HANDOFF_20260608_224213.md
+- reports/self_development/SELF_MODEL_ACTIVE_MAP.json
+- self_build_programs/promotions/**/self_model_active_map_before_promotion.json
+- self_build_programs/promotions/**/self_model_active_map_after_promotion.json
+
+## Exact-path rule
+
+If proof/report evidence is needed, read only the exact file named by route/proof chain. Do not open the whole parent folder.
+
+Correct example: proofs/self_development/PHASE165O_POST_PROMOTION_STATE_VERIFY_AND_CLOSE_V1.json
+Wrong example: read all proofs/** or reports/**
+
+## Evidence rule still applies
+
+Skipping heavy folders by default does not mean ignoring evidence. Evidence must be pulled by exact path, phase, proof name, or route requirement.
+
+## Current post-PHASE165O baseline
+
+organ_id = reusable_owner_material_self_build_organ_v1
+capability = owner_material_dynamic_self_build_loop
+close_commit = a686fbd
+next_required_action = PHASE165P_ROUTE_LOCK_V2_COMPLETION_REVIEW_OR_NEXT_ROUTE_LOCK_DECISION
+
+<!-- CODEX_CONTEXT_BUDGET_END -->
+
 # AGENTS.md ΓÇö e-factory-agent-builder
 
 ## Purpose
@@ -266,4 +329,5 @@ Use the route lock, protected state, current proofs named in the task, and exact
 If evidence is needed, ask for or inspect the narrow proof path only.
 
 <!-- CODEX_READ_BOUNDARY_END -->
+
 

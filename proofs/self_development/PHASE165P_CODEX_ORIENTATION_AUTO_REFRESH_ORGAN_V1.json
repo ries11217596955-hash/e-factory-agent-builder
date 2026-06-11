@@ -1,0 +1,37 @@
+﻿{
+    "phase":  "PHASE165P_CODEX_ORIENTATION_AUTO_REFRESH_ORGAN_V1",
+    "created_utc":  "2026-06-11T06:46:32.0606951Z",
+    "status":  "PASS",
+    "validation_passed":  true,
+    "errors":  [
+
+               ],
+    "generated_files":  [
+                            "docs/codex/CODEX_REPO_MAP.md",
+                            "docs/codex/CODEX_EVIDENCE_INDEX.md",
+                            "docs/codex/CODEX_CURRENT_STATE_THIN.json"
+                        ],
+    "branch":  "phase110-idempotent-autonomy-trial-runtime",
+    "head":  "491f85e139dfc6b64165c6ca87ed7dc3d34b822c",
+    "origin":  "491f85e139dfc6b64165c6ca87ed7dc3d34b822c",
+    "head_equals_origin":  true,
+    "route_lock_present":  true,
+    "current_state_thin_present":  true,
+    "repo_map_present":  true,
+    "evidence_index_present":  true,
+    "agents_budget_block_present":  true,
+    "skip_rules_present":  true,
+    "exact_path_rule_present":  true,
+    "phase165o_proof_paths_present":  true,
+    "phase165p_budget_proof_path_present":  true,
+    "task_queue_mutated":  false,
+    "genesis_state_mutated":  false,
+    "capability_roadmap_mutated":  false,
+    "registry_mutated":  false,
+    "route_lock_mutated":  false,
+    "orchestrator_mutated":  false,
+    "orchestrator_run":  false,
+    "external_fetch_or_install":  false,
+    "codex_used":  true,
+    "next_required_action":  "PHASE165P_CODEX_ORIENTATION_AUTO_REFRESH_ACCEPTANCE_COMMIT"
+}

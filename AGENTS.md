@@ -4,6 +4,8 @@
 
 Codex must optimize context before reading the repository.
 
+For lightweight orientation, read docs/codex/CODEX_CURRENT_STATE_THIN.json, docs/codex/CODEX_REPO_MAP.md, docs/codex/CODEX_EVIDENCE_INDEX.md before inspecting heavy folders.
+
 ## Read first
 
 - AGENTS.md

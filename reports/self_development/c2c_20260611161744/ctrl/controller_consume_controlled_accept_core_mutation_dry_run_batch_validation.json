@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_BATCH_VALIDATION_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T16:17:46.0595840+04:00",
+    "next_machine_action":  "EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_FOR_ATOM_BATCH",
+    "exact_atom_scope":  true,
+    "allowed_atom_ids":  [
+                             "decision_rule.validator_gate_requires_pass_before_accept.v1"
+                         ],
+    "policy_guard_result":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c2c_20260611161744\\c2c_policy_result.json"
+}

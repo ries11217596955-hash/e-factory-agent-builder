@@ -1821,6 +1821,32 @@
                                                       "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c1b_20260611155832\\ctrl",
                                                       "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c1b_20260611155832\\cand",
                                                       "accepted_core_write":  true
+                                                  },
+                                                  {
+                                                      "schema":  "PHASE162_ACCEPTED_ATOM_MEMORY_RECORD_V1",
+                                                      "atom_id":  "decision_rule.validator_gate_requires_pass_before_accept.v1",
+                                                      "accepted_at":  "2026-06-11T16:17:46.9441697+04:00",
+                                                      "operation_id":  "C2C_20260611161744_MEMORY",
+                                                      "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c2c_20260611161744",
+                                                      "payload":  {
+                                                                      "concept_id":  "validator_gate",
+                                                                      "meaning":  "A validator gate is mandatory before accepted-state promotion. A report, lesson PASS, or candidate artifact is not enough. Promotion requires validator PASS and accepted-surface visibility proof.",
+                                                                      "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                      "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                      "owner_interrupt_used":  false,
+                                                                      "decision_rule":  {
+                                                                                            "input":  "candidate_or_lesson_result",
+                                                                                            "classification":  "REQUIRES_VALIDATOR_PASS_BEFORE_ACCEPT",
+                                                                                            "report_only_accept":  false,
+                                                                                            "decision_authority":  "ACCEPTANCE_VALIDATOR_AND_MODE_DECISION_KERNEL"
+                                                                                        },
+                                                                      "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                      "use_proof":  "Given a candidate with report-only evidence, system must classify it as NOT_ACCEPTED_UNTIL_VALIDATOR_PASS.",
+                                                                      "behavior_delta":  "Next-cycle acceptance reasoning starts from accepted validator_gate atom."
+                                                                  },
+                                                      "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c2c_20260611161744\\ctrl",
+                                                      "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c2c_20260611161744\\cand",
+                                                      "accepted_core_write":  true
                                                   }
                                               ]
 }

@@ -1,0 +1,21 @@
+﻿{
+    "schema":  "PHASE162_POST_REAL_MUTATION_VALIDATION_FOR_ATOM_BATCH_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T16:33:28.4686568+04:00",
+    "expected_atom_count":  1,
+    "atom_validation":  [
+                            {
+                                "atom_id":  "concept.owner_inbox.v1",
+                                "memory_count":  1,
+                                "self_model_count":  1,
+                                "registry_count":  1
+                            }
+                        ],
+    "accepted_memory_contains_each_atom_once":  true,
+    "self_model_contains_each_atom_once":  true,
+    "registry_contains_each_atom_once":  true,
+    "rollback_plan_available":  true,
+    "bound_to_mutation_set":  true,
+    "bound_to_atomic_write_plan":  true,
+    "accepted_core_write":  true
+}

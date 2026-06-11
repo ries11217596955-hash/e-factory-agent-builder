@@ -1,0 +1,27 @@
+﻿{
+    "atom_id":  "concept.owner_inbox.v1",
+    "batch_size":  1,
+    "source_route":  "OWNER_INBOX_CURRICULUM",
+    "source_authority":  "OWNER_APPROVED",
+    "target_files":  [
+                         "reports/self_development/accepted_change_memory_snapshot.json",
+                         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                         "packs/registry.json"
+                     ],
+    "protected_files_to_mutate":  [
+                                      "packs/registry.json"
+                                  ],
+    "proof_gates":  {
+                        "memory_proof_status":  "PASS",
+                        "use_proof_status":  "PASS",
+                        "behavior_delta_status":  "PASS",
+                        "persistence_status":  "PASS",
+                        "startup_visibility_status":  "PASS"
+                    },
+    "rollback_plan_available":  true,
+    "exactly_one_atom_scope":  true,
+    "mass_acceptance_forbidden":  true,
+    "risk_flags":  [
+
+                   ]
+}

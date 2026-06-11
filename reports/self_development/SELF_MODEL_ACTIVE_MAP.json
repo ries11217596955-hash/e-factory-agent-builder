@@ -28495,6 +28495,141 @@
                                                         "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\approved_source_catalog\\cand",
                                                         "visible_to_next_cycle":  true,
                                                         "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "concept.builder_self_map.v1",
+                                                        "accepted_at":  "2026-06-11T16:33:23.8815520+04:00",
+                                                        "operation_id":  "C4_20260611163321_builder_self_map_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "builder_self_map",
+                                                                        "meaning":  "Builder self-map is a diagnostic body/self model that describes state and signals recommendations; it is not direct command authority.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                        "school_mode":  "SCHOOL_UNTIL_CURRICULUM_QUEUE_EMPTY",
+                                                                        "owner_interrupt_used":  false,
+                                                                        "decision_rule":  {
+                                                                                              "input":  "school_curriculum_concept",
+                                                                                              "classification":  "SELF_MAP_IS_DIAGNOSTIC_NOT_COMMAND",
+                                                                                              "direct_accept_without_guard":  false,
+                                                                                              "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                        "use_proof":  "Next reasoning must use this accepted atom as rule, not curriculum-only lesson.",
+                                                                        "behavior_delta":  "Builder starts from accepted atom after visibility proof."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\builder_self_map\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\builder_self_map\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "concept.owner_inbox.v1",
+                                                        "accepted_at":  "2026-06-11T16:33:27.8398148+04:00",
+                                                        "operation_id":  "C4_20260611163321_owner_inbox_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "owner_inbox",
+                                                                        "meaning":  "Owner Inbox is an intake surface for approved tasks, curriculum packs, and owner materials. It routes material but does not itself prove acceptance.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                        "school_mode":  "SCHOOL_UNTIL_CURRICULUM_QUEUE_EMPTY",
+                                                                        "owner_interrupt_used":  false,
+                                                                        "decision_rule":  {
+                                                                                              "input":  "school_curriculum_concept",
+                                                                                              "classification":  "OWNER_INBOX_IS_INTAKE_NOT_ACCEPTANCE",
+                                                                                              "direct_accept_without_guard":  false,
+                                                                                              "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                        "use_proof":  "Next reasoning must use this accepted atom as rule, not curriculum-only lesson.",
+                                                                        "behavior_delta":  "Builder starts from accepted atom after visibility proof."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\owner_inbox\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\owner_inbox\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "concept.curriculum_pack.v1",
+                                                        "accepted_at":  "2026-06-11T16:33:31.8233828+04:00",
+                                                        "operation_id":  "C4_20260611163321_curriculum_pack_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "curriculum_pack",
+                                                                        "meaning":  "A curriculum pack is structured school material. It can create lessons and atom candidates, but accepted atom status requires guard, executor, and visibility proof.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                        "school_mode":  "SCHOOL_UNTIL_CURRICULUM_QUEUE_EMPTY",
+                                                                        "owner_interrupt_used":  false,
+                                                                        "decision_rule":  {
+                                                                                              "input":  "school_curriculum_concept",
+                                                                                              "classification":  "CURRICULUM_PACK_IS_SCHOOL_MATERIAL_NOT_ACCEPTED_MEMORY",
+                                                                                              "direct_accept_without_guard":  false,
+                                                                                              "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                        "use_proof":  "Next reasoning must use this accepted atom as rule, not curriculum-only lesson.",
+                                                                        "behavior_delta":  "Builder starts from accepted atom after visibility proof."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\curriculum_pack\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\curriculum_pack\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "concept.atom_candidate.v1",
+                                                        "accepted_at":  "2026-06-11T16:33:35.7254583+04:00",
+                                                        "operation_id":  "C4_20260611163321_atom_candidate_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "atom_candidate",
+                                                                        "meaning":  "An atom candidate is proposed learning or behavior. It is not accepted until it passes policy, validation, persistence, and visibility gates.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                        "school_mode":  "SCHOOL_UNTIL_CURRICULUM_QUEUE_EMPTY",
+                                                                        "owner_interrupt_used":  false,
+                                                                        "decision_rule":  {
+                                                                                              "input":  "school_curriculum_concept",
+                                                                                              "classification":  "ATOM_CANDIDATE_IS_NOT_ACCEPTED_ATOM",
+                                                                                              "direct_accept_without_guard":  false,
+                                                                                              "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                        "use_proof":  "Next reasoning must use this accepted atom as rule, not curriculum-only lesson.",
+                                                                        "behavior_delta":  "Builder starts from accepted atom after visibility proof."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\atom_candidate\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\atom_candidate\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "concept.absorbed_atom.v1",
+                                                        "accepted_at":  "2026-06-11T16:33:39.6484118+04:00",
+                                                        "operation_id":  "C4_20260611163321_absorbed_atom_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "absorbed_atom",
+                                                                        "meaning":  "An absorbed atom is accepted learning visible through memory, self-map, and registry, usable by the next cycle.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                        "school_mode":  "SCHOOL_UNTIL_CURRICULUM_QUEUE_EMPTY",
+                                                                        "owner_interrupt_used":  false,
+                                                                        "decision_rule":  {
+                                                                                              "input":  "school_curriculum_concept",
+                                                                                              "classification":  "ABSORBED_ATOM_REQUIRES_ACCEPTED_SURFACE_VISIBILITY",
+                                                                                              "direct_accept_without_guard":  false,
+                                                                                              "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                        "use_proof":  "Next reasoning must use this accepted atom as rule, not curriculum-only lesson.",
+                                                                        "behavior_delta":  "Builder starts from accepted atom after visibility proof."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\absorbed_atom\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\absorbed_atom\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
                                                     }
                                                 ],
     "active_organs":  [

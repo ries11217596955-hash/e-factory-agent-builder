@@ -1,0 +1,85 @@
+﻿{
+    "phase":  "PHASE165S_C4_SCHOOL_UNTIL_EMPTY_OR_RETURN_NORMAL_MODE",
+    "status":  "PASS_SCHOOL_QUEUE_EMPTY_RETURN_TO_NORMAL_MODE",
+    "created_at":  "2026-06-11T16:33:42.5812828+04:00",
+    "school_mode":  "LEARN_UNTIL_CURRICULUM_QUEUE_EMPTY",
+    "normal_mode_when_no_school":  "RETURN_TO_NORMAL_MODE",
+    "owner_interrupt_used":  false,
+    "already_accepted_count":  5,
+    "pending_at_start_count":  5,
+    "accepted_this_run_count":  5,
+    "denied_count":  0,
+    "failed_count":  0,
+    "remaining_school_atom_count":  0,
+    "return_to_normal_mode":  true,
+    "accepted_this_run":  [
+                              {
+                                  "atom_id":  "concept.builder_self_map.v1",
+                                  "concept_id":  "builder_self_map",
+                                  "memory_count":  1,
+                                  "self_map_count":  1,
+                                  "registry_count":  1,
+                                  "owner_interrupt_used":  false,
+                                  "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                                  "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\builder_self_map"
+                              },
+                              {
+                                  "atom_id":  "concept.owner_inbox.v1",
+                                  "concept_id":  "owner_inbox",
+                                  "memory_count":  1,
+                                  "self_map_count":  1,
+                                  "registry_count":  1,
+                                  "owner_interrupt_used":  false,
+                                  "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                                  "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\owner_inbox"
+                              },
+                              {
+                                  "atom_id":  "concept.curriculum_pack.v1",
+                                  "concept_id":  "curriculum_pack",
+                                  "memory_count":  1,
+                                  "self_map_count":  1,
+                                  "registry_count":  1,
+                                  "owner_interrupt_used":  false,
+                                  "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                                  "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\curriculum_pack"
+                              },
+                              {
+                                  "atom_id":  "concept.atom_candidate.v1",
+                                  "concept_id":  "atom_candidate",
+                                  "memory_count":  1,
+                                  "self_map_count":  1,
+                                  "registry_count":  1,
+                                  "owner_interrupt_used":  false,
+                                  "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                                  "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\atom_candidate"
+                              },
+                              {
+                                  "atom_id":  "concept.absorbed_atom.v1",
+                                  "concept_id":  "absorbed_atom",
+                                  "memory_count":  1,
+                                  "self_map_count":  1,
+                                  "registry_count":  1,
+                                  "owner_interrupt_used":  false,
+                                  "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                                  "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321\\absorbed_atom"
+                              }
+                          ],
+    "skipped_already_accepted":  [
+                                     "decision_rule.map_signal_not_command.v1",
+                                     "decision_rule.validator_gate_requires_pass_before_accept.v1",
+                                     "decision_rule.proof_path_required_for_done_claim.v1",
+                                     "decision_rule.quarantine_unproven_or_risky_candidate.v1",
+                                     "decision_rule.approved_source_catalog_required_for_external_material.v1"
+                                 ],
+    "denied_atoms":  [
+
+                     ],
+    "failed_atoms":  [
+
+                     ],
+    "remaining_atoms":  [
+
+                        ],
+    "run_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c4_school_until_empty_20260611163321",
+    "next_required_action":  "PHASE165S_C4_ACCEPTANCE_COMMIT"
+}

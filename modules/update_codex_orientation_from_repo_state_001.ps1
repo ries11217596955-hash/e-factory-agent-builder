@@ -97,7 +97,20 @@ $originRef = "origin/phase110-idempotent-autonomy-trial-runtime"
 $origin = Get-GitValue -Root $root -Arguments @("rev-parse", "--verify", $originRef) -Optional
 $gitStatus = Get-GitValue -Root $root -Arguments @("status", "--porcelain")
 $gitStatusClean = [string]::IsNullOrWhiteSpace($gitStatus)
+$generatorWorktreeStatus = if ($gitStatusClean) { "CLEAN" } else { "DIRTY" }
 $headEqualsOrigin = (-not [string]::IsNullOrWhiteSpace($origin)) -and ($head -eq $origin)
+$lastOrientationRefreshCommit = Get-GitValue -Root $root -Arguments @(
+    "log",
+    "-1",
+    "--format=%H",
+    "--",
+    "docs/codex/CODEX_CURRENT_STATE_THIN.json",
+    "docs/codex/CODEX_REPO_MAP.md",
+    "docs/codex/CODEX_EVIDENCE_INDEX.md"
+) -Optional
+if ([string]::IsNullOrWhiteSpace($lastOrientationRefreshCommit)) {
+    $lastOrientationRefreshCommit = $null
+}
 
 $activeRouteLock = "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md"
 $activeRouteLockFull = Join-Path $root $activeRouteLock
@@ -109,10 +122,12 @@ $null = Get-Content -LiteralPath $activeRouteLockFull -Raw
 $phase165oPromotionProof = "proofs/self_development/PHASE165O_GUARDED_PROMOTION_APPLY_FOR_REUSABLE_SELF_BUILD_ORGAN_V1.json"
 $phase165oCloseProof = "proofs/self_development/PHASE165O_POST_PROMOTION_STATE_VERIFY_AND_CLOSE_V1.json"
 $phase165pBudgetProof = "proofs/self_development/PHASE165P_CODEX_CONTEXT_BUDGET_AGENTS_UPDATE_V1.json"
+$phase165pFreshnessRepairProof = "proofs/self_development/PHASE165P_CODEX_ORIENTATION_FRESHNESS_MODEL_REPAIR_V1.json"
 $namedProofPaths = @(
     $phase165oPromotionProof,
     $phase165oCloseProof,
-    $phase165pBudgetProof
+    $phase165pBudgetProof,
+    $phase165pFreshnessRepairProof
 )
 
 $namedProofs = @{}
@@ -223,6 +238,13 @@ $generatedFiles = @(
     "docs/codex/CODEX_EVIDENCE_INDEX.md",
     "docs/codex/CODEX_CURRENT_STATE_THIN.json"
 )
+$manualRefreshRequiredWhen = @(
+    "active route changes",
+    "protected state changes",
+    "registry/roadmap/self-model changes",
+    "proof index changes",
+    "before starting a major Codex task"
+)
 
 $repoMapLines = @(
     "# Codex Repository Map",
@@ -232,12 +254,22 @@ $repoMapLines = @(
     "## Current Git State",
     "",
     "- Branch: ``$branch``",
-    "- HEAD: ``$head``",
+    "- Generated from HEAD: ``$head``",
     "- Origin ref: ``$originRef``",
-    "- Origin commit: ``$(if ($origin) { $origin } else { 'UNAVAILABLE' })``",
-    "- HEAD equals origin: ``$($headEqualsOrigin.ToString().ToLowerInvariant())``",
-    "- Git status clean at generation start: ``$($gitStatusClean.ToString().ToLowerInvariant())``",
+    "- Generated from origin: ``$(if ($origin) { $origin } else { 'UNAVAILABLE' })``",
+    "- Generated HEAD equals origin: ``$($headEqualsOrigin.ToString().ToLowerInvariant())``",
+    "- Generator worktree status: ``$generatorWorktreeStatus``",
+    "- Last orientation refresh commit: ``$(if ($lastOrientationRefreshCommit) { $lastOrientationRefreshCommit } else { 'NOT_DETECTED' })``",
     "- Active route lock: ``$activeRouteLock``",
+    "",
+    "## Freshness Semantics",
+    "",
+    "The orientation model is ``generated_from_repo_state_not_self_referential``. It is fresh when generated from current HEAD, or when generated from the parent of the latest commit and that latest commit is an accepted Codex orientation refresh or repair.",
+    "",
+    "Manual refresh is required when:"
+)
+$repoMapLines += $manualRefreshRequiredWhen | ForEach-Object { "- $_" }
+$repoMapLines += @(
     "",
     "## Read First",
     ""
@@ -285,6 +317,7 @@ $evidenceLines = @(
     "- Promotion apply: ``$phase165oPromotionProof``",
     "- Post-promotion close: ``$phase165oCloseProof``",
     "- PHASE165P Codex context budget update: ``$phase165pBudgetProof``",
+    "- PHASE165P orientation freshness repair: ``$phase165pFreshnessRepairProof``",
     "",
     "## Current Promoted Capability",
     "",
@@ -314,9 +347,16 @@ $evidenceLines += @(
 )
 
 $state = [ordered]@{
-    schema_version = "1.0"
+    schema_version = "1.1"
     generated_utc = [DateTime]::UtcNow.ToString("o")
     branch = $branch
+    generated_from_head = $head
+    generated_from_origin = $origin
+    generator_worktree_status_at_generation = $generatorWorktreeStatus
+    orientation_freshness_model = "generated_from_repo_state_not_self_referential"
+    orientation_self_commit_tolerance = $true
+    manual_refresh_required_when = $manualRefreshRequiredWhen
+    last_orientation_refresh_commit = $lastOrientationRefreshCommit
     head = $head
     origin = $origin
     head_equals_origin = [bool]$headEqualsOrigin
@@ -336,8 +376,10 @@ Write-Utf8File -Path (Join-Path $root "docs/codex/CODEX_CURRENT_STATE_THIN.json"
 
 Write-Host "CODEX_ORIENTATION_GENERATOR=PASS"
 Write-Host "BRANCH=$branch"
-Write-Host "HEAD=$head"
-Write-Host "ORIGIN=$(if ($origin) { $origin } else { 'UNAVAILABLE' })"
+Write-Host "GENERATED_FROM_HEAD=$head"
+Write-Host "GENERATED_FROM_ORIGIN=$(if ($origin) { $origin } else { 'UNAVAILABLE' })"
+Write-Host "GENERATOR_WORKTREE_STATUS=$generatorWorktreeStatus"
+Write-Host "LAST_ORIENTATION_REFRESH_COMMIT=$(if ($lastOrientationRefreshCommit) { $lastOrientationRefreshCommit } else { 'NOT_DETECTED' })"
 Write-Host "ACTIVE_ROUTE_LOCK=$activeRouteLock"
 Write-Host "RECENT_PROOF_COUNT=$($recentProofs.Count)"
 Write-Host "GENERATED_FILES=$($generatedFiles -join ',')"

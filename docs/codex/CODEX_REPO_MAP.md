@@ -1,16 +1,28 @@
 ﻿# Codex Repository Map
 
-Generated UTC: 2026-06-11T06:46:29.4575227Z
+Generated UTC: 2026-06-11T07:02:27.4800331Z
 
 ## Current Git State
 
 - Branch: `phase110-idempotent-autonomy-trial-runtime`
-- HEAD: `491f85e139dfc6b64165c6ca87ed7dc3d34b822c`
+- Generated from HEAD: `00c1b7dbc87a1fb827869c2c074965450a1a59b8`
 - Origin ref: `origin/phase110-idempotent-autonomy-trial-runtime`
-- Origin commit: `491f85e139dfc6b64165c6ca87ed7dc3d34b822c`
-- HEAD equals origin: `true`
-- Git status clean at generation start: `false`
+- Generated from origin: `00c1b7dbc87a1fb827869c2c074965450a1a59b8`
+- Generated HEAD equals origin: `true`
+- Generator worktree status: `DIRTY`
+- Last orientation refresh commit: `00c1b7dbc87a1fb827869c2c074965450a1a59b8`
 - Active route lock: `route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md`
+
+## Freshness Semantics
+
+The orientation model is `generated_from_repo_state_not_self_referential`. It is fresh when generated from current HEAD, or when generated from the parent of the latest commit and that latest commit is an accepted Codex orientation refresh or repair.
+
+Manual refresh is required when:
+- active route changes
+- protected state changes
+- registry/roadmap/self-model changes
+- proof index changes
+- before starting a major Codex task
 
 ## Read First
 

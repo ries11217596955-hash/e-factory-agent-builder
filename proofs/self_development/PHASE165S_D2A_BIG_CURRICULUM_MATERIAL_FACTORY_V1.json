@@ -1,0 +1,93 @@
+{
+    "phase":  "PHASE165S_D2A_BIG_CURRICULUM_MATERIAL_FACTORY",
+    "created_utc":  "2026-06-11T13:50:51.1924231Z",
+    "status":  "PASS",
+    "validation_passed":  true,
+    "total_candidate_count":  50000,
+    "shard_count":  100,
+    "shard_size":  500,
+    "safe_candidate_count":  49800,
+    "quarantine_candidate_count":  200,
+    "accepted_false_count":  50000,
+    "trusted_false_count":  50000,
+    "dedupe_unique":  true,
+    "accepted_collision_count":  0,
+    "protected_state_dirty_check":  [
+
+                                    ],
+    "accepted_atoms_created":  false,
+    "self_map_manually_updated":  false,
+    "accepted_memory_updated":  false,
+    "generator_path":  "modules/generate_phase165s_d2a_big_curriculum_material_factory_001.ps1",
+    "validator_path":  "validators/validate_phase165s_d2a_big_curriculum_material_factory_v1.ps1",
+    "output_root":  "reports/self_development/phase165s_d2_big_curriculum_material_factory",
+    "index_path":  "reports/self_development/phase165s_d2_big_curriculum_material_factory/material_bank_index.json",
+    "manifest_path":  "reports/self_development/phase165s_d2_big_curriculum_material_factory/school_ready_manifest.json",
+    "topic_counts":  {
+                         "owner_task_hint_instruction_routing":  2500,
+                         "proof_atoms":  2500,
+                         "reports_vs_proofs":  2500,
+                         "protected_state_governance":  2500,
+                         "repository_and_git_procedures":  2500,
+                         "deepening_cycle_why_chain_gap_types":  2500,
+                         "runtime_session_log_concepts":  2500,
+                         "module_validator_runner_orchestrator":  2500,
+                         "reuse_atoms":  2500,
+                         "requirement_atoms":  2500,
+                         "material_catalogue_provenance_source_ladder":  2500,
+                         "procedure_atoms_after_primitives":  2500,
+                         "curriculum_school_atom_lifecycle":  2500,
+                         "proof_and_validation":  2500,
+                         "self_map_body_map_map_signal":  2500,
+                         "artifact_formats_and_conversion":  2500,
+                         "filesystem_concepts_and_procedures":  2500,
+                         "acceptance_visibility_and_persistence":  2500,
+                         "delivery_handoff_evidence_pack":  2500,
+                         "quarantine_rollback_risk_review":  2500
+                     },
+    "atom_type_counts":  {
+                             "procedure_atom":  10000,
+                             "reuse_atom":  10000,
+                             "concept_atom":  10000,
+                             "proof_atom":  10000,
+                             "requirement_atom":  10000
+                         },
+    "risk_level_counts":  {
+                              "LOW":  45750,
+                              "MEDIUM":  4050,
+                              "HIGH":  200
+                          },
+    "checks":  {
+                   "exact_candidate_count":  true,
+                   "manifest_count_consistent":  true,
+                   "index_count_consistent":  true,
+                   "shard_count_consistent":  true,
+                   "multiple_shards_present":  true,
+                   "shard_size_supported":  true,
+                   "no_oversized_shards":  true,
+                   "non_final_shards_full":  true,
+                   "all_shards_parse":  true,
+                   "required_fields_present":  true,
+                   "all_accepted_false":  true,
+                   "all_trusted_false":  true,
+                   "staged_status_only":  true,
+                   "all_acceptance_guards_required":  true,
+                   "dedupe_keys_unique":  true,
+                   "candidate_ids_unique":  true,
+                   "no_accepted_atom_id_collision":  true,
+                   "topic_coverage_present":  true,
+                   "safe_count_consistent":  true,
+                   "quarantine_count_consistent":  true,
+                   "index_duplicate_count_zero":  true,
+                   "index_collision_count_zero":  true,
+                   "manifest_next_action_correct":  true,
+                   "protected_and_accepted_state_clean":  true
+               },
+    "failed_checks":  [
+
+                      ],
+    "errors":  [
+
+               ],
+    "next_required_action":  "PHASE165S_D2B_BIG_CURRICULUM_SCHOOL_WAVE_DRY_RUN_OR_AUTONOMOUS_RUN"
+}

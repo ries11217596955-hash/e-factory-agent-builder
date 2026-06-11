@@ -1,0 +1,50 @@
+{
+    "schema":  "PHASE165S_D2A_MATERIAL_BANK_INDEX_V1",
+    "total_candidate_count":  50000,
+    "shard_count":  100,
+    "shard_size":  500,
+    "topic_counts":  {
+                         "filesystem_concepts_and_procedures":  2500,
+                         "repository_and_git_procedures":  2500,
+                         "proof_and_validation":  2500,
+                         "reports_vs_proofs":  2500,
+                         "protected_state_governance":  2500,
+                         "curriculum_school_atom_lifecycle":  2500,
+                         "self_map_body_map_map_signal":  2500,
+                         "owner_task_hint_instruction_routing":  2500,
+                         "material_catalogue_provenance_source_ladder":  2500,
+                         "artifact_formats_and_conversion":  2500,
+                         "runtime_session_log_concepts":  2500,
+                         "module_validator_runner_orchestrator":  2500,
+                         "quarantine_rollback_risk_review":  2500,
+                         "delivery_handoff_evidence_pack":  2500,
+                         "deepening_cycle_why_chain_gap_types":  2500,
+                         "procedure_atoms_after_primitives":  2500,
+                         "proof_atoms":  2500,
+                         "requirement_atoms":  2500,
+                         "reuse_atoms":  2500,
+                         "acceptance_visibility_and_persistence":  2500
+                     },
+    "atom_type_counts":  {
+                             "concept_atom":  10000,
+                             "procedure_atom":  10000,
+                             "proof_atom":  10000,
+                             "requirement_atom":  10000,
+                             "reuse_atom":  10000
+                         },
+    "risk_level_counts":  {
+                              "LOW":  45750,
+                              "MEDIUM":  4050,
+                              "HIGH":  200
+                          },
+    "duplicate_count":  0,
+    "accepted_collision_count":  0,
+    "accepted_collision_avoided_count":  0,
+    "accepted_atom_reference_count":  109,
+    "deterministic_seed":  "PHASE165S_D2A_50000_V1",
+    "permutation_offset":  41943,
+    "permutation_step":  43,
+    "generated_at":  "2026-06-11T13:37:03.9257455Z",
+    "generator_version":  "PHASE165S_D2A_BIG_CURRICULUM_MATERIAL_FACTORY_001",
+    "material_trust":  "RAW_STAGED_NOT_ACCEPTED_NOT_TRUSTED"
+}

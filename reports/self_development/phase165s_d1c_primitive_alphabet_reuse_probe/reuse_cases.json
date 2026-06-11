@@ -1,0 +1,254 @@
+﻿[
+    {
+        "case_id":  "create_folder_task",
+        "input_text":  "РЎРѕР·РґР°Р№ РїР°РїРєСѓ reports/test",
+        "required_atoms":  [
+                               "concept.folder.v1",
+                               "concept.path.v1",
+                               "concept.proof.v1"
+                           ],
+        "required_atom_visibility":  [
+                                         {
+                                             "atom_id":  "concept.folder.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.path.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.proof.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         }
+                                     ],
+        "starts_from_zero":  false,
+        "reuse_status":  "PASS_REUSES_ACCEPTED_ATOMS",
+        "classification":  "FILESYSTEM_CONTAINER_TASK_KNOWN_CONCEPTS",
+        "next_layer":  "ASK_FOR_CREATE_DIRECTORY_PROCEDURE_OR_ORGAN_AND_VALIDATE_DIRECTORY_EXISTS"
+    },
+    {
+        "case_id":  "report_is_not_proof",
+        "input_text":  "РћС‚С‡С‘С‚ РµСЃС‚СЊ, Р·РЅР°С‡РёС‚ РіРѕС‚РѕРІРѕ?",
+        "required_atoms":  [
+                               "concept.report.v1",
+                               "concept.proof.v1",
+                               "concept.validator.v1",
+                               "concept.runtime_output.v1"
+                           ],
+        "required_atom_visibility":  [
+                                         {
+                                             "atom_id":  "concept.report.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.proof.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.validator.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.runtime_output.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         }
+                                     ],
+        "starts_from_zero":  false,
+        "reuse_status":  "PASS_REUSES_ACCEPTED_ATOMS",
+        "classification":  "REPORT_NOT_ENOUGH_REQUIRE_PROOF_PATH",
+        "next_layer":  "ASK_FOR_VALIDATOR_OUTPUT_PROOF_JSON_COMMIT_PUSH_OR_LOG"
+    },
+    {
+        "case_id":  "push_done_requires_remote_proof",
+        "input_text":  "Push СЃРґРµР»Р°РЅ?",
+        "required_atoms":  [
+                               "concept.push.v1",
+                               "concept.commit.v1",
+                               "concept.branch.v1",
+                               "concept.git_dirty_state.v1"
+                           ],
+        "required_atom_visibility":  [
+                                         {
+                                             "atom_id":  "concept.push.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.commit.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.branch.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.git_dirty_state.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         }
+                                     ],
+        "starts_from_zero":  false,
+        "reuse_status":  "PASS_REUSES_ACCEPTED_ATOMS",
+        "classification":  "SYNC_CLAIM_REQUIRES_HEAD_ORIGIN_STATUS_PROOF",
+        "next_layer":  "CHECK_HEAD_ORIGIN_LAST_COMMIT_AND_GIT_STATUS"
+    },
+    {
+        "case_id":  "owner_hint_not_task",
+        "input_text":  "Owner РіРѕРІРѕСЂРёС‚: РЅРµРїР»РѕС…Рѕ Р±С‹ РїРѕС‚РѕРј РїРѕРґСѓРјР°С‚СЊ РїСЂРѕ Р±РёР±Р»РёРѕС‚РµРєСѓ.",
+        "required_atoms":  [
+                               "concept.owner_hint.v1",
+                               "concept.owner_task.v1"
+                           ],
+        "required_atom_visibility":  [
+                                         {
+                                             "atom_id":  "concept.owner_hint.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.owner_task.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         }
+                                     ],
+        "starts_from_zero":  false,
+        "reuse_status":  "PASS_REUSES_ACCEPTED_ATOMS",
+        "classification":  "OWNER_HINT_NOT_DIRECT_TASK",
+        "next_layer":  "PLACE_IN_DECISION_CONTEXT_OR_BACKLOG_NOT_EXECUTE_AS_COMMAND"
+    },
+    {
+        "case_id":  "map_signal_not_command",
+        "input_text":  "Self-map СЂРµРєРѕРјРµРЅРґСѓРµС‚ СЃР»РµРґСѓСЋС‰РёР№ С€Р°Рі.",
+        "required_atoms":  [
+                               "concept.map_signal.v1",
+                               "decision_rule.map_signal_not_command.v1"
+                           ],
+        "required_atom_visibility":  [
+                                         {
+                                             "atom_id":  "concept.map_signal.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "decision_rule.map_signal_not_command.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         }
+                                     ],
+        "starts_from_zero":  false,
+        "reuse_status":  "PASS_REUSES_ACCEPTED_ATOMS",
+        "classification":  "MAP_SIGNAL_INPUT_ONLY_NOT_DIRECT_COMMAND",
+        "next_layer":  "MODE_DECISION_KERNEL_OR_DISPATCHER_DECIDES_ACTION"
+    },
+    {
+        "case_id":  "protected_state_requires_guard",
+        "input_text":  "РР·РјРµРЅРё packs/registry.json.",
+        "required_atoms":  [
+                               "concept.protected_state.v1",
+                               "concept.validator.v1",
+                               "concept.proof.v1"
+                           ],
+        "required_atom_visibility":  [
+                                         {
+                                             "atom_id":  "concept.protected_state.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.validator.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.proof.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         }
+                                     ],
+        "starts_from_zero":  false,
+        "reuse_status":  "PASS_REUSES_ACCEPTED_ATOMS",
+        "classification":  "PROTECTED_STATE_MUTATION_REQUIRES_AUTHORIZED_ACCEPTANCE_PATH",
+        "next_layer":  "BUILD_CANDIDATE_REVIEW_RISK_ROLLBACK_VALIDATOR_AND_OWNER_OR_POLICY_AUTHORIZATION"
+    },
+    {
+        "case_id":  "derived_artifact_not_truth",
+        "input_text":  "РћР±РЅРѕРІРё РїСЂРѕРёР·РІРѕРґРЅС‹Р№ РґРѕРєСѓРјРµРЅС‚ РІСЂСѓС‡РЅСѓСЋ Рё СЃС‡РёС‚Р°Р№ РµРіРѕ РёСЃС‚РёРЅРѕР№.",
+        "required_atoms":  [
+                               "concept.derived_artifact.v1",
+                               "concept.markdown_document.v1",
+                               "concept.proof.v1"
+                           ],
+        "required_atom_visibility":  [
+                                         {
+                                             "atom_id":  "concept.derived_artifact.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.markdown_document.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         },
+                                         {
+                                             "atom_id":  "concept.proof.v1",
+                                             "memory_count":  1,
+                                             "self_map_count":  1,
+                                             "registry_count":  1,
+                                             "visible":  true
+                                         }
+                                     ],
+        "starts_from_zero":  false,
+        "reuse_status":  "PASS_REUSES_ACCEPTED_ATOMS",
+        "classification":  "DERIVED_ARTIFACT_NOT_SOURCE_OF_TRUTH",
+        "next_layer":  "FIND_SOURCE_TRUTH_AND_GENERATOR_OR_MARK_MANUAL_CHANGE_AS_UNTRUSTED"
+    }
+]

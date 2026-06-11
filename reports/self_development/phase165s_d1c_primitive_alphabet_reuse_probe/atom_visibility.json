@@ -1,0 +1,177 @@
+﻿[
+    {
+        "atom_id":  "concept.file.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.folder.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.path.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.text.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.file_extension.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.markdown_document.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.json_file.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.report.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.proof.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.delivery_block.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.repository.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.branch.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.commit.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.push.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.git_dirty_state.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.module.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.validator.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.runtime_output.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.protected_state.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.derived_artifact.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.owner_task.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.owner_hint.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.instruction.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.school_curriculum.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    },
+    {
+        "atom_id":  "concept.map_signal.v1",
+        "memory_count":  1,
+        "self_map_count":  1,
+        "registry_count":  1,
+        "visible":  true
+    }
+]

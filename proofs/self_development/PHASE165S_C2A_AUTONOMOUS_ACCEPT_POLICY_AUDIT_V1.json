@@ -1,0 +1,18 @@
+{
+  "phase": "PHASE165S_C2A_AUTONOMOUS_ACCEPT_POLICY_AUDIT",
+  "status": "PASS_AUDIT_COMPLETED",
+  "created_at": "2026-06-11T16:06:41.8363774+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "9fe3f8e83a91078ac7b1c76227ab8818f410ddcd",
+  "c1b_atom_id": "decision_rule.map_signal_not_command.v1",
+  "c1b_memory_count": 1,
+  "c1b_self_map_count": 1,
+  "c1b_registry_count": 1,
+  "c1b_visible": true,
+  "autonomous_module_hit_count": 53,
+  "inspected_report_root_count": 40,
+  "inspected_key_file_count": 40,
+  "audit_decision": "IDENTIFY_REUSABLE_AUTONOMOUS_ACCEPTANCE_POLICY_OR_DEFINE_MINIMAL_C2B_GUARD",
+  "next_required_action": "PHASE165S_C2B_BOUNDED_AUTONOMOUS_POLICY_DESIGN_OR_REUSE",
+  "protected_state_dirty_check": []
+}

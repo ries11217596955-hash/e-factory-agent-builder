@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_BATCH_RESULT_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:16:06.8055660+04:00",
+    "next_machine_action":  "EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_FOR_ATOM_BATCH",
+    "execution_authorization_status":  "AUTHORIZED_ONE_SHOT_CONTROLLED_ACCEPT_CORE_MUTATION",
+    "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\file\\cand",
+    "authorization_source":  "PHASE165S-C2B bounded autonomous acceptance policy guard",
+    "owner_interrupt_used":  false
+}

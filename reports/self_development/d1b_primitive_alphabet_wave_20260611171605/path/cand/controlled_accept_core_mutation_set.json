@@ -1,0 +1,116 @@
+﻿{
+    "schema":  "PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_SET_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:16:16.0890604+04:00",
+    "accepted_memory_operations":  [
+                                       {
+                                           "operation_id":  "D1B_20260611171605_path_MEMORY",
+                                           "atom_id":  "concept.path.v1",
+                                           "target":  "reports/self_development/accepted_change_memory_snapshot.json",
+                                           "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\path",
+                                           "payload":  {
+                                                           "concept_id":  "path",
+                                                           "meaning":  "A path identifies a file or folder location. Builder must distinguish relative path, absolute path, repo path, and protected path.",
+                                                           "atom_type":  "knowledge_atom",
+                                                           "used_when":  [
+                                                                             "file location",
+                                                                             "repo target",
+                                                                             "artifact output"
+                                                                         ],
+                                                           "next_layer_questions":  [
+                                                                                        "Is this path inside repo?",
+                                                                                        "Is it protected?",
+                                                                                        "Does parent exist?"
+                                                                                    ],
+                                                           "behavior_change":  "Next cycle should not ask what \u0027Path\u0027 means; it should use the accepted atom and ask the next layer question.",
+                                                           "source_curriculum_pack":  "reports/self_development/phase165s_d1_primitive_builder_alphabet/PHASE165S_D1_PRIMITIVE_BUILDER_ALPHABET_CURRICULUM_PACK_V1.json",
+                                                           "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                           "school_wave":  "PHASE165S-D1B",
+                                                           "owner_interrupt_used":  false,
+                                                           "decision_rule":  {
+                                                                                 "input":  "primitive_builder_concept",
+                                                                                 "classification":  "USE_ACCEPTED_PRIMITIVE_CONCEPT_AND_MOVE_TO_NEXT_LAYER",
+                                                                                 "direct_accept_without_guard":  false,
+                                                                                 "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                             },
+                                                           "memory_proof":  "Accepted-memory read must find this primitive concept atom by atom_id.",
+                                                           "use_proof":  "Future task should classify the concept and move to procedure/proof/organ layer.",
+                                                           "behavior_delta":  "Next cycle starts from accepted primitive concept, not zero-definition search."
+                                                       }
+                                       }
+                                   ],
+    "accepted_self_model_operations":  [
+                                           {
+                                               "operation_id":  "D1B_20260611171605_path_SELF",
+                                               "atom_id":  "concept.path.v1",
+                                               "target":  "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                                               "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\path",
+                                               "payload":  {
+                                                               "concept_id":  "path",
+                                                               "meaning":  "A path identifies a file or folder location. Builder must distinguish relative path, absolute path, repo path, and protected path.",
+                                                               "atom_type":  "knowledge_atom",
+                                                               "used_when":  [
+                                                                                 "file location",
+                                                                                 "repo target",
+                                                                                 "artifact output"
+                                                                             ],
+                                                               "next_layer_questions":  [
+                                                                                            "Is this path inside repo?",
+                                                                                            "Is it protected?",
+                                                                                            "Does parent exist?"
+                                                                                        ],
+                                                               "behavior_change":  "Next cycle should not ask what \u0027Path\u0027 means; it should use the accepted atom and ask the next layer question.",
+                                                               "source_curriculum_pack":  "reports/self_development/phase165s_d1_primitive_builder_alphabet/PHASE165S_D1_PRIMITIVE_BUILDER_ALPHABET_CURRICULUM_PACK_V1.json",
+                                                               "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                               "school_wave":  "PHASE165S-D1B",
+                                                               "owner_interrupt_used":  false,
+                                                               "decision_rule":  {
+                                                                                     "input":  "primitive_builder_concept",
+                                                                                     "classification":  "USE_ACCEPTED_PRIMITIVE_CONCEPT_AND_MOVE_TO_NEXT_LAYER",
+                                                                                     "direct_accept_without_guard":  false,
+                                                                                     "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                                 },
+                                                               "memory_proof":  "Accepted-memory read must find this primitive concept atom by atom_id.",
+                                                               "use_proof":  "Future task should classify the concept and move to procedure/proof/organ layer.",
+                                                               "behavior_delta":  "Next cycle starts from accepted primitive concept, not zero-definition search."
+                                                           }
+                                           }
+                                       ],
+    "registry_operations":  [
+                                {
+                                    "operation_id":  "D1B_20260611171605_path_REGISTRY",
+                                    "atom_id":  "concept.path.v1",
+                                    "target":  "packs/registry.json",
+                                    "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\path",
+                                    "payload":  {
+                                                    "concept_id":  "path",
+                                                    "meaning":  "A path identifies a file or folder location. Builder must distinguish relative path, absolute path, repo path, and protected path.",
+                                                    "atom_type":  "knowledge_atom",
+                                                    "used_when":  [
+                                                                      "file location",
+                                                                      "repo target",
+                                                                      "artifact output"
+                                                                  ],
+                                                    "next_layer_questions":  [
+                                                                                 "Is this path inside repo?",
+                                                                                 "Is it protected?",
+                                                                                 "Does parent exist?"
+                                                                             ],
+                                                    "behavior_change":  "Next cycle should not ask what \u0027Path\u0027 means; it should use the accepted atom and ask the next layer question.",
+                                                    "source_curriculum_pack":  "reports/self_development/phase165s_d1_primitive_builder_alphabet/PHASE165S_D1_PRIMITIVE_BUILDER_ALPHABET_CURRICULUM_PACK_V1.json",
+                                                    "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                    "school_wave":  "PHASE165S-D1B",
+                                                    "owner_interrupt_used":  false,
+                                                    "decision_rule":  {
+                                                                          "input":  "primitive_builder_concept",
+                                                                          "classification":  "USE_ACCEPTED_PRIMITIVE_CONCEPT_AND_MOVE_TO_NEXT_LAYER",
+                                                                          "direct_accept_without_guard":  false,
+                                                                          "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                      },
+                                                    "memory_proof":  "Accepted-memory read must find this primitive concept atom by atom_id.",
+                                                    "use_proof":  "Future task should classify the concept and move to procedure/proof/organ layer.",
+                                                    "behavior_delta":  "Next cycle starts from accepted primitive concept, not zero-definition search."
+                                                }
+                                }
+                            ]
+}

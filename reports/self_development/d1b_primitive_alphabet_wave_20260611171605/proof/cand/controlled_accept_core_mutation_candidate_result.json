@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_RESULT_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:16:41.5606353+04:00",
+    "batch_size":  1,
+    "staged_atom_count":  1,
+    "atom_ids":  [
+                     "concept.proof.v1"
+                 ],
+    "next_machine_action":  "VALIDATE_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_FOR_ATOM_BATCH",
+    "source":  "PHASE165S-D1B primitive builder alphabet school wave"
+}

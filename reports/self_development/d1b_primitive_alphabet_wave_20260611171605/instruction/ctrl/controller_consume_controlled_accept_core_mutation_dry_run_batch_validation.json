@@ -1,0 +1,10 @@
+﻿{
+    "schema":  "PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_DRY_RUN_BATCH_VALIDATION_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:17:38.6368206+04:00",
+    "next_machine_action":  "EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_FOR_ATOM_BATCH",
+    "exact_atom_scope":  true,
+    "allowed_atom_ids":  [
+                             "concept.instruction.v1"
+                         ]
+}

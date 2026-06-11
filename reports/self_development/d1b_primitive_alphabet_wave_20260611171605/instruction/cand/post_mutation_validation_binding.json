@@ -1,0 +1,7 @@
+﻿{
+    "schema":  "PHASE162_POST_MUTATION_VALIDATION_BINDING_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:17:38.6307167+04:00",
+    "bound_to_mutation_set":  "controlled_accept_core_mutation_set.json",
+    "bound_to_atomic_write_plan":  "atomic_accept_write_plan.json"
+}

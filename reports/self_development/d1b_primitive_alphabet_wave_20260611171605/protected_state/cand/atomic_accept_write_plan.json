@@ -1,0 +1,14 @@
+﻿{
+    "schema":  "PHASE162_ATOMIC_ACCEPT_WRITE_PLAN_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:17:21.8980009+04:00",
+    "atomicity_rule":  "all_operations_pass_or_rollback",
+    "target_files":  [
+                         "reports/self_development/accepted_change_memory_snapshot.json",
+                         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                         "packs/registry.json"
+                     ],
+    "allowed_atom_ids":  [
+                             "concept.protected_state.v1"
+                         ]
+}

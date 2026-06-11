@@ -1,0 +1,36 @@
+﻿{
+    "schema":  "PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_PROOF_RESULT_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:17:41.3660991+04:00",
+    "execution_proof":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\instruction\\exec\\phase165s_d1b_execution_proof_for_controller.json",
+    "execution_output_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\instruction\\exec",
+    "controller_finalization_executed":  true,
+    "accepted_atom_claimed":  true,
+    "accepted_core_rewrite_executed":  false,
+    "repeated_mutation_execution":  false,
+    "consumed_execution_commit":  "6e3ec352eede413527abae2830211b991c71e2eb",
+    "consumed_next_action":  "FEED_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_BACK_INTO_CONTROLLER",
+    "checks":  {
+                   "execution_proof_status_pass":  true,
+                   "execution_result_status_pass":  true,
+                   "execution_validation_status_pass":  true,
+                   "controlled_accept_core_mutation_executed_true":  true,
+                   "post_real_mutation_validation_passed_true":  true,
+                   "rollback_not_executed":  true,
+                   "staged_atom_count_positive":  true,
+                   "accepted_core_write_executed_true":  true,
+                   "accepted_memory_mutated_true":  true,
+                   "accepted_self_model_mutated_true":  true,
+                   "registry_mutated_true":  true,
+                   "final_accept_ready_true":  true,
+                   "execution_next_action_feeds_controller":  true,
+                   "proof_next_action_feeds_controller":  true,
+                   "atom_not_claimed_before_controller_finalization":  true,
+                   "machine_decision_pending_finalization":  true
+               },
+    "failed_checks":  [
+
+                      ],
+    "machine_decision":  "CONTROLLED_ACCEPT_CORE_MUTATION_FINALIZED_PENDING_VISIBILITY_TRIAL",
+    "next_machine_action":  "VERIFY_ACCEPTED_ATOM_VISIBLE_TO_NEXT_CYCLE"
+}

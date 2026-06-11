@@ -1,0 +1,12 @@
+﻿{
+    "schema":  "PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_ROLLBACK_PLAN_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:17:17.8511543+04:00",
+    "rollback_actions":  [
+                             "restore_memory_snapshot",
+                             "restore_self_map_snapshot",
+                             "restore_registry_snapshot",
+                             "validate_atom_count",
+                             "write_rollback_event"
+                         ]
+}

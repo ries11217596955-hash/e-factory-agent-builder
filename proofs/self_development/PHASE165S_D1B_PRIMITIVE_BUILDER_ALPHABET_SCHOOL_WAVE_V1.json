@@ -1,0 +1,275 @@
+﻿{
+    "phase":  "PHASE165S_D1B_PRIMITIVE_BUILDER_ALPHABET_SCHOOL_WAVE",
+    "status":  "PASS_PRIMITIVE_ALPHABET_25_ATOMS_VISIBLE",
+    "created_at":  "2026-06-11T17:17:49.9442187+04:00",
+    "owner_interrupt_used":  false,
+    "autonomous_policy_guard_used":  true,
+    "requested_lesson_count":  25,
+    "accepted_atom_count":  25,
+    "denied_atom_count":  0,
+    "failed_atom_count":  0,
+    "skipped_atom_count":  0,
+    "accepted_atoms":  [
+                           {
+                               "atom_id":  "concept.file.v1",
+                               "concept_id":  "file",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\file"
+                           },
+                           {
+                               "atom_id":  "concept.folder.v1",
+                               "concept_id":  "folder",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\folder"
+                           },
+                           {
+                               "atom_id":  "concept.path.v1",
+                               "concept_id":  "path",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\path"
+                           },
+                           {
+                               "atom_id":  "concept.text.v1",
+                               "concept_id":  "text",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\text"
+                           },
+                           {
+                               "atom_id":  "concept.file_extension.v1",
+                               "concept_id":  "file_extension",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\file_extension"
+                           },
+                           {
+                               "atom_id":  "concept.markdown_document.v1",
+                               "concept_id":  "markdown_document",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\markdown_document"
+                           },
+                           {
+                               "atom_id":  "concept.json_file.v1",
+                               "concept_id":  "json_file",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\json_file"
+                           },
+                           {
+                               "atom_id":  "concept.report.v1",
+                               "concept_id":  "report",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\report"
+                           },
+                           {
+                               "atom_id":  "concept.proof.v1",
+                               "concept_id":  "proof",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\proof"
+                           },
+                           {
+                               "atom_id":  "concept.delivery_block.v1",
+                               "concept_id":  "delivery_block",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\delivery_block"
+                           },
+                           {
+                               "atom_id":  "concept.repository.v1",
+                               "concept_id":  "repository",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\repository"
+                           },
+                           {
+                               "atom_id":  "concept.branch.v1",
+                               "concept_id":  "branch",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\branch"
+                           },
+                           {
+                               "atom_id":  "concept.commit.v1",
+                               "concept_id":  "commit",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\commit"
+                           },
+                           {
+                               "atom_id":  "concept.push.v1",
+                               "concept_id":  "push",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\push"
+                           },
+                           {
+                               "atom_id":  "concept.git_dirty_state.v1",
+                               "concept_id":  "dirty_state",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\dirty_state"
+                           },
+                           {
+                               "atom_id":  "concept.module.v1",
+                               "concept_id":  "module",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\module"
+                           },
+                           {
+                               "atom_id":  "concept.validator.v1",
+                               "concept_id":  "validator",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\validator"
+                           },
+                           {
+                               "atom_id":  "concept.runtime_output.v1",
+                               "concept_id":  "runtime_output",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\runtime_output"
+                           },
+                           {
+                               "atom_id":  "concept.protected_state.v1",
+                               "concept_id":  "protected_state",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\protected_state"
+                           },
+                           {
+                               "atom_id":  "concept.derived_artifact.v1",
+                               "concept_id":  "derived_artifact",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\derived_artifact"
+                           },
+                           {
+                               "atom_id":  "concept.owner_task.v1",
+                               "concept_id":  "owner_task",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\owner_task"
+                           },
+                           {
+                               "atom_id":  "concept.owner_hint.v1",
+                               "concept_id":  "owner_hint",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\owner_hint"
+                           },
+                           {
+                               "atom_id":  "concept.instruction.v1",
+                               "concept_id":  "instruction",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\instruction"
+                           },
+                           {
+                               "atom_id":  "concept.school_curriculum.v1",
+                               "concept_id":  "school_curriculum",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\school_curriculum"
+                           },
+                           {
+                               "atom_id":  "concept.map_signal.v1",
+                               "concept_id":  "map_signal",
+                               "memory_count":  1,
+                               "self_map_count":  1,
+                               "registry_count":  1,
+                               "owner_interrupt_used":  false,
+                               "policy_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+                               "atom_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\map_signal"
+                           }
+                       ],
+    "denied_atoms":  [
+
+                     ],
+    "failed_atoms":  [
+
+                     ],
+    "skipped_atoms":  [
+
+                      ],
+    "run_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605",
+    "next_required_action":  "PHASE165S_D1B_ACCEPTANCE_COMMIT"
+}

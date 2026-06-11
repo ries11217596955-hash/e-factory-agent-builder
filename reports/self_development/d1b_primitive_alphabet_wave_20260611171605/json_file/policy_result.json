@@ -1,0 +1,36 @@
+﻿{
+    "schema":  "PHASE165S_C2_BOUNDED_AUTONOMOUS_ATOM_ACCEPTANCE_POLICY_EVALUATION_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T17:16:33.4597309+04:00",
+    "candidate_path":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\d1b_primitive_alphabet_wave_20260611171605\\json_file\\policy_candidate.json",
+    "autonomous_accept_allowed":  true,
+    "decision_code":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+    "atom_ids":  [
+                     "concept.json_file.v1"
+                 ],
+    "batch_size":  1,
+    "source_route":  "OWNER_INBOX_CURRICULUM",
+    "source_authority":  "OWNER_APPROVED",
+    "allowed_target_files":  [
+                                 "reports/self_development/accepted_change_memory_snapshot.json",
+                                 "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                                 "packs/registry.json"
+                             ],
+    "target_files":  [
+                         "reports/self_development/accepted_change_memory_snapshot.json",
+                         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                         "packs/registry.json"
+                     ],
+    "protected_files_to_mutate":  [
+                                      "packs/registry.json"
+                                  ],
+    "duplicate_atoms":  [
+
+                        ],
+    "denial_reasons":  [
+
+                       ],
+    "owner_prompt_required":  false,
+    "protected_write_scope":  "packs/registry.json only, and only through existing PHASE162 accepted-core executor",
+    "next_machine_action":  "RUN_EXISTING_PHASE162_ACCEPT_PIPELINE_WITHOUT_OWNER_INTERRUPT"
+}

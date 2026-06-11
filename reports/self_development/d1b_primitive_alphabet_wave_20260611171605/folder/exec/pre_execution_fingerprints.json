@@ -1,0 +1,17 @@
+﻿{
+    "reports/self_development/accepted_change_memory_snapshot.json":  {
+                                                                          "exists":  true,
+                                                                          "length":  294935,
+                                                                          "sha256":  "70AD557A28CE2F0FBF860FFB4CB19D1AA6E0D76FE3F485AC64D7FD59D9BD621A"
+                                                                      },
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json":  {
+                                                                "exists":  true,
+                                                                "length":  3172300,
+                                                                "sha256":  "D482C002453F2E8320258A9AFCF2623B57414D928928B676AB79E2118F6069BB"
+                                                            },
+    "packs/registry.json":  {
+                                "exists":  true,
+                                "length":  238827,
+                                "sha256":  "1727D138AF53B82363C12BE0107BC170218437ADE1E232267BEF569F27789913"
+                            }
+}

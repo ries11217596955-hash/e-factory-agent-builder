@@ -1,0 +1,89 @@
+{
+  "phase": "PHASE165S_C5A_NORMAL_MODE_SCHOOL_DISPATCHER_AUDIT",
+  "status": "PASS_AUDIT_COMPLETED",
+  "created_at": "06/11/2026 16:38:18",
+  "corrected_at": "2026-06-11T16:40:59.0674743+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "11a0d1e86ddc366ae3e54aae8af6848b126918df",
+  "c4_status": "PASS_SCHOOL_QUEUE_EMPTY_RETURN_TO_NORMAL_MODE",
+  "c4_return_to_normal_mode": true,
+  "c4_remaining_school_atom_count": 0,
+  "dispatcher_mode_file_hit_count": 220,
+  "top_candidate_files": [
+    {
+      "file": "modules\\decide_builder_learning_mode_001.ps1",
+      "hit_count": 95
+    },
+    {
+      "file": "modules\\absorb_builder_school_experience_001.ps1",
+      "hit_count": 33
+    },
+    {
+      "file": "modules\\ingest_builder_curriculum_pack_001.ps1",
+      "hit_count": 27
+    },
+    {
+      "file": "modules\\cluster_builder_lesson_failures_001.ps1",
+      "hit_count": 20
+    },
+    {
+      "file": "modules\\build_builder_agent_body_map_001.ps1",
+      "hit_count": 10
+    },
+    {
+      "file": "modules\\classify_builder_owner_inbox_message_type_001.ps1",
+      "hit_count": 10
+    },
+    {
+      "file": "modules\\build_builder_protected_self_model_promotion_candidate_001.ps1",
+      "hit_count": 5
+    },
+    {
+      "file": "modules\\build_builder_self_knowledge.ps1",
+      "hit_count": 4
+    },
+    {
+      "file": "modules\\admit_generated_self_build_program_to_live_execution.ps1",
+      "hit_count": 4
+    },
+    {
+      "file": "modules\\evaluate_phase165s_c2_bounded_autonomous_atom_acceptance_policy_001.ps1",
+      "hit_count": 3
+    },
+    {
+      "file": "modules\\complete_generated_self_build_program_executable_packs.ps1",
+      "hit_count": 2
+    },
+    {
+      "file": "modules\\backup_builder_limited_protected_state_before_apply_001.ps1",
+      "hit_count": 2
+    },
+    {
+      "file": "modules\\classify_builder_agent_body_artifact_001.ps1",
+      "hit_count": 1
+    },
+    {
+      "file": "modules\\finalize_builder_promotion_bundle_001.ps1",
+      "hit_count": 1
+    },
+    {
+      "file": "modules\\create_phase162_accept_safety_contract_scaffold_001.ps1",
+      "hit_count": 1
+    },
+    {
+      "file": "modules\\discover_builder_existing_self_map_organs_001.ps1",
+      "hit_count": 1
+    },
+    {
+      "file": "modules\\emit_build_decision.ps1",
+      "hit_count": 1
+    }
+  ],
+  "existing_dispatcher_file": "modules/decide_builder_learning_mode_001.ps1",
+  "existing_owner_inbox_classifier_file": "modules/classify_builder_owner_inbox_message_type_001.ps1",
+  "audit_decision": "EXISTING_NORMAL_MODE_SCHOOL_DISPATCHER_FOUND",
+  "required_behavior": "IF_SCHOOL_QUEUE_PRESENT_RUN_SCHOOL_UNTIL_EMPTY_ELSE_RETURN_TO_NORMAL_MODE",
+  "route_change": "DO_NOT_BIND_NEW_DISPATCHER_REUSE_EXISTING_DISPATCHER",
+  "next_required_action": "PHASE165S_C5B_VALIDATE_EXISTING_DISPATCHER_CONTRACT_REUSE_NOT_REBUILD",
+  "protected_state_dirty_check": []
+}

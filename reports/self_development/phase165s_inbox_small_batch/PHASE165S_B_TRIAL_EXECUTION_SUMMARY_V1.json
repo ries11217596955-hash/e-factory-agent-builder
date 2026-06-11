@@ -1,0 +1,29 @@
+{
+    "phase":  "PHASE165S_B_SMALL_INBOX_CURRICULUM_BATCH_TRIAL",
+    "status":  "PIPELINE_PASS",
+    "selected_route":  "OWNER_INBOX_ROUTER_TO_CURRICULUM_INGEST",
+    "owner_inbox_router_executor_used":  true,
+    "pack_path":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+    "concept_ids":  [
+                        "builder_self_map",
+                        "owner_inbox",
+                        "curriculum_pack",
+                        "atom_candidate",
+                        "absorbed_atom",
+                        "validator_gate",
+                        "proof_path",
+                        "quarantine",
+                        "map_signal_not_command",
+                        "approved_source_catalog"
+                    ],
+    "concept_count":  10,
+    "validation_result":  "PASS",
+    "school_run_id":  "PHASE161B1_ROUTED_PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_V1_20260611100959434",
+    "school_run_root":  "runtime_sessions/school_runs/PHASE161B1_ROUTED_PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_V1_20260611100959434",
+    "normalized_output_path":  "runtime_sessions/school_runs/PHASE161B1_ROUTED_PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_V1_20260611100959434/normalized_lesson_batch.json",
+    "lesson_pass_count":  10,
+    "lesson_fail_count":  0,
+    "rejected_or_quarantine_count":  0,
+    "absorption_root":  "runtime_sessions/learning_absorption/PHASE165S_B_FOUNDATION_ABSORPTION_20260611100958474",
+    "created_utc":  "2026-06-11T10:10:06.9348804Z"
+}

@@ -1,0 +1,141 @@
+{
+  "curriculum_id": "PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_V1",
+  "curriculum_version": "1.0.0",
+  "pack_type": "BUILDER_SCHOOL_CURRICULUM_PACK",
+  "active_line": "AGENT_BUILDER_SELF_DEVELOPMENT",
+  "active_mode": "SELF_BUILD",
+  "route_lock_required": true,
+  "route_lock_stamp": "ACTIVE_ROUTE_LOCK:V3_PHASE161_BATCH_SCHOOL_PREP:PHASE161_BATCH_SCHOOL_FOUNDATION",
+  "route_step_id": "PHASE161A_SCHOOL_ENTRY_FOUNDATION_V1",
+  "title": "PHASE165S-B Small Foundation Concept Curriculum",
+  "safety_rules": {
+    "accepted_repo_mutation_allowed": false,
+    "protected_state_mutation_allowed": false,
+    "repo_commit_allowed": false,
+    "repo_push_allowed": false,
+    "branch_switch_allowed": false,
+    "runtime_session_only": true
+  },
+  "lessons": [
+    {
+      "lesson_id": "builder_self_map",
+      "title": "Builder self-map",
+      "objective": "Record that the self-map is derived diagnostic evidence about Builder organs and current state.",
+      "inputs": ["reports/self_development/SELF_MODEL_ACTIVE_MAP.json"],
+      "expected_outputs": ["foundation_concept_recorded:builder_self_map"],
+      "allowed_actions": ["read_repo", "write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "owner_inbox",
+      "title": "Owner inbox",
+      "objective": "Record that Owner-provided curriculum enters through the classified and validated inbox route.",
+      "inputs": ["modules/route_builder_owner_inbox_message_001.ps1"],
+      "expected_outputs": ["foundation_concept_recorded:owner_inbox"],
+      "allowed_actions": ["read_repo", "write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "curriculum_pack",
+      "title": "Curriculum pack",
+      "objective": "Record that a curriculum pack is a bounded set of schema-valid lessons with explicit safety rules.",
+      "inputs": ["schemas/builder_school_curriculum_pack.schema.json"],
+      "expected_outputs": ["foundation_concept_recorded:curriculum_pack"],
+      "allowed_actions": ["parse_schema", "write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "atom_candidate",
+      "title": "Atom candidate",
+      "objective": "Record that an atom candidate is proposed knowledge and is not accepted knowledge by default.",
+      "inputs": ["candidate_status=proposed_not_accepted"],
+      "expected_outputs": ["foundation_concept_recorded:atom_candidate"],
+      "allowed_actions": ["write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "absorbed_atom",
+      "title": "Absorbed atom",
+      "objective": "Record that absorption creates bounded learning evidence without silently mutating protected state.",
+      "inputs": ["modules/absorb_builder_school_experience_001.ps1"],
+      "expected_outputs": ["foundation_concept_recorded:absorbed_atom"],
+      "allowed_actions": ["read_repo", "write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "validator_gate",
+      "title": "Validator gate",
+      "objective": "Record that claimed success requires a matching validator result and cannot rely on chat alone.",
+      "inputs": ["AGENTS.md"],
+      "expected_outputs": ["foundation_concept_recorded:validator_gate"],
+      "allowed_actions": ["read_repo", "write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "proof_path",
+      "title": "Proof path",
+      "objective": "Record that evidence is loaded by exact path instead of broad archive scans.",
+      "inputs": ["AGENTS.md#Exact-path-rule"],
+      "expected_outputs": ["foundation_concept_recorded:proof_path"],
+      "allowed_actions": ["read_repo", "write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "quarantine",
+      "title": "Quarantine",
+      "objective": "Record that unsafe or malformed material is isolated and does not enter the accepted learning path.",
+      "inputs": ["modules/quarantine_builder_owner_inbox_message_001.ps1"],
+      "expected_outputs": ["foundation_concept_recorded:quarantine"],
+      "allowed_actions": ["read_repo", "write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "map_signal_not_command",
+      "title": "Map signal, not command",
+      "objective": "Record that the self-map recommends evidence-based direction while the Mode Decision Kernel retains authority.",
+      "inputs": ["recommendation_role=MAP_SIGNAL_NOT_COMMAND", "decision_authority=MODE_DECISION_KERNEL"],
+      "expected_outputs": ["foundation_concept_recorded:map_signal_not_command"],
+      "allowed_actions": ["write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    },
+    {
+      "lesson_id": "approved_source_catalog",
+      "title": "Approved source catalog",
+      "objective": "Record that future external learning sources require explicit approval and catalog admission before use.",
+      "inputs": ["source_status=approval_required"],
+      "expected_outputs": ["foundation_concept_recorded:approved_source_catalog"],
+      "allowed_actions": ["write_runtime"],
+      "failure_policy": {
+        "continue_batch": true,
+        "quarantine_on_safety_violation": true
+      }
+    }
+  ]
+}

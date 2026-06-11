@@ -28391,7 +28391,7 @@
                           }
                       ],
     "phase165o_last_active_organ":  "reusable_owner_material_self_build_organ_v1",
-    "generated_at":  "2026-06-11T08:42:45.1299005Z",
+    "generated_at":  "2026-06-11T10:10:24.8569905Z",
     "decision_authority":  "MODE_DECISION_KERNEL",
     "map_authority_role":  "DIAGNOSTIC_MAP_SIGNAL_NOT_COMMAND",
     "source_ingestion":  {
@@ -28405,22 +28405,22 @@
                          },
     "recent_self_development_evidence":  [
                                              {
-                                                 "path":  "reports/self_development/PHASE165R_B_BUILDER_SELF_MAP_REFRESH_ORGAN_COMPLETION_V1.md",
-                                                 "artifact_type":  "report",
-                                                 "claim_status":  null,
-                                                 "evidence_class":  "REPORT_REFERENCED",
-                                                 "evidence_strength":  "REPORT_WEAK",
-                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-11T08:39:39.3333502Z"
-                                             },
-                                             {
                                                  "path":  "proofs/self_development/PHASE165R_B_BUILDER_SELF_MAP_REFRESH_ORGAN_COMPLETION_V1.json",
                                                  "artifact_type":  "proof",
                                                  "claim_status":  "PASS",
                                                  "evidence_class":  "PROOF_JSON_PROVEN",
                                                  "evidence_strength":  "PROOF_MEDIUM",
                                                  "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-11T08:39:39.3177257Z"
+                                                 "last_write_utc":  "2026-06-11T10:10:22.7969735Z"
+                                             },
+                                             {
+                                                 "path":  "reports/self_development/PHASE165R_B_BUILDER_SELF_MAP_REFRESH_ORGAN_COMPLETION_V1.md",
+                                                 "artifact_type":  "report",
+                                                 "claim_status":  null,
+                                                 "evidence_class":  "REPORT_REFERENCED",
+                                                 "evidence_strength":  "REPORT_WEAK",
+                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
+                                                 "last_write_utc":  "2026-06-11T10:10:22.7969735Z"
                                              },
                                              {
                                                  "path":  "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
@@ -28429,7 +28429,7 @@
                                                  "evidence_class":  "REPORT_REFERENCED",
                                                  "evidence_strength":  "REPORT_WEAK",
                                                  "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-11T08:39:38.8966113Z"
+                                                 "last_write_utc":  "2026-06-11T10:10:22.3414287Z"
                                              },
                                              {
                                                  "path":  "reports/self_development/self_map_next_action_recommendation.json",
@@ -28438,7 +28438,7 @@
                                                  "evidence_class":  "REPORT_REFERENCED",
                                                  "evidence_strength":  "REPORT_WEAK",
                                                  "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-11T08:39:38.7775903Z"
+                                                 "last_write_utc":  "2026-06-11T10:10:22.1585179Z"
                                              },
                                              {
                                                  "path":  "reports/self_development/organism_health_state.json",
@@ -28447,7 +28447,43 @@
                                                  "evidence_class":  "REPORT_REFERENCED",
                                                  "evidence_strength":  "REPORT_WEAK",
                                                  "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-11T08:39:38.5831783Z"
+                                                 "last_write_utc":  "2026-06-11T10:10:22.0137344Z"
+                                             },
+                                             {
+                                                 "path":  "reports/self_development/PHASE165S_B_SMALL_INBOX_CURRICULUM_BATCH_TRIAL_V1.md",
+                                                 "artifact_type":  "report",
+                                                 "claim_status":  null,
+                                                 "evidence_class":  "REPORT_REFERENCED",
+                                                 "evidence_strength":  "REPORT_WEAK",
+                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
+                                                 "last_write_utc":  "2026-06-11T10:10:16.3539583Z"
+                                             },
+                                             {
+                                                 "path":  "proofs/self_development/PHASE165S_B_SMALL_INBOX_CURRICULUM_BATCH_TRIAL_V1.json",
+                                                 "artifact_type":  "proof",
+                                                 "claim_status":  "PASS",
+                                                 "evidence_class":  "PROOF_JSON_PROVEN",
+                                                 "evidence_strength":  "PROOF_MEDIUM",
+                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
+                                                 "last_write_utc":  "2026-06-11T10:10:16.3469791Z"
+                                             },
+                                             {
+                                                 "path":  "reports/self_development/PHASE165S_A_INBOX_PIPELINE_AUDIT_V1.md",
+                                                 "artifact_type":  "report",
+                                                 "claim_status":  null,
+                                                 "evidence_class":  "REPORT_REFERENCED",
+                                                 "evidence_strength":  "REPORT_WEAK",
+                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
+                                                 "last_write_utc":  "2026-06-11T09:04:29.3181849Z"
+                                             },
+                                             {
+                                                 "path":  "proofs/self_development/PHASE165S_A_INBOX_PIPELINE_AUDIT_V1.json",
+                                                 "artifact_type":  "proof",
+                                                 "claim_status":  "PASS_AUDIT_COMPLETED",
+                                                 "evidence_class":  "PROOF_JSON_PROVEN",
+                                                 "evidence_strength":  "PROOF_MEDIUM",
+                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
+                                                 "last_write_utc":  "2026-06-11T09:04:28.8288593Z"
                                              },
                                              {
                                                  "path":  "reports/self_development/PHASE165P_CODEX_ORIENTATION_FRESHNESS_MODEL_REPAIR_V1.md",
@@ -29017,20 +29053,20 @@
                                                  "last_write_utc":  "2026-06-10T08:26:45.7989713Z"
                                              },
                                              {
-                                                 "path":  "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
-                                                 "artifact_type":  "report",
-                                                 "claim_status":  "PASS",
-                                                 "evidence_class":  "REPORT_REFERENCED",
-                                                 "evidence_strength":  "REPORT_WEAK",
-                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-10T08:26:43.9834638Z"
-                                             },
-                                             {
                                                  "path":  "proofs/self_development/GENERATED_PROGRAM_ADMISSION_V1.json",
                                                  "artifact_type":  "proof",
                                                  "claim_status":  "PASS",
                                                  "evidence_class":  "PROOF_JSON_PROVEN",
                                                  "evidence_strength":  "PROOF_MEDIUM",
+                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
+                                                 "last_write_utc":  "2026-06-10T08:26:43.9834638Z"
+                                             },
+                                             {
+                                                 "path":  "reports/self_development/GENERATED_PROGRAM_ADMISSION_REPORT.json",
+                                                 "artifact_type":  "report",
+                                                 "claim_status":  "PASS",
+                                                 "evidence_class":  "REPORT_REFERENCED",
+                                                 "evidence_strength":  "REPORT_WEAK",
                                                  "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
                                                  "last_write_utc":  "2026-06-10T08:26:43.9834638Z"
                                              },
@@ -29263,42 +29299,6 @@
                                                  "path":  "reports/self_development/stage_06_route_lock_status_audit.json",
                                                  "artifact_type":  "report",
                                                  "claim_status":  "PASS",
-                                                 "evidence_class":  "REPORT_REFERENCED",
-                                                 "evidence_strength":  "REPORT_WEAK",
-                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-10T04:44:51.2015399Z"
-                                             },
-                                             {
-                                                 "path":  "reports/self_development/stage_05_promotion_truthfulness_audit.json",
-                                                 "artifact_type":  "report",
-                                                 "claim_status":  "PASS",
-                                                 "evidence_class":  "REPORT_REFERENCED",
-                                                 "evidence_strength":  "REPORT_WEAK",
-                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-10T04:44:51.2015399Z"
-                                             },
-                                             {
-                                                 "path":  "reports/self_development/self_map_refresh_after_acceptance_result.json",
-                                                 "artifact_type":  "report",
-                                                 "claim_status":  null,
-                                                 "evidence_class":  "REPORT_REFERENCED",
-                                                 "evidence_strength":  "REPORT_WEAK",
-                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-10T04:44:51.2015399Z"
-                                             },
-                                             {
-                                                 "path":  "reports/self_development/stage_07_overnight_batch_readiness_audit.json",
-                                                 "artifact_type":  "report",
-                                                 "claim_status":  "PASS",
-                                                 "evidence_class":  "REPORT_REFERENCED",
-                                                 "evidence_strength":  "REPORT_WEAK",
-                                                 "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",
-                                                 "last_write_utc":  "2026-06-10T04:44:51.2015399Z"
-                                             },
-                                             {
-                                                 "path":  "reports/self_development/superseded_artifact_inventory.json",
-                                                 "artifact_type":  "report",
-                                                 "claim_status":  null,
                                                  "evidence_class":  "REPORT_REFERENCED",
                                                  "evidence_strength":  "REPORT_WEAK",
                                                  "map_role":  "DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND",

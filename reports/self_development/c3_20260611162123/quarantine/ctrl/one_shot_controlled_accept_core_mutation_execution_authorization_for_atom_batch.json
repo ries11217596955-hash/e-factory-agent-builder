@@ -1,0 +1,14 @@
+﻿{
+    "schema":  "PHASE162_ONE_SHOT_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_AUTHORIZATION_FOR_ATOM_BATCH_V1",
+    "status":  "AUTHORIZED",
+    "created_at":  "2026-06-11T16:21:29.0846244+04:00",
+    "authorization_scope":  "ONE_SHOT_ACCEPTED_CORE_WRITE_WITH_ATOMIC_PLAN_AND_ROLLBACK",
+    "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\quarantine\\cand",
+    "authorization_source":  "PHASE165S-C2B bounded autonomous acceptance policy guard",
+    "owner_interrupt_used":  false,
+    "autonomous_policy_guard_allowed":  true,
+    "authorized_atom_ids":  [
+                                "decision_rule.quarantine_unproven_or_risky_candidate.v1"
+                            ],
+    "mass_acceptance_forbidden":  true
+}

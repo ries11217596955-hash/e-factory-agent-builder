@@ -28414,6 +28414,87 @@
                                                         "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c2c_20260611161744\\cand",
                                                         "visible_to_next_cycle":  true,
                                                         "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "decision_rule.proof_path_required_for_done_claim.v1",
+                                                        "accepted_at":  "2026-06-11T16:21:25.8228711+04:00",
+                                                        "operation_id":  "C3_20260611162123_proof_path_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "proof_path",
+                                                                        "meaning":  "A done/fixed/accepted claim must point to a concrete proof path such as proof JSON, report, validator output, commit, push, workflow, or log. Unsupported claims stay unaccepted.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                        "autonomous_loop":  "PHASE165S-C3",
+                                                                        "owner_interrupt_used":  false,
+                                                                        "decision_rule":  {
+                                                                                              "input":  "candidate_or_task_claim",
+                                                                                              "classification":  "REQUIRES_CONCRETE_PROOF_PATH",
+                                                                                              "direct_accept_without_proof":  false,
+                                                                                              "decision_authority":  "ACCEPTANCE_VALIDATOR_AND_MODE_DECISION_KERNEL"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                        "use_proof":  "Sample reasoning must use this atom as a rule, not as curriculum-only lesson.",
+                                                                        "behavior_delta":  "Next-cycle reasoning starts from the accepted atom."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\proof_path\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\proof_path\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "decision_rule.quarantine_unproven_or_risky_candidate.v1",
+                                                        "accepted_at":  "2026-06-11T16:21:30.0214400+04:00",
+                                                        "operation_id":  "C3_20260611162123_quarantine_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "quarantine",
+                                                                        "meaning":  "Unproven, risky, duplicate, or out-of-scope candidates must be quarantined instead of being silently promoted into accepted state.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                        "autonomous_loop":  "PHASE165S-C3",
+                                                                        "owner_interrupt_used":  false,
+                                                                        "decision_rule":  {
+                                                                                              "input":  "candidate_or_task_claim",
+                                                                                              "classification":  "QUARANTINE_UNPROVEN_OR_RISKY_CANDIDATE",
+                                                                                              "direct_accept_without_proof":  false,
+                                                                                              "decision_authority":  "ACCEPTANCE_VALIDATOR_AND_MODE_DECISION_KERNEL"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                        "use_proof":  "Sample reasoning must use this atom as a rule, not as curriculum-only lesson.",
+                                                                        "behavior_delta":  "Next-cycle reasoning starts from the accepted atom."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\quarantine\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\quarantine\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "decision_rule.approved_source_catalog_required_for_external_material.v1",
+                                                        "accepted_at":  "2026-06-11T16:21:34.2183836+04:00",
+                                                        "operation_id":  "C3_20260611162123_approved_source_catalog_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "approved_source_catalog",
+                                                                        "meaning":  "External material may support Builder only when source provenance and approval status are known. Unknown material is a candidate, not trusted memory.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                                        "autonomous_loop":  "PHASE165S-C3",
+                                                                        "owner_interrupt_used":  false,
+                                                                        "decision_rule":  {
+                                                                                              "input":  "candidate_or_task_claim",
+                                                                                              "classification":  "REQUIRE_APPROVED_SOURCE_CATALOG_FOR_EXTERNAL_MATERIAL",
+                                                                                              "direct_accept_without_proof":  false,
+                                                                                              "decision_authority":  "ACCEPTANCE_VALIDATOR_AND_MODE_DECISION_KERNEL"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                                        "use_proof":  "Sample reasoning must use this atom as a rule, not as curriculum-only lesson.",
+                                                                        "behavior_delta":  "Next-cycle reasoning starts from the accepted atom."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\approved_source_catalog\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\approved_source_catalog\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
                                                     }
                                                 ],
     "active_organs":  [

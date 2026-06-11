@@ -1,0 +1,80 @@
+﻿{
+    "schema":  "PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_SET_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T16:21:24.8424353+04:00",
+    "accepted_memory_operations":  [
+                                       {
+                                           "operation_id":  "C3_20260611162123_proof_path_MEMORY",
+                                           "atom_id":  "decision_rule.proof_path_required_for_done_claim.v1",
+                                           "target":  "reports/self_development/accepted_change_memory_snapshot.json",
+                                           "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\proof_path",
+                                           "payload":  {
+                                                           "concept_id":  "proof_path",
+                                                           "meaning":  "A done/fixed/accepted claim must point to a concrete proof path such as proof JSON, report, validator output, commit, push, workflow, or log. Unsupported claims stay unaccepted.",
+                                                           "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                           "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                           "autonomous_loop":  "PHASE165S-C3",
+                                                           "owner_interrupt_used":  false,
+                                                           "decision_rule":  {
+                                                                                 "input":  "candidate_or_task_claim",
+                                                                                 "classification":  "REQUIRES_CONCRETE_PROOF_PATH",
+                                                                                 "direct_accept_without_proof":  false,
+                                                                                 "decision_authority":  "ACCEPTANCE_VALIDATOR_AND_MODE_DECISION_KERNEL"
+                                                                             },
+                                                           "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                           "use_proof":  "Sample reasoning must use this atom as a rule, not as curriculum-only lesson.",
+                                                           "behavior_delta":  "Next-cycle reasoning starts from the accepted atom."
+                                                       }
+                                       }
+                                   ],
+    "accepted_self_model_operations":  [
+                                           {
+                                               "operation_id":  "C3_20260611162123_proof_path_SELF",
+                                               "atom_id":  "decision_rule.proof_path_required_for_done_claim.v1",
+                                               "target":  "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                                               "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\proof_path",
+                                               "payload":  {
+                                                               "concept_id":  "proof_path",
+                                                               "meaning":  "A done/fixed/accepted claim must point to a concrete proof path such as proof JSON, report, validator output, commit, push, workflow, or log. Unsupported claims stay unaccepted.",
+                                                               "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                               "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                               "autonomous_loop":  "PHASE165S-C3",
+                                                               "owner_interrupt_used":  false,
+                                                               "decision_rule":  {
+                                                                                     "input":  "candidate_or_task_claim",
+                                                                                     "classification":  "REQUIRES_CONCRETE_PROOF_PATH",
+                                                                                     "direct_accept_without_proof":  false,
+                                                                                     "decision_authority":  "ACCEPTANCE_VALIDATOR_AND_MODE_DECISION_KERNEL"
+                                                                                 },
+                                                               "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                               "use_proof":  "Sample reasoning must use this atom as a rule, not as curriculum-only lesson.",
+                                                               "behavior_delta":  "Next-cycle reasoning starts from the accepted atom."
+                                                           }
+                                           }
+                                       ],
+    "registry_operations":  [
+                                {
+                                    "operation_id":  "C3_20260611162123_proof_path_REGISTRY",
+                                    "atom_id":  "decision_rule.proof_path_required_for_done_claim.v1",
+                                    "target":  "packs/registry.json",
+                                    "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\proof_path",
+                                    "payload":  {
+                                                    "concept_id":  "proof_path",
+                                                    "meaning":  "A done/fixed/accepted claim must point to a concrete proof path such as proof JSON, report, validator output, commit, push, workflow, or log. Unsupported claims stay unaccepted.",
+                                                    "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                    "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                    "autonomous_loop":  "PHASE165S-C3",
+                                                    "owner_interrupt_used":  false,
+                                                    "decision_rule":  {
+                                                                          "input":  "candidate_or_task_claim",
+                                                                          "classification":  "REQUIRES_CONCRETE_PROOF_PATH",
+                                                                          "direct_accept_without_proof":  false,
+                                                                          "decision_authority":  "ACCEPTANCE_VALIDATOR_AND_MODE_DECISION_KERNEL"
+                                                                      },
+                                                    "memory_proof":  "Accepted-memory read must find this atom by atom_id.",
+                                                    "use_proof":  "Sample reasoning must use this atom as a rule, not as curriculum-only lesson.",
+                                                    "behavior_delta":  "Next-cycle reasoning starts from the accepted atom."
+                                                }
+                                }
+                            ]
+}

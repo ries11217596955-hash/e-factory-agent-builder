@@ -1,0 +1,11 @@
+﻿{
+    "schema":  "PHASE165S_C3_EXECUTION_PROOF_FOR_PHASE162_CONTROLLER_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T16:21:35.1887952+04:00",
+    "head":  "d1ed999f7aab9030bbb39251f43674187a5d5b43",
+    "output_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\approved_source_catalog\\exec",
+    "next_action":  "FEED_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_BACK_INTO_CONTROLLER",
+    "accepted_atom_claimed":  false,
+    "atom_id":  "decision_rule.approved_source_catalog_required_for_external_material.v1",
+    "owner_interrupt_used":  false
+}

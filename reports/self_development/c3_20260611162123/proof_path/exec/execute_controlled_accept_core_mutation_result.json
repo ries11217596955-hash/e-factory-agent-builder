@@ -1,0 +1,57 @@
+﻿{
+    "schema":  "PHASE162_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_FOR_ATOM_BATCH_RESULT_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T16:21:26.4081510+04:00",
+    "controller_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\proof_path\\ctrl",
+    "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c3_20260611162123\\proof_path\\cand",
+    "batch_size":  1,
+    "staged_atom_count":  1,
+    "controlled_accept_core_mutation_executed":  true,
+    "post_real_mutation_validation_passed":  true,
+    "rollback_executed":  false,
+    "rollback_required":  false,
+    "failure_message":  "",
+    "event_count":  3,
+    "before_fingerprints":  {
+                                "reports/self_development/accepted_change_memory_snapshot.json":  {
+                                                                                                      "exists":  true,
+                                                                                                      "length":  261582,
+                                                                                                      "sha256":  "E612F4CB8B09979AF752795B4948BF21219B5E0E5A93F65A10981FECD95372DD"
+                                                                                                  },
+                                "reports/self_development/SELF_MODEL_ACTIVE_MAP.json":  {
+                                                                                            "exists":  true,
+                                                                                            "length":  3139562,
+                                                                                            "sha256":  "50F374990CE64312EADA2845F9DAD8735E75BE89949DEA9808D2A7D6DAE4AF57"
+                                                                                        },
+                                "packs/registry.json":  {
+                                                            "exists":  true,
+                                                            "length":  208309,
+                                                            "sha256":  "23664ABFDA049741F74D5382793FE710B788DA3C9317AB2086130975553E675F"
+                                                        }
+                            },
+    "after_fingerprints":  {
+                               "reports/self_development/accepted_change_memory_snapshot.json":  {
+                                                                                                     "exists":  true,
+                                                                                                     "length":  265074,
+                                                                                                     "sha256":  "4D9CDC1692C64D8ED27DFF70FCD9E86E2007402FC39EC16C12321DF86FB6AD07"
+                                                                                                 },
+                               "reports/self_development/SELF_MODEL_ACTIVE_MAP.json":  {
+                                                                                           "exists":  true,
+                                                                                           "length":  3142999,
+                                                                                           "sha256":  "A3A07E783A89FAA68DE977976220E325FE7B69AE3D06F94D1D8A4E0DE878276F"
+                                                                                       },
+                               "packs/registry.json":  {
+                                                           "exists":  true,
+                                                           "length":  211508,
+                                                           "sha256":  "D16BB24E415C86CC1CC5DC75AE70D242590F558787B5E5359EA19EE34E5C6D19"
+                                                       }
+                           },
+    "accepted_core_write_executed":  true,
+    "accepted_atom_claimed":  false,
+    "accepted_memory_mutated":  true,
+    "accepted_self_model_mutated":  true,
+    "registry_mutated":  true,
+    "final_accept_ready":  true,
+    "machine_decision":  "CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTED_PENDING_CONTROLLER_FINALIZATION",
+    "next_machine_action":  "FEED_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_BACK_INTO_CONTROLLER"
+}

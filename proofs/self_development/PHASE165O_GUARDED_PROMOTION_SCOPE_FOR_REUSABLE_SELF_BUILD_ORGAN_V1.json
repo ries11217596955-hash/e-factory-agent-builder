@@ -1,0 +1,35 @@
+{
+  "phase": "PHASE165O_GUARDED_PROMOTION_SCOPE_FOR_REUSABLE_SELF_BUILD_ORGAN",
+  "created_utc": "2026-06-11T05:08:26.4555928Z",
+  "mode": "SCOPE_ONLY_NO_PROMOTION_NO_PROTECTED_MUTATION",
+  "status": "PASS",
+  "validation_passed": true,
+  "scope_path": "self_build_programs/promotion_scopes/PHASE165O_GUARDED_PROMOTION_SCOPE_FOR_REUSABLE_SELF_BUILD_ORGAN_V1.json",
+  "promotion_scope_ready": true,
+  "promotion_performed": false,
+  "organ_id": "reusable_owner_material_self_build_organ_v1",
+  "capability": "owner_material_dynamic_self_build_loop",
+  "allowed_mutation_targets": [
+    "packs/registry.json",
+    "CAPABILITY_ROADMAP.json",
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+  ],
+  "blocked_mutation_targets": [
+    "TASK_QUEUE.json",
+    "GENESIS_STATE.json",
+    "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md",
+    "orchestrator/run.ps1"
+  ],
+  "registry_already_promoted": false,
+  "orchestrator_run": false,
+  "task_queue_mutated": false,
+  "genesis_state_mutated": false,
+  "capability_roadmap_mutated": false,
+  "registry_mutated": false,
+  "route_lock_mutated": false,
+  "protected_self_model_mutated": false,
+  "external_fetch_or_install": false,
+  "codex_used": false,
+  "errors": [],
+  "next_required_action": "PHASE165O_GUARDED_PROMOTION_APPLY_FOR_REUSABLE_SELF_BUILD_ORGAN"
+}

@@ -1,0 +1,33 @@
+﻿{
+    "phase":  "PHASE165S_C2B_BOUNDED_AUTONOMOUS_ACCEPTANCE_POLICY_GUARD",
+    "status":  "PASS_POLICY_GUARD_READY",
+    "created_at":  "2026-06-11T16:14:23.1681854+04:00",
+    "c1b_atom_id":  "decision_rule.map_signal_not_command.v1",
+    "c1b_memory_count":  1,
+    "c1b_self_map_count":  1,
+    "c1b_registry_count":  1,
+    "policy_module":  "modules/evaluate_phase165s_c2_bounded_autonomous_atom_acceptance_policy_001.ps1",
+    "validator":  "validators/validate_phase165s_c2_bounded_autonomous_acceptance_policy_guard_v1.ps1",
+    "run_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_c2_bounded_autonomous_policy_guard",
+    "checks":  {
+                   "c1b_atom_still_visible":  true,
+                   "allowed_case_allowed":  true,
+                   "duplicate_case_denied":  true,
+                   "bulk_case_denied":  true,
+                   "unsafe_protected_target_denied":  true,
+                   "missing_use_proof_denied":  true,
+                   "protected_state_clean":  true
+               },
+    "failed_checks":  [
+
+                      ],
+    "allowed_case_decision":  "ALLOW_AUTONOMOUS_ONE_ATOM_ACCEPTANCE",
+    "duplicate_case_decision":  "DENY_REQUIRE_OWNER_OR_REPAIR",
+    "bulk_case_decision":  "DENY_REQUIRE_OWNER_OR_REPAIR",
+    "unsafe_case_decision":  "DENY_REQUIRE_OWNER_OR_REPAIR",
+    "missing_use_case_decision":  "DENY_REQUIRE_OWNER_OR_REPAIR",
+    "protected_state_dirty_check":  [
+
+                                    ],
+    "next_required_action":  "PHASE165S_C2C_AUTONOMOUS_ONE_ATOM_ACCEPTANCE_TRIAL_WITHOUT_OWNER_INTERRUPT"
+}

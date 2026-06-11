@@ -1,0 +1,40 @@
+﻿{
+    "schema":  "PHASE165S_C2_BOUNDED_AUTONOMOUS_ATOM_ACCEPTANCE_POLICY_EVALUATION_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-11T16:14:21.6958898+04:00",
+    "candidate_path":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_c2_bounded_autonomous_policy_guard\\deny_unsafe_protected_target.candidate.json",
+    "autonomous_accept_allowed":  false,
+    "decision_code":  "DENY_REQUIRE_OWNER_OR_REPAIR",
+    "atom_ids":  [
+                     "decision_rule.unsafe_target.v1"
+                 ],
+    "batch_size":  1,
+    "source_route":  "OWNER_INBOX_CURRICULUM",
+    "source_authority":  "OWNER_APPROVED",
+    "allowed_target_files":  [
+                                 "reports/self_development/accepted_change_memory_snapshot.json",
+                                 "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                                 "packs/registry.json"
+                             ],
+    "target_files":  [
+                         "reports/self_development/accepted_change_memory_snapshot.json",
+                         "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                         "packs/registry.json",
+                         "orchestrator/run.ps1"
+                     ],
+    "protected_files_to_mutate":  [
+                                      "packs/registry.json",
+                                      "orchestrator/run.ps1"
+                                  ],
+    "duplicate_atoms":  [
+
+                        ],
+    "denial_reasons":  [
+                           "target_files_outside_accept_atom_surfaces",
+                           "protected_write_outside_registry",
+                           "forbidden_protected_target=orchestrator/run.ps1"
+                       ],
+    "owner_prompt_required":  true,
+    "protected_write_scope":  "packs/registry.json only, and only through existing PHASE162 accepted-core executor",
+    "next_machine_action":  "STOP_FOR_OWNER_OR_REPAIR"
+}

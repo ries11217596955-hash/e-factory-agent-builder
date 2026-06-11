@@ -1,0 +1,92 @@
+{
+  "phase": "PHASE165R_A_SELF_MAP_REFRESH_ORGAN_AUDIT",
+  "created_utc": "2026-06-11T08:15:03.1814050Z",
+  "status": "PASS_AUDIT_COMPLETED",
+  "audit_decision": "CODEX_SERIAL_ORGAN_COMPLETION_NEEDED",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "26db309ea883e65e9c90dfc66e8c43fb347f9ae4",
+  "origin": "26db309ea883e65e9c90dfc66e8c43fb347f9ae4",
+  "head_equals_origin": true,
+  "git_status_clean": false,
+  "git_status": [
+    " M docs/codex/CODEX_CURRENT_STATE_THIN.json",
+    " M docs/codex/CODEX_EVIDENCE_INDEX.md",
+    " M docs/codex/CODEX_REPO_MAP.md",
+    " M proofs/self_development/PHASE165P_CODEX_ORIENTATION_FRESHNESS_MODEL_REPAIR_V1.json",
+    " M reports/self_development/PHASE165P_CODEX_ORIENTATION_FRESHNESS_MODEL_REPAIR_V1.md",
+    " M reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+    " M reports/self_development/organism_health_state.json",
+    " M reports/self_development/self_map_next_action_recommendation.json",
+    "?? proofs/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.json",
+    "?? reports/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.md"
+  ],
+  "protected_state_dirty": [],
+  "existing_entry_files": [
+    "modules/build_builder_agent_body_map_001.ps1",
+    "modules/update_builder_self_model_active_map_001.ps1",
+    "modules/inspect_builder_organism_health_state_001.ps1",
+    "modules/select_builder_self_map_next_action_001.ps1",
+    "validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
+  ],
+  "missing_entry_files": [],
+  "existing_output_files": [
+    "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+    "reports/self_development/organism_health_state.json",
+    "reports/self_development/self_map_next_action_recommendation.json",
+    "proofs/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.json",
+    "reports/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.md"
+  ],
+  "missing_output_files": [],
+  "self_map_created_at": null,
+  "health_created_at": "2026-06-11T08:08:03.5661017Z",
+  "selector_created_at": "2026-06-11T08:08:06.0346226Z",
+  "selector_recommended_phase": "PHASE161K_ACTIVE_ROUTE_EXHAUSTION_AND_LIVE_EVIDENCE_RECONCILIATION",
+  "phase165q_visible": {
+    "self_map": false,
+    "health": false,
+    "selector": false
+  },
+  "runtime_compatibility": {
+    "body_map_uses_getrelativepath": true,
+    "body_map_has_compatible_relative_fallback": true
+  },
+  "freshness_pins": {
+    "validator_mentions_current_head": false,
+    "health_mentions_route_v3_phase161": false,
+    "selector_mentions_phase161k": true,
+    "validator_has_unexpected_head_guard": true,
+    "selector_mentions_route_v3_phase161": false,
+    "validator_has_40_hex_literals": true
+  },
+  "authority_boundary": {
+    "selector_output_has_decision_authority": false,
+    "script_has_mode_decision_kernel_boundary": false,
+    "selector_output_has_map_signal_not_command": false,
+    "selector_output_has_blocks_current_action": false
+  },
+  "workflow_hooks": [
+    "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\.github\\workflows\\self-map-auto-refresh-after-push.yml"
+  ],
+  "readiness_gates": {
+    "entrypoints_present": true,
+    "outputs_present": true,
+    "protected_state_clean": true,
+    "relative_path_runtime_compatible": false,
+    "phase165q_visible_after_refresh": false,
+    "validator_not_pinned_to_old_head": false,
+    "authority_boundary_present": false,
+    "workflow_hook_present": true
+  },
+  "failures": [
+    "Relative path helper depends on GetRelativePath or incompatible runtime behavior.",
+    "PHASE165Q is not visible in self-map/health/selector outputs.",
+    "Validator has stale/rigid HEAD guard.",
+    "Authority boundary fields are missing or not emitted."
+  ],
+  "source_ingestion_findings_count": 53,
+  "hardcoded_head_findings_count": 4,
+  "authority_findings_count": 0,
+  "codex_recommendation": "Use Codex only after this audit, as a serial organ-completion repair, not a single-line patch.",
+  "protected_state_mutation_allowed": false,
+  "next_required_action": "PREPARE_SERIAL_CODEX_TASK_FROM_AUDIT"
+}

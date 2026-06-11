@@ -34,6 +34,8 @@ $snapshot = Get-SelectorJson (Join-Path $output 'accepted_change_memory_snapshot
 $routeIndex = Get-SelectorJson (Join-Path $root 'route_locks/ACTIVE_ROUTE_LOCK.json')
 $g2 = Get-SelectorJson (Join-Path $output 'protected_state_update_candidates/PHASE161G2_APPLY_RESULT.json')
 $delayed = Get-SelectorJson (Join-Path $output 'protected_state_update_candidates/PHASE161G1_DELAYED_OR_BLOCKED_SCOPE.json')
+$phase165qProofPath = Join-Path $root 'proofs/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.json'
+$phase165q = Get-SelectorJson $phase165qProofPath
 
 if (-not $policy) { throw 'Selector policy missing.' }
 if (-not $health) { throw 'Organism health state missing.' }
@@ -63,7 +65,24 @@ if ($delayed -and $delayed.items) {
 }
 
 $candidates = New-Object System.Collections.Generic.List[object]
-$routePending = $routeIndex -and $routeIndex.next_target_phase -eq 'PHASE161_BATCH_SCHOOL_FOUNDATION'
+$phase165qReconciled = $phase165q -and $phase165q.status -eq 'PASS' -and
+  $phase165q.route_decision -eq 'READY_FOR_FIRST_LIVE_ATOM_GROWTH_MICRO_TRIAL'
+$routePending = $routeIndex -and
+  $routeIndex.next_target_phase -eq 'PHASE161_BATCH_SCHOOL_FOUNDATION' -and
+  -not $phase165qReconciled
+if ($phase165qReconciled) {
+  $candidates.Add([pscustomobject][ordered]@{
+    action_id = 'PHASE165Q_RECONCILED_LIVE_ATOM_GROWTH_SIGNAL'
+    macro_step = 'Use PHASE165Q reconciliation as a diagnostic signal for the Mode Decision Kernel to consider the first live atom growth micro-trial.'
+    recommended_phase_id = [string]$phase165q.next_required_action
+    priority_class = 'REQUIRED_LIVE_PROOF_FOR_ACTIVE_ORGAN'
+    next_action_type = 'MAP_SIGNAL'
+    score = 90
+    route_relevant = $true
+    owner_approval_required = $false
+    reason = 'PHASE165Q passed route reconciliation and recorded readiness for the first live atom growth micro-trial. This is a map signal, not execution authority.'
+  })
+}
 if ($routePending) {
   $candidates.Add([pscustomobject][ordered]@{
     action_id = 'PHASE161J_ROUTE_EXHAUSTION_LIVE_EVIDENCE_RECONCILIATION'
@@ -148,6 +167,8 @@ $evidencePaths = @(
   'reports/self_development/protected_state_update_candidates/PHASE161G2_APPLY_RESULT.json',
   'reports/self_development/protected_state_update_candidates/PHASE161G1_DELAYED_OR_BLOCKED_SCOPE.json',
   'route_locks/ACTIVE_ROUTE_LOCK.json',
+  'proofs/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.json',
+  'reports/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.md',
   $routeIndex.active_route_lock_file
 ) | Where-Object { $_ }
 
@@ -155,6 +176,21 @@ $recommendation = [pscustomobject][ordered]@{
   recommendation_id = ('PHASE161J_RECOMMENDATION_' + (Get-Date).ToUniversalTime().ToString('yyyyMMddHHmmss'))
   created_at = (Get-Date).ToUniversalTime().ToString('o')
   selector_version = $policy.selector_version
+  decision_authority = 'MODE_DECISION_KERNEL'
+  recommendation_role = 'MAP_SIGNAL_NOT_COMMAND'
+  blocks_current_action = [bool]($health.health_state -eq 'CRITICAL')
+  map_signal = [pscustomobject][ordered]@{
+    source = 'BUILDER_SELF_MAP'
+    selected_action_id = $selected.action_id
+    recommended_phase_id = $selected.recommended_phase_id
+    requires_mode_decision = $true
+  }
+  health_signal = [pscustomobject][ordered]@{
+    health_state = $health.health_state
+    health_score = [int]$health.health_score
+    critical_finding_count = @($health.critical_findings).Count
+  }
+  self_map_repair_recommendation = $(if ($phase165qReconciled) { 'No self-map route reconciliation repair is currently required; preserve PHASE165Q as diagnostic evidence.' } else { 'Refresh and reconcile route evidence before relying on the map signal.' })
   organism_health_state = $health.health_state
   recommended_next_macro_step = $selected.macro_step
   recommended_next_phase_id = $selected.recommended_phase_id
@@ -188,6 +224,12 @@ Set-SelectorProperty $active 'selector_policy_id' $policy.policy_id
 Set-SelectorProperty $active 'blocked_old_recommendations' @($recommendation.blocked_old_recommendations)
 Set-SelectorProperty $active 'candidate_actions_considered' @($recommendation.candidate_actions_considered)
 Set-SelectorProperty $active 'next_decision_reason' $recommendation.why_this_step
+Set-SelectorProperty $active 'decision_authority' $recommendation.decision_authority
+Set-SelectorProperty $active 'recommendation_role' $recommendation.recommendation_role
+Set-SelectorProperty $active 'blocks_current_action' $recommendation.blocks_current_action
+Set-SelectorProperty $active 'map_signal' $recommendation.map_signal
+Set-SelectorProperty $active 'health_signal' $recommendation.health_signal
+Set-SelectorProperty $active 'self_map_repair_recommendation' $recommendation.self_map_repair_recommendation
 Write-SelectorJson -Path (Join-Path $output 'SELF_MODEL_ACTIVE_MAP.json') -Value $active
 
 $recommendation

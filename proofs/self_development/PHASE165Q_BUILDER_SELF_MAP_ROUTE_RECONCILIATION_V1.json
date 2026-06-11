@@ -1,0 +1,23 @@
+{
+  "phase": "PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION",
+  "created_utc": "2026-06-11T07:56:11.5306988Z",
+  "status": "PASS",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "26db309ea883e65e9c90dfc66e8c43fb347f9ae4",
+  "origin": "26db309ea883e65e9c90dfc66e8c43fb347f9ae4",
+  "git_status_clean": false,
+  "self_map_path": "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+  "phase165p_route_review_proof_path": "proofs/self_development/PHASE165P_ROUTE_LOCK_V2_COMPLETION_REVIEW_V1.json",
+  "old_phase161k_recommendation_present": true,
+  "phase165p_route_review_seen": true,
+  "phase165p_next_decision_seen": true,
+  "promoted_organ_seen_in_self_map": true,
+  "promoted_capability_seen_in_self_map": true,
+  "promoted_organ_seen_in_registry": true,
+  "promoted_organ_seen_in_roadmap": true,
+  "codex_map_debt": "NOT_THIS_TASK",
+  "protected_state_mutation_required": false,
+  "route_decision": "READY_FOR_FIRST_LIVE_ATOM_GROWTH_MICRO_TRIAL",
+  "errors": [],
+  "next_required_action": "DESIGN_AND_RUN_FIRST_LIVE_ATOM_GROWTH_MICRO_TRIAL"
+}

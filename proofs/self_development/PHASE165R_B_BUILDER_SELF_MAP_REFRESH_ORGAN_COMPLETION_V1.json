@@ -1,0 +1,62 @@
+﻿{
+    "phase":  "PHASE165R_B_BUILDER_SELF_MAP_REFRESH_ORGAN_COMPLETION",
+    "created_utc":  "2026-06-11T08:44:33.7523417Z",
+    "status":  "PASS",
+    "validation_passed":  true,
+    "errors":  [
+
+               ],
+    "branch":  "phase110-idempotent-autonomy-trial-runtime",
+    "head":  "26db309ea883e65e9c90dfc66e8c43fb347f9ae4",
+    "origin":  "26db309ea883e65e9c90dfc66e8c43fb347f9ae4",
+    "head_origin_coherent":  true,
+    "changed_files":  [
+                          "modules/build_builder_agent_body_map_001.ps1",
+                          "modules/update_builder_self_model_active_map_001.ps1",
+                          "modules/inspect_builder_organism_health_state_001.ps1",
+                          "modules/select_builder_self_map_next_action_001.ps1",
+                          "validators/validate_phase161j_self_map_next_action_selector_v1.ps1",
+                          "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                          "reports/self_development/organism_health_state.json",
+                          "reports/self_development/self_map_next_action_recommendation.json",
+                          "proofs/self_development/PHASE165R_B_BUILDER_SELF_MAP_REFRESH_ORGAN_COMPLETION_V1.json",
+                          "reports/self_development/PHASE165R_B_BUILDER_SELF_MAP_REFRESH_ORGAN_COMPLETION_V1.md"
+                      ],
+    "exact_failures_repaired":  [
+                                    "Windows PowerShell runtime no longer depends on System.IO.Path.GetRelativePath.",
+                                    "Fresh self-development proof/report artifacts are classified and exposed to the derived active map.",
+                                    "PHASE165Q reconciliation is visible in map, health, and selector output.",
+                                    "Selector declares MODE_DECISION_KERNEL authority and MAP_SIGNAL_NOT_COMMAND role.",
+                                    "Validator no longer pins a historical HEAD."
+                                ],
+    "commands_run":  [
+                         "powershell -NoProfile -ExecutionPolicy Bypass -File modules/update_builder_self_model_active_map_001.ps1",
+                         "powershell -NoProfile -ExecutionPolicy Bypass -File modules/inspect_builder_organism_health_state_001.ps1",
+                         "powershell -NoProfile -ExecutionPolicy Bypass -File modules/select_builder_self_map_next_action_001.ps1",
+                         "powershell -NoProfile -ExecutionPolicy Bypass -File validators/validate_phase161j_self_map_next_action_selector_v1.ps1"
+                     ],
+    "validator_result":  "PASS",
+    "phase165q_visibility_result":  {
+                                        "self_map":  true,
+                                        "health":  true,
+                                        "selector":  true
+                                    },
+    "authority_boundary_result":  {
+                                      "decision_authority":  "MODE_DECISION_KERNEL",
+                                      "recommendation_role":  "MAP_SIGNAL_NOT_COMMAND",
+                                      "blocks_current_action":  false,
+                                      "map_is_global_commander":  false
+                                  },
+    "protected_state_dirty_check":  false,
+    "protected_state_mutated":  false,
+    "orchestrator_run":  false,
+    "external_fetch_or_install":  false,
+    "codex_used":  true,
+    "remaining_risks":  [
+                            "Organism health remains DEGRADED because the existing body-map inventory reports two active-path stub findings; this task did not broaden into unrelated stub repair.",
+                            "The protected ACTIVE_ROUTE_LOCK index still records the historical PHASE161 target and was intentionally not mutated.",
+                            "Refresh remains local/manual; no after-push automation was added.",
+                            "The map remains derived diagnostic evidence and requires the Mode Decision Kernel for an executable decision."
+                        ],
+    "next_required_action":  "PHASE165R_B_BUILDER_SELF_MAP_REFRESH_ORGAN_COMPLETION_ACCEPTANCE_COMMIT"
+}

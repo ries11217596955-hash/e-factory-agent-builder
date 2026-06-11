@@ -1,16 +1,16 @@
 ﻿# Codex Repository Map
 
-Generated UTC: 2026-06-11T07:02:27.4800331Z
+Generated UTC: 2026-06-11T08:25:08.6188651Z
 
 ## Current Git State
 
 - Branch: `phase110-idempotent-autonomy-trial-runtime`
-- Generated from HEAD: `00c1b7dbc87a1fb827869c2c074965450a1a59b8`
+- Generated from HEAD: `26db309ea883e65e9c90dfc66e8c43fb347f9ae4`
 - Origin ref: `origin/phase110-idempotent-autonomy-trial-runtime`
-- Generated from origin: `00c1b7dbc87a1fb827869c2c074965450a1a59b8`
+- Generated from origin: `26db309ea883e65e9c90dfc66e8c43fb347f9ae4`
 - Generated HEAD equals origin: `true`
 - Generator worktree status: `DIRTY`
-- Last orientation refresh commit: `00c1b7dbc87a1fb827869c2c074965450a1a59b8`
+- Last orientation refresh commit: `5a6bed5650fcff59b7deb0a86b2a1b2675b2ec78`
 - Active route lock: `route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2.md`
 
 ## Freshness Semantics

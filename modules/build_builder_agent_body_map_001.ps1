@@ -14,7 +14,16 @@ function ConvertTo-BuilderRelativePath {
   )
   $rootFull = [System.IO.Path]::GetFullPath($Root)
   $pathFull = [System.IO.Path]::GetFullPath($Path)
-  return ([System.IO.Path]::GetRelativePath($rootFull, $pathFull) -replace '\\','/')
+  $separator = [System.IO.Path]::DirectorySeparatorChar
+  if (-not $rootFull.EndsWith([string]$separator)) {
+    $rootFull += $separator
+  }
+  $rootUri = New-Object System.Uri($rootFull)
+  $pathUri = New-Object System.Uri($pathFull)
+  if ($rootUri.Scheme -ne $pathUri.Scheme) {
+    return ($pathFull -replace '\\','/')
+  }
+  return ([System.Uri]::UnescapeDataString($rootUri.MakeRelativeUri($pathUri).ToString()) -replace '\\','/')
 }
 
 function Write-BuilderJsonFile {
@@ -28,6 +37,19 @@ function Write-BuilderJsonFile {
     New-Item -ItemType Directory -Path $dir | Out-Null
   }
   $Value | ConvertTo-Json -Depth $Depth | Set-Content -LiteralPath $Path -Encoding UTF8
+}
+
+function Set-BuilderObjectProperty {
+  param(
+    [Parameter(Mandatory=$true)]$Object,
+    [Parameter(Mandatory=$true)][string]$Name,
+    $Value
+  )
+  if ($Object.PSObject.Properties.Name -contains $Name) {
+    $Object.$Name = $Value
+  } else {
+    $Object | Add-Member -NotePropertyName $Name -NotePropertyValue $Value
+  }
 }
 
 function Get-BuilderPhaseHint {
@@ -457,13 +479,120 @@ function New-BuilderArtifactClassification {
 function Invoke-BuilderAgentBodyMap001 {
   param(
     [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path,
-    [string]$OutputRoot = 'reports/self_development'
+    [string]$OutputRoot = 'reports/self_development',
+    [switch]$ActiveMapOnly
   )
 
   $root = (Resolve-Path $RepoRoot).Path
   $outputFull = Join-Path $root $OutputRoot
   if (-not (Test-Path -LiteralPath $outputFull)) {
     New-Item -ItemType Directory -Path $outputFull | Out-Null
+  }
+
+  if ($ActiveMapOnly) {
+    $activeMapPath = Join-Path $outputFull 'SELF_MODEL_ACTIVE_MAP.json'
+    if (Test-Path -LiteralPath $activeMapPath) {
+      $activeMap = Get-Content -LiteralPath $activeMapPath -Raw | ConvertFrom-Json
+    } else {
+      $activeMap = [pscustomobject][ordered]@{
+        phase = 'PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1'
+        map_role = 'DERIVED_FROM_EXISTING'
+        source_of_truth_status = 'DERIVED_ACTIVE_MAP_CANDIDATE'
+        classifier_version = 'PHASE161D_STRICT_EVIDENCE_V1'
+        protected_state_mutation_allowed = $false
+        accepted_repo_mutation_allowed_by_runtime = $false
+      }
+    }
+
+    $evidenceFiles = New-Object System.Collections.Generic.List[object]
+    $proofRoot = Join-Path $root 'proofs/self_development'
+    $reportRoot = Join-Path $root 'reports/self_development'
+    if (Test-Path -LiteralPath $proofRoot) {
+      Get-ChildItem -LiteralPath $proofRoot -File -Filter '*.json' | ForEach-Object { $evidenceFiles.Add($_) }
+    }
+    if (Test-Path -LiteralPath $reportRoot) {
+      Get-ChildItem -LiteralPath $reportRoot -File |
+        Where-Object { $_.Extension -in @('.json','.md') } |
+        ForEach-Object { $evidenceFiles.Add($_) }
+    }
+
+    $selfDevelopmentEvidence = @(
+      $evidenceFiles |
+        Sort-Object LastWriteTimeUtc -Descending |
+        Select-Object -First 100 |
+        ForEach-Object {
+          $relative = ConvertTo-BuilderRelativePath -Root $root -Path $_.FullName
+          $phaseHint = Get-BuilderPhaseHint -Text '' -Path $relative
+          $phaseNumber = Get-BuilderPhaseNumber -PhaseHint $phaseHint -Path $relative
+          $claimStatus = $null
+          if ($_.Extension -eq '.json') {
+            try {
+              $json = Get-Content -LiteralPath $_.FullName -Raw | ConvertFrom-Json
+              if ($json.PSObject.Properties.Name -contains 'status') {
+                $claimStatus = [string]$json.status
+              }
+            } catch {
+              $claimStatus = 'UNPARSEABLE_JSON'
+            }
+          }
+          $evidenceClass = if ($phaseNumber -ne $null -and $phaseNumber -lt 160) {
+            'HISTORICAL_REFERENCE_ONLY'
+          } elseif ($relative -like 'proofs/*') {
+            'PROOF_JSON_PROVEN'
+          } else {
+            'REPORT_REFERENCED'
+          }
+          [pscustomobject][ordered]@{
+            path = $relative
+            artifact_type = Get-BuilderArtifactType -RelativePath $relative
+            claim_status = $claimStatus
+            evidence_class = $evidenceClass
+            evidence_strength = $(if ($evidenceClass -eq 'PROOF_JSON_PROVEN') { 'PROOF_MEDIUM' } elseif ($evidenceClass -eq 'HISTORICAL_REFERENCE_ONLY') { 'HISTORICAL_WEAK' } else { 'REPORT_WEAK' })
+            map_role = 'DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND'
+            last_write_utc = $_.LastWriteTimeUtc.ToString('o')
+          }
+        }
+    )
+
+    $phase165qProofPath = 'proofs/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.json'
+    $phase165qReportPath = 'reports/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.md'
+    $phase165qProofFull = Join-Path $root $phase165qProofPath
+    $phase165qProof = $null
+    if (Test-Path -LiteralPath $phase165qProofFull) {
+      try { $phase165qProof = Get-Content -LiteralPath $phase165qProofFull -Raw | ConvertFrom-Json } catch { $phase165qProof = $null }
+    }
+
+    Set-BuilderObjectProperty $activeMap 'generated_at' ((Get-Date).ToUniversalTime().ToString('o'))
+    Set-BuilderObjectProperty $activeMap 'decision_authority' 'MODE_DECISION_KERNEL'
+    Set-BuilderObjectProperty $activeMap 'map_authority_role' 'DIAGNOSTIC_MAP_SIGNAL_NOT_COMMAND'
+    Set-BuilderObjectProperty $activeMap 'source_ingestion' ([pscustomobject][ordered]@{
+      proof_glob = 'proofs/self_development/*.json'
+      report_globs = @('reports/self_development/*.md','reports/self_development/*.json')
+      evidence_count = $selfDevelopmentEvidence.Count
+      historical_artifacts_are_live_proof = $false
+    })
+    Set-BuilderObjectProperty $activeMap 'recent_self_development_evidence' $selfDevelopmentEvidence
+    Set-BuilderObjectProperty $activeMap 'phase165q_reconciliation' ([pscustomobject][ordered]@{
+      proof_path = $phase165qProofPath
+      proof_present = [bool](Test-Path -LiteralPath $phase165qProofFull)
+      proof_status = $(if ($phase165qProof -and $phase165qProof.PSObject.Properties.Name -contains 'status') { [string]$phase165qProof.status } else { $null })
+      report_path = $phase165qReportPath
+      report_present = [bool](Test-Path -LiteralPath (Join-Path $root $phase165qReportPath))
+      route_decision = $(if ($phase165qProof -and $phase165qProof.PSObject.Properties.Name -contains 'route_decision') { [string]$phase165qProof.route_decision } else { $null })
+      next_required_action = $(if ($phase165qProof -and $phase165qProof.PSObject.Properties.Name -contains 'next_required_action') { [string]$phase165qProof.next_required_action } else { $null })
+      evidence_role = 'DIAGNOSTIC_RECONCILIATION_PROOF_NOT_GLOBAL_COMMAND'
+    })
+
+    Write-BuilderJsonFile -Path $activeMapPath -Value $activeMap -Depth 50
+    return [pscustomobject]@{
+      result = 'PASS'
+      output_root = ConvertTo-BuilderRelativePath -Root $root -Path $outputFull
+      protected_state_mutation_allowed = $false
+      map_role = 'DERIVED_FROM_EXISTING'
+      active_map_only = $true
+      evidence_count = $selfDevelopmentEvidence.Count
+      phase165q_visible = [bool]$activeMap.phase165q_reconciliation.proof_present
+    }
   }
 
   $files = Get-BuilderScopedFiles -Root $root
@@ -764,6 +893,46 @@ function Invoke-BuilderAgentBodyMap001 {
   $nodeArray = @($nodes.ToArray())
   $edgeArray = @($edges.ToArray())
   $functionInventoryArray = @($functionInventory.ToArray())
+  $selfDevelopmentEvidence = @(
+    $files |
+      Where-Object {
+        $relative = ConvertTo-BuilderRelativePath -Root $root -Path $_.FullName
+        $relative -match '^proofs/self_development/[^/]+\.json$' -or
+          $relative -match '^reports/self_development/[^/]+\.(json|md)$'
+      } |
+      Sort-Object LastWriteTimeUtc -Descending |
+      Select-Object -First 100 |
+      ForEach-Object {
+        $relative = ConvertTo-BuilderRelativePath -Root $root -Path $_.FullName
+        $classification = @($artifactArray | Where-Object { $_.path -eq $relative } | Select-Object -First 1)
+        $claimStatus = $null
+        if ($relative -like '*.json') {
+          try {
+            $json = $textByPath[$relative] | ConvertFrom-Json
+            if ($json.PSObject.Properties.Name -contains 'status') {
+              $claimStatus = [string]$json.status
+            }
+          } catch {
+            $claimStatus = 'UNPARSEABLE_JSON'
+          }
+        }
+        [pscustomobject][ordered]@{
+          path = $relative
+          artifact_type = Get-BuilderArtifactType -RelativePath $relative
+          claim_status = $claimStatus
+          evidence_class = $(if ($classification.Count -gt 0) { $classification[0].evidence_type } else { 'UNKNOWN_NEEDS_REVIEW' })
+          evidence_strength = $(if ($classification.Count -gt 0) { $classification[0].evidence_strength } else { 'UNKNOWN_WEAK' })
+          map_role = 'DIAGNOSTIC_EVIDENCE_INPUT_NOT_COMMAND'
+          last_write_utc = $_.LastWriteTimeUtc.ToString('o')
+        }
+      }
+  )
+  $phase165qProofPath = 'proofs/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.json'
+  $phase165qReportPath = 'reports/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.md'
+  $phase165qProof = $null
+  if ($textByPath.ContainsKey($phase165qProofPath)) {
+    try { $phase165qProof = $textByPath[$phase165qProofPath] | ConvertFrom-Json } catch { $phase165qProof = $null }
+  }
 
   $map = [pscustomobject][ordered]@{
     phase = 'PHASE161D_BODY_MAP_CLASSIFIER_HARDENING_AND_LIVE_EVIDENCE_SEPARATION_V1'
@@ -814,7 +983,20 @@ function Invoke-BuilderAgentBodyMap001 {
     )
     protected_state_mutation_allowed = $false
     accepted_repo_mutation_allowed_by_runtime = $false
+    decision_authority = 'MODE_DECISION_KERNEL'
+    map_authority_role = 'DIAGNOSTIC_MAP_SIGNAL_NOT_COMMAND'
     active_artifacts = @($artifactArray | Where-Object { $_.primary_status -like 'ACTIVE_*' } | Select-Object -First 200)
+    recent_self_development_evidence = $selfDevelopmentEvidence
+    phase165q_reconciliation = [pscustomobject][ordered]@{
+      proof_path = $phase165qProofPath
+      proof_present = [bool]$textByPath.ContainsKey($phase165qProofPath)
+      proof_status = $(if ($phase165qProof -and $phase165qProof.PSObject.Properties.Name -contains 'status') { [string]$phase165qProof.status } else { $null })
+      report_path = $phase165qReportPath
+      report_present = [bool]$textByPath.ContainsKey($phase165qReportPath)
+      route_decision = $(if ($phase165qProof -and $phase165qProof.PSObject.Properties.Name -contains 'route_decision') { [string]$phase165qProof.route_decision } else { $null })
+      next_required_action = $(if ($phase165qProof -and $phase165qProof.PSObject.Properties.Name -contains 'next_required_action') { [string]$phase165qProof.next_required_action } else { $null })
+      evidence_role = 'DIAGNOSTIC_RECONCILIATION_PROOF_NOT_GLOBAL_COMMAND'
+    }
     evidence_type_counts = $evidenceGroups
     important_gaps = $gapChain
   }

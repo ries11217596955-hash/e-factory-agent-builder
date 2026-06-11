@@ -24,6 +24,9 @@ $body = Get-HealthJson (Join-Path $output 'agent_body_map.json')
 $hardening = Get-HealthJson (Join-Path $output 'agent_body_map_classifier_hardening_result.json')
 $g2 = Get-HealthJson (Join-Path $output 'protected_state_update_candidates/PHASE161G2_APPLY_RESULT.json')
 $routeIndex = Get-HealthJson (Join-Path $root 'route_locks/ACTIVE_ROUTE_LOCK.json')
+$phase165qProofPath = Join-Path $root 'proofs/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.json'
+$phase165qReportPath = Join-Path $root 'reports/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.md'
+$phase165q = Get-HealthJson $phase165qProofPath
 
 $critical = New-Object System.Collections.Generic.List[object]
 $activeFindings = New-Object System.Collections.Generic.List[object]
@@ -110,7 +113,25 @@ if ($selfReady) {
   $criteriaFailed.Add('Self knowledge is not ready for the next decision.')
 }
 
-$routeExhaustionPending = $routeExists -and $routeIndex.next_target_phase -eq 'PHASE161_BATCH_SCHOOL_FOUNDATION'
+$phase165qReconciled = $phase165q -and $phase165q.status -eq 'PASS' -and
+  $phase165q.route_decision -eq 'READY_FOR_FIRST_LIVE_ATOM_GROWTH_MICRO_TRIAL'
+$phase165qVisibleInMap = $active -and
+  $active.PSObject.Properties.Name -contains 'phase165q_reconciliation' -and
+  [bool]$active.phase165q_reconciliation.proof_present
+if ($phase165qReconciled) {
+  $evidenceFindings.Add([pscustomobject]@{
+    finding = 'phase165q_route_reconciliation_acknowledged'
+    severity = 'info'
+    proof_path = 'proofs/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.json'
+    report_path = 'reports/self_development/PHASE165Q_BUILDER_SELF_MAP_ROUTE_RECONCILIATION_V1.md'
+    route_decision = $phase165q.route_decision
+    evidence_role = 'DIAGNOSTIC_RECONCILIATION_PROOF_NOT_GLOBAL_COMMAND'
+  })
+  $criteriaMet.Add('PHASE165Q reconciliation proof is visible as diagnostic map evidence.')
+}
+$routeExhaustionPending = $routeExists -and
+  $routeIndex.next_target_phase -eq 'PHASE161_BATCH_SCHOOL_FOUNDATION' -and
+  -not $phase165qReconciled
 if ($routeExhaustionPending) {
   $activeFindings.Add([pscustomobject]@{
     finding = 'active_route_exhaustion_not_reconciled'
@@ -175,6 +196,13 @@ $result = [pscustomobject][ordered]@{
   healthy_criteria_met = $criteriaMet.ToArray()
   healthy_criteria_failed = $criteriaFailed.ToArray()
   optional_improvements = $optional.ToArray()
+  phase165q_visibility = [pscustomobject][ordered]@{
+    proof_present = [bool](Test-Path -LiteralPath $phase165qProofPath)
+    report_present = [bool](Test-Path -LiteralPath $phase165qReportPath)
+    visible_in_self_map = [bool]$phase165qVisibleInMap
+    reconciliation_acknowledged = [bool]$phase165qReconciled
+    evidence_role = 'DIAGNOSTIC_HEALTH_SIGNAL_NOT_COMMAND'
+  }
   why_health_state = $why
 }
 Write-HealthJson -Path (Join-Path $output 'organism_health_state.json') -Value $result

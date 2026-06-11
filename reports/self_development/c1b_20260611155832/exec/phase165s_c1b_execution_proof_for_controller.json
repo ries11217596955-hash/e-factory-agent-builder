@@ -1,0 +1,12 @@
+{
+  "schema": "PHASE165S_C1B_EXECUTION_PROOF_FOR_PHASE162_CONTROLLER_V1",
+  "status": "PASS",
+  "created_at": "2026-06-11T16:00:22.7988057+04:00",
+  "head": "3b9ffba270c82ffd98995d3c0a8b0c6b6979f93e",
+  "output_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c1b_20260611155832\\exec",
+  "next_action": "FEED_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_BACK_INTO_CONTROLLER",
+  "accepted_atom_claimed": false,
+  "atom_id": "decision_rule.map_signal_not_command.v1",
+  "source_execution_result": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c1b_20260611155832\\exec\\execute_controlled_accept_core_mutation_result.json",
+  "source_execution_validation": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c1b_20260611155832\\exec\\execute_controlled_accept_core_mutation_validation.json"
+}

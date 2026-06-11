@@ -1,0 +1,20 @@
+{
+  "schema": "PHASE165S_C1B_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_VALIDATION_V1",
+  "status": "PASS",
+  "created_at": "2026-06-11T16:00:22.6628508+04:00",
+  "atom_id": "decision_rule.map_signal_not_command.v1",
+  "checks": {
+    "execution_result_status_pass": true,
+    "controlled_accept_core_mutation_executed_true": true,
+    "post_real_mutation_validation_passed_true": true,
+    "rollback_not_executed": true,
+    "accepted_core_write_executed_true": true,
+    "accepted_memory_mutated_true": true,
+    "accepted_self_model_mutated_true": true,
+    "registry_mutated_true": true,
+    "final_accept_ready_true": true,
+    "memory_count_one": true,
+    "self_map_count_one": true,
+    "registry_count_one": true
+  }
+}

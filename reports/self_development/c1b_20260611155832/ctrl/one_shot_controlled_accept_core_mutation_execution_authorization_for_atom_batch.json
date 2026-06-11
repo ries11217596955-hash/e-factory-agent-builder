@@ -1,0 +1,11 @@
+{
+  "schema": "PHASE162_ONE_SHOT_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_AUTHORIZATION_FOR_ATOM_BATCH_V1",
+  "status": "AUTHORIZED",
+  "created_at": "2026-06-11T15:58:32.3442343+04:00",
+  "authorization_scope": "ONE_SHOT_ACCEPTED_CORE_WRITE_WITH_ATOMIC_PLAN_AND_ROLLBACK",
+  "candidate_root": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c1b_20260611155832\\cand",
+  "owner_authorized_atom_ids": [
+    "decision_rule.map_signal_not_command.v1"
+  ],
+  "mass_acceptance_forbidden": true
+}

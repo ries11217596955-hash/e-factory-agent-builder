@@ -28363,6 +28363,31 @@
                                                         "candidate_root":  "C:\\Users\\Azerbaijan\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase163_foundation_mind\\PHASE163L_CONTROLLED_ACCEPT_CORE_MUTATION_CANDIDATE_20260609_202515",
                                                         "visible_to_next_cycle":  true,
                                                         "accepted_core_write":  true
+                                                    },
+                                                    {
+                                                        "schema":  "PHASE162_ABSORBED_ATOM_SELF_MODEL_NOTE_V1",
+                                                        "atom_id":  "decision_rule.map_signal_not_command.v1",
+                                                        "accepted_at":  "2026-06-11T15:58:33.5229925+04:00",
+                                                        "operation_id":  "C1B_20260611155832_SELF",
+                                                        "payload":  {
+                                                                        "concept_id":  "map_signal_not_command",
+                                                                        "meaning":  "Self-map/body-map may emit diagnostic and recommendation signals, but it is not the commander. A map signal is MAP_SIGNAL_INPUT_ONLY and must not be treated as direct execution command. Mode Decision Kernel or dispatcher decides action.",
+                                                                        "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                                                                        "decision_rule":  {
+                                                                                              "input":  "self_map_recommendation",
+                                                                                              "classification":  "MAP_SIGNAL_INPUT_ONLY",
+                                                                                              "direct_command":  false,
+                                                                                              "decision_authority":  "MODE_DECISION_KERNEL"
+                                                                                          },
+                                                                        "memory_proof":  "Accepted-memory read finds this atom by atom_id.",
+                                                                        "use_proof":  "Sample self-map recommendation classifies as MAP_SIGNAL_INPUT_ONLY / NOT_DIRECT_COMMAND.",
+                                                                        "behavior_delta":  "Next-cycle reasoning treats map recommendation as signal, not direct command.",
+                                                                        "owner_authorization":  "Owner authorized PHASE165S-C1 one-atom protected apply for this atom only."
+                                                                    },
+                                                        "execution_authorization_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c1b_20260611155832\\ctrl",
+                                                        "candidate_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\c1b_20260611155832\\cand",
+                                                        "visible_to_next_cycle":  true,
+                                                        "accepted_core_write":  true
                                                     }
                                                 ],
     "active_organs":  [

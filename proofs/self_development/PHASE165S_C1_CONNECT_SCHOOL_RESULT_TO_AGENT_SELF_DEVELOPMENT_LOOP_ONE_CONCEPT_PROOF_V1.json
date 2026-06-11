@@ -1,0 +1,155 @@
+{
+    "phase":  "PHASE165S_C1_CONNECT_SCHOOL_RESULT_TO_AGENT_SELF_DEVELOPMENT_LOOP_ONE_CONCEPT_PROOF",
+    "created_utc":  "2026-06-11T11:05:38.5091398Z",
+    "status":  "BLOCKED_PROTECTED_APPLY_REQUIRED",
+    "branch":  "phase110-idempotent-autonomy-trial-runtime",
+    "head":  "3b9ffba270c82ffd98995d3c0a8b0c6b6979f93e",
+    "baseline_note":  "Task text named 389ffba; actual repository baseline is 3b9ffba.",
+    "c0_conclusion":  "POSSIBLE_CURRICULUM_TO_ATOM_BRIDGE_EXISTS_NEEDS_TARGETED_RUNTIME_PROOF",
+    "source_lesson_reconstructed":  true,
+    "source_lesson":  {
+                          "lesson_id":  "map_signal_not_command",
+                          "title":  "Map signal, not command",
+                          "objective":  "Record that the self-map recommends evidence-based direction while the Mode Decision Kernel retains authority.",
+                          "inputs":  [
+                                         "recommendation_role=MAP_SIGNAL_NOT_COMMAND",
+                                         "decision_authority=MODE_DECISION_KERNEL"
+                                     ],
+                          "expected_outputs":  [
+                                                   "foundation_concept_recorded:map_signal_not_command"
+                                               ],
+                          "allowed_actions":  [
+                                                  "write_runtime"
+                                              ],
+                          "failure_policy":  {
+                                                 "continue_batch":  true,
+                                                 "quarantine_on_safety_violation":  true
+                                             }
+                      },
+    "atom_candidate":  {
+                           "schema":  "PHASE165S_C1_LESSON_DERIVED_ATOM_CANDIDATE_V1",
+                           "atom_id":  "decision_rule.map_signal_not_command.v1",
+                           "candidate_status":  "BLOCKED_BEFORE_ACCEPTANCE",
+                           "source_lesson_id":  "map_signal_not_command",
+                           "source_curriculum_id":  "PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_V1",
+                           "source_curriculum_pack":  "reports/self_development/phase165s_inbox_small_batch/PHASE165S_B_FOUNDATION_CONCEPT_CURRICULUM_PACK_V1.json",
+                           "source_phase_b_proof":  "proofs/self_development/PHASE165S_B_SMALL_INBOX_CURRICULUM_BATCH_TRIAL_V1.json",
+                           "meaning":  "The self-map or body-map may emit diagnostic and recommendation signals, but it is not the commander. A map signal must not be treated as a direct execution command. The Mode Decision Kernel or dispatcher decides action.",
+                           "decision_rule":  {
+                                                 "input":  "self_map_recommendation",
+                                                 "classification":  "MAP_SIGNAL_INPUT_ONLY",
+                                                 "direct_command":  false,
+                                                 "decision_authority":  "MODE_DECISION_KERNEL"
+                                             },
+                           "required_acceptance_evidence":  [
+                                                                "memory_proof",
+                                                                "use_proof",
+                                                                "behavior_delta",
+                                                                "persistence",
+                                                                "startup_or_next_cycle_visibility"
+                                                            ]
+                       },
+    "existing_universal_acceptance_path_found":  true,
+    "acceptance_path_reused":  false,
+    "acceptance_path_blocked_before_execution":  true,
+    "protected_apply_dependency":  {
+                                       "existing_acceptance_executor":  "modules/invoke_phase162_execute_controlled_accept_core_mutation_for_atom_batch_001.ps1",
+                                       "existing_controller_finalizer":  "modules/invoke_phase162_controller_consume_controlled_accept_core_mutation_execution_proof_001.ps1",
+                                       "atomic_write_required":  true,
+                                       "target_files":  [
+                                                            "reports/self_development/accepted_change_memory_snapshot.json",
+                                                            "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                                                            "packs/registry.json"
+                                                        ],
+                                       "forbidden_target":  "packs/registry.json",
+                                       "forbidden_by_current_task":  true,
+                                       "registry_write_is_optional_in_existing_executor":  false,
+                                       "safe_non_protected_parallel_registry_allowed":  false
+                                   },
+    "atom_presence_before":  {
+                                 "memory_count":  0,
+                                 "self_map_count":  0,
+                                 "registry_count":  0
+                             },
+    "atom_candidate_created":  true,
+    "accepted_atom_claimed":  false,
+    "memory_proof":  {
+                         "status":  "NOT_RUN",
+                         "passed":  false,
+                         "reason":  "accepted atom write is blocked"
+                     },
+    "use_proof":  {
+                      "status":  "NOT_RUN",
+                      "passed":  false,
+                      "reason":  "must be executed after real acceptance"
+                  },
+    "behavior_delta":  {
+                           "status":  "NOT_RUN",
+                           "passed":  false,
+                           "reason":  "cannot compare accepted next-cycle behavior before acceptance"
+                       },
+    "persistence":  {
+                        "status":  "FAIL_NOT_PRESENT",
+                        "passed":  false,
+                        "repo_persistent_atom_count":  0
+                    },
+    "startup_or_next_cycle_visibility":  {
+                                             "status":  "NOT_RUN",
+                                             "passed":  false,
+                                             "reason":  "no accepted atom exists for fresh-process lookup"
+                                         },
+    "pass_marker_allowed":  false,
+    "protected_state_dirty_check":  [
+
+                                    ],
+    "protected_state_mutated":  false,
+    "no_parallel_atom_registry_created":  true,
+    "no_commit_or_push":  true,
+    "exact_candidate_apply_plan":  [
+                                       {
+                                           "step":  1,
+                                           "action":  "Build one PHASE162-compatible atom candidate from the committed map_signal_not_command lesson.",
+                                           "expected_atom_id":  "decision_rule.map_signal_not_command.v1",
+                                           "mutation":  "candidate evidence only"
+                                       },
+                                       {
+                                           "step":  2,
+                                           "action":  "Run freeze, readiness, usefulness, executed-use, behavior-delta, rollback, post-accept validation dry-run, and bounded runtime absorb gates.",
+                                           "expected_result":  "all pre-accept gates PASS with accepted_atom_claimed=false"
+                                       },
+                                       {
+                                           "step":  3,
+                                           "action":  "Prepare and validate the controlled accepted-core mutation candidate.",
+                                           "expected_operations":  [
+                                                                       "append_accepted_atom_memory_record",
+                                                                       "append_absorbed_atom_capability_note",
+                                                                       "record_accepted_atom_reference_after_final_authorization"
+                                                                   ]
+                                       },
+                                       {
+                                           "step":  4,
+                                           "action":  "Obtain explicit Owner scope allowing the one-shot atomic write to packs/registry.json together with the two derived accepted-state files.",
+                                           "required_scope_change":  "temporarily permit packs/registry.json mutation for this exact atom and existing PHASE162 executor only"
+                                       },
+                                       {
+                                           "step":  5,
+                                           "action":  "Execute and validate modules/invoke_phase162_execute_controlled_accept_core_mutation_for_atom_batch_001.ps1 under its one-shot authorization and rollback plan.",
+                                           "expected_result":  "one record in memory, self-map, and registry; post-real-mutation validation PASS"
+                                       },
+                                       {
+                                           "step":  6,
+                                           "action":  "Run controller finalization and its validator.",
+                                           "expected_result":  "accepted_atom_claimed=true and next action VERIFY_ACCEPTED_ATOM_VISIBLE_TO_NEXT_CYCLE"
+                                       },
+                                       {
+                                           "step":  7,
+                                           "action":  "Start a fresh PowerShell process and read the accepted atom through memory, self-map, and registry; run the sample map-signal classification.",
+                                           "expected_result":  "known atom count is one on all surfaces and classification is MAP_SIGNAL_INPUT_ONLY / NOT_DIRECT_COMMAND"
+                                       }
+                                   ],
+    "runner_path":  "modules/run_phase165s_c1_connect_school_result_to_agent_self_development_loop_one_concept_proof_001.ps1",
+    "validator_path":  "validators/validate_phase165s_c1_lesson_to_atom_bridge_v1.ps1",
+    "proof_path":  "proofs/self_development/PHASE165S_C1_CONNECT_SCHOOL_RESULT_TO_AGENT_SELF_DEVELOPMENT_LOOP_ONE_CONCEPT_PROOF_V1.json",
+    "report_path":  "reports/self_development/PHASE165S_C1_CONNECT_SCHOOL_RESULT_TO_AGENT_SELF_DEVELOPMENT_LOOP_ONE_CONCEPT_PROOF_V1.md",
+    "next_required_action":  "OWNER_AUTHORIZE_EXACT_PHASE162_ONE_ATOM_PROTECTED_APPLY_OR_KEEP_BLOCKED"
+}

@@ -1,0 +1,17 @@
+{
+  "phase": "PHASE165S_D1A_PRIMITIVE_BUILDER_ALPHABET_PACK_PRECHECK",
+  "status": "PASS_PACK_READY_FOR_SCHOOL_WAVE",
+  "created_at": "2026-06-11T17:12:56.2061587+04:00",
+  "branch": "phase110-idempotent-autonomy-trial-runtime",
+  "head": "3fb44e0876c216bba8b37ee2fd6881820f0ceb87",
+  "pack_path": "reports/self_development/phase165s_d1_primitive_builder_alphabet/PHASE165S_D1_PRIMITIVE_BUILDER_ALPHABET_CURRICULUM_PACK_V1.json",
+  "lesson_count": 25,
+  "duplicate_accepted_atom_count": 0,
+  "duplicate_accepted_atoms": [],
+  "schema_validation_attempted": true,
+  "schema_validation_ok": true,
+  "dispatcher_route_ok": true,
+  "dispatcher_expected_mode": "SCHOOL_MODE",
+  "protected_state_dirty_check": [],
+  "next_required_action": "PHASE165S_D1A_ACCEPTANCE_COMMIT_OR_D1B_SCHOOL_WAVE"
+}

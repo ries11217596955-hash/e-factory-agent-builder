@@ -1,0 +1,903 @@
+{
+  "schema": "PHASE165S_D1_PRIMITIVE_BUILDER_ALPHABET_CURRICULUM_PACK_V1",
+  "pack_type": "BUILDER_SCHOOL_CURRICULUM_PACK",
+  "curriculum_id": "PHASE165S_D1_PRIMITIVE_BUILDER_ALPHABET_V1",
+  "title": "Primitive Builder Alphabet Wave 1",
+  "curriculum_source": "owner",
+  "source_authority": "OWNER_APPROVED",
+  "created_at": "2026-06-11T17:12:50.4311061+04:00",
+  "purpose": "Teach Builder 25 primitive concepts so it starts future tasks from accepted concepts instead of zero.",
+  "safety_rules": {
+    "repo_commit_allowed": false,
+    "repo_push_allowed": false,
+    "branch_switch_allowed": false,
+    "protected_state_mutation_allowed": false,
+    "accepted_repo_mutation_allowed": false,
+    "external_internet_allowed": false,
+    "tool_install_allowed": false
+  },
+  "lessons": [
+    {
+      "lesson_id": "file",
+      "title": "File",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.file.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A file is a named data object stored in a filesystem. Builder must treat file tasks as artifact or storage tasks, not as abstract discussion only.",
+      "guided_example": "When Builder sees 'File' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'File' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.file.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "file",
+        "meaning": "A file is a named data object stored in a filesystem. Builder must treat file tasks as artifact or storage tasks, not as abstract discussion only.",
+        "used_when": [
+          "create file",
+          "read file",
+          "write file",
+          "attach artifact"
+        ],
+        "next_layer_questions": [
+          "Do I know the file path?",
+          "Do I know the format?",
+          "Can I validate existence?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'File' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "folder",
+      "title": "Folder / Directory",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.folder.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A folder is a container for files and other folders. Builder must not ask what a folder is; it should move to create/list/validate procedure.",
+      "guided_example": "When Builder sees 'Folder / Directory' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Folder / Directory' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.folder.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "folder",
+        "meaning": "A folder is a container for files and other folders. Builder must not ask what a folder is; it should move to create/list/validate procedure.",
+        "used_when": [
+          "create folder",
+          "put file in folder",
+          "directory path"
+        ],
+        "next_layer_questions": [
+          "Do I have create directory organ?",
+          "Can I validate directory exists?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Folder / Directory' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "path",
+      "title": "Path",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.path.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A path identifies a file or folder location. Builder must distinguish relative path, absolute path, repo path, and protected path.",
+      "guided_example": "When Builder sees 'Path' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Path' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.path.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "path",
+        "meaning": "A path identifies a file or folder location. Builder must distinguish relative path, absolute path, repo path, and protected path.",
+        "used_when": [
+          "file location",
+          "repo target",
+          "artifact output"
+        ],
+        "next_layer_questions": [
+          "Is this path inside repo?",
+          "Is it protected?",
+          "Does parent exist?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Path' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "text",
+      "title": "Text",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.text.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "Text is human-readable character content. Builder must distinguish text content from binary files, structured JSON, reports, and proof artifacts.",
+      "guided_example": "When Builder sees 'Text' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Text' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.text.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "text",
+        "meaning": "Text is human-readable character content. Builder must distinguish text content from binary files, structured JSON, reports, and proof artifacts.",
+        "used_when": [
+          "write text",
+          "summarize text",
+          "plain content"
+        ],
+        "next_layer_questions": [
+          "What encoding?",
+          "Where stored?",
+          "How validated?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Text' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "file_extension",
+      "title": "File Extension",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.file_extension.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A file extension signals expected format or tool handling. Builder should use extension to select validation and writer logic.",
+      "guided_example": "When Builder sees 'File Extension' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'File Extension' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.file_extension.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "file_extension",
+        "meaning": "A file extension signals expected format or tool handling. Builder should use extension to select validation and writer logic.",
+        "used_when": [
+          ".json",
+          ".md",
+          ".ps1",
+          ".docx",
+          ".pptx"
+        ],
+        "next_layer_questions": [
+          "Which format rules apply?",
+          "Which validator proves it?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'File Extension' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "markdown_document",
+      "title": "Markdown Document",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.markdown_document.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A markdown document is a text artifact for human-readable structured notes, reports, ledgers, or docs.",
+      "guided_example": "When Builder sees 'Markdown Document' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Markdown Document' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.markdown_document.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "markdown_document",
+        "meaning": "A markdown document is a text artifact for human-readable structured notes, reports, ledgers, or docs.",
+        "used_when": [
+          "README",
+          "report md",
+          "ledger md"
+        ],
+        "next_layer_questions": [
+          "Is it report or source?",
+          "Does it need proof?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Markdown Document' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "json_file",
+      "title": "JSON File",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.json_file.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A JSON file stores structured data. Builder must parse and validate it, not treat it as free text only.",
+      "guided_example": "When Builder sees 'JSON File' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'JSON File' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.json_file.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "json_file",
+        "meaning": "A JSON file stores structured data. Builder must parse and validate it, not treat it as free text only.",
+        "used_when": [
+          "proof JSON",
+          "registry JSON",
+          "state file"
+        ],
+        "next_layer_questions": [
+          "Is schema known?",
+          "Can it parse?",
+          "Which fields prove status?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'JSON File' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "report",
+      "title": "Report",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.report.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A report explains what happened, but a report alone is not proof unless tied to validator, runtime output, commit, artifact, or path evidence.",
+      "guided_example": "When Builder sees 'Report' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Report' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.report.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "report",
+        "meaning": "A report explains what happened, but a report alone is not proof unless tied to validator, runtime output, commit, artifact, or path evidence.",
+        "used_when": [
+          "human summary",
+          "phase report",
+          "decision report"
+        ],
+        "next_layer_questions": [
+          "Where is proof path?",
+          "What validator passed?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Report' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "proof",
+      "title": "Proof",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.proof.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A proof is concrete evidence such as validator output, proof JSON, terminal log, commit, push, workflow run, or artifact. Claim without proof is not accepted.",
+      "guided_example": "When Builder sees 'Proof' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Proof' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.proof.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "proof",
+        "meaning": "A proof is concrete evidence such as validator output, proof JSON, terminal log, commit, push, workflow run, or artifact. Claim without proof is not accepted.",
+        "used_when": [
+          "done claim",
+          "accepted claim",
+          "works claim"
+        ],
+        "next_layer_questions": [
+          "What file or output proves it?",
+          "Is it fresh?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Proof' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "delivery_block",
+      "title": "Delivery Block",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.delivery_block.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A delivery block is what Builder returns to Owner. It must separate result, evidence, next action, and what was not done.",
+      "guided_example": "When Builder sees 'Delivery Block' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Delivery Block' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.delivery_block.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "delivery_block",
+        "meaning": "A delivery block is what Builder returns to Owner. It must separate result, evidence, next action, and what was not done.",
+        "used_when": [
+          "final response",
+          "handoff",
+          "artifact delivery"
+        ],
+        "next_layer_questions": [
+          "Does it include evidence?",
+          "Does it overclaim?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Delivery Block' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "repository",
+      "title": "Repository",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.repository.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A repository is the project body under version control. Builder must verify repo path and branch before important operations.",
+      "guided_example": "When Builder sees 'Repository' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Repository' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.repository.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "repository",
+        "meaning": "A repository is the project body under version control. Builder must verify repo path and branch before important operations.",
+        "used_when": [
+          "repo work",
+          "git status",
+          "module edit"
+        ],
+        "next_layer_questions": [
+          "Am I in correct repo?",
+          "Which branch?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Repository' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "branch",
+      "title": "Branch",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.branch.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A branch is the current line of repo work. Builder must not assume branch; it must verify branch before commit/push.",
+      "guided_example": "When Builder sees 'Branch' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Branch' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.branch.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "branch",
+        "meaning": "A branch is the current line of repo work. Builder must not assume branch; it must verify branch before commit/push.",
+        "used_when": [
+          "git branch",
+          "push",
+          "route work"
+        ],
+        "next_layer_questions": [
+          "Is branch expected?",
+          "Is origin same?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Branch' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "commit",
+      "title": "Commit",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.commit.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A commit records staged changes in git history. Local success is not accepted repo state until committed and often pushed.",
+      "guided_example": "When Builder sees 'Commit' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Commit' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.commit.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "commit",
+        "meaning": "A commit records staged changes in git history. Local success is not accepted repo state until committed and often pushed.",
+        "used_when": [
+          "accept phase",
+          "record proof",
+          "repo checkpoint"
+        ],
+        "next_layer_questions": [
+          "What was staged?",
+          "What commit hash?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Commit' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "push",
+      "title": "Push",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.push.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "Push sends local commits to remote. Builder cannot claim synced until HEAD and origin are proven equal.",
+      "guided_example": "When Builder sees 'Push' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Push' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.push.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "push",
+        "meaning": "Push sends local commits to remote. Builder cannot claim synced until HEAD and origin are proven equal.",
+        "used_when": [
+          "remote proof",
+          "GitHub sync",
+          "handoff"
+        ],
+        "next_layer_questions": [
+          "HEAD?",
+          "ORIGIN?",
+          "status clean?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Push' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "dirty_state",
+      "title": "Git Dirty State",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.git_dirty_state.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "Dirty state means uncommitted or untracked changes exist. Builder must not claim clean while status is dirty.",
+      "guided_example": "When Builder sees 'Git Dirty State' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Git Dirty State' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.git_dirty_state.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "dirty_state",
+        "meaning": "Dirty state means uncommitted or untracked changes exist. Builder must not claim clean while status is dirty.",
+        "used_when": [
+          "git status",
+          "before commit",
+          "after run"
+        ],
+        "next_layer_questions": [
+          "What files changed?",
+          "Should commit, restore, or quarantine?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Git Dirty State' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "module",
+      "title": "Module",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.module.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A module is an executable or reusable organ file, usually in modules/, that performs action or computation.",
+      "guided_example": "When Builder sees 'Module' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Module' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.module.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "module",
+        "meaning": "A module is an executable or reusable organ file, usually in modules/, that performs action or computation.",
+        "used_when": [
+          "PowerShell module",
+          "organ runner",
+          "reusable function"
+        ],
+        "next_layer_questions": [
+          "Is it wired?",
+          "Does validator prove it?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Module' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "validator",
+      "title": "Validator",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.validator.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A validator checks whether output satisfies required conditions. A validator PASS is stronger than a report claim.",
+      "guided_example": "When Builder sees 'Validator' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Validator' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.validator.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "validator",
+        "meaning": "A validator checks whether output satisfies required conditions. A validator PASS is stronger than a report claim.",
+        "used_when": [
+          "acceptance",
+          "proof gate",
+          "CI logic"
+        ],
+        "next_layer_questions": [
+          "What exactly did it check?",
+          "Can it emit false PASS?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Validator' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "runtime_output",
+      "title": "Runtime Output",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.runtime_output.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "Runtime output is evidence produced by an execution. It may prove behavior, but must be tied to current repo state and validation.",
+      "guided_example": "When Builder sees 'Runtime Output' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Runtime Output' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.runtime_output.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "runtime_output",
+        "meaning": "Runtime output is evidence produced by an execution. It may prove behavior, but must be tied to current repo state and validation.",
+        "used_when": [
+          "terminal log",
+          "runtime session",
+          "execution result"
+        ],
+        "next_layer_questions": [
+          "Is output fresh?",
+          "What state produced it?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Runtime Output' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "protected_state",
+      "title": "Protected State",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.protected_state.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "Protected state is core memory/control that cannot be mutated casually: TASK_QUEUE, GENESIS_STATE, CAPABILITY_ROADMAP, packs/registry, orchestrator.",
+      "guided_example": "When Builder sees 'Protected State' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Protected State' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.protected_state.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "protected_state",
+        "meaning": "Protected state is core memory/control that cannot be mutated casually: TASK_QUEUE, GENESIS_STATE, CAPABILITY_ROADMAP, packs/registry, orchestrator.",
+        "used_when": [
+          "state mutation",
+          "apply candidate",
+          "accept atom"
+        ],
+        "next_layer_questions": [
+          "Is mutation authorized?",
+          "Is rollback ready?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Protected State' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "derived_artifact",
+      "title": "Derived Artifact",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.derived_artifact.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A derived artifact is generated from source truth. It may help orientation, but it must not become independent source of truth.",
+      "guided_example": "When Builder sees 'Derived Artifact' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Derived Artifact' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.derived_artifact.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "derived_artifact",
+        "meaning": "A derived artifact is generated from source truth. It may help orientation, but it must not become independent source of truth.",
+        "used_when": [
+          "AGENTS.md",
+          "codex map",
+          "generated report"
+        ],
+        "next_layer_questions": [
+          "What generated it?",
+          "Is source fresh?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Derived Artifact' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "owner_task",
+      "title": "Owner Task",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.owner_task.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "An owner_task is an explicit requested result from Owner. It has priority over autonomous optional work and must return result/proof.",
+      "guided_example": "When Builder sees 'Owner Task' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Owner Task' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.owner_task.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "owner_task",
+        "meaning": "An owner_task is an explicit requested result from Owner. It has priority over autonomous optional work and must return result/proof.",
+        "used_when": [
+          "Owner asks to do concrete work",
+          "artifact request",
+          "repo task"
+        ],
+        "next_layer_questions": [
+          "What result?",
+          "What proof?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Owner Task' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "owner_hint",
+      "title": "Owner Hint",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.owner_hint.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "An owner_hint is a soft direction signal, not a direct task. It influences decision context but should not execute as command by itself.",
+      "guided_example": "When Builder sees 'Owner Hint' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Owner Hint' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.owner_hint.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "owner_hint",
+        "meaning": "An owner_hint is a soft direction signal, not a direct task. It influences decision context but should not execute as command by itself.",
+        "used_when": [
+          "Owner suggests idea",
+          "strategic direction",
+          "soft correction"
+        ],
+        "next_layer_questions": [
+          "Does it alter priority?",
+          "Should it become task or backlog?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Owner Hint' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "instruction",
+      "title": "Instruction",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.instruction.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "An instruction modifies how active work should be done. It is not necessarily a new owner task or school curriculum.",
+      "guided_example": "When Builder sees 'Instruction' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Instruction' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.instruction.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "instruction",
+        "meaning": "An instruction modifies how active work should be done. It is not necessarily a new owner task or school curriculum.",
+        "used_when": [
+          "do it this way",
+          "avoid X",
+          "use Y style"
+        ],
+        "next_layer_questions": [
+          "Which active work does it constrain?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Instruction' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "school_curriculum",
+      "title": "School Curriculum",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.school_curriculum.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "School curriculum is structured learning material that can create atom candidates. It is not accepted memory until atoms pass guard/executor/visibility.",
+      "guided_example": "When Builder sees 'School Curriculum' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'School Curriculum' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.school_curriculum.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "school_curriculum",
+        "meaning": "School curriculum is structured learning material that can create atom candidates. It is not accepted memory until atoms pass guard/executor/visibility.",
+        "used_when": [
+          "curriculum pack",
+          "lesson card",
+          "school mode"
+        ],
+        "next_layer_questions": [
+          "Which atom candidate should result?",
+          "Which guard applies?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'School Curriculum' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    },
+    {
+      "lesson_id": "map_signal",
+      "title": "Map Signal",
+      "lesson_type": "primitive_concept",
+      "target_atom_id": "concept.map_signal.v1",
+      "target_atom_type": "knowledge_atom",
+      "explanation": "A map signal is diagnostic or recommendation input from self-map/body-map. It is not a direct command.",
+      "guided_example": "When Builder sees 'Map Signal' in a task, it should classify the task using this concept and move to the next procedure/proof layer.",
+      "check": {
+        "prompt": "Does Builder know how to use 'Map Signal' without starting from zero?",
+        "expected_result": "CLASSIFY_CONCEPT_AND_MOVE_TO_NEXT_LAYER"
+      },
+      "atom_candidate": {
+        "atom_id": "concept.map_signal.v1",
+        "atom_type": "knowledge_atom",
+        "concept_id": "map_signal",
+        "meaning": "A map signal is diagnostic or recommendation input from self-map/body-map. It is not a direct command.",
+        "used_when": [
+          "health recommendation",
+          "next action hint",
+          "body map signal"
+        ],
+        "next_layer_questions": [
+          "Does it block action?",
+          "Which kernel decides?"
+        ],
+        "behavior_change": "Next cycle should not ask what 'Map Signal' means; it should use the accepted atom and ask the next layer question."
+      },
+      "allowed_actions": [
+        "read_curriculum",
+        "create_atom_candidate",
+        "run_policy_guard",
+        "run_acceptance_validator"
+      ]
+    }
+  ]
+}

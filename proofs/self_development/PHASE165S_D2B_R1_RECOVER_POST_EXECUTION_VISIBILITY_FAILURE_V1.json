@@ -1,0 +1,33 @@
+{
+  "schema": "PHASE165S_D2B_R1_RECOVER_POST_EXECUTION_VISIBILITY_FAILURE_V1",
+  "status": "PASS_RECOVERED_INCOMPLETE_RESUMABLE",
+  "created_utc": "2026-06-12T04:41:50.3272174Z",
+  "failed_atom_id": "d2a.requirement_atom.material_catalogue_provenance_source_ladder.content_hash.reuse.next_cycle_reuse.v1",
+  "failed_candidate_id": "PHASE165S_D2A_material_catalogue_provenance_source_ladder_content_hash_requirement_atom_reuse_next_cycle_reuse",
+  "failed_visibility_counts_before": {
+    "memory": 0,
+    "self_map": 0,
+    "registry": 0
+  },
+  "recovery_decision": "QUARANTINE_NOT_ACCEPTED_ADVANCE_CURSOR",
+  "partial_surface_detected": false,
+  "resume_state_status_after_repair": "RUNNING_READY_TO_RESUME",
+  "processed_count_after_reconciliation": 693,
+  "remaining_count_after_reconciliation": 49307,
+  "accepted_count_after_reconciliation": 627,
+  "quarantine_count_after_reconciliation": 66,
+  "failed_count_after_reconciliation": 0,
+  "recovered_failure_count_after_reconciliation": 4,
+  "dynamic_quarantine_count_after_reconciliation": 1,
+  "can_resume": true,
+  "protected_state_dirty_check": {
+    "unauthorized_protected_files": [],
+    "allowed_existing_d2b_accepted_surfaces": [
+      "packs/registry.json",
+      "reports/self_development/accepted_change_memory_snapshot.json",
+      "reports/self_development/SELF_MODEL_ACTIVE_MAP.json"
+    ]
+  },
+  "validation_result": "INCOMPLETE_RESUMABLE",
+  "next_required_action": "RESUME_PHASE165S_D2B_BIG_CURRICULUM_AUTONOMOUS_LEARNING"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "PHASE165S_D2B_POST_REBOOT_SUMMARY_STATE_SYNC_V1",
+  "status": "SUMMARY_SYNCED_TO_QUEUE_STATE",
+  "created_utc": "2026-06-16T05:56:29.3898512Z",
+  "source_of_truth": "queue_state.json",
+  "synced_files": [
+    ".\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\final_summary.json",
+    ".\\proofs\\self_development\\PHASE165S_D2B_BIG_CURRICULUM_AUTONOMOUS_LEARNING_V1.json"
+  ],
+  "processed_count": 13341,
+  "accepted_count": 12187,
+  "remaining_count": 36659,
+  "quarantine_count": 1154,
+  "failed_count": 0,
+  "recovered_failure_count": 5,
+  "accepted_surfaces_mutated": false,
+  "registry_mutated": false,
+  "memory_snapshot_mutated": false,
+  "self_map_mutated": false,
+  "next_required_action": "RUN_VALIDATOR_AGAIN_BEFORE_COMMIT"
+}

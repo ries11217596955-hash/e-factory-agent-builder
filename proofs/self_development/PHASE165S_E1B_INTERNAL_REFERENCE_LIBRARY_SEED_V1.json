@@ -1,0 +1,18 @@
+﻿{
+    "schema_version":  "phase165s_e1b_validator_result.v1",
+    "phase":  "PHASE165S-E1B_INTERNAL_REFERENCE_LIBRARY_SEED",
+    "status":  "PASS_STAGED_INTERNAL_REFERENCE_LIBRARY_SEED",
+    "seed_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\knowledge_library\\internal\\phase165s_e1b_seed",
+    "catalog_path":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\knowledge_library\\internal\\phase165s_e1b_seed\\INTERNAL_REFERENCE_LIBRARY_CATALOG.json",
+    "protected_state_mutation":  false,
+    "accepted_atoms_created":  0,
+    "school_curriculum_created":  false,
+    "card_count":  19,
+    "invalid_cards":  [
+
+                      ],
+    "missing_paths":  [
+
+                      ],
+    "checked_utc":  "2026-06-12T05:19:17.5860288Z"
+}

@@ -1,0 +1,25 @@
+﻿{
+    "schema_version":  "phase165s_e1b_heavy_process_validator_result.v1",
+    "phase":  "PHASE165S_E1B_HEAVY_PROCESS_REFERENCE_LIBRARY_V1",
+    "status":  "PASS_STAGED_INTERNAL_HEAVY_PROCESS_REFERENCE_LIBRARY",
+    "seed_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\knowledge_library\\internal\\phase165s_e1b_heavy_process_reference_v1",
+    "catalog_path":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\knowledge_library\\internal\\phase165s_e1b_heavy_process_reference_v1\\INTERNAL_HEAVY_PROCESS_REFERENCE_CATALOG.json",
+    "card_count":  38,
+    "runbook_count":  16,
+    "index_count":  2,
+    "schema_count":  1,
+    "protected_state_mutation":  false,
+    "accepted_atoms_created":  0,
+    "school_curriculum_created":  false,
+    "running_process_touched":  false,
+    "invalid_cards":  [
+
+                      ],
+    "missing_paths":  [
+
+                      ],
+    "missing_repo_signs":  [
+
+                           ],
+    "checked_utc":  "2026-06-12T05:27:46.3985635Z"
+}

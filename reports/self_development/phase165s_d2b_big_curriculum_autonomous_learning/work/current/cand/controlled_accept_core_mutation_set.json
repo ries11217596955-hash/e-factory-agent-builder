@@ -1,0 +1,119 @@
+{
+    "schema":  "PHASE162_CONTROLLED_ACCEPT_CORE_MUTATION_SET_V1",
+    "status":  "PASS",
+    "created_at":  "2026-06-16T04:50:26.1283643Z",
+    "accepted_memory_operations":  [
+                                       {
+                                           "operation_id":  "D2B_00013341_PHASE165S_D2A_self_map_body_map_map_sign_MEMORY",
+                                           "atom_id":  "d2a.procedure_atom.self_map_body_map_map_signal.map_refresh.inspect.evidence_gate.v1",
+                                           "target":  "reports/self_development/accepted_change_memory_snapshot.json",
+                                           "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current",
+                                           "payload":  {
+                                                           "candidate_id":  "PHASE165S_D2A_self_map_body_map_map_signal_map_refresh_procedure_atom_inspect_evidence_gate",
+                                                           "concept_id":  "self_map_body_map_map_signal.map_refresh.inspect.evidence_gate",
+                                                           "meaning":  "Use maps as derived diagnostic inputs while preserving external decision authority. For \u0027map_refresh\u0027, Builder should inspect the canonical source and collect exact-path evidence. This procedure_atom candidate is limited to the proof required before a PASS or acceptance claim.",
+                                                           "atom_type":  "procedure_atom",
+                                                           "guided_example":  "When a task presents \u0027map_refresh\u0027 in a \u0027inspect\u0027 situation, classify it under \u0027self_map_body_map_map_signal\u0027, apply the evidence_gate boundary, and keep the result staged until school and acceptance gates pass.",
+                                                           "check_prompt":  "Can Builder handle \u0027map_refresh\u0027 for \u0027inspect\u0027 as a procedure_atom without bypassing the evidence_gate boundary?",
+                                                           "expected_check_result":  "ORDERED_SAFE_STEPS_WITH_COMPLETION_CHECK",
+                                                           "behavior_change":  "After acceptance, Builder should retrieve this procedure_atom for \u0027map_refresh\u0027, avoid re-deriving the base rule, and move to the next unresolved operational layer.",
+                                                           "next_layer_questions":  [
+                                                                                        "What canonical source or accepted atom already covers \u0027map_refresh\u0027?",
+                                                                                        "Which validator or proof demonstrates the \u0027evidence_gate\u0027 requirement?",
+                                                                                        "What authority and rollback boundary applies before \u0027inspect\u0027 action?"
+                                                                                    ],
+                                                           "source_curriculum_candidate":  "reports/self_development/phase165s_d2_big_curriculum_material_factory/raw_shards/curriculum_candidates_00027.jsonl#line=341",
+                                                           "source":  "GENERATED_OWNER_APPROVED_CURRICULUM_CANDIDATE",
+                                                           "provenance":  "PHASE165S_D2A_GENERATED_MATERIAL_FACTORY",
+                                                           "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                           "autonomous_loop":  "PHASE165S-D2B",
+                                                           "owner_interrupt_used":  false,
+                                                           "decision_rule":  {
+                                                                                 "input":  "staged_curriculum_candidate",
+                                                                                 "classification":  "USE_ACCEPTED_ATOM_AND_MOVE_TO_NEXT_LAYER",
+                                                                                 "direct_accept_without_guard":  false,
+                                                                                 "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                             },
+                                                           "memory_proof":  "Accepted-memory read must find this atom exactly once by atom_id.",
+                                                           "use_proof":  "Future reasoning must retrieve this accepted atom and advance beyond raw curriculum.",
+                                                           "behavior_delta":  "Next cycle starts from the accepted atom rather than the staged candidate."
+                                                       }
+                                       }
+                                   ],
+    "accepted_self_model_operations":  [
+                                           {
+                                               "operation_id":  "D2B_00013341_PHASE165S_D2A_self_map_body_map_map_sign_SELF",
+                                               "atom_id":  "d2a.procedure_atom.self_map_body_map_map_signal.map_refresh.inspect.evidence_gate.v1",
+                                               "target":  "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                                               "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current",
+                                               "payload":  {
+                                                               "candidate_id":  "PHASE165S_D2A_self_map_body_map_map_signal_map_refresh_procedure_atom_inspect_evidence_gate",
+                                                               "concept_id":  "self_map_body_map_map_signal.map_refresh.inspect.evidence_gate",
+                                                               "meaning":  "Use maps as derived diagnostic inputs while preserving external decision authority. For \u0027map_refresh\u0027, Builder should inspect the canonical source and collect exact-path evidence. This procedure_atom candidate is limited to the proof required before a PASS or acceptance claim.",
+                                                               "atom_type":  "procedure_atom",
+                                                               "guided_example":  "When a task presents \u0027map_refresh\u0027 in a \u0027inspect\u0027 situation, classify it under \u0027self_map_body_map_map_signal\u0027, apply the evidence_gate boundary, and keep the result staged until school and acceptance gates pass.",
+                                                               "check_prompt":  "Can Builder handle \u0027map_refresh\u0027 for \u0027inspect\u0027 as a procedure_atom without bypassing the evidence_gate boundary?",
+                                                               "expected_check_result":  "ORDERED_SAFE_STEPS_WITH_COMPLETION_CHECK",
+                                                               "behavior_change":  "After acceptance, Builder should retrieve this procedure_atom for \u0027map_refresh\u0027, avoid re-deriving the base rule, and move to the next unresolved operational layer.",
+                                                               "next_layer_questions":  [
+                                                                                            "What canonical source or accepted atom already covers \u0027map_refresh\u0027?",
+                                                                                            "Which validator or proof demonstrates the \u0027evidence_gate\u0027 requirement?",
+                                                                                            "What authority and rollback boundary applies before \u0027inspect\u0027 action?"
+                                                                                        ],
+                                                               "source_curriculum_candidate":  "reports/self_development/phase165s_d2_big_curriculum_material_factory/raw_shards/curriculum_candidates_00027.jsonl#line=341",
+                                                               "source":  "GENERATED_OWNER_APPROVED_CURRICULUM_CANDIDATE",
+                                                               "provenance":  "PHASE165S_D2A_GENERATED_MATERIAL_FACTORY",
+                                                               "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                               "autonomous_loop":  "PHASE165S-D2B",
+                                                               "owner_interrupt_used":  false,
+                                                               "decision_rule":  {
+                                                                                     "input":  "staged_curriculum_candidate",
+                                                                                     "classification":  "USE_ACCEPTED_ATOM_AND_MOVE_TO_NEXT_LAYER",
+                                                                                     "direct_accept_without_guard":  false,
+                                                                                     "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                                 },
+                                                               "memory_proof":  "Accepted-memory read must find this atom exactly once by atom_id.",
+                                                               "use_proof":  "Future reasoning must retrieve this accepted atom and advance beyond raw curriculum.",
+                                                               "behavior_delta":  "Next cycle starts from the accepted atom rather than the staged candidate."
+                                                           }
+                                           }
+                                       ],
+    "registry_operations":  [
+                                {
+                                    "operation_id":  "D2B_00013341_PHASE165S_D2A_self_map_body_map_map_sign_REGISTRY",
+                                    "atom_id":  "d2a.procedure_atom.self_map_body_map_map_signal.map_refresh.inspect.evidence_gate.v1",
+                                    "target":  "packs/registry.json",
+                                    "source_freeze_root":  "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current",
+                                    "payload":  {
+                                                    "candidate_id":  "PHASE165S_D2A_self_map_body_map_map_signal_map_refresh_procedure_atom_inspect_evidence_gate",
+                                                    "concept_id":  "self_map_body_map_map_signal.map_refresh.inspect.evidence_gate",
+                                                    "meaning":  "Use maps as derived diagnostic inputs while preserving external decision authority. For \u0027map_refresh\u0027, Builder should inspect the canonical source and collect exact-path evidence. This procedure_atom candidate is limited to the proof required before a PASS or acceptance claim.",
+                                                    "atom_type":  "procedure_atom",
+                                                    "guided_example":  "When a task presents \u0027map_refresh\u0027 in a \u0027inspect\u0027 situation, classify it under \u0027self_map_body_map_map_signal\u0027, apply the evidence_gate boundary, and keep the result staged until school and acceptance gates pass.",
+                                                    "check_prompt":  "Can Builder handle \u0027map_refresh\u0027 for \u0027inspect\u0027 as a procedure_atom without bypassing the evidence_gate boundary?",
+                                                    "expected_check_result":  "ORDERED_SAFE_STEPS_WITH_COMPLETION_CHECK",
+                                                    "behavior_change":  "After acceptance, Builder should retrieve this procedure_atom for \u0027map_refresh\u0027, avoid re-deriving the base rule, and move to the next unresolved operational layer.",
+                                                    "next_layer_questions":  [
+                                                                                 "What canonical source or accepted atom already covers \u0027map_refresh\u0027?",
+                                                                                 "Which validator or proof demonstrates the \u0027evidence_gate\u0027 requirement?",
+                                                                                 "What authority and rollback boundary applies before \u0027inspect\u0027 action?"
+                                                                             ],
+                                                    "source_curriculum_candidate":  "reports/self_development/phase165s_d2_big_curriculum_material_factory/raw_shards/curriculum_candidates_00027.jsonl#line=341",
+                                                    "source":  "GENERATED_OWNER_APPROVED_CURRICULUM_CANDIDATE",
+                                                    "provenance":  "PHASE165S_D2A_GENERATED_MATERIAL_FACTORY",
+                                                    "autonomous_policy_guard":  "PHASE165S-C2B",
+                                                    "autonomous_loop":  "PHASE165S-D2B",
+                                                    "owner_interrupt_used":  false,
+                                                    "decision_rule":  {
+                                                                          "input":  "staged_curriculum_candidate",
+                                                                          "classification":  "USE_ACCEPTED_ATOM_AND_MOVE_TO_NEXT_LAYER",
+                                                                          "direct_accept_without_guard":  false,
+                                                                          "decision_authority":  "C2B_POLICY_GUARD_AND_PHASE162_ACCEPTED_CORE_EXECUTOR"
+                                                                      },
+                                                    "memory_proof":  "Accepted-memory read must find this atom exactly once by atom_id.",
+                                                    "use_proof":  "Future reasoning must retrieve this accepted atom and advance beyond raw curriculum.",
+                                                    "behavior_delta":  "Next cycle starts from the accepted atom rather than the staged candidate."
+                                                }
+                                }
+                            ]
+}

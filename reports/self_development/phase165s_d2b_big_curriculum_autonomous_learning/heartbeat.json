@@ -1,0 +1,13 @@
+{
+    "status":  "RUNNING",
+    "heartbeat_utc":  "2026-06-16T04:31:39.5398984Z",
+    "processed_count":  13325,
+    "remaining_count":  36675,
+    "accepted_count":  12171,
+    "quarantine_count":  1154,
+    "shard_index":  26,
+    "line_index":  325,
+    "last_candidate_id":  "PHASE165S_D2A_curriculum_school_atom_lifecycle_next_cycle_visibility_proof_atom_repair_foundation",
+    "last_atom_id":  "d2a.proof_atom.curriculum_school_atom_lifecycle.next_cycle_visibility.repair.foundation.v1",
+    "last_disposition":  "ACCEPTED"
+}

@@ -1,0 +1,602 @@
+[
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\resume_state.json",
+    "Length": 1076,
+    "LastWriteTime": "2026-06-16T08:51:08.0476914+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\accepted_log.jsonl",
+    "Length": 6955628,
+    "LastWriteTime": "2026-06-16T08:51:08.0407085+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current\\fin\\controller_consume_controlled_accept_core_mutation_execution_proof_result.json",
+    "Length": 2242,
+    "LastWriteTime": "2026-06-16T08:51:07.9887681+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current\\fin\\PHASE162_CONTROLLER_CONSUME_CONTROLLED_ACCEPT_CORE_MUTATION_EXECUTION_PROOF_REPORT.md",
+    "Length": 689,
+    "LastWriteTime": "2026-06-16T08:51:07.9887681+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current\\exec\\phase165s_d2b_execution_proof_for_controller.json",
+    "Length": 655,
+    "LastWriteTime": "2026-06-16T08:51:07.6058817+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current\\exec\\PHASE162_EXECUTE_CONTROLLED_ACCEPT_CORE_MUTATION_FOR_ATOM_BATCH_REPORT.md",
+    "Length": 730,
+    "LastWriteTime": "2026-06-16T08:50:55.7077259+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current\\exec\\pre_execution_snapshots\\reports__self_development__SELF_MODEL_ACTIVE_MAP.json",
+    "Length": 78364713,
+    "LastWriteTime": "2026-06-16T08:49:36.3073448+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\work\\current\\exec\\pre_execution_snapshots\\reports__self_development__accepted_change_memory_snapshot.json",
+    "Length": 76256442,
+    "LastWriteTime": "2026-06-16T08:49:29.4872176+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\heartbeat.json",
+    "Length": 533,
+    "LastWriteTime": "2026-06-16T08:31:39.5562867+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\final_summary.json",
+    "Length": 1863,
+    "LastWriteTime": "2026-06-16T08:07:02.9500121+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00013300.json",
+    "Length": 1104,
+    "LastWriteTime": "2026-06-16T08:07:02.7682692+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00013200.json",
+    "Length": 1074,
+    "LastWriteTime": "2026-06-16T07:27:02.2113201+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00013100.json",
+    "Length": 1062,
+    "LastWriteTime": "2026-06-16T05:52:27.0887174+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00013000.json",
+    "Length": 1102,
+    "LastWriteTime": "2026-06-16T04:24:05.3811+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012900.json",
+    "Length": 1034,
+    "LastWriteTime": "2026-06-16T02:50:39.6022443+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012800.json",
+    "Length": 1038,
+    "LastWriteTime": "2026-06-16T01:18:09.5113584+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012700.json",
+    "Length": 1082,
+    "LastWriteTime": "2026-06-15T23:46:37.5950736+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012600.json",
+    "Length": 1068,
+    "LastWriteTime": "2026-06-15T22:16:05.9729849+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012500.json",
+    "Length": 1106,
+    "LastWriteTime": "2026-06-15T20:51:11.8836059+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012400.json",
+    "Length": 1082,
+    "LastWriteTime": "2026-06-15T19:22:24.5063278+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012300.json",
+    "Length": 1122,
+    "LastWriteTime": "2026-06-15T18:20:44.8892729+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012200.json",
+    "Length": 1096,
+    "LastWriteTime": "2026-06-15T16:53:30.6660082+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012100.json",
+    "Length": 1094,
+    "LastWriteTime": "2026-06-15T15:32:34.0720099+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00012000.json",
+    "Length": 1051,
+    "LastWriteTime": "2026-06-15T14:51:13.6454183+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011900.json",
+    "Length": 1101,
+    "LastWriteTime": "2026-06-15T13:28:55.4938263+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011800.json",
+    "Length": 1097,
+    "LastWriteTime": "2026-06-15T12:07:13.4545318+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011700.json",
+    "Length": 1031,
+    "LastWriteTime": "2026-06-15T10:40:45.8733002+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011600.json",
+    "Length": 1029,
+    "LastWriteTime": "2026-06-15T09:18:20.7018828+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011500.json",
+    "Length": 1085,
+    "LastWriteTime": "2026-06-15T07:56:33.6479273+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011400.json",
+    "Length": 1079,
+    "LastWriteTime": "2026-06-15T06:36:55.3974144+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011300.json",
+    "Length": 1101,
+    "LastWriteTime": "2026-06-15T05:21:29.1728985+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011200.json",
+    "Length": 1091,
+    "LastWriteTime": "2026-06-15T04:20:35.97465+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011100.json",
+    "Length": 1083,
+    "LastWriteTime": "2026-06-15T03:06:45.4758263+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00011000.json",
+    "Length": 1103,
+    "LastWriteTime": "2026-06-15T01:48:59.1980586+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010900.json",
+    "Length": 1091,
+    "LastWriteTime": "2026-06-15T01:05:52.7998138+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010800.json",
+    "Length": 1077,
+    "LastWriteTime": "2026-06-15T00:00:19.1137983+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010700.json",
+    "Length": 1089,
+    "LastWriteTime": "2026-06-14T22:48:14.1256416+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010600.json",
+    "Length": 1099,
+    "LastWriteTime": "2026-06-14T21:33:10.6128004+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010500.json",
+    "Length": 1057,
+    "LastWriteTime": "2026-06-14T20:18:52.0867241+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010400.json",
+    "Length": 1077,
+    "LastWriteTime": "2026-06-14T19:05:29.4588049+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010300.json",
+    "Length": 1089,
+    "LastWriteTime": "2026-06-14T17:53:00.1474556+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010200.json",
+    "Length": 1073,
+    "LastWriteTime": "2026-06-14T16:44:45.3547376+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010100.json",
+    "Length": 1071,
+    "LastWriteTime": "2026-06-14T15:35:07.3919202+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00010000.json",
+    "Length": 1099,
+    "LastWriteTime": "2026-06-14T14:45:05.1004156+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009900.json",
+    "Length": 1090,
+    "LastWriteTime": "2026-06-14T13:35:02.0007396+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009800.json",
+    "Length": 1084,
+    "LastWriteTime": "2026-06-14T12:25:49.6162016+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009700.json",
+    "Length": 1050,
+    "LastWriteTime": "2026-06-14T11:56:56.5097349+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009600.json",
+    "Length": 1068,
+    "LastWriteTime": "2026-06-14T10:49:37.5051152+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009500.json",
+    "Length": 1108,
+    "LastWriteTime": "2026-06-14T09:45:39.400232+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009400.json",
+    "Length": 1041,
+    "LastWriteTime": "2026-06-14T08:39:10.1376968+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009300.json",
+    "Length": 1043,
+    "LastWriteTime": "2026-06-14T07:33:16.2324929+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009200.json",
+    "Length": 1071,
+    "LastWriteTime": "2026-06-14T06:28:20.0081686+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009100.json",
+    "Length": 1063,
+    "LastWriteTime": "2026-06-14T05:23:58.7138381+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00009000.json",
+    "Length": 1103,
+    "LastWriteTime": "2026-06-14T04:24:18.6726195+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008900.json",
+    "Length": 1083,
+    "LastWriteTime": "2026-06-14T03:21:34.3346404+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008800.json",
+    "Length": 1105,
+    "LastWriteTime": "2026-06-14T02:37:46.8397311+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008700.json",
+    "Length": 1075,
+    "LastWriteTime": "2026-06-14T01:37:06.1466496+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008600.json",
+    "Length": 1091,
+    "LastWriteTime": "2026-06-14T00:47:46.1264912+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008500.json",
+    "Length": 1061,
+    "LastWriteTime": "2026-06-14T00:12:04.9130573+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008400.json",
+    "Length": 1081,
+    "LastWriteTime": "2026-06-13T23:15:41.5335585+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008300.json",
+    "Length": 1097,
+    "LastWriteTime": "2026-06-13T22:18:29.6579883+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008200.json",
+    "Length": 1059,
+    "LastWriteTime": "2026-06-13T21:21:22.4209062+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008100.json",
+    "Length": 1031,
+    "LastWriteTime": "2026-06-13T20:24:43.2963988+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00008000.json",
+    "Length": 1079,
+    "LastWriteTime": "2026-06-13T19:28:41.9213391+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007900.json",
+    "Length": 1073,
+    "LastWriteTime": "2026-06-13T18:34:07.2920559+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007800.json",
+    "Length": 1097,
+    "LastWriteTime": "2026-06-13T17:42:01.8978154+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007700.json",
+    "Length": 1071,
+    "LastWriteTime": "2026-06-13T17:03:58.5473473+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007600.json",
+    "Length": 1075,
+    "LastWriteTime": "2026-06-13T16:11:02.9870464+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007500.json",
+    "Length": 1093,
+    "LastWriteTime": "2026-06-13T15:18:49.3416443+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007400.json",
+    "Length": 1093,
+    "LastWriteTime": "2026-06-13T14:55:37.1941668+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007300.json",
+    "Length": 1059,
+    "LastWriteTime": "2026-06-13T14:06:00.549445+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007200.json",
+    "Length": 1093,
+    "LastWriteTime": "2026-06-13T13:18:39.5948355+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007100.json",
+    "Length": 1035,
+    "LastWriteTime": "2026-06-13T12:25:50.0124755+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00007000.json",
+    "Length": 1051,
+    "LastWriteTime": "2026-06-13T11:36:48.6677535+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006900.json",
+    "Length": 1071,
+    "LastWriteTime": "2026-06-13T10:48:38.0500152+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006800.json",
+    "Length": 1079,
+    "LastWriteTime": "2026-06-13T10:01:00.8013158+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006700.json",
+    "Length": 1081,
+    "LastWriteTime": "2026-06-13T09:16:46.9196645+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006600.json",
+    "Length": 1063,
+    "LastWriteTime": "2026-06-13T08:30:23.9375367+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006500.json",
+    "Length": 1103,
+    "LastWriteTime": "2026-06-13T07:58:13.400665+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006400.json",
+    "Length": 1081,
+    "LastWriteTime": "2026-06-13T07:13:38.3553375+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006300.json",
+    "Length": 1093,
+    "LastWriteTime": "2026-06-13T06:29:34.0610321+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006200.json",
+    "Length": 1057,
+    "LastWriteTime": "2026-06-13T06:11:40.6876495+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006100.json",
+    "Length": 1067,
+    "LastWriteTime": "2026-06-13T05:28:56.3052775+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00006000.json",
+    "Length": 1103,
+    "LastWriteTime": "2026-06-13T04:48:19.9738932+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005900.json",
+    "Length": 1045,
+    "LastWriteTime": "2026-06-13T04:06:51.0283437+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005800.json",
+    "Length": 1045,
+    "LastWriteTime": "2026-06-13T03:26:01.5186669+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005700.json",
+    "Length": 1091,
+    "LastWriteTime": "2026-06-13T02:46:04.7643143+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005600.json",
+    "Length": 1071,
+    "LastWriteTime": "2026-06-13T02:06:49.037964+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005500.json",
+    "Length": 1105,
+    "LastWriteTime": "2026-06-13T01:30:34.6613119+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005400.json",
+    "Length": 1079,
+    "LastWriteTime": "2026-06-13T00:56:11.7815318+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005300.json",
+    "Length": 1105,
+    "LastWriteTime": "2026-06-13T00:26:22.6263683+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005200.json",
+    "Length": 1061,
+    "LastWriteTime": "2026-06-12T23:50:01.8843931+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005100.json",
+    "Length": 1079,
+    "LastWriteTime": "2026-06-12T23:25:02.7302856+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00005000.json",
+    "Length": 1070,
+    "LastWriteTime": "2026-06-12T22:59:42.6283702+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004900.json",
+    "Length": 1072,
+    "LastWriteTime": "2026-06-12T22:26:56.9961612+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004800.json",
+    "Length": 1086,
+    "LastWriteTime": "2026-06-12T21:52:57.9416402+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004700.json",
+    "Length": 1066,
+    "LastWriteTime": "2026-06-12T21:19:44.1909455+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004600.json",
+    "Length": 1074,
+    "LastWriteTime": "2026-06-12T20:47:26.8506084+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004500.json",
+    "Length": 1086,
+    "LastWriteTime": "2026-06-12T20:15:55.782804+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004400.json",
+    "Length": 1066,
+    "LastWriteTime": "2026-06-12T19:45:59.5448786+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004300.json",
+    "Length": 1072,
+    "LastWriteTime": "2026-06-12T19:16:49.3488274+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004200.json",
+    "Length": 1078,
+    "LastWriteTime": "2026-06-12T18:55:49.494328+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004100.json",
+    "Length": 1090,
+    "LastWriteTime": "2026-06-12T18:26:54.1415079+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00004000.json",
+    "Length": 1100,
+    "LastWriteTime": "2026-06-12T17:58:34.4309498+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003900.json",
+    "Length": 1062,
+    "LastWriteTime": "2026-06-12T17:46:07.4962545+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003800.json",
+    "Length": 1064,
+    "LastWriteTime": "2026-06-12T17:16:10.771178+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003700.json",
+    "Length": 1078,
+    "LastWriteTime": "2026-06-12T16:51:19.7722879+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003600.json",
+    "Length": 1026,
+    "LastWriteTime": "2026-06-12T16:25:30.0397664+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003500.json",
+    "Length": 1034,
+    "LastWriteTime": "2026-06-12T15:58:52.8205822+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003400.json",
+    "Length": 1070,
+    "LastWriteTime": "2026-06-12T15:34:05.2640026+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003300.json",
+    "Length": 1074,
+    "LastWriteTime": "2026-06-12T15:09:56.2157415+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003200.json",
+    "Length": 1088,
+    "LastWriteTime": "2026-06-12T14:47:51.6091192+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003100.json",
+    "Length": 1074,
+    "LastWriteTime": "2026-06-12T14:24:51.366595+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00003000.json",
+    "Length": 1118,
+    "LastWriteTime": "2026-06-12T14:09:21.2988971+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00002900.json",
+    "Length": 1084,
+    "LastWriteTime": "2026-06-12T13:36:14.6162801+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00002800.json",
+    "Length": 1086,
+    "LastWriteTime": "2026-06-12T13:16:52.374313+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00002700.json",
+    "Length": 1054,
+    "LastWriteTime": "2026-06-12T13:07:53.8975553+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00002600.json",
+    "Length": 1094,
+    "LastWriteTime": "2026-06-12T12:49:09.4223321+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00002500.json",
+    "Length": 1094,
+    "LastWriteTime": "2026-06-12T12:30:45.208256+04:00"
+  },
+  {
+    "FullName": "C:\\Users\\vmammadov\\Downloads\\e-factory-agent-builder\\reports\\self_development\\phase165s_d2b_big_curriculum_autonomous_learning\\checkpoints\\checkpoint_00002400.json",
+    "Length": 1019,
+    "LastWriteTime": "2026-06-12T12:12:41.4828456+04:00"
+  }
+]

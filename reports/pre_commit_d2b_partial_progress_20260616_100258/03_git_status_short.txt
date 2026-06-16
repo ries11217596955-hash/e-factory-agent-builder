@@ -1,0 +1,25 @@
+ M packs/registry.json
+ M reports/self_development/SELF_MODEL_ACTIVE_MAP.json
+ M reports/self_development/accepted_change_memory_snapshot.json
+?? knowledge_library/internal/phase165s_e1b_heavy_process_reference_v1/
+?? knowledge_library/internal/phase165s_e1b_seed/
+?? modules/run_phase165s_d2b_big_curriculum_autonomous_learn_until_empty_001.ps1
+?? proofs/self_development/PHASE165S_D2B_BIG_CURRICULUM_AUTONOMOUS_LEARNING_V1.json
+?? proofs/self_development/PHASE165S_D2B_R1_RECOVER_POST_EXECUTION_VISIBILITY_FAILURE_V1.json
+?? proofs/self_development/PHASE165S_D2B_R2_SUMMARY_STATE_SYNC_V1.json
+?? proofs/self_development/PHASE165S_D2B_R3_RECOVER_FULL_SURFACE_FINALIZATION_V1.json
+?? proofs/self_development/PHASE165S_E1B_HEAVY_PROCESS_REFERENCE_LIBRARY_V1.json
+?? proofs/self_development/PHASE165S_E1B_INTERNAL_REFERENCE_LIBRARY_SEED_V1.json
+?? reports/post_reboot_d2b_audit_20260616_090825/
+?? reports/post_reboot_d2b_summary_sync_20260616_095629/
+?? reports/pre_commit_d2b_partial_progress_20260616_100258/
+?? reports/self_development/PHASE165S_D2B_BIG_CURRICULUM_AUTONOMOUS_LEARNING_V1.md
+?? reports/self_development/PHASE165S_D2B_R1_RECOVER_POST_EXECUTION_VISIBILITY_FAILURE_V1.md
+?? reports/self_development/PHASE165S_D2B_R2_SUMMARY_STATE_SYNC_V1.md
+?? reports/self_development/PHASE165S_D2B_R3_RECOVER_FULL_SURFACE_FINALIZATION_V1.md
+?? reports/self_development/PHASE165S_E1B_HEAVY_PROCESS_REFERENCE_LIBRARY_V1.md
+?? reports/self_development/PHASE165S_E1B_INTERNAL_REFERENCE_LIBRARY_SEED_V1.md
+?? reports/self_development/phase165s_d2b_big_curriculum_autonomous_learning/
+?? validators/validate_phase165s_d2b_big_curriculum_autonomous_learning_v1.ps1
+?? validators/validate_phase165s_e1b_heavy_process_reference_library_v1.ps1
+?? validators/validate_phase165s_e1b_internal_reference_library_seed_v1.ps1

@@ -1,0 +1,4 @@
+ packs/registry.json                                | 475293 +++++++++++++++++
+ .../self_development/SELF_MODEL_ACTIVE_MAP.json    | 487480 ++++++++++++++++++
+ .../accepted_change_memory_snapshot.json           | 487480 ++++++++++++++++++
+ 3 files changed, 1450253 insertions(+)

@@ -1,0 +1,45 @@
+
+   MB FullName
+   -- --------
+74,73 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\exec\pre_execution_snapshots\reports__self_development__SELF_MODEL_ACTIVE_MAP.json
+72,72 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\exec\pre_execution_snapshots\reports__self_development__accepted_change_memory_snapshot.json
+68,26 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\exec\pre_execution_snapshots\packs__registry.json
+ 6,63 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\accepted_log.jsonl
+ 0,59 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\quarantine_log.jsonl
+ 0,01 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\cand\controlled_accept_core_mutation_set.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\exec\execute_controlled_accept_core_mutation_result.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\failed_log.jsonl
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\fin\controller_consume_controlled_accept_core_mutation_execution_proof_result.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\recovery_log.jsonl
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\policy_result.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\final_summary.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\exec\pre_execution_fingerprints.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00012300.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00003000.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00009500.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\work\current\policy_candidate.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00012500.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00005500.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00008800.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00005300.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00013300.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00009000.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00006500.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00011000.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00006000.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00013000.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00011900.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00011300.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00004000.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00010600.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00010000.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00008300.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00007800.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00011800.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00002000.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00012200.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00002600.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00002500.json
+ 0,00 C:\Users\vmammadov\Downloads\e-factory-agent-builder\reports\self_development\phase165s_d2b_big_curriculum_autonomous_learning\checkpoints\checkpoint_00012100.json
+
+

@@ -88,6 +88,9 @@ EnsureDir $MemoryRoot
 $rows=ReadJsonl $InputPath
 if($rows.Count -lt 1){ throw 'NO_INPUT_ROWS' }
 $cells=LoadExistingCells $MemoryRoot
+$existingCellCountBefore=$cells.Keys.Count
+$createdCellCount=0
+$mergedObservationCount=0
 $inputFingerprints=@()
 foreach($r in $rows){
   $concept=[string](GetProp $r 'concept_key')
@@ -124,6 +127,7 @@ foreach($r in $rows){
     if(([string]$old.summary).Length -lt $summary.Length){ $old.summary=$summary }
     $old.updated_at=(Get-Date).ToString('o')
     $cells[$conceptKey]=$old
+    $mergedObservationCount++
   } else {
     $cell=[pscustomobject]@{
       schema='compact_semantic_cell_v1'
@@ -143,6 +147,7 @@ foreach($r in $rows){
       updated_at=(Get-Date).ToString('o')
     }
     $cells[$conceptKey]=$cell
+    $createdCellCount++
   }
 }
 $orderedCells=@($cells.Keys | Sort-Object | ForEach-Object { CellToOrdered $cells[$_] })
@@ -182,7 +187,7 @@ $manifest=[ordered]@{
   run_id=$RunId
   input_count=$rows.Count
   cell_count=$orderedCells.Count
-  merged_count=($rows.Count - $orderedCells.Count)
+  merged_count=$mergedObservationCount
   raw_source_path=$resolvedInput
   raw_source_deleted=$rawDeleted
   raw_source_dependency_removed=([bool]$CleanupRawSource -and $rawDeleted)

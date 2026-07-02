@@ -43,3 +43,5 @@ reports/**
 !reports/self_development/THIN_REPO_PASS2_MANIFEST_*.json
 proofs/**
 .runtime/
+
+operations/reports/

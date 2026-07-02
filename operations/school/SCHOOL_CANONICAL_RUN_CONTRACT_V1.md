@@ -208,8 +208,7 @@ This is the production-shaped organ that turns staged material into compact sema
 Required behavior:
 
 ```text
-input raw/staged candidates
--> canonical semantic cells
+input factory/streaming ready_atoms or raw staged candidates\n-> canonical semantic cells
 -> merge duplicate concepts
 -> build lookup index
 -> remove raw source dependency
@@ -261,4 +260,18 @@ atom file
 -> route/ledger unchanged
 ```
 
-`RunKind=Real` is wired to this pipeline. Real no longer means route append. Real means compact semantic digestion with raw-source dependency removed.
+`RunKind=Real uses the existing candidate factory and streaming ready lane, then sends ready_atoms through the digest pipeline. Real no longer means route append or synthetic seed generation.
+## FACTORY_TO_DIGEST_RECONCILIATION_V1
+
+Canonical school flow:
+
+```text
+TargetAccepted + RunKind
+-> existing candidate factory
+-> contract consistency validation
+-> streaming ready_atoms lane
+-> digest pipeline
+-> compact semantic memory
+```
+
+`RunKind=Real` must not create a parallel synthetic seed file. It must consume the existing factory output.

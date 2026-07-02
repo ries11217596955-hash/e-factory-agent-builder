@@ -7,7 +7,7 @@ $repoRoot=(git rev-parse --show-toplevel).Trim(); Set-Location $repoRoot
 $utf8=New-Object System.Text.UTF8Encoding($false)
 function EnsureDir($Path){ if(-not (Test-Path $Path)){ New-Item -ItemType Directory -Force $Path | Out-Null } }
 function WriteJson($Path,$Obj,$Depth=80){ $d=Split-Path $Path -Parent; if($d){ EnsureDir $d }; [IO.File]::WriteAllText((Join-Path (Get-Location).Path $Path),($Obj|ConvertTo-Json -Depth $Depth),$utf8) }
-$runId="school_factory_digest_{0}_{1}_{2}" -f $RunKind.ToLowerInvariant(),$TargetAccepted,(Get-Date -Format 'yyyyMMdd_HHmmss')
+$runId="school_factory_digest_use_{0}_{1}_{2}" -f $RunKind.ToLowerInvariant(),$TargetAccepted,(Get-Date -Format 'yyyyMMdd_HHmmss')
 $proofDir=".runtime/school_runs/$runId"
 $proofPath="$proofDir/AGENT_SCHOOL_CANONICAL_ENTRYPOINT_V1.json"
 $routePath='operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_POINTER_V1.json'
@@ -27,7 +27,7 @@ $stream=Get-Content operations/reports/STREAMING_SCHOOL_TO_ABSORPTION_PIPELINE_V
 if($stream.status -ne 'PASS_STREAMING_SCHOOL_TO_ABSORPTION_PIPELINE_V1'){ throw "STREAMING_NOT_PASS:$($stream.status)" }
 if([int]$stream.ready_atoms_total -ne $TargetAccepted){ throw "READY_ATOMS_COUNT_BAD:$($stream.ready_atoms_total)" }
 $base=[ordered]@{
-  schema='agent_school_canonical_run_v4'
+  schema='agent_school_canonical_run_v5'
   run_id=$runId
   run_kind=$RunKind
   target_accepted=$TargetAccepted
@@ -46,12 +46,14 @@ $base=[ordered]@{
   api_invoked=$factoryReport.api_invoked
   route_before=[int]$routeBefore.routed_active_count
   ledger_before=[int]$ledgerBefore.replayed_active_count
-  law='TargetAccepted + RunKind must use the existing candidate factory and streaming lane. No synthetic seed route is allowed.'
+  law='TargetAccepted + RunKind uses the existing candidate factory and streaming lane. Real cannot pass from digest alone; recall/use and behavior_delta proof are required.'
 }
 if($RunKind -eq 'Test'){
   $base.status='PASS_TEST_FACTORY_STREAMING_READY_V1'
   $base.accepted_total=0
   $base.digested_knowledge_mutated=$false
+  $base.recall_use_required=$false
+  $base.behavior_delta=$false
   $base.boundary='Test validates existing factory and streaming ready lane only. It does not digest or mutate compact memory.'
   WriteJson $proofPath $base 80
   Write-Host 'SCHOOL_RUN_STATUS=PASS_TEST_FACTORY_STREAMING_READY_V1'
@@ -61,6 +63,8 @@ if($RunKind -eq 'Test'){
   Write-Host "FACTORY_CANDIDATES=$($base.factory_candidates_created)"
   Write-Host "READY_ATOMS=$($base.ready_atoms)"
   Write-Host 'DIGESTED_KNOWLEDGE_MUTATED=false'
+  Write-Host 'RECALL_USE_REQUIRED=false'
+  Write-Host 'BEHAVIOR_DELTA=false'
   Write-Host 'RUNTIME_READY=false'
   return
 }
@@ -70,11 +74,23 @@ $pipeStatus=($pipeOut|Where-Object{$_ -match '^FILE_ATOM_ABSORPTION_STATUS='}|Se
 $pipeProofPath=($pipeOut|Where-Object{$_ -match '^PROOF_PATH='}|Select-Object -Last 1) -replace '^PROOF_PATH=',''
 if($pipeStatus -ne 'PASS_FILE_ATOM_ABSORPTION_PIPELINE_V1'){ throw "PIPELINE_NOT_PASS:$pipeStatus" }
 $pipeProof=Get-Content $pipeProofPath -Raw|ConvertFrom-Json
+$routeMid=Get-Content $routePath -Raw|ConvertFrom-Json
+$ledgerMid=Get-Content $ledgerPath -Raw|ConvertFrom-Json
+if([int]$routeMid.routed_active_count -ne [int]$routeBefore.routed_active_count){ throw 'ROUTE_MUTATED_BY_REAL_FACTORY_DIGEST' }
+if([int]$ledgerMid.replayed_active_count -ne [int]$ledgerBefore.replayed_active_count){ throw 'LEDGER_MUTATED_BY_REAL_FACTORY_DIGEST' }
+$useTask='Night school must prove that fresh compact memory is recalled and used before Real PASS; factory output must not be treated as external world knowledge without source acquisition.'
+$useOut=@(& powershell -NoProfile -ExecutionPolicy Bypass -File operations/school/memory/validate_compact_memory_recall_use_probe_v1.ps1 -MemoryRoot $pipeProof.memory_root -Task $useTask *>&1 | ForEach-Object {[string]$_})
+$useStatus=($useOut|Where-Object{$_ -match '^VALIDATION_PASS=COMPACT_MEMORY_RECALL_USE_PROBE_V1_VALID$'}|Select-Object -Last 1)
+$useProofPath=($useOut|Where-Object{$_ -match '^PROOF_PATH='}|Select-Object -Last 1) -replace '^PROOF_PATH=',''
+if($useStatus -ne 'VALIDATION_PASS=COMPACT_MEMORY_RECALL_USE_PROBE_V1_VALID'){ throw 'RECALL_USE_GATE_NOT_PASS' }
+if([string]::IsNullOrWhiteSpace($useProofPath) -or -not (Test-Path $useProofPath)){ throw 'RECALL_USE_PROOF_MISSING' }
+$useProof=Get-Content $useProofPath -Raw|ConvertFrom-Json
+if($useProof.behavior_delta -ne $true){ throw 'BEHAVIOR_DELTA_NOT_PROVEN' }
 $routeAfter=Get-Content $routePath -Raw|ConvertFrom-Json
 $ledgerAfter=Get-Content $ledgerPath -Raw|ConvertFrom-Json
-if([int]$routeAfter.routed_active_count -ne [int]$routeBefore.routed_active_count){ throw 'ROUTE_MUTATED_BY_REAL_FACTORY_DIGEST' }
-if([int]$ledgerAfter.replayed_active_count -ne [int]$ledgerBefore.replayed_active_count){ throw 'LEDGER_MUTATED_BY_REAL_FACTORY_DIGEST' }
-$base.status='PASS_REAL_FACTORY_TO_DIGEST_ABSORPTION_V1'
+if([int]$routeAfter.routed_active_count -ne [int]$routeBefore.routed_active_count){ throw 'ROUTE_MUTATED_BY_REAL_RECALL_USE' }
+if([int]$ledgerAfter.replayed_active_count -ne [int]$ledgerBefore.replayed_active_count){ throw 'LEDGER_MUTATED_BY_REAL_RECALL_USE' }
+$base.status='PASS_REAL_FACTORY_DIGEST_RECALL_USE_V1'
 $base.accepted_total=0
 $base.digested_knowledge_mutated=$true
 $base.pipeline_status=$pipeProof.status
@@ -87,11 +103,18 @@ $base.staged_raw_deleted=$pipeProof.staged_raw_deleted
 $base.normalized_digest_input_deleted=$pipeProof.normalized_digest_input_deleted
 $base.total_memory_bytes=[int]$pipeProof.total_memory_bytes
 $base.memory_root=$pipeProof.memory_root
+$base.recall_use_status=$useProof.status
+$base.recall_use_proof_path=$useProofPath
+$base.used_memory_cells=@($useProof.used_labels)
+$base.baseline_decision=$useProof.baseline_decision
+$base.active_decision=$useProof.active_decision
+$base.behavior_delta=$useProof.behavior_delta
+$base.behavior_delta_definition=$useProof.behavior_delta_definition
 $base.route_after=[int]$routeAfter.routed_active_count
 $base.ledger_after=[int]$ledgerAfter.replayed_active_count
-$base.boundary='Real uses existing candidate factory output, streaming ready_atoms, and digest pipeline. Synthetic seed generation is not part of the canonical route.'
+$base.boundary='Real uses existing candidate factory output, streaming ready_atoms, digest pipeline, compact memory recall, and behavior_delta proof. Old overnight/semantic/fresh parallel paths are not canonical.'
 WriteJson $proofPath $base 100
-Write-Host 'SCHOOL_RUN_STATUS=PASS_REAL_FACTORY_TO_DIGEST_ABSORPTION_V1'
+Write-Host 'SCHOOL_RUN_STATUS=PASS_REAL_FACTORY_DIGEST_RECALL_USE_V1'
 Write-Host "PROOF_PATH=$proofPath"
 Write-Host "TARGET_ACCEPTED=$TargetAccepted"
 Write-Host "RUN_KIND=$RunKind"
@@ -102,6 +125,9 @@ Write-Host "MERGED_COUNT=$($base.merged_count)"
 Write-Host "VALIDATION_TIER=$($base.validation_tier)"
 Write-Host "RAW_SOURCE_DEPENDENCY_REMOVED=$($base.raw_source_dependency_removed)"
 Write-Host "TOTAL_MEMORY_BYTES=$($base.total_memory_bytes)"
+Write-Host "RECALL_USE_STATUS=$($base.recall_use_status)"
+Write-Host "BEHAVIOR_DELTA=$($base.behavior_delta)"
+Write-Host "USED_MEMORY_CELLS=$($base.used_memory_cells -join ';')"
 Write-Host "ROUTE_AFTER=$($base.route_after)"
 Write-Host "LEDGER_AFTER=$($base.ledger_after)"
 Write-Host 'RUNTIME_READY=false'

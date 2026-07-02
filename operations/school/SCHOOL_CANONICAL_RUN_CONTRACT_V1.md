@@ -275,3 +275,29 @@ TargetAccepted + RunKind
 ```
 
 `RunKind=Real` must not create a parallel synthetic seed file. It must consume the existing factory output.
+## CANONICAL_REAL_RECALL_USE_GATE_V1
+
+`RunKind=Real` is not allowed to pass from digest alone.
+
+Canonical Real flow:
+
+```text
+TargetAccepted + RunKind
+-> existing candidate factory
+-> contract consistency validation
+-> streaming ready_atoms lane
+-> compact semantic digest
+-> compact memory recall/use probe
+-> behavior_delta proof
+-> PASS_REAL_FACTORY_DIGEST_RECALL_USE_V1
+```
+
+Forbidden production meanings:
+
+- old overnight ladder as canonical night body
+- standalone semantic ladder as canonical night body
+- fresh_1000 lab behavior absorption as canonical night body
+- synthetic seed Real route
+- digest-only Real PASS
+
+Useful ideas from old modules are merged only as active behavior requirements: checkpoint thinking, negative rejection, no_magic_n, no auto-accept by range, no_full_scan decision-use, and behavior delta.

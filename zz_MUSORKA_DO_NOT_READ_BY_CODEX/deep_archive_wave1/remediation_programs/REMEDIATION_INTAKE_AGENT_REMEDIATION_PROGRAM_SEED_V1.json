@@ -1,0 +1,49 @@
+{
+  "seed_id": "REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1",
+  "seed_version": "1.0",
+  "status": "PROGRAM_SEED_READY",
+  "readiness_status": "READY_FOR_GENERATED_PROFILE_MATERIALIZATION",
+  "family_id": "remediation_intake_agent_v1",
+  "target_agent_kind": "remediation_intake_agent",
+  "purpose": "Define the remediation intake program seed consumed by the generated profile materialization pack.",
+  "generated_program_root": "self_build_programs/generated/remediation_intake_agent_v1",
+  "program_manifest_path": "self_build_programs/generated/remediation_intake_agent_v1/SELF_BUILD_PROGRAM_MANIFEST.json",
+  "source_family_contract_path": "specs/second_generated_program_family/remediation_intake_agent_v1/REMEDIATION_INTAKE_AGENT_V1_GENERATED_PROGRAM_FAMILY_CONTRACT.json",
+  "source_materialization_proof_path": "proofs/SECOND_GENERATED_PROGRAM_FAMILY_MATERIALIZATION_V1.json",
+  "source_live_admission_proof_path": "proofs/SECOND_GENERATED_PROGRAM_FAMILY_LIVE_ADMISSION_V1.json",
+  "candidate_profile_id": "remediation_intake_agent_v1",
+  "candidate_agent_kind": "remediation_intake_agent",
+  "candidate_package_profile": "operational_specialized",
+  "expected_first_generated_task": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+  "expected_first_generated_capability": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+  "expected_profile_materialization_pack": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+  "expected_specialized_operation": "remediation_intake_mode_v1",
+  "expected_next_alert_id": "remediation_intake_agent_intake_request",
+  "expected_escalation_status": "INTAKE_READY",
+  "required_build_move": "CREATE_SPECIALIZATION_PROFILE_AND_REGISTRY_MAPPING",
+  "recommended_program": {
+    "program_kind": "GENERATED_SELF_BUILD_PROGRAM_FAMILY_CONSUMPTION",
+    "profile_capability_id": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+    "closure_capability_id": "generated_remediation_intake_agent_v1_closure_proof_v1",
+    "seed_consumption_capability_id": "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
+    "recommended_task_sequence": [
+      {
+        "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+        "capability_id": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+        "objective": "Build and prove remediation_intake_agent_v1 from the generated remediation intake program seed."
+      },
+      {
+        "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_001",
+        "capability_id": "generated_remediation_intake_agent_v1_closure_proof_v1",
+        "objective": "Rerun the remediation intake raw-idea path and prove the prior gap closes through remediation_intake_agent_v1."
+      },
+      {
+        "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+        "capability_id": "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
+        "objective": "Prove the generated remediation intake program seed was consumed by the generated profile and closure proofs."
+      }
+    ]
+  },
+  "required_operator_move": "RUN_ACTIVE_GENERATED_REMEDIATION_PROFILE_MATERIALIZATION_PACK",
+  "operator_summary": "The second generated self-build program family is admitted; this seed provides the profile and agent-kind contract required by the active generated remediation profile materialization pack."
+}

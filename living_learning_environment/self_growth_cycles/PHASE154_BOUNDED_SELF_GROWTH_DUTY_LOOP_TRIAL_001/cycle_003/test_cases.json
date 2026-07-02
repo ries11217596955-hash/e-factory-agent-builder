@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "cycle_id": "cycle_003",
+  "cycle_number": 3,
+  "step_id": "PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1",
+  "run_id": "PHASE154_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_001",
+  "skill_id": "SUBTRACTION_BASIC_SKILL_CANDIDATE_V1",
+  "operation": "subtract",
+  "test_cases": [
+    {
+      "test_id": "subtract_9_4",
+      "expression": "9 - 4 = 5",
+      "operation": "subtract",
+      "left_operand": 9,
+      "right_operand": 4,
+      "expected_result": 5
+    },
+    {
+      "test_id": "subtract_20_7",
+      "expression": "20 - 7 = 13",
+      "operation": "subtract",
+      "left_operand": 20,
+      "right_operand": 7,
+      "expected_result": 13
+    },
+    {
+      "test_id": "subtract_56_8",
+      "expression": "56 - 8 = 48",
+      "operation": "subtract",
+      "left_operand": 56,
+      "right_operand": 8,
+      "expected_result": 48
+    }
+  ],
+  "next_allowed_step": "PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1"
+}

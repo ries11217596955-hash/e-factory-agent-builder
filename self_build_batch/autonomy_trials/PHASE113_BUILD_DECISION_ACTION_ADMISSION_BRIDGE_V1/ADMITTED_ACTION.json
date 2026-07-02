@@ -1,0 +1,28 @@
+{
+  "admitted_action_id": "ADMITTED_ACTION_BUILD_EXECUTION_ENGINE_V1",
+  "status": "PASS",
+  "action_kind": "BUILD_NEXT_CAPABILITY",
+  "source_admission_id": "ADMISSION_DECISION_ACTION_BRIDGE_V1",
+  "source_action_request_path": ".\\self_build_batch\\autonomy_trials\\PHASE112_BUILD_DECISION_TO_ACTION_ENGINE_V1\\ACTION_REQUEST.json",
+  "target_capability": "ADMITTED_ACTION_EXECUTION_ENGINE",
+  "proposed_next_step": "PHASE114_BUILD_ADMITTED_ACTION_EXECUTION_ENGINE_V1",
+  "requested_outcome": "Build the engine that can transform an admitted action into an executable self-build task/pack safely.",
+  "acceptance_criteria": [
+    "reads admitted action record",
+    "does not require manual active_task_id seed",
+    "creates executable self-build move only after admission",
+    "keeps queue safe",
+    "does not claim full autonomy"
+  ],
+  "constraints": [
+    "do not touch main",
+    "do not use Codex",
+    "do not fetch internet materials",
+    "do not install dependencies",
+    "do not execute admitted action in PHASE113"
+  ],
+  "created_by_builder_runtime": true,
+  "executed": false,
+  "autonomy_claimed": false,
+  "codex_used": false
+}

@@ -1,0 +1,36 @@
+LIVE_CONSOLE POLL=1 HEARTBEAT_STATUS=STOPPED TICK=31 HEARTBEAT_COUNT=31 EVENT_LINES=33 OBSERVER_LINES=93 BLOCKERS=0 LATEST_BLOCKER=NONE TEACHER_INBOX=1 LATEST_SUGGESTION=observer_intervention_suggestion_0001.json TEACHER_OUTBOX=0 STALE=True HEARTBEAT_AGE_SECONDS=1839 STOP_FLAG=False LAST_EVENT=daemon_stopped
+LIVE_CONSOLE EVENT_TAIL[1] event=tick tick=tick_0030 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[2] event=tick tick=tick_0031 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[3] event=daemon_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE OBSERVER_TAIL[1] event=observer_poll poll=90 heartbeat=31 stale=False
+LIVE_CONSOLE OBSERVER_TAIL[2] event=observer_poll poll=91 heartbeat=31 stale=True
+LIVE_CONSOLE OBSERVER_TAIL[3] event=observer_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE POLL=2 HEARTBEAT_STATUS=STOPPED TICK=31 HEARTBEAT_COUNT=31 EVENT_LINES=33 OBSERVER_LINES=93 BLOCKERS=0 LATEST_BLOCKER=NONE TEACHER_INBOX=1 LATEST_SUGGESTION=observer_intervention_suggestion_0001.json TEACHER_OUTBOX=0 STALE=True HEARTBEAT_AGE_SECONDS=1844 STOP_FLAG=False LAST_EVENT=daemon_stopped
+LIVE_CONSOLE EVENT_TAIL[1] event=tick tick=tick_0030 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[2] event=tick tick=tick_0031 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[3] event=daemon_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE OBSERVER_TAIL[1] event=observer_poll poll=90 heartbeat=31 stale=False
+LIVE_CONSOLE OBSERVER_TAIL[2] event=observer_poll poll=91 heartbeat=31 stale=True
+LIVE_CONSOLE OBSERVER_TAIL[3] event=observer_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE POLL=3 HEARTBEAT_STATUS=STOPPED TICK=31 HEARTBEAT_COUNT=31 EVENT_LINES=33 OBSERVER_LINES=93 BLOCKERS=0 LATEST_BLOCKER=NONE TEACHER_INBOX=1 LATEST_SUGGESTION=observer_intervention_suggestion_0001.json TEACHER_OUTBOX=0 STALE=True HEARTBEAT_AGE_SECONDS=1849 STOP_FLAG=False LAST_EVENT=daemon_stopped
+LIVE_CONSOLE EVENT_TAIL[1] event=tick tick=tick_0030 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[2] event=tick tick=tick_0031 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[3] event=daemon_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE OBSERVER_TAIL[1] event=observer_poll poll=90 heartbeat=31 stale=False
+LIVE_CONSOLE OBSERVER_TAIL[2] event=observer_poll poll=91 heartbeat=31 stale=True
+LIVE_CONSOLE OBSERVER_TAIL[3] event=observer_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE POLL=4 HEARTBEAT_STATUS=STOPPED TICK=31 HEARTBEAT_COUNT=31 EVENT_LINES=33 OBSERVER_LINES=93 BLOCKERS=0 LATEST_BLOCKER=NONE TEACHER_INBOX=1 LATEST_SUGGESTION=observer_intervention_suggestion_0001.json TEACHER_OUTBOX=0 STALE=True HEARTBEAT_AGE_SECONDS=1854 STOP_FLAG=False LAST_EVENT=daemon_stopped
+LIVE_CONSOLE EVENT_TAIL[1] event=tick tick=tick_0030 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[2] event=tick tick=tick_0031 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[3] event=daemon_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE OBSERVER_TAIL[1] event=observer_poll poll=90 heartbeat=31 stale=False
+LIVE_CONSOLE OBSERVER_TAIL[2] event=observer_poll poll=91 heartbeat=31 stale=True
+LIVE_CONSOLE OBSERVER_TAIL[3] event=observer_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE POLL=5 HEARTBEAT_STATUS=STOPPED TICK=31 HEARTBEAT_COUNT=31 EVENT_LINES=33 OBSERVER_LINES=93 BLOCKERS=0 LATEST_BLOCKER=NONE TEACHER_INBOX=1 LATEST_SUGGESTION=observer_intervention_suggestion_0001.json TEACHER_OUTBOX=0 STALE=True HEARTBEAT_AGE_SECONDS=1858 STOP_FLAG=False LAST_EVENT=daemon_stopped
+LIVE_CONSOLE EVENT_TAIL[1] event=tick tick=tick_0030 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[2] event=tick tick=tick_0031 heartbeat=NONE stale=NONE
+LIVE_CONSOLE EVENT_TAIL[3] event=daemon_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE OBSERVER_TAIL[1] event=observer_poll poll=90 heartbeat=31 stale=False
+LIVE_CONSOLE OBSERVER_TAIL[2] event=observer_poll poll=91 heartbeat=31 stale=True
+LIVE_CONSOLE OBSERVER_TAIL[3] event=observer_stopped heartbeat=NONE stale=NONE
+LIVE_CONSOLE_DONE STATUS=PASS POLLS=5 SAMPLE=runtime_sessions/live_growth_console/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_001/console_output_sample.txt RESULT=runtime_sessions/live_growth_console/PHASE160_LIVE_OBSERVER_CONSOLE_REPAIR_001/console_run_result.json

@@ -1,0 +1,17 @@
+{
+    "status":  "PASS",
+    "duty_id":  "duty_0002",
+    "policy":  "DETERMINISTIC_PHASE160_SELF_GROWTH_CURRICULUM",
+    "duty_index":  2,
+    "selected_gap":  "CAPABILITY_INVENTORY_REFRESH_GAP",
+    "next_gap":  "TEACHER_CHANNEL_READINESS_GAP",
+    "curriculum":  [
+                       "SELF_MAP_REFRESH_GAP",
+                       "CAPABILITY_INVENTORY_REFRESH_GAP",
+                       "TEACHER_CHANNEL_READINESS_GAP",
+                       "BLOCKER_CHANNEL_READINESS_GAP",
+                       "SELF_GROWTH_RESULT_SUMMARY_GAP",
+                       "NEXT_SELF_GROWTH_GOAL_SELECTION_GAP"
+                   ],
+    "created_at":  "2026-06-03T17:11:07.9473417Z"
+}

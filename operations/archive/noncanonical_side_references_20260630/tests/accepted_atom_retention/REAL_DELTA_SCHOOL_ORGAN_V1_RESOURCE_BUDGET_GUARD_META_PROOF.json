@@ -1,0 +1,29 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_resource_budget_guard_proof",
+    "status":  "PASS",
+    "proof_label":  "PROVEN_LAB_RESOURCE_BUDGET_GUARD_NOT_RUNTIME_INTELLIGENCE",
+    "runtime_ready":  false,
+    "default_max_tested":  10,
+    "approved_target_accepted":  25,
+    "blocked_count":  2,
+    "cases":  [
+                  {
+                      "id":  "target_above_default_without_allow_large_n",
+                      "expected":  "BLOCKED",
+                      "actual":  "BLOCKED",
+                      "passed":  true,
+                      "message":  "REAL_DELTA_SCHOOL_ORGAN_V1_RUN_INVALID: TARGET_ACCEPTED_EXCEEDS_DEFAULT_BUDGET target=25 max=10 require=-AllowLargeN"
+                  },
+                  {
+                      "id":  "target_above_default_with_bad_token",
+                      "expected":  "BLOCKED",
+                      "actual":  "BLOCKED",
+                      "passed":  true,
+                      "message":  "REAL_DELTA_SCHOOL_ORGAN_V1_RUN_INVALID: LARGE_N_APPROVAL_TOKEN_INVALID"
+                  }
+              ],
+    "approved_run_passed":  true,
+    "accepted_core_mutated":  false,
+    "positive_self_map_update_called":  false,
+    "protected_hash_changed_count":  0
+}

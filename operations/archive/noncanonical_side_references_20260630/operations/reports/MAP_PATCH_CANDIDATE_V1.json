@@ -1,0 +1,435 @@
+﻿{
+    "schema":  "map_patch_candidate_v1",
+    "status":  "PATCH_CANDIDATE_CREATED_NOT_APPLIED",
+    "proof_label":  "MAP_PATCH_CANDIDATE_NOT_MAP_MUTATION",
+    "created_utc":  "2026-06-30T04:34:46.4680436Z",
+    "repo":  {
+                 "root":  "C:/Users/Azerbaijan/Downloads/e-factory-agent-builder",
+                 "branch":  "thin-control",
+                 "head":  "0391667e5c056eda67f2f24a350a57eabb7350a8",
+                 "dirty_count":  23,
+                 "dirty_status":  [
+                                      " M AGENTS.md",
+                                      "?? .autonomy_test/CHATGPT_AUTONOMY_TEST.md",
+                                      "?? CODEX_CANARY_RESULT.md",
+                                      "?? CODEX_CANARY_TASK.md",
+                                      "?? CODEX_CLI_CANARY_RESULT.md",
+                                      "?? CODEX_RUNNER_V0_1_TARGET_CANARY_RESULT.md",
+                                      "?? operations/codex_handoff/USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_PLAN_V1.md",
+                                      "?? operations/codex_handoff/USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_PLAN_V1_REPORT.md",
+                                      "?? operations/codex_handoff/audit_useful_school_30k_with_comprehension_and_delta_plan_v1.ps1",
+                                      "?? operations/overnight_school/run_useful_school_30k_full_process_v1.ps1",
+                                      "?? operations/overnight_school/validate_useful_school_30k_full_process_v1.ps1",
+                                      "?? operations/overnight_school/watch_useful_school_30k_full_process_v1.ps1",
+                                      "?? operations/quarantine/20260629_interrupted_codex_impl_v1/QUARANTINE_MANIFEST.json",
+                                      "?? operations/quarantine/20260629_interrupted_codex_impl_v1/modules__invoke_useful_school_30k_with_comprehension_and_delta_v1.ps1",
+                                      "?? operations/quarantine/20260629_interrupted_codex_impl_v1/operations__codex_handoff__USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_IMPLEMENT_V1.md",
+                                      "?? operations/quarantine/20260629_interrupted_codex_impl_v1/operations__codex_handoff__USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_IMPLEMENT_V1_REPORT.md",
+                                      "?? operations/quarantine/20260629_interrupted_codex_impl_v1/operations__codex_handoff__audit_useful_school_30k_with_comprehension_and_delta_implementation_v1.ps1",
+                                      "?? operations/quarantine/20260629_interrupted_codex_impl_v1/tests__accepted_atom_retention__USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_V1_PROOF.json",
+                                      "?? operations/quarantine/20260629_interrupted_codex_impl_v1/tests__accepted_atom_retention__run_useful_school_30k_with_comprehension_and_delta_v1_proof.ps1",
+                                      "?? operations/quarantine/20260629_interrupted_codex_impl_v1/validators__validate_useful_school_30k_with_comprehension_and_delta_v1_proof.ps1",
+                                      "?? operations/reports/BUILT_CAPABILITY_AUDIT_V1.json",
+                                      "?? operations/reports/BUILT_CAPABILITY_AUDIT_V1.md",
+                                      "?? tests/accepted_atom_retention/USEFUL_SCHOOL_30K_FULL_PROCESS_V1_PROOF.json"
+                                  ]
+             },
+    "target_map_state":  [
+                             {
+                                 "path":  "CAPABILITY_ROADMAP.json",
+                                 "exists":  true,
+                                 "size":  32579,
+                                 "updated_utc":  "2026-06-25T15:09:42.1824408Z",
+                                 "json_parse":  "PASS",
+                                 "top_keys":  [
+                                                  "roadmap_id",
+                                                  "roadmap_version",
+                                                  "capabilities",
+                                                  "phase89_generated_program_admission_v1",
+                                                  "phase90_builder_executes_own_generated_self_build_program_v1",
+                                                  "phase91_route_v1_closure_and_v2_r2_activation",
+                                                  "phase92_self_build_backlog_contract_v1",
+                                                  "phase93_capability_gap_detector_v1",
+                                                  "phase94_owner_order_to_gap_map_v1",
+                                                  "phase95_self_build_program_generator_v2",
+                                                  "phase96_batch_planner_v1",
+                                                  "phase97_batch_admission_policy_v1",
+                                                  "phase98_item_level_execution_ledger_v1",
+                                                  "phase99_continue_on_failure_runtime_v1",
+                                                  "phase100_quarantine_and_blocker_registry_v1",
+                                                  "phase101_batch_proof_aggregator_v1",
+                                                  "phase102_auto_next_gap_decision_v1",
+                                                  "phase103_repair_loop_generator_v1",
+                                                  "phase104_controlled_multi_cycle_self_build_run_v1",
+                                                  "phase105_scale_trial_10_30_100_item_simulation_v1",
+                                                  "phase106_scale_trial_promotion_gate_and_route_lock_refresh_v1",
+                                                  "phase107_builder_self_pack_author_v1",
+                                                  "phase108_builder_generated_pack_admission_v1",
+                                                  "phase108_next_allowed_step",
+                                                  "phase161e_self_map_auto_refresh",
+                                                  "phase88_self_build_program_generator_v1",
+                                                  "promoted_capabilities",
+                                                  "phase165o_last_promoted_capability"
+                                              ]
+                             },
+                             {
+                                 "path":  "GENESIS_STATE.json",
+                                 "exists":  true,
+                                 "size":  22115,
+                                 "updated_utc":  "2026-06-25T15:09:42.1834405Z",
+                                 "json_parse":  "PASS",
+                                 "top_keys":  [
+                                                  "agent_id",
+                                                  "genesis_version",
+                                                  "current_phase",
+                                                  "current_capability",
+                                                  "completed_capabilities",
+                                                  "blocked_capabilities",
+                                                  "self_build_ready",
+                                                  "external_agent_build_ready",
+                                                  "first_external_agent_proof",
+                                                  "last_run_status",
+                                                  "truth_correction",
+                                                  "production_version",
+                                                  "production_factory_ready",
+                                                  "production_program_v1_executed",
+                                                  "production_hardening_v2_ready",
+                                                  "operational_agent_package_ready",
+                                                  "idea_to_agent_factory_ready",
+                                                  "idea_to_specialized_agent_factory_ready",
+                                                  "multi_profile_specialization_factory_ready",
+                                                  "specialization_gap_diagnostic_ready",
+                                                  "gap_to_profile_closure_ready",
+                                                  "gap_remediation_intake_runtime_ready",
+                                                  "runtime_gap_remediation_closure_ready",
+                                                  "inline_gap_remediation_packet_ready",
+                                                  "one_run_remediation_program_seed_ready",
+                                                  "remediation_program_seed_consumption_closure_ready",
+                                                  "remediation_seed_to_self_build_program_synthesis_ready",
+                                                  "github_action_execution_surface_ready",
+                                                  "executable_generated_program_materialization_ready",
+                                                  "generated_program_execution_recipe_contract_ready",
+                                                  "recipe_driven_generated_program_executable_materialization_ready",
+                                                  "generalized_program_live_admission_contract_ready",
+                                                  "second_generated_program_family_ready",
+                                                  "second_generated_program_family_materialization_ready",
+                                                  "generated_program_live_admission_ready",
+                                                  "second_generated_program_family_live_admission_ready",
+                                                  "material_acquisition_bootstrap_ready",
+                                                  "manual_scout_pass_import_ready",
+                                                  "material_admission_policy_ready",
+                                                  "first_material_quarantine_trial_ready",
+                                                  "operation_contract_skeleton_ready",
+                                                  "first_wrapper_operation_contracts_ready",
+                                                  "first_smoke_install_trial_ready",
+                                                  "operation_runtime_skeleton_ready",
+                                                  "self_development_decision_kernel_ready",
+                                                  "generated_program_admission_v1",
+                                                  "generated_self_build_execution_v1",
+                                                  "route_lock_v2_r2_active",
+                                                  "self_build_backlog_contract_v1",
+                                                  "capability_gap_detector_v1",
+                                                  "owner_order_to_gap_map_v1",
+                                                  "self_build_program_generator_v2",
+                                                  "batch_planner_v1",
+                                                  "batch_admission_policy_v1",
+                                                  "item_level_execution_ledger_v1",
+                                                  "self_build_delivery_conveyor_v1",
+                                                  "continue_on_failure_runtime_v1",
+                                                  "quarantine_and_blocker_registry_v1",
+                                                  "batch_proof_aggregator_v1",
+                                                  "auto_next_gap_decision_v1",
+                                                  "repair_loop_generator_v1",
+                                                  "controlled_multi_cycle_self_build_run_v1",
+                                                  "scale_trial_10_30_100_item_simulation_v1",
+                                                  "route_lock_v3_self_pack_author",
+                                                  "scale_trial_promotion_gate_and_route_lock_refresh_v1",
+                                                  "builder_self_pack_author_v1",
+                                                  "builder_generated_pack_admission_v1",
+                                                  "builder_generated_pack_admission_next_allowed_step",
+                                                  "protected_self_model_memory",
+                                                  "self_build_program_generator_v1"
+                                              ]
+                             },
+                             {
+                                 "path":  "TASK_QUEUE.json",
+                                 "exists":  true,
+                                 "size":  81488,
+                                 "updated_utc":  "2026-06-25T15:09:42.1844421Z",
+                                 "json_parse":  "PASS",
+                                 "top_keys":  [
+                                                  "queue_version",
+                                                  "active_task_id",
+                                                  "tasks"
+                                              ]
+                             },
+                             {
+                                 "path":  "packs/registry.json",
+                                 "exists":  true,
+                                 "size":  430,
+                                 "updated_utc":  "2026-06-25T15:09:42.6472939Z",
+                                 "json_parse":  "PASS",
+                                 "top_keys":  [
+                                                  "schema",
+                                                  "status",
+                                                  "original_path",
+                                                  "original_kind",
+                                                  "reason",
+                                                  "created_utc",
+                                                  "policy"
+                                              ]
+                             }
+                         ],
+    "source_audit":  "operations/reports/BUILT_CAPABILITY_AUDIT_V1.json",
+    "reason":  "Stop duplicate 100/1000/5K/30K proof-runner loops by making existing capabilities and gaps visible before new construction.",
+    "capability_entries":  [
+                               {
+                                   "capability_id":  "compact_atom_storage_and_controlled_reuse_foundation",
+                                   "evidence_status":  "PROVEN_LAB_FOUNDATION_REMOTE_SYNCED_EARLIER",
+                                   "maturity":  "L0_STORAGE_L1_RETRIEVAL_L2_CONTROLLED_USE",
+                                   "source_proofs":  [
+                                                         "COMPACT_ATOM_STORAGE_BRIDGE_MICRO_PROOF_V1",
+                                                         "COMPACT_ATOM_STORAGE_SURVIVES_CLEANUP_MICRO_PROOF_V1",
+                                                         "small_scale_durable_compact_store_integration_proof",
+                                                         "useful_builder_atoms_100",
+                                                         "useful_builder_atoms_reuse_decisions"
+                                                     ],
+                                   "proves":  [
+                                                  "compact accepted atom storage mechanics",
+                                                  "retrieval mechanics",
+                                                  "controlled decision reuse samples"
+                                              ],
+                                   "does_not_prove":  [
+                                                          "live runtime use",
+                                                          "real intelligence delta",
+                                                          "auto map update"
+                                                      ],
+                                   "recommended_map_action":  "UPSERT_OR_MERGE_EXISTING_FOUNDATION_ENTRY",
+                                   "block_duplicate_builds":  [
+                                                                  "do not build another storage/retrieval micro-runner unless regression suspected"
+                                                              ]
+                               },
+                               {
+                                   "capability_id":  "legacy_ephemeral_1000_lane",
+                                   "evidence_status":  "LEGACY_BLOCKED",
+                                   "maturity":  "FAILED_OBSOLETE",
+                                   "source_proofs":  [
+                                                         "EPHEMERAL_CANDIDATE_TO_ATOM_RUNTIME_1000_TRIAL_STATUS=FAIL"
+                                                     ],
+                                   "proves":  [
+                                                  "old lane must not be used for durable accepted-memory claims"
+                                              ],
+                                   "does_not_prove":  [
+                                                          "accepted storage",
+                                                          "receipt discipline",
+                                                          "durable retention"
+                                                      ],
+                                   "recommended_map_action":  "MARK_BLOCKED_LEGACY_DO_NOT_ROUTE",
+                                   "block_duplicate_builds":  [
+                                                                  "do not repeat 1000 candidate test on this lane"
+                                                              ]
+                               },
+                               {
+                                   "capability_id":  "useful_knowledge_ladder_5000",
+                                   "evidence_status":  "PROVEN_LAB",
+                                   "maturity":  "SOURCE_LADDER_AND_ACCEPTANCE_GATE_HARNESS",
+                                   "source_proofs":  [
+                                                         "tests/accepted_atom_retention/USEFUL_KNOWLEDGE_LADDER_5000_PROOF_V1.json"
+                                                     ],
+                                   "proves":  [
+                                                  "5500 candidates to 5000 accepted",
+                                                  "10 domains",
+                                                  "rejection classes",
+                                                  "retrieval PASS",
+                                                  "decision reuse sample PASS"
+                                              ],
+                                   "does_not_prove":  [
+                                                          "comprehension exam",
+                                                          "active competence update",
+                                                          "real before/after intelligence",
+                                                          "live use"
+                                                      ],
+                                   "recommended_map_action":  "UPSERT_CAPABILITY_AS_LAB_HARNESS_NOT_ORGAN",
+                                   "block_duplicate_builds":  [
+                                                                  "do not build another 5K ladder proof until this entry is represented in map"
+                                                              ]
+                               },
+                               {
+                                   "capability_id":  "useful_curriculum_school_supervisor_v1",
+                                   "evidence_status":  "PROVEN_LAB",
+                                   "maturity":  "SCHOOL_SUPERVISOR_HARNESS",
+                                   "source_proofs":  [
+                                                         "tests/accepted_atom_retention/USEFUL_CURRICULUM_SCHOOL_SUPERVISOR_V1_PROOF.json"
+                                                     ],
+                                   "proves":  [
+                                                  "3 cycles",
+                                                  "30 subchunks",
+                                                  "3000 accepted",
+                                                  "resume proof PASS",
+                                                  "stop-on-fail guard PASS",
+                                                  "retrieval PASS",
+                                                  "decision reuse PASS"
+                                              ],
+                                   "does_not_prove":  [
+                                                          "real assimilation",
+                                                          "active state memory",
+                                                          "non-synthetic exam",
+                                                          "live readiness"
+                                                      ],
+                                   "recommended_map_action":  "UPSERT_CAPABILITY_AS_LAB_HARNESS_NOT_ORGAN",
+                                   "block_duplicate_builds":  [
+                                                                  "do not build another school supervisor; reuse this harness"
+                                                              ]
+                               },
+                               {
+                                   "capability_id":  "useful_school_30k_full_process_v1",
+                                   "evidence_status":  "PROVEN_LAB_MECHANICS_ONLY",
+                                   "maturity":  "COUNT_SCALE_PROCESS_HARNESS_NOT_LEARNING",
+                                   "source_proofs":  [
+                                                         "tests/accepted_atom_retention/USEFUL_SCHOOL_30K_FULL_PROCESS_V1_PROOF.json"
+                                                     ],
+                                   "proves":  [
+                                                  "30000-line compact store can be produced outside repo",
+                                                  "3000 rejects",
+                                                  "6 chunk/300 subchunk shape",
+                                                  "bounded repo proof summary",
+                                                  "validator count/reuse-shape PASS"
+                                              ],
+                                   "does_not_prove":  [
+                                                          "agent became smarter",
+                                                          "real before/after exam",
+                                                          "active runtime uses atom memory",
+                                                          "live readiness"
+                                                      ],
+                                   "recommended_map_action":  "ADD_AS_HARNESS_AND_EXPLICITLY_DOWNGRADE_REAL_LEARNING_CLAIM",
+                                   "block_duplicate_builds":  [
+                                                                  "do not run another 30K scale proof as next step"
+                                                              ]
+                               },
+                               {
+                                   "capability_id":  "interrupted_codex_impl_v1_quarantine",
+                                   "evidence_status":  "QUARANTINED_CODEX_DRAFT_NOT_ACCEPTED",
+                                   "maturity":  "SAFETY_HYGIENE",
+                                   "source_proofs":  [
+                                                         "operations/quarantine/20260629_interrupted_codex_impl_v1/QUARANTINE_MANIFEST.json"
+                                                     ],
+                                   "proves":  [
+                                                  "interrupted Codex draft was isolated"
+                                              ],
+                                   "does_not_prove":  [
+                                                          "draft correctness",
+                                                          "implementation acceptance"
+                                                      ],
+                                   "recommended_map_action":  "KEEP_OUT_OF_ACTIVE_CAPABILITY_MAP_OR_MARK_QUARANTINE_ONLY",
+                                   "block_duplicate_builds":  [
+                                                                  "do not inspect/resurrect unless Owner explicitly decides"
+                                                              ]
+                               },
+                               {
+                                   "capability_id":  "active_memory_runtime_use_and_real_delta_exam",
+                                   "evidence_status":  "NOT_PROVEN",
+                                   "maturity":  "MISSING_CORE_GAP",
+                                   "source_proofs":  [
+
+                                                     ],
+                                   "proves":  [
+
+                                              ],
+                                   "does_not_prove":  [
+                                                          "main target remains open: Builder remembers and uses learned material in behavior"
+                                                      ],
+                                   "recommended_map_action":  "ADD_AS_EXPLICIT_NEXT_GAP_WITH_NO_RUNTIME_READY",
+                                   "block_duplicate_builds":  [
+                                                                  "blocks further 100/1000/5K/30K count-only runners"
+                                                              ]
+                               }
+                           ],
+    "proposed_patch_operations":  [
+                                      {
+                                          "op":  "upsert_capability_or_gap_candidate",
+                                          "target":  "existing body/capability map, exact file/anchor requires separate safe patch after Owner review",
+                                          "capability_id":  "compact_atom_storage_and_controlled_reuse_foundation",
+                                          "evidence_status":  "PROVEN_LAB_FOUNDATION_REMOTE_SYNCED_EARLIER",
+                                          "maturity":  "L0_STORAGE_L1_RETRIEVAL_L2_CONTROLLED_USE",
+                                          "recommended_map_action":  "UPSERT_OR_MERGE_EXISTING_FOUNDATION_ENTRY",
+                                          "no_runtime_ready_promotion":  true,
+                                          "no_live_claim":  true,
+                                          "no_commit_push":  true
+                                      },
+                                      {
+                                          "op":  "upsert_capability_or_gap_candidate",
+                                          "target":  "existing body/capability map, exact file/anchor requires separate safe patch after Owner review",
+                                          "capability_id":  "legacy_ephemeral_1000_lane",
+                                          "evidence_status":  "LEGACY_BLOCKED",
+                                          "maturity":  "FAILED_OBSOLETE",
+                                          "recommended_map_action":  "MARK_BLOCKED_LEGACY_DO_NOT_ROUTE",
+                                          "no_runtime_ready_promotion":  true,
+                                          "no_live_claim":  true,
+                                          "no_commit_push":  true
+                                      },
+                                      {
+                                          "op":  "upsert_capability_or_gap_candidate",
+                                          "target":  "existing body/capability map, exact file/anchor requires separate safe patch after Owner review",
+                                          "capability_id":  "useful_knowledge_ladder_5000",
+                                          "evidence_status":  "PROVEN_LAB",
+                                          "maturity":  "SOURCE_LADDER_AND_ACCEPTANCE_GATE_HARNESS",
+                                          "recommended_map_action":  "UPSERT_CAPABILITY_AS_LAB_HARNESS_NOT_ORGAN",
+                                          "no_runtime_ready_promotion":  true,
+                                          "no_live_claim":  true,
+                                          "no_commit_push":  true
+                                      },
+                                      {
+                                          "op":  "upsert_capability_or_gap_candidate",
+                                          "target":  "existing body/capability map, exact file/anchor requires separate safe patch after Owner review",
+                                          "capability_id":  "useful_curriculum_school_supervisor_v1",
+                                          "evidence_status":  "PROVEN_LAB",
+                                          "maturity":  "SCHOOL_SUPERVISOR_HARNESS",
+                                          "recommended_map_action":  "UPSERT_CAPABILITY_AS_LAB_HARNESS_NOT_ORGAN",
+                                          "no_runtime_ready_promotion":  true,
+                                          "no_live_claim":  true,
+                                          "no_commit_push":  true
+                                      },
+                                      {
+                                          "op":  "upsert_capability_or_gap_candidate",
+                                          "target":  "existing body/capability map, exact file/anchor requires separate safe patch after Owner review",
+                                          "capability_id":  "useful_school_30k_full_process_v1",
+                                          "evidence_status":  "PROVEN_LAB_MECHANICS_ONLY",
+                                          "maturity":  "COUNT_SCALE_PROCESS_HARNESS_NOT_LEARNING",
+                                          "recommended_map_action":  "ADD_AS_HARNESS_AND_EXPLICITLY_DOWNGRADE_REAL_LEARNING_CLAIM",
+                                          "no_runtime_ready_promotion":  true,
+                                          "no_live_claim":  true,
+                                          "no_commit_push":  true
+                                      },
+                                      {
+                                          "op":  "upsert_capability_or_gap_candidate",
+                                          "target":  "existing body/capability map, exact file/anchor requires separate safe patch after Owner review",
+                                          "capability_id":  "interrupted_codex_impl_v1_quarantine",
+                                          "evidence_status":  "QUARANTINED_CODEX_DRAFT_NOT_ACCEPTED",
+                                          "maturity":  "SAFETY_HYGIENE",
+                                          "recommended_map_action":  "KEEP_OUT_OF_ACTIVE_CAPABILITY_MAP_OR_MARK_QUARANTINE_ONLY",
+                                          "no_runtime_ready_promotion":  true,
+                                          "no_live_claim":  true,
+                                          "no_commit_push":  true
+                                      },
+                                      {
+                                          "op":  "upsert_capability_or_gap_candidate",
+                                          "target":  "existing body/capability map, exact file/anchor requires separate safe patch after Owner review",
+                                          "capability_id":  "active_memory_runtime_use_and_real_delta_exam",
+                                          "evidence_status":  "NOT_PROVEN",
+                                          "maturity":  "MISSING_CORE_GAP",
+                                          "recommended_map_action":  "ADD_AS_EXPLICIT_NEXT_GAP_WITH_NO_RUNTIME_READY",
+                                          "no_runtime_ready_promotion":  true,
+                                          "no_live_claim":  true,
+                                          "no_commit_push":  true
+                                      }
+                                  ],
+    "acceptance_rules":  [
+                             "must not claim runtime_ready",
+                             "must not claim PROVEN_LIVE",
+                             "must not convert lab harness into mature organ",
+                             "must preserve quarantined Codex draft as not accepted",
+                             "must mark active_memory_runtime_use_and_real_delta_exam as NOT_PROVEN"
+                         ],
+    "next_after_owner_review":  "apply minimal patch to existing map file or create canonical map if missing; then validate map can answer what is built and what must not be rebuilt",
+    "runtime_ready":  false
+}

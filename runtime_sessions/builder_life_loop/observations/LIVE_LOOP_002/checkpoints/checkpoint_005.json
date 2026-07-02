@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checkpoint_id": "checkpoint_005",
+  "session_id": "LIVE_LOOP_002",
+  "run_id": "PHASE142_BUILDER_NEXT_GAP_SELECTOR_OBSERVABLE_LIFE_LOOP_001",
+  "cycle": 5,
+  "completed_cycles": 5,
+  "task_types_completed": [
+    "READ_CURRENT_STATE",
+    "READ_NEXT_ACTION",
+    "FIND_LAST_ACCEPTED_PROOF",
+    "COMPARE_NEXT_STEP",
+    "WRITE_LEARNING_NOTE"
+  ],
+  "heartbeat_path": "runtime_sessions/builder_life_loop/current/heartbeat.json",
+  "life_loop_state_path": "runtime_sessions/builder_life_loop/current/life_loop_state.json",
+  "observation_ledger_path": "runtime_sessions/builder_life_loop/current/observation_ledger.jsonl",
+  "decision_trace_path": "runtime_sessions/builder_life_loop/current/decision_trace.jsonl",
+  "created_at": "2026-06-02T09:56:14.2096413Z",
+  "next_allowed_step": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_V1"
+}

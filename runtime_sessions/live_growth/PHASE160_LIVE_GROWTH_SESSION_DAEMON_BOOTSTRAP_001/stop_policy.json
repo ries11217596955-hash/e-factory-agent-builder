@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "policy_id": "PHASE160_STOP_POLICY",
+  "step_id": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1",
+  "run_id": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  "stop_flag_supported": true,
+  "stop_flag_path": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001/stop.flag",
+  "duration_limit_supported": true,
+  "smoke_duration_seconds": 90,
+  "safe_stop_after_duration": true,
+  "daemon_can_run_until_stop_flag": true,
+  "uncontrolled_infinite_process_allowed": false
+}

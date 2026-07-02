@@ -1,0 +1,25 @@
+{
+  "report_id": "REMEDIATION_INTAKE_AGENT_V1_SECOND_FAMILY",
+  "run_id": "SECOND_GENERATED_PROGRAM_FAMILY_PROOF_V1_001__PACK_1",
+  "status": "PASS",
+  "timestamp": "2026-05-20T17:08:53.2697800+04:00",
+  "family_id": "remediation_intake_agent_v1",
+  "distinct_from_family_id": "monitoring_agent_v1",
+  "source_contract_path": ".\\specs\\second_generated_program_family\\remediation_intake_agent_v1\\REMEDIATION_INTAKE_AGENT_V1_GENERATED_PROGRAM_FAMILY_CONTRACT.json",
+  "compatibility_target": "generalized_generated_program_pipeline_v1",
+  "second_family_readiness": "PASS",
+  "target_agent_kind": "remediation_intake_agent",
+  "growth_purpose": "Grow Builder toward formal intake, normalization, and validation of remediation requests before they become generated self-build program seeds.",
+  "planned_pack_count": 3,
+  "planned_capability_count": 3,
+  "planned_task_count": 3,
+  "semantic_roles": [
+    "PROFILE_MATERIALIZATION",
+    "SPECIALIZED_CLOSURE_PROOF",
+    "SEED_CONSUMPTION_PROOF"
+  ],
+  "materialized_program_exists": false,
+  "live_admission_attempted": false,
+  "second_family_pack_execution_attempted": false,
+  "next_required_capability": "second_generated_program_family_materialization_v1"
+}

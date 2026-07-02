@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "engine_name": "OPERATION_CONTRACT_AWARE_SELF_MODEL_ADVANCE_V1",
+  "run_id": "PHASE129_OPERATION_CONTRACT_AWARE_SELF_MODEL_ADVANCE_001",
+  "self_model_path": "self_model/BUILDER_SELF_MODEL.json",
+  "self_model_updated": true,
+  "closed_need": "NEED_SELF_BUILD_OPERATION_CONTRACT",
+  "current_detected_need": "NEED_SELF_BUILD_OPERATION_READINESS_GATE",
+  "proposed_next_step": "PHASE130_BUILD_SELF_BUILD_OPERATION_READINESS_GATE_V1",
+  "reason": "PHASE127 built the self-build operation contract and PHASE128 proved its smoke path. Self-model can close the contract need and move to readiness gate.",
+  "queue_mutated": false,
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

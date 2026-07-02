@@ -1,0 +1,29 @@
+{
+  "report_id": "MONITORING_AGENT_V1_ADMISSION_READINESS",
+  "run_id": "GENERATED_PROGRAM_ADMISSION_READINESS_GATE_V1_001__PACK_1",
+  "status": "PASS",
+  "evaluated_program_manifest": ".\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "admission_decision": "ADMISSION_BLOCKED_NON_EXECUTABLE_PACKS",
+  "executable_pack_count": 0,
+  "blocked_pack_count": 3,
+  "blocked_packs": [
+    {
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1",
+      "expected_entry_script": "APPLY.ps1",
+      "missing_path": "D:\\a\\e-factory-agent-builder\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\packs\\GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1\\APPLY.ps1"
+    },
+    {
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+      "expected_entry_script": "APPLY.ps1",
+      "missing_path": "D:\\a\\e-factory-agent-builder\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\packs\\GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1\\APPLY.ps1"
+    },
+    {
+      "pack_id": "GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+      "expected_entry_script": "APPLY.ps1",
+      "missing_path": "D:\\a\\e-factory-agent-builder\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\packs\\GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1\\APPLY.ps1"
+    }
+  ],
+  "manifest_path": "D:\\a\\e-factory-agent-builder\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "program_root": "D:\\a\\e-factory-agent-builder\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1",
+  "next_required_capability": "executable_generated_program_materialization_v1"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "engine_name": "SELF_BUILD_OPERATION_READINESS_GATE_BUILDER_V1",
+  "run_id": "PHASE130_SELF_BUILD_OPERATION_READINESS_GATE_001",
+  "gate_created": true,
+  "gate_path": "self_control/SELF_BUILD_OPERATION_READINESS_GATE.json",
+  "decision": "READY_FOR_CONTRACT_GOVERNED_SELF_BUILD_OPERATION_TRIAL",
+  "proposed_next_step": "PHASE131_RUN_CONTRACT_GOVERNED_SELF_BUILD_OPERATION_TRIAL_V1",
+  "reason": "Builder has self-model-first runtime, controller-governed trial, operation contract, contract smoke, and operation-contract-aware self-model. Ready for one bounded contract-governed self-build operation trial.",
+  "queue_mutated": false,
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

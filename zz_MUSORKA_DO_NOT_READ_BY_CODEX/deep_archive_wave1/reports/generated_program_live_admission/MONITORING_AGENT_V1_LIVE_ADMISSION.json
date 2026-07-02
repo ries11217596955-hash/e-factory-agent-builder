@@ -1,0 +1,26 @@
+{
+  "report_id": "MONITORING_AGENT_V1_LIVE_ADMISSION",
+  "run_id": "GENERATED_PROGRAM_LIVE_ADMISSION_PROOF_V1_001__PACK_1",
+  "status": "PASS",
+  "admitted_program_manifest": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "admitted_registry_entry_count": 3,
+  "admitted_capability_count": 3,
+  "admitted_task_count": 3,
+  "activated_task_id": "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+  "activated_capability_id": "generated_monitoring_agent_v1_profile_materialization_v1",
+  "manifest_admission_status_after": "ADMITTED_TO_LIVE_EXECUTION",
+  "selected_live_pack_id": "GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+  "selected_live_entry_script": "self_build_programs/generated/monitoring_agent_v1/packs/GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1/APPLY.ps1",
+  "selected_live_entry_script_exists": true,
+  "generated_pack_execution_performed": false,
+  "generated_capability_statuses": {
+    "generated_monitoring_agent_v1_closure_proof_v1": "QUEUED",
+    "generated_monitoring_agent_v1_seed_consumption_proof_v1": "QUEUED",
+    "generated_monitoring_agent_v1_profile_materialization_v1": "ACTIVE"
+  },
+  "generated_task_statuses": {
+    "TASK_GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001": "QUEUED",
+    "TASK_GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_001": "ACTIVE",
+    "TASK_GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1_001": "QUEUED"
+  }
+}

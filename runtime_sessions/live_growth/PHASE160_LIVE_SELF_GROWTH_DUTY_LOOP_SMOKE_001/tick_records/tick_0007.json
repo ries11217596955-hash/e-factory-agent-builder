@@ -1,0 +1,21 @@
+{
+    "status":  "PASS",
+    "tick_id":  "tick_0007",
+    "tick_number":  7,
+    "session_root":  "runtime_sessions/live_growth/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_SMOKE_001",
+    "heartbeat_written":  true,
+    "current_state_written":  true,
+    "teacher_outbox_scanned":  true,
+    "accepted_interventions_supported":  true,
+    "rejected_interventions_supported":  true,
+    "blocker_queue_supported":  true,
+    "self_growth_enabled":  true,
+    "self_growth_duty_count":  3,
+    "last_self_growth_duty_id":  "duty_0003",
+    "last_self_growth_gap":  "TEACHER_CHANNEL_READINESS_GAP",
+    "last_self_growth_status":  "PASS",
+    "next_self_growth_gap":  "BLOCKER_CHANNEL_READINESS_GAP",
+    "duration_based_session":  true,
+    "fixed_tick_batch_mode":  false,
+    "occurred_at":  "2026-06-03T17:11:38.9104691Z"
+}

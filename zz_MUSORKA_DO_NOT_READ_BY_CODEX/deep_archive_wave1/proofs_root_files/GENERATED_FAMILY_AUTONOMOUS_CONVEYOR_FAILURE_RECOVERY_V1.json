@@ -1,0 +1,40 @@
+{
+  "run_id": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1_001__PACK_1",
+  "dry_run": false,
+  "active_task_id_observed": "TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001",
+  "effective_conveyor_task_id": "TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001",
+  "excluded_task_ids": [
+    "TASK_GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1_001"
+  ],
+  "conveyor_status": "HALTED_ON_PACK_FAILURE",
+  "packs_executed": 1,
+  "generated_pack_execution_attempted": true,
+  "selected_pack": null,
+  "per_pack_results": [
+    {
+      "pack_id": "GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1",
+      "task_id": "TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001",
+      "status": "FAIL",
+      "error": "CONTROLLED_GENERATED_CONVEYOR_FAILURE_TRIAL",
+      "output_line_count": 0
+    }
+  ],
+  "roadmap_capability_count": 75,
+  "registry_pack_count": 71,
+  "queue_task_count": 75,
+  "genesis_phase": "GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_PHASE_1",
+  "genesis_capability": "generated_conveyor_failure_trial_family_v1_failure_pack_v1",
+  "proof_id": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1",
+  "status": "PASS",
+  "raw_conveyor_status": "FAIL",
+  "expected_failure_observed": true,
+  "recovered_queue_state": "NONE",
+  "family_id": "conveyor_failure_trial_family_v1",
+  "failed_generated_task_id": "TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001",
+  "failed_generated_capability_id": "generated_conveyor_failure_trial_family_v1_failure_pack_v1",
+  "failed_generated_proof_path": ".\\proofs\\GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1.json",
+  "failed_generated_report_path": ".\\reports\\generated_family_autonomous_conveyor\\GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_REPORT.json",
+  "next_required_capability": "external_agent_production_program_test_v1",
+  "conclusion": "The conveyor detected a controlled generated-pack failure, did not fake PASS, preserved failure evidence, and returned the Builder queue to NONE.",
+  "report_path": ".\\reports\\generated_family_autonomous_conveyor\\GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1_REPORT.json"
+}

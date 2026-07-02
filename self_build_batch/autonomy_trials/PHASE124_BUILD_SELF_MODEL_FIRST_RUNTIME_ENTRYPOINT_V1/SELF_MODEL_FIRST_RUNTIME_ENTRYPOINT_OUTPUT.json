@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "engine_name": "SELF_MODEL_FIRST_RUNTIME_ENTRYPOINT_V1",
+  "run_id": "PHASE124_SELF_MODEL_FIRST_RUNTIME_ENTRYPOINT_SELF_TEST_001",
+  "decision_id": "ENTRYPOINT_USE_SELF_MODEL_CURRENT_NEED_V1",
+  "entry_mode": "SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_READY",
+  "current_need": "NEED_CONTROLLER_GOVERNED_SELF_BUILD_TRIAL",
+  "proposed_next_step": "PHASE125_RUN_SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_V1",
+  "used_self_model_first": true,
+  "replayed_controller_build_path": false,
+  "queue_mutated": false,
+  "reason": "Self-model already records the current need. Runtime should enter through self-model first and avoid replaying prior organ-build path.",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

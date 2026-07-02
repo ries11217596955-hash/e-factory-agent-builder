@@ -1,0 +1,11 @@
+{
+    "schema":  "school_lesson_digest_manifest_v1",
+    "status":  "SCHOOL_LESSONS_DIGESTED_AND_ACTIVE",
+    "runtime_ready":  false,
+    "lesson_batch_id":  "school_lesson_digest_v1",
+    "active_lesson_index_path":  "operations/school/lessons/store/school_lesson_digest_v1/active_lesson_index.json",
+    "lesson_count":  6,
+    "molecule_count":  3,
+    "source":  "Owner strategic lessons from current school/promotion discussion",
+    "boundary":  "Compact active lesson memory. Does not replace promoted 1000 atom store and does not set runtime_ready true."
+}

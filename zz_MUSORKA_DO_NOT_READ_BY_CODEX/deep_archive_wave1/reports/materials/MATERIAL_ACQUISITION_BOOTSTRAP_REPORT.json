@@ -1,0 +1,119 @@
+{
+  "report_id": "MATERIAL_ACQUISITION_BOOTSTRAP_REPORT",
+  "phase": "PHASE_79",
+  "capability_id": "material_acquisition_bootstrap_v1",
+  "status": "PASS",
+  "generated_at": "2026-05-28T19:06:58.5514014Z",
+  "catalog_path": "materials/MATERIAL_CATALOG.json",
+  "schema_paths": [
+    {
+      "path": "contracts/materials/material_request.schema.json",
+      "kind": "schema",
+      "exists": true
+    },
+    {
+      "path": "contracts/materials/material_candidate.schema.json",
+      "kind": "schema",
+      "exists": true
+    },
+    {
+      "path": "contracts/materials/material_catalog.schema.json",
+      "kind": "schema",
+      "exists": true
+    },
+    {
+      "path": "contracts/materials/manual_scout_pass.schema.json",
+      "kind": "schema",
+      "exists": true
+    }
+  ],
+  "material_directories": [
+    {
+      "path": "materials/inbox",
+      "kind": "directory",
+      "exists": true
+    },
+    {
+      "path": "materials/catalog",
+      "kind": "directory",
+      "exists": true
+    },
+    {
+      "path": "materials/quarantine",
+      "kind": "directory",
+      "exists": true
+    },
+    {
+      "path": "materials/trusted",
+      "kind": "directory",
+      "exists": true
+    },
+    {
+      "path": "materials/rejected",
+      "kind": "directory",
+      "exists": true
+    },
+    {
+      "path": "materials/reference_only",
+      "kind": "directory",
+      "exists": true
+    }
+  ],
+  "catalog_entry_count": 0,
+  "counts_by_status": {
+    "DISCOVERED": 0,
+    "CANDIDATE": 0,
+    "QUARANTINED": 0,
+    "WRAPPED": 0,
+    "TESTED": 0,
+    "TRUSTED": 0,
+    "REJECTED": 0,
+    "REFERENCE_ONLY": 0,
+    "OWNER_APPROVAL_REQUIRED": 0
+  },
+  "counts_by_type": {
+    "CLI": 0,
+    "LIBRARY": 0,
+    "TEMPLATE": 0,
+    "WORKFLOW": 0,
+    "DOCKER_IMAGE": 0,
+    "POLICY": 0,
+    "SCHEMA": 0,
+    "EXAMPLE": 0,
+    "RESEARCH_REFERENCE": 0,
+    "SERVICE": 0
+  },
+  "counts_by_usage_mode": {
+    "USE_AS_TOOL": 0,
+    "WRAP_ONLY": 0,
+    "COPY_WITH_ATTRIBUTION": 0,
+    "ADAPT": 0,
+    "REIMPLEMENT": 0,
+    "REFERENCE_ONLY": 0,
+    "ASK_PERMISSION": 0,
+    "REJECT": 0
+  },
+  "counts_by_risk_level": {
+    "LOW": 0,
+    "MEDIUM": 0,
+    "HIGH": 0,
+    "FORBIDDEN": 0,
+    "UNKNOWN": 0
+  },
+  "policy_summary": {
+    "no_trusted_materials_in_phase79": true,
+    "trusted_entry_count": 0,
+    "no_external_tools_required": true,
+    "full_contract_first": true,
+    "phased_execution_second": true
+  },
+  "missing_required_paths": [],
+  "next_allowed_step": "STEP4_MANUAL_SCOUT_PASS_001",
+  "cut_list": [
+    "Do not install external tools in PHASE79.",
+    "Do not discover or scout materials in PHASE79.",
+    "Do not mark materials TRUSTED in PHASE79.",
+    "Do not create external agents in PHASE79.",
+    "Do not modify PHASE78 files in PHASE79."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "proof_id": "RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1",
+  "run_id": "RECIPE_DRIVEN_GENERATED_PROGRAM_EXECUTABLE_MATERIALIZATION_V1_001__PACK_1",
+  "status": "PASS",
+  "source_program_manifest": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "rendered_apply_script_count": 3,
+  "supported_recipe_kinds": [
+    "PROFILE_MATERIALIZATION_RECIPE_V1",
+    "SEED_CONSUMPTION_PROOF_RECIPE_V1",
+    "SPECIALIZED_CLOSURE_PROOF_RECIPE_V1"
+  ],
+  "admission_readiness_after_recipe_rendering": "ADMISSION_READY",
+  "report_path": ".\\reports\\recipe_driven_generated_program_materialization\\MONITORING_AGENT_V1_RECIPE_RENDERING_PARITY.json",
+  "next_required_capability": "generalized_generated_program_live_admission_contract_v1",
+  "conclusion": "Builder can now render executable generated self-build pack entry scripts from program-owned execution recipes rather than from fixture-owned hardcoded builder semantics."
+}

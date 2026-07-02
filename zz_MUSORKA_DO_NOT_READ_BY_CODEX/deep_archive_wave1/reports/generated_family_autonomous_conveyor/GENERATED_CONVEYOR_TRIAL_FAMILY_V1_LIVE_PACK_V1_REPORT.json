@@ -1,0 +1,12 @@
+{
+  "report_id": "GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1_REPORT",
+  "run_id": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_LIVE_TRIAL_V1_001__PACK_1",
+  "status": "PASS",
+  "task_id": "TASK_GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1_001",
+  "capability_id": "generated_conveyor_trial_family_v1_live_pack_v1",
+  "semantic_role": "CONVEYOR_LIVE_TRIAL_PROOF",
+  "executed_by": "generated_family_autonomous_conveyor",
+  "active_task_before": "TASK_GENERATED_CONVEYOR_TRIAL_FAMILY_V1_LIVE_PACK_V1_001",
+  "active_task_after": "NONE",
+  "conclusion": "Generated conveyor trial pack executed through Invoke-GeneratedFamilyAutonomousConveyor live path."
+}

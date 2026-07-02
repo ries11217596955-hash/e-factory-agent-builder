@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "policy_id": "PHASE159_STOP_POLICY",
+  "step_id": "PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1",
+  "run_id": "PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001",
+  "safe_stop": true,
+  "stop_flag_supported": true,
+  "stop_flag_path": "runtime_sessions/newborn_reflex/PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001/STOP.flag",
+  "stop_reasons": [
+    "teacher_stop_requested",
+    "validator_fail_root_cause_unclear",
+    "scope_boundary_detected",
+    "forbidden_mutation_detected",
+    "live_daemon_bootstrap_not_allowed_in_phase159"
+  ],
+  "live_daemon_started": false,
+  "next_allowed_step": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1"
+}

@@ -1,0 +1,10 @@
+{
+  "proof_id": "APPLIED_AGENT_SPEC_ARCHITECT_BUILD_001",
+  "status": "PASS",
+  "agent_id": "agent_spec_architect",
+  "spec_path": ".\\specs\\applied_agents\\agent_spec_architect\\AGENT_SPEC_ARCHITECT_SPEC.json",
+  "generated_package_root": ".\\generated_agents\\agent_spec_architect",
+  "build_report_path": ".\\runs\\BUILD_APPLIED_AGENT_SPEC_ARCHITECT_001\\BUILD_EXTERNAL_AGENT_MODE_V2\\BUILD_EXTERNAL_AGENT_REPORT.json",
+  "operational_result_path": ".\\runs\\BUILD_APPLIED_AGENT_SPEC_ARCHITECT_001\\BUILD_EXTERNAL_AGENT_MODE_V2\\operational_validation\\OPERATIONAL_RESULT.json",
+  "note": "This proves Agent Builder v2 can build a real applied operational baseline agent package from a production spec."
+}

@@ -1,0 +1,23 @@
+{
+  "execution_checklist": [
+    "Confirm the current incident scope and affected environment.",
+    "Check worker queue depth and last successful job timestamp.",
+    "Restart the worker service using the approved operational command.",
+    "Verify queue depth decreases and no new critical errors appear.",
+    "Record evidence and hand off unresolved symptoms to engineering."
+  ],
+  "risk_flags": [
+    "Constraint: Do not change production systems.",
+    "Constraint: Do not delete queued jobs.",
+    "Constraint: Collect evidence before and after restart."
+  ],
+  "required_evidence": [
+    "Original runbook title and step list",
+    "Task or incident description",
+    "Environment where the runbook is applied",
+    "Before and after observations for each executed step",
+    "Final operator note with unresolved symptoms"
+  ],
+  "next_operator_action": "Execute the checklist in staging, collect evidence for each step, and escalate if validation does not pass.",
+  "validation_status": "PASS"
+}

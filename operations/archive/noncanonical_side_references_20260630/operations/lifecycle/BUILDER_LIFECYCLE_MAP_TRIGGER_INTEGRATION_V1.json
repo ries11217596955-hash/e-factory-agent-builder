@@ -1,0 +1,35 @@
+﻿{
+    "schema":  "builder_lifecycle_map_trigger_integration_v1",
+    "status":  "CONTRACT_CREATED_WITH_MINIMAL_POST_CHANGE_WRAPPER",
+    "proof_label":  "LAB_LIFECYCLE_WRAPPER_NOT_OS_WATCHER_NOT_GIT_HOOK",
+    "created_utc":  "2026-06-30T11:17:02.3790058Z",
+    "purpose":  "Define one Builder lifecycle point after accepted file/proof/module changes that invokes self-map trigger automatically as part of the Builder workflow, without making the map a planner.",
+    "integration_point":  "post_change_after_validator_or_safe_mutation",
+    "required_order":  [
+                           "restore_git_reality",
+                           "run_change_validator_or_acceptance_check",
+                           "invoke_self_map_auto_update_trigger",
+                           "validate_self_map_state",
+                           "write_lifecycle_proof",
+                           "return_to_parent"
+                       ],
+    "map_role_boundary":  [
+                              "map is mirror",
+                              "map is not planner",
+                              "map returns facts/warnings/open gaps only"
+                          ],
+    "forbidden":  [
+                      "OS watcher as primary brain",
+                      "map selecting next action",
+                      "protected map mutation by lifecycle wrapper",
+                      "runtime_ready promotion",
+                      "PROVEN_LIVE claim from lab trigger"
+                  ],
+    "not_yet_proven":  [
+                           "Codex endpoint automatically calls this wrapper",
+                           "Git hook installed",
+                           "OS FileSystemWatcher installed",
+                           "live runtime integration"
+                       ],
+    "runtime_ready":  false
+}

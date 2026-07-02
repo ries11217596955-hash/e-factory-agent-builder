@@ -1,0 +1,14 @@
+{
+  "proof_id": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1",
+  "run_id": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_003__PACK_1",
+  "status": "PASS",
+  "produced_agent_id": "remediation_intake_operator_agent_v1",
+  "produced_agent_path": "generated_agents/remediation_intake_operator_agent_v1",
+  "required_files_present": true,
+  "validator_status": "PASS",
+  "runtime_example_status": "PASS",
+  "active_task_after": "NONE",
+  "next_recommended_track": "external_agent_production_test_2",
+  "runtime_output_path": "generated_agents/remediation_intake_operator_agent_v1/OUTPUT_EXAMPLE_RUNTIME.json",
+  "report_path": "reports/external_agent_production/EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_REPORT.json"
+}

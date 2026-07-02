@@ -1,0 +1,18 @@
+{
+  "proof_id": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+  "run_id": "GENERATED_REMEDIATION_SEED_CONSUMPTION_PROOF_V1_001__PACK_1",
+  "status": "PASS",
+  "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_001",
+  "capability_id": "generated_remediation_intake_agent_v1_seed_consumption_proof_v1",
+  "expected_gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1",
+  "semantic_role": "SEED_CONSUMPTION_PROOF",
+  "program_seed_path": ".\\remediation_programs\\REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+  "seed_profile_id": "remediation_intake_agent_v1",
+  "seed_agent_kind": "remediation_intake_agent",
+  "profile_proof_path": ".\\proofs\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1.json",
+  "profile_selected_id": "remediation_intake_agent_v1",
+  "closure_proof_path": ".\\proofs\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1.json",
+  "closure_selected_profile_id": "remediation_intake_agent_v1",
+  "closure_specialized_operation": "remediation_intake_mode_v1",
+  "conclusion": "Generated self-build seed consumption proof executed from program-owned execution recipe GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_RECIPE."
+}

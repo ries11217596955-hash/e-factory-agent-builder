@@ -1,0 +1,28 @@
+{
+    "status":  "PASS",
+    "duty_id":  "duty_0003",
+    "inventory_scope":  "session_local_runtime_capability_snapshot",
+    "modules_available":  [
+                              "modules/start_builder_live_growth_daemon_001.ps1",
+                              "modules/watch_builder_live_growth_session_observer_001.ps1",
+                              "modules/watch_builder_live_console_001.ps1",
+                              "modules/invoke_builder_live_self_growth_duty_step_001.ps1"
+                          ],
+    "validators_available":  [
+                                 "validators/validate_phase160_live_growth_session_daemon_bootstrap_v1.ps1",
+                                 "validators/validate_phase160_live_observer_console_repair_v1.ps1",
+                                 "validators/validate_phase160_live_self_growth_duty_loop_v1.ps1"
+                             ],
+    "channels_available":  [
+                               "teacher_outbox",
+                               "teacher_inbox",
+                               "blocker_queue",
+                               "accepted_interventions",
+                               "rejected_interventions",
+                               "event_log"
+                           ],
+    "deterministic_gap_policy_available":  true,
+    "arbitrary_code_execution_allowed":  false,
+    "capability_shelf_promotion_allowed":  false,
+    "created_at":  "2026-06-03T17:11:28.8073223Z"
+}

@@ -1,0 +1,38 @@
+# PHASE159 Newborn Reflex Core And Live Session Prep Alignment Request
+
+status: PREPARED
+line: AGENT_BUILDER_SELF_DEVELOPMENT
+mode: SELF_BUILD
+step_id: PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1
+run_id: PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001
+root_cause: child is not prepared for live daemon mode
+repo_root_repair_status: APPLIED
+wrong_root_source_found: RepoRoot defaulted to "." and Push-Location used the caller working directory.
+repo_root_resolution_rule: module_or_validator_file_is_in_repo_subdir_and_repo_root_is_parent_of_that_script_directory
+local_head_required: fc7b49a
+remote_head_required: fc7b49a
+phase_type: newborn_reflex_core_and_live_session_preparation
+source_phase158_status_required: PASS
+generic_execution_bridge_required: true
+codex_required_for_phase159_entrypoint: false
+execution_scope: sandbox_only
+meaningful_newborn_step_count_required: 2
+step_001_selected_action: REFRESH_CAPABILITY_INVENTORY_FROM_PROOFS
+step_002_selected_action: PREPARE_LIVE_SESSION_CHANNELS
+step_002_must_derive_from_step_001_next_action: true
+teacher_channel_type: file_based
+daemon_mode_prepared: true
+live_daemon_started: false
+accepted_state_mutation_allowed: false
+accepted_memory_mutation_allowed: false
+accepted_self_model_mutation_allowed: false
+capability_shelf_mutation_allowed: false
+body_pack_mutation_allowed: false
+external_fetch_allowed: false
+dependency_install_allowed: false
+arbitrary_generated_code_execution_allowed: false
+external_agent_creation_allowed: false
+queue_after: NONE
+codex_needed_for_next_step: false
+safe_stop_required: true
+next_allowed_step: PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1

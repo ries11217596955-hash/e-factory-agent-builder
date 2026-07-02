@@ -1,0 +1,195 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_small_proof",
+    "status":  "PASS",
+    "proof_label":  "PROVEN_LAB_PARAMETRIC_ORGAN_STAGE1_NOT_RUNTIME_INTELLIGENCE",
+    "runtime_ready":  false,
+    "run_params":  {
+                       "candidate_feed_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_SAMPLE_FEED.json",
+                       "target_accepted":  5,
+                       "batch_size":  2,
+                       "proof_mode":  "small",
+                       "candidate_source_mode":  "OWNER_SUPPLIED",
+                       "resume_from_checkpoint":  true,
+                       "checkpoint_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME.checkpoint.json",
+                       "stop_after_accepted":  0,
+                       "max_accepted_without_explicit_approval":  100,
+                       "allow_large_n":  false,
+                       "large_n_approval_token_present":  false
+                   },
+    "resume":  {
+                   "used":  true,
+                   "source":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME.checkpoint.json",
+                   "checkpoint_written":  false
+               },
+    "accepted_total":  5,
+    "rejected_total":  0,
+    "accepted_atoms":  [
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.001.feed.atom.001.evidence_boundary",
+                               "candidate_id":  "feed.atom.001.evidence_boundary",
+                               "domain":  "truth_evidence",
+                               "concept":  "claim proof labels",
+                               "useful_for":  "prevents lab/live proof overclaim",
+                               "comprehension":  {
+                                                     "explain_back":  "Claims must be labelled by evidence boundary before acceptance.",
+                                                     "apply":  "Label future school outputs as lab proof unless live proof exists.",
+                                                     "anti_apply":  "Do not mark runtime_ready from lab proof."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  6,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.001.feed.atom.001.evidence_boundary",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.002.feed.atom.002.parametric_n",
+                               "candidate_id":  "feed.atom.002.parametric_n",
+                               "domain":  "school_contract",
+                               "concept":  "N is input not architecture",
+                               "useful_for":  "prevents scale-gate duplication",
+                               "comprehension":  {
+                                                     "explain_back":  "TargetAccepted changes quantity, not organ architecture.",
+                                                     "apply":  "Run same organ with TargetAccepted 5 or 30000 when allowed.",
+                                                     "anti_apply":  "Do not create REAL_DELTA_SCHOOL_SCALE_GATE routes."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  7,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.002.feed.atom.002.parametric_n",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.003.feed.atom.003.candidate_feed",
+                               "candidate_id":  "feed.atom.003.candidate_feed",
+                               "domain":  "candidate_intake",
+                               "concept":  "candidate feed contract",
+                               "useful_for":  "keeps external school input explicit",
+                               "comprehension":  {
+                                                     "explain_back":  "School acceleration starts with a bounded candidate feed supplied by owner or practice source.",
+                                                     "apply":  "Reject missing candidate fields before proof creation.",
+                                                     "anti_apply":  "Do not accept source-less generated atoms."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  8,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.003.feed.atom.003.candidate_feed",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.004.feed.atom.004.real_delta_invariant",
+                               "candidate_id":  "feed.atom.004.real_delta_invariant",
+                               "domain":  "acceptance_gates",
+                               "concept":  "real delta acceptance",
+                               "useful_for":  "blocks storage-only learning",
+                               "comprehension":  {
+                                                     "explain_back":  "Accepted atoms need comprehension, before/after delta, causal link and retrieval/use proof.",
+                                                     "apply":  "Validate each atom has improved=true and retrieval_used=true.",
+                                                     "anti_apply":  "Do not pass count-only storage as intelligence."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  9,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.004.feed.atom.004.real_delta_invariant",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.005.feed.atom.005.map_rollup",
+                               "candidate_id":  "feed.atom.005.map_rollup",
+                               "domain":  "self_map",
+                               "concept":  "rollup-only map updates",
+                               "useful_for":  "prevents atom-event self-map explosion",
+                               "comprehension":  {
+                                                     "explain_back":  "Atom/subchunk events roll up before map update.",
+                                                     "apply":  "Record atom/subchunk should_update=false in proof.",
+                                                     "anti_apply":  "Do not call positive self-map update in small proof."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  10,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.005.feed.atom.005.map_rollup",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           }
+                       ],
+    "batch_summary":  {
+                          "batch_size":  2,
+                          "batch_count":  3,
+                          "digest":  "6617b0dc3c943dba9cadcec233e2d8e2687ea1146de02b3951ce405b6163c6b4",
+                          "checkpoint_count":  1
+                      },
+    "map_rollup_policy":  {
+                              "atom":  {
+                                           "aggregation_level":  "atom",
+                                           "should_update":  false
+                                       },
+                              "subchunk":  {
+                                               "aggregation_level":  "subchunk",
+                                               "should_update":  false
+                                           },
+                              "rollup_allowed_levels":  [
+                                                            "chunk",
+                                                            "batch",
+                                                            "capability",
+                                                            "module",
+                                                            "organ",
+                                                            "system"
+                                                        ]
+                          },
+    "positive_self_map_update_called":  false,
+    "accepted_core_mutated":  false,
+    "negative_tests":  [
+                           {
+                               "id":  "count_only_false_pass",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "duplicate_candidate",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "runtime_ready_overclaim",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "scale_gate_route",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "atom_map_update",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "subchunk_map_update",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           }
+                       ],
+    "protected_hashes":  {
+                             "before":  {
+                                            "CAPABILITY_ROADMAP.json":  "e554f11fd7d5cddf7b19cc37e451e87dafbb8e920a8280666f29e31a95a19597",
+                                            "GENESIS_STATE.json":  "6eb22fee813a5a9643af674ad6cd173e88ab9bdcb955cd3e09a897fce72d6f9d",
+                                            "TASK_QUEUE.json":  "2b03f7fda435c238bfa51f22610aa8126c9ed7282f896b2dcb04c12a80a7efba",
+                                            "packs/registry.json":  "bf15bb23a43a713a84f4b35c9c63f39757451ca307d8bfb049708654438d63d1",
+                                            "orchestrator/run.ps1":  "ef881e345d6bfa30f817f899061eacba8282d2e7562f58012fa2531eb9e2a88e"
+                                        },
+                             "after":  {
+                                           "CAPABILITY_ROADMAP.json":  "e554f11fd7d5cddf7b19cc37e451e87dafbb8e920a8280666f29e31a95a19597",
+                                           "GENESIS_STATE.json":  "6eb22fee813a5a9643af674ad6cd173e88ab9bdcb955cd3e09a897fce72d6f9d",
+                                           "TASK_QUEUE.json":  "2b03f7fda435c238bfa51f22610aa8126c9ed7282f896b2dcb04c12a80a7efba",
+                                           "packs/registry.json":  "bf15bb23a43a713a84f4b35c9c63f39757451ca307d8bfb049708654438d63d1",
+                                           "orchestrator/run.ps1":  "ef881e345d6bfa30f817f899061eacba8282d2e7562f58012fa2531eb9e2a88e"
+                                       },
+                             "changed":  [
+
+                                         ]
+                         }
+}

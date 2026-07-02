@@ -1,0 +1,8 @@
+{
+  "status": "SAMPLE",
+  "flag_id": "PHASE160_STOP_FLAG_SAMPLE",
+  "write_this_as": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001/stop.flag",
+  "requested_stop": true,
+  "reason": "owner_or_teacher_safe_stop",
+  "created_by": "teacher_or_owner"
+}

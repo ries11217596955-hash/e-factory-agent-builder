@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "admitted_bounded_reuse_id": "PHASE159_ADMITTED_BOUNDED_REUSE",
+  "step_id": "PHASE159_BUILDER_RUNS_GENERIC_SELF_WRITTEN_SPEC_EXECUTION_BRIDGE_V1",
+  "run_id": "PHASE159_NEWBORN_REFLEX_CORE_AND_LIVE_SESSION_PREP_001",
+  "source_phase157_proof_path": "proofs/self_development/PHASE157_BUILDER_SELF_SELECTED_GAP_TRIAL_REVIEW_V1.json",
+  "reuse_decision": "ADMIT_PHASE156_CANDIDATES_FOR_BOUNDED_SANDBOX_REUSE",
+  "allowed_scope": "sandbox_only",
+  "allowed_use": "REVIEWED_SELF_GAP_SKILL_REUSE_TRIAL",
+  "max_cycles_per_run": 3,
+  "admitted_for_bounded_reuse": true,
+  "capability_shelf_mutated": false,
+  "next_allowed_step": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1"
+}

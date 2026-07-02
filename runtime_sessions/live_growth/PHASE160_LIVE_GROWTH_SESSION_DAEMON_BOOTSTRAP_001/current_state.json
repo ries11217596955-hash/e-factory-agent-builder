@@ -1,0 +1,15 @@
+{
+  "status": "STOPPED",
+  "state_id": "PHASE160_BUILDER_DAEMON_CURRENT_STATE",
+  "session_root": "runtime_sessions/live_growth/PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  "current_tick": 10,
+  "last_tick_id": "tick_0010",
+  "stop_reason": "duration_limit",
+  "stopped_at": "2026-06-03T15:39:39.5860093Z",
+  "duration_based_session": true,
+  "fixed_tick_batch_mode": false,
+  "live_session_safe_stop": true,
+  "accepted_state_mutated": false,
+  "accepted_memory_mutated": false,
+  "accepted_self_model_mutated": false
+}

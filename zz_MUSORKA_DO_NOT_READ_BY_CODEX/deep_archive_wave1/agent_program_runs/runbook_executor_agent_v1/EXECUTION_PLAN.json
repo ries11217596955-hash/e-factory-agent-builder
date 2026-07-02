@@ -1,0 +1,52 @@
+{
+  "plan_id": "RUNBOOK_EXECUTOR_AGENT_PROGRAM_EXECUTION_PLAN_V1",
+  "status": "READY",
+  "source_program_path": "agent_programs/runbook_executor_agent_v1/PROGRAM.json",
+  "agent_id": "runbook_executor_agent_v1",
+  "agent_name": "Runbook Executor Agent v1",
+  "production_steps": [
+    "create_agent_folder",
+    "create_agent_spec",
+    "create_readme",
+    "create_runbook",
+    "create_input_example",
+    "create_output_example",
+    "create_run_script",
+    "validate_local_runtime",
+    "create_github_action",
+    "validate_github_artifact",
+    "register_agent_catalog"
+  ],
+  "required_files": [
+    "README.md",
+    "AGENT_SPEC.json",
+    "RUNBOOK.md",
+    "INPUT_EXAMPLE.json",
+    "OUTPUT_EXAMPLE.json",
+    "run.ps1",
+    "proofs/README.md"
+  ],
+  "validation_requirements": [
+    "required files present",
+    "JSON examples valid",
+    "run.ps1 parser check passes",
+    "runtime output contains checklist, risks, evidence, next action",
+    "validation_status is PASS"
+  ],
+  "github_action_required": true,
+  "github_action_name": "Run Runbook Executor Agent v1",
+  "artifact_name": "runbook-executor-agent-v1-output",
+  "acceptance_criteria": [
+    "Builder creates standalone agent package",
+    "local runtime validation PASS",
+    "GitHub Actions workflow exists",
+    "GitHub Actions run produces artifact",
+    "agent registered in catalog"
+  ],
+  "forbidden_scope": [
+    "do not modify existing remediation intake agent",
+    "do not modify existing GitHub workflow",
+    "do not modify orchestrator/run.ps1"
+  ],
+  "conclusion": "Builder can read a new external agent program and prepare a production plan."
+}

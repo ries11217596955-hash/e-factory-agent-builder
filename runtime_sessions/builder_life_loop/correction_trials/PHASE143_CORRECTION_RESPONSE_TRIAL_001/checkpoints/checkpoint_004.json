@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "checkpoint_id": "checkpoint_004",
+  "session_id": "PHASE143_CORRECTION_RESPONSE_TRIAL_001",
+  "run_id": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_001",
+  "completed_cycles": 4,
+  "correction_seen_count": 1,
+  "correction_applied_count": 1,
+  "behavior_changed_after_correction": true,
+  "created_at": "2026-06-02T10:33:10.3378654Z",
+  "next_allowed_step": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1"
+}

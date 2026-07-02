@@ -1,0 +1,29 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_candidate_feed",
+    "candidate_source_mode":  "OWNER_SUPPLIED",
+    "runtime_ready":  false,
+    "candidates":  [
+                       {
+                           "candidate_id":  "neg.atom.001",
+                           "domain":  "d1",
+                           "concept":  "c1",
+                           "useful_for":  "u1",
+                           "lesson":  "l1",
+                           "before_answer":  "b1",
+                           "after_answer":  "a1",
+                           "anti_apply":  "x1",
+                           "expected_use":  "e1"
+                       },
+                       {
+                           "candidate_id":  "neg.atom.002",
+                           "domain":  "d2",
+                           "concept":  "c2",
+                           "useful_for":  "u2",
+                           "lesson":  "l2",
+                           "before_answer":  "b2",
+                           "after_answer":  "a2",
+                           "anti_apply":  "x2",
+                           "expected_use":  "e2"
+                       }
+                   ]
+}

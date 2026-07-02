@@ -1,0 +1,10 @@
+{
+    "schema":  "efab_active_pack_registry_pointer_v1",
+    "status":  "ACTIVE_BEHAVIOR_PACK_REGISTERED",
+    "runtime_ready":  false,
+    "promotion_id":  "active_behavior_absorption_fresh_1000_v1",
+    "pack_id":  "active_behavior_absorption_fresh_1000_v1",
+    "active_manifest_path":  "operations/active_behavior/store/active_behavior_absorption_fresh_1000_v1/manifest.json",
+    "active_index_path":  "operations/active_behavior/store/active_behavior_absorption_fresh_1000_v1/active_compact_atom_index.json",
+    "rollback_manifest_path":  "operations/active_behavior/rollback/active_behavior_absorption_fresh_1000_v1/rollback_manifest.json"
+}

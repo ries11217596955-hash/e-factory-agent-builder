@@ -1,0 +1,14 @@
+{
+    "status":  "PASS",
+    "duty_id":  "duty_0001",
+    "selected_gap":  "SELF_MAP_REFRESH_GAP",
+    "candidate_bytes":  489,
+    "max_candidate_bytes":  8192,
+    "sandbox_only":  true,
+    "arbitrary_code_execution_used":  false,
+    "accepted_state_mutated":  false,
+    "accepted_memory_mutated":  false,
+    "accepted_self_model_mutated":  false,
+    "external_agents_created":  false,
+    "validated_at":  "2026-06-03T17:10:47.1963190Z"
+}

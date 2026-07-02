@@ -1,0 +1,25 @@
+{
+  "proof_id": "GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1",
+  "run_id": "GENERATED_PROGRAM_EXECUTION_RECIPE_CONTRACT_V1_001__PACK_1",
+  "status": "PASS",
+  "source_program_manifest": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\SELF_BUILD_PROGRAM_MANIFEST.json",
+  "emitted_recipe_count": 3,
+  "emitted_recipe_paths": [
+    "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\execution_recipes\\GENERATED_MONITORING_AGENT_V1_PROFILE_MATERIALIZATION_V1_RECIPE.json",
+    "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\execution_recipes\\GENERATED_MONITORING_AGENT_V1_CLOSURE_PROOF_V1_RECIPE.json",
+    "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\monitoring_agent_v1\\execution_recipes\\GENERATED_MONITORING_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_RECIPE.json"
+  ],
+  "covered_semantic_roles": [
+    "PROFILE_MATERIALIZATION",
+    "SEED_CONSUMPTION_PROOF",
+    "SPECIALIZED_CLOSURE_PROOF"
+  ],
+  "covered_recipe_kinds": [
+    "PROFILE_MATERIALIZATION_RECIPE_V1",
+    "SEED_CONSUMPTION_PROOF_RECIPE_V1",
+    "SPECIALIZED_CLOSURE_PROOF_RECIPE_V1"
+  ],
+  "next_required_capability": "recipe_driven_generated_program_executable_materialization_v1",
+  "report_path": ".\\reports\\generated_program_execution_recipes\\MONITORING_AGENT_V1_EXECUTION_RECIPE_BUNDLE.json",
+  "conclusion": "Builder can now externalize generated self-build pack execution intent into program-owned machine-readable recipe artifacts."
+}

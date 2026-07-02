@@ -1,0 +1,14 @@
+{
+  "proof_id": "GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1",
+  "run_id": "GENERATED_FAMILY_AUTONOMOUS_CONVEYOR_FAILURE_RECOVERY_V1_001__PACK_1",
+  "status": "FAIL_EXPECTED",
+  "task_id": "TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001",
+  "capability_id": "generated_conveyor_failure_trial_family_v1_failure_pack_v1",
+  "semantic_role": "CONVEYOR_FAILURE_RECOVERY_PROOF",
+  "executed_by": "generated_family_autonomous_conveyor",
+  "active_task_before": "TASK_GENERATED_CONVEYOR_FAILURE_TRIAL_FAMILY_V1_FAILURE_PACK_V1_001",
+  "active_task_after": "NONE",
+  "controlled_failure": true,
+  "error_code": "CONTROLLED_GENERATED_CONVEYOR_FAILURE_TRIAL",
+  "conclusion": "Generated conveyor failure trial pack intentionally failed after writing failure evidence and returning the queue to NONE."
+}

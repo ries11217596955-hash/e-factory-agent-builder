@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "phase": "PHASE125_RUN_SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "baseline_commit": "eb6e7e3",
+  "runtime_executed": true,
+  "builder_runtime_invoked": true,
+  "manual_active_task_seed": false,
+  "used_self_model_first": true,
+  "legacy_replay_absent": true,
+  "controller_governed_trial_need": "NEED_CONTROLLER_GOVERNED_SELF_BUILD_TRIAL",
+  "queue_after": "NONE",
+  "classification": "SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_PASS",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false,
+  "runtime_log_path": "self_build_batch/autonomy_trials/PHASE125_RUN_SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_V1/PHASE125_RUN_SELF_MODEL_FIRST_CONTROLLER_GOVERNED_TRIAL_V1_RUNTIME_LOG.txt",
+  "next_allowed_step": "PHASE126_BUILD_TRIAL_AWARE_SELF_MODEL_ADVANCE_V1"
+}

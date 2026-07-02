@@ -1,0 +1,10 @@
+{
+    "schema":  "efab_active_self_model_pointer_v1",
+    "status":  "ACTIVE_BEHAVIOR_ABSORPTION_POINTER_INSTALLED",
+    "runtime_ready":  false,
+    "promotion_id":  "active_behavior_absorption_fresh_1000_v1",
+    "capability":  "active_behavior_absorption_from_promoted_atoms",
+    "active_index_path":  "operations/active_behavior/store/active_behavior_absorption_fresh_1000_v1/active_compact_atom_index.json",
+    "proof_path":  "operations/reports/ACTIVE_BEHAVIOR_ABSORPTION_PROMOTION_V1.json",
+    "policy":  "Self map points to active behavior absorption capability; bulk atoms remain in compact store."
+}

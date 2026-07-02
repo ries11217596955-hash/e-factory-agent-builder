@@ -1,0 +1,40 @@
+{
+  "report_id": "OPERATION_CONTRACT_SKELETON_REPORT",
+  "phase": "PHASE_83",
+  "capability_id": "operation_contract_skeleton_v1",
+  "status": "PASS",
+  "generated_at": "2026-05-29T09:08:26.9884794Z",
+  "operation_contract_schema_path": "contracts/operations/operation_contract.schema.json",
+  "operation_registry_schema_path": "contracts/operations/operation_registry.schema.json",
+  "operation_registry_path": "operations/registry.json",
+  "quarantine_batch_path": "materials/quarantine/QUARANTINE_BATCH_001.json",
+  "quarantine_selected_count": 2,
+  "operation_count": 0,
+  "trusted_operation_count": 0,
+  "execution_performed": false,
+  "install_performed": false,
+  "external_fetch_performed": false,
+  "registry_status": "SKELETON_READY",
+  "policy_summary": {
+    "skeleton_only": true,
+    "operations_empty_by_default": true,
+    "no_trusted_operations": true,
+    "no_execution_performed": true,
+    "no_install_performed": true,
+    "no_external_fetch_performed": true,
+    "quarantine_material_ids_are_data": [
+      "mat_json_schema_ajv_001",
+      "mat_python_jsonschema_001"
+    ]
+  },
+  "next_allowed_step": "PHASE84_FIRST_WRAPPER_OPERATION_CONTRACTS_V1",
+  "cut_list": [
+    "Do not create real wrapper contracts in PHASE83.",
+    "Do not install tools.",
+    "Do not fetch external repositories.",
+    "Do not run candidate tools.",
+    "Do not run smoke tests.",
+    "Do not create TRUSTED_OPERATION entries.",
+    "Do not create external agents."
+  ]
+}

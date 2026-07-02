@@ -1,0 +1,16 @@
+{
+  "candidate_id": "SPECIALIZATION_PROFILE_CANDIDATE_DECISION_SUPPORT_AGENT_V1",
+  "candidate_version": "1.0",
+  "status": "PROFILE_CANDIDATE_READY",
+  "source_gap_report_path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_GAP_TO_PROFILE_CLOSURE_PROGRAM_V1_001__PACK_1__GAP_REPRO\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\SPECIALIZATION_GAP_REPORT.json",
+  "source_gap_run_id": "SELF_BUILD_GAP_TO_PROFILE_CLOSURE_PROGRAM_V1_001__PACK_1__GAP_REPRO",
+  "candidate_profile_id": "decision_support_agent_v1",
+  "candidate_agent_kind": "decision_support_agent",
+  "candidate_package_profile": "operational_specialized",
+  "source_derived_agent_id": "intake_prioritization_route_agent",
+  "resolver_status": "NO_MATCH",
+  "resolver_reason": "No active specialization profile matched derived agent_kind/package_profile.",
+  "required_build_move": "CREATE_SPECIALIZATION_PROFILE_AND_REGISTRY_MAPPING",
+  "candidate_scope": "repo_defined_overlay",
+  "operator_summary": "A missing specialization family was detected and normalized into a bounded profile candidate for self-build execution."
+}

@@ -1,0 +1,49 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_checkpoint",
+    "status":  "CHECKPOINT_CREATED",
+    "runtime_ready":  false,
+    "candidate_feed_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_SAMPLE_FEED.json",
+    "target_accepted":  5,
+    "accepted_total":  2,
+    "accepted_atoms":  [
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.001.feed.atom.001.evidence_boundary",
+                               "candidate_id":  "feed.atom.001.evidence_boundary",
+                               "domain":  "truth_evidence",
+                               "concept":  "claim proof labels",
+                               "useful_for":  "prevents lab/live proof overclaim",
+                               "comprehension":  {
+                                                     "explain_back":  "Claims must be labelled by evidence boundary before acceptance.",
+                                                     "apply":  "Label future school outputs as lab proof unless live proof exists.",
+                                                     "anti_apply":  "Do not mark runtime_ready from lab proof."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  6,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.001.feed.atom.001.evidence_boundary",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.002.feed.atom.002.parametric_n",
+                               "candidate_id":  "feed.atom.002.parametric_n",
+                               "domain":  "school_contract",
+                               "concept":  "N is input not architecture",
+                               "useful_for":  "prevents scale-gate duplication",
+                               "comprehension":  {
+                                                     "explain_back":  "TargetAccepted changes quantity, not organ architecture.",
+                                                     "apply":  "Run same organ with TargetAccepted 5 or 30000 when allowed.",
+                                                     "anti_apply":  "Do not create REAL_DELTA_SCHOOL_SCALE_GATE routes."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  7,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.002.feed.atom.002.parametric_n",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           }
+                       ],
+    "checkpoint_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME.checkpoint.json",
+    "accepted_core_mutated":  false,
+    "positive_self_map_update_called":  false
+}

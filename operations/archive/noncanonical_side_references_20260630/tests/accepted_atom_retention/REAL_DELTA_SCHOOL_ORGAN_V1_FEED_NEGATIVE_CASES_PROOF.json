@@ -1,0 +1,53 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_feed_negative_cases_proof",
+    "status":  "PASS",
+    "proof_label":  "PROVEN_LAB_FEED_CONTRACT_NEGATIVE_CASES_NOT_RUNTIME_INTELLIGENCE",
+    "runtime_ready":  false,
+    "case_count":  5,
+    "blocked_count":  5,
+    "cases":  [
+                  {
+                      "id":  "runtime_ready_true",
+                      "expected":  "BLOCKED",
+                      "actual":  "BLOCKED",
+                      "passed":  true,
+                      "path":  "tests\\accepted_atom_retention\\REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_TMP\\runtime_ready_true.json",
+                      "message":  "REAL_DELTA_SCHOOL_ORGAN_V1_CANDIDATE_FEED_CONTRACT_INVALID: runtime_ready must be false"
+                  },
+                  {
+                      "id":  "duplicate_candidate_id",
+                      "expected":  "BLOCKED",
+                      "actual":  "BLOCKED",
+                      "passed":  true,
+                      "path":  "tests\\accepted_atom_retention\\REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_TMP\\duplicate_candidate_id.json",
+                      "message":  "REAL_DELTA_SCHOOL_ORGAN_V1_CANDIDATE_FEED_CONTRACT_INVALID: DUPLICATE_CANDIDATE_ID=neg.atom.001"
+                  },
+                  {
+                      "id":  "duplicate_concept",
+                      "expected":  "BLOCKED",
+                      "actual":  "BLOCKED",
+                      "passed":  true,
+                      "path":  "tests\\accepted_atom_retention\\REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_TMP\\duplicate_concept.json",
+                      "message":  "REAL_DELTA_SCHOOL_ORGAN_V1_CANDIDATE_FEED_CONTRACT_INVALID: DUPLICATE_CONCEPT=d1|c1|u1"
+                  },
+                  {
+                      "id":  "missing_required_field",
+                      "expected":  "BLOCKED",
+                      "actual":  "BLOCKED",
+                      "passed":  true,
+                      "path":  "tests\\accepted_atom_retention\\REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_TMP\\missing_required_field.json",
+                      "message":  "REAL_DELTA_SCHOOL_ORGAN_V1_CANDIDATE_FEED_CONTRACT_INVALID: CANDIDATE_FIELD_MISSING=expected_use"
+                  },
+                  {
+                      "id":  "insufficient_candidates",
+                      "expected":  "BLOCKED",
+                      "actual":  "BLOCKED",
+                      "passed":  true,
+                      "path":  "tests\\accepted_atom_retention\\REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_TMP\\insufficient_candidates.json",
+                      "message":  "REAL_DELTA_SCHOOL_ORGAN_V1_CANDIDATE_FEED_CONTRACT_INVALID: CANDIDATE_COUNT_LT_MIN count=2 min=3"
+                  }
+              ],
+    "accepted_core_mutated":  false,
+    "positive_self_map_update_called":  false,
+    "runtime_ready_claimed_true":  false
+}

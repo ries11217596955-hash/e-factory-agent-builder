@@ -1,0 +1,48 @@
+{
+  "status": "BUILDER_RUNTIME_AUTHORED",
+  "step_id": "PHASE140C_BUILDER_GENERATED_NEXT_GAP_SELECTOR_SEED_V1",
+  "pack_id": "PHASE140C_BUILDER_GENERATED_NEXT_GAP_SELECTOR_SEED_V1",
+  "author": "BUILDER_RUNTIME",
+  "authorship_status": "BUILDER_RUNTIME_AUTHORED",
+  "codex_authored": false,
+  "line": "SELF_BUILD",
+  "external_agent_production_allowed": false,
+  "dependency_install_allowed": false,
+  "external_fetch_allowed": false,
+  "executable_use_allowed": false,
+  "purpose": "Seed the next gap selector surface for choosing the next bounded self-development move",
+  "expected_outputs": [
+    "self_build_batch/autonomy_trials/PHASE140C_BUILDER_GENERATED_NEXT_GAP_SELECTOR_SEED_V1/PHASE140C_BUILDER_GENERATED_NEXT_GAP_SELECTOR_SEED_V1_RESULT.json",
+    "self_build_batch/autonomy_trials/PHASE140C_BUILDER_GENERATED_NEXT_GAP_SELECTOR_SEED_V1/PHASE140C_BUILDER_GENERATED_NEXT_GAP_SELECTOR_SEED_V1_RUNTIME_LOG.txt"
+  ],
+  "generated_during_runtime": true,
+  "generated_by_runtime": "PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_001",
+  "run_id": "PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_001",
+  "generated_at": "2026-06-02T07:30:10.4936407Z",
+  "source_scale_trial_step": "PHASE140_BUILDER_SELF_PACK_AUTHOR_SCALE_TRIAL_V1",
+  "validator_contract": {
+    "required_status": "PASS",
+    "required_execution_actor": "BUILDER_RUNTIME",
+    "generated_pack_executed_required": true,
+    "bounded_mode_required": true,
+    "fail_if_external_agent_created": true,
+    "fail_if_external_fetch_performed": true,
+    "fail_if_dependency_install_performed": true,
+    "fail_if_executable_material_used": true,
+    "fail_if_next_allowed_step_not": "PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1"
+  },
+  "proof_contract": {
+    "required_fields": [
+      "status",
+      "executed_by",
+      "bounded_mode",
+      "generated_pack_executed",
+      "external_agent_created",
+      "external_fetch_performed",
+      "dependency_install_performed",
+      "executable_materials_used",
+      "next_allowed_step"
+    ],
+    "next_allowed_step": "PHASE141_BUILDER_SELF_LEARNING_LOOP_METRICS_V1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "heartbeat_id": "BUILDER_CORRECTION_RESPONSE_HEARTBEAT_CURRENT",
+  "session_id": "PHASE143_CORRECTION_RESPONSE_TRIAL_001",
+  "run_id": "PHASE143_BUILDER_CORRECTION_INBOX_RESPONSE_TRIAL_001",
+  "completed_cycles": 12,
+  "max_cycles": 12,
+  "correction_seen_count": 1,
+  "correction_applied_count": 1,
+  "last_task_type": "COMPARE_NEXT_STEP",
+  "last_seen_at": "2026-06-02T10:33:10.5453371Z",
+  "next_allowed_step": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1"
+}

@@ -1,0 +1,11 @@
+{
+  "proof_id": "AGENT_CATALOG_V1",
+  "status": "PASS",
+  "catalog_path": "agent_catalog/AGENT_CATALOG.json",
+  "registered_agents_count": 1,
+  "registered_agent_ids": [
+    "remediation_intake_operator_agent_v1"
+  ],
+  "active_task_after": "NONE",
+  "next_recommended_step": "agent_program_input_format_v1"
+}

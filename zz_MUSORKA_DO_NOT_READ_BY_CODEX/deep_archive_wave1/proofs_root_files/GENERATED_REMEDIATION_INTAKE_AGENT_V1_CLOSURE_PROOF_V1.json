@@ -1,0 +1,18 @@
+{
+  "proof_id": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1",
+  "run_id": "GENERATED_REMEDIATION_CLOSURE_PROOF_V1_002__PACK_1",
+  "status": "PASS",
+  "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_001",
+  "capability_id": "generated_remediation_intake_agent_v1_closure_proof_v1",
+  "expected_gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1",
+  "semantic_role": "SPECIALIZED_CLOSURE_PROOF",
+  "raw_idea_path": ".\\specs\\remediation_intake_agent_gap_proof\\RAW_IDEA_REMEDIATION_INTAKE_AGENT_GAP_PROOF.json",
+  "factory_report_path": ".\\runs\\GENERATED_REMEDIATION_CLOSURE_PROOF_V1_002__PACK_1\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json",
+  "selected_profile_id": "remediation_intake_agent_v1",
+  "generated_package_root": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\generated_agents\\remediation_intake_agent_v1",
+  "validation_output": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\GENERATED_REMEDIATION_CLOSURE_PROOF_V1_002__PACK_1\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\target_build\\operational_validation\\OPERATIONAL_RESULT.json",
+  "specialized_operation": "remediation_intake_mode_v1",
+  "next_alert_id": "remediation_intake_agent_intake_request",
+  "escalation_status": "INTAKE_READY",
+  "conclusion": "Generated self-build closure proof executed from program-owned execution recipe GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_RECIPE."
+}

@@ -1,0 +1,37 @@
+﻿{
+    "schema":  "interrupted_codex_impl_v1_quarantine_manifest",
+    "status":  "QUARANTINED_CODEX_DRAFT_NOT_ACCEPTED",
+    "utc":  "2026-06-29T20:47:27.5854412Z",
+    "reason":  "Owner requested full overnight process; interrupted Codex draft must not be treated as accepted/proven.",
+    "moved":  [
+                  {
+                      "from":  "modules/invoke_useful_school_30k_with_comprehension_and_delta_v1.ps1",
+                      "to":  "operations\\quarantine\\20260629_interrupted_codex_impl_v1\\modules__invoke_useful_school_30k_with_comprehension_and_delta_v1.ps1"
+                  },
+                  {
+                      "from":  "tests/accepted_atom_retention/run_useful_school_30k_with_comprehension_and_delta_v1_proof.ps1",
+                      "to":  "operations\\quarantine\\20260629_interrupted_codex_impl_v1\\tests__accepted_atom_retention__run_useful_school_30k_with_comprehension_and_delta_v1_proof.ps1"
+                  },
+                  {
+                      "from":  "tests/accepted_atom_retention/USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_V1_PROOF.json",
+                      "to":  "operations\\quarantine\\20260629_interrupted_codex_impl_v1\\tests__accepted_atom_retention__USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_V1_PROOF.json"
+                  },
+                  {
+                      "from":  "validators/validate_useful_school_30k_with_comprehension_and_delta_v1_proof.ps1",
+                      "to":  "operations\\quarantine\\20260629_interrupted_codex_impl_v1\\validators__validate_useful_school_30k_with_comprehension_and_delta_v1_proof.ps1"
+                  },
+                  {
+                      "from":  "operations/codex_handoff/USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_IMPLEMENT_V1.md",
+                      "to":  "operations\\quarantine\\20260629_interrupted_codex_impl_v1\\operations__codex_handoff__USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_IMPLEMENT_V1.md"
+                  },
+                  {
+                      "from":  "operations/codex_handoff/USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_IMPLEMENT_V1_REPORT.md",
+                      "to":  "operations\\quarantine\\20260629_interrupted_codex_impl_v1\\operations__codex_handoff__USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_IMPLEMENT_V1_REPORT.md"
+                  },
+                  {
+                      "from":  "operations/codex_handoff/audit_useful_school_30k_with_comprehension_and_delta_implementation_v1.ps1",
+                      "to":  "operations\\quarantine\\20260629_interrupted_codex_impl_v1\\operations__codex_handoff__audit_useful_school_30k_with_comprehension_and_delta_implementation_v1.ps1"
+                  }
+              ],
+    "runtime_ready":  false
+}

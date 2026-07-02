@@ -1,0 +1,211 @@
+{
+  "report_id": "MATERIAL_POLICY_V1_REPORT",
+  "phase": "PHASE_81",
+  "capability_id": "material_admission_policy_v1",
+  "status": "PASS",
+  "generated_at": "2026-05-29T07:06:16.6090369Z",
+  "catalog_path": "materials/MATERIAL_CATALOG.json",
+  "policy_path": "materials/MATERIAL_POLICY.json",
+  "catalog_entry_count": 9,
+  "trusted_count": 0,
+  "owner_approval_required_count": 1,
+  "decisions": [
+    {
+      "material_id": "mat_json_schema_ajv_001",
+      "name": "Ajv",
+      "status": "CANDIDATE",
+      "usage_mode": "USE_AS_TOOL",
+      "risk_level": "LOW",
+      "owner_approval_required": false,
+      "source_origin": "official_project_site",
+      "source_url": "https://ajv.js.org/",
+      "license_status": "MIT_REPORTED_BY_OFFICIAL_LICENSE_PAGE",
+      "security_status": "NOT_SCANNED",
+      "decision": "CANDIDATE_FOR_QUARANTINE",
+      "matched_rule_id": "low_risk_use_as_tool_permissive_official",
+      "rationale": "Low-risk, official-source, permissive-license tool candidates may advance only to quarantine."
+    },
+    {
+      "material_id": "mat_license_scancode_toolkit_001",
+      "name": "ScanCode Toolkit",
+      "status": "OWNER_APPROVAL_REQUIRED",
+      "usage_mode": "WRAP_ONLY",
+      "risk_level": "HIGH",
+      "owner_approval_required": true,
+      "source_origin": "official_github_repo",
+      "source_url": "https://github.com/aboutcode-org/scancode-toolkit",
+      "license_status": "APACHE_2_0_OVERALL_WITH_SECONDARY_LICENSES_REVIEW_REQUIRED",
+      "security_status": "NOT_SCANNED",
+      "decision": "OWNER_APPROVAL_REQUIRED",
+      "matched_rule_id": "owner_approval_or_high_risk",
+      "rationale": "High-risk or owner-gated material requires explicit owner approval before later admission work."
+    },
+    {
+      "material_id": "mat_policy_conftest_001",
+      "name": "Conftest",
+      "status": "REFERENCE_ONLY",
+      "usage_mode": "REFERENCE_ONLY",
+      "risk_level": "MEDIUM",
+      "owner_approval_required": false,
+      "source_origin": "official_opa_ecosystem_page",
+      "source_url": "https://openpolicyagent.org/ecosystem/entry/conftest",
+      "license_status": "LICENSE_REVIEW_REQUIRED_BEFORE_USE",
+      "security_status": "NOT_SCANNED",
+      "decision": "REFERENCE_ONLY",
+      "matched_rule_id": "reference_only_material",
+      "rationale": "Reference-only material remains informational and is not admitted for runtime use."
+    },
+    {
+      "material_id": "mat_policy_opa_001",
+      "name": "Open Policy Agent",
+      "status": "REFERENCE_ONLY",
+      "usage_mode": "WRAP_ONLY",
+      "risk_level": "MEDIUM",
+      "owner_approval_required": false,
+      "source_origin": "official_project_site",
+      "source_url": "https://openpolicyagent.org/",
+      "license_status": "APACHE_2_0_REPORTED_BY_OFFICIAL_SITE",
+      "security_status": "NOT_SCANNED",
+      "decision": "REFERENCE_ONLY",
+      "matched_rule_id": "reference_only_material",
+      "rationale": "Reference-only material remains informational and is not admitted for runtime use."
+    },
+    {
+      "material_id": "mat_python_jsonschema_001",
+      "name": "python-jsonschema",
+      "status": "CANDIDATE",
+      "usage_mode": "USE_AS_TOOL",
+      "risk_level": "LOW",
+      "owner_approval_required": false,
+      "source_origin": "official_package_registry_and_project_repo",
+      "source_url": "https://pypi.org/project/jsonschema/",
+      "license_status": "MIT_REPORTED_BY_PYPI",
+      "security_status": "NOT_SCANNED",
+      "decision": "CANDIDATE_FOR_QUARANTINE",
+      "matched_rule_id": "low_risk_use_as_tool_permissive_official",
+      "rationale": "Low-risk, official-source, permissive-license tool candidates may advance only to quarantine."
+    },
+    {
+      "material_id": "mat_sbom_syft_001",
+      "name": "Syft",
+      "status": "CANDIDATE",
+      "usage_mode": "WRAP_ONLY",
+      "risk_level": "MEDIUM",
+      "owner_approval_required": false,
+      "source_origin": "official_github_repo",
+      "source_url": "https://github.com/anchore/syft",
+      "license_status": "APACHE_2_0_REPORTED_BY_OFFICIAL_REPO",
+      "security_status": "NOT_SCANNED",
+      "decision": "CANDIDATE_FOR_WRAPPER_CONTRACT",
+      "matched_rule_id": "medium_risk_wrapper_apache_official",
+      "rationale": "Medium-risk Apache-2.0 wrapper-only material may advance to wrapper contract design, not runtime use."
+    },
+    {
+      "material_id": "mat_template_copier_001",
+      "name": "Copier",
+      "status": "CANDIDATE",
+      "usage_mode": "USE_AS_TOOL",
+      "risk_level": "MEDIUM",
+      "owner_approval_required": false,
+      "source_origin": "official_github_repo",
+      "source_url": "https://github.com/copier-org/copier",
+      "license_status": "LICENSE_REVIEW_REQUIRED_BEFORE_USE",
+      "security_status": "NOT_SCANNED",
+      "decision": "NEEDS_METADATA",
+      "matched_rule_id": "unknown_license_needs_metadata",
+      "rationale": "Unknown or review-required license metadata must be resolved before later admission steps."
+    },
+    {
+      "material_id": "mat_vuln_grype_001",
+      "name": "Grype",
+      "status": "CANDIDATE",
+      "usage_mode": "WRAP_ONLY",
+      "risk_level": "MEDIUM",
+      "owner_approval_required": false,
+      "source_origin": "official_github_repo",
+      "source_url": "https://github.com/anchore/grype",
+      "license_status": "APACHE_2_0_REPORTED_BY_OFFICIAL_REPO",
+      "security_status": "NOT_SCANNED",
+      "decision": "CANDIDATE_FOR_WRAPPER_CONTRACT",
+      "matched_rule_id": "medium_risk_wrapper_apache_official",
+      "rationale": "Medium-risk Apache-2.0 wrapper-only material may advance to wrapper contract design, not runtime use."
+    },
+    {
+      "material_id": "mat_vuln_osv_scanner_001",
+      "name": "OSV-Scanner",
+      "status": "CANDIDATE",
+      "usage_mode": "WRAP_ONLY",
+      "risk_level": "MEDIUM",
+      "owner_approval_required": false,
+      "source_origin": "official_documentation",
+      "source_url": "https://google.github.io/osv-scanner/",
+      "license_status": "LICENSE_REVIEW_REQUIRED_BEFORE_USE",
+      "security_status": "NOT_SCANNED",
+      "decision": "NEEDS_METADATA",
+      "matched_rule_id": "unknown_license_needs_metadata",
+      "rationale": "Unknown or review-required license metadata must be resolved before later admission steps."
+    }
+  ],
+  "counts_by_decision": {
+    "CANDIDATE_FOR_QUARANTINE": 2,
+    "OWNER_APPROVAL_REQUIRED": 1,
+    "REFERENCE_ONLY": 2,
+    "CANDIDATE_FOR_WRAPPER_CONTRACT": 2,
+    "NEEDS_METADATA": 2
+  },
+  "counts_by_status": {
+    "CANDIDATE": 6,
+    "OWNER_APPROVAL_REQUIRED": 1,
+    "REFERENCE_ONLY": 2
+  },
+  "counts_by_risk_level": {
+    "LOW": 2,
+    "HIGH": 1,
+    "MEDIUM": 6
+  },
+  "counts_by_usage_mode": {
+    "USE_AS_TOOL": 3,
+    "WRAP_ONLY": 5,
+    "REFERENCE_ONLY": 1
+  },
+  "high_risk_material_ids": "mat_license_scancode_toolkit_001",
+  "owner_approval_required_material_ids": "mat_license_scancode_toolkit_001",
+  "reference_only_material_ids": [
+    "mat_policy_conftest_001",
+    "mat_policy_opa_001"
+  ],
+  "candidate_for_quarantine_material_ids": [
+    "mat_json_schema_ajv_001",
+    "mat_python_jsonschema_001"
+  ],
+  "candidate_for_wrapper_contract_material_ids": [
+    "mat_sbom_syft_001",
+    "mat_vuln_grype_001"
+  ],
+  "rejected_material_ids": null,
+  "needs_metadata_material_ids": [
+    "mat_template_copier_001",
+    "mat_vuln_osv_scanner_001"
+  ],
+  "policy_summary": {
+    "policy_id": "MATERIAL_ADMISSION_POLICY_V1",
+    "policy_version": "1.0",
+    "catalog_mutated": false,
+    "evaluation_only": true,
+    "trust_forbidden": true,
+    "no_external_tools_installed": true,
+    "no_scanners_run": true,
+    "no_quarantine_created": true
+  },
+  "next_allowed_step": "PHASE82_FIRST_MATERIAL_QUARANTINE_TRIAL_V1",
+  "cut_list": [
+    "Do not install tools.",
+    "Do not fetch external repositories.",
+    "Do not run vulnerability scanners.",
+    "Do not run license scanners.",
+    "Do not create quarantine trials.",
+    "Do not create wrappers.",
+    "Do not mark materials TRUSTED.",
+    "Do not create external agents."
+  ]
+}

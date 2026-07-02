@@ -1,0 +1,16 @@
+{
+  "proof_id": "PRODUCTION_FACTORY_PROOF_V1",
+  "run_id": "SELF_BUILD_PRODUCTION_PROGRAM_V1_001__PACK_5",
+  "status": "PASS",
+  "generated_agent_id": "production_factory_proof_agent",
+  "generated_package_root": ".\\generated_agents\\production_factory_proof_agent",
+  "checked_files": [
+    "README.md",
+    "AGENTS.md",
+    "AGENT_MISSION.md",
+    "contracts\\input_contract.json",
+    "contracts\\output_contract.json",
+    "orchestrator\\run.ps1",
+    "validators\\validate_package.ps1"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "state_id": "BUILDER_BEHAVIOR_ADAPTATION_SCALE_STATE_CURRENT",
+  "session_id": "PHASE144_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001",
+  "run_id": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001",
+  "current_line": "SELF_BUILD",
+  "completed_cycles": 18,
+  "max_cycles": 18,
+  "corrections_seen_count": 3,
+  "corrections_applied_count": 3,
+  "behavior_changes_count": 3,
+  "adaptation_scaled": true,
+  "repeated_safe_carousel_reduced": true,
+  "baseline_session": "LIVE_LOOP_002",
+  "phase143_trial_session": "PHASE143_CORRECTION_RESPONSE_TRIAL_001",
+  "trial_session": "PHASE144_BEHAVIOR_ADAPTATION_SCALE_TRIAL_001",
+  "selected_next_gap": "PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1",
+  "owner_interactive_prompt_required": false,
+  "external_agent_production_allowed": false,
+  "next_allowed_step": "PHASE145_BUILDER_AUTONOMOUS_MULTI_SESSION_LEARNING_TRIAL_V1"
+}

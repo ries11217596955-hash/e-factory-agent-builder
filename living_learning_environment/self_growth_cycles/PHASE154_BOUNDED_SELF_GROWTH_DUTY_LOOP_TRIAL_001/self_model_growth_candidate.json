@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "candidate_id": "PHASE154_SELF_MODEL_GROWTH_CANDIDATE",
+  "step_id": "PHASE154_BUILDER_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_V1",
+  "run_id": "PHASE154_BOUNDED_SELF_GROWTH_DUTY_LOOP_TRIAL_001",
+  "candidate_only": true,
+  "new_candidate_skills_count": 3,
+  "candidate_skill_ids": [
+    "SUBTRACTION_BASIC_SKILL_CANDIDATE_V1",
+    "ADDITION_CONSISTENCY_SKILL_CANDIDATE_V1",
+    "ARITHMETIC_ERROR_DETECTION_SKILL_CANDIDATE_V1"
+  ],
+  "accepted_self_model_mutated": false,
+  "accepted_state_mutated": false,
+  "next_allowed_step": "PHASE155_BUILDER_SELF_GROWTH_RUNTIME_ADMISSION_REVIEW_V1"
+}

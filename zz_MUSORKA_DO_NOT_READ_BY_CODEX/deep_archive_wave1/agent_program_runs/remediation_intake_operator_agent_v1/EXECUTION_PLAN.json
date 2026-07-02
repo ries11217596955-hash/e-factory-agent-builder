@@ -1,0 +1,46 @@
+{
+  "plan_id": "AGENT_PROGRAM_EXECUTION_PLAN_REMEDIATION_INTAKE_OPERATOR_AGENT_V1",
+  "status": "READY",
+  "source_program_path": "agent_programs/remediation_intake_operator_agent_v1/PROGRAM.json",
+  "agent_id": "remediation_intake_operator_agent_v1",
+  "agent_name": "Remediation Intake Operator Agent v1",
+  "production_steps": [
+    "create_agent_folder",
+    "create_agent_spec",
+    "create_readme",
+    "create_runbook",
+    "create_input_example",
+    "create_output_example",
+    "create_run_script",
+    "validate_local_runtime",
+    "create_github_action",
+    "validate_github_artifact",
+    "register_agent_catalog"
+  ],
+  "required_files": [
+    "generated_agents/remediation_intake_operator_agent_v1/AGENT_SPEC.json",
+    "generated_agents/remediation_intake_operator_agent_v1/INPUT_EXAMPLE.json",
+    "generated_agents/remediation_intake_operator_agent_v1/README.md",
+    "generated_agents/remediation_intake_operator_agent_v1/RUNBOOK.md",
+    "generated_agents/remediation_intake_operator_agent_v1/run.ps1"
+  ],
+  "validation_requirements": [
+    "agent package required files exist",
+    "run.ps1 passes PowerShell parser check",
+    "INPUT_EXAMPLE.json produces OUTPUT_EXAMPLE_RUNTIME.json",
+    "runtime output contains validation_status PASS",
+    "GitHub Actions workflow can run manually and upload expected artifact",
+    "agent is registered in agent_catalog/AGENT_CATALOG.json"
+  ],
+  "github_action_required": true,
+  "github_action_name": "Run Remediation Intake Operator Agent v1",
+  "artifact_name": "remediation-intake-operator-agent-v1-output",
+  "forbidden_scope": [
+    "do not create a second agent",
+    "do not change generated_agents/remediation_intake_operator_agent_v1 files",
+    "do not change the existing GitHub workflow",
+    "do not change old proofs or reports",
+    "do not claim acceptance without validator evidence"
+  ],
+  "conclusion": "Builder can read the agent production program and prepare an execution plan."
+}

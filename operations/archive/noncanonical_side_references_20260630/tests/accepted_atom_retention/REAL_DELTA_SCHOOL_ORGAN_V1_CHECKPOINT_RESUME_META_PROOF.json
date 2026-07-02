@@ -1,0 +1,14 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_checkpoint_resume_proof",
+    "status":  "PASS",
+    "proof_label":  "PROVEN_LAB_CHECKPOINT_RESUME_NOT_RUNTIME_INTELLIGENCE",
+    "runtime_ready":  false,
+    "checkpoint_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME.checkpoint.json",
+    "resumed_proof_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME_PROOF.json",
+    "checkpoint_accepted_total":  2,
+    "final_accepted_total":  5,
+    "resume_used":  true,
+    "accepted_core_mutated":  false,
+    "positive_self_map_update_called":  false,
+    "protected_hash_changed_count":  0
+}

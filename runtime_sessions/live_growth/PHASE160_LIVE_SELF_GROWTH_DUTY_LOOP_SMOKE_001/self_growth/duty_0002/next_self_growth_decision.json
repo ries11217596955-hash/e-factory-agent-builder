@@ -1,0 +1,9 @@
+{
+    "status":  "PASS",
+    "duty_id":  "duty_0002",
+    "completed_gap":  "CAPABILITY_INVENTORY_REFRESH_GAP",
+    "next_gap":  "TEACHER_CHANNEL_READINESS_GAP",
+    "next_action":  "continue_bounded_self_growth_curriculum",
+    "codex_needed_for_next_step":  false,
+    "created_at":  "2026-06-03T17:11:07.9797723Z"
+}

@@ -1,0 +1,42 @@
+{
+    "schema":  "ladder_school_rollback_manifest_v1",
+    "status":  "ROLLBACK_READY",
+    "runtime_ready":  false,
+    "run_id":  "ladder_school_1000_v1",
+    "protected_before":  [
+                             {
+                                 "path":  "reports/self_development/accepted_change_memory_snapshot.json",
+                                 "before_sha256":  "92260d70d982b4e3899660d8b61917e9badbc8fc1c0fd35c7b2c422ea4a0a9a4",
+                                 "backup_path":  "operations\\school\\ladder\\rollback\\ladder_school_1000_v1\\reports__self_development__accepted_change_memory_snapshot.json.before.json"
+                             },
+                             {
+                                 "path":  "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                                 "before_sha256":  "cf5ce27c230992200de7e64c2d55c33f57b293f168e3212fe4b12460ca6faa3b",
+                                 "backup_path":  "operations\\school\\ladder\\rollback\\ladder_school_1000_v1\\reports__self_development__SELF_MODEL_ACTIVE_MAP.json.before.json"
+                             },
+                             {
+                                 "path":  "packs/registry.json",
+                                 "before_sha256":  "f61ed26b24ae40ce645e292adc0bb9aa85d04d81ccabee2ef3bf9864c389aafc",
+                                 "backup_path":  "operations\\school\\ladder\\rollback\\ladder_school_1000_v1\\packs__registry.json.before.json"
+                             }
+                         ],
+    "protected_after":  [
+                            {
+                                "path":  "reports/self_development/accepted_change_memory_snapshot.json",
+                                "after_sha256":  "83344e9a685ea7c67c59f582376b0a9d8958c3de685e14fbca6efd229f84105a"
+                            },
+                            {
+                                "path":  "reports/self_development/SELF_MODEL_ACTIVE_MAP.json",
+                                "after_sha256":  "a8bf16c2c5f96834435447bcd11dd106125a09c98d321ded95bed90615102b1d"
+                            },
+                            {
+                                "path":  "packs/registry.json",
+                                "after_sha256":  "085dc855ee57f346e677799a240359c5a21d2764c0ba0292dd4f52d3a203da21"
+                            }
+                        ],
+    "active_store_paths":  [
+                               "operations/school/ladder/store/ladder_school_1000_v1/manifest.json",
+                               "operations/school/ladder/store/ladder_school_1000_v1/active_ladder_atom_index.json"
+                           ],
+    "rollback_command":  "manual restore from backups under operations/school/ladder/rollback/ladder_school_1000_v1"
+}

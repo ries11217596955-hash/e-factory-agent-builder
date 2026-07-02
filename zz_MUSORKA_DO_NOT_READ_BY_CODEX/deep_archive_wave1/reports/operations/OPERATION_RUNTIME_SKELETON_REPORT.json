@@ -1,0 +1,155 @@
+{
+  "report_id": "OPERATION_RUNTIME_SKELETON_REPORT",
+  "phase": "PHASE_86",
+  "capability_id": "operation_runtime_skeleton_v1",
+  "status": "PASS",
+  "generated_at": "2026-05-29T10:35:26.5916342Z",
+  "request_path": "operations/runtime/requests/FIRST_OPERATION_RUNTIME_DRY_RUN_REQUEST.json",
+  "operation_id": "validate_json_schema_with_python_jsonschema",
+  "operation_registry_path": "operations/registry.json",
+  "operation_contract_path": "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json",
+  "operation_contract_status": "CONTRACT_READY",
+  "smoke_proof_path": "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
+  "smoke_proof_status": "PASS",
+  "runtime_mode": "DRY_RUN_PLAN_ONLY",
+  "dry_run_plan_created": true,
+  "dry_run_plan": {
+    "plan_id": "FIRST_OPERATION_RUNTIME_DRY_RUN_PLAN",
+    "operation_id": "validate_json_schema_with_python_jsonschema",
+    "runtime_mode": "DRY_RUN_PLAN_ONLY",
+    "contract_path": "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json",
+    "smoke_proof_path": "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json",
+    "input_refs": {
+      "schema_path": "operations/smoke_trials/fixtures/json_schema_validation/schema.json",
+      "instance_path": "operations/smoke_trials/fixtures/json_schema_validation/valid_instance.json",
+      "options": {
+        "schema_dialect": "draft_2020_12",
+        "format_checking": false,
+        "error_format": "structured"
+      }
+    },
+    "output_refs": {
+      "runtime_report_path": "reports/operations/OPERATION_RUNTIME_SKELETON_REPORT.json",
+      "future_operation_output_path": "reports/operations/future_validate_json_schema_with_python_jsonschema_runtime_output.json"
+    },
+    "sandbox_policy": "TEMP_SANDBOX_REQUIRED_FOR_EXECUTION_LATER",
+    "allowed_reads": [
+      "future declared schema_path",
+      "future declared instance_path",
+      "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json",
+      "materials/quarantine/mat_python_jsonschema_001/MATERIAL_CARD.json"
+    ],
+    "allowed_writes": [
+      "future operation-local report path",
+      "future operation-local proof path"
+    ],
+    "forbidden_actions": [
+      "install_tool",
+      "run_tool",
+      "create_venv",
+      "fetch_repo",
+      "mutate_catalog",
+      "mutate_policy",
+      "mutate_quarantine_card",
+      "mutate_operation_contract",
+      "mutate_operation_registry",
+      "mark_material_trusted",
+      "mark_operation_trusted",
+      "create_external_agent"
+    ],
+    "execution_steps": [
+      "validate_request",
+      "validate_operation_registry_entry",
+      "validate_operation_contract",
+      "validate_smoke_proof",
+      "prepare_future_sandbox_execution_plan",
+      "write_runtime_report",
+      "record_runtime_proof"
+    ],
+    "blocked_in_phase86": [
+      "tool_execution",
+      "package_install",
+      "environment_creation",
+      "external_fetch",
+      "production_wrapper_creation",
+      "trust_promotion"
+    ]
+  },
+  "execution_performed": false,
+  "install_performed": false,
+  "external_fetch_performed": false,
+  "trusted_operation_count": 0,
+  "operation_marked_trusted": false,
+  "material_marked_trusted": false,
+  "allowed_reads": [
+    "future declared schema_path",
+    "future declared instance_path",
+    "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json",
+    "materials/quarantine/mat_python_jsonschema_001/MATERIAL_CARD.json"
+  ],
+  "allowed_writes": [
+    "future operation-local report path",
+    "future operation-local proof path"
+  ],
+  "forbidden_actions": [
+    "install_tool",
+    "run_tool",
+    "create_venv",
+    "fetch_repo",
+    "mutate_catalog",
+    "mutate_policy",
+    "mutate_quarantine_card",
+    "mutate_operation_contract",
+    "mutate_operation_registry",
+    "mark_material_trusted",
+    "mark_operation_trusted",
+    "create_external_agent"
+  ],
+  "validation_gates": [
+    "request_parse_pass",
+    "runtime_mode_dry_run_only",
+    "registry_operation_found",
+    "operation_not_trusted",
+    "contract_ready",
+    "smoke_proof_pass",
+    "dry_run_plan_created",
+    "execution_performed_false",
+    "install_performed_false",
+    "external_fetch_performed_false"
+  ],
+  "protected_state_hashes_before": {
+    "materials/MATERIAL_CATALOG.json": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+    "materials/MATERIAL_POLICY.json": "122B92C7D03D240E6737C57FFE68DD8E2E0AF6B223B3998B12B22E06661F0E2A",
+    "materials/quarantine/QUARANTINE_BATCH_001.json": "9A75D4A070D1756917E946806C4AE553BCC617E8F90539753100C5A5F22E0555",
+    "materials/quarantine/mat_json_schema_ajv_001/MATERIAL_CARD.json": "438EE168E32B2C0AE4C9ED7CB11F2A8FA2516A2B7C8083BC4D8C48D8EE182AF0",
+    "materials/quarantine/mat_python_jsonschema_001/MATERIAL_CARD.json": "2E87E32432FF6D70C255888705BA70D7CB910585F3B16130EF879384C492B7BF",
+    "operations/registry.json": "1A8CC9B07857F4D067BE6E54059CCFCE9847A0AF26E0D5DFDC39345CEC485C5E",
+    "operations/contracts/validate_json_schema_with_ajv.contract.json": "5A9230FF764115BDFBFCAA743E3F55CC0F296DB39D8193A4F09E0D4934E5D860",
+    "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json": "BAB43E5B8A45157CF719D0267DC87E29A524B644884743CD439427020F019E36",
+    "reports/operations/FIRST_SMOKE_INSTALL_TRIAL_REPORT.json": "A41E03FD12BEC77D53AFB68E22FD50C0A210C4087D81CF9A396DBC6A2F9D260F",
+    "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json": "6AB674D7DD684361C886E0F9E621C736DE93DEA101D25F8BC19E65608E12297A"
+  },
+  "protected_state_hashes_after": {
+    "materials/MATERIAL_CATALOG.json": "038C7506161A37B97ADA82618913403A948707FB19B1F4593ECDEA763FFE2D76",
+    "materials/MATERIAL_POLICY.json": "122B92C7D03D240E6737C57FFE68DD8E2E0AF6B223B3998B12B22E06661F0E2A",
+    "materials/quarantine/QUARANTINE_BATCH_001.json": "9A75D4A070D1756917E946806C4AE553BCC617E8F90539753100C5A5F22E0555",
+    "materials/quarantine/mat_json_schema_ajv_001/MATERIAL_CARD.json": "438EE168E32B2C0AE4C9ED7CB11F2A8FA2516A2B7C8083BC4D8C48D8EE182AF0",
+    "materials/quarantine/mat_python_jsonschema_001/MATERIAL_CARD.json": "2E87E32432FF6D70C255888705BA70D7CB910585F3B16130EF879384C492B7BF",
+    "operations/registry.json": "1A8CC9B07857F4D067BE6E54059CCFCE9847A0AF26E0D5DFDC39345CEC485C5E",
+    "operations/contracts/validate_json_schema_with_ajv.contract.json": "5A9230FF764115BDFBFCAA743E3F55CC0F296DB39D8193A4F09E0D4934E5D860",
+    "operations/contracts/validate_json_schema_with_python_jsonschema.contract.json": "BAB43E5B8A45157CF719D0267DC87E29A524B644884743CD439427020F019E36",
+    "reports/operations/FIRST_SMOKE_INSTALL_TRIAL_REPORT.json": "A41E03FD12BEC77D53AFB68E22FD50C0A210C4087D81CF9A396DBC6A2F9D260F",
+    "proofs/operations/FIRST_SMOKE_INSTALL_TRIAL_V1.json": "6AB674D7DD684361C886E0F9E621C736DE93DEA101D25F8BC19E65608E12297A"
+  },
+  "protected_state_unchanged": true,
+  "next_allowed_step": "PHASE87_SELF_DEVELOPMENT_DECISION_KERNEL_V1",
+  "cut_list": [
+    "Do not execute operation tools.",
+    "Do not install packages.",
+    "Do not create sandboxes or runtime environments.",
+    "Do not fetch external repositories.",
+    "Do not create production wrappers.",
+    "Do not mark operations or materials trusted.",
+    "Do not mutate registry, contracts, catalog, policy, quarantine cards, or smoke evidence."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "inbox_id": "BUILDER_LIFE_LOOP_ADAPTATION_CORRECTION_INBOX",
+  "pending_corrections": [
+    {
+      "correction_id": "PHASE144_CORRECTION_001",
+      "status": "pending",
+      "message": "Reduce repetitive READ_CURRENT_STATE loops. Prioritize practical tasks after state read.",
+      "author": "OWNER_OR_ASSISTANT",
+      "created_before_trial": true,
+      "created_at": "2026-06-02T11:14:16.6702668Z",
+      "application_cycle": 1,
+      "behavior_change": "After the first state read, do not restart the safe carousel; move directly to WRITE_LEARNING_NOTE and SELECT_NEXT_MICRO_GAP."
+    },
+    {
+      "correction_id": "PHASE144_CORRECTION_002",
+      "status": "pending",
+      "message": "When a correction is present, explain the behavior change in decision_trace before selecting the next task.",
+      "author": "OWNER_OR_ASSISTANT",
+      "created_before_trial": true,
+      "created_at": "2026-06-02T11:14:16.6702668Z",
+      "application_cycle": 4,
+      "behavior_change": "Insert explicit EXPLAIN_BEHAVIOR_CHANGE decisions before selection so decision_trace names the behavior change."
+    },
+    {
+      "correction_id": "PHASE144_CORRECTION_003",
+      "status": "pending",
+      "message": "After applying a correction, select a stronger micro-gap than the baseline safe carousel.",
+      "author": "OWNER_OR_ASSISTANT",
+      "created_before_trial": true,
+      "created_at": "2026-06-02T11:14:16.6702668Z",
+      "application_cycle": 10,
+      "behavior_change": "Map correction response to a stronger next micro-gap: PHASE145 autonomous multi-session learning."
+    }
+  ],
+  "observed_correction_count": 0,
+  "applied_correction_count": 0,
+  "next_behavior_trial": "PHASE144_BUILDER_BEHAVIOR_ADAPTATION_SCALE_TRIAL_V1"
+}

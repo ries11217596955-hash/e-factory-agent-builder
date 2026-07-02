@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "engine_name": "SELF_NEED_DETECTION_ENGINE_V1",
+  "run_id": "PHASE111_SELF_NEED_DETECTION_ENGINE_SELF_TEST_001",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "queue_active_task_id": "NONE",
+  "phase110_finalize_status": "PASS",
+  "phase111_probe_status": "BLOCKED",
+  "phase111_probe_classification": "NO_AUTONOMOUS_NEXT_ACTION_SELECTION_FOUND",
+  "diagnosis": "MISSING_DECISION_TO_ACTION_CAPABILITY",
+  "detected_need_id": "NEED_DECISION_TO_ACTION_ENGINE",
+  "missing_capability": "BUILDER_CAN_REPEAT_RUNTIME_OPERATION_BUT_CANNOT_TRANSLATE_STATE_NEED_INTO_NEXT_ACTION",
+  "recommended_next_step": "PHASE112_BUILD_DECISION_TO_ACTION_ENGINE_V1",
+  "reason": "PHASE110 proved repeatability; PHASE111 probe proved Builder does not select a next action when active_task_id is NONE.",
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

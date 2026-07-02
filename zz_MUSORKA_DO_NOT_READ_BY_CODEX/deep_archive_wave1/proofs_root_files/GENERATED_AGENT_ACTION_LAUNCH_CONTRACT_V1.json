@@ -1,0 +1,9 @@
+﻿{
+    "proof_id":  "GENERATED_AGENT_ACTION_LAUNCH_CONTRACT_V1",
+    "run_id":  "SELF_BUILD_GITHUB_ACTION_EXECUTION_SURFACE_V1_CONTINUE_001__PACK_1",
+    "status":  "PASS",
+    "contract_path":  ".\\contracts\\generated_agent_github_action_launch_surface.contract.json",
+    "generator_path":  ".\\modules\\new_external_agent_package.ps1",
+    "delivery_artifact_path":  "deployment/github_actions/run-generated-agent.workflow.yml",
+    "deployment_target_path":  ".github/workflows/run-generated-agent.yml"
+}

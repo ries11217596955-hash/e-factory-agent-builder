@@ -1,0 +1,21 @@
+{
+    "status":  "STOPPED",
+    "state_id":  "PHASE160_BUILDER_DAEMON_CURRENT_STATE",
+    "session_root":  "runtime_sessions/live_growth/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_SMOKE_001",
+    "current_tick":  13,
+    "last_tick_id":  "tick_0013",
+    "stop_reason":  "duration_limit",
+    "stopped_at":  "2026-06-03T17:12:35.9748847Z",
+    "duration_based_session":  true,
+    "fixed_tick_batch_mode":  false,
+    "live_session_safe_stop":  true,
+    "self_growth_enabled":  true,
+    "self_growth_duty_count":  3,
+    "last_self_growth_duty_id":  "duty_0003",
+    "last_self_growth_gap":  "TEACHER_CHANNEL_READINESS_GAP",
+    "last_self_growth_status":  "PASS",
+    "next_self_growth_gap":  "BLOCKER_CHANNEL_READINESS_GAP",
+    "accepted_state_mutated":  false,
+    "accepted_memory_mutated":  false,
+    "accepted_self_model_mutated":  false
+}

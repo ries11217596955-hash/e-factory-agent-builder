@@ -1,0 +1,12 @@
+{
+    "status":  "PASS",
+    "duty_id":  "duty_0001",
+    "selected_gap":  "SELF_MAP_REFRESH_GAP",
+    "intention":  "perform_bounded_session_local_self_growth_duty",
+    "owner_visible":  true,
+    "dry_run":  false,
+    "accepted_state_mutation_requested":  false,
+    "accepted_memory_mutation_requested":  false,
+    "capability_shelf_promotion_requested":  false,
+    "created_at":  "2026-06-03T17:10:47.1832585Z"
+}

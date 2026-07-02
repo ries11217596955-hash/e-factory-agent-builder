@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "phase": "PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1",
+  "task_id": "TASK_PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_ONE_CYCLE_SMOKE_V1_001",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "run_id": "PHASE110_BATCH5_CYCLE_02__PACK_1",
+  "runtime_executed": true,
+  "builder_executed": true,
+  "replayed_phase107": false,
+  "used_historical_phase107_validator": false,
+  "codex_used": false,
+  "internet_used": false,
+  "install_used": false,
+  "external_agent_production": false,
+  "main_touched": false,
+  "queue_returned_to_none": true,
+  "proven_previous_blocker": "PHASE107_NOT_IDEMPOTENT_AFTER_PHASE109",
+  "next_allowed_step": "PHASE110_IDEMPOTENT_AUTONOMY_TRIAL_5_CYCLE_BATCH_V1"
+}

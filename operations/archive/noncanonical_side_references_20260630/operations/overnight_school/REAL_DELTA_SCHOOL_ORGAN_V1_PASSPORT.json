@@ -1,0 +1,86 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_passport",
+    "organ_id":  "REAL_DELTA_SCHOOL_ORGAN_V1",
+    "status":  "PASSPORT_CANDIDATE_FROM_EXISTING_BODY_SCAN",
+    "purpose":  "Accept candidate atom feeds of arbitrary N and turn them into accepted/rejected atoms only through real-delta evidence, comprehension, causal use, and anti-cheat gates.",
+    "not_new_from_scratch":  true,
+    "assembled_from_scan":  "operations/overnight_school/REAL_DELTA_SCHOOL_EXISTING_BODY_SCAN_V1.json",
+    "body_scan_status":  "SCAN_COMPLETE_NO_NEW_ORGAN_CREATED",
+    "authority_boundary":  {
+                               "may_accept_candidate_feeds":  true,
+                               "may_build_curriculum_ladder":  true,
+                               "may_run_lab_school_cycles":  true,
+                               "may_write_proof_artifacts":  true,
+                               "may_update_map_only_via_rollup":  true,
+                               "may_mutate_live_runtime":  false,
+                               "may_set_runtime_ready_true":  false,
+                               "may_blind_restore_quarantine":  false,
+                               "may_create_per_number_validators":  false
+                           },
+    "source_modes":  [
+                         {
+                             "mode":  "OWNER_SUPPLIED",
+                             "meaning":  "Owner/external package supplies candidate atoms or lessons for accelerated learning."
+                         },
+                         {
+                             "mode":  "SELF_PRACTICE_DERIVED",
+                             "meaning":  "Agent derives candidates from its own actions, repairs, validators, failures, and successful decisions."
+                         },
+                         {
+                             "mode":  "FAILURE_DERIVED",
+                             "meaning":  "Repeated blocker or validator failure becomes candidate lesson material."
+                         },
+                         {
+                             "mode":  "QUARANTINE_DERIVED",
+                             "meaning":  "Quarantined material can be mined for candidate/invariant material only; no blind restore."
+                         },
+                         {
+                             "mode":  "REPO_CHANGE_DERIVED",
+                             "meaning":  "Accepted repo/capability/module changes can emit candidate lessons for future reuse."
+                         }
+                     ],
+    "reused_components":  [
+                              "candidate_intake_contract",
+                              "phase162_atom_acceptance_gates",
+                              "phase165_lesson_to_atom_bridge",
+                              "useful_curriculum_school_supervisor",
+                              "useful_school_30k_full_process",
+                              "real_delta_cycle_probe",
+                              "real_delta_review",
+                              "self_map_rollup_policy"
+                          ],
+    "excluded_or_limited_components":  [
+                                           {
+                                               "id":  "real_delta_scale_gate_50",
+                                               "classification":  "SUPERSEDED_WRONG_DIRECTION",
+                                               "reason":  "N is a parameter, not a new organ or validator per number."
+                                           },
+                                           {
+                                               "id":  "codex_plan_comprehension_delta",
+                                               "classification":  "PLAN_REFERENCE_ONLY",
+                                               "reason":  "Plan/reference only, not implementation proof."
+                                           },
+                                           {
+                                               "id":  "quarantine_comprehension_delta_impl",
+                                               "classification":  "QUARANTINE_REVIEW_ONLY",
+                                               "reason":  "Candidate material only, no blind restore."
+                                           }
+                                       ],
+    "lifecycle_contract":  [
+                               "candidate_feed_received",
+                               "candidate_intake_validated",
+                               "curriculum_ladder_built",
+                               "before_exam_recorded",
+                               "lesson_comprehension_recorded",
+                               "after_exam_recorded",
+                               "causal_use_checked",
+                               "anti_cheat_negative_tests_passed",
+                               "accepted_or_rejected_atoms_written",
+                               "batch_or_capability_digest_written",
+                               "map_updated_at_rollup_level_only"
+                           ],
+    "proof_status":  "NOT_IMPLEMENTED_AS_UNIFIED_PARAMETRIC_RUNNER; PASSPORT_AND_CONTRACT_ONLY",
+    "runtime_ready":  false,
+    "commit_push_performed":  false,
+    "created_utc":  "2026-06-30T12:18:06.0210803Z"
+}

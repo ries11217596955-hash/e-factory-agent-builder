@@ -1,0 +1,21 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_large_n_dry_run_meta_proof",
+    "status":  "PASS",
+    "proof_label":  "PROVEN_LAB_LARGE_N_DRY_RUN_MECHANICS_NOT_LEARNING_QUALITY",
+    "runtime_ready":  false,
+    "target_accepted":  25,
+    "batch_size":  7,
+    "expected_batch_count":  4,
+    "checkpoint_accepted_total":  11,
+    "final_accepted_total":  25,
+    "resume_used":  true,
+    "feed_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_DRY_RUN_FEED_25.json",
+    "proof_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN_PROOF.json",
+    "checkpoint_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN.checkpoint.json",
+    "feed_purpose":  "DRY_RUN_MECHANICS_ONLY",
+    "generated_for_test":  true,
+    "learning_quality_claimed":  false,
+    "accepted_core_mutated":  false,
+    "positive_self_map_update_called":  false,
+    "protected_hash_changed_count":  0
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "cycle_id": "cycle_008",
+  "cycle_number": 8,
+  "step_id": "PHASE156_BUILDER_SELF_SELECTED_GAP_SELF_BUILD_TRIAL_V1",
+  "run_id": "PHASE156_SELF_SELECTED_GAP_SELF_BUILD_TRIAL_001",
+  "skill_id": "SELF_PROOF_SUMMARY_SKILL_CANDIDATE_V1",
+  "absorption_status": "CANDIDATE_NOT_ACCEPTED",
+  "accepted_memory_mutated": false,
+  "accepted_state_mutated": false,
+  "accepted_self_model_mutated": false,
+  "next_allowed_step": "PHASE157_BUILDER_SELF_SELECTED_GAP_TRIAL_REVIEW_V1"
+}

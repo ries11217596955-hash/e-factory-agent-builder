@@ -1,0 +1,17 @@
+{
+  "runbook_title": "Restart stuck background worker",
+  "runbook_steps": [
+    "Confirm the current incident scope and affected environment.",
+    "Check worker queue depth and last successful job timestamp.",
+    "Restart the worker service using the approved operational command.",
+    "Verify queue depth decreases and no new critical errors appear.",
+    "Record evidence and hand off unresolved symptoms to engineering."
+  ],
+  "task_or_incident": "Background worker is stuck and queued remediation jobs are not progressing.",
+  "environment": "staging",
+  "constraints": [
+    "Do not change production systems.",
+    "Do not delete queued jobs.",
+    "Collect evidence before and after restart."
+  ]
+}

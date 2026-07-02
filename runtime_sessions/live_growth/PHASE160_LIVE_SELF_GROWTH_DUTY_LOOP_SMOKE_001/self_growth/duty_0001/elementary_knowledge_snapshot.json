@@ -1,0 +1,14 @@
+{
+    "status":  "PASS",
+    "duty_id":  "duty_0001",
+    "knowledge_type":  "operational_seed_only",
+    "identity":  "Builder is local-first self-growing action machine",
+    "safety":  "sandbox-only until admission",
+    "scope":  "no accepted state mutation",
+    "method":  "observe -\u003e select gap -\u003e candidate -\u003e validate -\u003e memory event -\u003e next decision",
+    "teacher_channel":  "teacher_outbox suggestions are input, not commands",
+    "blocker_channel":  "if unable, write blocker/help request",
+    "stop":  "obey stop.flag and duration limit",
+    "world_knowledge_loaded":  false,
+    "created_at":  "2026-06-03T17:10:47.1612815Z"
+}

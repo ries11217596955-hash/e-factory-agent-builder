@@ -1,0 +1,364 @@
+{
+    "schema":  "noncanonical_side_references_archive_manifest_v1",
+    "status":  "ARCHIVED_NONCANONICAL_SIDE_REFERENCES_NO_DELETE",
+    "runtime_ready":  false,
+    "head_before":  "276133ca606cf2b34161a41e0f5ad72922c7aa5d",
+    "branch":  "thin-control",
+    "archive_root":  "operations/archive/noncanonical_side_references_20260630",
+    "archived_item_count":  50,
+    "archived_file_count":  75,
+    "archived_total_bytes":  745291,
+    "boundary":  "Moved remaining untracked non-canonical/reference side material out of active route. No canonical school entrypoint, 30K support, or self_map files were archived.",
+    "items":  [
+                  {
+                      "original_path":  "operations/codex_handoff/",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/codex_handoff/",
+                      "kind":  "directory",
+                      "file_count":  11,
+                      "bytes":  87972
+                  },
+                  {
+                      "original_path":  "operations/lifecycle/",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/lifecycle/",
+                      "kind":  "directory",
+                      "file_count":  5,
+                      "bytes":  6236
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_CYCLE_V1_REQUIREMENT.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_CYCLE_V1_REQUIREMENT.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  1558
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_CYCLE_V1_REQUIREMENT.md",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_CYCLE_V1_REQUIREMENT.md",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  669
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_EXISTING_BODY_SCAN_V1.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_EXISTING_BODY_SCAN_V1.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  12034
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_EXISTING_BODY_SCAN_V1.md",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_EXISTING_BODY_SCAN_V1.md",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  750
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_DRY_RUN_FEED_25.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_DRY_RUN_FEED_25.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  25265
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_PARAMETRIC_CONTRACT.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_PARAMETRIC_CONTRACT.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  7810
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_PARAMETRIC_CONTRACT.md",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_PARAMETRIC_CONTRACT.md",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  521
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_PASSPORT.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_PASSPORT.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  5308
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_PASSPORT.md",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_PASSPORT.md",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  575
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_SAMPLE_FEED.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_SAMPLE_FEED.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  2751
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/generate_real_delta_school_organ_v1_dry_run_feed.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/generate_real_delta_school_organ_v1_dry_run_feed.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  1907
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/run_real_delta_school_cycle_v1.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/run_real_delta_school_cycle_v1.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  12511
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/run_real_delta_school_cycle_v1_review.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/run_real_delta_school_cycle_v1_review.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  6606
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/run_real_delta_school_organ_v1.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/run_real_delta_school_organ_v1.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  8130
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/run_real_delta_school_scale_gate_v1.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/run_real_delta_school_scale_gate_v1.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  6913
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_cycle_v1.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_cycle_v1.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  4810
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_cycle_v1_review.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_cycle_v1_review.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  2681
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_existing_body_scan_v1.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_existing_body_scan_v1.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  2080
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_organ_v1_candidate_feed_contract.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_organ_v1_candidate_feed_contract.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  1766
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_organ_v1_candidate_feed_negative_cases.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_organ_v1_candidate_feed_negative_cases.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  3412
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_organ_v1_checkpoint_resume.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_organ_v1_checkpoint_resume.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  3725
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_organ_v1_large_n_dry_run.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_organ_v1_large_n_dry_run.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  4758
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_organ_v1_passport_contract.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_organ_v1_passport_contract.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  4671
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_organ_v1_resource_budget_guard.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_organ_v1_resource_budget_guard.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  3924
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_organ_v1_run_output_contract.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_organ_v1_run_output_contract.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  1444
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_organ_v1_small_proof.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_organ_v1_small_proof.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  2186
+                  },
+                  {
+                      "original_path":  "operations/overnight_school/validate_real_delta_school_scale_gate_v1.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/overnight_school/validate_real_delta_school_scale_gate_v1.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  2783
+                  },
+                  {
+                      "original_path":  "operations/quarantine/",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/quarantine/",
+                      "kind":  "directory",
+                      "file_count":  8,
+                      "bytes":  188350
+                  },
+                  {
+                      "original_path":  "operations/reports/BUILT_CAPABILITY_AUDIT_V1.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/reports/BUILT_CAPABILITY_AUDIT_V1.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  91718
+                  },
+                  {
+                      "original_path":  "operations/reports/BUILT_CAPABILITY_AUDIT_V1.md",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/reports/BUILT_CAPABILITY_AUDIT_V1.md",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  11188
+                  },
+                  {
+                      "original_path":  "operations/reports/MAP_PATCH_CANDIDATE_V1.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/reports/MAP_PATCH_CANDIDATE_V1.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  34163
+                  },
+                  {
+                      "original_path":  "operations/reports/MAP_PATCH_CANDIDATE_V1.md",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/reports/MAP_PATCH_CANDIDATE_V1.md",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  2343
+                  },
+                  {
+                      "original_path":  "operations/reports/validate_map_patch_candidate_v1.ps1",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/operations/reports/validate_map_patch_candidate_v1.ps1",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  1797
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  25106
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_REVIEW.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_REVIEW.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  7444
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME.checkpoint.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME.checkpoint.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  3245
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME_META_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME_META_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  671
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_CHECKPOINT_RESUME_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  12727
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  2959
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_TMP/",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_FEED_NEGATIVE_CASES_TMP/",
+                      "kind":  "directory",
+                      "file_count":  5,
+                      "bytes":  5918
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN.checkpoint.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN.checkpoint.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  16045
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN_META_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN_META_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  974
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  41209
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_PARAM_N3_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_PARAM_N3_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  9746
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_RESOURCE_BUDGET_GUARD_META_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_RESOURCE_BUDGET_GUARD_META_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  1267
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_RESOURCE_BUDGET_GUARD_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_RESOURCE_BUDGET_GUARD_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  41138
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_SMALL_PROOF.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_SMALL_PROOF.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  12452
+                  },
+                  {
+                      "original_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_SCALE_GATE_V1.json",
+                      "archived_path":  "operations/archive/noncanonical_side_references_20260630/tests/accepted_atom_retention/REAL_DELTA_SCHOOL_SCALE_GATE_V1.json",
+                      "kind":  "file",
+                      "file_count":  1,
+                      "bytes":  9075
+                  }
+              ]
+}

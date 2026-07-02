@@ -1,0 +1,207 @@
+{
+  "report_id": "GENERATED_REMEDIATION_FAMILY_CONSUMPTION_PREFLIGHT_V1",
+  "status": "PASS",
+  "active_task_line": "  \"active_task_id\": \"TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_001\",",
+  "raw_idea_request_shape": {
+    "has_request_id": true,
+    "has_payload": true,
+    "payload_has_target_fields": true
+  },
+  "file_checks": [
+    {
+      "path": "remediation_programs/REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+      "exists": true
+    },
+    {
+      "path": "specs/remediation_intake_agent_profile_proof/REMEDIATION_INTAKE_AGENT_PROFILE_PROOF_SPEC.json",
+      "exists": true
+    },
+    {
+      "path": "specs/remediation_intake_agent_gap_proof/RAW_IDEA_REMEDIATION_INTAKE_AGENT_GAP_PROOF.json",
+      "exists": true
+    },
+    {
+      "path": "applied_agents/specialization_profiles/SPECIALIZATION_PROFILE_REGISTRY.json",
+      "exists": true
+    },
+    {
+      "path": "applied_agents/specialization_profiles/remediation_intake_agent_v1/overlay/OVERLAY_MANIFEST.json",
+      "exists": true
+    },
+    {
+      "path": "applied_agents/specialization_profiles/remediation_intake_agent_v1/overlay/modules/invoke_agent_operation.ps1",
+      "exists": true
+    },
+    {
+      "path": "proofs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1.json",
+      "exists": true
+    }
+  ],
+  "json_checks": [
+    {
+      "path": "self_build_programs/generated/remediation_intake_agent_v1/SELF_BUILD_PROGRAM_MANIFEST.json",
+      "status": "PASS"
+    },
+    {
+      "path": "remediation_programs/REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+      "status": "PASS"
+    },
+    {
+      "path": "specs/remediation_intake_agent_profile_proof/REMEDIATION_INTAKE_AGENT_PROFILE_PROOF_SPEC.json",
+      "status": "PASS"
+    },
+    {
+      "path": "specs/remediation_intake_agent_gap_proof/RAW_IDEA_REMEDIATION_INTAKE_AGENT_GAP_PROOF.json",
+      "status": "PASS"
+    },
+    {
+      "path": "applied_agents/specialization_profiles/SPECIALIZATION_PROFILE_REGISTRY.json",
+      "status": "PASS"
+    },
+    {
+      "path": "applied_agents/specialization_profiles/remediation_intake_agent_v1/overlay/OVERLAY_MANIFEST.json",
+      "status": "PASS"
+    },
+    {
+      "path": "proofs/GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1.json",
+      "status": "PASS"
+    },
+    {
+      "path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\remediation_intake_agent_v1\\execution_recipes\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_RECIPE.json",
+      "status": "PASS"
+    },
+    {
+      "path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\remediation_intake_agent_v1\\execution_recipes\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_RECIPE.json",
+      "status": "PASS"
+    },
+    {
+      "path": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\self_build_programs\\generated\\remediation_intake_agent_v1\\execution_recipes\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_RECIPE.json",
+      "status": "PASS"
+    }
+  ],
+  "missing_spec_fields": [],
+  "specialization_resolution": {
+    "status": "PASS",
+    "profile_id": "remediation_intake_agent_v1",
+    "overlay_root": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\applied_agents\\specialization_profiles\\remediation_intake_agent_v1\\overlay"
+  },
+  "overlay_module_parse": "PASS",
+  "recipe_summaries": [
+    {
+      "recipe_file": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1_RECIPE.json",
+      "recipe_kind": "SPECIALIZED_CLOSURE_PROOF_RECIPE_V1",
+      "input_artifacts": [
+        {
+          "name": "raw_idea_path",
+          "value": ".\\specs\\remediation_intake_agent_gap_proof\\RAW_IDEA_REMEDIATION_INTAKE_AGENT_GAP_PROOF.json",
+          "exists": true
+        },
+        {
+          "name": "orchestrator_path",
+          "value": ".\\orchestrator\\run.ps1",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "recipe_file": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_RECIPE.json",
+      "recipe_kind": "PROFILE_MATERIALIZATION_RECIPE_V1",
+      "input_artifacts": [
+        {
+          "name": "program_seed_path",
+          "value": ".\\remediation_programs\\REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+          "exists": true
+        },
+        {
+          "name": "profile_proof_spec_path",
+          "value": ".\\specs\\remediation_intake_agent_profile_proof\\REMEDIATION_INTAKE_AGENT_PROFILE_PROOF_SPEC.json",
+          "exists": true
+        },
+        {
+          "name": "resolver_module_path",
+          "value": ".\\modules\\resolve_specialization_overlay.ps1",
+          "exists": true
+        },
+        {
+          "name": "external_build_module_path",
+          "value": ".\\modules\\invoke_external_agent_build.ps1",
+          "exists": true
+        }
+      ]
+    },
+    {
+      "recipe_file": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_SEED_CONSUMPTION_PROOF_V1_RECIPE.json",
+      "recipe_kind": "SEED_CONSUMPTION_PROOF_RECIPE_V1",
+      "input_artifacts": [
+        {
+          "name": "program_seed_path",
+          "value": ".\\remediation_programs\\REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+          "exists": true
+        },
+        {
+          "name": "dependent_generated_profile_proof_path",
+          "value": ".\\proofs\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1.json",
+          "exists": true
+        },
+        {
+          "name": "dependent_generated_closure_proof_path",
+          "value": ".\\proofs\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_CLOSURE_PROOF_V1.json",
+          "exists": false
+        }
+      ]
+    }
+  ],
+  "proof_state": {
+    "profile_proof_exists": true,
+    "closure_proof_exists": false,
+    "seed_consumption_proof_exists": false
+  },
+  "forbidden_drift": {
+    "monitoring_generated_drift": false,
+    "core_module_drift": false,
+    "orchestrator_workflow_drift": false,
+    "phase64_or_consumption_preseeded": false
+  },
+  "architect_handoff_request_shape": {
+    "required_payload_fields": [
+      "problem",
+      "target_user",
+      "operator_goal",
+      "target_agent_id",
+      "target_agent_kind",
+      "package_profile"
+    ],
+    "missing_payload_fields": [],
+    "status": "PASS"
+  },
+  "architect_handoff_full_payload_contract": {
+    "required_payload_fields": [
+      "problem",
+      "target_user",
+      "operator_goal",
+      "target_agent_id",
+      "target_agent_kind",
+      "package_profile",
+      "required_inputs",
+      "expected_outputs",
+      "validation_expectations",
+      "forbidden_scope"
+    ],
+    "missing_payload_fields": [],
+    "semantic_failures": [],
+    "status": "PASS"
+  },
+  "architect_raw_idea_schema_contract": {
+    "source_schema_path": "applied_agents/agent_spec_architect/overlay/contracts/raw_agent_idea.schema.json",
+    "required_fields": [
+      "problem",
+      "target_user",
+      "operator_goal",
+      "expected_outputs",
+      "constraints",
+      "non_goals"
+    ],
+    "missing_fields": [],
+    "status": "PASS"
+  }
+}

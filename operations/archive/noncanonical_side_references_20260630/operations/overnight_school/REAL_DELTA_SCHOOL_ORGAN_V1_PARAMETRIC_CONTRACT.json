@@ -1,0 +1,105 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_parametric_contract",
+    "organ_id":  "REAL_DELTA_SCHOOL_ORGAN_V1",
+    "status":  "PARAMETRIC_CONTRACT_CANDIDATE",
+    "assembled_from_scan":  "operations/overnight_school/REAL_DELTA_SCHOOL_EXISTING_BODY_SCAN_V1.json",
+    "invocation":  {
+                       "required_params":  [
+                                               "CandidateFeedPath",
+                                               "TargetAccepted"
+                                           ],
+                       "optional_params":  [
+                                               "BatchSize",
+                                               "MaxCandidates",
+                                               "MaxRuntimeSeconds",
+                                               "StopOnFail",
+                                               "ProofMode",
+                                               "MapAggregationLevel",
+                                               "ResumeFromCheckpoint",
+                                               "CandidateSourceMode"
+                                           ],
+                       "target_accepted":  "integer N; may be 0..unbounded by architecture; constrained only by runtime/budget/storage/operator command.",
+                       "batch_size":  "integer chunk size; controls checkpoint cadence and map rollup cadence, not intelligence claim.",
+                       "proof_mode":  [
+                                          "full",
+                                          "sampled",
+                                          "audit"
+                                      ],
+                       "map_aggregation_level_allowed":  [
+                                                             "chunk",
+                                                             "batch",
+                                                             "capability",
+                                                             "module",
+                                                             "organ",
+                                                             "system"
+                                                         ],
+                       "map_aggregation_level_forbidden":  [
+                                                               "atom",
+                                                               "subchunk"
+                                                           ]
+                   },
+    "candidate_feed_contract":  {
+                                    "candidate_id":  "required unique id",
+                                    "source_type":  [
+                                                        "OWNER_SUPPLIED",
+                                                        "SELF_PRACTICE_DERIVED",
+                                                        "FAILURE_DERIVED",
+                                                        "QUARANTINE_DERIVED",
+                                                        "REPO_CHANGE_DERIVED",
+                                                        "MIXED"
+                                                    ],
+                                    "source_ref":  "required path/report/log/reference",
+                                    "claim":  "required candidate rule or lesson claim",
+                                    "why_useful":  "required expected usefulness for Builder behavior",
+                                    "expected_behavior_delta":  "required concrete before-\u003eafter behavior change",
+                                    "dependencies":  "optional prior atom/capability ids",
+                                    "risk":  "required known risk or false-pass mode",
+                                    "exam_hint":  "optional exam case hint; validator must not accept direct answer leakage"
+                                },
+    "invariants":  [
+                       "N is parameter, not architecture",
+                       "No validator per numeric scale",
+                       "CandidateFeed is external or self-derived input; curriculum orders and tests candidates but does not magically certify them",
+                       "Accepted atom requires comprehension and after-exam improvement",
+                       "Causal atom link required",
+                       "Retrieval/use proof required",
+                       "Count-only success blocked",
+                       "Direct answer/rubric leakage blocked",
+                       "Flat duplicate candidate batches blocked or quarantined",
+                       "Atom/subchunk events do not update map",
+                       "Only rollup digest/capability/module/organ proof may update map",
+                       "Lab proof never upgrades to live proof",
+                       "runtime_ready remains false unless separate live authority proof exists",
+                       "Protected maps unchanged unless explicitly authorized and validated"
+                   ],
+    "reuse_bindings":  {
+                           "candidate_intake":  "validators/validate_candidate_intake_report_contract_v1.ps1",
+                           "atom_acceptance":  "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1; validators/validate_phase162_atom_executed_use_proof_v1.ps1; validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
+                           "lesson_to_atom":  "validators/validate_phase165s_c1_lesson_to_atom_bridge_v1.ps1; modules/write_builder_lesson_result_001.ps1; modules/normalize_builder_lesson_batch_001.ps1",
+                           "school_supervisor_mechanics":  "modules/invoke_useful_curriculum_school_supervisor_v1.ps1; operations/overnight_school/run_useful_school_30k_full_process_v1.ps1",
+                           "real_delta_invariant_probe":  "operations/overnight_school/run_real_delta_school_cycle_v1.ps1; operations/overnight_school/validate_real_delta_school_cycle_v1.ps1",
+                           "heldout_review":  "operations/overnight_school/run_real_delta_school_cycle_v1_review.ps1; operations/overnight_school/validate_real_delta_school_cycle_v1_review.ps1",
+                           "map_rollup":  "operations/self_map/invoke_self_map_auto_update_trigger_v1.ps1 -AggregationLevel batch|capability|module|organ|system"
+                       },
+    "output_contract":  {
+                            "accepted_atoms":  "accepted atoms or receipts; atom-level storage is not map-level surface",
+                            "rejected_atoms":  "rejected candidates with reasons",
+                            "batch_digest":  "rollup digest suitable for map trigger at batch/capability level",
+                            "proof_artifact":  "validator-readable proof json",
+                            "checkpoint":  "resume/checkpoint state for long runs",
+                            "report":  "human-readable report with proof boundaries"
+                        },
+    "validation_contract":  [
+                                "passport contract validator passes",
+                                "existing body scan validator passes",
+                                "real_delta probe validator passes for small N",
+                                "heldout review validator passes",
+                                "atom-level map suppression test passes",
+                                "protected hash check passes",
+                                "runtime_ready false"
+                            ],
+    "proof_status":  "CONTRACT_DEFINED_NOT_RUNNER_IMPLEMENTED",
+    "runtime_ready":  false,
+    "commit_push_performed":  false,
+    "created_utc":  "2026-06-30T12:18:06.0210803Z"
+}

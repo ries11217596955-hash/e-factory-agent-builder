@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "contract_id": "PHASE160_LIVE_SESSION_CONTRACT",
+  "step_id": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1",
+  "run_id": "PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001",
+  "terminal_1_builder_loop": true,
+  "terminal_2_observer_loop": true,
+  "duration_based_session": true,
+  "fixed_tick_batch_mode": false,
+  "execution_scope": "sandbox_only",
+  "heartbeat_interval_seconds": 10,
+  "observer_poll_interval_seconds": 5,
+  "stop_flag_supported": true,
+  "teacher_inbox_supported": true,
+  "teacher_outbox_supported": true,
+  "blocker_queue_supported": true,
+  "accepted_interventions_supported": true,
+  "rejected_interventions_supported": true,
+  "daemon_can_run_until_stop_flag": true,
+  "smoke_duration_seconds": 90
+}

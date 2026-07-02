@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "phase": "PHASE106_SCALE_TRIAL_PROMOTION_GATE_AND_ROUTE_LOCK_REFRESH_V1",
+  "active_line": "AGENT_BUILDER / SELF_BUILD",
+  "generated_at": "2026-05-30T16:38:56.1125158Z",
+  "baseline_commit": "e66cf8e",
+  "route_lock_created": "route_locks/AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR.md",
+  "route_lock_id": "AGENT_BUILDER_NEXT_15_STEPS_LOCK_V3_SELF_PACK_AUTHOR",
+  "route_lock_version": "V3_SELF_PACK_AUTHOR",
+  "supersedes": "AGENT_BUILDER_NEXT_15_STEPS_LOCK_V2_R2",
+  "proven_baseline_phase": "PHASE105_SCALE_TRIAL_10_30_100_ITEM_SIMULATION_V1",
+  "scale_trial_promoted_as": "SIMULATION_PROVEN",
+  "full_autonomy_claimed": false,
+  "codex_dependency_risk_recorded": true,
+  "route_correction_created": true,
+  "builder_self_pack_author_required_next": true,
+  "codex_fallback_not_primary": true,
+  "no_external_agent_production": true,
+  "no_external_fetch": true,
+  "no_external_install": true,
+  "phase107_not_executed": true,
+  "next_allowed_step": "PHASE107_BUILDER_SELF_PACK_AUTHOR_V1"
+}

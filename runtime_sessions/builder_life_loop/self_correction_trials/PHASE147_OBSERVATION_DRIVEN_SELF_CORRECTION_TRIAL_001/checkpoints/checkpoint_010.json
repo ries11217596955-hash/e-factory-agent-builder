@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "checkpoint_id": "checkpoint_010",
+  "session_id": "PHASE147_SELF_CORRECTION_SESSION_001",
+  "run_id": "PHASE147_BUILDER_OBSERVATION_DRIVEN_SELF_CORRECTION_TRIAL_001",
+  "completed_cycles": 10,
+  "baseline_observation_analyzed": true,
+  "repetition_detected": true,
+  "self_correction_created": true,
+  "self_correction_created_by": "BUILDER_RUNTIME",
+  "self_correction_applied": true,
+  "selected_by": "BUILDER_RUNTIME",
+  "lifecycle_authority": "OBSERVATION_RUNNER_ONLY",
+  "supervisor_lifecycle_only": true,
+  "routed_phase_runtime_invoked": false,
+  "created_at": "2026-06-02T14:37:47.7401736Z",
+  "next_allowed_step": "PHASE148_BUILDER_SELF_CORRECTION_RETENTION_TRIAL_V1"
+}

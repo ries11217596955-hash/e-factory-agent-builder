@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "repair_id": "PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_V1",
+  "run_id": "PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_SMOKE_001",
+  "expansion_runtime_root": "runtime_sessions/live_growth_self_growth/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_001",
+  "daemon_result_tick_count": 13,
+  "daemon_result_self_growth_duty_count": 3,
+  "observer_result_self_growth_seen": true,
+  "console_poll_lines": 4,
+  "console_output_sample_path": "runtime_sessions/live_growth_self_growth/PHASE160_LIVE_SELF_GROWTH_DUTY_LOOP_EXPANSION_001/console_output_sample.txt",
+  "created_at": "2026-06-03T17:13:11.6496760Z"
+}

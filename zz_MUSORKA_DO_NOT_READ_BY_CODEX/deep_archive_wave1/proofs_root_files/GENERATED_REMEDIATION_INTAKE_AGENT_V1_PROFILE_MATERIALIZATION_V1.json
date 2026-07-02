@@ -1,0 +1,17 @@
+{
+  "proof_id": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1",
+  "run_id": "GENERATED_REMEDIATION_PROFILE_MATERIALIZATION_V1_005__PACK_1",
+  "status": "PASS",
+  "task_id": "TASK_GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_001",
+  "capability_id": "generated_remediation_intake_agent_v1_profile_materialization_v1",
+  "expected_gate": "GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_READY",
+  "semantic_role": "PROFILE_MATERIALIZATION",
+  "program_seed_path": ".\\remediation_programs\\REMEDIATION_INTAKE_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+  "selected_profile_id": "remediation_intake_agent_v1",
+  "build_report_path": ".\\runs\\GENERATED_REMEDIATION_PROFILE_MATERIALIZATION_V1_005__PACK_1\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1\\profile_build\\BUILD_EXTERNAL_AGENT_REPORT.json",
+  "validation_output": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\GENERATED_REMEDIATION_PROFILE_MATERIALIZATION_V1_005__PACK_1\\GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1\\profile_build\\operational_validation\\OPERATIONAL_RESULT.json",
+  "specialized_operation": "remediation_intake_mode_v1",
+  "next_alert_id": "remediation_intake_agent_intake_request",
+  "escalation_status": "INTAKE_READY",
+  "conclusion": "Generated self-build profile materialization executed from program-owned execution recipe GENERATED_REMEDIATION_INTAKE_AGENT_V1_PROFILE_MATERIALIZATION_V1_RECIPE."
+}

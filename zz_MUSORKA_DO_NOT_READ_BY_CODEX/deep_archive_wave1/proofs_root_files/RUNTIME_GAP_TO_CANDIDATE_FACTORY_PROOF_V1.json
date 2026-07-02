@@ -1,0 +1,12 @@
+{
+  "proof_id": "RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1",
+  "run_id": "SELF_BUILD_GAP_REMEDIATION_INTAKE_RUNTIME_PROGRAM_V1_001_REPAIR__PACK_3",
+  "status": "PASS",
+  "synthetic_gap_report": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_GAP_REMEDIATION_INTAKE_RUNTIME_PROGRAM_V1_001_REPAIR__PACK_3\\PHASE35_RUNTIME_GAP_TO_CANDIDATE_FACTORY_PROOF_V1\\synthetic_gap_source\\SPECIALIZATION_GAP_REPORT.json",
+  "runtime_candidate_path": ".\\runs\\SELF_BUILD_GAP_REMEDIATION_INTAKE_RUNTIME_PROGRAM_V1_001_REPAIR__PACK_3__CANDIDATE_RUNTIME\\GAP_TO_PROFILE_CANDIDATE_MODE_V1\\SPECIALIZATION_PROFILE_CANDIDATE.json",
+  "runtime_intake_report_path": ".\\runs\\SELF_BUILD_GAP_REMEDIATION_INTAKE_RUNTIME_PROGRAM_V1_001_REPAIR__PACK_3__CANDIDATE_RUNTIME\\GAP_TO_PROFILE_CANDIDATE_MODE_V1\\GAP_REMEDIATION_INTAKE_REPORT.json",
+  "candidate_profile_id": "workflow_execution_agent_v1",
+  "candidate_agent_kind": "workflow_execution_agent",
+  "required_build_move": "CREATE_SPECIALIZATION_PROFILE_AND_REGISTRY_MAPPING",
+  "conclusion": "Builder runtime now converts a specialization gap report into both a normalized profile candidate and an intake report artifact."
+}

@@ -1,0 +1,33 @@
+{
+  "report_id": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1_REPORT",
+  "proof_id": "EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1",
+  "status": "PASS",
+  "produced_agent_id": "remediation_intake_operator_agent_v1",
+  "created": [
+    "generated_agents/remediation_intake_operator_agent_v1/README.md",
+    "generated_agents/remediation_intake_operator_agent_v1/AGENT_SPEC.json",
+    "generated_agents/remediation_intake_operator_agent_v1/RUNBOOK.md",
+    "generated_agents/remediation_intake_operator_agent_v1/INPUT_EXAMPLE.json",
+    "generated_agents/remediation_intake_operator_agent_v1/OUTPUT_EXAMPLE.json",
+    "generated_agents/remediation_intake_operator_agent_v1/run.ps1",
+    "generated_agents/remediation_intake_operator_agent_v1/proofs/README.md",
+    "generated_agents/remediation_intake_operator_agent_v1/OUTPUT_EXAMPLE_RUNTIME.json"
+  ],
+  "location": "generated_agents/remediation_intake_operator_agent_v1",
+  "how_to_run": "pwsh -File generated_agents/remediation_intake_operator_agent_v1/run.ps1 -InputPath generated_agents/remediation_intake_operator_agent_v1/INPUT_EXAMPLE.json -OutputPath generated_agents/remediation_intake_operator_agent_v1/OUTPUT_EXAMPLE_RUNTIME.json",
+  "checks_passed": [
+    "required files present",
+    "AGENT_SPEC.json valid and identity matched",
+    "INPUT_EXAMPLE.json valid",
+    "OUTPUT_EXAMPLE.json valid",
+    "run.ps1 PowerShell parser check passed",
+    "run.ps1 produced OUTPUT_EXAMPLE_RUNTIME.json",
+    "runtime output contains required fields",
+    "runtime output validation_status is PASS",
+    "PHASE67 task and capability finalized",
+    "TASK_QUEUE active_task_id returned to NONE"
+  ],
+  "what_this_proves": "The Builder can produce a standalone external operator agent package, validate its local runtime contract, and complete the production-program task with proof-backed state.",
+  "proof_path": "proofs/EXTERNAL_AGENT_PRODUCTION_PROGRAM_TEST_V1.json",
+  "next_recommended_track": "external_agent_production_test_2"
+}

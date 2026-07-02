@@ -1,0 +1,10 @@
+﻿{
+    "request_id":  "sample_request_001",
+    "payload":  {
+                    "topic":  "baseline operational proof",
+                    "priority":  "normal"
+                },
+    "metadata":  {
+                     "source":  "factory_generated_example"
+                 }
+}

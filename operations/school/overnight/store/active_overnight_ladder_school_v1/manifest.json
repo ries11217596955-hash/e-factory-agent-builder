@@ -1,0 +1,12 @@
+{
+    "schema":  "overnight_ladder_school_manifest_v1",
+    "status":  "ACTIVE_WORKTREE_OVERNIGHT_LADDER_MANIFEST",
+    "runtime_ready":  false,
+    "run_id":  "overnight_ladder_school_v1_20260630_232036",
+    "active_checkpoint_path":  "operations/school/overnight/store/active_overnight_ladder_school_v1/active_overnight_checkpoint.json",
+    "state_path":  ".runtime/overnight_ladder_school/overnight_ladder_school_v1_20260630_232036/state.json",
+    "last_good_checkpoint":  300000,
+    "note":  "Compact active checkpoint; raw candidates are not stored.",
+    "compacted":  true,
+    "molecule_materialization":  "deterministic_formula_domain_tier_from_sequence_ranges"
+}

@@ -1,0 +1,110 @@
+﻿{
+    "schema":  "real_delta_school_cycle_v1_review",
+    "status":  "PASS_WITH_LIMITATIONS",
+    "proof_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_PROOF.json",
+    "proof_label":  null,
+    "review_label":  "HELD_OUT_TRANSFER_REVIEW_PASS_NOT_RUNTIME_PROOF",
+    "limitation":  "Still a lab harness; held-out cases are scripted review cases, not live autonomous runtime behavior.",
+    "heldout_case_count":  3,
+    "heldout_pass_count":  3,
+    "heldout_results":  [
+                            {
+                                "case_id":  "heldout.01.quarantine_school_candidate",
+                                "prompt":  "A quarantined school implementation claims PASS and after_score improved. Should Builder restore it as active source?",
+                                "before_score":  0,
+                                "after_score":  6,
+                                "improved":  true,
+                                "required_atoms":  [
+                                                       "real_delta.atom.01.evidence_boundary",
+                                                       "real_delta.atom.02.reuse_before_build",
+                                                       "real_delta.atom.04.school_acceptance_by_delta"
+                                                   ],
+                                "required_atoms_found":  true,
+                                "direct_answer_leakage_detected":  false,
+                                "passed":  true
+                            },
+                            {
+                                "case_id":  "heldout.02.million_atom_map_pressure",
+                                "prompt":  "A school batch accepts one million atoms. Should every atom event refresh the body capability map?",
+                                "before_score":  0,
+                                "after_score":  8,
+                                "improved":  true,
+                                "required_atoms":  [
+                                                       "real_delta.atom.02.reuse_before_build",
+                                                       "real_delta.atom.03.trigger_decision_logic",
+                                                       "real_delta.atom.04.school_acceptance_by_delta"
+                                                   ],
+                                "required_atoms_found":  true,
+                                "direct_answer_leakage_detected":  false,
+                                "passed":  true
+                            },
+                            {
+                                "case_id":  "heldout.03_live_lab_claim_boundary",
+                                "prompt":  "A lab harness passes real-delta validation. Can Builder claim live runtime intelligence?",
+                                "before_score":  0,
+                                "after_score":  5,
+                                "improved":  true,
+                                "required_atoms":  [
+                                                       "real_delta.atom.01.evidence_boundary",
+                                                       "real_delta.atom.05.route_synthesis"
+                                                   ],
+                                "required_atoms_found":  true,
+                                "direct_answer_leakage_detected":  false,
+                                "passed":  true
+                            }
+                        ],
+    "negative_review_tests":  [
+                                  {
+                                      "name":  "answer_leakage_trap",
+                                      "expected":  "BLOCKED",
+                                      "actual":  "BLOCKED",
+                                      "reason":  "A proof cannot pass if after_answer simply repeats the expected rubric or weak answer."
+                                  },
+                                  {
+                                      "name":  "heldout_without_required_atoms",
+                                      "expected":  "BLOCKED",
+                                      "actual":  "BLOCKED",
+                                      "reason":  "Held-out case must cite accepted atoms needed for the decision."
+                                  },
+                                  {
+                                      "name":  "map_atom_explosion_trap",
+                                      "expected":  "BLOCKED",
+                                      "actual":  "BLOCKED",
+                                      "reason":  "Atom/subchunk map refresh is blocked; only rolled-up capability evidence may update map."
+                                  }
+                              ],
+    "map_atom_scale_policy":  {
+                                  "atom_level_updates_allowed":  false,
+                                  "subchunk_level_updates_allowed":  false,
+                                  "rollup_levels":  [
+                                                        "chunk",
+                                                        "batch",
+                                                        "capability",
+                                                        "module",
+                                                        "organ",
+                                                        "system"
+                                                    ]
+                              },
+    "protected_hashes":  {
+                             "before":  {
+                                            "CAPABILITY_ROADMAP.json":  "e554f11fd7d5cddf7b19cc37e451e87dafbb8e920a8280666f29e31a95a19597",
+                                            "GENESIS_STATE.json":  "6eb22fee813a5a9643af674ad6cd173e88ab9bdcb955cd3e09a897fce72d6f9d",
+                                            "TASK_QUEUE.json":  "2b03f7fda435c238bfa51f22610aa8126c9ed7282f896b2dcb04c12a80a7efba",
+                                            "packs/registry.json":  "bf15bb23a43a713a84f4b35c9c63f39757451ca307d8bfb049708654438d63d1",
+                                            "orchestrator/run.ps1":  "ef881e345d6bfa30f817f899061eacba8282d2e7562f58012fa2531eb9e2a88e"
+                                        },
+                             "after":  {
+                                           "CAPABILITY_ROADMAP.json":  "e554f11fd7d5cddf7b19cc37e451e87dafbb8e920a8280666f29e31a95a19597",
+                                           "GENESIS_STATE.json":  "6eb22fee813a5a9643af674ad6cd173e88ab9bdcb955cd3e09a897fce72d6f9d",
+                                           "TASK_QUEUE.json":  "2b03f7fda435c238bfa51f22610aa8126c9ed7282f896b2dcb04c12a80a7efba",
+                                           "packs/registry.json":  "bf15bb23a43a713a84f4b35c9c63f39757451ca307d8bfb049708654438d63d1",
+                                           "orchestrator/run.ps1":  "ef881e345d6bfa30f817f899061eacba8282d2e7562f58012fa2531eb9e2a88e"
+                                       },
+                             "changed":  [
+
+                                         ]
+                         },
+    "runtime_ready":  false,
+    "created_utc":  "2026-06-30T12:04:20.5681257Z",
+    "review_hash":  "ad8e419d31695db101345d9dca03ff7dfc96a325ed6a7feab69b66772798a977"
+}

@@ -1,0 +1,89 @@
+{
+    "schema":  "school_lesson_active_index_v1",
+    "status":  "ACTIVE_SCHOOL_LESSONS",
+    "runtime_ready":  false,
+    "lesson_batch_id":  "school_lesson_digest_v1",
+    "lesson_count":  6,
+    "molecule_count":  3,
+    "lessons":  [
+                    {
+                        "lesson_id":  "lesson.safe_pass_requires_promotion.v1",
+                        "domain":  "promotion_lifecycle",
+                        "raw_lesson":  "Safe or test PASS is unfinished unless it has a path into active agent life.",
+                        "meaning":  "A school success must graduate into active memory, skill, or behavior; otherwise it is only an archive proof.",
+                        "behavior_rule":  "After a school PASS, produce promote/reject/quarantine decision and never leave orphan lab proof.",
+                        "proof_required":  "promotion manifest, active pointer/store, active retrieval, behavior delta proof"
+                    },
+                    {
+                        "lesson_id":  "lesson.test_is_real_on_copy.v1",
+                        "domain":  "promotion_lifecycle",
+                        "raw_lesson":  "Test mode should mean the same real process on a copy, not a toy mock.",
+                        "meaning":  "Safe mode is a protected place for real semantics, not a fake process.",
+                        "behavior_rule":  "Before RealApply, prefer twin/copy execution with same mutation semantics, rollback, and validators.",
+                        "proof_required":  "copy/twin run report, same contract, same validators, rollback"
+                    },
+                    {
+                        "lesson_id":  "lesson.living_cell_properties.v1",
+                        "domain":  "living_cell_growth",
+                        "raw_lesson":  "A living cell is useful only if it accepts, digests, stores meaning, changes behavior, proves it, and reports upward.",
+                        "meaning":  "A Builder cell is not a file or function; it is a smallest growth unit with boundary, law, input, digestion, memory trace, behavior expression, validator, rollback, promotion, and return-to-parent.",
+                        "behavior_rule":  "Do not call a cell mature until it changes future behavior and reports proof to parent.",
+                        "proof_required":  "cell contract, digestion output, behavior-use proof, rollback, parent report"
+                    },
+                    {
+                        "lesson_id":  "lesson.directive_school_then_observed_freedom.v1",
+                        "domain":  "school_freedom_governance",
+                        "raw_lesson":  "Obligation belongs to school; freedom belongs to the observed life path after school.",
+                        "meaning":  "Immature Builder grows by directive school. After proof, it enters bounded observed autonomy; freedom is loosened or tightened by behavior.",
+                        "behavior_rule":  "If immature teach by obligation; if promoted let it act under observation; if behavior improves loosen one boundary; if behavior degrades return to school.",
+                        "proof_required":  "school pass, life-path observation trace, maturity score, return-to-school gate"
+                    },
+                    {
+                        "lesson_id":  "lesson.no_full_memory_scan.v1",
+                        "domain":  "attention_memory_routing",
+                        "raw_lesson":  "The agent must not scan all atoms when memory grows huge.",
+                        "meaning":  "Always-on memory must be a small law/profile/map/index pointer set; task memory must retrieve only top-k relevant items.",
+                        "behavior_rule":  "Use law kernel, classify domain, choose shard/index, retrieve top-k, inject compact rules; never load bulk atom stores into every task.",
+                        "proof_required":  "retrieval budget, no_full_scan flag, top_k count, store byte limit"
+                    },
+                    {
+                        "lesson_id":  "lesson.structural_analogy_source_ladder.v1",
+                        "domain":  "source_ladder",
+                        "raw_lesson":  "Seklitova/Strelnikova books are an architectural analogy source for unknown self-growth structures, not proof.",
+                        "meaning":  "Use structural analogies such as matrix, hierarchy, law kernel, quality accumulation, and atom-to-organism growth only after project laws and before design candidates.",
+                        "behavior_rule":  "When no software precedent exists, convert analogy into compact requirement, then validator, then proof.",
+                        "proof_required":  "source ladder citation in strategy, extracted requirement, validator, proof report"
+                    }
+                ],
+    "molecules":  [
+                      {
+                          "molecule_id":  "molecule.promotion_lifecycle.v1",
+                          "domain":  "promotion_lifecycle",
+                          "lesson_ids":  [
+                                             "lesson.safe_pass_requires_promotion.v1",
+                                             "lesson.test_is_real_on_copy.v1"
+                                         ],
+                          "compact_meaning":  "School/test success must graduate through promotion into active body, preferably after real semantics are proven on a copy."
+                      },
+                      {
+                          "molecule_id":  "molecule.living_cell_growth.v1",
+                          "domain":  "living_cell_growth",
+                          "lesson_ids":  [
+                                             "lesson.living_cell_properties.v1",
+                                             "lesson.structural_analogy_source_ladder.v1"
+                                         ],
+                          "compact_meaning":  "Build living cells by analogy-informed requirements, but accept maturity only after behavior proof and parent report."
+                      },
+                      {
+                          "molecule_id":  "molecule.school_memory_governance.v1",
+                          "domain":  "school_freedom_governance",
+                          "lesson_ids":  [
+                                             "lesson.directive_school_then_observed_freedom.v1",
+                                             "lesson.no_full_memory_scan.v1"
+                                         ],
+                          "compact_meaning":  "School is directive; life path is observed freedom; memory use is selective top-k, never full scan."
+                      }
+                  ],
+    "no_full_scan":  true,
+    "retrieval_default_top_k":  3
+}

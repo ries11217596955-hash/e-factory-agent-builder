@@ -1,0 +1,10 @@
+{
+  "proof_id": "BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1",
+  "run_id": "SELF_BUILD_IDEA_TO_SPECIALIZED_AGENT_PROGRAM_V1_001__PACK_2",
+  "status": "PASS",
+  "derived_agent_id": "website_funnel_audit_agent",
+  "specialization_profile": "audit_agent_v1",
+  "report_path": ".\\runs\\SELF_BUILD_IDEA_TO_SPECIALIZED_AGENT_PROGRAM_V1_001__PACK_2\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\BUILD_FROM_RAW_IDEA_SPECIALIZED_REPORT.json",
+  "target_validation_output": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_IDEA_TO_SPECIALIZED_AGENT_PROGRAM_V1_001__PACK_2\\BUILD_FROM_RAW_IDEA_SPECIALIZED_MODE_V1\\target_build\\operational_validation\\OPERATIONAL_RESULT.json",
+  "target_operation": "audit_signal_triage"
+}

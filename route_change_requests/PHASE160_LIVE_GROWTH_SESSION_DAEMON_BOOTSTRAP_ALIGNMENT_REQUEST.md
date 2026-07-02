@@ -1,0 +1,40 @@
+# PHASE160 Live Growth Session Daemon Bootstrap Alignment Request
+
+status: PREPARED
+line: AGENT_BUILDER_SELF_DEVELOPMENT
+mode: SELF_BUILD
+step_id: PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1
+run_id: PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_001
+root_cause: PHASE160 live daemon entrypoint absent
+phase_type: live_growth_session_daemon_bootstrap
+source_phase159_status_required: PASS
+source_phase159_next_allowed_step_required: PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1
+repo_root_resolution_rule: scripts_resolve_repo_root_from_own_file_location
+local_head_required: d3e1710
+remote_head_required: d3e1710
+terminal_1_builder_loop_required: true
+terminal_2_observer_loop_required: true
+duration_based_session_required: true
+fixed_tick_batch_mode_allowed: false
+bounded_smoke_run_required: true
+heartbeat_count_minimum: 3
+teacher_inbox_supported: true
+teacher_outbox_supported: true
+blocker_queue_supported: true
+accepted_interventions_supported: true
+rejected_interventions_supported: true
+stop_flag_supported: true
+execution_scope: sandbox_only
+accepted_state_mutation_allowed: false
+accepted_memory_mutation_allowed: false
+accepted_self_model_mutation_allowed: false
+capability_shelf_mutation_allowed: false
+body_pack_mutation_allowed: false
+self_growth_runtime_mutation_allowed: false
+external_fetch_allowed: false
+dependency_install_allowed: false
+arbitrary_generated_code_execution_allowed: false
+external_agent_creation_allowed: false
+queue_after: NONE
+codex_needed_for_next_step: false
+next_allowed_step: PHASE160_LIVE_GROWTH_SESSION_READY_FOR_OWNER_SUPERVISED_RUN_V1

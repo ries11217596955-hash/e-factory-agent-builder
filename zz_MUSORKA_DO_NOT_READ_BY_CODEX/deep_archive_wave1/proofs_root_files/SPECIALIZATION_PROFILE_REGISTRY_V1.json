@@ -1,0 +1,9 @@
+{
+  "proof_id": "SPECIALIZATION_PROFILE_REGISTRY_V1",
+  "run_id": "SELF_BUILD_MULTI_PROFILE_SPECIALIZATION_PROGRAM_V1_001__PACK_1",
+  "status": "PASS",
+  "registry_path": ".\\applied_agents\\specialization_profiles\\SPECIALIZATION_PROFILE_REGISTRY.json",
+  "resolved_agent_kind": "audit_agent",
+  "resolved_profile_id": "audit_agent_v1",
+  "resolved_overlay_root": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\applied_agents\\specialization_profiles\\audit_agent_v1\\overlay"
+}

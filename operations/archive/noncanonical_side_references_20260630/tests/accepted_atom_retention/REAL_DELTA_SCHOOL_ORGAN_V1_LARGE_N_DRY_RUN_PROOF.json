@@ -1,0 +1,555 @@
+﻿{
+    "schema":  "real_delta_school_organ_v1_small_proof",
+    "status":  "PASS",
+    "proof_label":  "PROVEN_LAB_PARAMETRIC_ORGAN_STAGE1_NOT_RUNTIME_INTELLIGENCE",
+    "runtime_ready":  false,
+    "run_params":  {
+                       "candidate_feed_path":  "operations/overnight_school/REAL_DELTA_SCHOOL_ORGAN_V1_DRY_RUN_FEED_25.json",
+                       "target_accepted":  25,
+                       "batch_size":  7,
+                       "proof_mode":  "small",
+                       "candidate_source_mode":  "OWNER_SUPPLIED",
+                       "resume_from_checkpoint":  true,
+                       "checkpoint_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN.checkpoint.json",
+                       "stop_after_accepted":  0,
+                       "max_accepted_without_explicit_approval":  100,
+                       "allow_large_n":  false,
+                       "large_n_approval_token_present":  false
+                   },
+    "resume":  {
+                   "used":  true,
+                   "source":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_ORGAN_V1_LARGE_N_DRY_RUN.checkpoint.json",
+                   "checkpoint_written":  false
+               },
+    "accepted_total":  25,
+    "rejected_total":  0,
+    "accepted_atoms":  [
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.001.dryrun.atom.001",
+                               "candidate_id":  "dryrun.atom.001",
+                               "domain":  "dry_run_domain_2",
+                               "concept":  "dry_run_unique_concept_001",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 1",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 1 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 1 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 1 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  6,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.001.dryrun.atom.001",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.002.dryrun.atom.002",
+                               "candidate_id":  "dryrun.atom.002",
+                               "domain":  "dry_run_domain_3",
+                               "concept":  "dry_run_unique_concept_002",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 2",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 2 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 2 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 2 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  7,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.002.dryrun.atom.002",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.003.dryrun.atom.003",
+                               "candidate_id":  "dryrun.atom.003",
+                               "domain":  "dry_run_domain_4",
+                               "concept":  "dry_run_unique_concept_003",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 3",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 3 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 3 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 3 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  8,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.003.dryrun.atom.003",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.004.dryrun.atom.004",
+                               "candidate_id":  "dryrun.atom.004",
+                               "domain":  "dry_run_domain_5",
+                               "concept":  "dry_run_unique_concept_004",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 4",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 4 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 4 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 4 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  9,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.004.dryrun.atom.004",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.005.dryrun.atom.005",
+                               "candidate_id":  "dryrun.atom.005",
+                               "domain":  "dry_run_domain_6",
+                               "concept":  "dry_run_unique_concept_005",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 5",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 5 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 5 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 5 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  10,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.005.dryrun.atom.005",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.006.dryrun.atom.006",
+                               "candidate_id":  "dryrun.atom.006",
+                               "domain":  "dry_run_domain_7",
+                               "concept":  "dry_run_unique_concept_006",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 6",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 6 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 6 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 6 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  11,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.006.dryrun.atom.006",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.007.dryrun.atom.007",
+                               "candidate_id":  "dryrun.atom.007",
+                               "domain":  "dry_run_domain_1",
+                               "concept":  "dry_run_unique_concept_007",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 7",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 7 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 7 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 7 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  12,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.007.dryrun.atom.007",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.008.dryrun.atom.008",
+                               "candidate_id":  "dryrun.atom.008",
+                               "domain":  "dry_run_domain_2",
+                               "concept":  "dry_run_unique_concept_008",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 8",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 8 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 8 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 8 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  13,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.008.dryrun.atom.008",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.009.dryrun.atom.009",
+                               "candidate_id":  "dryrun.atom.009",
+                               "domain":  "dry_run_domain_3",
+                               "concept":  "dry_run_unique_concept_009",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 9",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 9 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 9 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 9 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  14,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.009.dryrun.atom.009",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.010.dryrun.atom.010",
+                               "candidate_id":  "dryrun.atom.010",
+                               "domain":  "dry_run_domain_4",
+                               "concept":  "dry_run_unique_concept_010",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 10",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 10 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 10 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 10 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  15,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.010.dryrun.atom.010",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.011.dryrun.atom.011",
+                               "candidate_id":  "dryrun.atom.011",
+                               "domain":  "dry_run_domain_5",
+                               "concept":  "dry_run_unique_concept_011",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 11",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 11 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 11 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 11 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  16,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.011.dryrun.atom.011",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.012.dryrun.atom.012",
+                               "candidate_id":  "dryrun.atom.012",
+                               "domain":  "dry_run_domain_6",
+                               "concept":  "dry_run_unique_concept_012",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 12",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 12 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 12 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 12 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  17,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.012.dryrun.atom.012",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.013.dryrun.atom.013",
+                               "candidate_id":  "dryrun.atom.013",
+                               "domain":  "dry_run_domain_7",
+                               "concept":  "dry_run_unique_concept_013",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 13",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 13 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 13 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 13 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  18,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.013.dryrun.atom.013",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.014.dryrun.atom.014",
+                               "candidate_id":  "dryrun.atom.014",
+                               "domain":  "dry_run_domain_1",
+                               "concept":  "dry_run_unique_concept_014",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 14",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 14 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 14 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 14 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  19,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.014.dryrun.atom.014",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.015.dryrun.atom.015",
+                               "candidate_id":  "dryrun.atom.015",
+                               "domain":  "dry_run_domain_2",
+                               "concept":  "dry_run_unique_concept_015",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 15",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 15 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 15 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 15 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  20,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.015.dryrun.atom.015",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.016.dryrun.atom.016",
+                               "candidate_id":  "dryrun.atom.016",
+                               "domain":  "dry_run_domain_3",
+                               "concept":  "dry_run_unique_concept_016",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 16",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 16 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 16 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 16 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  21,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.016.dryrun.atom.016",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.017.dryrun.atom.017",
+                               "candidate_id":  "dryrun.atom.017",
+                               "domain":  "dry_run_domain_4",
+                               "concept":  "dry_run_unique_concept_017",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 17",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 17 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 17 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 17 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  22,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.017.dryrun.atom.017",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.018.dryrun.atom.018",
+                               "candidate_id":  "dryrun.atom.018",
+                               "domain":  "dry_run_domain_5",
+                               "concept":  "dry_run_unique_concept_018",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 18",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 18 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 18 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 18 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  23,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.018.dryrun.atom.018",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.019.dryrun.atom.019",
+                               "candidate_id":  "dryrun.atom.019",
+                               "domain":  "dry_run_domain_6",
+                               "concept":  "dry_run_unique_concept_019",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 19",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 19 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 19 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 19 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  24,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.019.dryrun.atom.019",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.020.dryrun.atom.020",
+                               "candidate_id":  "dryrun.atom.020",
+                               "domain":  "dry_run_domain_7",
+                               "concept":  "dry_run_unique_concept_020",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 20",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 20 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 20 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 20 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  25,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.020.dryrun.atom.020",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.021.dryrun.atom.021",
+                               "candidate_id":  "dryrun.atom.021",
+                               "domain":  "dry_run_domain_1",
+                               "concept":  "dry_run_unique_concept_021",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 21",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 21 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 21 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 21 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  26,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.021.dryrun.atom.021",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.022.dryrun.atom.022",
+                               "candidate_id":  "dryrun.atom.022",
+                               "domain":  "dry_run_domain_2",
+                               "concept":  "dry_run_unique_concept_022",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 22",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 22 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 22 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 22 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  27,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.022.dryrun.atom.022",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.023.dryrun.atom.023",
+                               "candidate_id":  "dryrun.atom.023",
+                               "domain":  "dry_run_domain_3",
+                               "concept":  "dry_run_unique_concept_023",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 23",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 23 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 23 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 23 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  28,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.023.dryrun.atom.023",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.024.dryrun.atom.024",
+                               "candidate_id":  "dryrun.atom.024",
+                               "domain":  "dry_run_domain_4",
+                               "concept":  "dry_run_unique_concept_024",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 24",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 24 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 24 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 24 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  29,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.024.dryrun.atom.024",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           },
+                           {
+                               "atom_id":  "real_delta_school_organ.stage1.atom.025.dryrun.atom.025",
+                               "candidate_id":  "dryrun.atom.025",
+                               "domain":  "dry_run_domain_5",
+                               "concept":  "dry_run_unique_concept_025",
+                               "useful_for":  "mechanics-only batch/checkpoint validation item 25",
+                               "comprehension":  {
+                                                     "explain_back":  "Dry-run candidate 25 proves mechanics fields are wired; it does not prove learning quality.",
+                                                     "apply":  "Use item 25 only to test parametric runner mechanics, batching and checkpoint/resume.",
+                                                     "anti_apply":  "Do not treat dry-run item 25 as semantic intelligence or live readiness."
+                                                 },
+                               "before_score":  1,
+                               "after_score":  30,
+                               "improved":  true,
+                               "causal_atom_link":  "real_delta_school_organ.stage1.atom.025.dryrun.atom.025",
+                               "retrieval_used":  true,
+                               "accepted":  true
+                           }
+                       ],
+    "batch_summary":  {
+                          "batch_size":  7,
+                          "batch_count":  4,
+                          "digest":  "fa13efc78dcf676d6d05b045ff250a0ee60089df314890d9e2689b1890c6b2e1",
+                          "checkpoint_count":  1
+                      },
+    "map_rollup_policy":  {
+                              "atom":  {
+                                           "aggregation_level":  "atom",
+                                           "should_update":  false
+                                       },
+                              "subchunk":  {
+                                               "aggregation_level":  "subchunk",
+                                               "should_update":  false
+                                           },
+                              "rollup_allowed_levels":  [
+                                                            "chunk",
+                                                            "batch",
+                                                            "capability",
+                                                            "module",
+                                                            "organ",
+                                                            "system"
+                                                        ]
+                          },
+    "positive_self_map_update_called":  false,
+    "accepted_core_mutated":  false,
+    "negative_tests":  [
+                           {
+                               "id":  "count_only_false_pass",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "duplicate_candidate",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "runtime_ready_overclaim",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "scale_gate_route",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "atom_map_update",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           },
+                           {
+                               "id":  "subchunk_map_update",
+                               "expected":  "BLOCKED",
+                               "actual":  "BLOCKED"
+                           }
+                       ],
+    "protected_hashes":  {
+                             "before":  {
+                                            "CAPABILITY_ROADMAP.json":  "e554f11fd7d5cddf7b19cc37e451e87dafbb8e920a8280666f29e31a95a19597",
+                                            "GENESIS_STATE.json":  "6eb22fee813a5a9643af674ad6cd173e88ab9bdcb955cd3e09a897fce72d6f9d",
+                                            "TASK_QUEUE.json":  "2b03f7fda435c238bfa51f22610aa8126c9ed7282f896b2dcb04c12a80a7efba",
+                                            "packs/registry.json":  "bf15bb23a43a713a84f4b35c9c63f39757451ca307d8bfb049708654438d63d1",
+                                            "orchestrator/run.ps1":  "ef881e345d6bfa30f817f899061eacba8282d2e7562f58012fa2531eb9e2a88e"
+                                        },
+                             "after":  {
+                                           "CAPABILITY_ROADMAP.json":  "e554f11fd7d5cddf7b19cc37e451e87dafbb8e920a8280666f29e31a95a19597",
+                                           "GENESIS_STATE.json":  "6eb22fee813a5a9643af674ad6cd173e88ab9bdcb955cd3e09a897fce72d6f9d",
+                                           "TASK_QUEUE.json":  "2b03f7fda435c238bfa51f22610aa8126c9ed7282f896b2dcb04c12a80a7efba",
+                                           "packs/registry.json":  "bf15bb23a43a713a84f4b35c9c63f39757451ca307d8bfb049708654438d63d1",
+                                           "orchestrator/run.ps1":  "ef881e345d6bfa30f817f899061eacba8282d2e7562f58012fa2531eb9e2a88e"
+                                       },
+                             "changed":  [
+
+                                         ]
+                         }
+}

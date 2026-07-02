@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "engine_name": "SELF_BUILD_OPERATION_CONTRACT_BUILDER_V1",
+  "run_id": "PHASE127_SELF_BUILD_OPERATION_CONTRACT_SELF_TEST_001",
+  "contract_created": true,
+  "contract_path": "self_control/SELF_BUILD_OPERATION_CONTRACT.json",
+  "source_need": "NEED_SELF_BUILD_OPERATION_CONTRACT",
+  "proposed_next_step": "PHASE128_RUN_SELF_BUILD_OPERATION_CONTRACT_SMOKE_V1",
+  "reason": "Self-model requests a self-build operation contract and PHASE126 proof confirms the need.",
+  "queue_mutated": false,
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

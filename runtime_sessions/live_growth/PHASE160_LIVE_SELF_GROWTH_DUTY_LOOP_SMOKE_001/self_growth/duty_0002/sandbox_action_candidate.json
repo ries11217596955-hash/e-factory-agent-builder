@@ -1,0 +1,17 @@
+{
+    "status":  "CANDIDATE",
+    "duty_id":  "duty_0002",
+    "selected_gap":  "CAPABILITY_INVENTORY_REFRESH_GAP",
+    "candidate_type":  "sandbox_only_self_growth_action",
+    "proposed_action":  "refresh session-local inventory of live modules, validators, and channels",
+    "candidate_payload":  {
+                              "observe":  true,
+                              "select_gap":  "CAPABILITY_INVENTORY_REFRESH_GAP",
+                              "validate_before_promotion":  true,
+                              "write_session_memory_event":  true,
+                              "mutate_accepted_state":  false,
+                              "execute_generated_code":  false,
+                              "create_external_agent":  false
+                          },
+    "created_at":  "2026-06-03T17:11:07.9629687Z"
+}

@@ -1,0 +1,22 @@
+# PHASE160 Post-Commit Runnability Repair Request
+
+status: PREPARED
+line: AGENT_BUILDER_SELF_DEVELOPMENT
+mode: VERIFY
+repair_id: PHASE160_POST_COMMIT_RUNNABILITY_REPAIR_V1
+target_step_id: PHASE160_LIVE_GROWTH_SESSION_DAEMON_BOOTSTRAP_V1
+root_cause: PHASE160 scripts hardcoded the pre-acceptance baseline as ExpectedHead, so they failed after PHASE160 was accepted at a newer commit.
+repair_type: post_commit_runnability_repair
+new_phase_created: false
+phase161_created: false
+expected_head_source: CURRENT_SYNCED_REPO_HEAD
+head_rule: local_head_must_equal_remote_head_for_phase_branch
+static_expected_head_allowed: false
+historical_expected_head_parameter_allowed_for_bootstrap: true
+repo_root_resolution_rule: scripts_resolve_repo_root_from_own_file_location
+required_branch: phase110-idempotent-autonomy-trial-runtime
+protected_state_mutation_allowed: false
+accepted_phase159_artifacts_mutation_allowed: false
+accepted_phase160_runtime_or_proof_mutation_allowed: false
+queue_mutation_allowed: false
+next_allowed_step_remains: PHASE160_LIVE_GROWTH_SESSION_READY_FOR_OWNER_SUPERVISED_RUN_V1

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "engine_name": "SELF_MODEL_UPDATE_ENGINE_V1",
+  "run_id": "PHASE118_SELF_MODEL_UPDATE_ENGINE_SELF_TEST_001",
+  "self_model_path": "self_model/BUILDER_SELF_MODEL.json",
+  "self_model_updated": true,
+  "source_need_id": "NEED_SELF_MODEL_UPDATE_ENGINE",
+  "current_detected_need": "NEED_SELF_MODEL_AWARE_DECISION_LOOP",
+  "current_missing_capability": "SELF_MODEL_AWARE_DECISION_LOOP",
+  "proposed_next_step": "PHASE119_BUILD_SELF_MODEL_AWARE_DECISION_LOOP_V1",
+  "reason": "Proof chain confirms Builder can detect need, create action request, admit action, generate executable move, execute queued move, run a two-step chain, and update diagnosis from proofs. Next missing organ is a decision loop that uses the self-model.",
+  "queue_mutated": false,
+  "autonomy_claimed": false,
+  "codex_used": false
+}

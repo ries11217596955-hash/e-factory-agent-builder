@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "engine_name": "SELF_MODEL_AWARE_DECISION_LOOP_V1",
+  "run_id": "PHASE119_SELF_MODEL_AWARE_DECISION_LOOP_SELF_TEST_001",
+  "self_model_path": "self_model/BUILDER_SELF_MODEL.json",
+  "self_model_status": "PASS",
+  "self_model_source_need": "NEED_SELF_MODEL_AWARE_DECISION_LOOP",
+  "decision_id": "DECISION_BUILD_AUTONOMOUS_LOOP_CONTROLLER_V1",
+  "selected_need_id": "NEED_AUTONOMOUS_LOOP_CONTROLLER",
+  "selected_action_kind": "BUILD_NEXT_CAPABILITY",
+  "selected_target_capability": "AUTONOMOUS_LOOP_CONTROLLER",
+  "proposed_next_step": "PHASE120_BUILD_AUTONOMOUS_LOOP_CONTROLLER_V1",
+  "reason": "Self-model says the next missing capability is a decision loop. This loop now reads the self-model and selects the next controller-building move.",
+  "queue_mutated": false,
+  "manual_active_task_seed": false,
+  "autonomy_claimed": false,
+  "codex_used": false,
+  "main_touched": false
+}

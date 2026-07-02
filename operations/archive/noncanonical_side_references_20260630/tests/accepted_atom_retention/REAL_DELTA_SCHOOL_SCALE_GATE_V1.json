@@ -1,0 +1,139 @@
+﻿{
+    "schema":  "real_delta_school_scale_gate_v1",
+    "status":  "PASS_NEXT_SCALE_ALLOWED_TO_50_ONLY",
+    "proof_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_PROOF.json",
+    "review_path":  "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_REVIEW.json",
+    "decision":  "ALLOW_DESIGN_FOR_50_REAL_DELTA_LADDER_NOT_EXECUTE_30K",
+    "current_limit":  "Do not run 30K/300K/1M. Next executable scale is 50 only, with rising useful bands and held-out review.",
+    "gate_checks":  {
+                        "base_real_delta_valid":  true,
+                        "review_valid":  true,
+                        "distinct_domains":  true,
+                        "increasing_levels":  true,
+                        "no_atom_map_updates":  true,
+                        "count_only_blocked":  true,
+                        "causal_link_required":  true,
+                        "retrieval_use_required":  true
+                    },
+    "blocked_paths":  [
+                          {
+                              "path":  "jump_to_30000_or_300000",
+                              "decision":  "BLOCKED",
+                              "reason":  "Scale is not criterion of intelligence; must pass 50 real-delta ladder first."
+                          },
+                          {
+                              "path":  "flat_50_atoms_same_domain",
+                              "decision":  "BLOCKED",
+                              "reason":  "Owner constraint: candidates must be useful and rising, not 50 uniform cycles."
+                          },
+                          {
+                              "path":  "map_update_per_atom",
+                              "decision":  "BLOCKED",
+                              "reason":  "Atom/subchunk events must roll up; map tracks capabilities/modules/organs, not every atom."
+                          },
+                          {
+                              "path":  "runtime_ready_promotion",
+                              "decision":  "BLOCKED",
+                              "reason":  "Lab harness and review do not prove live runtime intelligence."
+                          },
+                          {
+                              "path":  "quarantine_blind_restore",
+                              "decision":  "BLOCKED",
+                              "reason":  "Quarantine candidates must be reconciled, validated, and promoted only as missing safe layer."
+                          }
+                      ],
+    "next_50_blueprint":  [
+                              {
+                                  "band":  "01_truth_boundary",
+                                  "size":  5,
+                                  "purpose":  "evidence labels, live/lab separation, false-proof rejection",
+                                  "requires_previous":  [
+
+                                                        ]
+                              },
+                              {
+                                  "band":  "02_reuse_and_map_literacy",
+                                  "size":  5,
+                                  "purpose":  "scan existing body, detect duplicates, respect source/generated surfaces",
+                                  "requires_previous":  [
+                                                            "01_truth_boundary"
+                                                        ]
+                              },
+                              {
+                                  "band":  "03_trigger_and_scale_discipline",
+                                  "size":  5,
+                                  "purpose":  "roll up atom/subchunk events, update map only on capability/module/organ changes",
+                                  "requires_previous":  [
+                                                            "01_truth_boundary",
+                                                            "02_reuse_and_map_literacy"
+                                                        ]
+                              },
+                              {
+                                  "band":  "04_school_assimilation",
+                                  "size":  10,
+                                  "purpose":  "comprehension, causal atom link, retrieval/use proof, negative false-pass traps",
+                                  "requires_previous":  [
+                                                            "01_truth_boundary",
+                                                            "02_reuse_and_map_literacy",
+                                                            "03_trigger_and_scale_discipline"
+                                                        ]
+                              },
+                              {
+                                  "band":  "05_quarantine_reconciliation",
+                                  "size":  10,
+                                  "purpose":  "use quarantined school material safely without blind restore",
+                                  "requires_previous":  [
+                                                            "01_truth_boundary",
+                                                            "02_reuse_and_map_literacy",
+                                                            "04_school_assimilation"
+                                                        ]
+                              },
+                              {
+                                  "band":  "06_route_synthesis_and_transfer",
+                                  "size":  15,
+                                  "purpose":  "mixed operator decisions that require all previous bands",
+                                  "requires_previous":  [
+                                                            "01_truth_boundary",
+                                                            "02_reuse_and_map_literacy",
+                                                            "03_trigger_and_scale_discipline",
+                                                            "04_school_assimilation",
+                                                            "05_quarantine_reconciliation"
+                                                        ]
+                              }
+                          ],
+    "next_50_total":  50,
+    "required_next_validator_gates":  [
+                                          "band diversity",
+                                          "dependency ladder",
+                                          "comprehension per accepted atom",
+                                          "held-out transfer cases",
+                                          "negative false-pass traps",
+                                          "map rollup only",
+                                          "runtime_ready false",
+                                          "protected hashes unchanged"
+                                      ],
+    "map_policy":  "Map updates only on chunk/batch/capability/module/organ/system proof, not atom/subchunk events.",
+    "proof_label":  "SCALE_GATE_PASS_NOT_SCALE_PROOF",
+    "protected_hashes":  {
+                             "before":  {
+                                            "CAPABILITY_ROADMAP.json":  "e554f11fd7d5cddf7b19cc37e451e87dafbb8e920a8280666f29e31a95a19597",
+                                            "GENESIS_STATE.json":  "6eb22fee813a5a9643af674ad6cd173e88ab9bdcb955cd3e09a897fce72d6f9d",
+                                            "TASK_QUEUE.json":  "2b03f7fda435c238bfa51f22610aa8126c9ed7282f896b2dcb04c12a80a7efba",
+                                            "packs/registry.json":  "bf15bb23a43a713a84f4b35c9c63f39757451ca307d8bfb049708654438d63d1",
+                                            "orchestrator/run.ps1":  "ef881e345d6bfa30f817f899061eacba8282d2e7562f58012fa2531eb9e2a88e"
+                                        },
+                             "after":  {
+                                           "CAPABILITY_ROADMAP.json":  "e554f11fd7d5cddf7b19cc37e451e87dafbb8e920a8280666f29e31a95a19597",
+                                           "GENESIS_STATE.json":  "6eb22fee813a5a9643af674ad6cd173e88ab9bdcb955cd3e09a897fce72d6f9d",
+                                           "TASK_QUEUE.json":  "2b03f7fda435c238bfa51f22610aa8126c9ed7282f896b2dcb04c12a80a7efba",
+                                           "packs/registry.json":  "bf15bb23a43a713a84f4b35c9c63f39757451ca307d8bfb049708654438d63d1",
+                                           "orchestrator/run.ps1":  "ef881e345d6bfa30f817f899061eacba8282d2e7562f58012fa2531eb9e2a88e"
+                                       },
+                             "changed":  [
+
+                                         ]
+                         },
+    "runtime_ready":  false,
+    "created_utc":  "2026-06-30T12:07:33.0196356Z",
+    "gate_hash":  "86ea4afbdcec59e43bcc7df028226e72129e1ce8a71b95b35778b0bf34e0b928"
+}

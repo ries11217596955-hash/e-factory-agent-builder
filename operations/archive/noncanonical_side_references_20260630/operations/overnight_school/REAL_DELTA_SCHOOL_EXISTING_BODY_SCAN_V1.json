@@ -1,0 +1,167 @@
+﻿{
+    "schema":  "real_delta_school_existing_body_scan_v1",
+    "status":  "SCAN_COMPLETE_NO_NEW_ORGAN_CREATED",
+    "branch":  "thin-control",
+    "head":  "0391667e5c056eda67f2f24a350a57eabb7350a8",
+    "purpose":  "Prevent duplicate school organs before building parametric REAL_DELTA_SCHOOL_ORGAN_V1.",
+    "decision":  "DO_NOT_BUILD_FROM_SCRATCH; ASSEMBLE_PARAMETRIC_ORGAN_FROM_EXISTING_COMPONENTS",
+    "candidate_sources":  [
+                              "OWNER_SUPPLIED",
+                              "SELF_PRACTICE_DERIVED",
+                              "FAILURE_DERIVED",
+                              "QUARANTINE_DERIVED",
+                              "REPO_CHANGE_DERIVED"
+                          ],
+    "required_new_layer":  "ORGAN_PASSPORT_AND_PARAMETRIC_CONTRACT_ONLY; runner may be adapter/wiring, not duplicate of existing Phase162/Phase165/supervisor mechanics.",
+    "components":  [
+                       {
+                           "id":  "candidate_intake_contract",
+                           "classification":  "ACTIVE_REUSE_COMPONENT",
+                           "layer":  "candidate_intake",
+                           "files":  [
+                                         "validators/validate_candidate_intake_report_contract_v1.ps1"
+                                     ],
+                           "role":  "Validates candidate intake report contract; reuse for CandidateFeed passport.",
+                           "proof_status":  "SOURCE_PRESENT_NOT_RUN_IN_THIS_SCAN"
+                       },
+                       {
+                           "id":  "phase162_atom_acceptance_gates",
+                           "classification":  "ACTIVE_REUSE_COMPONENT",
+                           "layer":  "atom_acceptance",
+                           "files":  [
+                                         "validators/validate_phase162_atom_accept_readiness_gate_v1.ps1",
+                                         "validators/validate_phase162_atom_executed_use_proof_v1.ps1",
+                                         "validators/validate_phase162_atom_usefulness_safety_blockers_v1.ps1",
+                                         "modules/invoke_phase162_controller_consume_controlled_accept_candidate_batch_001.ps1"
+                                     ],
+                           "role":  "Existing acceptance/readiness/usefulness/executed-use gates; reuse as acceptance gate surface.",
+                           "proof_status":  "SOURCE_PRESENT_NOT_RUN_IN_THIS_SCAN"
+                       },
+                       {
+                           "id":  "phase165_lesson_to_atom_bridge",
+                           "classification":  "ACTIVE_REUSE_COMPONENT",
+                           "layer":  "lesson_to_atom",
+                           "files":  [
+                                         "validators/validate_phase165s_c1_lesson_to_atom_bridge_v1.ps1",
+                                         "modules/run_phase165s_c1_connect_school_result_to_agent_self_development_loop_one_concept_proof_001.ps1",
+                                         "modules/write_builder_lesson_result_001.ps1",
+                                         "modules/normalize_builder_lesson_batch_001.ps1"
+                                     ],
+                           "role":  "Existing bridge from school lesson result to atom/self-development loop; reuse instead of new bridge.",
+                           "proof_status":  "SOURCE_PRESENT_NOT_RUN_IN_THIS_SCAN"
+                       },
+                       {
+                           "id":  "useful_curriculum_school_supervisor",
+                           "classification":  "ACTIVE_REUSE_COMPONENT",
+                           "layer":  "school_supervisor",
+                           "files":  [
+                                         "modules/invoke_useful_curriculum_school_supervisor_v1.ps1",
+                                         "validators/validate_useful_curriculum_school_supervisor_v1_proof.ps1",
+                                         "tests/accepted_atom_retention/USEFUL_CURRICULUM_SCHOOL_SUPERVISOR_V1_PROOF.json"
+                                     ],
+                           "role":  "Existing supervisor mechanics for cycles/subchunks/checkpoints/retrieval/decision reuse; reuse as mechanical substrate, not real-delta proof.",
+                           "proof_status":  "PROVEN_LAB_MECHANICS_ONLY_FROM_PRIOR_VALIDATOR"
+                       },
+                       {
+                           "id":  "useful_school_30k_full_process",
+                           "classification":  "ACTIVE_REUSE_COMPONENT_WITH_LIMITATION",
+                           "layer":  "scale_mechanics",
+                           "files":  [
+                                         "operations/overnight_school/run_useful_school_30k_full_process_v1.ps1",
+                                         "operations/overnight_school/validate_useful_school_30k_full_process_v1.ps1",
+                                         "tests/accepted_atom_retention/USEFUL_SCHOOL_30K_FULL_PROCESS_V1_PROOF.json"
+                                     ],
+                           "role":  "Existing bounded 30K mechanics; reuse only as scale/checkpoint/storage mechanics, not as intelligence proof.",
+                           "proof_status":  "PROVEN_LAB_MECHANICS_ONLY"
+                       },
+                       {
+                           "id":  "real_delta_cycle_probe",
+                           "classification":  "ACTIVE_REUSE_COMPONENT",
+                           "layer":  "real_delta_probe",
+                           "files":  [
+                                         "operations/overnight_school/REAL_DELTA_SCHOOL_CYCLE_V1_REQUIREMENT.json",
+                                         "operations/overnight_school/run_real_delta_school_cycle_v1.ps1",
+                                         "operations/overnight_school/validate_real_delta_school_cycle_v1.ps1",
+                                         "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_PROOF.json"
+                                     ],
+                           "role":  "Small real-delta harness proving invariant shape; reuse as probe/spec material, not separate scale organ.",
+                           "proof_status":  "PROVEN_LAB_REAL_DELTA_HARNESS_NOT_RUNTIME_INTELLIGENCE"
+                       },
+                       {
+                           "id":  "real_delta_review",
+                           "classification":  "ACTIVE_REUSE_COMPONENT",
+                           "layer":  "heldout_review",
+                           "files":  [
+                                         "operations/overnight_school/run_real_delta_school_cycle_v1_review.ps1",
+                                         "operations/overnight_school/validate_real_delta_school_cycle_v1_review.ps1",
+                                         "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_CYCLE_V1_REVIEW.json"
+                                     ],
+                           "role":  "Held-out review cases and anti-leakage/scale pressure checks; reuse as validator invariant source.",
+                           "proof_status":  "HELD_OUT_TRANSFER_REVIEW_PASS_NOT_RUNTIME_PROOF"
+                       },
+                       {
+                           "id":  "real_delta_scale_gate_50",
+                           "classification":  "SUPERSEDED_WRONG_DIRECTION",
+                           "layer":  "scale_gate",
+                           "files":  [
+                                         "operations/overnight_school/run_real_delta_school_scale_gate_v1.ps1",
+                                         "operations/overnight_school/validate_real_delta_school_scale_gate_v1.ps1",
+                                         "tests/accepted_atom_retention/REAL_DELTA_SCHOOL_SCALE_GATE_V1.json"
+                                     ],
+                           "role":  "Wrong route: treated 50 as special scale gate. Do not continue; superseded by parametric N organ concept.",
+                           "proof_status":  "BLOCKED_AND_SUPERSEDED"
+                       },
+                       {
+                           "id":  "codex_plan_comprehension_delta",
+                           "classification":  "PLAN_REFERENCE_ONLY",
+                           "layer":  "external_material",
+                           "files":  [
+                                         "operations/codex_handoff/USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_PLAN_V1.md",
+                                         "operations/codex_handoff/USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_PLAN_V1_REPORT.md",
+                                         "operations/codex_handoff/audit_useful_school_30k_with_comprehension_and_delta_plan_v1.ps1"
+                                     ],
+                           "role":  "Plan/reference, not implementation and not proof.",
+                           "proof_status":  "PLAN_ONLY_RUNTIME_READY_FALSE"
+                       },
+                       {
+                           "id":  "quarantine_comprehension_delta_impl",
+                           "classification":  "QUARANTINE_REVIEW_ONLY",
+                           "layer":  "quarantine_candidate",
+                           "files":  [
+                                         "operations/quarantine/20260629_interrupted_codex_impl_v1/modules__invoke_useful_school_30k_with_comprehension_and_delta_v1.ps1",
+                                         "operations/quarantine/20260629_interrupted_codex_impl_v1/validators__validate_useful_school_30k_with_comprehension_and_delta_v1_proof.ps1",
+                                         "operations/quarantine/20260629_interrupted_codex_impl_v1/tests__accepted_atom_retention__USEFUL_SCHOOL_30K_WITH_COMPREHENSION_AND_DELTA_V1_PROOF.json"
+                                     ],
+                           "role":  "Candidate material only. May be mined for invariants; no blind restore.",
+                           "proof_status":  "QUARANTINED_CANDIDATE_NOT_ACTIVE_SOURCE"
+                       },
+                       {
+                           "id":  "self_map_rollup_policy",
+                           "classification":  "ACTIVE_REUSE_COMPONENT",
+                           "layer":  "map_integration",
+                           "files":  [
+                                         "operations/self_map/invoke_self_map_auto_update_trigger_v1.ps1",
+                                         "operations/self_map/validate_self_map_auto_update_trigger_v1.ps1",
+                                         "operations/self_map/SELF_MAP_SOURCE_GENERATED_BOUNDARY_V1.json"
+                                     ],
+                           "role":  "Map updates only on rollup/capability/module/organ events, not atom/subchunk events.",
+                           "proof_status":  "VALIDATOR_PASS_IN_PRIOR_RUN"
+                       }
+                   ],
+    "duplicate_prevention_rules":  [
+                                       "Reuse candidate intake validator",
+                                       "Reuse Phase162 atom acceptance gates",
+                                       "Reuse Phase165 lesson-to-atom bridge",
+                                       "Reuse useful school supervisor mechanics",
+                                       "Treat real_delta_cycle_v1 as probe/spec not separate scale organ",
+                                       "Do not continue scale_gate_50 path",
+                                       "Do not restore quarantine blindly",
+                                       "Map updates only on rollup/capability level"
+                                   ],
+    "missing_files":  [
+
+                      ],
+    "runtime_ready":  false,
+    "commit_push_performed":  false,
+    "created_utc":  "2026-06-30T12:15:23.8164527Z"
+}

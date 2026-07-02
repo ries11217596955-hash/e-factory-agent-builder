@@ -1,0 +1,33 @@
+﻿{
+    "schema":  "real_delta_school_cycle_v1_requirement",
+    "status":  "REQUIREMENT_CANDIDATE",
+    "purpose":  "Prove a small useful ladder where accepted atoms change later answers/decisions, not merely count/store atoms.",
+    "not_a_new_supervisor":  true,
+    "reuses":  [
+                   "operations/overnight_school",
+                   "tests/accepted_atom_retention",
+                   "operations/self_map trigger for proof_created map refresh"
+               ],
+    "atom_count":  5,
+    "ladder_policy":  "Candidates must be useful, non-identical, and cumulative: each later atom must use at least one earlier accepted atom.",
+    "required_gates":  [
+                           "before_exam",
+                           "lesson_atom",
+                           "comprehension_answer",
+                           "per_atom_after_exam",
+                           "causal_atom_link",
+                           "retrieval_use_proof",
+                           "cumulative_transfer_exam",
+                           "negative_false_pass_traps",
+                           "map_trigger_update",
+                           "runtime_ready_false"
+                       ],
+    "forbidden":  [
+                      "30K count-only run",
+                      "storage-only proof",
+                      "Codex draft as proof",
+                      "runtime_ready true",
+                      "flat duplicate atoms"
+                  ],
+    "evidence_status":  "CANDIDATE_UNTIL_RUNNER_AND_VALIDATOR_PASS"
+}

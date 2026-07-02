@@ -1,0 +1,15 @@
+{
+  "proof_id": "SEED_DRIVEN_MONITORING_PROFILE_V1",
+  "run_id": "SELF_BUILD_SEED_DRIVEN_MONITORING_REMEDIATION_CLOSURE_V1_001__PACK_1",
+  "status": "PASS",
+  "program_seed_path": ".\\remediation_programs\\MONITORING_AGENT_REMEDIATION_PROGRAM_SEED_V1.json",
+  "candidate_profile_id": "monitoring_agent_v1",
+  "candidate_agent_kind": "monitoring_agent",
+  "profile_capability_id": "monitoring_agent_specialization_profile_v1",
+  "selected_profile_id": "monitoring_agent_v1",
+  "build_report_path": ".\\runs\\SELF_BUILD_SEED_DRIVEN_MONITORING_REMEDIATION_CLOSURE_V1_001__PACK_1\\PHASE45_SEED_DRIVEN_MONITORING_PROFILE_V1\\profile_build\\BUILD_EXTERNAL_AGENT_REPORT.json",
+  "validation_output": "C:\\Users\\vmammadov\\Documents\\e-factory-agent-builder\\runs\\SELF_BUILD_SEED_DRIVEN_MONITORING_REMEDIATION_CLOSURE_V1_001__PACK_1\\PHASE45_SEED_DRIVEN_MONITORING_PROFILE_V1\\profile_build\\operational_validation\\OPERATIONAL_RESULT.json",
+  "specialized_operation": "monitoring_alert_triage_queue",
+  "next_alert_id": "cpu_spike",
+  "escalation_status": "ESCALATE"
+}

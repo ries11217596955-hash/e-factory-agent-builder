@@ -1,0 +1,58 @@
+﻿name: Run Generated Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      input_path:
+        description: 'Request JSON path inside the agent repository.'
+        required: true
+        default: 'examples/SAMPLE_REQUEST.json'
+        type: string
+      output_path:
+        description: 'Optional result JSON path. Leave blank for automatic runs path.'
+        required: false
+        default: ''
+        type: string
+
+jobs:
+  run-generated-agent:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout agent repository
+        uses: actions/checkout@v6
+
+      - name: Resolve output path
+        id: run_context
+        shell: pwsh
+        run: |
+          $OutputPath = "${{ inputs.output_path }}"
+          if ([string]::IsNullOrWhiteSpace($OutputPath)) {
+              $OutputPath = "runs\GHA_AGENT_RUN_${{ github.run_id }}\OPERATIONAL_RESULT.json"
+          }
+
+          $OutputDir = Split-Path $OutputPath -Parent
+          if (-not [string]::IsNullOrWhiteSpace($OutputDir)) {
+              New-Item -ItemType Directory -Force -Path $OutputDir | Out-Null
+          }
+
+          New-Item -ItemType Directory -Force -Path ".\runs\GHA_AGENT_RUN_${{ github.run_id }}" | Out-Null
+          "output_path=$OutputPath" >> $env:GITHUB_OUTPUT
+
+      - name: Run generated agent
+        shell: pwsh
+        run: |
+          & ".\orchestrator\run.ps1" `
+              -Mode RUN `
+              -InputPath "${{ inputs.input_path }}" `
+              -OutputPath "${{ steps.run_context.outputs.output_path }}" |
+              Tee-Object -FilePath ".\runs\GHA_AGENT_RUN_${{ github.run_id }}\GITHUB_ACTION_AGENT_RUN.log"
+
+      - name: Upload generated agent artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: generated-agent-run-${{ github.run_id }}
+          path: |
+            runs
+          if-no-files-found: warn

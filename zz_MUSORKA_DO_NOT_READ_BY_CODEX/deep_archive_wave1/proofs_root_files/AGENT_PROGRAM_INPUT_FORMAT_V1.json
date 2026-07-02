@@ -1,0 +1,10 @@
+{
+  "proof_id": "AGENT_PROGRAM_INPUT_FORMAT_V1",
+  "status": "PASS",
+  "program_root": "agent_programs/",
+  "schema_path": "agent_programs/AGENT_PROGRAM_SCHEMA.json",
+  "template_json_path": "agent_programs/AGENT_PROGRAM_TEMPLATE.json",
+  "example_program_agent_id": "remediation_intake_operator_agent_v1",
+  "active_task_after": "NONE",
+  "next_recommended_step": "agent_program_executor_v1"
+}

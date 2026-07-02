@@ -225,3 +225,24 @@ Canonical scripts:
 operations/school/digestion/invoke_compact_semantic_digestion_organ_v1.ps1
 operations/school/digestion/validate_compact_semantic_digestion_organ_v1.ps1
 ```
+## Digest validation budget
+
+The digest organ must not run expensive proof loops after every tiny step.
+
+Validation tiers:
+
+```text
+Fast   = per digest guard: parse/status/raw-deleted/size/route unchanged/lookup smoke
+Stable = periodic guard: Fast + dedup sample + broader lookup
+Full   = promotion guard: Stable + negative/full scan style checks
+```
+
+Default runtime posture:
+
+```text
+every digest -> Fast
+periodic threshold -> Stable
+before Real promotion / large batch / owner-selected promotion -> Full
+```
+
+This preserves safety without making the agent slow by forcing full validation on every atom.

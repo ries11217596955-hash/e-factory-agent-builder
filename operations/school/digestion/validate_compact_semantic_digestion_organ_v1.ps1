@@ -1,12 +1,17 @@
 param(
   [int]$TargetAtoms = 20,
-  [int]$SizeBudgetBytes = 80000
+  [int]$SizeBudgetBytes = 80000,
+  [ValidateSet('Fast','Stable','Full')][string]$ValidationTier = 'Stable'
 )
 $ErrorActionPreference='Stop'
 $repoRoot=(git rev-parse --show-toplevel).Trim(); Set-Location $repoRoot
 $utf8=New-Object System.Text.UTF8Encoding($false)
 function EnsureDir($Path){ if(-not (Test-Path $Path)){ New-Item -ItemType Directory -Force $Path | Out-Null } }
 function WriteText($Path,$Text){ $d=Split-Path $Path -Parent; if($d){ EnsureDir $d }; [IO.File]::WriteAllText((Join-Path (Get-Location).Path $Path),$Text,$utf8) }
+$policyOut=@(& powershell -NoProfile -ExecutionPolicy Bypass -File operations/school/digestion/select_compact_semantic_digest_validation_budget_v1.ps1 -RequestedTier $ValidationTier -IncomingAtoms $TargetAtoms *>&1 | ForEach-Object {[string]$_})
+$policyOut | ForEach-Object { Write-Host "POLICY|$_" }
+$selectedTier=($policyOut|Where-Object{$_ -match '^SELECTED_TIER='}|Select-Object -Last 1) -replace '^SELECTED_TIER=',''
+if([string]::IsNullOrWhiteSpace($selectedTier)){ throw 'VALIDATION_POLICY_TIER_MISSING' }
 $routeBefore=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_POINTER_V1.json -Raw|ConvertFrom-Json
 $ledgerBefore=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_REPLAY_LEDGER_V1.json -Raw|ConvertFrom-Json
 $runId="compact_semantic_digest_validation_$(Get-Date -Format yyyyMMdd_HHmmss)"
@@ -45,15 +50,16 @@ if($manifest.status -ne 'PASS_COMPACT_SEMANTIC_DIGESTION_ORGAN_V1'){ throw 'MANI
 if($manifest.raw_source_dependency_removed -ne $true){ throw 'RAW_DEPENDENCY_NOT_REMOVED' }
 if([int]$manifest.input_count -ne $TargetAtoms){ throw 'INPUT_COUNT_BAD' }
 if([int]$manifest.cell_count -gt $TargetAtoms){ throw 'CELL_COUNT_EXCEEDS_INPUT' }
-if([int]$manifest.cell_count -ge $TargetAtoms){ throw 'DEDUP_MERGE_NOT_PROVEN' }
+if($selectedTier -ne 'Fast' -and [int]$manifest.cell_count -ge $TargetAtoms){ throw 'DEDUP_MERGE_NOT_PROVEN' }
 if([int]$manifest.total_memory_bytes -gt $SizeBudgetBytes){ throw 'SIZE_BUDGET_BAD' }
 $terms=$index.terms
-foreach($term in @('vehicle-car','automobile','road-vehicle','transport','engine-or-motor')){
-  if($null -eq $terms.$term){ throw "LOOKUP_TERM_MISSING:$term" }
-}
-foreach($c in $cells){
-  $j=$c|ConvertTo-Json -Depth 50 -Compress
-  foreach($bad in @('raw_text','source_text','ready_atoms','batch_trace','prompt_trace')){ if($j -match $bad){ throw "RAW_FIELD_SURVIVED:$bad" } }
+$lookupTerms=if($selectedTier -eq 'Fast'){@('vehicle-car','automobile')}else{@('vehicle-car','automobile','road-vehicle','transport','engine-or-motor')}
+foreach($term in $lookupTerms){ if($null -eq $terms.$term){ throw "LOOKUP_TERM_MISSING:$term" } }
+if($selectedTier -ne 'Fast'){
+  foreach($c in $cells){
+    $j=$c|ConvertTo-Json -Depth 50 -Compress
+    foreach($bad in @('raw_text','source_text','ready_atoms','batch_trace','prompt_trace')){ if($j -match $bad){ throw "RAW_FIELD_SURVIVED:$bad" } }
+  }
 }
 $routeAfter=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_POINTER_V1.json -Raw|ConvertFrom-Json
 $ledgerAfter=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_REPLAY_LEDGER_V1.json -Raw|ConvertFrom-Json
@@ -62,6 +68,7 @@ if([int]$ledgerBefore.replayed_active_count -ne [int]$ledgerAfter.replayed_activ
 $statusLines=@(git status --short --untracked-files=all)
 if($statusLines | Where-Object { $_ -match '^\?\? \.runtime' }){ throw 'RUNTIME_NOT_IGNORED' }
 Write-Host 'VALIDATION_PASS=COMPACT_SEMANTIC_DIGESTION_ORGAN_V1_VALID'
+Write-Host "VALIDATION_TIER=$selectedTier"
 Write-Host "TARGET_ATOMS=$TargetAtoms"
 Write-Host "DIGESTED_CELLS=$($manifest.cell_count)"
 Write-Host "MERGED_COUNT=$($manifest.merged_count)"

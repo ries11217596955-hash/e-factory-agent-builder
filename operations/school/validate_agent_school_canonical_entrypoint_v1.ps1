@@ -19,37 +19,49 @@ $forbiddenOwnerLaunchers=@(
   'operations/school/overnight/validate_overnight_ladder_school_v1.ps1',
   'operations/school/overnight/watch_overnight_ladder_school_v1.ps1'
 )
-foreach($oldLauncher in $forbiddenOwnerLaunchers){
-  if(Test-Path $oldLauncher){ throw "DUPLICATE_OWNER_FACING_SCHOOL_LAUNCHER_PRESENT: $oldLauncher" }
-}
+foreach($oldLauncher in $forbiddenOwnerLaunchers){ if(Test-Path $oldLauncher){ throw "DUPLICATE_OWNER_FACING_SCHOOL_LAUNCHER_PRESENT: $oldLauncher" } }
 $runner='operations/school/run_agent_school.ps1'
 if(-not (Test-Path $runner)){ throw 'RUNNER_MISSING' }
 $runnerText=Get-Content $runner -Raw
-if($runnerText -notmatch 'TargetAccepted' -or $runnerText -notmatch 'RunKind') { throw 'RUNNER_CONTRACT_MISSING_TARGET_OR_RUNKIND' }
+foreach($required in @('TargetAccepted','RunKind','BLOCKED_DIGESTION_ORGAN_REQUIRED_V1','PASS_TEST_STAGING_ONLY_DIGEST_REQUIRED_V1','raw_route_absorption_allowed')){
+  if($runnerText -notmatch [regex]::Escape($required)){ throw "RUNNER_DIGEST_CONTRACT_MISSING:$required" }
+}
+if($runnerText -match 'PASS_REAL_ACTIVE_ROUTE_ABSORB'){ throw 'RUNNER_STILL_CLAIMS_RAW_REAL_ABSORB' }
 if($runnerText -match 'Start-Process') { throw 'RUNNER_MUST_NOT_DETACH' }
+$routeBefore=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_POINTER_V1.json -Raw|ConvertFrom-Json
+$ledgerBefore=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_REPLAY_LEDGER_V1.json -Raw|ConvertFrom-Json
 $testOut=@(& $runner -TargetAccepted $TestTargetAccepted -RunKind Test *>&1 | ForEach-Object{[string]$_})
 $testStatus=($testOut|Where-Object{$_ -match '^SCHOOL_RUN_STATUS='}|Select-Object -Last 1)
 $testProofPath=(($testOut|Where-Object{$_ -match '^PROOF_PATH='}|Select-Object -Last 1) -replace '^PROOF_PATH=','')
-if($testStatus -ne 'SCHOOL_RUN_STATUS=PASS_TEST_READY_LANE_ONLY'){ throw "TEST_STATUS_BAD: $testStatus" }
+if($testStatus -ne 'SCHOOL_RUN_STATUS=PASS_TEST_STAGING_ONLY_DIGEST_REQUIRED_V1'){ throw "TEST_STATUS_BAD: $testStatus" }
 $testProof=Get-Content $testProofPath -Raw|ConvertFrom-Json
-if($testProof.schema -ne 'agent_school_canonical_run_v1'){ throw 'TEST_BAD_SCHEMA' }
+if($testProof.schema -ne 'agent_school_canonical_run_v2'){ throw 'TEST_BAD_SCHEMA' }
 if($testProof.run_kind -ne 'Test'){ throw 'TEST_BAD_RUN_KIND' }
 if([int]$testProof.target_accepted -ne $TestTargetAccepted){ throw 'TEST_BAD_TARGET' }
 if($testProof.accepted_core_mutated -ne $false){ throw 'TEST_MUTATED_ACTIVE_ROUTE' }
-if(@($testProof.chunks).Count -lt 1){ throw 'TEST_NO_CHUNKS' }
+if($testProof.digested_knowledge_mutated -ne $false){ throw 'TEST_MUTATED_DIGESTED_MEMORY' }
+if($testProof.raw_route_absorption_allowed -ne $false){ throw 'TEST_ALLOWED_RAW_ROUTE_ABSORB' }
+if([int]$testProof.accepted_total -ne 0){ throw 'TEST_ACCEPTED_TOTAL_MUST_BE_ZERO' }
 $realOut=@(& $runner -TargetAccepted $RealTargetAccepted -RunKind Real *>&1 | ForEach-Object{[string]$_})
 $realStatus=($realOut|Where-Object{$_ -match '^SCHOOL_RUN_STATUS='}|Select-Object -Last 1)
 $realProofPath=(($realOut|Where-Object{$_ -match '^PROOF_PATH='}|Select-Object -Last 1) -replace '^PROOF_PATH=','')
-if($realStatus -ne 'SCHOOL_RUN_STATUS=PASS_REAL_ACTIVE_ROUTE_ABSORB'){ throw "REAL_STATUS_BAD: $realStatus" }
+if($realStatus -ne 'SCHOOL_RUN_STATUS=BLOCKED_DIGESTION_ORGAN_REQUIRED_V1'){ throw "REAL_STATUS_BAD: $realStatus" }
 $realProof=Get-Content $realProofPath -Raw|ConvertFrom-Json
-if($realProof.schema -ne 'agent_school_canonical_run_v1'){ throw 'REAL_BAD_SCHEMA' }
+if($realProof.schema -ne 'agent_school_canonical_run_v2'){ throw 'REAL_BAD_SCHEMA' }
 if($realProof.run_kind -ne 'Real'){ throw 'REAL_BAD_RUN_KIND' }
 if([int]$realProof.target_accepted -ne $RealTargetAccepted){ throw 'REAL_BAD_TARGET' }
-if($realProof.accepted_core_mutated -ne $true){ throw 'REAL_DID_NOT_MUTATE_ACTIVE_ROUTE' }
-if([int]$realProof.accepted_total -ne $RealTargetAccepted){ throw 'REAL_ACCEPTED_TOTAL_BAD' }
-Write-Host 'VALIDATION_PASS=AGENT_SCHOOL_CANONICAL_ENTRYPOINT_V1_VALID'
+if($realProof.accepted_core_mutated -ne $false){ throw 'REAL_MUTATED_ACTIVE_ROUTE' }
+if($realProof.digested_knowledge_mutated -ne $false){ throw 'REAL_MUTATED_DIGESTED_MEMORY_WITHOUT_ORGAN' }
+if($realProof.raw_route_absorption_allowed -ne $false){ throw 'REAL_ALLOWED_RAW_ROUTE_ABSORB' }
+if([int]$realProof.accepted_total -ne 0){ throw 'REAL_ACCEPTED_TOTAL_MUST_BE_ZERO_WHILE_BLOCKED' }
+$routeAfter=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_POINTER_V1.json -Raw|ConvertFrom-Json
+$ledgerAfter=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_REPLAY_LEDGER_V1.json -Raw|ConvertFrom-Json
+if([int]$routeBefore.routed_active_count -ne [int]$routeAfter.routed_active_count){ throw 'ROUTE_COUNT_CHANGED' }
+if([int]$ledgerBefore.replayed_active_count -ne [int]$ledgerAfter.replayed_active_count){ throw 'LEDGER_COUNT_CHANGED' }
+Write-Host 'VALIDATION_PASS=AGENT_SCHOOL_DIGEST_GATE_V1_VALID'
 Write-Host "TEST_STATUS=$($testProof.status)"
 Write-Host "REAL_STATUS=$($realProof.status)"
 Write-Host "TEST_TARGET_ACCEPTED=$TestTargetAccepted"
 Write-Host "REAL_TARGET_ACCEPTED=$RealTargetAccepted"
+Write-Host 'REAL_ABSORPTION=BLOCKED_UNTIL_DIGEST_ORGAN'
 Write-Host 'RUNTIME_READY=false'

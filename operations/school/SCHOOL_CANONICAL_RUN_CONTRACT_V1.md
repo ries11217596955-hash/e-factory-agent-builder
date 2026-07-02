@@ -167,3 +167,37 @@ This contract does not prove Real absorption.
 This contract does not make runtime ready.
 This contract does not delete old files.
 This contract defines the single owner-facing route that cleanup and implementation must converge toward.
+## 2026-07-02 Digest-first absorption correction
+
+The old phrase `accepted atom absorption` was too weak and is superseded.
+
+Canonical vocabulary now is:
+
+```text
+RAW_CANDIDATE       = untrusted material
+READY/STAGED_ATOM   = validator accepted shape, not intelligence
+DIGESTED_KNOWLEDGE  = compact semantic memory cell usable after raw source deletion
+ABSORBED            = DIGESTED_KNOWLEDGE only
+```
+
+A Real run must not mutate active route or claim intelligence by appending raw ready atoms.
+
+Real absorption is permitted only after all gates pass:
+
+```text
+compact semantic digest organ exists
+raw candidate -> semantic cell transform passes
+lookup/use proof passes
+raw source dependency is removed
+repo growth budget is bounded
+staging/proof bulk is disposable
+```
+
+Until then:
+
+```text
+RunKind=Test -> staging/probe only, no intelligence claim
+RunKind=Real -> BLOCKED_DIGESTION_ORGAN_REQUIRED_V1
+```
+
+Old ready-lane route absorption is deprecated. It may not be used as proof that the agent became smarter.

@@ -246,3 +246,19 @@ before Real promotion / large batch / owner-selected promotion -> Full
 ```
 
 This preserves safety without making the agent slow by forcing full validation on every atom.
+## FILE_ATOM_ABSORPTION_PIPELINE_V1
+
+The production file absorption route is now:
+
+```text
+atom file
+-> runtime staging copy
+-> JSONL/intake validation
+-> compact semantic digestion organ
+-> compact memory + lookup index
+-> staging raw deleted
+-> original raw deleted only if it is runtime-owned and explicitly requested
+-> route/ledger unchanged
+```
+
+`RunKind=Real` is wired to this pipeline. Real no longer means route append. Real means compact semantic digestion with raw-source dependency removed.

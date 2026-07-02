@@ -29,6 +29,8 @@ $stagingDir="$runRoot/staging"
 EnsureDir $stagingDir
 $stagedInput="$stagingDir/raw_atoms.jsonl"
 $normalizedInput="$stagingDir/digestible_atoms.jsonl"
+$targetMemoryRoot=$MemoryRoot
+$candidateMemoryRoot="$runRoot/memory_candidate"
 Copy-Item -Path $InputPath -Destination $stagedInput -Force
 $rows=@()
 $lineNo=0
@@ -41,21 +43,42 @@ Get-Content $stagedInput | ForEach-Object {
 if($rows.Count -lt 1){ throw 'NO_ATOMS_IN_FILE' }
 $normalized=@()
 foreach($r in $rows){
-  $concept=GetField $r @('concept_key','concept','topic','learning_key','candidate_id','atom_id','label','title')
-  if([string]::IsNullOrWhiteSpace($concept)){ throw 'ATOM_MISSING_CONCEPT_OR_TOPIC_FIELD' }
-  $label=GetField $r @('label','topic','concept_key','concept','learning_key','candidate_id','atom_id')
-  $definition=GetField $r @('definition','summary','new_knowledge','objective','expected_behavior','text','exercise')
-  if([string]::IsNullOrWhiteSpace($definition)){ throw 'ATOM_MISSING_MEANING_FIELD' }
-  $uses=@()
-  foreach($name in @('behavior_use_proof_target','expected_behavior','return_to_parent','exercise')){ $v=GetField $r @($name); if($v){ $uses += $v } }
-  $props=@()
-  foreach($name in @('source_mode','theme_key','learning_key','level','ladder_step','batch_delta_target')){ if($r.PSObject.Properties[$name]){ $props += "$name=$($r.PSObject.Properties[$name].Value)" } }
-  $relations=@()
-  foreach($name in @('prerequisite_key','theme_key')){ if($r.PSObject.Properties[$name]){ $v=[string]$r.PSObject.Properties[$name].Value; if($v){ $relations += "${name}:$v" } } }
+  $isFactoryCandidate=($r.PSObject.Properties['theme_key'] -and $r.PSObject.Properties['learning_key'] -and $r.PSObject.Properties['level'])
+  if($isFactoryCandidate){
+    $theme=GetField $r @('theme_key')
+    $level=GetField $r @('level')
+    $sourceMode=GetField $r @('source_mode')
+    $verbRootMode=$theme
+    $concept=$theme
+    $label=$theme
+    $definition="Factory curriculum theme $verbRootMode is a Builder learning ladder theme. Current observed step is level $level from source_mode $sourceMode."
+    $props=@("source_mode=$sourceMode","latest_observed_level=$level")
+    $relations=@()
+    $prereq=GetField $r @('prerequisite_key')
+    if($prereq){ $relations += "prerequisite_key:$prereq" }
+    $learningKey=GetField $r @('learning_key')
+    if($learningKey){ $relations += "learning_key:$learningKey" }
+    $uses=@(
+      "Use this theme only as Builder process curriculum material after factory contract, streaming, digest, and promotion gates pass.",
+      "Do not treat factory cursor output as external factual world knowledge."
+    )
+  } else {
+    $concept=GetField $r @('concept_key','concept','topic','learning_key','candidate_id','atom_id','label','title')
+    if([string]::IsNullOrWhiteSpace($concept)){ throw 'ATOM_MISSING_CONCEPT_OR_TOPIC_FIELD' }
+    $label=GetField $r @('label','topic','concept_key','concept','learning_key','candidate_id','atom_id')
+    $definition=GetField $r @('definition','summary','new_knowledge','objective','expected_behavior','text','exercise')
+    if([string]::IsNullOrWhiteSpace($definition)){ throw 'ATOM_MISSING_MEANING_FIELD' }
+    $uses=@()
+    foreach($name in @('behavior_use_proof_target','expected_behavior','return_to_parent','exercise')){ $v=GetField $r @($name); if($v){ $uses += $v } }
+    $props=@()
+    foreach($name in @('source_mode','theme_key','learning_key','level','ladder_step','batch_delta_target')){ if($r.PSObject.Properties[$name]){ $props += "$name=$($r.PSObject.Properties[$name].Value)" } }
+    $relations=@()
+    foreach($name in @('prerequisite_key','theme_key')){ if($r.PSObject.Properties[$name]){ $v=[string]$r.PSObject.Properties[$name].Value; if($v){ $relations += "${name}:$v" } } }
+  }
   $normalized += [pscustomobject]@{
     concept_key=$concept
     label=$label
-    kind='factory_candidate_semantic_material'
+    kind=if($isFactoryCandidate){'factory_theme_ladder_memory'}else{'semantic_material'}
     definition=$definition
     properties=@($props)
     relations=@($relations)
@@ -69,14 +92,14 @@ if([string]::IsNullOrWhiteSpace($selectedTier)){ throw 'VALIDATION_POLICY_TIER_M
 $routeBefore=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_POINTER_V1.json -Raw|ConvertFrom-Json
 $ledgerBefore=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_REPLAY_LEDGER_V1.json -Raw|ConvertFrom-Json
 $inputSha=FileSha256 $stagedInput
-$digestOut=@(& powershell -NoProfile -ExecutionPolicy Bypass -File operations/school/digestion/invoke_compact_semantic_digestion_organ_v1.ps1 -InputPath $normalizedInput -MemoryRoot $MemoryRoot -RunId $runId -CleanupRawSource -SizeBudgetBytes $SizeBudgetBytes *>&1 | ForEach-Object {[string]$_})
+$digestOut=@(& powershell -NoProfile -ExecutionPolicy Bypass -File operations/school/digestion/invoke_compact_semantic_digestion_organ_v1.ps1 -InputPath $normalizedInput -MemoryRoot $candidateMemoryRoot -RunId $runId -CleanupRawSource -SizeBudgetBytes $SizeBudgetBytes *>&1 | ForEach-Object {[string]$_})
 $digestStatus=($digestOut|Where-Object{$_ -match '^DIGEST_STATUS='}|Select-Object -Last 1) -replace '^DIGEST_STATUS=',''
 if($digestStatus -ne 'PASS_COMPACT_SEMANTIC_DIGESTION_ORGAN_V1'){ throw "DIGEST_NOT_PASS:$digestStatus" }
 if(Test-Path $normalizedInput){ throw 'NORMALIZED_DIGEST_INPUT_NOT_DELETED' }
 if(Test-Path $stagedInput){ Remove-Item $stagedInput -Force }
-$manifest=Get-Content (Join-Path $MemoryRoot 'manifest.json') -Raw|ConvertFrom-Json
-$index=Get-Content (Join-Path $MemoryRoot 'index.json') -Raw|ConvertFrom-Json
-$cellsPath=Join-Path $MemoryRoot 'cells.jsonl'
+$manifest=Get-Content (Join-Path $candidateMemoryRoot 'manifest.json') -Raw|ConvertFrom-Json
+$index=Get-Content (Join-Path $candidateMemoryRoot 'index.json') -Raw|ConvertFrom-Json
+$cellsPath=Join-Path $candidateMemoryRoot 'cells.jsonl'
 $cells=@(Get-Content $cellsPath | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_|ConvertFrom-Json })
 if(Test-Path $stagedInput){ throw 'STAGED_RAW_SOURCE_NOT_DELETED' }
 if($manifest.raw_source_dependency_removed -ne $true){ throw 'RAW_SOURCE_DEPENDENCY_NOT_REMOVED' }
@@ -98,6 +121,10 @@ $routeAfter=Get-Content operations/school/curriculum/incremental_active_store/AC
 $ledgerAfter=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_REPLAY_LEDGER_V1.json -Raw|ConvertFrom-Json
 if([int]$routeBefore.routed_active_count -ne [int]$routeAfter.routed_active_count){ throw 'ROUTE_MUTATED_BY_FILE_ABSORPTION' }
 if([int]$ledgerBefore.replayed_active_count -ne [int]$ledgerAfter.replayed_active_count){ throw 'LEDGER_MUTATED_BY_FILE_ABSORPTION' }
+if(Test-Path $targetMemoryRoot){ Remove-Item $targetMemoryRoot -Recurse -Force }
+$targetParent=Split-Path $targetMemoryRoot -Parent
+if($targetParent){ EnsureDir $targetParent }
+Copy-Item -Path $candidateMemoryRoot -Destination $targetMemoryRoot -Recurse -Force
 $report=[ordered]@{
   schema='file_atom_absorption_pipeline_v1'
   status='PASS_FILE_ATOM_ABSORPTION_PIPELINE_V1'
@@ -107,7 +134,8 @@ $report=[ordered]@{
   input_atoms=$rows.Count
   normalized_digest_atoms=$normalized.Count
   selected_validation_tier=$selectedTier
-  memory_root=$MemoryRoot
+  memory_root=$targetMemoryRoot
+  candidate_memory_root=$candidateMemoryRoot
   digest_status=$digestStatus
   digested_cells=[int]$manifest.cell_count
   merged_count=[int]$manifest.merged_count

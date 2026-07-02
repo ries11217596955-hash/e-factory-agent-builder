@@ -201,3 +201,27 @@ RunKind=Real -> BLOCKED_DIGESTION_ORGAN_REQUIRED_V1
 ```
 
 Old ready-lane route absorption is deprecated. It may not be used as proof that the agent became smarter.
+## COMPACT_SEMANTIC_DIGESTION_ORGAN_V1
+
+This is the production-shaped organ that turns staged material into compact semantic memory.
+
+Required behavior:
+
+```text
+input raw/staged candidates
+-> canonical semantic cells
+-> merge duplicate concepts
+-> build lookup index
+-> remove raw source dependency
+-> enforce size budget
+-> prove route/ledger are not mutated by staging
+```
+
+The first validator may run on a small batch, but the organ contract is not a toy. It is the canonical gate before any future `RunKind=Real` can claim absorption.
+
+Canonical scripts:
+
+```text
+operations/school/digestion/invoke_compact_semantic_digestion_organ_v1.ps1
+operations/school/digestion/validate_compact_semantic_digestion_organ_v1.ps1
+```

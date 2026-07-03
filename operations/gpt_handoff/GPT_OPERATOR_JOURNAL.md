@@ -1,10 +1,10 @@
-Всегда читай карту агента.
+Ð’ÑÐµÐ³Ð´Ð° Ñ‡Ð¸Ñ‚Ð°Ð¹ ÐºÐ°Ñ€Ñ‚Ñƒ Ð°Ð³ÐµÐ½Ñ‚Ð°.
 
 # GPT_OPERATOR_JOURNAL.md
 
 Purpose: this file is for ChatGPT / GPT operator continuity. It is not Codex law, not a raw archive, not a Program Ledger dump. It is the compact active operator journal that must be read after AGENTS.md and before choosing the next technical route.
 
-Owner instruction: when migrating chats, Owner may say: "прочитай operations/gpt_handoff/GPT_OPERATOR_JOURNAL.md". Treat that as an active restore command.
+Owner instruction: when migrating chats, Owner may say: "Ð¿Ñ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ð¹ operations/gpt_handoff/GPT_OPERATOR_JOURNAL.md". Treat that as an active restore command.
 
 ## 0. Mandatory first actions for GPT in this repo
 
@@ -317,7 +317,7 @@ Next implication: Build/wire accepted atom retention/storage organ into active r
 
 Action: created operations/gpt_handoff/GPT_OPERATOR_JOURNAL.md.
 
-Evidence: this file exists and first line is "Всегда читай карту агента."
+Evidence: this file exists and first line is "Ð’ÑÐµÐ³Ð´Ð° Ñ‡Ð¸Ñ‚Ð°Ð¹ ÐºÐ°Ñ€Ñ‚Ñƒ Ð°Ð³ÐµÐ½Ñ‚Ð°."
 
 Status: OPERATOR_MEMORY_ANCHOR_CREATED.
 
@@ -933,7 +933,7 @@ Change:
 - The file is now marked as ACTIVE_MUST_READ_BEFORE_PROJECT_ACTION.
 - For every Agent Builder/project message, GPT must do a surface pass over the file before choosing action.
 - Before serious repo/school/night/Codex/promotion/learning claims, GPT must do a relevant deep pass.
-- Confusion or Owner signal "ты поплыл" forces immediate return to this file before continuing.
+- Confusion or Owner signal "Ñ‚Ñ‹ Ð¿Ð¾Ð¿Ð»Ñ‹Ð»" forces immediate return to this file before continuing.
 
 Purpose:
 
@@ -1325,11 +1325,11 @@ Flow:
 
 ```text
 candidate batch ready
-→ contract validation
-→ stream digest
-→ per-batch/cumulative quality gate
-→ ready lane OR quarantine lane
-→ checkpoint
+â†’ contract validation
+â†’ stream digest
+â†’ per-batch/cumulative quality gate
+â†’ ready lane OR quarantine lane
+â†’ checkpoint
 ```
 
 Proof on partial 5839 Test run:
@@ -1465,8 +1465,8 @@ Contract:
 ```text
 TargetAccepted=N
 RunKind=Test|Real
-Test → local factory generation, no Codex CLI/API call
-Real → blocked until live authority passport exists
+Test â†’ local factory generation, no Codex CLI/API call
+Real â†’ blocked until live authority passport exists
 ```
 
 Proof run:
@@ -1495,7 +1495,7 @@ Boundary:
 
 Next integration path:
 
-factory run → contract consistency → streaming absorption → ready lane gate → active promotion only when Owner selects that run for absorption.
+factory run â†’ contract consistency â†’ streaming absorption â†’ ready lane gate â†’ active promotion only when Owner selects that run for absorption.
 ### 2026-07-01 - Factory 1000 atoms absorbed additively into repo-body active memory
 
 Input:
@@ -1750,7 +1750,7 @@ Boundary:
 Owner pressure:
 
 - Full duplicate scans will not scale to hundreds of thousands of atoms.
-- Factory must remember theme progress: X last_level=N → next candidate level=N+1; new theme → level=1.
+- Factory must remember theme progress: X last_level=N â†’ next candidate level=N+1; new theme â†’ level=1.
 
 Implemented:
 
@@ -1921,10 +1921,10 @@ Implemented:
 Architecture:
 
 ```text
-legacy active checkpoint full rewrite → append-only runtime chunks
-rollback full snapshot → inverse delta
-index rebuild → append topic/key index entries
-cursor rebuild → touched theme update
+legacy active checkpoint full rewrite â†’ append-only runtime chunks
+rollback full snapshot â†’ inverse delta
+index rebuild â†’ append topic/key index entries
+cursor rebuild â†’ touched theme update
 ```
 
 Validation proof:
@@ -2026,9 +2026,9 @@ Replay contract:
 
 ```text
 legacy checkpoint 9049 + committed ready_atoms delta source
-→ rebuild .runtime routed store
-→ apply inverse-delta-capable route delta
-→ projection and route pointer recover 9089
+â†’ rebuild .runtime routed store
+â†’ apply inverse-delta-capable route delta
+â†’ projection and route pointer recover 9089
 ```
 
 Proof:
@@ -2888,3 +2888,55 @@ Return-to-parent / next strongest move:
 - Replay ledger reset: SKELETON_ROUTE_LEDGER_RESET_V1, deltas=[].
 - Boundary: no claim of 14338 absorbed/digested atoms remains. Future learning must implement compact semantic digestion where raw source becomes disposable after integration.
 - Rollback reference before cleanup: 6541f34b05ce0b0fb951b9784cd54010567a7be8.
+
+### 2026-07-03 - GPT OPERATOR JOURNAL REALITY UPDATE AFTER SKELETON RESET
+- Reason for update: Owner reminded GPT that this file is the canonical operator handoff journal and must be kept current before chat migration. Previous last entry was the 2026-07-02 skeleton reset; all digest/school/memory work after that was missing from the journal.
+- Current branch/head proof: thin-control at 52cec837c08a505b062fcf7d3a597b54cb866c8b, pushed to origin/thin-control.
+- Current repo status at update time: clean before journal edit.
+- Current active route status: SKELETON_NO_ACTIVE_ROUTE_V1, routed_active_count=0.
+- Current replay ledger status: SKELETON_ROUTE_LEDGER_RESET_V1, replayed_active_count=0, deltas=0.
+- Current active compact semantic memory status: PASS_COMPACT_SEMANTIC_DIGESTION_ORGAN_V1; run_id=file_atom_absorption_20260703_090650; input=7; cells=600; merged=7; total_memory_bytes=740252.
+- Important boundary: active compact memory is valid compact memory, but it is not the untouched 1000-run baseline anymore. During debugging, a direct Real run partially merged seven observations before a chunk-3 failure was repaired. Do not describe current runtime memory as â€œbaseline 1000 untouchedâ€. Use label VALID_BUT_PARTIAL_CUMULATIVE_FROM_DEBUG_RUN until Owner decides whether to accept it or rebuild fresh.
+
+### 2026-07-02/03 - DIGEST-FIRST SCHOOL CHAIN BUILT AFTER RAW ROUTE DISCARD
+- Digest gate added: 9d06eef school: require digest before real absorption.
+- Compact semantic digestion organ added: 8d8286f school: add compact semantic digestion organ.
+- Validation budget tiers added: 10f9af4 school: add digest validation budget tiers.
+- File atom digestion pipeline added: 9d6e468 school: wire real runs through file atom digestion pipeline.
+- Factory-to-digest reconciliation: ff4b200 school: reconcile factory output with digest absorption.
+- Factory compaction/proven 1000 run: 8a994dc school: compact factory ready atoms before digest promotion.
+- Recall/use probe added: e88f182 school: add compact memory recall use probe.
+- Real school made recall/use-gated: c11d9c8 school: make canonical real require recall use proof.
+- Transient runtime trace cleanup after real proof: a47dfd0 school: remove transient runtime traces after real proof.
+- Chunked cumulative bounded-clean school: 6b89cd7 school: make real runs chunked cumulative and bounded-clean.
+- Final chunked cumulative ordinal/failsafe proof: 52cec83 school: prove chunked cumulative runs with ordinal offsets.
+
+### 2026-07-03 - PROVEN SCHOOL BEHAVIOR AFTER FINAL PATCH
+- Canonical owner-facing contract remains: operations/school/run_agent_school.ps1 -TargetAccepted N -RunKind Test|Real.
+- No owner-facing chunk/batch knobs were added. Default Real execution uses outer_chunk_size=5000 and inner_batch_size_max=100.
+- Validator may internally force EF_SCHOOL_OUTER_CHUNK_SIZE=7 only to prove multi-chunk path. This is not an Owner launch knob.
+- Factory now accepts OrdinalOffset so outer chunks do not restart the same curriculum sequence. Final proof used offsets 0, 7, and 14.
+- Real path is now: factory -> streaming ready lane -> cumulative compact semantic digest -> recall/use proof -> cleanup after chunk -> next chunk.
+- Real cannot continue past a chunk without recall/use behavior_delta proof.
+- Final validator proof: VALIDATION_PASS=AGENT_SCHOOL_CANONICAL_CHUNKED_CUMULATIVE_V1_VALID.
+- Final Real proof path: .runtime/school_runs/school_factory_digest_use_real_15_20260703_091413/AGENT_SCHOOL_CANONICAL_ENTRYPOINT_V1.json.
+- Final Real proof summary: status=PASS_REAL_FACTORY_DIGEST_RECALL_USE_V1; target=15; chunk_count=3; outer=7; inner=100; ready_atoms=15; digested_cells=600; cumulative_memory_merge=True; cleanup_after_each_chunk=True; behavior_delta=True.
+- Chunk proof: chunk1 offset=0 target=7; chunk2 offset=7 target=7; chunk3 offset=14 target=1. All chunks cleanup_after_chunk=True and behavior_delta=True.
+- Single-row digest bug was found and fixed: ReadJsonl now wraps rows as an array, so a one-line JSONL chunk no longer fails false NO_INPUT_ROWS.
+- Transient checks after final proof: .runtime/codex_curriculum_candidate_factory_runs, .runtime/file_atom_absorption, .runtime/validator_active_memory_backup, .runtime/memory_use_probes, .runtime/digestion_policy, .runtime/digestion_reports, operations/reports all absent.
+- Route/ledger after proof: route=0, ledger=0, deltas=0. Runtime_ready remains false.
+- Repo size after gc: repo_mb=19.928, git_mb=6.4, worktree_mb=13.528, runtime_mb=0.786.
+
+### 2026-07-03 - NIGHT RUN READINESS BOUNDARY
+- PROVEN_LAB: chunked cumulative school mechanism, ordinal offsets, cumulative compact memory merge, per-chunk recall/use gate, in-run transient cleanup after successful chunks, validator restoration of active memory after proof run.
+- NOT_PROVEN_LIVE: overnight autonomous live run, self-modifying code run, child-agent production, source-backed factual learning, medical/domain/world knowledge acquisition.
+- NOT_PROVEN_FULL_FAIL_ROLLBACK: fail-safe cleanup path is structurally implemented in runner, but a deliberate negative failure test after the final rewrite has not yet been run. Do not claim full rollback maturity until that negative test is performed.
+- Source boundary: current factory material is internal Builder process curriculum generated from local roots/verbs/modes/cursor, not books, internet, medicine, or world-factual knowledge.
+- Correct next decision before night launch: Owner must choose active memory policy: accept current VALID_BUT_PARTIAL_CUMULATIVE_FROM_DEBUG_RUN memory or rebuild fresh active compact semantic memory through controlled Real run before any larger night run.
+- Preferred next action: rebuild fresh active compact memory under controlled proof, then request Owner approval for a first bounded night run (suggested 3000 or 5000, not 30000) with launch plan shown before execution.
+
+### 2026-07-03 - GPT OPERATOR SELF-RULE FROM OWNER CORRECTION
+- Before any chat migration or long handoff, GPT must open and update operations/gpt_handoff/GPT_OPERATOR_JOURNAL.md.
+- The journal must record current repo HEAD/remote, route/ledger state, active memory state, latest proof path/status, boundaries, and next required Owner decision.
+- Do not rely on chat memory alone for operator continuity.
+- Do not claim ready/live/clean/proven without fresh proof from terminal, file, validator, commit, or report.

@@ -7,6 +7,7 @@ $repoRoot=(git rev-parse --show-toplevel).Trim(); Set-Location $repoRoot
 $utf8=New-Object System.Text.UTF8Encoding($false)
 function EnsureDir($Path){ if(-not (Test-Path $Path)){ New-Item -ItemType Directory -Force $Path | Out-Null } }
 function WriteJson($Path,$Obj,$Depth=80){ $d=Split-Path $Path -Parent; if($d){ EnsureDir $d }; [IO.File]::WriteAllText((Join-Path (Get-Location).Path $Path),($Obj|ConvertTo-Json -Depth $Depth),$utf8) }
+function RemoveIfExists($Path){ if(-not [string]::IsNullOrWhiteSpace($Path) -and (Test-Path $Path)){ Remove-Item $Path -Recurse -Force; return $true } return $false }
 $runId="school_factory_digest_use_{0}_{1}_{2}" -f $RunKind.ToLowerInvariant(),$TargetAccepted,(Get-Date -Format 'yyyyMMdd_HHmmss')
 $proofDir=".runtime/school_runs/$runId"
 $proofPath="$proofDir/AGENT_SCHOOL_CANONICAL_ENTRYPOINT_V1.json"
@@ -49,12 +50,22 @@ $base=[ordered]@{
   law='TargetAccepted + RunKind uses the existing candidate factory and streaming lane. Real cannot pass from digest alone; recall/use and behavior_delta proof are required.'
 }
 if($RunKind -eq 'Test'){
+  $cleanupRemoved=@()
+  foreach($target in @($factoryReport.run_dir,'operations/reports')){
+    if(-not [string]::IsNullOrWhiteSpace($target) -and (Test-Path $target)){
+      Remove-Item $target -Recurse -Force
+      $cleanupRemoved += $target
+    }
+  }
   $base.status='PASS_TEST_FACTORY_STREAMING_READY_V1'
   $base.accepted_total=0
   $base.digested_knowledge_mutated=$false
   $base.recall_use_required=$false
   $base.behavior_delta=$false
-  $base.boundary='Test validates existing factory and streaming ready lane only. It does not digest or mutate compact memory.'
+  $base.retention_policy='KEEP_CANONICAL_TEST_PROOF_ONLY_V1'
+  $base.cleanup_removed=@($cleanupRemoved | Select-Object -Unique)
+  $base.cleanup_kept=@($proofPath)
+  $base.boundary='Test validates existing factory and streaming ready lane only. It does not digest or mutate compact memory. Raw/transient factory and report traces are removed after proof embedding.'
   WriteJson $proofPath $base 80
   Write-Host 'SCHOOL_RUN_STATUS=PASS_TEST_FACTORY_STREAMING_READY_V1'
   Write-Host "PROOF_PATH=$proofPath"
@@ -112,7 +123,31 @@ $base.behavior_delta=$useProof.behavior_delta
 $base.behavior_delta_definition=$useProof.behavior_delta_definition
 $base.route_after=[int]$routeAfter.routed_active_count
 $base.ledger_after=[int]$ledgerAfter.replayed_active_count
-$base.boundary='Real uses existing candidate factory output, streaming ready_atoms, digest pipeline, compact memory recall, and behavior_delta proof. Old overnight/semantic/fresh parallel paths are not canonical.'
+$cleanupRemoved=@()
+$cleanupKept=@()
+# Retention policy: keep active compact memory and canonical school proof only; remove raw/transient factory, streaming, digest, and recall proof traces after their results are embedded into this proof.
+foreach($target in @($factoryReport.run_dir,$pipeProofPath,$pipeProof.candidate_memory_root,$useProofPath,'operations/reports')){
+  if(-not [string]::IsNullOrWhiteSpace($target)){
+    $removeTarget=$target
+    if((Test-Path $target) -and -not (Get-Item $target).PSIsContainer){ $removeTarget=Split-Path $target -Parent }
+    if($removeTarget -and (Test-Path $removeTarget)){
+      Remove-Item $removeTarget -Recurse -Force
+      $cleanupRemoved += $removeTarget
+    }
+  }
+}
+foreach($trashPath in @('.runtime/codex_curriculum_candidate_factory_runs','.runtime/file_atom_absorption','.runtime/memory_use_probes','.runtime/digestion_policy','.runtime/digestion_reports','operations/reports')){
+  if(Test-Path $trashPath){
+    Remove-Item $trashPath -Recurse -Force
+    $cleanupRemoved += $trashPath
+  }
+}
+$cleanupKept += $pipeProof.memory_root
+$cleanupKept += $proofPath
+$base.retention_policy='KEEP_ACTIVE_COMPACT_MEMORY_AND_CANONICAL_PROOF_ONLY_V1'
+$base.cleanup_removed=@($cleanupRemoved | Select-Object -Unique)
+$base.cleanup_kept=@($cleanupKept | Select-Object -Unique)
+$base.boundary='Real uses existing candidate factory output, streaming ready_atoms, digest pipeline, compact memory recall, and behavior_delta proof. Raw/transient traces are removed after proof embedding. Old overnight/semantic/fresh parallel paths are not canonical.'
 WriteJson $proofPath $base 100
 Write-Host 'SCHOOL_RUN_STATUS=PASS_REAL_FACTORY_DIGEST_RECALL_USE_V1'
 Write-Host "PROOF_PATH=$proofPath"

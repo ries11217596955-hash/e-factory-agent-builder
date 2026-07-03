@@ -301,3 +301,22 @@ Forbidden production meanings:
 - digest-only Real PASS
 
 Useful ideas from old modules are merged only as active behavior requirements: checkpoint thinking, negative rejection, no_magic_n, no auto-accept by range, no_full_scan decision-use, and behavior delta.
+## RUNTIME_RETENTION_POLICY_V1
+
+Canonical Real must not leave raw/transient run trash after a successful proof.
+
+Keep:
+
+- `.runtime/active_compact_semantic_memory_v1`
+- the canonical school run proof for the completed run
+
+Remove after embedding proof fields into the canonical proof:
+
+- candidate factory run directory
+- streaming absorption generated reports
+- file atom absorption candidate/proof trace
+- compact memory recall/use probe trace
+- validator active memory backup
+- `operations/reports` generated report cache
+
+This policy protects disk growth before overnight runs. Active knowledge is compact memory, not raw run traces.

@@ -48,6 +48,10 @@ try {
 } finally {
   if(Test-Path $activeMemoryRoot){ Remove-Item $activeMemoryRoot -Recurse -Force }
   if($hadActiveMemory){ Copy-Item -Path $backupRoot -Destination $activeMemoryRoot -Recurse -Force }
+  if(Test-Path $backupRoot){ Remove-Item $backupRoot -Recurse -Force }
+  $validatorBackupParent=Split-Path $backupRoot -Parent
+  if($validatorBackupParent -and (Test-Path $validatorBackupParent) -and -not (Get-ChildItem $validatorBackupParent -Force -ErrorAction SilentlyContinue)){ Remove-Item $validatorBackupParent -Force }
+  # validator_active_memory_backup_parent_cleanup
 }
 $routeAfter=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_POINTER_V1.json -Raw|ConvertFrom-Json
 $ledgerAfter=Get-Content operations/school/curriculum/incremental_active_store/ACTIVE_REPO_BODY_ROUTE_REPLAY_LEDGER_V1.json -Raw|ConvertFrom-Json

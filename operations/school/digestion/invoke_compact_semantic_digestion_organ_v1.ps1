@@ -44,9 +44,9 @@ function ReadJsonl($Path){
   if(-not (Test-Path $Path)){ throw "INPUT_MISSING:$Path" }
   $rows=@()
   $n=0
-  Get-Content $Path | ForEach-Object {
-    $line=[string]$_
-    if([string]::IsNullOrWhiteSpace($line)){ return }
+  foreach($rawLine in (Get-Content $Path)){
+    $line=[string]$rawLine
+    if([string]::IsNullOrWhiteSpace($line)){ continue }
     $n++
     try { $rows += ($line | ConvertFrom-Json) } catch { throw "BAD_JSONL_LINE:${n}:$($_.Exception.Message)" }
   }
@@ -85,7 +85,7 @@ function CellToOrdered($Cell){
 }
 $resolvedInput=(Resolve-Path $InputPath).Path
 EnsureDir $MemoryRoot
-$rows=ReadJsonl $InputPath
+$rows=@(ReadJsonl $InputPath)
 if($rows.Count -lt 1){ throw 'NO_INPUT_ROWS' }
 $cells=LoadExistingCells $MemoryRoot
 $existingCellCountBefore=$cells.Keys.Count

@@ -2,6 +2,7 @@ param(
   [Parameter(Mandatory=$true)][int]$TargetAccepted,
   [ValidateSet('Test','Real')][string]$RunKind='Test',
   [int]$BatchSize=100,
+  [ValidateRange(0,1000000000)][int]$OrdinalOffset=0,
   [string]$RunId='',
   [bool]$UseFactoryMemory=$true,
   [bool]$UseTopicCursor=$true,
@@ -66,11 +67,11 @@ while($ordinal -lt $TargetAccepted){
   if(Test-Path $batchPath){ Remove-Item $batchPath -Force }
   for($i=1;$i -le $batchTarget;$i++){
     $ordinal++
-    $task=$taskSchedule[($ordinal-1) % $taskSchedule.Count]
+    $globalOrdinal=$OrdinalOffset + $ordinal - 1
+    $task=$taskSchedule[$globalOrdinal % $taskSchedule.Count]
     $root=[string]$task.root; $verb=[string]$task.verb; $sourceMode=[string]$task.source_mode; $themeKey=[string]$task.theme_key
-    if(-not $runNextLevel.ContainsKey($themeKey)){ $runNextLevel[$themeKey]=[int]$task.next_level }
-    $level=[int]$runNextLevel[$themeKey]
-    $runNextLevel[$themeKey]=$level+1
+    $cycleLevelOffset=[int][Math]::Floor([double]$globalOrdinal / [double]$taskSchedule.Count)
+    $level=[int]$task.next_level + $cycleLevelOffset
     $learningKey="$verb|$root|$level|$sourceMode"
     $prereq=if($level -gt 1){"$verb|$root|$($level-1)|$sourceMode"}else{''}
     if(-not $generatedKeys.ContainsKey($learningKey)){ $generatedKeys[$learningKey]=0 }; $generatedKeys[$learningKey]++

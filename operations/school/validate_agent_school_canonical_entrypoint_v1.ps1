@@ -31,13 +31,17 @@ try {
   if([int]$testProof.inner_batch_size_max -ne 100){ throw 'TEST_INNER_BATCH_BAD' }
   if([int]$testProof.ready_atoms -ne $TestTargetAccepted){ throw 'TEST_READY_COUNT_BAD' }
   if($testProof.digested_knowledge_mutated -ne $false){ throw 'TEST_MUTATED_DIGESTED_MEMORY' }
-  $realOut=@(& $runner -TargetAccepted $RealTargetAccepted -RunKind Real *>&1 | ForEach-Object{[string]$_})
+  $oldOuterChunkEnv=$env:EF_SCHOOL_OUTER_CHUNK_SIZE
+  $env:EF_SCHOOL_OUTER_CHUNK_SIZE='7'
+  try { $realOut=@(& $runner -TargetAccepted $RealTargetAccepted -RunKind Real *>&1 | ForEach-Object{[string]$_}) } finally { $env:EF_SCHOOL_OUTER_CHUNK_SIZE=$oldOuterChunkEnv }
   $realStatus=($realOut|Where-Object{$_ -match '^SCHOOL_RUN_STATUS='}|Select-Object -Last 1)
   $realProofPath=(($realOut|Where-Object{$_ -match '^PROOF_PATH='}|Select-Object -Last 1) -replace '^PROOF_PATH=','')
   if($realStatus -ne 'SCHOOL_RUN_STATUS=PASS_REAL_FACTORY_DIGEST_RECALL_USE_V1'){ throw "REAL_STATUS_BAD: $realStatus" }
   $realProof=Get-Content $realProofPath -Raw|ConvertFrom-Json
   if($realProof.schema -ne 'agent_school_canonical_run_v6_chunked_cumulative'){ throw 'REAL_BAD_SCHEMA' }
-  if([int]$realProof.outer_chunk_size -ne 5000){ throw 'REAL_OUTER_CHUNK_SIZE_BAD' }
+  if((Get-Content $runner -Raw) -notmatch '\$outerChunkSize=5000'){ throw 'REAL_DEFAULT_OUTER_CHUNK_5000_MISSING' }
+  if([int]$realProof.outer_chunk_size -ne 7){ throw 'REAL_FORCED_OUTER_CHUNK_SIZE_BAD' }
+  if([int]$realProof.chunk_count -lt 2){ throw 'REAL_MULTI_CHUNK_NOT_PROVEN' }
   if([int]$realProof.inner_batch_size_max -ne 100){ throw 'REAL_INNER_BATCH_SIZE_BAD' }
   if([int]$realProof.ready_atoms -ne $RealTargetAccepted){ throw 'REAL_READY_COUNT_BAD' }
   if($realProof.digested_knowledge_mutated -ne $true){ throw 'REAL_DID_NOT_DIGEST_MEMORY' }

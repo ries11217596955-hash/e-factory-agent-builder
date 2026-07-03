@@ -334,3 +334,17 @@ TargetAccepted total
 ```
 
 Active memory is a single cumulative compact memory root, not one permanent file per run. The active root is atomically replaced by a merged candidate memory after validation.
+## MULTI_CHUNK_PROOF_BOUNDARY_V1
+
+The owner-facing school contract remains `TargetAccepted + RunKind`.
+
+Default Real execution must use:
+
+```text
+outer_chunk_size = 5000
+inner_batch_size_max = 100
+```
+
+Validator may force a smaller outer chunk through an internal environment variable only to prove the multi-chunk path. This must not become an owner-facing launch knob.
+
+Factory generation across outer chunks must use a global ordinal offset so chunk 2 does not restart the same curriculum levels as chunk 1.

@@ -320,3 +320,17 @@ Remove after embedding proof fields into the canonical proof:
 - `operations/reports` generated report cache
 
 This policy protects disk growth before overnight runs. Active knowledge is compact memory, not raw run traces.
+## CUMULATIVE_CHUNKED_NIGHT_SCHOOL_V1
+
+Canonical Real is cumulative and chunked:
+
+```text
+TargetAccepted total
+-> outer chunks of 5000
+-> each chunk uses factory batches of max 100
+-> each chunk digests into active compact memory seeded from prior active memory
+-> each chunk must pass recall/use behavior_delta before next chunk
+-> each chunk removes transient raw/proof traces before continuing
+```
+
+Active memory is a single cumulative compact memory root, not one permanent file per run. The active root is atomically replaced by a merged candidate memory after validation.

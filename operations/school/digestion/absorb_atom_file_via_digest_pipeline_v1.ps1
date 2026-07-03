@@ -31,6 +31,15 @@ $stagedInput="$stagingDir/raw_atoms.jsonl"
 $normalizedInput="$stagingDir/digestible_atoms.jsonl"
 $targetMemoryRoot=$MemoryRoot
 $candidateMemoryRoot="$runRoot/memory_candidate"
+$cumulative_memory_merge=$true
+$existing_memory_seeded=$false
+$existing_memory_cells_before=0
+if(Test-Path (Join-Path $targetMemoryRoot 'manifest.json')){
+  $existingManifest=Get-Content (Join-Path $targetMemoryRoot 'manifest.json') -Raw|ConvertFrom-Json
+  $existing_memory_cells_before=[int]$existingManifest.cell_count
+  Copy-Item -Path $targetMemoryRoot -Destination $candidateMemoryRoot -Recurse -Force
+  $existing_memory_seeded=$true
+}
 Copy-Item -Path $InputPath -Destination $stagedInput -Force
 $rows=@()
 $lineNo=0
@@ -139,6 +148,9 @@ $report=[ordered]@{
   digest_status=$digestStatus
   digested_cells=[int]$manifest.cell_count
   merged_count=[int]$manifest.merged_count
+  cumulative_memory_merge=$cumulative_memory_merge
+  existing_memory_seeded=$existing_memory_seeded
+  existing_memory_cells_before=[int]$existing_memory_cells_before
   total_memory_bytes=[int]$manifest.total_memory_bytes
   size_budget_bytes=$SizeBudgetBytes
   staged_raw_deleted=(-not (Test-Path $stagedInput))
@@ -152,7 +164,7 @@ $report=[ordered]@{
   ledger_after=[int]$ledgerAfter.replayed_active_count
   route_ledger_mutated=$false
   runtime_ready=$false
-  boundary='Factory/atom file material is absorbed only through compact semantic memory. Staging and normalized raw are deleted; route/ledger are not intelligence stores.'
+  boundary='Factory/atom file material is absorbed only through cumulative compact semantic memory. Existing active memory seeds candidate memory, new atoms merge through digest, staging and normalized raw are deleted; route/ledger are not intelligence stores.'
 }
 $proofPath="$runRoot/FILE_ATOM_ABSORPTION_PIPELINE_V1.json"
 WriteJson $proofPath $report 80

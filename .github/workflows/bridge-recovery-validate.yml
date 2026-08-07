@@ -1,6 +1,12 @@
 name: Bridge Recovery Validate
 
 on:
+  push:
+    branches:
+      - "bridge-recovery-bootstrap-v1"
+    paths:
+      - "bridge/**"
+      - ".github/workflows/bridge-recovery-validate.yml"
   pull_request:
     paths:
       - "bridge/**"

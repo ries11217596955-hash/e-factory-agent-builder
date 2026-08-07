@@ -17,11 +17,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
       - name: Parse PowerShell files
         shell: powershell
         run: |
           $Failed = $false
-          Get-ChildItem bridge/recovery -Filter *.ps1 | ForEach-Object {
+          Get-ChildItem bridge -Filter *.ps1 -Recurse | ForEach-Object {
             $Tokens = $null
             $Errors = $null
             [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$Tokens, [ref]$Errors) | Out-Null
@@ -72,3 +77,24 @@ jobs:
             throw "Recovery Agent must not expose remote command execution"
           }
           Write-Host "ANTI_ARBITRARY_SHELL=PASS"
+
+      - name: Run Local Bridge API tests
+        shell: powershell
+        run: python -m unittest discover -s bridge/tests -v
+
+      - name: Bootstrap and start Bridge on Windows
+        shell: powershell
+        run: |
+          & bridge/bootstrap.ps1 -SkipRecoveryInstall
+          & bridge/scripts/status_bridge.ps1
+          $Status = Invoke-RestMethod -Uri http://127.0.0.1:8765/health -TimeoutSec 5
+          if ($Status.status -ne "OK") { throw "Bridge health failed after bootstrap" }
+          Write-Host "WINDOWS_BRIDGE_BOOTSTRAP=PASS"
+
+      - name: Stop Bridge cleanly
+        if: always()
+        shell: powershell
+        run: |
+          if (Test-Path bridge/scripts/stop_bridge.ps1) {
+            & bridge/scripts/stop_bridge.ps1
+          }

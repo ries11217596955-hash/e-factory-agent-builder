@@ -1,0 +1,15 @@
+{
+  "repo_root": "C:\\path\\to\\e-factory-agent-builder",
+  "bridge_service_name": "",
+  "bridge_start_script": "",
+  "tunnel_service_name": "",
+  "tunnel_start_script": "",
+  "github_cli_path": "gh.exe",
+  "git_path": "git.exe",
+  "local_state_dir": "%LOCALAPPDATA%\\EFactory\\Recovery",
+  "notes": [
+    "Copy this file to local_config.json on the PC.",
+    "Do not store tokens, passwords or private keys here.",
+    "Secret-bearing tools must use Windows Credential Manager, environment-secret references or another dedicated local secure store."
+  ]
+}

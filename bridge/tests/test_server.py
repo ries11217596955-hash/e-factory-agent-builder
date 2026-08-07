@@ -1,4 +1,5 @@
 import json
+import os
 import sys
 import tempfile
 import threading
@@ -22,10 +23,11 @@ class BridgeTests(unittest.TestCase):
         token_file.write_text(self.token, encoding="utf-8")
         reports = self.root / "reports"
         recovery = self.root / "recovery"
+        self.shell = "powershell" if os.name == "nt" else "bash"
         cfg = {
             "bind_host": "127.0.0.1",
             "port": 0,
-            "shell": "bash",
+            "shell": self.shell,
             "token_file": str(token_file),
             "report_dir": str(reports),
             "recovery_report_dir": str(recovery),
@@ -83,11 +85,12 @@ class BridgeTests(unittest.TestCase):
         self.assertEqual(scheme["name"], "X-Bridge-Token")
 
     def test_run_and_report(self):
+        command = '[Console]::Write("bridge_ok")' if os.name == "nt" else "printf bridge_ok"
         status, data = self.request(
             "/run",
             method="POST",
             token=self.token,
-            body={"command": "printf bridge_ok", "cwd": str(self.root), "timeout_sec": 5},
+            body={"command": command, "cwd": str(self.root), "timeout_sec": 5},
         )
         self.assertEqual(status, 200)
         self.assertEqual(data["status"], "PASS")
@@ -99,11 +102,12 @@ class BridgeTests(unittest.TestCase):
 
     def test_cwd_boundary(self):
         outside = Path(self.root.parent)
+        command = "exit 0" if os.name == "nt" else "true"
         status, data = self.request(
             "/run",
             method="POST",
             token=self.token,
-            body={"command": "true", "cwd": str(outside)},
+            body={"command": command, "cwd": str(outside)},
         )
         self.assertEqual(status, 403)
         self.assertEqual(data["status"], "FORBIDDEN")

@@ -1,0 +1,74 @@
+name: Bridge Recovery Validate
+
+on:
+  pull_request:
+    paths:
+      - "bridge/**"
+      - ".github/workflows/bridge-recovery-validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Parse PowerShell files
+        shell: powershell
+        run: |
+          $Failed = $false
+          Get-ChildItem bridge/recovery -Filter *.ps1 | ForEach-Object {
+            $Tokens = $null
+            $Errors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$Tokens, [ref]$Errors) | Out-Null
+            if ($Errors.Count -gt 0) {
+              Write-Host "SYNTAX_FAIL=$($_.FullName)"
+              $Errors | ForEach-Object { Write-Host $_.Message }
+              $Failed = $true
+            }
+            else {
+              Write-Host "SYNTAX_PASS=$($_.FullName)"
+            }
+          }
+          if ($Failed) { exit 1 }
+
+      - name: Validate JSON contracts
+        shell: powershell
+        run: |
+          $Desired = Get-Content -Raw bridge/recovery/desired_state.json | ConvertFrom-Json
+          $Local = Get-Content -Raw bridge/recovery/local_config.example.json | ConvertFrom-Json
+
+          if ($Desired.schema_version -ne 1) { throw "desired_state schema_version must be 1" }
+          if ($Desired.generation -lt 0) { throw "desired_state generation must be non-negative" }
+          if ($Desired.enabled -ne $false) { throw "bootstrap desired_state must ship disabled" }
+
+          $Allowed = @("health_report", "ensure_bridge", "ensure_tunnel", "ensure_repo_remote", "ensure_github_cli")
+          foreach ($Operation in @($Desired.requested_operations)) {
+            if ($Allowed -notcontains [string]$Operation) { throw "forbidden operation: $Operation" }
+          }
+
+          $DesiredText = Get-Content -Raw bridge/recovery/desired_state.json
+          foreach ($ForbiddenKey in @('"command"', '"shell"', '"powershell"', '"bash"', '"token"', '"password"', '"secret"')) {
+            if ($DesiredText.ToLowerInvariant().Contains($ForbiddenKey)) {
+              throw "remote desired state contains forbidden executable/secret key: $ForbiddenKey"
+            }
+          }
+
+          if ([string]::IsNullOrWhiteSpace([string]$Local.repo_root)) { throw "local config template must declare repo_root placeholder" }
+          Write-Host "JSON_CONTRACTS=PASS"
+
+      - name: Check recovery anti-shell boundary
+        shell: powershell
+        run: |
+          $Agent = Get-Content -Raw bridge/recovery/recovery_agent.ps1
+          if ($Agent -match '(?i)Invoke-Expression|\biex\b') {
+            throw "Recovery Agent must not contain Invoke-Expression/iex"
+          }
+          if ($Agent -match '(?i)requested_.*command|remote_.*command') {
+            throw "Recovery Agent must not expose remote command execution"
+          }
+          Write-Host "ANTI_ARBITRARY_SHELL=PASS"

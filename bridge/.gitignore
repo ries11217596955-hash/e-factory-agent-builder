@@ -1,0 +1,5 @@
+config.local.json
+recovery/local_config.json
+*.pid
+__pycache__/
+tests/__pycache__/

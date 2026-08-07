@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "generation": 1,
+  "enabled": false,
+  "requested_operations": [
+    "health_report"
+  ],
+  "bridge": {
+    "target_ref": "phase110-idempotent-autonomy-trial-runtime",
+    "health_url": "http://127.0.0.1:8765/health"
+  },
+  "tunnel": {
+    "enabled": false
+  },
+  "repo": {
+    "expected_remote": "https://github.com/ries11217596955-hash/e-factory-agent-builder.git"
+  },
+  "proof": {
+    "output_dir": "%LOCALAPPDATA%\\EFactory\\Recovery\\reports"
+  },
+  "note": "PREPARED_NOT_INSTALLED: recovery control is disabled until local install and validation are complete."
+}

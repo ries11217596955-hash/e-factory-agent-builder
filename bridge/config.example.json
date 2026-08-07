@@ -1,0 +1,15 @@
+{
+  "bind_host": "127.0.0.1",
+  "port": 8765,
+  "shell": "powershell",
+  "token_file": "%LOCALAPPDATA%\\EFactory\\Bridge\\bridge_token.txt",
+  "report_dir": "%LOCALAPPDATA%\\EFactory\\Bridge\\reports",
+  "recovery_report_dir": "%LOCALAPPDATA%\\EFactory\\Recovery\\reports",
+  "allowed_roots": [
+    "__REPO_ROOT__"
+  ],
+  "default_cwd": "__REPO_ROOT__",
+  "max_timeout_sec": 900,
+  "max_body_bytes": 65536,
+  "max_inline_output_bytes": 50000
+}
